@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string BuildPipelineStageType;
         /// <summary>
+        /// The information about build runner.
+        /// </summary>
+        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult BuildRunnerShapeConfig;
+        /// <summary>
         /// Collection of build sources.
         /// </summary>
         public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult BuildSourceCollection;
@@ -126,6 +130,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string buildPipelineStageType,
 
+            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult buildRunnerShapeConfig,
+
             Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult buildSourceCollection,
 
             string buildSpecFile,
@@ -175,6 +181,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             BuildPipelineId = buildPipelineId;
             BuildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
             BuildPipelineStageType = buildPipelineStageType;
+            BuildRunnerShapeConfig = buildRunnerShapeConfig;
             BuildSourceCollection = buildSourceCollection;
             BuildSpecFile = buildSpecFile;
             CompartmentId = compartmentId;

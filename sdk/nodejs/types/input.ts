@@ -17202,7 +17202,7 @@ export namespace Database {
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
-        preference: pulumi.Input<string>;
+        preference?: pulumi.Input<string>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -17273,6 +17273,29 @@ export namespace Database {
          * The Oracle REST Data Services (ORDS) version.
          */
         ordsVersion?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseBackupBackupDestinationDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string>;
+        /**
+         * The type of backup.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseBackupConfig {
@@ -17410,6 +17433,10 @@ export namespace Database {
          * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
          */
         timeDataGuardRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         */
+        timeDisasterRecoveryRoleChanged?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseLongTermBackupSchedule {
@@ -17429,6 +17456,13 @@ export namespace Database {
          * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
          */
         timeOfBackup?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
+        /**
+         * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         */
+        disasterRecoveryType?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseScheduledOperation {
@@ -17470,6 +17504,10 @@ export namespace Database {
          * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
          */
         timeDataGuardRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         */
+        timeDisasterRecoveryRoleChanged?: pulumi.Input<string>;
     }
 
     export interface AutonomousExadataInfrastructureMaintenanceWindow {
@@ -17560,7 +17598,7 @@ export namespace Database {
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
-        preference: pulumi.Input<string>;
+        preference?: pulumi.Input<string>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -17609,6 +17647,9 @@ export namespace Database {
          * (Updatable) Months during the year when maintenance should be performed.
          */
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowMonth>[]>;
+        /**
+         * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         */
         patchingMode?: pulumi.Input<string>;
         /**
          * (Updatable) The maintenance window scheduling preference.
@@ -17648,11 +17689,14 @@ export namespace Database {
          * (Updatable) Months during the year when maintenance should be performed.
          */
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetailMonth>[]>;
+        /**
+         * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         */
         patchingMode?: pulumi.Input<string>;
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
-        preference: pulumi.Input<string>;
+        preference?: pulumi.Input<string>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -17798,7 +17842,7 @@ export namespace Database {
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
-        preference: pulumi.Input<string>;
+        preference?: pulumi.Input<string>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -17881,7 +17925,7 @@ export namespace Database {
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
-        preference: pulumi.Input<string>;
+        preference?: pulumi.Input<string>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -18081,6 +18125,10 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string>;
+        /**
          * Backup destination details.
          */
         backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDatabaseDbBackupConfigBackupDestinationDetail>[]>;
@@ -18091,6 +18139,10 @@ export namespace Database {
     }
 
     export interface DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
@@ -18123,6 +18175,10 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string>;
+        /**
          * Backup destination details.
          */
         backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDbBackupConfigBackupDestinationDetail>[]>;
@@ -18133,6 +18189,10 @@ export namespace Database {
     }
 
     export interface DatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
@@ -18190,6 +18250,10 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string>;
+        /**
          * Backup destination details.
          */
         backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseUpgradeDbBackupConfigBackupDestinationDetail>[]>;
@@ -18200,6 +18264,10 @@ export namespace Database {
     }
 
     export interface DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          */
@@ -18339,6 +18407,10 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string>;
+        /**
          * Backup destination details.
          */
         backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.DbHomeDatabaseDbBackupConfigBackupDestinationDetail>[]>;
@@ -18349,6 +18421,10 @@ export namespace Database {
     }
 
     export interface DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
@@ -18536,6 +18612,10 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string>;
+        /**
          * (Updatable) Backup destination details.
          */
         backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail>[]>;
@@ -18546,6 +18626,10 @@ export namespace Database {
     }
 
     export interface DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
@@ -18938,7 +19022,7 @@ export namespace Database {
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
-        preference: pulumi.Input<string>;
+        preference?: pulumi.Input<string>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -22676,7 +22760,7 @@ export namespace DevOps {
         /**
          * (Updatable) Default value of the parameter.
          */
-        defaultValue?: pulumi.Input<string>;
+        defaultValue: pulumi.Input<string>;
         /**
          * (Updatable) Optional description about the build pipeline.
          */
@@ -22699,6 +22783,21 @@ export namespace DevOps {
          * (Updatable) The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's OCID.
          */
         id: pulumi.Input<string>;
+    }
+
+    export interface BuildPipelineStageBuildRunnerShapeConfig {
+        /**
+         * (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+         */
+        buildRunnerType: pulumi.Input<string>;
+        /**
+         * (Updatable) The total amount of memory set for the instance in gigabytes.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs set for the instance.
+         */
+        ocpus?: pulumi.Input<number>;
     }
 
     export interface BuildPipelineStageBuildSourceCollection {
@@ -25093,6 +25192,17 @@ export namespace Functions {
         strategy: pulumi.Input<string>;
     }
 
+    export interface FunctionSourceDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+         */
+        pbfListingId: pulumi.Input<string>;
+        /**
+         * Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+         */
+        sourceType: pulumi.Input<string>;
+    }
+
     export interface FunctionTraceConfig {
         /**
          * (Updatable) Define if tracing is enabled for the resource.
@@ -25215,6 +25325,60 @@ export namespace Functions {
     }
 
     export interface GetFusionEnvironmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPbfListingTriggersFilter {
+        /**
+         * A filter to return only resources that match the service trigger source of a PBF.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPbfListingTriggersFilterArgs {
+        /**
+         * A filter to return only resources that match the service trigger source of a PBF.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPbfListingVersionsFilter {
+        /**
+         * Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPbfListingVersionsFilterArgs {
+        /**
+         * Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPbfListingsFilter {
+        /**
+         * A filter to return only resources that match the entire PBF name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPbfListingsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire PBF name given.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -25439,7 +25603,7 @@ export namespace GoldenGate {
 
     export interface DeploymentOggData {
         /**
-         * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+         * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
          */
         adminPassword: pulumi.Input<string>;
         /**

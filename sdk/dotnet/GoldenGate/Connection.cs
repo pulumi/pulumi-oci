@@ -29,6 +29,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         ConnectionType = @var.Connection_connection_type,
     ///         DisplayName = @var.Connection_display_name,
     ///         TechnologyType = @var.Connection_technology_type,
+    ///         AccessKeyId = oci_kms_key.Test_key.Id,
     ///         AccountKey = @var.Connection_account_key,
     ///         AccountName = @var.Connection_account_name,
     ///         AdditionalAttributes = new[]
@@ -52,8 +53,11 @@ namespace Pulumi.Oci.GoldenGate
     ///         },
     ///         ClientId = oci_golden_gate_client.Test_client.Id,
     ///         ClientSecret = @var.Connection_client_secret,
+    ///         ConnectionFactory = @var.Connection_connection_factory,
     ///         ConnectionString = @var.Connection_connection_string,
+    ///         ConnectionUrl = @var.Connection_connection_url,
     ///         ConsumerProperties = @var.Connection_consumer_properties,
+    ///         CoreSiteXml = @var.Connection_core_site_xml,
     ///         DatabaseId = oci_database_database.Test_database.Id,
     ///         DatabaseName = oci_database_database.Test_database.Name,
     ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
@@ -69,6 +73,11 @@ namespace Pulumi.Oci.GoldenGate
     ///             { "bar-key", "value" },
     ///         },
     ///         Host = @var.Connection_host,
+    ///         JndiConnectionFactory = @var.Connection_jndi_connection_factory,
+    ///         JndiInitialContextFactory = @var.Connection_jndi_initial_context_factory,
+    ///         JndiProviderUrl = @var.Connection_jndi_provider_url,
+    ///         JndiSecurityCredentials = @var.Connection_jndi_security_credentials,
+    ///         JndiSecurityPrincipal = @var.Connection_jndi_security_principal,
     ///         KeyId = oci_kms_key.Test_key.Id,
     ///         KeyStore = @var.Connection_key_store,
     ///         KeyStorePassword = @var.Connection_key_store_password,
@@ -82,8 +91,11 @@ namespace Pulumi.Oci.GoldenGate
     ///         PublicKeyFingerprint = @var.Connection_public_key_fingerprint,
     ///         Region = @var.Connection_region,
     ///         SasToken = @var.Connection_sas_token,
+    ///         SecretAccessKey = @var.Connection_secret_access_key,
     ///         SecurityProtocol = @var.Connection_security_protocol,
     ///         SessionMode = @var.Connection_session_mode,
+    ///         ShouldUseJndi = @var.Connection_should_use_jndi,
+    ///         ShouldValidateServerCertificate = @var.Connection_should_validate_server_certificate,
     ///         SslCa = @var.Connection_ssl_ca,
     ///         SslCert = @var.Connection_ssl_cert,
     ///         SslCrl = @var.Connection_ssl_crl,
@@ -117,6 +129,12 @@ namespace Pulumi.Oci.GoldenGate
     public partial class Connection : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// </summary>
+        [Output("accessKeyId")]
+        public Output<string> AccessKeyId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         /// </summary>
         [Output("accountKey")]
@@ -135,7 +153,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<Outputs.ConnectionAdditionalAttribute>> AdditionalAttributes { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        /// (Updatable) Used authentication mechanism.
         /// </summary>
         [Output("authenticationType")]
         public Output<string> AuthenticationType { get; private set; } = null!;
@@ -171,7 +189,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        /// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        /// </summary>
+        [Output("connectionFactory")]
+        public Output<string> ConnectionFactory { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         /// </summary>
         [Output("connectionString")]
         public Output<string> ConnectionString { get; private set; } = null!;
@@ -183,10 +207,22 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ConnectionType { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// </summary>
+        [Output("connectionUrl")]
+        public Output<string> ConnectionUrl { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The base64 encoded content of the consumer.properties file.
         /// </summary>
         [Output("consumerProperties")]
         public Output<string> ConsumerProperties { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        /// </summary>
+        [Output("coreSiteXml")]
+        public Output<string> CoreSiteXml { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -249,13 +285,43 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> Host { get; private set; } = null!;
 
         /// <summary>
-        /// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         /// </summary>
         [Output("ingressIps")]
         public Output<ImmutableArray<Outputs.ConnectionIngressIp>> IngressIps { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        /// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        /// </summary>
+        [Output("jndiConnectionFactory")]
+        public Output<string> JndiConnectionFactory { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        /// </summary>
+        [Output("jndiInitialContextFactory")]
+        public Output<string> JndiInitialContextFactory { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        /// </summary>
+        [Output("jndiProviderUrl")]
+        public Output<string> JndiProviderUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The password associated to the principal.
+        /// </summary>
+        [Output("jndiSecurityCredentials")]
+        public Output<string> JndiSecurityCredentials { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        /// </summary>
+        [Output("jndiSecurityPrincipal")]
+        public Output<string> JndiSecurityPrincipal { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         /// </summary>
         [Output("keyId")]
         public Output<string> KeyId { get; private set; } = null!;
@@ -285,7 +351,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
@@ -303,13 +369,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> PrivateIp { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of private key file in PEM format.
         /// </summary>
         [Output("privateKeyFile")]
         public Output<string> PrivateKeyFile { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The passphrase of the private key.
+        /// (Updatable) Password if the private key file is encrypted.
         /// </summary>
         [Output("privateKeyPassphrase")]
         public Output<string> PrivateKeyPassphrase { get; private set; } = null!;
@@ -339,7 +405,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SasToken { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Security protocol for PostgreSQL.
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// </summary>
+        [Output("secretAccessKey")]
+        public Output<string> SecretAccessKey { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security Protocol.
         /// </summary>
         [Output("securityProtocol")]
         public Output<string> SecurityProtocol { get; private set; } = null!;
@@ -351,7 +423,19 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SessionMode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        /// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        /// </summary>
+        [Output("shouldUseJndi")]
+        public Output<bool> ShouldUseJndi { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        /// </summary>
+        [Output("shouldValidateServerCertificate")]
+        public Output<bool> ShouldValidateServerCertificate { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         /// </summary>
         [Output("sslCa")]
         public Output<string> SslCa { get; private set; } = null!;
@@ -453,19 +537,19 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> Url { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
         /// </summary>
         [Output("userId")]
         public Output<string> UserId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        /// (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        /// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         /// </summary>
         [Output("vaultId")]
         public Output<string> VaultId { get; private set; } = null!;
@@ -532,6 +616,12 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class ConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// </summary>
+        [Input("accessKeyId")]
+        public Input<string>? AccessKeyId { get; set; }
+
+        /// <summary>
         /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         /// </summary>
         [Input("accountKey")]
@@ -556,7 +646,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        /// (Updatable) Used authentication mechanism.
         /// </summary>
         [Input("authenticationType")]
         public Input<string>? AuthenticationType { get; set; }
@@ -598,7 +688,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        /// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        /// </summary>
+        [Input("connectionFactory")]
+        public Input<string>? ConnectionFactory { get; set; }
+
+        /// <summary>
+        /// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         /// </summary>
         [Input("connectionString")]
         public Input<string>? ConnectionString { get; set; }
@@ -610,10 +706,22 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> ConnectionType { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// </summary>
+        [Input("connectionUrl")]
+        public Input<string>? ConnectionUrl { get; set; }
+
+        /// <summary>
         /// (Updatable) The base64 encoded content of the consumer.properties file.
         /// </summary>
         [Input("consumerProperties")]
         public Input<string>? ConsumerProperties { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        /// </summary>
+        [Input("coreSiteXml")]
+        public Input<string>? CoreSiteXml { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -688,7 +796,37 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? Host { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        /// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        /// </summary>
+        [Input("jndiConnectionFactory")]
+        public Input<string>? JndiConnectionFactory { get; set; }
+
+        /// <summary>
+        /// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        /// </summary>
+        [Input("jndiInitialContextFactory")]
+        public Input<string>? JndiInitialContextFactory { get; set; }
+
+        /// <summary>
+        /// (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        /// </summary>
+        [Input("jndiProviderUrl")]
+        public Input<string>? JndiProviderUrl { get; set; }
+
+        /// <summary>
+        /// (Updatable) The password associated to the principal.
+        /// </summary>
+        [Input("jndiSecurityCredentials")]
+        public Input<string>? JndiSecurityCredentials { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        /// </summary>
+        [Input("jndiSecurityPrincipal")]
+        public Input<string>? JndiSecurityPrincipal { get; set; }
+
+        /// <summary>
+        /// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         /// </summary>
         [Input("keyId")]
         public Input<string>? KeyId { get; set; }
@@ -731,7 +869,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         /// </summary>
         public Input<string>? Password
         {
@@ -759,7 +897,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of private key file in PEM format.
         /// </summary>
         public Input<string>? PrivateKeyFile
         {
@@ -775,7 +913,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyPassphrase;
 
         /// <summary>
-        /// (Updatable) The passphrase of the private key.
+        /// (Updatable) Password if the private key file is encrypted.
         /// </summary>
         public Input<string>? PrivateKeyPassphrase
         {
@@ -812,7 +950,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SasToken { get; set; }
 
         /// <summary>
-        /// (Updatable) Security protocol for PostgreSQL.
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// </summary>
+        [Input("secretAccessKey")]
+        public Input<string>? SecretAccessKey { get; set; }
+
+        /// <summary>
+        /// (Updatable) Security Protocol.
         /// </summary>
         [Input("securityProtocol")]
         public Input<string>? SecurityProtocol { get; set; }
@@ -824,7 +968,19 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SessionMode { get; set; }
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        /// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        /// </summary>
+        [Input("shouldUseJndi")]
+        public Input<bool>? ShouldUseJndi { get; set; }
+
+        /// <summary>
+        /// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        /// </summary>
+        [Input("shouldValidateServerCertificate")]
+        public Input<bool>? ShouldValidateServerCertificate { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         /// </summary>
         [Input("sslCa")]
         public Input<string>? SslCa { get; set; }
@@ -922,19 +1078,19 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }
 
         /// <summary>
-        /// (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        /// (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        /// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
@@ -953,6 +1109,12 @@ namespace Pulumi.Oci.GoldenGate
 
     public sealed class ConnectionState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// </summary>
+        [Input("accessKeyId")]
+        public Input<string>? AccessKeyId { get; set; }
+
         /// <summary>
         /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         /// </summary>
@@ -978,7 +1140,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+        /// (Updatable) Used authentication mechanism.
         /// </summary>
         [Input("authenticationType")]
         public Input<string>? AuthenticationType { get; set; }
@@ -1020,7 +1182,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        /// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        /// </summary>
+        [Input("connectionFactory")]
+        public Input<string>? ConnectionFactory { get; set; }
+
+        /// <summary>
+        /// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         /// </summary>
         [Input("connectionString")]
         public Input<string>? ConnectionString { get; set; }
@@ -1032,10 +1200,22 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ConnectionType { get; set; }
 
         /// <summary>
+        /// (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// </summary>
+        [Input("connectionUrl")]
+        public Input<string>? ConnectionUrl { get; set; }
+
+        /// <summary>
         /// (Updatable) The base64 encoded content of the consumer.properties file.
         /// </summary>
         [Input("consumerProperties")]
         public Input<string>? ConsumerProperties { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        /// </summary>
+        [Input("coreSiteXml")]
+        public Input<string>? CoreSiteXml { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -1113,7 +1293,7 @@ namespace Pulumi.Oci.GoldenGate
         private InputList<Inputs.ConnectionIngressIpGetArgs>? _ingressIps;
 
         /// <summary>
-        /// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         /// </summary>
         public InputList<Inputs.ConnectionIngressIpGetArgs> IngressIps
         {
@@ -1122,7 +1302,37 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        /// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        /// </summary>
+        [Input("jndiConnectionFactory")]
+        public Input<string>? JndiConnectionFactory { get; set; }
+
+        /// <summary>
+        /// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        /// </summary>
+        [Input("jndiInitialContextFactory")]
+        public Input<string>? JndiInitialContextFactory { get; set; }
+
+        /// <summary>
+        /// (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        /// </summary>
+        [Input("jndiProviderUrl")]
+        public Input<string>? JndiProviderUrl { get; set; }
+
+        /// <summary>
+        /// (Updatable) The password associated to the principal.
+        /// </summary>
+        [Input("jndiSecurityCredentials")]
+        public Input<string>? JndiSecurityCredentials { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        /// </summary>
+        [Input("jndiSecurityPrincipal")]
+        public Input<string>? JndiSecurityPrincipal { get; set; }
+
+        /// <summary>
+        /// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         /// </summary>
         [Input("keyId")]
         public Input<string>? KeyId { get; set; }
@@ -1171,7 +1381,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         /// </summary>
         public Input<string>? Password
         {
@@ -1199,7 +1409,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of private key file in PEM format.
         /// </summary>
         public Input<string>? PrivateKeyFile
         {
@@ -1215,7 +1425,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyPassphrase;
 
         /// <summary>
-        /// (Updatable) The passphrase of the private key.
+        /// (Updatable) Password if the private key file is encrypted.
         /// </summary>
         public Input<string>? PrivateKeyPassphrase
         {
@@ -1252,7 +1462,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SasToken { get; set; }
 
         /// <summary>
-        /// (Updatable) Security protocol for PostgreSQL.
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// </summary>
+        [Input("secretAccessKey")]
+        public Input<string>? SecretAccessKey { get; set; }
+
+        /// <summary>
+        /// (Updatable) Security Protocol.
         /// </summary>
         [Input("securityProtocol")]
         public Input<string>? SecurityProtocol { get; set; }
@@ -1264,7 +1480,19 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SessionMode { get; set; }
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+        /// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        /// </summary>
+        [Input("shouldUseJndi")]
+        public Input<bool>? ShouldUseJndi { get; set; }
+
+        /// <summary>
+        /// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+        /// </summary>
+        [Input("shouldValidateServerCertificate")]
+        public Input<bool>? ShouldValidateServerCertificate { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         /// </summary>
         [Input("sslCa")]
         public Input<string>? SslCa { get; set; }
@@ -1392,19 +1620,19 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }
 
         /// <summary>
-        /// (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        /// (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        /// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }

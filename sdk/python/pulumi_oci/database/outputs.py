@@ -23,6 +23,7 @@ __all__ = [
     'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig',
     'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail',
     'AutonomousDatabaseApexDetail',
+    'AutonomousDatabaseBackupBackupDestinationDetails',
     'AutonomousDatabaseBackupConfig',
     'AutonomousDatabaseConnectionString',
     'AutonomousDatabaseConnectionStringProfile',
@@ -31,6 +32,7 @@ __all__ = [
     'AutonomousDatabaseKeyHistoryEntry',
     'AutonomousDatabaseLocalStandbyDb',
     'AutonomousDatabaseLongTermBackupSchedule',
+    'AutonomousDatabaseRemoteDisasterRecoveryConfiguration',
     'AutonomousDatabaseScheduledOperation',
     'AutonomousDatabaseScheduledOperationDayOfWeek',
     'AutonomousDatabaseStandbyDb',
@@ -177,8 +179,10 @@ __all__ = [
     'GetAutonomousContainerPatchesAutonomousPatchResult',
     'GetAutonomousContainerPatchesFilterResult',
     'GetAutonomousDatabaseApexDetailResult',
+    'GetAutonomousDatabaseBackupBackupDestinationDetailResult',
     'GetAutonomousDatabaseBackupConfigResult',
     'GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult',
+    'GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult',
     'GetAutonomousDatabaseBackupsFilterResult',
     'GetAutonomousDatabaseConnectionStringResult',
     'GetAutonomousDatabaseConnectionStringProfileResult',
@@ -192,6 +196,7 @@ __all__ = [
     'GetAutonomousDatabaseRefreshableClonesFilterResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult',
+    'GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult',
     'GetAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabaseStandbyDbResult',
@@ -205,6 +210,7 @@ __all__ = [
     'GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult',
+    'GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult',
@@ -218,6 +224,7 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult',
@@ -913,7 +920,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 preference: str,
                  custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
@@ -922,9 +928,9 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonth']] = None,
                  patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
-        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
         :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
@@ -934,9 +940,9 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
-        pulumi.set(__self__, "preference", preference)
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -953,16 +959,10 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
             pulumi.set(__self__, "months", months)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
-
-    @property
-    @pulumi.getter
-    def preference(self) -> str:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -1028,6 +1028,14 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         """
         return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -1278,6 +1286,93 @@ class AutonomousDatabaseApexDetail(dict):
         The Oracle REST Data Services (ORDS) version.
         """
         return pulumi.get(self, "ords_version")
+
+
+@pulumi.output_type
+class AutonomousDatabaseBackupBackupDestinationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "internetProxy":
+            suggest = "internet_proxy"
+        elif key == "vpcPassword":
+            suggest = "vpc_password"
+        elif key == "vpcUser":
+            suggest = "vpc_user"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseBackupBackupDestinationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseBackupBackupDestinationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseBackupBackupDestinationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 id: Optional[str] = None,
+                 internet_proxy: Optional[str] = None,
+                 vpc_password: Optional[str] = None,
+                 vpc_user: Optional[str] = None):
+        """
+        :param str type: The type of backup.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param str internet_proxy: Proxy URL to connect to object store.
+        :param str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "type", type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of backup.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[str]:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[str]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[str]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
 
 
 @pulumi.output_type
@@ -1740,6 +1835,8 @@ class AutonomousDatabaseLocalStandbyDb(dict):
             suggest = "lifecycle_details"
         elif key == "timeDataGuardRoleChanged":
             suggest = "time_data_guard_role_changed"
+        elif key == "timeDisasterRecoveryRoleChanged":
+            suggest = "time_disaster_recovery_role_changed"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseLocalStandbyDb. Access the value via the '{suggest}' property getter instead.")
@@ -1756,12 +1853,14 @@ class AutonomousDatabaseLocalStandbyDb(dict):
                  lag_time_in_seconds: Optional[int] = None,
                  lifecycle_details: Optional[str] = None,
                  state: Optional[str] = None,
-                 time_data_guard_role_changed: Optional[str] = None):
+                 time_data_guard_role_changed: Optional[str] = None,
+                 time_disaster_recovery_role_changed: Optional[str] = None):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
@@ -1771,6 +1870,8 @@ class AutonomousDatabaseLocalStandbyDb(dict):
             pulumi.set(__self__, "state", state)
         if time_data_guard_role_changed is not None:
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        if time_disaster_recovery_role_changed is not None:
+            pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -1803,6 +1904,14 @@ class AutonomousDatabaseLocalStandbyDb(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> Optional[str]:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
 
 @pulumi.output_type
@@ -1881,6 +1990,42 @@ class AutonomousDatabaseLongTermBackupSchedule(dict):
         The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
         """
         return pulumi.get(self, "time_of_backup")
+
+
+@pulumi.output_type
+class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "disasterRecoveryType":
+            suggest = "disaster_recovery_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseRemoteDisasterRecoveryConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseRemoteDisasterRecoveryConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseRemoteDisasterRecoveryConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 disaster_recovery_type: Optional[str] = None):
+        """
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        if disaster_recovery_type is not None:
+            pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+
+    @property
+    @pulumi.getter(name="disasterRecoveryType")
+    def disaster_recovery_type(self) -> Optional[str]:
+        """
+        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "disaster_recovery_type")
 
 
 @pulumi.output_type
@@ -1975,6 +2120,8 @@ class AutonomousDatabaseStandbyDb(dict):
             suggest = "lifecycle_details"
         elif key == "timeDataGuardRoleChanged":
             suggest = "time_data_guard_role_changed"
+        elif key == "timeDisasterRecoveryRoleChanged":
+            suggest = "time_disaster_recovery_role_changed"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseStandbyDb. Access the value via the '{suggest}' property getter instead.")
@@ -1991,12 +2138,14 @@ class AutonomousDatabaseStandbyDb(dict):
                  lag_time_in_seconds: Optional[int] = None,
                  lifecycle_details: Optional[str] = None,
                  state: Optional[str] = None,
-                 time_data_guard_role_changed: Optional[str] = None):
+                 time_data_guard_role_changed: Optional[str] = None,
+                 time_disaster_recovery_role_changed: Optional[str] = None):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
@@ -2006,6 +2155,8 @@ class AutonomousDatabaseStandbyDb(dict):
             pulumi.set(__self__, "state", state)
         if time_data_guard_role_changed is not None:
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        if time_disaster_recovery_role_changed is not None:
+            pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -2038,6 +2189,14 @@ class AutonomousDatabaseStandbyDb(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> Optional[str]:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
 
 @pulumi.output_type
@@ -2253,7 +2412,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 preference: str,
                  custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
@@ -2262,9 +2420,9 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonth']] = None,
                  patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
-        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
         :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
@@ -2274,9 +2432,9 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
-        pulumi.set(__self__, "preference", preference)
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -2293,16 +2451,10 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
             pulumi.set(__self__, "months", months)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
-
-    @property
-    @pulumi.getter
-    def preference(self) -> str:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -2368,6 +2520,14 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         """
         return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -2483,6 +2643,7 @@ class AutonomousVmClusterMaintenanceWindow(dict):
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousVmClusterMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
+        :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -2558,6 +2719,9 @@ class AutonomousVmClusterMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[str]:
+        """
+        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
         return pulumi.get(self, "patching_mode")
 
     @property
@@ -2630,7 +2794,6 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 preference: str,
                  custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
@@ -2639,17 +2802,18 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowDetailMonth']] = None,
                  patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
-        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
         :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
+        :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
-        pulumi.set(__self__, "preference", preference)
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -2666,16 +2830,10 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
             pulumi.set(__self__, "months", months)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
-
-    @property
-    @pulumi.getter
-    def preference(self) -> str:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -2728,7 +2886,18 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[str]:
+        """
+        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
         return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -3132,7 +3301,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 preference: str,
                  custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
@@ -3141,9 +3309,9 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDetailsMonth']] = None,
                  patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
-        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
         :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
@@ -3153,9 +3321,9 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
-        pulumi.set(__self__, "preference", preference)
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -3172,16 +3340,10 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
             pulumi.set(__self__, "months", months)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
-
-    @property
-    @pulumi.getter
-    def preference(self) -> str:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -3247,6 +3409,14 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         """
         return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -3413,7 +3583,6 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 preference: str,
                  custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.CloudExadataInfrastructureMaintenanceWindowDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
@@ -3422,9 +3591,9 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.CloudExadataInfrastructureMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
-        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
         :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
@@ -3434,9 +3603,9 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['CloudExadataInfrastructureMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
-        pulumi.set(__self__, "preference", preference)
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -3453,16 +3622,10 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
             pulumi.set(__self__, "months", months)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
-
-    @property
-    @pulumi.getter
-    def preference(self) -> str:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -3528,6 +3691,14 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         """
         return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -4243,6 +4414,8 @@ class DatabaseDatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "backupDeletionPolicy":
+            suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
@@ -4262,11 +4435,13 @@ class DatabaseDatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetail']] = None,
                  recovery_window_in_days: Optional[int] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
@@ -4274,6 +4449,8 @@ class DatabaseDatabaseDbBackupConfig(dict):
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
@@ -4294,6 +4471,14 @@ class DatabaseDatabaseDbBackupConfig(dict):
         (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[str]:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -4317,7 +4502,9 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "vpcUser":
+        if key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+        elif key == "vpcUser":
             suggest = "vpc_user"
 
         if suggest:
@@ -4332,19 +4519,31 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 dbrs_policy_id: Optional[str] = None,
                  id: Optional[str] = None,
                  type: Optional[str] = None,
                  vpc_user: Optional[str] = None):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param str type: Type of the database backup destination.
         """
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -4427,6 +4626,8 @@ class DatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "backupDeletionPolicy":
+            suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
@@ -4446,11 +4647,13 @@ class DatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DatabaseDbBackupConfigBackupDestinationDetail']] = None,
                  recovery_window_in_days: Optional[int] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
@@ -4458,6 +4661,8 @@ class DatabaseDbBackupConfig(dict):
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
@@ -4478,6 +4683,14 @@ class DatabaseDbBackupConfig(dict):
         (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[str]:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -4501,7 +4714,9 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "vpcUser":
+        if key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+        elif key == "vpcUser":
             suggest = "vpc_user"
 
         if suggest:
@@ -4516,19 +4731,31 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 dbrs_policy_id: Optional[str] = None,
                  id: Optional[str] = None,
                  type: Optional[str] = None,
                  vpc_user: Optional[str] = None):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param str type: Type of the database backup destination.
         """
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -4703,6 +4930,8 @@ class DatabaseUpgradeDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "backupDeletionPolicy":
+            suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
@@ -4722,11 +4951,13 @@ class DatabaseUpgradeDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DatabaseUpgradeDbBackupConfigBackupDestinationDetail']] = None,
                  recovery_window_in_days: Optional[int] = None):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
@@ -4734,6 +4965,8 @@ class DatabaseUpgradeDbBackupConfig(dict):
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
@@ -4754,6 +4987,14 @@ class DatabaseUpgradeDbBackupConfig(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[str]:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -4777,7 +5018,9 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "internetProxy":
+        if key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+        elif key == "internetProxy":
             suggest = "internet_proxy"
         elif key == "vpcPassword":
             suggest = "vpc_password"
@@ -4796,18 +5039,22 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 dbrs_policy_id: Optional[str] = None,
                  id: Optional[str] = None,
                  internet_proxy: Optional[str] = None,
                  type: Optional[str] = None,
                  vpc_password: Optional[str] = None,
                  vpc_user: Optional[str] = None):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param str internet_proxy: Proxy URL to connect to object store.
         :param str type: Type of the database backup destination.
         :param str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
@@ -4818,6 +5065,14 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -5292,6 +5547,8 @@ class DbHomeDatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "backupDeletionPolicy":
+            suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
@@ -5311,11 +5568,13 @@ class DbHomeDatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DbHomeDatabaseDbBackupConfigBackupDestinationDetail']] = None,
                  recovery_window_in_days: Optional[int] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
@@ -5323,6 +5582,8 @@ class DbHomeDatabaseDbBackupConfig(dict):
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
@@ -5345,6 +5606,14 @@ class DbHomeDatabaseDbBackupConfig(dict):
         return pulumi.get(self, "auto_backup_window")
 
     @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[str]:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
+
+    @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[Sequence['outputs.DbHomeDatabaseDbBackupConfigBackupDestinationDetail']]:
         """
@@ -5363,17 +5632,46 @@ class DbHomeDatabaseDbBackupConfig(dict):
 
 @pulumi.output_type
 class DbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbHomeDatabaseDbBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbHomeDatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbHomeDatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 dbrs_policy_id: Optional[str] = None,
                  id: Optional[str] = None,
                  type: Optional[str] = None):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param str type: Type of the database backup destination. Supported values: `NFS`.
         """
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -6063,6 +6361,8 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "backupDeletionPolicy":
+            suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
@@ -6082,11 +6382,13 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail']] = None,
                  recovery_window_in_days: Optional[int] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: (Updatable) Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
@@ -6094,6 +6396,8 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
@@ -6116,6 +6420,14 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
         return pulumi.get(self, "auto_backup_window")
 
     @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[str]:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
+
+    @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[Sequence['outputs.DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail']]:
         """
@@ -6134,17 +6446,46 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
 
 @pulumi.output_type
 class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 dbrs_policy_id: Optional[str] = None,
                  id: Optional[str] = None,
                  type: Optional[str] = None):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param str type: Type of the database backup destination.
         """
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -7460,7 +7801,6 @@ class ExadataInfrastructureMaintenanceWindow(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 preference: str,
                  custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.ExadataInfrastructureMaintenanceWindowDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
@@ -7469,9 +7809,9 @@ class ExadataInfrastructureMaintenanceWindow(dict):
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.ExadataInfrastructureMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
-        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
         :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
@@ -7481,9 +7821,9 @@ class ExadataInfrastructureMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['ExadataInfrastructureMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
-        pulumi.set(__self__, "preference", preference)
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -7500,16 +7840,10 @@ class ExadataInfrastructureMaintenanceWindow(dict):
             pulumi.set(__self__, "months", months)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
-
-    @property
-    @pulumi.getter
-    def preference(self) -> str:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -7575,6 +7909,14 @@ class ExadataInfrastructureMaintenanceWindow(dict):
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         """
         return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -11851,6 +12193,68 @@ class GetAutonomousDatabaseApexDetailResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseBackupBackupDestinationDetailResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 internet_proxy: str,
+                 type: str,
+                 vpc_password: str,
+                 vpc_user: str):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param str internet_proxy: Proxy URL to connect to object store.
+        :param str type: The type of backup.
+        :param str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internet_proxy", internet_proxy)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vpc_password", vpc_password)
+        pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> str:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of backup.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseBackupConfigResult(dict):
     def __init__(__self__, *,
                  manual_backup_bucket_name: str,
@@ -11883,6 +12287,7 @@ class GetAutonomousDatabaseBackupConfigResult(dict):
 class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     def __init__(__self__, *,
                  autonomous_database_id: str,
+                 backup_destination_details: Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult'],
                  compartment_id: str,
                  database_size_in_tbs: float,
                  db_version: str,
@@ -11906,6 +12311,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
                  vault_id: str):
         """
         :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailArgs'] backup_destination_details: Backup destination details
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
         :param str db_version: A valid Oracle Database version for Autonomous Database.
@@ -11924,10 +12330,11 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         :param str time_available_till: Timestamp until when the backup will be available
         :param str time_ended: The date and time the backup completed.
         :param str time_started: The date and time the backup started.
-        :param str type: The type of backup.
+        :param str type: A filter to return only backups that matches with the given type of Backup.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_size_in_tbs", database_size_in_tbs)
         pulumi.set(__self__, "db_version", db_version)
@@ -11957,6 +12364,14 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult']:
+        """
+        Backup destination details
+        """
+        return pulumi.get(self, "backup_destination_details")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12111,7 +12526,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of backup.
+        A filter to return only backups that matches with the given type of Backup.
         """
         return pulumi.get(self, "type")
 
@@ -12122,6 +12537,68 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 internet_proxy: str,
+                 type: str,
+                 vpc_password: str,
+                 vpc_user: str):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param str internet_proxy: Proxy URL to connect to object store.
+        :param str type: A filter to return only backups that matches with the given type of Backup.
+        :param str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internet_proxy", internet_proxy)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vpc_password", vpc_password)
+        pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> str:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        A filter to return only backups that matches with the given type of Backup.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
 
 
 @pulumi.output_type
@@ -12655,17 +13132,20 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
-                 time_data_guard_role_changed: str):
+                 time_data_guard_role_changed: str,
+                 time_disaster_recovery_role_changed: str):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -12698,6 +13178,14 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
 
 @pulumi.output_type
@@ -12820,6 +13308,24 @@ class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 disaster_recovery_type: str):
+        """
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+
+    @property
+    @pulumi.getter(name="disasterRecoveryType")
+    def disaster_recovery_type(self) -> str:
+        """
+        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "disaster_recovery_type")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseScheduledOperationResult(dict):
     def __init__(__self__, *,
                  day_of_weeks: Sequence['outputs.GetAutonomousDatabaseScheduledOperationDayOfWeekResult'],
@@ -12883,17 +13389,20 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
-                 time_data_guard_role_changed: str):
+                 time_data_guard_role_changed: str,
+                 time_disaster_recovery_role_changed: str):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -12926,6 +13435,14 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
 
 @pulumi.output_type
@@ -12962,6 +13479,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  db_version: str,
                  db_workload: str,
                  defined_tags: Mapping[str, Any],
+                 disaster_recovery_region_type: str,
                  display_name: str,
                  failed_data_recovery_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
@@ -12989,6 +13507,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  kms_key_version_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 local_disaster_recovery_type: str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult'],
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult'],
                  max_cpu_core_count: int,
@@ -13007,6 +13526,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  provisionable_cpuses: Sequence[float],
                  refreshable_mode: str,
                  refreshable_status: str,
+                 remote_disaster_recovery_configurations: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult'],
+                 remote_disaster_recovery_type: str,
                  role: str,
                  rotate_key_trigger: bool,
                  scheduled_operations: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult'],
@@ -13026,6 +13547,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  time_created: str,
                  time_data_guard_role_changed: str,
                  time_deletion_of_free_autonomous_database: str,
+                 time_disaster_recovery_role_changed: str,
                  time_local_data_guard_enabled: str,
                  time_maintenance_begin: str,
                  time_maintenance_end: str,
@@ -13070,6 +13592,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
         :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -13095,6 +13618,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
@@ -13114,6 +13638,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: list of scheduled operations
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
@@ -13127,6 +13652,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str time_created: The date and time the Autonomous Database was created.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         :param str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         :param str time_maintenance_begin: The date and time when maintenance will begin.
         :param str time_maintenance_end: The date and time when maintenance will end.
@@ -13173,6 +13699,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "db_workload", db_workload)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -13200,6 +13727,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
@@ -13218,6 +13746,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
         pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         pulumi.set(__self__, "refreshable_status", refreshable_status)
+        pulumi.set(__self__, "remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
+        pulumi.set(__self__, "remote_disaster_recovery_type", remote_disaster_recovery_type)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         pulumi.set(__self__, "scheduled_operations", scheduled_operations)
@@ -13237,6 +13767,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_deletion_of_free_autonomous_database", time_deletion_of_free_autonomous_database)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
         pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
         pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
@@ -13491,6 +14022,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="disasterRecoveryRegionType")
+    def disaster_recovery_region_type(self) -> str:
+        """
+        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        """
+        return pulumi.get(self, "disaster_recovery_region_type")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -13701,6 +14240,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localDisasterRecoveryType")
+    def local_disaster_recovery_type(self) -> str:
+        """
+        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "local_disaster_recovery_type")
+
+    @property
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult']:
         """
@@ -13846,6 +14393,19 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "refreshable_status")
 
     @property
+    @pulumi.getter(name="remoteDisasterRecoveryConfigurations")
+    def remote_disaster_recovery_configurations(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult']:
+        """
+        Configurations of a Disaster Recovery.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_configurations")
+
+    @property
+    @pulumi.getter(name="remoteDisasterRecoveryType")
+    def remote_disaster_recovery_type(self) -> str:
+        return pulumi.get(self, "remote_disaster_recovery_type")
+
+    @property
     @pulumi.getter
     def role(self) -> str:
         """
@@ -13978,6 +14538,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         """
         return pulumi.get(self, "time_deletion_of_free_autonomous_database")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @property
     @pulumi.getter(name="timeLocalDataGuardEnabled")
@@ -14454,17 +15022,20 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
-                 time_data_guard_role_changed: str):
+                 time_data_guard_role_changed: str,
+                 time_disaster_recovery_role_changed: str):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -14497,6 +15068,14 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
 
 @pulumi.output_type
@@ -14548,6 +15127,24 @@ class GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult(dict)
         The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
         """
         return pulumi.get(self, "time_of_backup")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 disaster_recovery_type: str):
+        """
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+
+    @property
+    @pulumi.getter(name="disasterRecoveryType")
+    def disaster_recovery_type(self) -> str:
+        """
+        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "disaster_recovery_type")
 
 
 @pulumi.output_type
@@ -14614,17 +15211,20 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
-                 time_data_guard_role_changed: str):
+                 time_data_guard_role_changed: str,
+                 time_disaster_recovery_role_changed: str):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -14658,6 +15258,14 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
+
 
 @pulumi.output_type
 class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
@@ -14689,6 +15297,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  db_version: str,
                  db_workload: str,
                  defined_tags: Mapping[str, Any],
+                 disaster_recovery_region_type: str,
                  display_name: str,
                  failed_data_recovery_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
@@ -14714,6 +15323,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  kms_key_version_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 local_disaster_recovery_type: str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult'],
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult'],
                  max_cpu_core_count: int,
@@ -14730,6 +15340,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  provisionable_cpuses: Sequence[float],
                  refreshable_mode: str,
                  refreshable_status: str,
+                 remote_disaster_recovery_configurations: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult'],
                  role: str,
                  scheduled_operations: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult'],
                  service_console_url: str,
@@ -14743,6 +15354,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  time_created: str,
                  time_data_guard_role_changed: str,
                  time_deletion_of_free_autonomous_database: str,
+                 time_disaster_recovery_role_changed: str,
                  time_local_data_guard_enabled: str,
                  time_maintenance_begin: str,
                  time_maintenance_end: str,
@@ -14789,6 +15401,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                * AJD - indicates an Autonomous JSON Database
                * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -14814,6 +15427,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
@@ -14831,6 +15445,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: list of scheduled operations
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
@@ -14844,6 +15459,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str time_created: The date and time the Autonomous Database was created.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         :param str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         :param str time_maintenance_begin: The date and time when maintenance will begin.
         :param str time_maintenance_end: The date and time when maintenance will end.
@@ -14886,6 +15502,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "db_workload", db_workload)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -14911,6 +15528,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
@@ -14927,6 +15545,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
         pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         pulumi.set(__self__, "refreshable_status", refreshable_status)
+        pulumi.set(__self__, "remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "scheduled_operations", scheduled_operations)
         pulumi.set(__self__, "service_console_url", service_console_url)
@@ -14940,6 +15559,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         pulumi.set(__self__, "time_deletion_of_free_autonomous_database", time_deletion_of_free_autonomous_database)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
         pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
         pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
@@ -15176,6 +15796,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="disasterRecoveryRegionType")
+    def disaster_recovery_region_type(self) -> str:
+        """
+        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        """
+        return pulumi.get(self, "disaster_recovery_region_type")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -15376,6 +16004,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localDisasterRecoveryType")
+    def local_disaster_recovery_type(self) -> str:
+        """
+        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "local_disaster_recovery_type")
+
+    @property
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult']:
         """
@@ -15505,6 +16141,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "refreshable_status")
 
     @property
+    @pulumi.getter(name="remoteDisasterRecoveryConfigurations")
+    def remote_disaster_recovery_configurations(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult']:
+        """
+        Configurations of a Disaster Recovery.
+        """
+        return pulumi.get(self, "remote_disaster_recovery_configurations")
+
+    @property
     @pulumi.getter
     def role(self) -> str:
         """
@@ -15607,6 +16251,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         """
         return pulumi.get(self, "time_deletion_of_free_autonomous_database")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @property
     @pulumi.getter(name="timeLocalDataGuardEnabled")
@@ -16073,17 +16725,20 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
-                 time_data_guard_role_changed: str):
+                 time_data_guard_role_changed: str,
+                 time_disaster_recovery_role_changed: str):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -16116,6 +16771,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
 
 @pulumi.output_type
@@ -16167,6 +16830,24 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult
         The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
         """
         return pulumi.get(self, "time_of_backup")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 disaster_recovery_type: str):
+        """
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+
+    @property
+    @pulumi.getter(name="disasterRecoveryType")
+    def disaster_recovery_type(self) -> str:
+        """
+        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "disaster_recovery_type")
 
 
 @pulumi.output_type
@@ -16233,17 +16914,20 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
                  lag_time_in_seconds: int,
                  lifecycle_details: str,
                  state: str,
-                 time_data_guard_role_changed: str):
+                 time_data_guard_role_changed: str,
+                 time_disaster_recovery_role_changed: str):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
         pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+        pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -16276,6 +16960,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+    @property
+    @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
+    def time_disaster_recovery_role_changed(self) -> str:
+        """
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        """
+        return pulumi.get(self, "time_disaster_recovery_role_changed")
 
 
 @pulumi.output_type
@@ -22760,16 +23452,19 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult'],
                  recovery_window_in_days: int):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
 
@@ -22788,6 +23483,14 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> str:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -22809,16 +23512,27 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 dbrs_policy_id: str,
                  id: str,
                  type: str,
                  vpc_user: str):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param str type: Type of the database backup destination.
         """
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -22876,16 +23590,19 @@ class GetDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabaseDbBackupConfigBackupDestinationDetailResult'],
                  recovery_window_in_days: int):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
 
@@ -22904,6 +23621,14 @@ class GetDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> str:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -22925,16 +23650,27 @@ class GetDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 dbrs_policy_id: str,
                  id: str,
                  type: str,
                  vpc_user: str):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param str type: Type of the database backup destination.
         """
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -24526,7 +25262,9 @@ class GetDatabasesDatabaseResult(dict):
                  kms_key_migration: bool,
                  kms_key_rotation: int,
                  kms_key_version_id: str,
+                 last_backup_duration_in_seconds: int,
                  last_backup_timestamp: str,
+                 last_failed_backup_timestamp: str,
                  lifecycle_details: str,
                  ncharacter_set: str,
                  pdb_name: str,
@@ -24555,7 +25293,9 @@ class GetDatabasesDatabaseResult(dict):
         :param bool is_cdb: True if the database is a container database.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param int last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param str last_backup_timestamp: The date and time when the latest database backup was created.
+        :param str last_failed_backup_timestamp: The date and time when the latest database backup failed.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character set for the database.
         :param str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -24587,7 +25327,9 @@ class GetDatabasesDatabaseResult(dict):
         pulumi.set(__self__, "kms_key_migration", kms_key_migration)
         pulumi.set(__self__, "kms_key_rotation", kms_key_rotation)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        pulumi.set(__self__, "last_backup_duration_in_seconds", last_backup_duration_in_seconds)
         pulumi.set(__self__, "last_backup_timestamp", last_backup_timestamp)
+        pulumi.set(__self__, "last_failed_backup_timestamp", last_failed_backup_timestamp)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "pdb_name", pdb_name)
@@ -24756,12 +25498,28 @@ class GetDatabasesDatabaseResult(dict):
         return pulumi.get(self, "kms_key_version_id")
 
     @property
+    @pulumi.getter(name="lastBackupDurationInSeconds")
+    def last_backup_duration_in_seconds(self) -> int:
+        """
+        The duration when the latest database backup created.
+        """
+        return pulumi.get(self, "last_backup_duration_in_seconds")
+
+    @property
     @pulumi.getter(name="lastBackupTimestamp")
     def last_backup_timestamp(self) -> str:
         """
         The date and time when the latest database backup was created.
         """
         return pulumi.get(self, "last_backup_timestamp")
+
+    @property
+    @pulumi.getter(name="lastFailedBackupTimestamp")
+    def last_failed_backup_timestamp(self) -> str:
+        """
+        The date and time when the latest database backup failed.
+        """
+        return pulumi.get(self, "last_failed_backup_timestamp")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -25075,16 +25833,19 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult'],
                  recovery_window_in_days: int):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
 
@@ -25103,6 +25864,14 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> str:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -25124,16 +25893,27 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 dbrs_policy_id: str,
                  id: str,
                  type: str,
                  vpc_user: str):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param str type: Type of the database backup destination.
         """
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -25191,16 +25971,19 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult'],
                  recovery_window_in_days: int):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
 
@@ -25219,6 +26002,14 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> str:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -25240,16 +26031,27 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 dbrs_policy_id: str,
                  id: str,
                  type: str,
                  vpc_user: str):
         """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param str type: Type of the database backup destination.
         """
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -25556,10 +26358,12 @@ class GetDbHomeDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult'],
                  recovery_window_in_days: int):
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
 
@@ -25572,6 +26376,11 @@ class GetDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> str:
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> str:
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -25587,13 +26396,20 @@ class GetDbHomeDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 dbrs_policy_id: str,
                  id: str,
                  type: str):
         """
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> str:
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -26320,10 +27136,12 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult'],
                  recovery_window_in_days: int):
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
 
@@ -26336,6 +27154,11 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> str:
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> str:
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -26351,13 +27174,20 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 dbrs_policy_id: str,
                  id: str,
                  type: str):
         """
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> str:
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter
@@ -29051,10 +29881,12 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult'],
                  recovery_window_in_days: int):
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
 
@@ -29067,6 +29899,11 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> str:
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> str:
+        return pulumi.get(self, "backup_deletion_policy")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -29082,13 +29919,20 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 dbrs_policy_id: str,
                  id: str,
                  type: str):
         """
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> str:
+        return pulumi.get(self, "dbrs_policy_id")
 
     @property
     @pulumi.getter

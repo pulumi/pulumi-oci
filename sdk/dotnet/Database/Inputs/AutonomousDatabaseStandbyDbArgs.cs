@@ -36,6 +36,12 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("timeDataGuardRoleChanged")]
         public Input<string>? TimeDataGuardRoleChanged { get; set; }
 
+        /// <summary>
+        /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        /// </summary>
+        [Input("timeDisasterRecoveryRoleChanged")]
+        public Input<string>? TimeDisasterRecoveryRoleChanged { get; set; }
+
         public AutonomousDatabaseStandbyDbArgs()
         {
         }

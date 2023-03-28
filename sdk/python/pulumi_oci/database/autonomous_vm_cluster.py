@@ -970,7 +970,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
             is_mtls_enabled=var["autonomous_vm_cluster_is_mtls_enabled"],
             license_model=var["autonomous_vm_cluster_license_model"],
             maintenance_window_details=[oci.database.AutonomousVmClusterMaintenanceWindowDetailArgs(
-                preference=var["autonomous_vm_cluster_maintenance_window_details_preference"],
                 days_of_weeks=[oci.database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs(
                     name=var["autonomous_vm_cluster_maintenance_window_details_days_of_week_name"],
                 )],
@@ -979,6 +978,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
                 months=[oci.database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs(
                     name=var["autonomous_vm_cluster_maintenance_window_details_months_name"],
                 )],
+                patching_mode=var["autonomous_vm_cluster_maintenance_window_details_patching_mode"],
+                preference=var["autonomous_vm_cluster_maintenance_window_details_preference"],
                 weeks_of_months=var["autonomous_vm_cluster_maintenance_window_details_weeks_of_month"],
             )],
             memory_per_oracle_compute_unit_in_gbs=var["autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs"],
@@ -1052,7 +1053,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
             is_mtls_enabled=var["autonomous_vm_cluster_is_mtls_enabled"],
             license_model=var["autonomous_vm_cluster_license_model"],
             maintenance_window_details=[oci.database.AutonomousVmClusterMaintenanceWindowDetailArgs(
-                preference=var["autonomous_vm_cluster_maintenance_window_details_preference"],
                 days_of_weeks=[oci.database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs(
                     name=var["autonomous_vm_cluster_maintenance_window_details_days_of_week_name"],
                 )],
@@ -1061,6 +1061,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
                 months=[oci.database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs(
                     name=var["autonomous_vm_cluster_maintenance_window_details_months_name"],
                 )],
+                patching_mode=var["autonomous_vm_cluster_maintenance_window_details_patching_mode"],
+                preference=var["autonomous_vm_cluster_maintenance_window_details_preference"],
                 weeks_of_months=var["autonomous_vm_cluster_maintenance_window_details_weeks_of_month"],
             )],
             memory_per_oracle_compute_unit_in_gbs=var["autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs"],

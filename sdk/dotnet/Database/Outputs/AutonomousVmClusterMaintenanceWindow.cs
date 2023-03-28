@@ -33,6 +33,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// (Updatable) Months during the year when maintenance should be performed.
         /// </summary>
         public readonly ImmutableArray<Outputs.AutonomousVmClusterMaintenanceWindowMonth> Months;
+        /// <summary>
+        /// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        /// </summary>
         public readonly string? PatchingMode;
         /// <summary>
         /// (Updatable) The maintenance window scheduling preference.

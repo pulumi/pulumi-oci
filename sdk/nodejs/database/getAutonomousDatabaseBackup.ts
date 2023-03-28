@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -47,6 +49,10 @@ export interface GetAutonomousDatabaseBackupResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      */
     readonly autonomousDatabaseId: string;
+    /**
+     * Backup destination details
+     */
+    readonly backupDestinationDetails: outputs.Database.GetAutonomousDatabaseBackupBackupDestinationDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

@@ -34,7 +34,6 @@ import * as utilities from "../utilities";
  *     isMtlsEnabled: _var.autonomous_vm_cluster_is_mtls_enabled,
  *     licenseModel: _var.autonomous_vm_cluster_license_model,
  *     maintenanceWindowDetails: [{
- *         preference: _var.autonomous_vm_cluster_maintenance_window_details_preference,
  *         daysOfWeeks: [{
  *             name: _var.autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
  *         }],
@@ -43,6 +42,8 @@ import * as utilities from "../utilities";
  *         months: [{
  *             name: _var.autonomous_vm_cluster_maintenance_window_details_months_name,
  *         }],
+ *         patchingMode: _var.autonomous_vm_cluster_maintenance_window_details_patching_mode,
+ *         preference: _var.autonomous_vm_cluster_maintenance_window_details_preference,
  *         weeksOfMonths: _var.autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
  *     }],
  *     memoryPerOracleComputeUnitInGbs: _var.autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,

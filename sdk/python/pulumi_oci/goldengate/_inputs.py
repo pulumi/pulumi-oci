@@ -296,7 +296,7 @@ class DeploymentOggDataArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  ogg_version: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
         :param pulumi.Input[str] admin_username: (Updatable) The GoldenGate deployment console username.
         :param pulumi.Input[str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param pulumi.Input[str] certificate: (Updatable) A PEM-encoded SSL certificate.
@@ -317,7 +317,7 @@ class DeploymentOggDataArgs:
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> pulumi.Input[str]:
         """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
         """
         return pulumi.get(self, "admin_password")
 

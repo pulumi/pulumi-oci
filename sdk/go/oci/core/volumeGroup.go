@@ -228,6 +228,8 @@ type volumeGroupArgs struct {
 	// (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
 	VolumeGroupReplicas         []VolumeGroupVolumeGroupReplica `pulumi:"volumeGroupReplicas"`
 	VolumeGroupReplicasDeletion *bool                           `pulumi:"volumeGroupReplicasDeletion"`
+	// OCIDs for the volumes in this volume group.
+	VolumeIds []string `pulumi:"volumeIds"`
 }
 
 // The set of arguments for constructing a VolumeGroup resource.
@@ -250,6 +252,8 @@ type VolumeGroupArgs struct {
 	// (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
 	VolumeGroupReplicas         VolumeGroupVolumeGroupReplicaArrayInput
 	VolumeGroupReplicasDeletion pulumi.BoolPtrInput
+	// OCIDs for the volumes in this volume group.
+	VolumeIds pulumi.StringArrayInput
 }
 
 func (VolumeGroupArgs) ElementType() reflect.Type {

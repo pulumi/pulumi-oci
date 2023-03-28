@@ -109,6 +109,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string AutonomousDatabaseId;
         /// <summary>
+        /// Backup destination details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseBackupBackupDestinationDetailResult> BackupDestinationDetails;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -196,6 +200,8 @@ namespace Pulumi.Oci.Database
 
             string autonomousDatabaseId,
 
+            ImmutableArray<Outputs.GetAutonomousDatabaseBackupBackupDestinationDetailResult> backupDestinationDetails,
+
             string compartmentId,
 
             double databaseSizeInTbs,
@@ -240,6 +246,7 @@ namespace Pulumi.Oci.Database
         {
             AutonomousDatabaseBackupId = autonomousDatabaseBackupId;
             AutonomousDatabaseId = autonomousDatabaseId;
+            BackupDestinationDetails = backupDestinationDetails;
             CompartmentId = compartmentId;
             DatabaseSizeInTbs = databaseSizeInTbs;
             DbVersion = dbVersion;

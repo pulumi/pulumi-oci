@@ -14,6 +14,7 @@ __all__ = [
     'ApplicationImagePolicyConfigKeyDetailArgs',
     'ApplicationTraceConfigArgs',
     'FunctionProvisionedConcurrencyConfigArgs',
+    'FunctionSourceDetailsArgs',
     'FunctionTraceConfigArgs',
     'GetApplicationsFilterArgs',
     'GetFunctionsFilterArgs',
@@ -25,6 +26,9 @@ __all__ = [
     'GetFusionEnvironmentServiceAttachmentsFilterArgs',
     'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs',
     'GetFusionEnvironmentsFilterArgs',
+    'GetPbfListingTriggersFilterArgs',
+    'GetPbfListingVersionsFilterArgs',
+    'GetPbfListingsFilterArgs',
 ]
 
 @pulumi.input_type
@@ -162,6 +166,43 @@ class FunctionProvisionedConcurrencyConfigArgs:
     @count.setter
     def count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "count", value)
+
+
+@pulumi.input_type
+class FunctionSourceDetailsArgs:
+    def __init__(__self__, *,
+                 pbf_listing_id: pulumi.Input[str],
+                 source_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        :param pulumi.Input[str] source_type: Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter(name="pbfListingId")
+    def pbf_listing_id(self) -> pulumi.Input[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        """
+        return pulumi.get(self, "pbf_listing_id")
+
+    @pbf_listing_id.setter
+    def pbf_listing_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pbf_listing_id", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        """
+        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
 
 
 @pulumi.input_type
@@ -552,6 +593,141 @@ class GetFusionEnvironmentsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetPbfListingTriggersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the service trigger source of a PBF.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the service trigger source of a PBF.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetPbfListingVersionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetPbfListingsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the entire PBF name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire PBF name given.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

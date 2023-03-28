@@ -37,10 +37,12 @@ namespace Pulumi.Oci.Database
     ///             {
     ///                 AutoBackupEnabled = @var.Database_database_db_backup_config_auto_backup_enabled,
     ///                 AutoBackupWindow = @var.Database_database_db_backup_config_auto_backup_window,
+    ///                 BackupDeletionPolicy = @var.Database_database_db_backup_config_backup_deletion_policy,
     ///                 BackupDestinationDetails = new[]
     ///                 {
     ///                     new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs
     ///                     {
+    ///                         DbrsPolicyId = oci_identity_policy.Test_policy.Id,
     ///                         Id = @var.Database_database_db_backup_config_backup_destination_details_id,
     ///                         Type = @var.Database_database_db_backup_config_backup_destination_details_type,
     ///                     },
@@ -201,10 +203,22 @@ namespace Pulumi.Oci.Database
         public Output<string> KmsKeyVersionId { get; private set; } = null!;
 
         /// <summary>
+        /// The duration when the latest database backup created.
+        /// </summary>
+        [Output("lastBackupDurationInSeconds")]
+        public Output<int> LastBackupDurationInSeconds { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time when the latest database backup was created.
         /// </summary>
         [Output("lastBackupTimestamp")]
         public Output<string> LastBackupTimestamp { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time when the latest database backup failed.
+        /// </summary>
+        [Output("lastFailedBackupTimestamp")]
+        public Output<string> LastFailedBackupTimestamp { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
@@ -525,10 +539,22 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyVersionId { get; set; }
 
         /// <summary>
+        /// The duration when the latest database backup created.
+        /// </summary>
+        [Input("lastBackupDurationInSeconds")]
+        public Input<int>? LastBackupDurationInSeconds { get; set; }
+
+        /// <summary>
         /// The date and time when the latest database backup was created.
         /// </summary>
         [Input("lastBackupTimestamp")]
         public Input<string>? LastBackupTimestamp { get; set; }
+
+        /// <summary>
+        /// The date and time when the latest database backup failed.
+        /// </summary>
+        [Input("lastFailedBackupTimestamp")]
+        public Input<string>? LastFailedBackupTimestamp { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycle state.

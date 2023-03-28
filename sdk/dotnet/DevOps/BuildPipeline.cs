@@ -32,8 +32,8 @@ namespace Pulumi.Oci.DevOps
     ///             {
     ///                 new Oci.DevOps.Inputs.BuildPipelineBuildPipelineParametersItemArgs
     ///                 {
-    ///                     Name = @var.Build_pipeline_build_pipeline_parameters_items_name,
     ///                     DefaultValue = @var.Build_pipeline_build_pipeline_parameters_items_default_value,
+    ///                     Name = @var.Build_pipeline_build_pipeline_parameters_items_name,
     ///                     Description = @var.Build_pipeline_build_pipeline_parameters_items_description,
     ///                 },
     ///             },

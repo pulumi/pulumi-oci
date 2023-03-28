@@ -19,6 +19,7 @@ class BuildPipelineStageArgs:
                  build_pipeline_id: pulumi.Input[str],
                  build_pipeline_stage_predecessor_collection: pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs'],
                  build_pipeline_stage_type: pulumi.Input[str],
+                 build_runner_shape_config: Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']] = None,
                  build_source_collection: Optional[pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs']] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -38,6 +39,7 @@ class BuildPipelineStageArgs:
         :param pulumi.Input[str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs'] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
+        :param pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs'] build_runner_shape_config: (Updatable) The information about build runner.
         :param pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs'] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -56,6 +58,8 @@ class BuildPipelineStageArgs:
         pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
         pulumi.set(__self__, "build_pipeline_stage_predecessor_collection", build_pipeline_stage_predecessor_collection)
         pulumi.set(__self__, "build_pipeline_stage_type", build_pipeline_stage_type)
+        if build_runner_shape_config is not None:
+            pulumi.set(__self__, "build_runner_shape_config", build_runner_shape_config)
         if build_source_collection is not None:
             pulumi.set(__self__, "build_source_collection", build_source_collection)
         if build_spec_file is not None:
@@ -120,6 +124,18 @@ class BuildPipelineStageArgs:
     @build_pipeline_stage_type.setter
     def build_pipeline_stage_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "build_pipeline_stage_type", value)
+
+    @property
+    @pulumi.getter(name="buildRunnerShapeConfig")
+    def build_runner_shape_config(self) -> Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']]:
+        """
+        (Updatable) The information about build runner.
+        """
+        return pulumi.get(self, "build_runner_shape_config")
+
+    @build_runner_shape_config.setter
+    def build_runner_shape_config(self, value: Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']]):
+        pulumi.set(self, "build_runner_shape_config", value)
 
     @property
     @pulumi.getter(name="buildSourceCollection")
@@ -296,6 +312,7 @@ class _BuildPipelineStageState:
                  build_pipeline_id: Optional[pulumi.Input[str]] = None,
                  build_pipeline_stage_predecessor_collection: Optional[pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']] = None,
                  build_pipeline_stage_type: Optional[pulumi.Input[str]] = None,
+                 build_runner_shape_config: Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']] = None,
                  build_source_collection: Optional[pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs']] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -322,6 +339,7 @@ class _BuildPipelineStageState:
         :param pulumi.Input[str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs'] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
+        :param pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs'] build_runner_shape_config: (Updatable) The information about build runner.
         :param pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs'] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the pipeline is created.
@@ -350,6 +368,8 @@ class _BuildPipelineStageState:
             pulumi.set(__self__, "build_pipeline_stage_predecessor_collection", build_pipeline_stage_predecessor_collection)
         if build_pipeline_stage_type is not None:
             pulumi.set(__self__, "build_pipeline_stage_type", build_pipeline_stage_type)
+        if build_runner_shape_config is not None:
+            pulumi.set(__self__, "build_runner_shape_config", build_runner_shape_config)
         if build_source_collection is not None:
             pulumi.set(__self__, "build_source_collection", build_source_collection)
         if build_spec_file is not None:
@@ -428,6 +448,18 @@ class _BuildPipelineStageState:
     @build_pipeline_stage_type.setter
     def build_pipeline_stage_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "build_pipeline_stage_type", value)
+
+    @property
+    @pulumi.getter(name="buildRunnerShapeConfig")
+    def build_runner_shape_config(self) -> Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']]:
+        """
+        (Updatable) The information about build runner.
+        """
+        return pulumi.get(self, "build_runner_shape_config")
+
+    @build_runner_shape_config.setter
+    def build_runner_shape_config(self, value: Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']]):
+        pulumi.set(self, "build_runner_shape_config", value)
 
     @property
     @pulumi.getter(name="buildSourceCollection")
@@ -690,6 +722,7 @@ class BuildPipelineStage(pulumi.CustomResource):
                  build_pipeline_id: Optional[pulumi.Input[str]] = None,
                  build_pipeline_stage_predecessor_collection: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']]] = None,
                  build_pipeline_stage_type: Optional[pulumi.Input[str]] = None,
+                 build_runner_shape_config: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildRunnerShapeConfigArgs']]] = None,
                  build_source_collection: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildSourceCollectionArgs']]] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -724,6 +757,11 @@ class BuildPipelineStage(pulumi.CustomResource):
                 )],
             ),
             build_pipeline_stage_type=var["build_pipeline_stage_build_pipeline_stage_type"],
+            build_runner_shape_config=oci.dev_ops.BuildPipelineStageBuildRunnerShapeConfigArgs(
+                build_runner_type=var["build_pipeline_stage_build_runner_shape_config_build_runner_type"],
+                memory_in_gbs=var["build_pipeline_stage_build_runner_shape_config_memory_in_gbs"],
+                ocpus=var["build_pipeline_stage_build_runner_shape_config_ocpus"],
+            ),
             build_source_collection=oci.dev_ops.BuildPipelineStageBuildSourceCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildSourceCollectionItemArgs(
                     connection_type=var["build_pipeline_stage_build_source_collection_items_connection_type"],
@@ -778,6 +816,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input[pulumi.InputType['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
+        :param pulumi.Input[pulumi.InputType['BuildPipelineStageBuildRunnerShapeConfigArgs']] build_runner_shape_config: (Updatable) The information about build runner.
         :param pulumi.Input[pulumi.InputType['BuildPipelineStageBuildSourceCollectionArgs']] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -818,6 +857,11 @@ class BuildPipelineStage(pulumi.CustomResource):
                 )],
             ),
             build_pipeline_stage_type=var["build_pipeline_stage_build_pipeline_stage_type"],
+            build_runner_shape_config=oci.dev_ops.BuildPipelineStageBuildRunnerShapeConfigArgs(
+                build_runner_type=var["build_pipeline_stage_build_runner_shape_config_build_runner_type"],
+                memory_in_gbs=var["build_pipeline_stage_build_runner_shape_config_memory_in_gbs"],
+                ocpus=var["build_pipeline_stage_build_runner_shape_config_ocpus"],
+            ),
             build_source_collection=oci.dev_ops.BuildPipelineStageBuildSourceCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildSourceCollectionItemArgs(
                     connection_type=var["build_pipeline_stage_build_source_collection_items_connection_type"],
@@ -885,6 +929,7 @@ class BuildPipelineStage(pulumi.CustomResource):
                  build_pipeline_id: Optional[pulumi.Input[str]] = None,
                  build_pipeline_stage_predecessor_collection: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']]] = None,
                  build_pipeline_stage_type: Optional[pulumi.Input[str]] = None,
+                 build_runner_shape_config: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildRunnerShapeConfigArgs']]] = None,
                  build_source_collection: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildSourceCollectionArgs']]] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -917,6 +962,7 @@ class BuildPipelineStage(pulumi.CustomResource):
             if build_pipeline_stage_type is None and not opts.urn:
                 raise TypeError("Missing required property 'build_pipeline_stage_type'")
             __props__.__dict__["build_pipeline_stage_type"] = build_pipeline_stage_type
+            __props__.__dict__["build_runner_shape_config"] = build_runner_shape_config
             __props__.__dict__["build_source_collection"] = build_source_collection
             __props__.__dict__["build_spec_file"] = build_spec_file
             __props__.__dict__["defined_tags"] = defined_tags
@@ -951,6 +997,7 @@ class BuildPipelineStage(pulumi.CustomResource):
             build_pipeline_id: Optional[pulumi.Input[str]] = None,
             build_pipeline_stage_predecessor_collection: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']]] = None,
             build_pipeline_stage_type: Optional[pulumi.Input[str]] = None,
+            build_runner_shape_config: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildRunnerShapeConfigArgs']]] = None,
             build_source_collection: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageBuildSourceCollectionArgs']]] = None,
             build_spec_file: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -982,6 +1029,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input[pulumi.InputType['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
+        :param pulumi.Input[pulumi.InputType['BuildPipelineStageBuildRunnerShapeConfigArgs']] build_runner_shape_config: (Updatable) The information about build runner.
         :param pulumi.Input[pulumi.InputType['BuildPipelineStageBuildSourceCollectionArgs']] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the pipeline is created.
@@ -1011,6 +1059,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         __props__.__dict__["build_pipeline_id"] = build_pipeline_id
         __props__.__dict__["build_pipeline_stage_predecessor_collection"] = build_pipeline_stage_predecessor_collection
         __props__.__dict__["build_pipeline_stage_type"] = build_pipeline_stage_type
+        __props__.__dict__["build_runner_shape_config"] = build_runner_shape_config
         __props__.__dict__["build_source_collection"] = build_source_collection
         __props__.__dict__["build_spec_file"] = build_spec_file
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1057,6 +1106,14 @@ class BuildPipelineStage(pulumi.CustomResource):
         (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
         """
         return pulumi.get(self, "build_pipeline_stage_type")
+
+    @property
+    @pulumi.getter(name="buildRunnerShapeConfig")
+    def build_runner_shape_config(self) -> pulumi.Output['outputs.BuildPipelineStageBuildRunnerShapeConfig']:
+        """
+        (Updatable) The information about build runner.
+        """
+        return pulumi.get(self, "build_runner_shape_config")
 
     @property
     @pulumi.getter(name="buildSourceCollection")

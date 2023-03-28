@@ -95,8 +95,12 @@ type LookupDatabaseResult struct {
 	KmsKeyRotation  int    `pulumi:"kmsKeyRotation"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// The duration when the latest database backup created.
+	LastBackupDurationInSeconds int `pulumi:"lastBackupDurationInSeconds"`
 	// The date and time when the latest database backup was created.
 	LastBackupTimestamp string `pulumi:"lastBackupTimestamp"`
+	// The date and time when the latest database backup failed.
+	LastFailedBackupTimestamp string `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The national character set for the database.
@@ -261,9 +265,19 @@ func (o LookupDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
 
+// The duration when the latest database backup created.
+func (o LookupDatabaseResultOutput) LastBackupDurationInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) int { return v.LastBackupDurationInSeconds }).(pulumi.IntOutput)
+}
+
 // The date and time when the latest database backup was created.
 func (o LookupDatabaseResultOutput) LastBackupTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.LastBackupTimestamp }).(pulumi.StringOutput)
+}
+
+// The date and time when the latest database backup failed.
+func (o LookupDatabaseResultOutput) LastFailedBackupTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) string { return v.LastFailedBackupTimestamp }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state.

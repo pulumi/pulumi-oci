@@ -37,7 +37,7 @@ class DeploymentArgs:
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        :param pulumi.Input[str] deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
@@ -109,7 +109,7 @@ class DeploymentArgs:
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Input[str]:
         """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -330,7 +330,7 @@ class _DeploymentState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentDiagnosticDataArgs']]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
-        :param pulumi.Input[str] deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] deployment_url: The URL of a resource.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
@@ -493,7 +493,7 @@ class _DeploymentState:
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -880,7 +880,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param pulumi.Input[str] deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -1058,7 +1058,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeploymentDiagnosticDataArgs']]]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
-        :param pulumi.Input[str] deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] deployment_url: The URL of a resource.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
@@ -1172,7 +1172,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Output[str]:
         """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         """
         return pulumi.get(self, "deployment_type")
 

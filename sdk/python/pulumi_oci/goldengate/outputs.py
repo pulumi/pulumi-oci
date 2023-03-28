@@ -374,7 +374,7 @@ class DeploymentOggData(dict):
                  key: Optional[str] = None,
                  ogg_version: Optional[str] = None):
         """
-        :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
         :param str admin_username: (Updatable) The GoldenGate deployment console username.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param str certificate: (Updatable) A PEM-encoded SSL certificate.
@@ -395,7 +395,7 @@ class DeploymentOggData(dict):
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> str:
         """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
         """
         return pulumi.get(self, "admin_password")
 
@@ -494,7 +494,7 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str alias_name: Credential store alias.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
@@ -523,7 +523,7 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -682,6 +682,7 @@ class GetConnectionsConnectionCollectionResult(dict):
 @pulumi.output_type
 class GetConnectionsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
+                 access_key_id: str,
                  account_key: str,
                  account_name: str,
                  additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
@@ -691,9 +692,12 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  client_id: str,
                  client_secret: str,
                  compartment_id: str,
+                 connection_factory: str,
                  connection_string: str,
                  connection_type: str,
+                 connection_url: str,
                  consumer_properties: str,
+                 core_site_xml: str,
                  database_id: str,
                  database_name: str,
                  db_system_id: str,
@@ -706,6 +710,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  host: str,
                  id: str,
                  ingress_ips: Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult'],
+                 jndi_connection_factory: str,
+                 jndi_initial_context_factory: str,
+                 jndi_provider_url: str,
+                 jndi_security_credentials: str,
+                 jndi_security_principal: str,
                  key_id: str,
                  key_store: str,
                  key_store_password: str,
@@ -720,8 +729,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  public_key_fingerprint: str,
                  region: str,
                  sas_token: str,
+                 secret_access_key: str,
                  security_protocol: str,
                  session_mode: str,
+                 should_use_jndi: bool,
+                 should_validate_server_certificate: bool,
                  ssl_ca: str,
                  ssl_cert: str,
                  ssl_crl: str,
@@ -744,16 +756,19 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  vault_id: str,
                  wallet: str):
         """
+        :param str access_key_id: Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param str account_name: Sets the Azure storage account name.
         :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
         :param str authentication_type: Used authentication mechanism to access Azure Data Lake Storage.
         :param str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+        :param str connection_factory: The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param str connection_string: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         :param str connection_type: The array of connection types.
-        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        :param str connection_url: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
         :param str database_name: The name of the database.
         :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
         :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -764,15 +779,22 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str host: The name or address of a host.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param Sequence['GetConnectionsConnectionCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
-        :param str key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        :param Sequence['GetConnectionsConnectionCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        :param str jndi_connection_factory: The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        :param str jndi_initial_context_factory: The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        :param str jndi_provider_url: The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        :param str jndi_security_principal: Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        :param str key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param str region: The name of the region. e.g.: us-ashburn-1
-        :param str security_protocol: Security protocol for PostgreSQL.
+        :param str security_protocol: Security protocol for PostgreSQL / Microsoft SQL Server..
         :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
+        :param str ssl_ca: Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param str ssl_mode: SSL mode for PostgreSQL.
         :param str state: A filter to return only connections having the 'lifecycleState' given.
         :param str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -783,10 +805,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str url: Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param str user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
-        :param str username: The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        :param str user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+        :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
+        pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "account_key", account_key)
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "additional_attributes", additional_attributes)
@@ -796,9 +819,12 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "client_id", client_id)
         pulumi.set(__self__, "client_secret", client_secret)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_factory", connection_factory)
         pulumi.set(__self__, "connection_string", connection_string)
         pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "connection_url", connection_url)
         pulumi.set(__self__, "consumer_properties", consumer_properties)
+        pulumi.set(__self__, "core_site_xml", core_site_xml)
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "database_name", database_name)
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -811,6 +837,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ingress_ips", ingress_ips)
+        pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+        pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+        pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+        pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "key_store", key_store)
         pulumi.set(__self__, "key_store_password", key_store_password)
@@ -825,8 +856,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "sas_token", sas_token)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
         pulumi.set(__self__, "security_protocol", security_protocol)
         pulumi.set(__self__, "session_mode", session_mode)
+        pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         pulumi.set(__self__, "ssl_ca", ssl_ca)
         pulumi.set(__self__, "ssl_cert", ssl_cert)
         pulumi.set(__self__, "ssl_crl", ssl_crl)
@@ -848,6 +882,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "username", username)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "wallet", wallet)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> str:
+        """
+        Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "access_key_id")
 
     @property
     @pulumi.getter(name="accountKey")
@@ -911,9 +953,17 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionFactory")
+    def connection_factory(self) -> str:
+        """
+        The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        """
+        return pulumi.get(self, "connection_factory")
 
     @property
     @pulumi.getter(name="connectionString")
@@ -932,15 +982,28 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "connection_type")
 
     @property
+    @pulumi.getter(name="connectionUrl")
+    def connection_url(self) -> str:
+        """
+        JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        """
+        return pulumi.get(self, "connection_url")
+
+    @property
     @pulumi.getter(name="consumerProperties")
     def consumer_properties(self) -> str:
         return pulumi.get(self, "consumer_properties")
 
     @property
+    @pulumi.getter(name="coreSiteXml")
+    def core_site_xml(self) -> str:
+        return pulumi.get(self, "core_site_xml")
+
+    @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
         """
         return pulumi.get(self, "database_id")
 
@@ -1028,15 +1091,52 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="ingressIps")
     def ingress_ips(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult']:
         """
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         """
         return pulumi.get(self, "ingress_ips")
+
+    @property
+    @pulumi.getter(name="jndiConnectionFactory")
+    def jndi_connection_factory(self) -> str:
+        """
+        The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        """
+        return pulumi.get(self, "jndi_connection_factory")
+
+    @property
+    @pulumi.getter(name="jndiInitialContextFactory")
+    def jndi_initial_context_factory(self) -> str:
+        """
+        The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        """
+        return pulumi.get(self, "jndi_initial_context_factory")
+
+    @property
+    @pulumi.getter(name="jndiProviderUrl")
+    def jndi_provider_url(self) -> str:
+        """
+        The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        """
+        return pulumi.get(self, "jndi_provider_url")
+
+    @property
+    @pulumi.getter(name="jndiSecurityCredentials")
+    def jndi_security_credentials(self) -> str:
+        return pulumi.get(self, "jndi_security_credentials")
+
+    @property
+    @pulumi.getter(name="jndiSecurityPrincipal")
+    def jndi_security_principal(self) -> str:
+        """
+        Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        """
+        return pulumi.get(self, "jndi_security_principal")
 
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
@@ -1121,10 +1221,15 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "sas_token")
 
     @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> str:
+        return pulumi.get(self, "secret_access_key")
+
+    @property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> str:
         """
-        Security protocol for PostgreSQL.
+        Security protocol for PostgreSQL / Microsoft SQL Server..
         """
         return pulumi.get(self, "security_protocol")
 
@@ -1137,8 +1242,27 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "session_mode")
 
     @property
+    @pulumi.getter(name="shouldUseJndi")
+    def should_use_jndi(self) -> bool:
+        """
+        If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        """
+        return pulumi.get(self, "should_use_jndi")
+
+    @property
+    @pulumi.getter(name="shouldValidateServerCertificate")
+    def should_validate_server_certificate(self) -> bool:
+        """
+        If set to true, the driver validates the certificate that is sent by the database server.
+        """
+        return pulumi.get(self, "should_validate_server_certificate")
+
+    @property
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> str:
+        """
+        Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        """
         return pulumi.get(self, "ssl_ca")
 
     @property
@@ -1255,7 +1379,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
         """
         return pulumi.get(self, "user_id")
 
@@ -1263,7 +1387,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         """
         return pulumi.get(self, "username")
 
@@ -1271,7 +1395,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 
@@ -1444,8 +1568,8 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
                  wallet: str):
         """
         :param str alias_name: Credential store alias.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param str connection_string: Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+        :param str connection_string: Connect descriptor or Easy Connect Naming method used to connect to a database.
         :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Metadata about this specific object.
@@ -1454,19 +1578,19 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
         :param str ip_address: The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        :param str key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        :param str key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param str rce_private_ip: A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
-        :param str secret_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
-        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+        :param str rce_private_ip: A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
+        :param str secret_compartment_id: The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+        :param str secret_id: The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
         :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str username: The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
+        :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         pulumi.set(__self__, "alias_name", alias_name)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1507,7 +1631,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1515,7 +1639,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> str:
         """
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        Connect descriptor or Easy Connect Naming method used to connect to a database.
         """
         return pulumi.get(self, "connection_string")
 
@@ -1587,7 +1711,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="keyId")
     def key_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
@@ -1608,7 +1732,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="rcePrivateIp")
     def rce_private_ip(self) -> str:
         """
-        A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+        A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
         """
         return pulumi.get(self, "rce_private_ip")
 
@@ -1616,7 +1740,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="secretCompartmentId")
     def secret_compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+        The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "secret_compartment_id")
 
@@ -1624,7 +1748,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+        The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
         """
         return pulumi.get(self, "secret_id")
 
@@ -1680,7 +1804,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         """
         return pulumi.get(self, "username")
 
@@ -1688,7 +1812,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 
@@ -1763,7 +1887,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         """
         :param str backup_type: Possible Deployment backup types.
         :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
@@ -1823,7 +1947,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2401,7 +2525,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
                  time_started: str,
                  time_updated: str):
         """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         :param str deployment_upgrade_type: The type of the deployment upgrade: MANUAL or AUTOMATIC
@@ -2459,7 +2583,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2843,12 +2967,12 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  time_updated: str,
                  time_upgrade_required: str):
         """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
         :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param str deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs'] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
-        :param str deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+        :param str deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param str deployment_url: The URL of a resource.
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
@@ -2919,7 +3043,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2959,7 +3083,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         """
         return pulumi.get(self, "deployment_type")
 

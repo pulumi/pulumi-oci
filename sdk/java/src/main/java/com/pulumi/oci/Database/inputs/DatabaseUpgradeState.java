@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.inputs.DatabaseUpgradeConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseUpgradeDbBackupConfigArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -293,6 +294,21 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The duration when the latest database backup created.
+     * 
+     */
+    @Import(name="lastBackupDurationInSeconds")
+    private @Nullable Output<Integer> lastBackupDurationInSeconds;
+
+    /**
+     * @return The duration when the latest database backup created.
+     * 
+     */
+    public Optional<Output<Integer>> lastBackupDurationInSeconds() {
+        return Optional.ofNullable(this.lastBackupDurationInSeconds);
+    }
+
+    /**
      * The date and time when the latest database backup was created.
      * 
      */
@@ -305,6 +321,21 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> lastBackupTimestamp() {
         return Optional.ofNullable(this.lastBackupTimestamp);
+    }
+
+    /**
+     * The date and time when the latest database backup failed.
+     * 
+     */
+    @Import(name="lastFailedBackupTimestamp")
+    private @Nullable Output<String> lastFailedBackupTimestamp;
+
+    /**
+     * @return The date and time when the latest database backup failed.
+     * 
+     */
+    public Optional<Output<String>> lastFailedBackupTimestamp() {
+        return Optional.ofNullable(this.lastFailedBackupTimestamp);
     }
 
     /**
@@ -463,7 +494,9 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
         this.isCdb = $.isCdb;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
+        this.lastBackupDurationInSeconds = $.lastBackupDurationInSeconds;
         this.lastBackupTimestamp = $.lastBackupTimestamp;
+        this.lastFailedBackupTimestamp = $.lastFailedBackupTimestamp;
         this.lifecycleDetails = $.lifecycleDetails;
         this.ncharacterSet = $.ncharacterSet;
         this.pdbName = $.pdbName;
@@ -892,6 +925,27 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param lastBackupDurationInSeconds The duration when the latest database backup created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastBackupDurationInSeconds(@Nullable Output<Integer> lastBackupDurationInSeconds) {
+            $.lastBackupDurationInSeconds = lastBackupDurationInSeconds;
+            return this;
+        }
+
+        /**
+         * @param lastBackupDurationInSeconds The duration when the latest database backup created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastBackupDurationInSeconds(Integer lastBackupDurationInSeconds) {
+            return lastBackupDurationInSeconds(Output.of(lastBackupDurationInSeconds));
+        }
+
+        /**
          * @param lastBackupTimestamp The date and time when the latest database backup was created.
          * 
          * @return builder
@@ -910,6 +964,27 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
          */
         public Builder lastBackupTimestamp(String lastBackupTimestamp) {
             return lastBackupTimestamp(Output.of(lastBackupTimestamp));
+        }
+
+        /**
+         * @param lastFailedBackupTimestamp The date and time when the latest database backup failed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastFailedBackupTimestamp(@Nullable Output<String> lastFailedBackupTimestamp) {
+            $.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
+            return this;
+        }
+
+        /**
+         * @param lastFailedBackupTimestamp The date and time when the latest database backup failed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastFailedBackupTimestamp(String lastFailedBackupTimestamp) {
+            return lastFailedBackupTimestamp(Output.of(lastFailedBackupTimestamp));
         }
 
         /**

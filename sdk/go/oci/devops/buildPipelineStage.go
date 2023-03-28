@@ -39,6 +39,11 @@ import (
 //					},
 //				},
 //				BuildPipelineStageType: pulumi.Any(_var.Build_pipeline_stage_build_pipeline_stage_type),
+//				BuildRunnerShapeConfig: &devops.BuildPipelineStageBuildRunnerShapeConfigArgs{
+//					BuildRunnerType: pulumi.Any(_var.Build_pipeline_stage_build_runner_shape_config_build_runner_type),
+//					MemoryInGbs:     pulumi.Any(_var.Build_pipeline_stage_build_runner_shape_config_memory_in_gbs),
+//					Ocpus:           pulumi.Any(_var.Build_pipeline_stage_build_runner_shape_config_ocpus),
+//				},
 //				BuildSourceCollection: &devops.BuildPipelineStageBuildSourceCollectionArgs{
 //					Items: devops.BuildPipelineStageBuildSourceCollectionItemArray{
 //						&devops.BuildPipelineStageBuildSourceCollectionItemArgs{
@@ -110,6 +115,8 @@ type BuildPipelineStage struct {
 	BuildPipelineStagePredecessorCollection BuildPipelineStageBuildPipelineStagePredecessorCollectionOutput `pulumi:"buildPipelineStagePredecessorCollection"`
 	// (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType pulumi.StringOutput `pulumi:"buildPipelineStageType"`
+	// (Updatable) The information about build runner.
+	BuildRunnerShapeConfig BuildPipelineStageBuildRunnerShapeConfigOutput `pulumi:"buildRunnerShapeConfig"`
 	// (Updatable) Collection of build sources.
 	BuildSourceCollection BuildPipelineStageBuildSourceCollectionOutput `pulumi:"buildSourceCollection"`
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
@@ -198,6 +205,8 @@ type buildPipelineStageState struct {
 	BuildPipelineStagePredecessorCollection *BuildPipelineStageBuildPipelineStagePredecessorCollection `pulumi:"buildPipelineStagePredecessorCollection"`
 	// (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType *string `pulumi:"buildPipelineStageType"`
+	// (Updatable) The information about build runner.
+	BuildRunnerShapeConfig *BuildPipelineStageBuildRunnerShapeConfig `pulumi:"buildRunnerShapeConfig"`
 	// (Updatable) Collection of build sources.
 	BuildSourceCollection *BuildPipelineStageBuildSourceCollection `pulumi:"buildSourceCollection"`
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
@@ -249,6 +258,8 @@ type BuildPipelineStageState struct {
 	BuildPipelineStagePredecessorCollection BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrInput
 	// (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType pulumi.StringPtrInput
+	// (Updatable) The information about build runner.
+	BuildRunnerShapeConfig BuildPipelineStageBuildRunnerShapeConfigPtrInput
 	// (Updatable) Collection of build sources.
 	BuildSourceCollection BuildPipelineStageBuildSourceCollectionPtrInput
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
@@ -304,6 +315,8 @@ type buildPipelineStageArgs struct {
 	BuildPipelineStagePredecessorCollection BuildPipelineStageBuildPipelineStagePredecessorCollection `pulumi:"buildPipelineStagePredecessorCollection"`
 	// (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType string `pulumi:"buildPipelineStageType"`
+	// (Updatable) The information about build runner.
+	BuildRunnerShapeConfig *BuildPipelineStageBuildRunnerShapeConfig `pulumi:"buildRunnerShapeConfig"`
 	// (Updatable) Collection of build sources.
 	BuildSourceCollection *BuildPipelineStageBuildSourceCollection `pulumi:"buildSourceCollection"`
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
@@ -342,6 +355,8 @@ type BuildPipelineStageArgs struct {
 	BuildPipelineStagePredecessorCollection BuildPipelineStageBuildPipelineStagePredecessorCollectionInput
 	// (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType pulumi.StringInput
+	// (Updatable) The information about build runner.
+	BuildRunnerShapeConfig BuildPipelineStageBuildRunnerShapeConfigPtrInput
 	// (Updatable) Collection of build sources.
 	BuildSourceCollection BuildPipelineStageBuildSourceCollectionPtrInput
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
@@ -474,6 +489,13 @@ func (o BuildPipelineStageOutput) BuildPipelineStagePredecessorCollection() Buil
 // (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 func (o BuildPipelineStageOutput) BuildPipelineStageType() pulumi.StringOutput {
 	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.BuildPipelineStageType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The information about build runner.
+func (o BuildPipelineStageOutput) BuildRunnerShapeConfig() BuildPipelineStageBuildRunnerShapeConfigOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageBuildRunnerShapeConfigOutput {
+		return v.BuildRunnerShapeConfig
+	}).(BuildPipelineStageBuildRunnerShapeConfigOutput)
 }
 
 // (Updatable) Collection of build sources.

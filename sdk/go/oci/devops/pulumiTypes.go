@@ -151,7 +151,7 @@ func (o BuildPipelineBuildPipelineParametersPtrOutput) Items() BuildPipelineBuil
 
 type BuildPipelineBuildPipelineParametersItem struct {
 	// (Updatable) Default value of the parameter.
-	DefaultValue *string `pulumi:"defaultValue"`
+	DefaultValue string `pulumi:"defaultValue"`
 	// (Updatable) Optional description about the build pipeline.
 	Description *string `pulumi:"description"`
 	// (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
@@ -171,7 +171,7 @@ type BuildPipelineBuildPipelineParametersItemInput interface {
 
 type BuildPipelineBuildPipelineParametersItemArgs struct {
 	// (Updatable) Default value of the parameter.
-	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
 	// (Updatable) Optional description about the build pipeline.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
@@ -230,8 +230,8 @@ func (o BuildPipelineBuildPipelineParametersItemOutput) ToBuildPipelineBuildPipe
 }
 
 // (Updatable) Default value of the parameter.
-func (o BuildPipelineBuildPipelineParametersItemOutput) DefaultValue() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v BuildPipelineBuildPipelineParametersItem) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
+func (o BuildPipelineBuildPipelineParametersItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v BuildPipelineBuildPipelineParametersItem) string { return v.DefaultValue }).(pulumi.StringOutput)
 }
 
 // (Updatable) Optional description about the build pipeline.
@@ -498,6 +498,181 @@ func (o BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildPipelineStageBuildPipelineStagePredecessorCollectionItem {
 		return vs[0].([]BuildPipelineStageBuildPipelineStagePredecessorCollectionItem)[vs[1].(int)]
 	}).(BuildPipelineStageBuildPipelineStagePredecessorCollectionItemOutput)
+}
+
+type BuildPipelineStageBuildRunnerShapeConfig struct {
+	// (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+	BuildRunnerType string `pulumi:"buildRunnerType"`
+	// (Updatable) The total amount of memory set for the instance in gigabytes.
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs set for the instance.
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BuildPipelineStageBuildRunnerShapeConfigInput is an input type that accepts BuildPipelineStageBuildRunnerShapeConfigArgs and BuildPipelineStageBuildRunnerShapeConfigOutput values.
+// You can construct a concrete instance of `BuildPipelineStageBuildRunnerShapeConfigInput` via:
+//
+//	BuildPipelineStageBuildRunnerShapeConfigArgs{...}
+type BuildPipelineStageBuildRunnerShapeConfigInput interface {
+	pulumi.Input
+
+	ToBuildPipelineStageBuildRunnerShapeConfigOutput() BuildPipelineStageBuildRunnerShapeConfigOutput
+	ToBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(context.Context) BuildPipelineStageBuildRunnerShapeConfigOutput
+}
+
+type BuildPipelineStageBuildRunnerShapeConfigArgs struct {
+	// (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+	BuildRunnerType pulumi.StringInput `pulumi:"buildRunnerType"`
+	// (Updatable) The total amount of memory set for the instance in gigabytes.
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs set for the instance.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BuildPipelineStageBuildRunnerShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (i BuildPipelineStageBuildRunnerShapeConfigArgs) ToBuildPipelineStageBuildRunnerShapeConfigOutput() BuildPipelineStageBuildRunnerShapeConfigOutput {
+	return i.ToBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BuildPipelineStageBuildRunnerShapeConfigArgs) ToBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(ctx context.Context) BuildPipelineStageBuildRunnerShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageBuildRunnerShapeConfigOutput)
+}
+
+func (i BuildPipelineStageBuildRunnerShapeConfigArgs) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutput() BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return i.ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BuildPipelineStageBuildRunnerShapeConfigArgs) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageBuildRunnerShapeConfigOutput).ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BuildPipelineStageBuildRunnerShapeConfigPtrInput is an input type that accepts BuildPipelineStageBuildRunnerShapeConfigArgs, BuildPipelineStageBuildRunnerShapeConfigPtr and BuildPipelineStageBuildRunnerShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BuildPipelineStageBuildRunnerShapeConfigPtrInput` via:
+//
+//	        BuildPipelineStageBuildRunnerShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type BuildPipelineStageBuildRunnerShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBuildPipelineStageBuildRunnerShapeConfigPtrOutput() BuildPipelineStageBuildRunnerShapeConfigPtrOutput
+	ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(context.Context) BuildPipelineStageBuildRunnerShapeConfigPtrOutput
+}
+
+type buildPipelineStageBuildRunnerShapeConfigPtrType BuildPipelineStageBuildRunnerShapeConfigArgs
+
+func BuildPipelineStageBuildRunnerShapeConfigPtr(v *BuildPipelineStageBuildRunnerShapeConfigArgs) BuildPipelineStageBuildRunnerShapeConfigPtrInput {
+	return (*buildPipelineStageBuildRunnerShapeConfigPtrType)(v)
+}
+
+func (*buildPipelineStageBuildRunnerShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (i *buildPipelineStageBuildRunnerShapeConfigPtrType) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutput() BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return i.ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *buildPipelineStageBuildRunnerShapeConfigPtrType) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageBuildRunnerShapeConfigPtrOutput)
+}
+
+type BuildPipelineStageBuildRunnerShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BuildPipelineStageBuildRunnerShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (o BuildPipelineStageBuildRunnerShapeConfigOutput) ToBuildPipelineStageBuildRunnerShapeConfigOutput() BuildPipelineStageBuildRunnerShapeConfigOutput {
+	return o
+}
+
+func (o BuildPipelineStageBuildRunnerShapeConfigOutput) ToBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(ctx context.Context) BuildPipelineStageBuildRunnerShapeConfigOutput {
+	return o
+}
+
+func (o BuildPipelineStageBuildRunnerShapeConfigOutput) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutput() BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return o.ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BuildPipelineStageBuildRunnerShapeConfigOutput) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BuildPipelineStageBuildRunnerShapeConfig) *BuildPipelineStageBuildRunnerShapeConfig {
+		return &v
+	}).(BuildPipelineStageBuildRunnerShapeConfigPtrOutput)
+}
+
+// (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+func (o BuildPipelineStageBuildRunnerShapeConfigOutput) BuildRunnerType() pulumi.StringOutput {
+	return o.ApplyT(func(v BuildPipelineStageBuildRunnerShapeConfig) string { return v.BuildRunnerType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The total amount of memory set for the instance in gigabytes.
+func (o BuildPipelineStageBuildRunnerShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BuildPipelineStageBuildRunnerShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total number of OCPUs set for the instance.
+func (o BuildPipelineStageBuildRunnerShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BuildPipelineStageBuildRunnerShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BuildPipelineStageBuildRunnerShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BuildPipelineStageBuildRunnerShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (o BuildPipelineStageBuildRunnerShapeConfigPtrOutput) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutput() BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return o
+}
+
+func (o BuildPipelineStageBuildRunnerShapeConfigPtrOutput) ToBuildPipelineStageBuildRunnerShapeConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return o
+}
+
+func (o BuildPipelineStageBuildRunnerShapeConfigPtrOutput) Elem() BuildPipelineStageBuildRunnerShapeConfigOutput {
+	return o.ApplyT(func(v *BuildPipelineStageBuildRunnerShapeConfig) BuildPipelineStageBuildRunnerShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BuildPipelineStageBuildRunnerShapeConfig
+		return ret
+	}).(BuildPipelineStageBuildRunnerShapeConfigOutput)
+}
+
+// (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+func (o BuildPipelineStageBuildRunnerShapeConfigPtrOutput) BuildRunnerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStageBuildRunnerShapeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.BuildRunnerType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The total amount of memory set for the instance in gigabytes.
+func (o BuildPipelineStageBuildRunnerShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStageBuildRunnerShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total number of OCPUs set for the instance.
+func (o BuildPipelineStageBuildRunnerShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStageBuildRunnerShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
 }
 
 type BuildPipelineStageBuildSourceCollection struct {
@@ -12839,6 +13014,121 @@ func (o GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOut
 	}).(GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemOutput)
 }
 
+type GetBuildPipelineStageBuildRunnerShapeConfig struct {
+	// Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+	BuildRunnerType string `pulumi:"buildRunnerType"`
+	// The total amount of memory set for the instance in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs set for the instance.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBuildPipelineStageBuildRunnerShapeConfigInput is an input type that accepts GetBuildPipelineStageBuildRunnerShapeConfigArgs and GetBuildPipelineStageBuildRunnerShapeConfigOutput values.
+// You can construct a concrete instance of `GetBuildPipelineStageBuildRunnerShapeConfigInput` via:
+//
+//	GetBuildPipelineStageBuildRunnerShapeConfigArgs{...}
+type GetBuildPipelineStageBuildRunnerShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBuildPipelineStageBuildRunnerShapeConfigOutput() GetBuildPipelineStageBuildRunnerShapeConfigOutput
+	ToGetBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(context.Context) GetBuildPipelineStageBuildRunnerShapeConfigOutput
+}
+
+type GetBuildPipelineStageBuildRunnerShapeConfigArgs struct {
+	// Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+	BuildRunnerType pulumi.StringInput `pulumi:"buildRunnerType"`
+	// The total amount of memory set for the instance in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs set for the instance.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBuildPipelineStageBuildRunnerShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (i GetBuildPipelineStageBuildRunnerShapeConfigArgs) ToGetBuildPipelineStageBuildRunnerShapeConfigOutput() GetBuildPipelineStageBuildRunnerShapeConfigOutput {
+	return i.ToGetBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBuildPipelineStageBuildRunnerShapeConfigArgs) ToGetBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(ctx context.Context) GetBuildPipelineStageBuildRunnerShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildPipelineStageBuildRunnerShapeConfigOutput)
+}
+
+// GetBuildPipelineStageBuildRunnerShapeConfigArrayInput is an input type that accepts GetBuildPipelineStageBuildRunnerShapeConfigArray and GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBuildPipelineStageBuildRunnerShapeConfigArrayInput` via:
+//
+//	GetBuildPipelineStageBuildRunnerShapeConfigArray{ GetBuildPipelineStageBuildRunnerShapeConfigArgs{...} }
+type GetBuildPipelineStageBuildRunnerShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBuildPipelineStageBuildRunnerShapeConfigArrayOutput() GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput
+	ToGetBuildPipelineStageBuildRunnerShapeConfigArrayOutputWithContext(context.Context) GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput
+}
+
+type GetBuildPipelineStageBuildRunnerShapeConfigArray []GetBuildPipelineStageBuildRunnerShapeConfigInput
+
+func (GetBuildPipelineStageBuildRunnerShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (i GetBuildPipelineStageBuildRunnerShapeConfigArray) ToGetBuildPipelineStageBuildRunnerShapeConfigArrayOutput() GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput {
+	return i.ToGetBuildPipelineStageBuildRunnerShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBuildPipelineStageBuildRunnerShapeConfigArray) ToGetBuildPipelineStageBuildRunnerShapeConfigArrayOutputWithContext(ctx context.Context) GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput)
+}
+
+type GetBuildPipelineStageBuildRunnerShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBuildPipelineStageBuildRunnerShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (o GetBuildPipelineStageBuildRunnerShapeConfigOutput) ToGetBuildPipelineStageBuildRunnerShapeConfigOutput() GetBuildPipelineStageBuildRunnerShapeConfigOutput {
+	return o
+}
+
+func (o GetBuildPipelineStageBuildRunnerShapeConfigOutput) ToGetBuildPipelineStageBuildRunnerShapeConfigOutputWithContext(ctx context.Context) GetBuildPipelineStageBuildRunnerShapeConfigOutput {
+	return o
+}
+
+// Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+func (o GetBuildPipelineStageBuildRunnerShapeConfigOutput) BuildRunnerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildPipelineStageBuildRunnerShapeConfig) string { return v.BuildRunnerType }).(pulumi.StringOutput)
+}
+
+// The total amount of memory set for the instance in gigabytes.
+func (o GetBuildPipelineStageBuildRunnerShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBuildPipelineStageBuildRunnerShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs set for the instance.
+func (o GetBuildPipelineStageBuildRunnerShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBuildPipelineStageBuildRunnerShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildPipelineStageBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (o GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput) ToGetBuildPipelineStageBuildRunnerShapeConfigArrayOutput() GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput) ToGetBuildPipelineStageBuildRunnerShapeConfigArrayOutputWithContext(ctx context.Context) GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBuildPipelineStageBuildRunnerShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildPipelineStageBuildRunnerShapeConfig {
+		return vs[0].([]GetBuildPipelineStageBuildRunnerShapeConfig)[vs[1].(int)]
+	}).(GetBuildPipelineStageBuildRunnerShapeConfigOutput)
+}
+
 type GetBuildPipelineStageBuildSourceCollection struct {
 	// Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
 	Items []GetBuildPipelineStageBuildSourceCollectionItem `pulumi:"items"`
@@ -13612,6 +13902,8 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItem struct {
 	BuildPipelineStagePredecessorCollections []GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection `pulumi:"buildPipelineStagePredecessorCollections"`
 	// Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType string `pulumi:"buildPipelineStageType"`
+	// The information about build runner.
+	BuildRunnerShapeConfig GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig `pulumi:"buildRunnerShapeConfig"`
 	// Collection of build sources.
 	BuildSourceCollection GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection `pulumi:"buildSourceCollection"`
 	// The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
@@ -13678,6 +13970,8 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs struct {
 	BuildPipelineStagePredecessorCollections GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArrayInput `pulumi:"buildPipelineStagePredecessorCollections"`
 	// Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType pulumi.StringInput `pulumi:"buildPipelineStageType"`
+	// The information about build runner.
+	BuildRunnerShapeConfig GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigInput `pulumi:"buildRunnerShapeConfig"`
 	// Collection of build sources.
 	BuildSourceCollection GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionInput `pulumi:"buildSourceCollection"`
 	// The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
@@ -13792,6 +14086,13 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) BuildPipel
 // Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) BuildPipelineStageType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) string { return v.BuildPipelineStageType }).(pulumi.StringOutput)
+}
+
+// The information about build runner.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) BuildRunnerShapeConfig() GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig {
+		return v.BuildRunnerShapeConfig
+	}).(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput)
 }
 
 // Collection of build sources.
@@ -14143,6 +14444,82 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStage
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem {
 		return vs[0].([]GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem)[vs[1].(int)]
 	}).(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemOutput)
+}
+
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig struct {
+	// Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+	BuildRunnerType string `pulumi:"buildRunnerType"`
+	// The total amount of memory set for the instance in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs set for the instance.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput values.
+// You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigInput` via:
+//
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs{...}
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput() GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput
+	ToGetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutputWithContext(context.Context) GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput
+}
+
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs struct {
+	// Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+	BuildRunnerType pulumi.StringInput `pulumi:"buildRunnerType"`
+	// The total amount of memory set for the instance in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs set for the instance.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput() GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput {
+	return i.ToGetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutputWithContext(ctx context.Context) GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput)
+}
+
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig)(nil)).Elem()
+}
+
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput() GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput {
+	return o
+}
+
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutputWithContext(ctx context.Context) GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput {
+	return o
+}
+
+// Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput) BuildRunnerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig) string {
+		return v.BuildRunnerType
+	}).(pulumi.StringOutput)
+}
+
+// The total amount of memory set for the instance in gigabytes.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig) int {
+		return v.MemoryInGbs
+	}).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs set for the instance.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig) int {
+		return v.Ocpus
+	}).(pulumi.IntOutput)
 }
 
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection struct {
@@ -40797,6 +41174,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrInput)(nil)).Elem(), BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput)(nil)).Elem(), BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput)(nil)).Elem(), BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildRunnerShapeConfigInput)(nil)).Elem(), BuildPipelineStageBuildRunnerShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildRunnerShapeConfigPtrInput)(nil)).Elem(), BuildPipelineStageBuildRunnerShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildSourceCollectionInput)(nil)).Elem(), BuildPipelineStageBuildSourceCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildSourceCollectionPtrInput)(nil)).Elem(), BuildPipelineStageBuildSourceCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageBuildSourceCollectionItemInput)(nil)).Elem(), BuildPipelineStageBuildSourceCollectionItemArgs{})
@@ -40981,6 +41360,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArrayInput)(nil)).Elem(), GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput)(nil)).Elem(), GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput)(nil)).Elem(), GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildRunnerShapeConfigInput)(nil)).Elem(), GetBuildPipelineStageBuildRunnerShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildRunnerShapeConfigArrayInput)(nil)).Elem(), GetBuildPipelineStageBuildRunnerShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildSourceCollectionInput)(nil)).Elem(), GetBuildPipelineStageBuildSourceCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildSourceCollectionArrayInput)(nil)).Elem(), GetBuildPipelineStageBuildSourceCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageBuildSourceCollectionItemInput)(nil)).Elem(), GetBuildPipelineStageBuildSourceCollectionItemArgs{})
@@ -41001,6 +41382,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArrayInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArrayInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArrayInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArray{})
@@ -41451,6 +41833,8 @@ func init() {
 	pulumi.RegisterOutputType(BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageBuildPipelineStagePredecessorCollectionItemOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(BuildPipelineStageBuildRunnerShapeConfigOutput{})
+	pulumi.RegisterOutputType(BuildPipelineStageBuildRunnerShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageBuildSourceCollectionOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageBuildSourceCollectionPtrOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageBuildSourceCollectionItemOutput{})
@@ -41635,6 +42019,8 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildPipelineStageBuildRunnerShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBuildPipelineStageBuildRunnerShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageBuildSourceCollectionOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageBuildSourceCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageBuildSourceCollectionItemOutput{})
@@ -41655,6 +42041,7 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArrayOutput{})

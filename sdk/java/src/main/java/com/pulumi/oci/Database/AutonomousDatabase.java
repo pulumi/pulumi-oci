@@ -17,6 +17,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseRemoteDisasterRecoveryConfiguration;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseStandbyDb;
 import com.pulumi.oci.Utilities;
@@ -501,6 +502,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
+     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * 
+     */
+    @Export(name="disasterRecoveryRegionType", type=String.class, parameters={})
+    private Output<String> disasterRecoveryRegionType;
+
+    /**
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * 
+     */
+    public Output<String> disasterRecoveryRegionType() {
+        return this.disasterRecoveryRegionType;
+    }
+    /**
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
@@ -865,6 +880,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    @Export(name="localDisasterRecoveryType", type=String.class, parameters={})
+    private Output<String> localDisasterRecoveryType;
+
+    /**
+     * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    public Output<String> localDisasterRecoveryType() {
+        return this.localDisasterRecoveryType;
+    }
+    /**
      * Autonomous Data Guard standby database details.
      * 
      */
@@ -1117,6 +1146,34 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> refreshableStatus() {
         return this.refreshableStatus;
+    }
+    /**
+     * Configurations of a Disaster Recovery.
+     * 
+     */
+    @Export(name="remoteDisasterRecoveryConfigurations", type=List.class, parameters={AutonomousDatabaseRemoteDisasterRecoveryConfiguration.class})
+    private Output<List<AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> remoteDisasterRecoveryConfigurations;
+
+    /**
+     * @return Configurations of a Disaster Recovery.
+     * 
+     */
+    public Output<List<AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> remoteDisasterRecoveryConfigurations() {
+        return this.remoteDisasterRecoveryConfigurations;
+    }
+    /**
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    @Export(name="remoteDisasterRecoveryType", type=String.class, parameters={})
+    private Output<String> remoteDisasterRecoveryType;
+
+    /**
+     * @return Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    public Output<String> remoteDisasterRecoveryType() {
+        return this.remoteDisasterRecoveryType;
     }
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -1383,6 +1440,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeDeletionOfFreeAutonomousDatabase() {
         return this.timeDeletionOfFreeAutonomousDatabase;
+    }
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    @Export(name="timeDisasterRecoveryRoleChanged", type=String.class, parameters={})
+    private Output<String> timeDisasterRecoveryRoleChanged;
+
+    /**
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    public Output<String> timeDisasterRecoveryRoleChanged() {
+        return this.timeDisasterRecoveryRoleChanged;
     }
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.

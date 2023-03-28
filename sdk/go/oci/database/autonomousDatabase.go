@@ -99,6 +99,8 @@ type AutonomousDatabase struct {
 	DbWorkload pulumi.StringOutput `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+	DisasterRecoveryRegionType pulumi.StringOutput `pulumi:"disasterRecoveryRegionType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
@@ -151,6 +153,8 @@ type AutonomousDatabase struct {
 	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	LocalDisasterRecoveryType pulumi.StringOutput `pulumi:"localDisasterRecoveryType"`
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs AutonomousDatabaseLocalStandbyDbArrayOutput `pulumi:"localStandbyDbs"`
 	// Details for the long-term backup schedule.
@@ -188,6 +192,10 @@ type AutonomousDatabase struct {
 	RefreshableMode pulumi.StringOutput `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
 	RefreshableStatus pulumi.StringOutput `pulumi:"refreshableStatus"`
+	// Configurations of a Disaster Recovery.
+	RemoteDisasterRecoveryConfigurations AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput `pulumi:"remoteDisasterRecoveryConfigurations"`
+	// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	RemoteDisasterRecoveryType pulumi.StringOutput `pulumi:"remoteDisasterRecoveryType"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringOutput `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
@@ -226,6 +234,8 @@ type AutonomousDatabase struct {
 	TimeDataGuardRoleChanged pulumi.StringOutput `pulumi:"timeDataGuardRoleChanged"`
 	// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
 	TimeDeletionOfFreeAutonomousDatabase pulumi.StringOutput `pulumi:"timeDeletionOfFreeAutonomousDatabase"`
+	// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+	TimeDisasterRecoveryRoleChanged pulumi.StringOutput `pulumi:"timeDisasterRecoveryRoleChanged"`
 	// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
 	TimeLocalDataGuardEnabled pulumi.StringOutput `pulumi:"timeLocalDataGuardEnabled"`
 	// The date and time when maintenance will begin.
@@ -374,6 +384,8 @@ type autonomousDatabaseState struct {
 	DbWorkload *string `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+	DisasterRecoveryRegionType *string `pulumi:"disasterRecoveryRegionType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
@@ -426,6 +438,8 @@ type autonomousDatabaseState struct {
 	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	LocalDisasterRecoveryType *string `pulumi:"localDisasterRecoveryType"`
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs []AutonomousDatabaseLocalStandbyDb `pulumi:"localStandbyDbs"`
 	// Details for the long-term backup schedule.
@@ -463,6 +477,10 @@ type autonomousDatabaseState struct {
 	RefreshableMode *string `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
 	RefreshableStatus *string `pulumi:"refreshableStatus"`
+	// Configurations of a Disaster Recovery.
+	RemoteDisasterRecoveryConfigurations []AutonomousDatabaseRemoteDisasterRecoveryConfiguration `pulumi:"remoteDisasterRecoveryConfigurations"`
+	// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	RemoteDisasterRecoveryType *string `pulumi:"remoteDisasterRecoveryType"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role *string `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
@@ -501,6 +519,8 @@ type autonomousDatabaseState struct {
 	TimeDataGuardRoleChanged *string `pulumi:"timeDataGuardRoleChanged"`
 	// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
 	TimeDeletionOfFreeAutonomousDatabase *string `pulumi:"timeDeletionOfFreeAutonomousDatabase"`
+	// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+	TimeDisasterRecoveryRoleChanged *string `pulumi:"timeDisasterRecoveryRoleChanged"`
 	// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
 	TimeLocalDataGuardEnabled *string `pulumi:"timeLocalDataGuardEnabled"`
 	// The date and time when maintenance will begin.
@@ -608,6 +628,8 @@ type AutonomousDatabaseState struct {
 	DbWorkload pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
+	// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+	DisasterRecoveryRegionType pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// Indicates the number of seconds of data loss for a Data Guard failover.
@@ -660,6 +682,8 @@ type AutonomousDatabaseState struct {
 	LicenseModel pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
+	// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	LocalDisasterRecoveryType pulumi.StringPtrInput
 	// Autonomous Data Guard standby database details.
 	LocalStandbyDbs AutonomousDatabaseLocalStandbyDbArrayInput
 	// Details for the long-term backup schedule.
@@ -697,6 +721,10 @@ type AutonomousDatabaseState struct {
 	RefreshableMode pulumi.StringPtrInput
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
 	RefreshableStatus pulumi.StringPtrInput
+	// Configurations of a Disaster Recovery.
+	RemoteDisasterRecoveryConfigurations AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayInput
+	// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	RemoteDisasterRecoveryType pulumi.StringPtrInput
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
@@ -735,6 +763,8 @@ type AutonomousDatabaseState struct {
 	TimeDataGuardRoleChanged pulumi.StringPtrInput
 	// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
 	TimeDeletionOfFreeAutonomousDatabase pulumi.StringPtrInput
+	// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+	TimeDisasterRecoveryRoleChanged pulumi.StringPtrInput
 	// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
 	TimeLocalDataGuardEnabled pulumi.StringPtrInput
 	// The date and time when maintenance will begin.
@@ -879,6 +909,8 @@ type autonomousDatabaseArgs struct {
 	PrivateEndpointLabel *string `pulumi:"privateEndpointLabel"`
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode *string `pulumi:"refreshableMode"`
+	// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	RemoteDisasterRecoveryType *string `pulumi:"remoteDisasterRecoveryType"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// (Updatable) list of scheduled operations
@@ -1018,6 +1050,8 @@ type AutonomousDatabaseArgs struct {
 	PrivateEndpointLabel pulumi.StringPtrInput
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode pulumi.StringPtrInput
+	// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	RemoteDisasterRecoveryType pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// (Updatable) list of scheduled operations
@@ -1302,6 +1336,11 @@ func (o AutonomousDatabaseOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+func (o AutonomousDatabaseOutput) DisasterRecoveryRegionType() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DisasterRecoveryRegionType }).(pulumi.StringOutput)
+}
+
 // (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 func (o AutonomousDatabaseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -1432,6 +1471,11 @@ func (o AutonomousDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+func (o AutonomousDatabaseOutput) LocalDisasterRecoveryType() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.LocalDisasterRecoveryType }).(pulumi.StringOutput)
+}
+
 // Autonomous Data Guard standby database details.
 func (o AutonomousDatabaseOutput) LocalStandbyDbs() AutonomousDatabaseLocalStandbyDbArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseLocalStandbyDbArrayOutput { return v.LocalStandbyDbs }).(AutonomousDatabaseLocalStandbyDbArrayOutput)
@@ -1523,6 +1567,18 @@ func (o AutonomousDatabaseOutput) RefreshableMode() pulumi.StringOutput {
 // The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
 func (o AutonomousDatabaseOutput) RefreshableStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.RefreshableStatus }).(pulumi.StringOutput)
+}
+
+// Configurations of a Disaster Recovery.
+func (o AutonomousDatabaseOutput) RemoteDisasterRecoveryConfigurations() AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput {
+		return v.RemoteDisasterRecoveryConfigurations
+	}).(AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput)
+}
+
+// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+func (o AutonomousDatabaseOutput) RemoteDisasterRecoveryType() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.RemoteDisasterRecoveryType }).(pulumi.StringOutput)
 }
 
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -1620,6 +1676,11 @@ func (o AutonomousDatabaseOutput) TimeDataGuardRoleChanged() pulumi.StringOutput
 // The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
 func (o AutonomousDatabaseOutput) TimeDeletionOfFreeAutonomousDatabase() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.TimeDeletionOfFreeAutonomousDatabase }).(pulumi.StringOutput)
+}
+
+// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+func (o AutonomousDatabaseOutput) TimeDisasterRecoveryRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.TimeDisasterRecoveryRoleChanged }).(pulumi.StringOutput)
 }
 
 // The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.

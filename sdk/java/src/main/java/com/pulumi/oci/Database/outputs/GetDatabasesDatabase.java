@@ -108,10 +108,20 @@ public final class GetDatabasesDatabase {
      */
     private String kmsKeyVersionId;
     /**
+     * @return The duration when the latest database backup created.
+     * 
+     */
+    private Integer lastBackupDurationInSeconds;
+    /**
      * @return The date and time when the latest database backup was created.
      * 
      */
     private String lastBackupTimestamp;
+    /**
+     * @return The date and time when the latest database backup failed.
+     * 
+     */
+    private String lastFailedBackupTimestamp;
     /**
      * @return Additional information about the current lifecycle state.
      * 
@@ -292,11 +302,25 @@ public final class GetDatabasesDatabase {
         return this.kmsKeyVersionId;
     }
     /**
+     * @return The duration when the latest database backup created.
+     * 
+     */
+    public Integer lastBackupDurationInSeconds() {
+        return this.lastBackupDurationInSeconds;
+    }
+    /**
      * @return The date and time when the latest database backup was created.
      * 
      */
     public String lastBackupTimestamp() {
         return this.lastBackupTimestamp;
+    }
+    /**
+     * @return The date and time when the latest database backup failed.
+     * 
+     */
+    public String lastFailedBackupTimestamp() {
+        return this.lastFailedBackupTimestamp;
     }
     /**
      * @return Additional information about the current lifecycle state.
@@ -395,7 +419,9 @@ public final class GetDatabasesDatabase {
         private Boolean kmsKeyMigration;
         private Integer kmsKeyRotation;
         private String kmsKeyVersionId;
+        private Integer lastBackupDurationInSeconds;
         private String lastBackupTimestamp;
+        private String lastFailedBackupTimestamp;
         private String lifecycleDetails;
         private String ncharacterSet;
         private String pdbName;
@@ -430,7 +456,9 @@ public final class GetDatabasesDatabase {
     	      this.kmsKeyMigration = defaults.kmsKeyMigration;
     	      this.kmsKeyRotation = defaults.kmsKeyRotation;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
+    	      this.lastBackupDurationInSeconds = defaults.lastBackupDurationInSeconds;
     	      this.lastBackupTimestamp = defaults.lastBackupTimestamp;
+    	      this.lastFailedBackupTimestamp = defaults.lastFailedBackupTimestamp;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
@@ -561,8 +589,18 @@ public final class GetDatabasesDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder lastBackupDurationInSeconds(Integer lastBackupDurationInSeconds) {
+            this.lastBackupDurationInSeconds = Objects.requireNonNull(lastBackupDurationInSeconds);
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastBackupTimestamp(String lastBackupTimestamp) {
             this.lastBackupTimestamp = Objects.requireNonNull(lastBackupTimestamp);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastFailedBackupTimestamp(String lastFailedBackupTimestamp) {
+            this.lastFailedBackupTimestamp = Objects.requireNonNull(lastFailedBackupTimestamp);
             return this;
         }
         @CustomType.Setter
@@ -638,7 +676,9 @@ public final class GetDatabasesDatabase {
             o.kmsKeyMigration = kmsKeyMigration;
             o.kmsKeyRotation = kmsKeyRotation;
             o.kmsKeyVersionId = kmsKeyVersionId;
+            o.lastBackupDurationInSeconds = lastBackupDurationInSeconds;
             o.lastBackupTimestamp = lastBackupTimestamp;
+            o.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
             o.lifecycleDetails = lifecycleDetails;
             o.ncharacterSet = ncharacterSet;
             o.pdbName = pdbName;

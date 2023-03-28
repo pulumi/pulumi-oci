@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     connectionType: _var.connection_connection_type,
  *     displayName: _var.connection_display_name,
  *     technologyType: _var.connection_technology_type,
+ *     accessKeyId: oci_kms_key.test_key.id,
  *     accountKey: _var.connection_account_key,
  *     accountName: _var.connection_account_name,
  *     additionalAttributes: [{
@@ -37,8 +38,11 @@ import * as utilities from "../utilities";
  *     }],
  *     clientId: oci_golden_gate_client.test_client.id,
  *     clientSecret: _var.connection_client_secret,
+ *     connectionFactory: _var.connection_connection_factory,
  *     connectionString: _var.connection_connection_string,
+ *     connectionUrl: _var.connection_connection_url,
  *     consumerProperties: _var.connection_consumer_properties,
+ *     coreSiteXml: _var.connection_core_site_xml,
  *     databaseId: oci_database_database.test_database.id,
  *     databaseName: oci_database_database.test_database.name,
  *     dbSystemId: oci_database_db_system.test_db_system.id,
@@ -52,6 +56,11 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     host: _var.connection_host,
+ *     jndiConnectionFactory: _var.connection_jndi_connection_factory,
+ *     jndiInitialContextFactory: _var.connection_jndi_initial_context_factory,
+ *     jndiProviderUrl: _var.connection_jndi_provider_url,
+ *     jndiSecurityCredentials: _var.connection_jndi_security_credentials,
+ *     jndiSecurityPrincipal: _var.connection_jndi_security_principal,
  *     keyId: oci_kms_key.test_key.id,
  *     keyStore: _var.connection_key_store,
  *     keyStorePassword: _var.connection_key_store_password,
@@ -65,8 +74,11 @@ import * as utilities from "../utilities";
  *     publicKeyFingerprint: _var.connection_public_key_fingerprint,
  *     region: _var.connection_region,
  *     sasToken: _var.connection_sas_token,
+ *     secretAccessKey: _var.connection_secret_access_key,
  *     securityProtocol: _var.connection_security_protocol,
  *     sessionMode: _var.connection_session_mode,
+ *     shouldUseJndi: _var.connection_should_use_jndi,
+ *     shouldValidateServerCertificate: _var.connection_should_validate_server_certificate,
  *     sslCa: _var.connection_ssl_ca,
  *     sslCert: _var.connection_ssl_cert,
  *     sslCrl: _var.connection_ssl_crl,
@@ -123,6 +135,10 @@ export class Connection extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     */
+    public readonly accessKeyId!: pulumi.Output<string>;
+    /**
      * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      */
     public readonly accountKey!: pulumi.Output<string>;
@@ -135,7 +151,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly additionalAttributes!: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[]>;
     /**
-     * (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+     * (Updatable) Used authentication mechanism.
      */
     public readonly authenticationType!: pulumi.Output<string>;
     /**
@@ -159,7 +175,11 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+     * (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+     */
+    public readonly connectionFactory!: pulumi.Output<string>;
+    /**
+     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
      */
     public readonly connectionString!: pulumi.Output<string>;
     /**
@@ -167,9 +187,17 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly connectionType!: pulumi.Output<string>;
     /**
+     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     */
+    public readonly connectionUrl!: pulumi.Output<string>;
+    /**
      * (Updatable) The base64 encoded content of the consumer.properties file.
      */
     public readonly consumerProperties!: pulumi.Output<string>;
+    /**
+     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     */
+    public readonly coreSiteXml!: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
@@ -211,11 +239,31 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly host!: pulumi.Output<string>;
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
     public /*out*/ readonly ingressIps!: pulumi.Output<outputs.GoldenGate.ConnectionIngressIp[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+     */
+    public readonly jndiConnectionFactory!: pulumi.Output<string>;
+    /**
+     * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+     */
+    public readonly jndiInitialContextFactory!: pulumi.Output<string>;
+    /**
+     * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+     */
+    public readonly jndiProviderUrl!: pulumi.Output<string>;
+    /**
+     * (Updatable) The password associated to the principal.
+     */
+    public readonly jndiSecurityCredentials!: pulumi.Output<string>;
+    /**
+     * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+     */
+    public readonly jndiSecurityPrincipal!: pulumi.Output<string>;
+    /**
+     * (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
     public readonly keyId!: pulumi.Output<string>;
     /**
@@ -235,7 +283,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      */
     public readonly password!: pulumi.Output<string>;
     /**
@@ -247,11 +295,11 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly privateIp!: pulumi.Output<string>;
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of private key file in PEM format.
      */
     public readonly privateKeyFile!: pulumi.Output<string>;
     /**
-     * (Updatable) The passphrase of the private key.
+     * (Updatable) Password if the private key file is encrypted.
      */
     public readonly privateKeyPassphrase!: pulumi.Output<string>;
     /**
@@ -271,7 +319,11 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly sasToken!: pulumi.Output<string>;
     /**
-     * (Updatable) Security protocol for PostgreSQL.
+     * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     */
+    public readonly secretAccessKey!: pulumi.Output<string>;
+    /**
+     * (Updatable) Security Protocol.
      */
     public readonly securityProtocol!: pulumi.Output<string>;
     /**
@@ -279,7 +331,15 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly sessionMode!: pulumi.Output<string>;
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+     * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     */
+    public readonly shouldUseJndi!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+     */
+    public readonly shouldValidateServerCertificate!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      */
     public readonly sslCa!: pulumi.Output<string>;
     /**
@@ -347,15 +407,15 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly url!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      */
     public readonly userId!: pulumi.Output<string>;
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      */
     public readonly username!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
     public readonly vaultId!: pulumi.Output<string>;
     /**
@@ -376,6 +436,7 @@ export class Connection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionState | undefined;
+            resourceInputs["accessKeyId"] = state ? state.accessKeyId : undefined;
             resourceInputs["accountKey"] = state ? state.accountKey : undefined;
             resourceInputs["accountName"] = state ? state.accountName : undefined;
             resourceInputs["additionalAttributes"] = state ? state.additionalAttributes : undefined;
@@ -385,9 +446,12 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["clientId"] = state ? state.clientId : undefined;
             resourceInputs["clientSecret"] = state ? state.clientSecret : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["connectionFactory"] = state ? state.connectionFactory : undefined;
             resourceInputs["connectionString"] = state ? state.connectionString : undefined;
             resourceInputs["connectionType"] = state ? state.connectionType : undefined;
+            resourceInputs["connectionUrl"] = state ? state.connectionUrl : undefined;
             resourceInputs["consumerProperties"] = state ? state.consumerProperties : undefined;
+            resourceInputs["coreSiteXml"] = state ? state.coreSiteXml : undefined;
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["databaseName"] = state ? state.databaseName : undefined;
             resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
@@ -399,6 +463,11 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["host"] = state ? state.host : undefined;
             resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
+            resourceInputs["jndiConnectionFactory"] = state ? state.jndiConnectionFactory : undefined;
+            resourceInputs["jndiInitialContextFactory"] = state ? state.jndiInitialContextFactory : undefined;
+            resourceInputs["jndiProviderUrl"] = state ? state.jndiProviderUrl : undefined;
+            resourceInputs["jndiSecurityCredentials"] = state ? state.jndiSecurityCredentials : undefined;
+            resourceInputs["jndiSecurityPrincipal"] = state ? state.jndiSecurityPrincipal : undefined;
             resourceInputs["keyId"] = state ? state.keyId : undefined;
             resourceInputs["keyStore"] = state ? state.keyStore : undefined;
             resourceInputs["keyStorePassword"] = state ? state.keyStorePassword : undefined;
@@ -413,8 +482,11 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["publicKeyFingerprint"] = state ? state.publicKeyFingerprint : undefined;
             resourceInputs["region"] = state ? state.region : undefined;
             resourceInputs["sasToken"] = state ? state.sasToken : undefined;
+            resourceInputs["secretAccessKey"] = state ? state.secretAccessKey : undefined;
             resourceInputs["securityProtocol"] = state ? state.securityProtocol : undefined;
             resourceInputs["sessionMode"] = state ? state.sessionMode : undefined;
+            resourceInputs["shouldUseJndi"] = state ? state.shouldUseJndi : undefined;
+            resourceInputs["shouldValidateServerCertificate"] = state ? state.shouldValidateServerCertificate : undefined;
             resourceInputs["sslCa"] = state ? state.sslCa : undefined;
             resourceInputs["sslCert"] = state ? state.sslCert : undefined;
             resourceInputs["sslCrl"] = state ? state.sslCrl : undefined;
@@ -450,6 +522,7 @@ export class Connection extends pulumi.CustomResource {
             if ((!args || args.technologyType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'technologyType'");
             }
+            resourceInputs["accessKeyId"] = args ? args.accessKeyId : undefined;
             resourceInputs["accountKey"] = args ? args.accountKey : undefined;
             resourceInputs["accountName"] = args ? args.accountName : undefined;
             resourceInputs["additionalAttributes"] = args ? args.additionalAttributes : undefined;
@@ -459,9 +532,12 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["clientId"] = args ? args.clientId : undefined;
             resourceInputs["clientSecret"] = args ? args.clientSecret : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["connectionFactory"] = args ? args.connectionFactory : undefined;
             resourceInputs["connectionString"] = args ? args.connectionString : undefined;
             resourceInputs["connectionType"] = args ? args.connectionType : undefined;
+            resourceInputs["connectionUrl"] = args ? args.connectionUrl : undefined;
             resourceInputs["consumerProperties"] = args ? args.consumerProperties : undefined;
+            resourceInputs["coreSiteXml"] = args ? args.coreSiteXml : undefined;
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
             resourceInputs["databaseName"] = args ? args.databaseName : undefined;
             resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
@@ -472,6 +548,11 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["endpoint"] = args ? args.endpoint : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["jndiConnectionFactory"] = args ? args.jndiConnectionFactory : undefined;
+            resourceInputs["jndiInitialContextFactory"] = args ? args.jndiInitialContextFactory : undefined;
+            resourceInputs["jndiProviderUrl"] = args ? args.jndiProviderUrl : undefined;
+            resourceInputs["jndiSecurityCredentials"] = args ? args.jndiSecurityCredentials : undefined;
+            resourceInputs["jndiSecurityPrincipal"] = args ? args.jndiSecurityPrincipal : undefined;
             resourceInputs["keyId"] = args ? args.keyId : undefined;
             resourceInputs["keyStore"] = args ? args.keyStore : undefined;
             resourceInputs["keyStorePassword"] = args?.keyStorePassword ? pulumi.secret(args.keyStorePassword) : undefined;
@@ -485,8 +566,11 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["publicKeyFingerprint"] = args ? args.publicKeyFingerprint : undefined;
             resourceInputs["region"] = args ? args.region : undefined;
             resourceInputs["sasToken"] = args ? args.sasToken : undefined;
+            resourceInputs["secretAccessKey"] = args ? args.secretAccessKey : undefined;
             resourceInputs["securityProtocol"] = args ? args.securityProtocol : undefined;
             resourceInputs["sessionMode"] = args ? args.sessionMode : undefined;
+            resourceInputs["shouldUseJndi"] = args ? args.shouldUseJndi : undefined;
+            resourceInputs["shouldValidateServerCertificate"] = args ? args.shouldValidateServerCertificate : undefined;
             resourceInputs["sslCa"] = args ? args.sslCa : undefined;
             resourceInputs["sslCert"] = args ? args.sslCert : undefined;
             resourceInputs["sslCrl"] = args ? args.sslCrl : undefined;
@@ -523,6 +607,10 @@ export class Connection extends pulumi.CustomResource {
  */
 export interface ConnectionState {
     /**
+     * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     */
+    accessKeyId?: pulumi.Input<string>;
+    /**
      * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      */
     accountKey?: pulumi.Input<string>;
@@ -535,7 +623,7 @@ export interface ConnectionState {
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[]>;
     /**
-     * (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+     * (Updatable) Used authentication mechanism.
      */
     authenticationType?: pulumi.Input<string>;
     /**
@@ -559,7 +647,11 @@ export interface ConnectionState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+     * (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+     */
+    connectionFactory?: pulumi.Input<string>;
+    /**
+     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
      */
     connectionString?: pulumi.Input<string>;
     /**
@@ -567,9 +659,17 @@ export interface ConnectionState {
      */
     connectionType?: pulumi.Input<string>;
     /**
+     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     */
+    connectionUrl?: pulumi.Input<string>;
+    /**
      * (Updatable) The base64 encoded content of the consumer.properties file.
      */
     consumerProperties?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     */
+    coreSiteXml?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
@@ -611,11 +711,31 @@ export interface ConnectionState {
      */
     host?: pulumi.Input<string>;
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
     ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionIngressIp>[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+     */
+    jndiConnectionFactory?: pulumi.Input<string>;
+    /**
+     * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+     */
+    jndiInitialContextFactory?: pulumi.Input<string>;
+    /**
+     * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+     */
+    jndiProviderUrl?: pulumi.Input<string>;
+    /**
+     * (Updatable) The password associated to the principal.
+     */
+    jndiSecurityCredentials?: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+     */
+    jndiSecurityPrincipal?: pulumi.Input<string>;
+    /**
+     * (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
     keyId?: pulumi.Input<string>;
     /**
@@ -635,7 +755,7 @@ export interface ConnectionState {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      */
     password?: pulumi.Input<string>;
     /**
@@ -647,11 +767,11 @@ export interface ConnectionState {
      */
     privateIp?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of private key file in PEM format.
      */
     privateKeyFile?: pulumi.Input<string>;
     /**
-     * (Updatable) The passphrase of the private key.
+     * (Updatable) Password if the private key file is encrypted.
      */
     privateKeyPassphrase?: pulumi.Input<string>;
     /**
@@ -671,7 +791,11 @@ export interface ConnectionState {
      */
     sasToken?: pulumi.Input<string>;
     /**
-     * (Updatable) Security protocol for PostgreSQL.
+     * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     */
+    secretAccessKey?: pulumi.Input<string>;
+    /**
+     * (Updatable) Security Protocol.
      */
     securityProtocol?: pulumi.Input<string>;
     /**
@@ -679,7 +803,15 @@ export interface ConnectionState {
      */
     sessionMode?: pulumi.Input<string>;
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+     * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     */
+    shouldUseJndi?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+     */
+    shouldValidateServerCertificate?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      */
     sslCa?: pulumi.Input<string>;
     /**
@@ -747,15 +879,15 @@ export interface ConnectionState {
      */
     url?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      */
     userId?: pulumi.Input<string>;
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      */
     username?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
     vaultId?: pulumi.Input<string>;
     /**
@@ -769,6 +901,10 @@ export interface ConnectionState {
  */
 export interface ConnectionArgs {
     /**
+     * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     */
+    accessKeyId?: pulumi.Input<string>;
+    /**
      * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      */
     accountKey?: pulumi.Input<string>;
@@ -781,7 +917,7 @@ export interface ConnectionArgs {
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[]>;
     /**
-     * (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+     * (Updatable) Used authentication mechanism.
      */
     authenticationType?: pulumi.Input<string>;
     /**
@@ -805,7 +941,11 @@ export interface ConnectionArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+     * (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+     */
+    connectionFactory?: pulumi.Input<string>;
+    /**
+     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
      */
     connectionString?: pulumi.Input<string>;
     /**
@@ -813,9 +953,17 @@ export interface ConnectionArgs {
      */
     connectionType: pulumi.Input<string>;
     /**
+     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     */
+    connectionUrl?: pulumi.Input<string>;
+    /**
      * (Updatable) The base64 encoded content of the consumer.properties file.
      */
     consumerProperties?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     */
+    coreSiteXml?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
@@ -857,7 +1005,27 @@ export interface ConnectionArgs {
      */
     host?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+     */
+    jndiConnectionFactory?: pulumi.Input<string>;
+    /**
+     * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+     */
+    jndiInitialContextFactory?: pulumi.Input<string>;
+    /**
+     * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+     */
+    jndiProviderUrl?: pulumi.Input<string>;
+    /**
+     * (Updatable) The password associated to the principal.
+     */
+    jndiSecurityCredentials?: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+     */
+    jndiSecurityPrincipal?: pulumi.Input<string>;
+    /**
+     * (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
     keyId?: pulumi.Input<string>;
     /**
@@ -873,7 +1041,7 @@ export interface ConnectionArgs {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      */
     password?: pulumi.Input<string>;
     /**
@@ -885,11 +1053,11 @@ export interface ConnectionArgs {
      */
     privateIp?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of private key file in PEM format.
      */
     privateKeyFile?: pulumi.Input<string>;
     /**
-     * (Updatable) The passphrase of the private key.
+     * (Updatable) Password if the private key file is encrypted.
      */
     privateKeyPassphrase?: pulumi.Input<string>;
     /**
@@ -909,7 +1077,11 @@ export interface ConnectionArgs {
      */
     sasToken?: pulumi.Input<string>;
     /**
-     * (Updatable) Security protocol for PostgreSQL.
+     * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     */
+    secretAccessKey?: pulumi.Input<string>;
+    /**
+     * (Updatable) Security Protocol.
      */
     securityProtocol?: pulumi.Input<string>;
     /**
@@ -917,7 +1089,15 @@ export interface ConnectionArgs {
      */
     sessionMode?: pulumi.Input<string>;
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+     * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     */
+    shouldUseJndi?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+     */
+    shouldValidateServerCertificate?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      */
     sslCa?: pulumi.Input<string>;
     /**
@@ -969,15 +1149,15 @@ export interface ConnectionArgs {
      */
     url?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      */
     userId?: pulumi.Input<string>;
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      */
     username?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
     vaultId?: pulumi.Input<string>;
     /**

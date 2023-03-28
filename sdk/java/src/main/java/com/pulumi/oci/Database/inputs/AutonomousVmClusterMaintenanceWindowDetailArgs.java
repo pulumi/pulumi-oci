@@ -103,9 +103,17 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
         return Optional.ofNullable(this.months);
     }
 
+    /**
+     * (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     */
     @Import(name="patchingMode")
     private @Nullable Output<String> patchingMode;
 
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     */
     public Optional<Output<String>> patchingMode() {
         return Optional.ofNullable(this.patchingMode);
     }
@@ -114,15 +122,15 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
      * (Updatable) The maintenance window scheduling preference.
      * 
      */
-    @Import(name="preference", required=true)
-    private Output<String> preference;
+    @Import(name="preference")
+    private @Nullable Output<String> preference;
 
     /**
      * @return (Updatable) The maintenance window scheduling preference.
      * 
      */
-    public Output<String> preference() {
-        return this.preference;
+    public Optional<Output<String>> preference() {
+        return Optional.ofNullable(this.preference);
     }
 
     /**
@@ -317,11 +325,23 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
             return months(List.of(months));
         }
 
+        /**
+         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingMode(@Nullable Output<String> patchingMode) {
             $.patchingMode = patchingMode;
             return this;
         }
 
+        /**
+         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingMode(String patchingMode) {
             return patchingMode(Output.of(patchingMode));
         }
@@ -332,7 +352,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder preference(Output<String> preference) {
+        public Builder preference(@Nullable Output<String> preference) {
             $.preference = preference;
             return this;
         }
@@ -379,7 +399,6 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
         }
 
         public AutonomousVmClusterMaintenanceWindowDetailArgs build() {
-            $.preference = Objects.requireNonNull($.preference, "expected parameter 'preference' to be non-null");
             return $;
         }
     }

@@ -53,6 +53,16 @@ import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefre
 import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshsPlainArgs;
 import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsArgs;
 import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingVersionPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+import com.pulumi.oci.Functions.inputs.GetPbfListingsPlainArgs;
 import com.pulumi.oci.Functions.outputs.GetApplicationResult;
 import com.pulumi.oci.Functions.outputs.GetApplicationsResult;
 import com.pulumi.oci.Functions.outputs.GetFunctionResult;
@@ -76,6 +86,11 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentStatusResult;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentTimeAvailableForRefreshResult;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentTimeAvailableForRefreshsResult;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsResult;
+import com.pulumi.oci.Functions.outputs.GetPbfListingResult;
+import com.pulumi.oci.Functions.outputs.GetPbfListingTriggersResult;
+import com.pulumi.oci.Functions.outputs.GetPbfListingVersionResult;
+import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsResult;
+import com.pulumi.oci.Functions.outputs.GetPbfListingsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -3783,5 +3798,1009 @@ public final class FunctionsFunctions {
      */
     public static CompletableFuture<GetFusionEnvironmentsResult> getFusionEnvironmentsPlain(GetFusionEnvironmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironments:getFusionEnvironments", TypeShape.of(GetFusionEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingResult> getPbfListing(GetPbfListingArgs args) {
+        return getPbfListing(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingResult> getPbfListingPlain(GetPbfListingPlainArgs args) {
+        return getPbfListingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingResult> getPbfListing(GetPbfListingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListing:getPbfListing", TypeShape.of(GetPbfListingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingResult> getPbfListingPlain(GetPbfListingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getPbfListing:getPbfListing", TypeShape.of(GetPbfListingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Returns a list of Triggers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
+     *             .name(var_.pbf_listing_trigger_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingTriggersResult> getPbfListingTriggers() {
+        return getPbfListingTriggers(GetPbfListingTriggersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Returns a list of Triggers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
+     *             .name(var_.pbf_listing_trigger_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingTriggersResult> getPbfListingTriggersPlain() {
+        return getPbfListingTriggersPlain(GetPbfListingTriggersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Returns a list of Triggers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
+     *             .name(var_.pbf_listing_trigger_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingTriggersResult> getPbfListingTriggers(GetPbfListingTriggersArgs args) {
+        return getPbfListingTriggers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Returns a list of Triggers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
+     *             .name(var_.pbf_listing_trigger_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingTriggersResult> getPbfListingTriggersPlain(GetPbfListingTriggersPlainArgs args) {
+        return getPbfListingTriggersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Returns a list of Triggers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
+     *             .name(var_.pbf_listing_trigger_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingTriggersResult> getPbfListingTriggers(GetPbfListingTriggersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", TypeShape.of(GetPbfListingTriggersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Returns a list of Triggers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
+     *             .name(var_.pbf_listing_trigger_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingTriggersResult> getPbfListingTriggersPlain(GetPbfListingTriggersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", TypeShape.of(GetPbfListingTriggersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Gets a PbfListingVersion by identifier for a PbfListing.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingVersionResult> getPbfListingVersion(GetPbfListingVersionArgs args) {
+        return getPbfListingVersion(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Gets a PbfListingVersion by identifier for a PbfListing.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingVersionResult> getPbfListingVersionPlain(GetPbfListingVersionPlainArgs args) {
+        return getPbfListingVersionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Gets a PbfListingVersion by identifier for a PbfListing.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingVersionResult> getPbfListingVersion(GetPbfListingVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListingVersion:getPbfListingVersion", TypeShape.of(GetPbfListingVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Gets a PbfListingVersion by identifier for a PbfListing.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingVersionResult> getPbfListingVersionPlain(GetPbfListingVersionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getPbfListingVersion:getPbfListingVersion", TypeShape.of(GetPbfListingVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
+     * containing an array of PbfListingVersionSummary response models.
+     * 
+     * Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
+     * be thrown.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
+     *             .name(var_.pbf_listing_version_name())
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .state(var_.pbf_listing_version_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingVersionsResult> getPbfListingVersions(GetPbfListingVersionsArgs args) {
+        return getPbfListingVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
+     * containing an array of PbfListingVersionSummary response models.
+     * 
+     * Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
+     * be thrown.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
+     *             .name(var_.pbf_listing_version_name())
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .state(var_.pbf_listing_version_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingVersionsResult> getPbfListingVersionsPlain(GetPbfListingVersionsPlainArgs args) {
+        return getPbfListingVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
+     * containing an array of PbfListingVersionSummary response models.
+     * 
+     * Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
+     * be thrown.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
+     *             .name(var_.pbf_listing_version_name())
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .state(var_.pbf_listing_version_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingVersionsResult> getPbfListingVersions(GetPbfListingVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListingVersions:getPbfListingVersions", TypeShape.of(GetPbfListingVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
+     * containing an array of PbfListingVersionSummary response models.
+     * 
+     * Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
+     * be thrown.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
+     *             .name(var_.pbf_listing_version_name())
+     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .state(var_.pbf_listing_version_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingVersionsResult> getPbfListingVersionsPlain(GetPbfListingVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getPbfListingVersions:getPbfListingVersions", TypeShape.of(GetPbfListingVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
+     *             .name(var_.pbf_listing_name())
+     *             .nameContains(var_.pbf_listing_name_contains())
+     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .state(var_.pbf_listing_state())
+     *             .triggers(var_.pbf_listing_trigger())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingsResult> getPbfListings() {
+        return getPbfListings(GetPbfListingsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
+     *             .name(var_.pbf_listing_name())
+     *             .nameContains(var_.pbf_listing_name_contains())
+     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .state(var_.pbf_listing_state())
+     *             .triggers(var_.pbf_listing_trigger())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingsResult> getPbfListingsPlain() {
+        return getPbfListingsPlain(GetPbfListingsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
+     *             .name(var_.pbf_listing_name())
+     *             .nameContains(var_.pbf_listing_name_contains())
+     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .state(var_.pbf_listing_state())
+     *             .triggers(var_.pbf_listing_trigger())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingsResult> getPbfListings(GetPbfListingsArgs args) {
+        return getPbfListings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
+     *             .name(var_.pbf_listing_name())
+     *             .nameContains(var_.pbf_listing_name_contains())
+     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .state(var_.pbf_listing_state())
+     *             .triggers(var_.pbf_listing_trigger())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingsResult> getPbfListingsPlain(GetPbfListingsPlainArgs args) {
+        return getPbfListingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
+     *             .name(var_.pbf_listing_name())
+     *             .nameContains(var_.pbf_listing_name_contains())
+     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .state(var_.pbf_listing_state())
+     *             .triggers(var_.pbf_listing_trigger())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPbfListingsResult> getPbfListings(GetPbfListingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListings:getPbfListings", TypeShape.of(GetPbfListingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
+     *             .name(var_.pbf_listing_name())
+     *             .nameContains(var_.pbf_listing_name_contains())
+     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
+     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .state(var_.pbf_listing_state())
+     *             .triggers(var_.pbf_listing_trigger())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPbfListingsResult> getPbfListingsPlain(GetPbfListingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getPbfListings:getPbfListings", TypeShape.of(GetPbfListingsResult.class), args, Utilities.withVersion(options));
     }
 }

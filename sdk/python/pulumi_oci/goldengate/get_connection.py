@@ -22,7 +22,10 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, account_key=None, account_name=None, additional_attributes=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_id=None, connection_string=None, connection_type=None, consumer_properties=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, region=None, sas_token=None, security_protocol=None, session_mode=None, ssl_ca=None, ssl_cert=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, region=None, sas_token=None, secret_access_key=None, security_protocol=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
+        if access_key_id and not isinstance(access_key_id, str):
+            raise TypeError("Expected argument 'access_key_id' to be a str")
+        pulumi.set(__self__, "access_key_id", access_key_id)
         if account_key and not isinstance(account_key, str):
             raise TypeError("Expected argument 'account_key' to be a str")
         pulumi.set(__self__, "account_key", account_key)
@@ -50,6 +53,9 @@ class GetConnectionResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_factory and not isinstance(connection_factory, str):
+            raise TypeError("Expected argument 'connection_factory' to be a str")
+        pulumi.set(__self__, "connection_factory", connection_factory)
         if connection_id and not isinstance(connection_id, str):
             raise TypeError("Expected argument 'connection_id' to be a str")
         pulumi.set(__self__, "connection_id", connection_id)
@@ -59,9 +65,15 @@ class GetConnectionResult:
         if connection_type and not isinstance(connection_type, str):
             raise TypeError("Expected argument 'connection_type' to be a str")
         pulumi.set(__self__, "connection_type", connection_type)
+        if connection_url and not isinstance(connection_url, str):
+            raise TypeError("Expected argument 'connection_url' to be a str")
+        pulumi.set(__self__, "connection_url", connection_url)
         if consumer_properties and not isinstance(consumer_properties, str):
             raise TypeError("Expected argument 'consumer_properties' to be a str")
         pulumi.set(__self__, "consumer_properties", consumer_properties)
+        if core_site_xml and not isinstance(core_site_xml, str):
+            raise TypeError("Expected argument 'core_site_xml' to be a str")
+        pulumi.set(__self__, "core_site_xml", core_site_xml)
         if database_id and not isinstance(database_id, str):
             raise TypeError("Expected argument 'database_id' to be a str")
         pulumi.set(__self__, "database_id", database_id)
@@ -98,6 +110,21 @@ class GetConnectionResult:
         if ingress_ips and not isinstance(ingress_ips, list):
             raise TypeError("Expected argument 'ingress_ips' to be a list")
         pulumi.set(__self__, "ingress_ips", ingress_ips)
+        if jndi_connection_factory and not isinstance(jndi_connection_factory, str):
+            raise TypeError("Expected argument 'jndi_connection_factory' to be a str")
+        pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+        if jndi_initial_context_factory and not isinstance(jndi_initial_context_factory, str):
+            raise TypeError("Expected argument 'jndi_initial_context_factory' to be a str")
+        pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+        if jndi_provider_url and not isinstance(jndi_provider_url, str):
+            raise TypeError("Expected argument 'jndi_provider_url' to be a str")
+        pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+        if jndi_security_credentials and not isinstance(jndi_security_credentials, str):
+            raise TypeError("Expected argument 'jndi_security_credentials' to be a str")
+        pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        if jndi_security_principal and not isinstance(jndi_security_principal, str):
+            raise TypeError("Expected argument 'jndi_security_principal' to be a str")
+        pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
         if key_id and not isinstance(key_id, str):
             raise TypeError("Expected argument 'key_id' to be a str")
         pulumi.set(__self__, "key_id", key_id)
@@ -140,12 +167,21 @@ class GetConnectionResult:
         if sas_token and not isinstance(sas_token, str):
             raise TypeError("Expected argument 'sas_token' to be a str")
         pulumi.set(__self__, "sas_token", sas_token)
+        if secret_access_key and not isinstance(secret_access_key, str):
+            raise TypeError("Expected argument 'secret_access_key' to be a str")
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
         if security_protocol and not isinstance(security_protocol, str):
             raise TypeError("Expected argument 'security_protocol' to be a str")
         pulumi.set(__self__, "security_protocol", security_protocol)
         if session_mode and not isinstance(session_mode, str):
             raise TypeError("Expected argument 'session_mode' to be a str")
         pulumi.set(__self__, "session_mode", session_mode)
+        if should_use_jndi and not isinstance(should_use_jndi, bool):
+            raise TypeError("Expected argument 'should_use_jndi' to be a bool")
+        pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        if should_validate_server_certificate and not isinstance(should_validate_server_certificate, bool):
+            raise TypeError("Expected argument 'should_validate_server_certificate' to be a bool")
+        pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         if ssl_ca and not isinstance(ssl_ca, str):
             raise TypeError("Expected argument 'ssl_ca' to be a str")
         pulumi.set(__self__, "ssl_ca", ssl_ca)
@@ -209,6 +245,14 @@ class GetConnectionResult:
         if wallet and not isinstance(wallet, str):
             raise TypeError("Expected argument 'wallet' to be a str")
         pulumi.set(__self__, "wallet", wallet)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> str:
+        """
+        Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        """
+        return pulumi.get(self, "access_key_id")
 
     @property
     @pulumi.getter(name="accountKey")
@@ -277,6 +321,14 @@ class GetConnectionResult:
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="connectionFactory")
+    def connection_factory(self) -> str:
+        """
+        The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+        """
+        return pulumi.get(self, "connection_factory")
+
+    @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> str:
         return pulumi.get(self, "connection_id")
@@ -285,7 +337,7 @@ class GetConnectionResult:
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> str:
         """
-        JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         """
         return pulumi.get(self, "connection_string")
 
@@ -298,9 +350,22 @@ class GetConnectionResult:
         return pulumi.get(self, "connection_type")
 
     @property
+    @pulumi.getter(name="connectionUrl")
+    def connection_url(self) -> str:
+        """
+        JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        """
+        return pulumi.get(self, "connection_url")
+
+    @property
     @pulumi.getter(name="consumerProperties")
     def consumer_properties(self) -> str:
         return pulumi.get(self, "consumer_properties")
+
+    @property
+    @pulumi.getter(name="coreSiteXml")
+    def core_site_xml(self) -> str:
+        return pulumi.get(self, "core_site_xml")
 
     @property
     @pulumi.getter(name="databaseId")
@@ -394,15 +459,52 @@ class GetConnectionResult:
     @pulumi.getter(name="ingressIps")
     def ingress_ips(self) -> Sequence['outputs.GetConnectionIngressIpResult']:
         """
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         """
         return pulumi.get(self, "ingress_ips")
+
+    @property
+    @pulumi.getter(name="jndiConnectionFactory")
+    def jndi_connection_factory(self) -> str:
+        """
+        The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+        """
+        return pulumi.get(self, "jndi_connection_factory")
+
+    @property
+    @pulumi.getter(name="jndiInitialContextFactory")
+    def jndi_initial_context_factory(self) -> str:
+        """
+        The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+        """
+        return pulumi.get(self, "jndi_initial_context_factory")
+
+    @property
+    @pulumi.getter(name="jndiProviderUrl")
+    def jndi_provider_url(self) -> str:
+        """
+        The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        """
+        return pulumi.get(self, "jndi_provider_url")
+
+    @property
+    @pulumi.getter(name="jndiSecurityCredentials")
+    def jndi_security_credentials(self) -> str:
+        return pulumi.get(self, "jndi_security_credentials")
+
+    @property
+    @pulumi.getter(name="jndiSecurityPrincipal")
+    def jndi_security_principal(self) -> str:
+        """
+        Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+        """
+        return pulumi.get(self, "jndi_security_principal")
 
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
@@ -487,10 +589,15 @@ class GetConnectionResult:
         return pulumi.get(self, "sas_token")
 
     @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> str:
+        return pulumi.get(self, "secret_access_key")
+
+    @property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> str:
         """
-        Security protocol for PostgreSQL.
+        Security Protocol for Microsoft SQL Server/PostgreSQL.
         """
         return pulumi.get(self, "security_protocol")
 
@@ -503,8 +610,27 @@ class GetConnectionResult:
         return pulumi.get(self, "session_mode")
 
     @property
+    @pulumi.getter(name="shouldUseJndi")
+    def should_use_jndi(self) -> bool:
+        """
+        If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        """
+        return pulumi.get(self, "should_use_jndi")
+
+    @property
+    @pulumi.getter(name="shouldValidateServerCertificate")
+    def should_validate_server_certificate(self) -> bool:
+        """
+        If set to true, the driver validates the certificate that is sent by the database server.
+        """
+        return pulumi.get(self, "should_validate_server_certificate")
+
+    @property
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> str:
+        """
+        Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        """
         return pulumi.get(self, "ssl_ca")
 
     @property
@@ -621,7 +747,7 @@ class GetConnectionResult:
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
         """
         return pulumi.get(self, "user_id")
 
@@ -629,7 +755,7 @@ class GetConnectionResult:
     @pulumi.getter
     def username(self) -> str:
         """
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         """
         return pulumi.get(self, "username")
 
@@ -637,7 +763,7 @@ class GetConnectionResult:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 
@@ -653,6 +779,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
         if False:
             yield self
         return GetConnectionResult(
+            access_key_id=self.access_key_id,
             account_key=self.account_key,
             account_name=self.account_name,
             additional_attributes=self.additional_attributes,
@@ -662,10 +789,13 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             client_id=self.client_id,
             client_secret=self.client_secret,
             compartment_id=self.compartment_id,
+            connection_factory=self.connection_factory,
             connection_id=self.connection_id,
             connection_string=self.connection_string,
             connection_type=self.connection_type,
+            connection_url=self.connection_url,
             consumer_properties=self.consumer_properties,
+            core_site_xml=self.core_site_xml,
             database_id=self.database_id,
             database_name=self.database_name,
             db_system_id=self.db_system_id,
@@ -678,6 +808,11 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             host=self.host,
             id=self.id,
             ingress_ips=self.ingress_ips,
+            jndi_connection_factory=self.jndi_connection_factory,
+            jndi_initial_context_factory=self.jndi_initial_context_factory,
+            jndi_provider_url=self.jndi_provider_url,
+            jndi_security_credentials=self.jndi_security_credentials,
+            jndi_security_principal=self.jndi_security_principal,
             key_id=self.key_id,
             key_store=self.key_store,
             key_store_password=self.key_store_password,
@@ -692,8 +827,11 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             public_key_fingerprint=self.public_key_fingerprint,
             region=self.region,
             sas_token=self.sas_token,
+            secret_access_key=self.secret_access_key,
             security_protocol=self.security_protocol,
             session_mode=self.session_mode,
+            should_use_jndi=self.should_use_jndi,
+            should_validate_server_certificate=self.should_validate_server_certificate,
             ssl_ca=self.ssl_ca,
             ssl_cert=self.ssl_cert,
             ssl_crl=self.ssl_crl,
@@ -742,6 +880,7 @@ def get_connection(connection_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getConnection:getConnection', __args__, opts=opts, typ=GetConnectionResult).value
 
     return AwaitableGetConnectionResult(
+        access_key_id=__ret__.access_key_id,
         account_key=__ret__.account_key,
         account_name=__ret__.account_name,
         additional_attributes=__ret__.additional_attributes,
@@ -751,10 +890,13 @@ def get_connection(connection_id: Optional[str] = None,
         client_id=__ret__.client_id,
         client_secret=__ret__.client_secret,
         compartment_id=__ret__.compartment_id,
+        connection_factory=__ret__.connection_factory,
         connection_id=__ret__.connection_id,
         connection_string=__ret__.connection_string,
         connection_type=__ret__.connection_type,
+        connection_url=__ret__.connection_url,
         consumer_properties=__ret__.consumer_properties,
+        core_site_xml=__ret__.core_site_xml,
         database_id=__ret__.database_id,
         database_name=__ret__.database_name,
         db_system_id=__ret__.db_system_id,
@@ -767,6 +909,11 @@ def get_connection(connection_id: Optional[str] = None,
         host=__ret__.host,
         id=__ret__.id,
         ingress_ips=__ret__.ingress_ips,
+        jndi_connection_factory=__ret__.jndi_connection_factory,
+        jndi_initial_context_factory=__ret__.jndi_initial_context_factory,
+        jndi_provider_url=__ret__.jndi_provider_url,
+        jndi_security_credentials=__ret__.jndi_security_credentials,
+        jndi_security_principal=__ret__.jndi_security_principal,
         key_id=__ret__.key_id,
         key_store=__ret__.key_store,
         key_store_password=__ret__.key_store_password,
@@ -781,8 +928,11 @@ def get_connection(connection_id: Optional[str] = None,
         public_key_fingerprint=__ret__.public_key_fingerprint,
         region=__ret__.region,
         sas_token=__ret__.sas_token,
+        secret_access_key=__ret__.secret_access_key,
         security_protocol=__ret__.security_protocol,
         session_mode=__ret__.session_mode,
+        should_use_jndi=__ret__.should_use_jndi,
+        should_validate_server_certificate=__ret__.should_validate_server_certificate,
         ssl_ca=__ret__.ssl_ca,
         ssl_cert=__ret__.ssl_cert,
         ssl_crl=__ret__.ssl_crl,

@@ -58,6 +58,8 @@ type AutonomousDatabaseBackup struct {
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	AutonomousDatabaseId pulumi.StringOutput `pulumi:"autonomousDatabaseId"`
+	// Backup destination details
+	BackupDestinationDetails AutonomousDatabaseBackupBackupDestinationDetailsOutput `pulumi:"backupDestinationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
@@ -134,6 +136,8 @@ func GetAutonomousDatabaseBackup(ctx *pulumi.Context,
 type autonomousDatabaseBackupState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
+	// Backup destination details
+	BackupDestinationDetails *AutonomousDatabaseBackupBackupDestinationDetails `pulumi:"backupDestinationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
@@ -179,6 +183,8 @@ type autonomousDatabaseBackupState struct {
 type AutonomousDatabaseBackupState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	AutonomousDatabaseId pulumi.StringPtrInput
+	// Backup destination details
+	BackupDestinationDetails AutonomousDatabaseBackupBackupDestinationDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// The size of the database in terabytes at the time the backup was taken.
@@ -228,6 +234,8 @@ func (AutonomousDatabaseBackupState) ElementType() reflect.Type {
 type autonomousDatabaseBackupArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// Backup destination details
+	BackupDestinationDetails *AutonomousDatabaseBackupBackupDestinationDetails `pulumi:"backupDestinationDetails"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// Indicates whether the backup is long-term
@@ -240,6 +248,8 @@ type autonomousDatabaseBackupArgs struct {
 type AutonomousDatabaseBackupArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 	AutonomousDatabaseId pulumi.StringInput
+	// Backup destination details
+	BackupDestinationDetails AutonomousDatabaseBackupBackupDestinationDetailsPtrInput
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// Indicates whether the backup is long-term
@@ -338,6 +348,13 @@ func (o AutonomousDatabaseBackupOutput) ToAutonomousDatabaseBackupOutputWithCont
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
 func (o AutonomousDatabaseBackupOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// Backup destination details
+func (o AutonomousDatabaseBackupOutput) BackupDestinationDetails() AutonomousDatabaseBackupBackupDestinationDetailsOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseBackup) AutonomousDatabaseBackupBackupDestinationDetailsOutput {
+		return v.BackupDestinationDetails
+	}).(AutonomousDatabaseBackupBackupDestinationDetailsOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

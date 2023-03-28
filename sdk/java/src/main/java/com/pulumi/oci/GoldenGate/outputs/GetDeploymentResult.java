@@ -44,7 +44,7 @@ public final class GetDeploymentResult {
     private List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas;
     private String deploymentId;
     /**
-     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
     private String deploymentType;
@@ -234,7 +234,7 @@ public final class GetDeploymentResult {
         return this.deploymentId;
     }
     /**
-     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
     public String deploymentType() {

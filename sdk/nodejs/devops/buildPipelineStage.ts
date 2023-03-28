@@ -25,6 +25,11 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     buildPipelineStageType: _var.build_pipeline_stage_build_pipeline_stage_type,
+ *     buildRunnerShapeConfig: {
+ *         buildRunnerType: _var.build_pipeline_stage_build_runner_shape_config_build_runner_type,
+ *         memoryInGbs: _var.build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
+ *         ocpus: _var.build_pipeline_stage_build_runner_shape_config_ocpus,
+ *     },
  *     buildSourceCollection: {
  *         items: [{
  *             connectionType: _var.build_pipeline_stage_build_source_collection_items_connection_type,
@@ -115,6 +120,10 @@ export class BuildPipelineStage extends pulumi.CustomResource {
      * (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      */
     public readonly buildPipelineStageType!: pulumi.Output<string>;
+    /**
+     * (Updatable) The information about build runner.
+     */
+    public readonly buildRunnerShapeConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
     /**
      * (Updatable) Collection of build sources.
      */
@@ -216,6 +225,7 @@ export class BuildPipelineStage extends pulumi.CustomResource {
             resourceInputs["buildPipelineId"] = state ? state.buildPipelineId : undefined;
             resourceInputs["buildPipelineStagePredecessorCollection"] = state ? state.buildPipelineStagePredecessorCollection : undefined;
             resourceInputs["buildPipelineStageType"] = state ? state.buildPipelineStageType : undefined;
+            resourceInputs["buildRunnerShapeConfig"] = state ? state.buildRunnerShapeConfig : undefined;
             resourceInputs["buildSourceCollection"] = state ? state.buildSourceCollection : undefined;
             resourceInputs["buildSpecFile"] = state ? state.buildSpecFile : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -251,6 +261,7 @@ export class BuildPipelineStage extends pulumi.CustomResource {
             resourceInputs["buildPipelineId"] = args ? args.buildPipelineId : undefined;
             resourceInputs["buildPipelineStagePredecessorCollection"] = args ? args.buildPipelineStagePredecessorCollection : undefined;
             resourceInputs["buildPipelineStageType"] = args ? args.buildPipelineStageType : undefined;
+            resourceInputs["buildRunnerShapeConfig"] = args ? args.buildRunnerShapeConfig : undefined;
             resourceInputs["buildSourceCollection"] = args ? args.buildSourceCollection : undefined;
             resourceInputs["buildSpecFile"] = args ? args.buildSpecFile : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -294,6 +305,10 @@ export interface BuildPipelineStageState {
      * (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      */
     buildPipelineStageType?: pulumi.Input<string>;
+    /**
+     * (Updatable) The information about build runner.
+     */
+    buildRunnerShapeConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
     /**
      * (Updatable) Collection of build sources.
      */
@@ -396,6 +411,10 @@ export interface BuildPipelineStageArgs {
      * (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      */
     buildPipelineStageType: pulumi.Input<string>;
+    /**
+     * (Updatable) The information about build runner.
+     */
+    buildRunnerShapeConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
     /**
      * (Updatable) Collection of build sources.
      */

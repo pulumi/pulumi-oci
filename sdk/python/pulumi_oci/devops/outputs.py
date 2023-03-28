@@ -15,6 +15,7 @@ __all__ = [
     'BuildPipelineBuildPipelineParametersItem',
     'BuildPipelineStageBuildPipelineStagePredecessorCollection',
     'BuildPipelineStageBuildPipelineStagePredecessorCollectionItem',
+    'BuildPipelineStageBuildRunnerShapeConfig',
     'BuildPipelineStageBuildSourceCollection',
     'BuildPipelineStageBuildSourceCollectionItem',
     'BuildPipelineStageDeliverArtifactCollection',
@@ -107,6 +108,7 @@ __all__ = [
     'GetBuildPipelineBuildPipelineParameterItemResult',
     'GetBuildPipelineStageBuildPipelineStagePredecessorCollectionResult',
     'GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult',
+    'GetBuildPipelineStageBuildRunnerShapeConfigResult',
     'GetBuildPipelineStageBuildSourceCollectionResult',
     'GetBuildPipelineStageBuildSourceCollectionItemResult',
     'GetBuildPipelineStageDeliverArtifactCollectionResult',
@@ -117,6 +119,7 @@ __all__ = [
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemResult',
+    'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult',
@@ -382,19 +385,26 @@ class BuildPipelineBuildPipelineParametersItem(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 default_value: str,
                  name: str,
-                 default_value: Optional[str] = None,
                  description: Optional[str] = None):
         """
-        :param str name: (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
         :param str default_value: (Updatable) Default value of the parameter.
+        :param str name: (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
         :param str description: (Updatable) Optional description about the build pipeline.
         """
+        pulumi.set(__self__, "default_value", default_value)
         pulumi.set(__self__, "name", name)
-        if default_value is not None:
-            pulumi.set(__self__, "default_value", default_value)
         if description is not None:
             pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        (Updatable) Default value of the parameter.
+        """
+        return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
@@ -403,14 +413,6 @@ class BuildPipelineBuildPipelineParametersItem(dict):
         (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
         """
         return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="defaultValue")
-    def default_value(self) -> Optional[str]:
-        """
-        (Updatable) Default value of the parameter.
-        """
-        return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
@@ -455,6 +457,67 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollectionItem(dict):
         (Updatable) The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's OCID.
         """
         return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class BuildPipelineStageBuildRunnerShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "buildRunnerType":
+            suggest = "build_runner_type"
+        elif key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BuildPipelineStageBuildRunnerShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BuildPipelineStageBuildRunnerShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BuildPipelineStageBuildRunnerShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 build_runner_type: str,
+                 memory_in_gbs: Optional[int] = None,
+                 ocpus: Optional[int] = None):
+        """
+        :param str build_runner_type: (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        :param int memory_in_gbs: (Updatable) The total amount of memory set for the instance in gigabytes.
+        :param int ocpus: (Updatable) The total number of OCPUs set for the instance.
+        """
+        pulumi.set(__self__, "build_runner_type", build_runner_type)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="buildRunnerType")
+    def build_runner_type(self) -> str:
+        """
+        (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        """
+        return pulumi.get(self, "build_runner_type")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[int]:
+        """
+        (Updatable) The total amount of memory set for the instance in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[int]:
+        """
+        (Updatable) The total number of OCPUs set for the instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -4779,6 +4842,46 @@ class GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult(dic
 
 
 @pulumi.output_type
+class GetBuildPipelineStageBuildRunnerShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 build_runner_type: str,
+                 memory_in_gbs: int,
+                 ocpus: int):
+        """
+        :param str build_runner_type: Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        :param int memory_in_gbs: The total amount of memory set for the instance in gigabytes.
+        :param int ocpus: The total number of OCPUs set for the instance.
+        """
+        pulumi.set(__self__, "build_runner_type", build_runner_type)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="buildRunnerType")
+    def build_runner_type(self) -> str:
+        """
+        Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        """
+        return pulumi.get(self, "build_runner_type")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory set for the instance in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs set for the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
 class GetBuildPipelineStageBuildSourceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetBuildPipelineStageBuildSourceCollectionItemResult']):
@@ -5009,6 +5112,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
                  build_pipeline_id: str,
                  build_pipeline_stage_predecessor_collections: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionResult'],
                  build_pipeline_stage_type: str,
+                 build_runner_shape_config: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult',
                  build_source_collection: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult',
                  build_spec_file: str,
                  compartment_id: str,
@@ -5036,6 +5140,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         :param str build_pipeline_id: The OCID of the parent build pipeline.
         :param Sequence['GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArgs'] build_pipeline_stage_predecessor_collections: The collection containing the predecessors of a stage.
         :param str build_pipeline_stage_type: Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
+        :param 'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigArgs' build_runner_shape_config: The information about build runner.
         :param 'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionArgs' build_source_collection: Collection of build sources.
         :param str build_spec_file: The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param str compartment_id: The OCID of the compartment in which to list resources.
@@ -5063,6 +5168,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
         pulumi.set(__self__, "build_pipeline_stage_predecessor_collections", build_pipeline_stage_predecessor_collections)
         pulumi.set(__self__, "build_pipeline_stage_type", build_pipeline_stage_type)
+        pulumi.set(__self__, "build_runner_shape_config", build_runner_shape_config)
         pulumi.set(__self__, "build_source_collection", build_source_collection)
         pulumi.set(__self__, "build_spec_file", build_spec_file)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -5110,6 +5216,14 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
         """
         return pulumi.get(self, "build_pipeline_stage_type")
+
+    @property
+    @pulumi.getter(name="buildRunnerShapeConfig")
+    def build_runner_shape_config(self) -> 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult':
+        """
+        The information about build runner.
+        """
+        return pulumi.get(self, "build_runner_shape_config")
 
     @property
     @pulumi.getter(name="buildSourceCollection")
@@ -5330,6 +5444,46 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePr
         Unique identifier or OCID for listing a single resource by ID.
         """
         return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 build_runner_type: str,
+                 memory_in_gbs: int,
+                 ocpus: int):
+        """
+        :param str build_runner_type: Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        :param int memory_in_gbs: The total amount of memory set for the instance in gigabytes.
+        :param int ocpus: The total number of OCPUs set for the instance.
+        """
+        pulumi.set(__self__, "build_runner_type", build_runner_type)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="buildRunnerType")
+    def build_runner_type(self) -> str:
+        """
+        Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        """
+        return pulumi.get(self, "build_runner_type")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory set for the instance in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs set for the instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type

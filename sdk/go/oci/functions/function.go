@@ -32,7 +32,6 @@ import (
 //			_, err := Functions.NewFunction(ctx, "testFunction", &Functions.FunctionArgs{
 //				ApplicationId: pulumi.Any(oci_functions_application.Test_application.Id),
 //				DisplayName:   pulumi.Any(_var.Function_display_name),
-//				Image:         pulumi.Any(_var.Function_image),
 //				MemoryInMbs:   pulumi.Any(_var.Function_memory_in_mbs),
 //				Config:        pulumi.Any(_var.Function_config),
 //				DefinedTags: pulumi.AnyMap{
@@ -41,10 +40,15 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
+//				Image:       pulumi.Any(_var.Function_image),
 //				ImageDigest: pulumi.Any(_var.Function_image_digest),
 //				ProvisionedConcurrencyConfig: &functions.FunctionProvisionedConcurrencyConfigArgs{
 //					Strategy: pulumi.Any(_var.Function_provisioned_concurrency_config_strategy),
 //					Count:    pulumi.Any(_var.Function_provisioned_concurrency_config_count),
+//				},
+//				SourceDetails: &functions.FunctionSourceDetailsArgs{
+//					PbfListingId: pulumi.Any(oci_functions_pbf_listing.Test_pbf_listing.Id),
+//					SourceType:   pulumi.Any(_var.Function_source_details_source_type),
 //				},
 //				TimeoutInSeconds: pulumi.Any(_var.Function_timeout_in_seconds),
 //				TraceConfig: &functions.FunctionTraceConfigArgs{
@@ -94,6 +98,8 @@ type Function struct {
 	MemoryInMbs pulumi.StringOutput `pulumi:"memoryInMbs"`
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigOutput `pulumi:"provisionedConcurrencyConfig"`
+	// The source details for the Function. The function can be created from various sources.
+	SourceDetails FunctionSourceDetailsOutput `pulumi:"sourceDetails"`
 	// The current state of the function.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -118,9 +124,6 @@ func NewFunction(ctx *pulumi.Context,
 	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
-	}
-	if args.Image == nil {
-		return nil, errors.New("invalid value for required argument 'Image'")
 	}
 	if args.MemoryInMbs == nil {
 		return nil, errors.New("invalid value for required argument 'MemoryInMbs'")
@@ -169,6 +172,8 @@ type functionState struct {
 	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
+	// The source details for the Function. The function can be created from various sources.
+	SourceDetails *FunctionSourceDetails `pulumi:"sourceDetails"`
 	// The current state of the function.
 	State *string `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -204,6 +209,8 @@ type FunctionState struct {
 	MemoryInMbs pulumi.StringPtrInput
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
+	// The source details for the Function. The function can be created from various sources.
+	SourceDetails FunctionSourceDetailsPtrInput
 	// The current state of the function.
 	State pulumi.StringPtrInput
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -232,13 +239,15 @@ type functionArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-	Image string `pulumi:"image"`
+	Image *string `pulumi:"image"`
 	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest *string `pulumi:"imageDigest"`
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs string `pulumi:"memoryInMbs"`
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
+	// The source details for the Function. The function can be created from various sources.
+	SourceDetails *FunctionSourceDetails `pulumi:"sourceDetails"`
 	// (Updatable) Timeout for executions of the function. Value in seconds.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) Define the tracing configuration for a function.
@@ -258,13 +267,15 @@ type FunctionArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-	Image pulumi.StringInput
+	Image pulumi.StringPtrInput
 	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest pulumi.StringPtrInput
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs pulumi.StringInput
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
+	// The source details for the Function. The function can be created from various sources.
+	SourceDetails FunctionSourceDetailsPtrInput
 	// (Updatable) Timeout for executions of the function. Value in seconds.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Define the tracing configuration for a function.
@@ -411,6 +422,11 @@ func (o FunctionOutput) MemoryInMbs() pulumi.StringOutput {
 // (Updatable) Define the strategy for provisioned concurrency for the function.
 func (o FunctionOutput) ProvisionedConcurrencyConfig() FunctionProvisionedConcurrencyConfigOutput {
 	return o.ApplyT(func(v *Function) FunctionProvisionedConcurrencyConfigOutput { return v.ProvisionedConcurrencyConfig }).(FunctionProvisionedConcurrencyConfigOutput)
+}
+
+// The source details for the Function. The function can be created from various sources.
+func (o FunctionOutput) SourceDetails() FunctionSourceDetailsOutput {
+	return o.ApplyT(func(v *Function) FunctionSourceDetailsOutput { return v.SourceDetails }).(FunctionSourceDetailsOutput)
 }
 
 // The current state of the function.

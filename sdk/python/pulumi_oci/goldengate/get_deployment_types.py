@@ -55,7 +55,7 @@ class GetDeploymentTypesResult:
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[str]:
         """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -136,7 +136,7 @@ def get_deployment_types(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str ogg_version: Allows to query by a specific GoldenGate version.
@@ -185,7 +185,7 @@ def get_deployment_types_output(compartment_id: Optional[pulumi.Input[str]] = No
     ```
 
 
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str ogg_version: Allows to query by a specific GoldenGate version.

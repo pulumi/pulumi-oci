@@ -34,8 +34,8 @@ import (
 //				BuildPipelineParameters: &devops.BuildPipelineBuildPipelineParametersArgs{
 //					Items: devops.BuildPipelineBuildPipelineParametersItemArray{
 //						&devops.BuildPipelineBuildPipelineParametersItemArgs{
-//							Name:         pulumi.Any(_var.Build_pipeline_build_pipeline_parameters_items_name),
 //							DefaultValue: pulumi.Any(_var.Build_pipeline_build_pipeline_parameters_items_default_value),
+//							Name:         pulumi.Any(_var.Build_pipeline_build_pipeline_parameters_items_name),
 //							Description:  pulumi.Any(_var.Build_pipeline_build_pipeline_parameters_items_description),
 //						},
 //					},

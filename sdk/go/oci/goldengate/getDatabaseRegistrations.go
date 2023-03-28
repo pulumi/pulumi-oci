@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
 //
-// Note: Deprecated. Use the new resource model APIs instead.
+// Note: Deprecated. Use the /connections API instead.
 // Lists the DatabaseRegistrations in the compartment.
 //
 // ## Example Usage
@@ -53,7 +53,7 @@ func GetDatabaseRegistrations(ctx *pulumi.Context, args *GetDatabaseRegistration
 
 // A collection of arguments for invoking getDatabaseRegistrations.
 type GetDatabaseRegistrationsArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                          `pulumi:"displayName"`
@@ -92,7 +92,7 @@ func GetDatabaseRegistrationsOutput(ctx *pulumi.Context, args GetDatabaseRegistr
 
 // A collection of arguments for invoking getDatabaseRegistrations.
 type GetDatabaseRegistrationsOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput                    `pulumi:"displayName"`

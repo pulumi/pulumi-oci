@@ -273,6 +273,18 @@ namespace Pulumi.Oci.Core
         [Input("volumeGroupReplicasDeletion")]
         public Input<bool>? VolumeGroupReplicasDeletion { get; set; }
 
+        [Input("volumeIds")]
+        private InputList<string>? _volumeIds;
+
+        /// <summary>
+        /// OCIDs for the volumes in this volume group.
+        /// </summary>
+        public InputList<string> VolumeIds
+        {
+            get => _volumeIds ?? (_volumeIds = new InputList<string>());
+            set => _volumeIds = value;
+        }
+
         public VolumeGroupArgs()
         {
         }

@@ -18,32 +18,33 @@ class FunctionArgs:
     def __init__(__self__, *,
                  application_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 image: pulumi.Input[str],
                  memory_in_mbs: pulumi.Input[str],
                  config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 image: Optional[pulumi.Input[str]] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
                  provisioned_concurrency_config: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']] = None,
+                 source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None):
         """
         The set of arguments for constructing a Function resource.
         :param pulumi.Input[str] application_id: The OCID of the application this function belongs to.
         :param pulumi.Input[str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        :param pulumi.Input[str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param pulumi.Input['FunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input['FunctionSourceDetailsArgs'] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
         :param pulumi.Input['FunctionTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         pulumi.set(__self__, "application_id", application_id)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "image", image)
         pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
         if config is not None:
             pulumi.set(__self__, "config", config)
@@ -51,10 +52,14 @@ class FunctionArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if image is not None:
+            pulumi.set(__self__, "image", image)
         if image_digest is not None:
             pulumi.set(__self__, "image_digest", image_digest)
         if provisioned_concurrency_config is not None:
             pulumi.set(__self__, "provisioned_concurrency_config", provisioned_concurrency_config)
+        if source_details is not None:
+            pulumi.set(__self__, "source_details", source_details)
         if timeout_in_seconds is not None:
             pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
         if trace_config is not None:
@@ -83,18 +88,6 @@ class FunctionArgs:
     @display_name.setter
     def display_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "display_name", value)
-
-    @property
-    @pulumi.getter
-    def image(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        """
-        return pulumi.get(self, "image")
-
-    @image.setter
-    def image(self, value: pulumi.Input[str]):
-        pulumi.set(self, "image", value)
 
     @property
     @pulumi.getter(name="memoryInMbs")
@@ -145,6 +138,18 @@ class FunctionArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter
+    def image(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        """
+        return pulumi.get(self, "image")
+
+    @image.setter
+    def image(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image", value)
+
+    @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> Optional[pulumi.Input[str]]:
         """
@@ -167,6 +172,18 @@ class FunctionArgs:
     @provisioned_concurrency_config.setter
     def provisioned_concurrency_config(self, value: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]):
         pulumi.set(self, "provisioned_concurrency_config", value)
+
+    @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> Optional[pulumi.Input['FunctionSourceDetailsArgs']]:
+        """
+        The source details for the Function. The function can be created from various sources.
+        """
+        return pulumi.get(self, "source_details")
+
+    @source_details.setter
+    def source_details(self, value: Optional[pulumi.Input['FunctionSourceDetailsArgs']]):
+        pulumi.set(self, "source_details", value)
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
@@ -207,6 +224,7 @@ class _FunctionState:
                  invoke_endpoint: Optional[pulumi.Input[str]] = None,
                  memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  provisioned_concurrency_config: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']] = None,
+                 source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -225,6 +243,7 @@ class _FunctionState:
         :param pulumi.Input[str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
         :param pulumi.Input['FunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input['FunctionSourceDetailsArgs'] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[str] state: The current state of the function.
         :param pulumi.Input[str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -253,6 +272,8 @@ class _FunctionState:
             pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
         if provisioned_concurrency_config is not None:
             pulumi.set(__self__, "provisioned_concurrency_config", provisioned_concurrency_config)
+        if source_details is not None:
+            pulumi.set(__self__, "source_details", source_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -397,6 +418,18 @@ class _FunctionState:
         pulumi.set(self, "provisioned_concurrency_config", value)
 
     @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> Optional[pulumi.Input['FunctionSourceDetailsArgs']]:
+        """
+        The source details for the Function. The function can be created from various sources.
+        """
+        return pulumi.get(self, "source_details")
+
+    @source_details.setter
+    def source_details(self, value: Optional[pulumi.Input['FunctionSourceDetailsArgs']]):
+        pulumi.set(self, "source_details", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -471,6 +504,7 @@ class Function(pulumi.CustomResource):
                  image_digest: Optional[pulumi.Input[str]] = None,
                  memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  provisioned_concurrency_config: Optional[pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']]] = None,
+                 source_details: Optional[pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  trace_config: Optional[pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']]] = None,
                  __props__=None):
@@ -488,7 +522,6 @@ class Function(pulumi.CustomResource):
         test_function = oci.functions.Function("testFunction",
             application_id=oci_functions_application["test_application"]["id"],
             display_name=var["function_display_name"],
-            image=var["function_image"],
             memory_in_mbs=var["function_memory_in_mbs"],
             config=var["function_config"],
             defined_tags={
@@ -497,10 +530,15 @@ class Function(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            image=var["function_image"],
             image_digest=var["function_image_digest"],
             provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
                 strategy=var["function_provisioned_concurrency_config_strategy"],
                 count=var["function_provisioned_concurrency_config_count"],
+            ),
+            source_details=oci.functions.FunctionSourceDetailsArgs(
+                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
+                source_type=var["function_source_details_source_type"],
             ),
             timeout_in_seconds=var["function_timeout_in_seconds"],
             trace_config=oci.functions.FunctionTraceConfigArgs(
@@ -527,6 +565,7 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
         :param pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
         :param pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for a function.
         """
@@ -550,7 +589,6 @@ class Function(pulumi.CustomResource):
         test_function = oci.functions.Function("testFunction",
             application_id=oci_functions_application["test_application"]["id"],
             display_name=var["function_display_name"],
-            image=var["function_image"],
             memory_in_mbs=var["function_memory_in_mbs"],
             config=var["function_config"],
             defined_tags={
@@ -559,10 +597,15 @@ class Function(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            image=var["function_image"],
             image_digest=var["function_image_digest"],
             provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
                 strategy=var["function_provisioned_concurrency_config_strategy"],
                 count=var["function_provisioned_concurrency_config_count"],
+            ),
+            source_details=oci.functions.FunctionSourceDetailsArgs(
+                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
+                source_type=var["function_source_details_source_type"],
             ),
             timeout_in_seconds=var["function_timeout_in_seconds"],
             trace_config=oci.functions.FunctionTraceConfigArgs(
@@ -602,6 +645,7 @@ class Function(pulumi.CustomResource):
                  image_digest: Optional[pulumi.Input[str]] = None,
                  memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  provisioned_concurrency_config: Optional[pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']]] = None,
+                 source_details: Optional[pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  trace_config: Optional[pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']]] = None,
                  __props__=None):
@@ -622,14 +666,13 @@ class Function(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if image is None and not opts.urn:
-                raise TypeError("Missing required property 'image'")
             __props__.__dict__["image"] = image
             __props__.__dict__["image_digest"] = image_digest
             if memory_in_mbs is None and not opts.urn:
                 raise TypeError("Missing required property 'memory_in_mbs'")
             __props__.__dict__["memory_in_mbs"] = memory_in_mbs
             __props__.__dict__["provisioned_concurrency_config"] = provisioned_concurrency_config
+            __props__.__dict__["source_details"] = source_details
             __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
             __props__.__dict__["trace_config"] = trace_config
             __props__.__dict__["compartment_id"] = None
@@ -658,6 +701,7 @@ class Function(pulumi.CustomResource):
             invoke_endpoint: Optional[pulumi.Input[str]] = None,
             memory_in_mbs: Optional[pulumi.Input[str]] = None,
             provisioned_concurrency_config: Optional[pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']]] = None,
+            source_details: Optional[pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -681,6 +725,7 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
         :param pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[str] state: The current state of the function.
         :param pulumi.Input[str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -702,6 +747,7 @@ class Function(pulumi.CustomResource):
         __props__.__dict__["invoke_endpoint"] = invoke_endpoint
         __props__.__dict__["memory_in_mbs"] = memory_in_mbs
         __props__.__dict__["provisioned_concurrency_config"] = provisioned_concurrency_config
+        __props__.__dict__["source_details"] = source_details
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -796,6 +842,14 @@ class Function(pulumi.CustomResource):
         (Updatable) Define the strategy for provisioned concurrency for the function.
         """
         return pulumi.get(self, "provisioned_concurrency_config")
+
+    @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> pulumi.Output['outputs.FunctionSourceDetails']:
+        """
+        The source details for the Function. The function can be created from various sources.
+        """
+        return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter

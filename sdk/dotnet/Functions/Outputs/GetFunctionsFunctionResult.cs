@@ -62,6 +62,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult> ProvisionedConcurrencyConfigs;
         /// <summary>
+        /// The source details for the Function. The function can be created from various sources.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailResult> SourceDetails;
+        /// <summary>
         /// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
         /// </summary>
         public readonly string State;
@@ -108,6 +112,8 @@ namespace Pulumi.Oci.Functions.Outputs
 
             ImmutableArray<Outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult> provisionedConcurrencyConfigs,
 
+            ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailResult> sourceDetails,
+
             string state,
 
             string timeCreated,
@@ -130,6 +136,7 @@ namespace Pulumi.Oci.Functions.Outputs
             InvokeEndpoint = invokeEndpoint;
             MemoryInMbs = memoryInMbs;
             ProvisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            SourceDetails = sourceDetails;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

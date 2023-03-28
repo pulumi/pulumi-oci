@@ -745,7 +745,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
@@ -785,7 +785,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
@@ -825,7 +825,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
@@ -865,7 +865,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
@@ -905,7 +905,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
@@ -947,7 +947,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
@@ -989,7 +989,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
@@ -1031,7 +1031,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage

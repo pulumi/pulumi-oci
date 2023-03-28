@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class DatabaseUpgradeDbBackupConfigBackupDestinationDetail
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        /// </summary>
+        public readonly string? DbrsPolicyId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
         public readonly string? Id;
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private DatabaseUpgradeDbBackupConfigBackupDestinationDetail(
+            string? dbrsPolicyId,
+
             string? id,
 
             string? internetProxy,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? vpcUser)
         {
+            DbrsPolicyId = dbrsPolicyId;
             Id = id;
             InternetProxy = internetProxy;
             Type = type;

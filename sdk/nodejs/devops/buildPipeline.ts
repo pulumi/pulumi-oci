@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  *     projectId: oci_devops_project.test_project.id,
  *     buildPipelineParameters: {
  *         items: [{
- *             name: _var.build_pipeline_build_pipeline_parameters_items_name,
  *             defaultValue: _var.build_pipeline_build_pipeline_parameters_items_default_value,
+ *             name: _var.build_pipeline_build_pipeline_parameters_items_name,
  *             description: _var.build_pipeline_build_pipeline_parameters_items_description,
  *         }],
  *     },

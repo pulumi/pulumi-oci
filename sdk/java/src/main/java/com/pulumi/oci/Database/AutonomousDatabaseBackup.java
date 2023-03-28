@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.AutonomousDatabaseBackupArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupState;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseBackupBackupDestinationDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -78,6 +79,20 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      */
     public Output<String> autonomousDatabaseId() {
         return this.autonomousDatabaseId;
+    }
+    /**
+     * Backup destination details
+     * 
+     */
+    @Export(name="backupDestinationDetails", type=AutonomousDatabaseBackupBackupDestinationDetails.class, parameters={})
+    private Output<AutonomousDatabaseBackupBackupDestinationDetails> backupDestinationDetails;
+
+    /**
+     * @return Backup destination details
+     * 
+     */
+    public Output<AutonomousDatabaseBackupBackupDestinationDetails> backupDestinationDetails() {
+        return this.backupDestinationDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

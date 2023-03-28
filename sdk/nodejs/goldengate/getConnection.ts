@@ -44,6 +44,10 @@ export interface GetConnectionArgs {
  * A collection of values returned by getConnection.
  */
 export interface GetConnectionResult {
+    /**
+     * Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     */
+    readonly accessKeyId: string;
     readonly accountKey: string;
     /**
      * Sets the Azure storage account name.
@@ -74,16 +78,25 @@ export interface GetConnectionResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
     readonly compartmentId: string;
+    /**
+     * The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+     */
+    readonly connectionFactory: string;
     readonly connectionId: string;
     /**
-     * JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+     * Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
      */
     readonly connectionString: string;
     /**
      * The connection type.
      */
     readonly connectionType: string;
+    /**
+     * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     */
+    readonly connectionUrl: string;
     readonly consumerProperties: string;
+    readonly coreSiteXml: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
@@ -129,11 +142,28 @@ export interface GetConnectionResult {
      */
     readonly id: string;
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
     readonly ingressIps: outputs.GoldenGate.GetConnectionIngressIp[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+     */
+    readonly jndiConnectionFactory: string;
+    /**
+     * The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+     */
+    readonly jndiInitialContextFactory: string;
+    /**
+     * The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+     */
+    readonly jndiProviderUrl: string;
+    readonly jndiSecurityCredentials: string;
+    /**
+     * Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+     */
+    readonly jndiSecurityPrincipal: string;
+    /**
+     * Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
     readonly keyId: string;
     readonly keyStore: string;
@@ -164,14 +194,26 @@ export interface GetConnectionResult {
      */
     readonly region: string;
     readonly sasToken: string;
+    readonly secretAccessKey: string;
     /**
-     * Security protocol for PostgreSQL.
+     * Security Protocol for Microsoft SQL Server/PostgreSQL.
      */
     readonly securityProtocol: string;
     /**
      * The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
     readonly sessionMode: string;
+    /**
+     * If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     */
+    readonly shouldUseJndi: boolean;
+    /**
+     * If set to true, the driver validates the certificate that is sent by the database server.
+     */
+    readonly shouldValidateServerCertificate: boolean;
+    /**
+     * Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     */
     readonly sslCa: string;
     readonly sslCert: string;
     readonly sslCrl: string;
@@ -220,15 +262,15 @@ export interface GetConnectionResult {
      */
     readonly url: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
      */
     readonly userId: string;
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      */
     readonly username: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
     readonly vaultId: string;
     readonly wallet: string;

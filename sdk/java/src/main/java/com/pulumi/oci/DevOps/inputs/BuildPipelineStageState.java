@@ -6,6 +6,7 @@ package com.pulumi.oci.DevOps.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs;
+import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildRunnerShapeConfigArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildSourceCollectionArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageDeliverArtifactCollectionArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStagePrivateAccessConfigArgs;
@@ -67,6 +68,21 @@ public final class BuildPipelineStageState extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> buildPipelineStageType() {
         return Optional.ofNullable(this.buildPipelineStageType);
+    }
+
+    /**
+     * (Updatable) The information about build runner.
+     * 
+     */
+    @Import(name="buildRunnerShapeConfig")
+    private @Nullable Output<BuildPipelineStageBuildRunnerShapeConfigArgs> buildRunnerShapeConfig;
+
+    /**
+     * @return (Updatable) The information about build runner.
+     * 
+     */
+    public Optional<Output<BuildPipelineStageBuildRunnerShapeConfigArgs>> buildRunnerShapeConfig() {
+        return Optional.ofNullable(this.buildRunnerShapeConfig);
     }
 
     /**
@@ -390,6 +406,7 @@ public final class BuildPipelineStageState extends com.pulumi.resources.Resource
         this.buildPipelineId = $.buildPipelineId;
         this.buildPipelineStagePredecessorCollection = $.buildPipelineStagePredecessorCollection;
         this.buildPipelineStageType = $.buildPipelineStageType;
+        this.buildRunnerShapeConfig = $.buildRunnerShapeConfig;
         this.buildSourceCollection = $.buildSourceCollection;
         this.buildSpecFile = $.buildSpecFile;
         this.compartmentId = $.compartmentId;
@@ -492,6 +509,27 @@ public final class BuildPipelineStageState extends com.pulumi.resources.Resource
          */
         public Builder buildPipelineStageType(String buildPipelineStageType) {
             return buildPipelineStageType(Output.of(buildPipelineStageType));
+        }
+
+        /**
+         * @param buildRunnerShapeConfig (Updatable) The information about build runner.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder buildRunnerShapeConfig(@Nullable Output<BuildPipelineStageBuildRunnerShapeConfigArgs> buildRunnerShapeConfig) {
+            $.buildRunnerShapeConfig = buildRunnerShapeConfig;
+            return this;
+        }
+
+        /**
+         * @param buildRunnerShapeConfig (Updatable) The information about build runner.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder buildRunnerShapeConfig(BuildPipelineStageBuildRunnerShapeConfigArgs buildRunnerShapeConfig) {
+            return buildRunnerShapeConfig(Output.of(buildRunnerShapeConfig));
         }
 
         /**

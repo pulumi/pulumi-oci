@@ -54,7 +54,7 @@ func GetConnectionAssignments(ctx *pulumi.Context, args *GetConnectionAssignment
 
 // A collection of arguments for invoking getConnectionAssignments.
 type GetConnectionAssignmentsArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId *string `pulumi:"connectionId"`
@@ -100,7 +100,7 @@ func GetConnectionAssignmentsOutput(ctx *pulumi.Context, args GetConnectionAssig
 
 // A collection of arguments for invoking getConnectionAssignments.
 type GetConnectionAssignmentsOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`

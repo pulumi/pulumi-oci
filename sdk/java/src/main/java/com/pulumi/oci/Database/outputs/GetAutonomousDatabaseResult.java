@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLongTermBackupSchedule;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseStandbyDb;
 import java.lang.Boolean;
@@ -169,6 +170,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private Map<String,Object> definedTags;
     /**
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * 
+     */
+    private String disasterRecoveryRegionType;
+    /**
      * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
@@ -296,6 +302,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private String lifecycleDetails;
     /**
+     * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    private String localDisasterRecoveryType;
+    /**
      * @return Autonomous Data Guard standby database details.
      * 
      */
@@ -387,6 +398,12 @@ public final class GetAutonomousDatabaseResult {
      */
     private String refreshableStatus;
     /**
+     * @return Configurations of a Disaster Recovery.
+     * 
+     */
+    private List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
+    private String remoteDisasterRecoveryType;
+    /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
@@ -457,6 +474,11 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private String timeDeletionOfFreeAutonomousDatabase;
+    /**
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    private String timeDisasterRecoveryRoleChanged;
     /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
@@ -737,6 +759,13 @@ public final class GetAutonomousDatabaseResult {
         return this.definedTags;
     }
     /**
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * 
+     */
+    public String disasterRecoveryRegionType() {
+        return this.disasterRecoveryRegionType;
+    }
+    /**
      * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
@@ -918,6 +947,13 @@ public final class GetAutonomousDatabaseResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    public String localDisasterRecoveryType() {
+        return this.localDisasterRecoveryType;
+    }
+    /**
      * @return Autonomous Data Guard standby database details.
      * 
      */
@@ -1045,6 +1081,16 @@ public final class GetAutonomousDatabaseResult {
         return this.refreshableStatus;
     }
     /**
+     * @return Configurations of a Disaster Recovery.
+     * 
+     */
+    public List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations() {
+        return this.remoteDisasterRecoveryConfigurations;
+    }
+    public String remoteDisasterRecoveryType() {
+        return this.remoteDisasterRecoveryType;
+    }
+    /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
@@ -1152,6 +1198,13 @@ public final class GetAutonomousDatabaseResult {
      */
     public String timeDeletionOfFreeAutonomousDatabase() {
         return this.timeDeletionOfFreeAutonomousDatabase;
+    }
+    /**
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * 
+     */
+    public String timeDisasterRecoveryRoleChanged() {
+        return this.timeDisasterRecoveryRoleChanged;
     }
     /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
@@ -1298,6 +1351,7 @@ public final class GetAutonomousDatabaseResult {
         private String dbVersion;
         private String dbWorkload;
         private Map<String,Object> definedTags;
+        private String disasterRecoveryRegionType;
         private String displayName;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,Object> freeformTags;
@@ -1325,6 +1379,7 @@ public final class GetAutonomousDatabaseResult {
         private String kmsKeyVersionId;
         private String licenseModel;
         private String lifecycleDetails;
+        private String localDisasterRecoveryType;
         private List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
         private List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
         private Integer maxCpuCoreCount;
@@ -1343,6 +1398,8 @@ public final class GetAutonomousDatabaseResult {
         private List<Double> provisionableCpuses;
         private String refreshableMode;
         private String refreshableStatus;
+        private List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
+        private String remoteDisasterRecoveryType;
         private String role;
         private Boolean rotateKeyTrigger;
         private List<GetAutonomousDatabaseScheduledOperation> scheduledOperations;
@@ -1362,6 +1419,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeCreated;
         private String timeDataGuardRoleChanged;
         private String timeDeletionOfFreeAutonomousDatabase;
+        private String timeDisasterRecoveryRoleChanged;
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
         private String timeMaintenanceEnd;
@@ -1412,6 +1470,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.dbVersion = defaults.dbVersion;
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
+    	      this.disasterRecoveryRegionType = defaults.disasterRecoveryRegionType;
     	      this.displayName = defaults.displayName;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
@@ -1439,6 +1498,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.localDisasterRecoveryType = defaults.localDisasterRecoveryType;
     	      this.localStandbyDbs = defaults.localStandbyDbs;
     	      this.longTermBackupSchedules = defaults.longTermBackupSchedules;
     	      this.maxCpuCoreCount = defaults.maxCpuCoreCount;
@@ -1457,6 +1517,8 @@ public final class GetAutonomousDatabaseResult {
     	      this.provisionableCpuses = defaults.provisionableCpuses;
     	      this.refreshableMode = defaults.refreshableMode;
     	      this.refreshableStatus = defaults.refreshableStatus;
+    	      this.remoteDisasterRecoveryConfigurations = defaults.remoteDisasterRecoveryConfigurations;
+    	      this.remoteDisasterRecoveryType = defaults.remoteDisasterRecoveryType;
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.scheduledOperations = defaults.scheduledOperations;
@@ -1476,6 +1538,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
     	      this.timeDeletionOfFreeAutonomousDatabase = defaults.timeDeletionOfFreeAutonomousDatabase;
+    	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
     	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
@@ -1668,6 +1731,11 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder disasterRecoveryRegionType(String disasterRecoveryRegionType) {
+            this.disasterRecoveryRegionType = Objects.requireNonNull(disasterRecoveryRegionType);
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
@@ -1806,6 +1874,11 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder localDisasterRecoveryType(String localDisasterRecoveryType) {
+            this.localDisasterRecoveryType = Objects.requireNonNull(localDisasterRecoveryType);
+            return this;
+        }
+        @CustomType.Setter
         public Builder localStandbyDbs(List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs) {
             this.localStandbyDbs = Objects.requireNonNull(localStandbyDbs);
             return this;
@@ -1908,6 +1981,19 @@ public final class GetAutonomousDatabaseResult {
         @CustomType.Setter
         public Builder refreshableStatus(String refreshableStatus) {
             this.refreshableStatus = Objects.requireNonNull(refreshableStatus);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteDisasterRecoveryConfigurations(List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations) {
+            this.remoteDisasterRecoveryConfigurations = Objects.requireNonNull(remoteDisasterRecoveryConfigurations);
+            return this;
+        }
+        public Builder remoteDisasterRecoveryConfigurations(GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration... remoteDisasterRecoveryConfigurations) {
+            return remoteDisasterRecoveryConfigurations(List.of(remoteDisasterRecoveryConfigurations));
+        }
+        @CustomType.Setter
+        public Builder remoteDisasterRecoveryType(String remoteDisasterRecoveryType) {
+            this.remoteDisasterRecoveryType = Objects.requireNonNull(remoteDisasterRecoveryType);
             return this;
         }
         @CustomType.Setter
@@ -2015,6 +2101,11 @@ public final class GetAutonomousDatabaseResult {
         @CustomType.Setter
         public Builder timeDeletionOfFreeAutonomousDatabase(String timeDeletionOfFreeAutonomousDatabase) {
             this.timeDeletionOfFreeAutonomousDatabase = Objects.requireNonNull(timeDeletionOfFreeAutonomousDatabase);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeDisasterRecoveryRoleChanged(String timeDisasterRecoveryRoleChanged) {
+            this.timeDisasterRecoveryRoleChanged = Objects.requireNonNull(timeDisasterRecoveryRoleChanged);
             return this;
         }
         @CustomType.Setter
@@ -2133,6 +2224,7 @@ public final class GetAutonomousDatabaseResult {
             o.dbVersion = dbVersion;
             o.dbWorkload = dbWorkload;
             o.definedTags = definedTags;
+            o.disasterRecoveryRegionType = disasterRecoveryRegionType;
             o.displayName = displayName;
             o.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             o.freeformTags = freeformTags;
@@ -2160,6 +2252,7 @@ public final class GetAutonomousDatabaseResult {
             o.kmsKeyVersionId = kmsKeyVersionId;
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
+            o.localDisasterRecoveryType = localDisasterRecoveryType;
             o.localStandbyDbs = localStandbyDbs;
             o.longTermBackupSchedules = longTermBackupSchedules;
             o.maxCpuCoreCount = maxCpuCoreCount;
@@ -2178,6 +2271,8 @@ public final class GetAutonomousDatabaseResult {
             o.provisionableCpuses = provisionableCpuses;
             o.refreshableMode = refreshableMode;
             o.refreshableStatus = refreshableStatus;
+            o.remoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;
+            o.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
             o.role = role;
             o.rotateKeyTrigger = rotateKeyTrigger;
             o.scheduledOperations = scheduledOperations;
@@ -2197,6 +2292,7 @@ public final class GetAutonomousDatabaseResult {
             o.timeCreated = timeCreated;
             o.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             o.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
+            o.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             o.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             o.timeMaintenanceBegin = timeMaintenanceBegin;
             o.timeMaintenanceEnd = timeMaintenanceEnd;

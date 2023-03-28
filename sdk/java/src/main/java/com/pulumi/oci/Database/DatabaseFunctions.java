@@ -1898,6 +1898,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.autonomous_database_backup_display_name())
      *             .state(var_.autonomous_database_backup_state())
+     *             .type(var_.autonomous_database_backup_type())
      *             .build());
      * 
      *     }
@@ -1940,6 +1941,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.autonomous_database_backup_display_name())
      *             .state(var_.autonomous_database_backup_state())
+     *             .type(var_.autonomous_database_backup_type())
      *             .build());
      * 
      *     }
@@ -1982,6 +1984,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.autonomous_database_backup_display_name())
      *             .state(var_.autonomous_database_backup_state())
+     *             .type(var_.autonomous_database_backup_type())
      *             .build());
      * 
      *     }
@@ -2024,6 +2027,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.autonomous_database_backup_display_name())
      *             .state(var_.autonomous_database_backup_state())
+     *             .type(var_.autonomous_database_backup_type())
      *             .build());
      * 
      *     }
@@ -2066,6 +2070,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.autonomous_database_backup_display_name())
      *             .state(var_.autonomous_database_backup_state())
+     *             .type(var_.autonomous_database_backup_type())
      *             .build());
      * 
      *     }
@@ -2108,6 +2113,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.autonomous_database_backup_display_name())
      *             .state(var_.autonomous_database_backup_state())
+     *             .type(var_.autonomous_database_backup_type())
      *             .build());
      * 
      *     }

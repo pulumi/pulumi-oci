@@ -118,9 +118,17 @@ export interface GetDatabaseResult {
      */
     readonly kmsKeyVersionId: string;
     /**
+     * The duration when the latest database backup created.
+     */
+    readonly lastBackupDurationInSeconds: number;
+    /**
      * The date and time when the latest database backup was created.
      */
     readonly lastBackupTimestamp: string;
+    /**
+     * The date and time when the latest database backup failed.
+     */
+    readonly lastFailedBackupTimestamp: string;
     /**
      * Additional information about the current lifecycle state.
      */

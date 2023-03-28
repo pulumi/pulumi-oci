@@ -15,6 +15,7 @@ import java.util.Objects;
 public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     private Boolean autoBackupEnabled;
     private String autoBackupWindow;
+    private String backupDeletionPolicy;
     private List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
     private Integer recoveryWindowInDays;
 
@@ -24,6 +25,9 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     }
     public String autoBackupWindow() {
         return this.autoBackupWindow;
+    }
+    public String backupDeletionPolicy() {
+        return this.backupDeletionPolicy;
     }
     public List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails() {
         return this.backupDestinationDetails;
@@ -43,6 +47,7 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     public static final class Builder {
         private Boolean autoBackupEnabled;
         private String autoBackupWindow;
+        private String backupDeletionPolicy;
         private List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
         public Builder() {}
@@ -50,6 +55,7 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     	      Objects.requireNonNull(defaults);
     	      this.autoBackupEnabled = defaults.autoBackupEnabled;
     	      this.autoBackupWindow = defaults.autoBackupWindow;
+    	      this.backupDeletionPolicy = defaults.backupDeletionPolicy;
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
@@ -62,6 +68,11 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
         @CustomType.Setter
         public Builder autoBackupWindow(String autoBackupWindow) {
             this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupDeletionPolicy(String backupDeletionPolicy) {
+            this.backupDeletionPolicy = Objects.requireNonNull(backupDeletionPolicy);
             return this;
         }
         @CustomType.Setter
@@ -81,6 +92,7 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
             final var o = new GetDbHomesDbHomeDatabaseDbBackupConfig();
             o.autoBackupEnabled = autoBackupEnabled;
             o.autoBackupWindow = autoBackupWindow;
+            o.backupDeletionPolicy = backupDeletionPolicy;
             o.backupDestinationDetails = backupDestinationDetails;
             o.recoveryWindowInDays = recoveryWindowInDays;
             return o;

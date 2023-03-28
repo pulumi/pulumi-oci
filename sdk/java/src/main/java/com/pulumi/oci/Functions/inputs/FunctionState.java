@@ -6,6 +6,7 @@ package com.pulumi.oci.Functions.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
+import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
 import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -186,6 +187,21 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    @Import(name="sourceDetails")
+    private @Nullable Output<FunctionSourceDetailsArgs> sourceDetails;
+
+    /**
+     * @return The source details for the Function. The function can be created from various sources.
+     * 
+     */
+    public Optional<Output<FunctionSourceDetailsArgs>> sourceDetails() {
+        return Optional.ofNullable(this.sourceDetails);
+    }
+
+    /**
      * The current state of the function.
      * 
      */
@@ -274,6 +290,7 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         this.invokeEndpoint = $.invokeEndpoint;
         this.memoryInMbs = $.memoryInMbs;
         this.provisionedConcurrencyConfig = $.provisionedConcurrencyConfig;
+        this.sourceDetails = $.sourceDetails;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -528,6 +545,27 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder provisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfigArgs provisionedConcurrencyConfig) {
             return provisionedConcurrencyConfig(Output.of(provisionedConcurrencyConfig));
+        }
+
+        /**
+         * @param sourceDetails The source details for the Function. The function can be created from various sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(@Nullable Output<FunctionSourceDetailsArgs> sourceDetails) {
+            $.sourceDetails = sourceDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceDetails The source details for the Function. The function can be created from various sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(FunctionSourceDetailsArgs sourceDetails) {
+            return sourceDetails(Output.of(sourceDetails));
         }
 
         /**

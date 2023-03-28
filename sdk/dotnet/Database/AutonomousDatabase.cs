@@ -222,6 +222,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        /// </summary>
+        [Output("disasterRecoveryRegionType")]
+        public Output<string> DisasterRecoveryRegionType { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
@@ -378,6 +384,12 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// </summary>
+        [Output("localDisasterRecoveryType")]
+        public Output<string> LocalDisasterRecoveryType { get; private set; } = null!;
+
+        /// <summary>
         /// Autonomous Data Guard standby database details.
         /// </summary>
         [Output("localStandbyDbs")]
@@ -485,6 +497,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("refreshableStatus")]
         public Output<string> RefreshableStatus { get; private set; } = null!;
+
+        /// <summary>
+        /// Configurations of a Disaster Recovery.
+        /// </summary>
+        [Output("remoteDisasterRecoveryConfigurations")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> RemoteDisasterRecoveryConfigurations { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// </summary>
+        [Output("remoteDisasterRecoveryType")]
+        public Output<string> RemoteDisasterRecoveryType { get; private set; } = null!;
 
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -599,6 +623,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeDeletionOfFreeAutonomousDatabase")]
         public Output<string> TimeDeletionOfFreeAutonomousDatabase { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        /// </summary>
+        [Output("timeDisasterRecoveryRoleChanged")]
+        public Output<string> TimeDisasterRecoveryRoleChanged { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
@@ -1074,6 +1104,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? RefreshableMode { get; set; }
 
         /// <summary>
+        /// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// </summary>
+        [Input("remoteDisasterRecoveryType")]
+        public Input<string>? RemoteDisasterRecoveryType { get; set; }
+
+        /// <summary>
         /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         /// </summary>
         [Input("rotateKeyTrigger")]
@@ -1438,6 +1474,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        /// </summary>
+        [Input("disasterRecoveryRegionType")]
+        public Input<string>? DisasterRecoveryRegionType { get; set; }
+
+        /// <summary>
         /// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         /// </summary>
         [Input("displayName")]
@@ -1605,6 +1647,12 @@ namespace Pulumi.Oci.Database
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        /// <summary>
+        /// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// </summary>
+        [Input("localDisasterRecoveryType")]
+        public Input<string>? LocalDisasterRecoveryType { get; set; }
+
         [Input("localStandbyDbs")]
         private InputList<Inputs.AutonomousDatabaseLocalStandbyDbGetArgs>? _localStandbyDbs;
 
@@ -1743,6 +1791,24 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("refreshableStatus")]
         public Input<string>? RefreshableStatus { get; set; }
+
+        [Input("remoteDisasterRecoveryConfigurations")]
+        private InputList<Inputs.AutonomousDatabaseRemoteDisasterRecoveryConfigurationGetArgs>? _remoteDisasterRecoveryConfigurations;
+
+        /// <summary>
+        /// Configurations of a Disaster Recovery.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseRemoteDisasterRecoveryConfigurationGetArgs> RemoteDisasterRecoveryConfigurations
+        {
+            get => _remoteDisasterRecoveryConfigurations ?? (_remoteDisasterRecoveryConfigurations = new InputList<Inputs.AutonomousDatabaseRemoteDisasterRecoveryConfigurationGetArgs>());
+            set => _remoteDisasterRecoveryConfigurations = value;
+        }
+
+        /// <summary>
+        /// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// </summary>
+        [Input("remoteDisasterRecoveryType")]
+        public Input<string>? RemoteDisasterRecoveryType { get; set; }
 
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -1887,6 +1953,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeDeletionOfFreeAutonomousDatabase")]
         public Input<string>? TimeDeletionOfFreeAutonomousDatabase { get; set; }
+
+        /// <summary>
+        /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        /// </summary>
+        [Input("timeDisasterRecoveryRoleChanged")]
+        public Input<string>? TimeDisasterRecoveryRoleChanged { get; set; }
 
         /// <summary>
         /// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.

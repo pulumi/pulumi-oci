@@ -16,14 +16,14 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     public static final DeploymentOggDataArgs Empty = new DeploymentOggDataArgs();
 
     /**
-     * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
+     * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
      * 
      */
     @Import(name="adminPassword", required=true)
     private Output<String> adminPassword;
 
     /**
-     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
+     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
      * 
      */
     public Output<String> adminPassword() {
@@ -135,7 +135,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
+         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
+         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
          * 
          * @return builder
          * 

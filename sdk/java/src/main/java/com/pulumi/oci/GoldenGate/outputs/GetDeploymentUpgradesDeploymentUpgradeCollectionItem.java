@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
     private String compartmentId;
@@ -142,7 +142,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
 
     private GetDeploymentUpgradesDeploymentUpgradeCollectionItem() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
     public String compartmentId() {

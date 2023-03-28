@@ -13,6 +13,7 @@ import com.pulumi.oci.GoldenGate.outputs.ConnectionAdditionalAttribute;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionIngressIp;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -54,6 +55,7 @@ import javax.annotation.Nullable;
  *             .connectionType(var_.connection_connection_type())
  *             .displayName(var_.connection_display_name())
  *             .technologyType(var_.connection_technology_type())
+ *             .accessKeyId(oci_kms_key.test_key().id())
  *             .accountKey(var_.connection_account_key())
  *             .accountName(var_.connection_account_name())
  *             .additionalAttributes(ConnectionAdditionalAttributeArgs.builder()
@@ -69,8 +71,11 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .clientId(oci_golden_gate_client.test_client().id())
  *             .clientSecret(var_.connection_client_secret())
+ *             .connectionFactory(var_.connection_connection_factory())
  *             .connectionString(var_.connection_connection_string())
+ *             .connectionUrl(var_.connection_connection_url())
  *             .consumerProperties(var_.connection_consumer_properties())
+ *             .coreSiteXml(var_.connection_core_site_xml())
  *             .databaseId(oci_database_database.test_database().id())
  *             .databaseName(oci_database_database.test_database().name())
  *             .dbSystemId(oci_database_db_system.test_db_system().id())
@@ -80,6 +85,11 @@ import javax.annotation.Nullable;
  *             .endpoint(var_.connection_endpoint())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .host(var_.connection_host())
+ *             .jndiConnectionFactory(var_.connection_jndi_connection_factory())
+ *             .jndiInitialContextFactory(var_.connection_jndi_initial_context_factory())
+ *             .jndiProviderUrl(var_.connection_jndi_provider_url())
+ *             .jndiSecurityCredentials(var_.connection_jndi_security_credentials())
+ *             .jndiSecurityPrincipal(var_.connection_jndi_security_principal())
  *             .keyId(oci_kms_key.test_key().id())
  *             .keyStore(var_.connection_key_store())
  *             .keyStorePassword(var_.connection_key_store_password())
@@ -93,8 +103,11 @@ import javax.annotation.Nullable;
  *             .publicKeyFingerprint(var_.connection_public_key_fingerprint())
  *             .region(var_.connection_region())
  *             .sasToken(var_.connection_sas_token())
+ *             .secretAccessKey(var_.connection_secret_access_key())
  *             .securityProtocol(var_.connection_security_protocol())
  *             .sessionMode(var_.connection_session_mode())
+ *             .shouldUseJndi(var_.connection_should_use_jndi())
+ *             .shouldValidateServerCertificate(var_.connection_should_validate_server_certificate())
  *             .sslCa(var_.connection_ssl_ca())
  *             .sslCert(var_.connection_ssl_cert())
  *             .sslCrl(var_.connection_ssl_crl())
@@ -128,6 +141,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:GoldenGate/connection:Connection")
 public class Connection extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * 
+     */
+    @Export(name="accessKeyId", type=String.class, parameters={})
+    private Output<String> accessKeyId;
+
+    /**
+     * @return (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * 
+     */
+    public Output<String> accessKeyId() {
+        return this.accessKeyId;
+    }
     /**
      * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      * 
@@ -171,14 +198,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.additionalAttributes;
     }
     /**
-     * (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+     * (Updatable) Used authentication mechanism.
      * 
      */
     @Export(name="authenticationType", type=String.class, parameters={})
     private Output<String> authenticationType;
 
     /**
-     * @return (Updatable) Used authentication mechanism to access Azure Data Lake Storage.
+     * @return (Updatable) Used authentication mechanism.
      * 
      */
     public Output<String> authenticationType() {
@@ -255,14 +282,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
+     * (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
+     * 
+     */
+    @Export(name="connectionFactory", type=String.class, parameters={})
+    private Output<String> connectionFactory;
+
+    /**
+     * @return (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
+     * 
+     */
+    public Output<String> connectionFactory() {
+        return this.connectionFactory;
+    }
+    /**
+     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
      * 
      */
     @Export(name="connectionString", type=String.class, parameters={})
     private Output<String> connectionString;
 
     /**
-     * @return (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
+     * @return (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
      * 
      */
     public Output<String> connectionString() {
@@ -283,6 +324,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.connectionType;
     }
     /**
+     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * 
+     */
+    @Export(name="connectionUrl", type=String.class, parameters={})
+    private Output<String> connectionUrl;
+
+    /**
+     * @return (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * 
+     */
+    public Output<String> connectionUrl() {
+        return this.connectionUrl;
+    }
+    /**
      * (Updatable) The base64 encoded content of the consumer.properties file.
      * 
      */
@@ -295,6 +350,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> consumerProperties() {
         return this.consumerProperties;
+    }
+    /**
+     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * 
+     */
+    @Export(name="coreSiteXml", type=String.class, parameters={})
+    private Output<String> coreSiteXml;
+
+    /**
+     * @return (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * 
+     */
+    public Output<String> coreSiteXml() {
+        return this.coreSiteXml;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -437,28 +506,98 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.host;
     }
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this connection&#39;s privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
     @Export(name="ingressIps", type=List.class, parameters={ConnectionIngressIp.class})
     private Output<List<ConnectionIngressIp>> ingressIps;
 
     /**
-     * @return List of ingress IP addresses, from where the GoldenGate deployment connects to this connection&#39;s privateIp.
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
     public Output<List<ConnectionIngressIp>> ingressIps() {
         return this.ingressIps;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
+     * 
+     */
+    @Export(name="jndiConnectionFactory", type=String.class, parameters={})
+    private Output<String> jndiConnectionFactory;
+
+    /**
+     * @return (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
+     * 
+     */
+    public Output<String> jndiConnectionFactory() {
+        return this.jndiConnectionFactory;
+    }
+    /**
+     * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
+     * 
+     */
+    @Export(name="jndiInitialContextFactory", type=String.class, parameters={})
+    private Output<String> jndiInitialContextFactory;
+
+    /**
+     * @return (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
+     * 
+     */
+    public Output<String> jndiInitialContextFactory() {
+        return this.jndiInitialContextFactory;
+    }
+    /**
+     * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
+     * 
+     */
+    @Export(name="jndiProviderUrl", type=String.class, parameters={})
+    private Output<String> jndiProviderUrl;
+
+    /**
+     * @return (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
+     * 
+     */
+    public Output<String> jndiProviderUrl() {
+        return this.jndiProviderUrl;
+    }
+    /**
+     * (Updatable) The password associated to the principal.
+     * 
+     */
+    @Export(name="jndiSecurityCredentials", type=String.class, parameters={})
+    private Output<String> jndiSecurityCredentials;
+
+    /**
+     * @return (Updatable) The password associated to the principal.
+     * 
+     */
+    public Output<String> jndiSecurityCredentials() {
+        return this.jndiSecurityCredentials;
+    }
+    /**
+     * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
+     * 
+     */
+    @Export(name="jndiSecurityPrincipal", type=String.class, parameters={})
+    private Output<String> jndiSecurityPrincipal;
+
+    /**
+     * @return (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
+     * 
+     */
+    public Output<String> jndiSecurityPrincipal() {
+        return this.jndiSecurityPrincipal;
+    }
+    /**
+     * (Updatable) Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     @Export(name="keyId", type=String.class, parameters={})
     private Output<String> keyId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * @return (Updatable) Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     public Output<String> keyId() {
@@ -521,14 +660,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.nsgIds;
     }
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
     @Export(name="password", type=String.class, parameters={})
     private Output<String> password;
 
     /**
-     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
     public Output<String> password() {
@@ -563,28 +702,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.privateIp;
     }
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of private key file in PEM format.
      * 
      */
     @Export(name="privateKeyFile", type=String.class, parameters={})
     private Output<String> privateKeyFile;
 
     /**
-     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * @return (Updatable) The base64 encoded content of private key file in PEM format.
      * 
      */
     public Output<String> privateKeyFile() {
         return this.privateKeyFile;
     }
     /**
-     * (Updatable) The passphrase of the private key.
+     * (Updatable) Password if the private key file is encrypted.
      * 
      */
     @Export(name="privateKeyPassphrase", type=String.class, parameters={})
     private Output<String> privateKeyPassphrase;
 
     /**
-     * @return (Updatable) The passphrase of the private key.
+     * @return (Updatable) Password if the private key file is encrypted.
      * 
      */
     public Output<String> privateKeyPassphrase() {
@@ -647,14 +786,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.sasToken;
     }
     /**
-     * (Updatable) Security protocol for PostgreSQL.
+     * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * 
+     */
+    @Export(name="secretAccessKey", type=String.class, parameters={})
+    private Output<String> secretAccessKey;
+
+    /**
+     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * 
+     */
+    public Output<String> secretAccessKey() {
+        return this.secretAccessKey;
+    }
+    /**
+     * (Updatable) Security Protocol.
      * 
      */
     @Export(name="securityProtocol", type=String.class, parameters={})
     private Output<String> securityProtocol;
 
     /**
-     * @return (Updatable) Security protocol for PostgreSQL.
+     * @return (Updatable) Security Protocol.
      * 
      */
     public Output<String> securityProtocol() {
@@ -675,14 +828,42 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.sessionMode;
     }
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+     * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     * 
+     */
+    @Export(name="shouldUseJndi", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldUseJndi;
+
+    /**
+     * @return (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     * 
+     */
+    public Output<Boolean> shouldUseJndi() {
+        return this.shouldUseJndi;
+    }
+    /**
+     * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+     * 
+     */
+    @Export(name="shouldValidateServerCertificate", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldValidateServerCertificate;
+
+    /**
+     * @return (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
+     * 
+     */
+    public Output<Boolean> shouldValidateServerCertificate() {
+        return this.shouldValidateServerCertificate;
+    }
+    /**
+     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      * 
      */
     @Export(name="sslCa", type=String.class, parameters={})
     private Output<String> sslCa;
 
     /**
-     * @return (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
+     * @return (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      * 
      */
     public Output<String> sslCa() {
@@ -913,42 +1094,42 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.url;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      * 
      */
     @Export(name="userId", type=String.class, parameters={})
     private Output<String> userId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      * 
      */
     public Output<String> userId() {
         return this.userId;
     }
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
     @Export(name="username", type=String.class, parameters={})
     private Output<String> username;
 
     /**
-     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
     public Output<String> username() {
         return this.username;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * (Updatable) Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     @Export(name="vaultId", type=String.class, parameters={})
     private Output<String> vaultId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * @return (Updatable) Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     public Output<String> vaultId() {

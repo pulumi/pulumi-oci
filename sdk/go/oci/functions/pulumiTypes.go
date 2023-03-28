@@ -575,6 +575,162 @@ func (o FunctionProvisionedConcurrencyConfigPtrOutput) Strategy() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+type FunctionSourceDetails struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+	PbfListingId string `pulumi:"pbfListingId"`
+	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// FunctionSourceDetailsInput is an input type that accepts FunctionSourceDetailsArgs and FunctionSourceDetailsOutput values.
+// You can construct a concrete instance of `FunctionSourceDetailsInput` via:
+//
+//	FunctionSourceDetailsArgs{...}
+type FunctionSourceDetailsInput interface {
+	pulumi.Input
+
+	ToFunctionSourceDetailsOutput() FunctionSourceDetailsOutput
+	ToFunctionSourceDetailsOutputWithContext(context.Context) FunctionSourceDetailsOutput
+}
+
+type FunctionSourceDetailsArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
+	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (FunctionSourceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceDetails)(nil)).Elem()
+}
+
+func (i FunctionSourceDetailsArgs) ToFunctionSourceDetailsOutput() FunctionSourceDetailsOutput {
+	return i.ToFunctionSourceDetailsOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceDetailsArgs) ToFunctionSourceDetailsOutputWithContext(ctx context.Context) FunctionSourceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsOutput)
+}
+
+func (i FunctionSourceDetailsArgs) ToFunctionSourceDetailsPtrOutput() FunctionSourceDetailsPtrOutput {
+	return i.ToFunctionSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceDetailsArgs) ToFunctionSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsOutput).ToFunctionSourceDetailsPtrOutputWithContext(ctx)
+}
+
+// FunctionSourceDetailsPtrInput is an input type that accepts FunctionSourceDetailsArgs, FunctionSourceDetailsPtr and FunctionSourceDetailsPtrOutput values.
+// You can construct a concrete instance of `FunctionSourceDetailsPtrInput` via:
+//
+//	        FunctionSourceDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionSourceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToFunctionSourceDetailsPtrOutput() FunctionSourceDetailsPtrOutput
+	ToFunctionSourceDetailsPtrOutputWithContext(context.Context) FunctionSourceDetailsPtrOutput
+}
+
+type functionSourceDetailsPtrType FunctionSourceDetailsArgs
+
+func FunctionSourceDetailsPtr(v *FunctionSourceDetailsArgs) FunctionSourceDetailsPtrInput {
+	return (*functionSourceDetailsPtrType)(v)
+}
+
+func (*functionSourceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceDetails)(nil)).Elem()
+}
+
+func (i *functionSourceDetailsPtrType) ToFunctionSourceDetailsPtrOutput() FunctionSourceDetailsPtrOutput {
+	return i.ToFunctionSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *functionSourceDetailsPtrType) ToFunctionSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsPtrOutput)
+}
+
+type FunctionSourceDetailsOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceDetails)(nil)).Elem()
+}
+
+func (o FunctionSourceDetailsOutput) ToFunctionSourceDetailsOutput() FunctionSourceDetailsOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsOutput) ToFunctionSourceDetailsOutputWithContext(ctx context.Context) FunctionSourceDetailsOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsOutput) ToFunctionSourceDetailsPtrOutput() FunctionSourceDetailsPtrOutput {
+	return o.ToFunctionSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionSourceDetailsOutput) ToFunctionSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionSourceDetails) *FunctionSourceDetails {
+		return &v
+	}).(FunctionSourceDetailsPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+func (o FunctionSourceDetailsOutput) PbfListingId() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) string { return v.PbfListingId }).(pulumi.StringOutput)
+}
+
+// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+func (o FunctionSourceDetailsOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type FunctionSourceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceDetails)(nil)).Elem()
+}
+
+func (o FunctionSourceDetailsPtrOutput) ToFunctionSourceDetailsPtrOutput() FunctionSourceDetailsPtrOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsPtrOutput) ToFunctionSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsPtrOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsPtrOutput) Elem() FunctionSourceDetailsOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) FunctionSourceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionSourceDetails
+		return ret
+	}).(FunctionSourceDetailsOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+func (o FunctionSourceDetailsPtrOutput) PbfListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PbfListingId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+func (o FunctionSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
 type FunctionTraceConfig struct {
 	// (Updatable) Define if tracing is enabled for the resource.
 	IsEnabled *bool `pulumi:"isEnabled"`
@@ -1759,6 +1915,112 @@ func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pulumi.IntIn
 	}).(GetFunctionProvisionedConcurrencyConfigOutput)
 }
 
+type GetFunctionSourceDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+	PbfListingId string `pulumi:"pbfListingId"`
+	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetFunctionSourceDetailInput is an input type that accepts GetFunctionSourceDetailArgs and GetFunctionSourceDetailOutput values.
+// You can construct a concrete instance of `GetFunctionSourceDetailInput` via:
+//
+//	GetFunctionSourceDetailArgs{...}
+type GetFunctionSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetFunctionSourceDetailOutput() GetFunctionSourceDetailOutput
+	ToGetFunctionSourceDetailOutputWithContext(context.Context) GetFunctionSourceDetailOutput
+}
+
+type GetFunctionSourceDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
+	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetFunctionSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionSourceDetailArgs) ToGetFunctionSourceDetailOutput() GetFunctionSourceDetailOutput {
+	return i.ToGetFunctionSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSourceDetailArgs) ToGetFunctionSourceDetailOutputWithContext(ctx context.Context) GetFunctionSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailOutput)
+}
+
+// GetFunctionSourceDetailArrayInput is an input type that accepts GetFunctionSourceDetailArray and GetFunctionSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetFunctionSourceDetailArrayInput` via:
+//
+//	GetFunctionSourceDetailArray{ GetFunctionSourceDetailArgs{...} }
+type GetFunctionSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionSourceDetailArrayOutput() GetFunctionSourceDetailArrayOutput
+	ToGetFunctionSourceDetailArrayOutputWithContext(context.Context) GetFunctionSourceDetailArrayOutput
+}
+
+type GetFunctionSourceDetailArray []GetFunctionSourceDetailInput
+
+func (GetFunctionSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionSourceDetailArray) ToGetFunctionSourceDetailArrayOutput() GetFunctionSourceDetailArrayOutput {
+	return i.ToGetFunctionSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSourceDetailArray) ToGetFunctionSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailArrayOutput)
+}
+
+type GetFunctionSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionSourceDetailOutput) ToGetFunctionSourceDetailOutput() GetFunctionSourceDetailOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailOutput) ToGetFunctionSourceDetailOutputWithContext(ctx context.Context) GetFunctionSourceDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+func (o GetFunctionSourceDetailOutput) PbfListingId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.PbfListingId }).(pulumi.StringOutput)
+}
+
+// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+func (o GetFunctionSourceDetailOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type GetFunctionSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionSourceDetailArrayOutput) ToGetFunctionSourceDetailArrayOutput() GetFunctionSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailArrayOutput) ToGetFunctionSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunctionSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionSourceDetail {
+		return vs[0].([]GetFunctionSourceDetail)[vs[1].(int)]
+	}).(GetFunctionSourceDetailOutput)
+}
+
 type GetFunctionTraceConfig struct {
 	// Define if tracing is enabled for the resource.
 	IsEnabled bool `pulumi:"isEnabled"`
@@ -1987,6 +2249,8 @@ type GetFunctionsFunction struct {
 	MemoryInMbs string `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs []GetFunctionsFunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfigs"`
+	// The source details for the Function. The function can be created from various sources.
+	SourceDetails []GetFunctionsFunctionSourceDetail `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
 	State string `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -2035,6 +2299,8 @@ type GetFunctionsFunctionArgs struct {
 	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput `pulumi:"provisionedConcurrencyConfigs"`
+	// The source details for the Function. The function can be created from various sources.
+	SourceDetails GetFunctionsFunctionSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -2158,6 +2424,11 @@ func (o GetFunctionsFunctionOutput) ProvisionedConcurrencyConfigs() GetFunctions
 	return o.ApplyT(func(v GetFunctionsFunction) []GetFunctionsFunctionProvisionedConcurrencyConfig {
 		return v.ProvisionedConcurrencyConfigs
 	}).(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput)
+}
+
+// The source details for the Function. The function can be created from various sources.
+func (o GetFunctionsFunctionOutput) SourceDetails() GetFunctionsFunctionSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) []GetFunctionsFunctionSourceDetail { return v.SourceDetails }).(GetFunctionsFunctionSourceDetailArrayOutput)
 }
 
 // A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
@@ -2306,6 +2577,112 @@ func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionProvisionedConcurrencyConfig {
 		return vs[0].([]GetFunctionsFunctionProvisionedConcurrencyConfig)[vs[1].(int)]
 	}).(GetFunctionsFunctionProvisionedConcurrencyConfigOutput)
+}
+
+type GetFunctionsFunctionSourceDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+	PbfListingId string `pulumi:"pbfListingId"`
+	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetFunctionsFunctionSourceDetailInput is an input type that accepts GetFunctionsFunctionSourceDetailArgs and GetFunctionsFunctionSourceDetailOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSourceDetailInput` via:
+//
+//	GetFunctionsFunctionSourceDetailArgs{...}
+type GetFunctionsFunctionSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSourceDetailOutput() GetFunctionsFunctionSourceDetailOutput
+	ToGetFunctionsFunctionSourceDetailOutputWithContext(context.Context) GetFunctionsFunctionSourceDetailOutput
+}
+
+type GetFunctionsFunctionSourceDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
+	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetFunctionsFunctionSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSourceDetailArgs) ToGetFunctionsFunctionSourceDetailOutput() GetFunctionsFunctionSourceDetailOutput {
+	return i.ToGetFunctionsFunctionSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSourceDetailArgs) ToGetFunctionsFunctionSourceDetailOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailOutput)
+}
+
+// GetFunctionsFunctionSourceDetailArrayInput is an input type that accepts GetFunctionsFunctionSourceDetailArray and GetFunctionsFunctionSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSourceDetailArrayInput` via:
+//
+//	GetFunctionsFunctionSourceDetailArray{ GetFunctionsFunctionSourceDetailArgs{...} }
+type GetFunctionsFunctionSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSourceDetailArrayOutput() GetFunctionsFunctionSourceDetailArrayOutput
+	ToGetFunctionsFunctionSourceDetailArrayOutputWithContext(context.Context) GetFunctionsFunctionSourceDetailArrayOutput
+}
+
+type GetFunctionsFunctionSourceDetailArray []GetFunctionsFunctionSourceDetailInput
+
+func (GetFunctionsFunctionSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSourceDetailArray) ToGetFunctionsFunctionSourceDetailArrayOutput() GetFunctionsFunctionSourceDetailArrayOutput {
+	return i.ToGetFunctionsFunctionSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSourceDetailArray) ToGetFunctionsFunctionSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailArrayOutput)
+}
+
+type GetFunctionsFunctionSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSourceDetailOutput) ToGetFunctionsFunctionSourceDetailOutput() GetFunctionsFunctionSourceDetailOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailOutput) ToGetFunctionsFunctionSourceDetailOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+func (o GetFunctionsFunctionSourceDetailOutput) PbfListingId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.PbfListingId }).(pulumi.StringOutput)
+}
+
+// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+func (o GetFunctionsFunctionSourceDetailOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type GetFunctionsFunctionSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSourceDetailArrayOutput) ToGetFunctionsFunctionSourceDetailArrayOutput() GetFunctionsFunctionSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailArrayOutput) ToGetFunctionsFunctionSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionSourceDetail {
+		return vs[0].([]GetFunctionsFunctionSourceDetail)[vs[1].(int)]
+	}).(GetFunctionsFunctionSourceDetailOutput)
 }
 
 type GetFunctionsFunctionTraceConfig struct {
@@ -9067,6 +9444,2375 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOu
 	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput)
 }
 
+type GetPbfListingPublisherDetail struct {
+	// A brief descriptive name for the PBF trigger.
+	Name string `pulumi:"name"`
+}
+
+// GetPbfListingPublisherDetailInput is an input type that accepts GetPbfListingPublisherDetailArgs and GetPbfListingPublisherDetailOutput values.
+// You can construct a concrete instance of `GetPbfListingPublisherDetailInput` via:
+//
+//	GetPbfListingPublisherDetailArgs{...}
+type GetPbfListingPublisherDetailInput interface {
+	pulumi.Input
+
+	ToGetPbfListingPublisherDetailOutput() GetPbfListingPublisherDetailOutput
+	ToGetPbfListingPublisherDetailOutputWithContext(context.Context) GetPbfListingPublisherDetailOutput
+}
+
+type GetPbfListingPublisherDetailArgs struct {
+	// A brief descriptive name for the PBF trigger.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPbfListingPublisherDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingPublisherDetail)(nil)).Elem()
+}
+
+func (i GetPbfListingPublisherDetailArgs) ToGetPbfListingPublisherDetailOutput() GetPbfListingPublisherDetailOutput {
+	return i.ToGetPbfListingPublisherDetailOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingPublisherDetailArgs) ToGetPbfListingPublisherDetailOutputWithContext(ctx context.Context) GetPbfListingPublisherDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingPublisherDetailOutput)
+}
+
+// GetPbfListingPublisherDetailArrayInput is an input type that accepts GetPbfListingPublisherDetailArray and GetPbfListingPublisherDetailArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingPublisherDetailArrayInput` via:
+//
+//	GetPbfListingPublisherDetailArray{ GetPbfListingPublisherDetailArgs{...} }
+type GetPbfListingPublisherDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingPublisherDetailArrayOutput() GetPbfListingPublisherDetailArrayOutput
+	ToGetPbfListingPublisherDetailArrayOutputWithContext(context.Context) GetPbfListingPublisherDetailArrayOutput
+}
+
+type GetPbfListingPublisherDetailArray []GetPbfListingPublisherDetailInput
+
+func (GetPbfListingPublisherDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingPublisherDetail)(nil)).Elem()
+}
+
+func (i GetPbfListingPublisherDetailArray) ToGetPbfListingPublisherDetailArrayOutput() GetPbfListingPublisherDetailArrayOutput {
+	return i.ToGetPbfListingPublisherDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingPublisherDetailArray) ToGetPbfListingPublisherDetailArrayOutputWithContext(ctx context.Context) GetPbfListingPublisherDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingPublisherDetailArrayOutput)
+}
+
+type GetPbfListingPublisherDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingPublisherDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingPublisherDetail)(nil)).Elem()
+}
+
+func (o GetPbfListingPublisherDetailOutput) ToGetPbfListingPublisherDetailOutput() GetPbfListingPublisherDetailOutput {
+	return o
+}
+
+func (o GetPbfListingPublisherDetailOutput) ToGetPbfListingPublisherDetailOutputWithContext(ctx context.Context) GetPbfListingPublisherDetailOutput {
+	return o
+}
+
+// A brief descriptive name for the PBF trigger.
+func (o GetPbfListingPublisherDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingPublisherDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPbfListingPublisherDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingPublisherDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingPublisherDetail)(nil)).Elem()
+}
+
+func (o GetPbfListingPublisherDetailArrayOutput) ToGetPbfListingPublisherDetailArrayOutput() GetPbfListingPublisherDetailArrayOutput {
+	return o
+}
+
+func (o GetPbfListingPublisherDetailArrayOutput) ToGetPbfListingPublisherDetailArrayOutputWithContext(ctx context.Context) GetPbfListingPublisherDetailArrayOutput {
+	return o
+}
+
+func (o GetPbfListingPublisherDetailArrayOutput) Index(i pulumi.IntInput) GetPbfListingPublisherDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingPublisherDetail {
+		return vs[0].([]GetPbfListingPublisherDetail)[vs[1].(int)]
+	}).(GetPbfListingPublisherDetailOutput)
+}
+
+type GetPbfListingTrigger struct {
+	// A brief descriptive name for the PBF trigger.
+	Name string `pulumi:"name"`
+}
+
+// GetPbfListingTriggerInput is an input type that accepts GetPbfListingTriggerArgs and GetPbfListingTriggerOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggerInput` via:
+//
+//	GetPbfListingTriggerArgs{...}
+type GetPbfListingTriggerInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggerOutput() GetPbfListingTriggerOutput
+	ToGetPbfListingTriggerOutputWithContext(context.Context) GetPbfListingTriggerOutput
+}
+
+type GetPbfListingTriggerArgs struct {
+	// A brief descriptive name for the PBF trigger.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPbfListingTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggerArgs) ToGetPbfListingTriggerOutput() GetPbfListingTriggerOutput {
+	return i.ToGetPbfListingTriggerOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggerArgs) ToGetPbfListingTriggerOutputWithContext(ctx context.Context) GetPbfListingTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggerOutput)
+}
+
+// GetPbfListingTriggerArrayInput is an input type that accepts GetPbfListingTriggerArray and GetPbfListingTriggerArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggerArrayInput` via:
+//
+//	GetPbfListingTriggerArray{ GetPbfListingTriggerArgs{...} }
+type GetPbfListingTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggerArrayOutput() GetPbfListingTriggerArrayOutput
+	ToGetPbfListingTriggerArrayOutputWithContext(context.Context) GetPbfListingTriggerArrayOutput
+}
+
+type GetPbfListingTriggerArray []GetPbfListingTriggerInput
+
+func (GetPbfListingTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggerArray) ToGetPbfListingTriggerArrayOutput() GetPbfListingTriggerArrayOutput {
+	return i.ToGetPbfListingTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggerArray) ToGetPbfListingTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggerArrayOutput)
+}
+
+type GetPbfListingTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggerOutput) ToGetPbfListingTriggerOutput() GetPbfListingTriggerOutput {
+	return o
+}
+
+func (o GetPbfListingTriggerOutput) ToGetPbfListingTriggerOutputWithContext(ctx context.Context) GetPbfListingTriggerOutput {
+	return o
+}
+
+// A brief descriptive name for the PBF trigger.
+func (o GetPbfListingTriggerOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingTrigger) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPbfListingTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggerArrayOutput) ToGetPbfListingTriggerArrayOutput() GetPbfListingTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggerArrayOutput) ToGetPbfListingTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingTrigger {
+		return vs[0].([]GetPbfListingTrigger)[vs[1].(int)]
+	}).(GetPbfListingTriggerOutput)
+}
+
+type GetPbfListingTriggersFilter struct {
+	// A filter to return only resources that match the service trigger source of a PBF.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPbfListingTriggersFilterInput is an input type that accepts GetPbfListingTriggersFilterArgs and GetPbfListingTriggersFilterOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggersFilterInput` via:
+//
+//	GetPbfListingTriggersFilterArgs{...}
+type GetPbfListingTriggersFilterInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggersFilterOutput() GetPbfListingTriggersFilterOutput
+	ToGetPbfListingTriggersFilterOutputWithContext(context.Context) GetPbfListingTriggersFilterOutput
+}
+
+type GetPbfListingTriggersFilterArgs struct {
+	// A filter to return only resources that match the service trigger source of a PBF.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPbfListingTriggersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTriggersFilter)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggersFilterArgs) ToGetPbfListingTriggersFilterOutput() GetPbfListingTriggersFilterOutput {
+	return i.ToGetPbfListingTriggersFilterOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggersFilterArgs) ToGetPbfListingTriggersFilterOutputWithContext(ctx context.Context) GetPbfListingTriggersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersFilterOutput)
+}
+
+// GetPbfListingTriggersFilterArrayInput is an input type that accepts GetPbfListingTriggersFilterArray and GetPbfListingTriggersFilterArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggersFilterArrayInput` via:
+//
+//	GetPbfListingTriggersFilterArray{ GetPbfListingTriggersFilterArgs{...} }
+type GetPbfListingTriggersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggersFilterArrayOutput() GetPbfListingTriggersFilterArrayOutput
+	ToGetPbfListingTriggersFilterArrayOutputWithContext(context.Context) GetPbfListingTriggersFilterArrayOutput
+}
+
+type GetPbfListingTriggersFilterArray []GetPbfListingTriggersFilterInput
+
+func (GetPbfListingTriggersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTriggersFilter)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggersFilterArray) ToGetPbfListingTriggersFilterArrayOutput() GetPbfListingTriggersFilterArrayOutput {
+	return i.ToGetPbfListingTriggersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggersFilterArray) ToGetPbfListingTriggersFilterArrayOutputWithContext(ctx context.Context) GetPbfListingTriggersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersFilterArrayOutput)
+}
+
+type GetPbfListingTriggersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTriggersFilter)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggersFilterOutput) ToGetPbfListingTriggersFilterOutput() GetPbfListingTriggersFilterOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersFilterOutput) ToGetPbfListingTriggersFilterOutputWithContext(ctx context.Context) GetPbfListingTriggersFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the service trigger source of a PBF.
+func (o GetPbfListingTriggersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingTriggersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPbfListingTriggersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPbfListingTriggersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPbfListingTriggersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPbfListingTriggersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPbfListingTriggersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTriggersFilter)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggersFilterArrayOutput) ToGetPbfListingTriggersFilterArrayOutput() GetPbfListingTriggersFilterArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersFilterArrayOutput) ToGetPbfListingTriggersFilterArrayOutputWithContext(ctx context.Context) GetPbfListingTriggersFilterArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersFilterArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingTriggersFilter {
+		return vs[0].([]GetPbfListingTriggersFilter)[vs[1].(int)]
+	}).(GetPbfListingTriggersFilterOutput)
+}
+
+type GetPbfListingTriggersTriggersCollection struct {
+	// List of TriggerSummary.
+	Items []GetPbfListingTriggersTriggersCollectionItem `pulumi:"items"`
+}
+
+// GetPbfListingTriggersTriggersCollectionInput is an input type that accepts GetPbfListingTriggersTriggersCollectionArgs and GetPbfListingTriggersTriggersCollectionOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggersTriggersCollectionInput` via:
+//
+//	GetPbfListingTriggersTriggersCollectionArgs{...}
+type GetPbfListingTriggersTriggersCollectionInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggersTriggersCollectionOutput() GetPbfListingTriggersTriggersCollectionOutput
+	ToGetPbfListingTriggersTriggersCollectionOutputWithContext(context.Context) GetPbfListingTriggersTriggersCollectionOutput
+}
+
+type GetPbfListingTriggersTriggersCollectionArgs struct {
+	// List of TriggerSummary.
+	Items GetPbfListingTriggersTriggersCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPbfListingTriggersTriggersCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTriggersTriggersCollection)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggersTriggersCollectionArgs) ToGetPbfListingTriggersTriggersCollectionOutput() GetPbfListingTriggersTriggersCollectionOutput {
+	return i.ToGetPbfListingTriggersTriggersCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggersTriggersCollectionArgs) ToGetPbfListingTriggersTriggersCollectionOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionOutput)
+}
+
+// GetPbfListingTriggersTriggersCollectionArrayInput is an input type that accepts GetPbfListingTriggersTriggersCollectionArray and GetPbfListingTriggersTriggersCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggersTriggersCollectionArrayInput` via:
+//
+//	GetPbfListingTriggersTriggersCollectionArray{ GetPbfListingTriggersTriggersCollectionArgs{...} }
+type GetPbfListingTriggersTriggersCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggersTriggersCollectionArrayOutput() GetPbfListingTriggersTriggersCollectionArrayOutput
+	ToGetPbfListingTriggersTriggersCollectionArrayOutputWithContext(context.Context) GetPbfListingTriggersTriggersCollectionArrayOutput
+}
+
+type GetPbfListingTriggersTriggersCollectionArray []GetPbfListingTriggersTriggersCollectionInput
+
+func (GetPbfListingTriggersTriggersCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTriggersTriggersCollection)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggersTriggersCollectionArray) ToGetPbfListingTriggersTriggersCollectionArrayOutput() GetPbfListingTriggersTriggersCollectionArrayOutput {
+	return i.ToGetPbfListingTriggersTriggersCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggersTriggersCollectionArray) ToGetPbfListingTriggersTriggersCollectionArrayOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionArrayOutput)
+}
+
+type GetPbfListingTriggersTriggersCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggersTriggersCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTriggersTriggersCollection)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggersTriggersCollectionOutput) ToGetPbfListingTriggersTriggersCollectionOutput() GetPbfListingTriggersTriggersCollectionOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersTriggersCollectionOutput) ToGetPbfListingTriggersTriggersCollectionOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionOutput {
+	return o
+}
+
+// List of TriggerSummary.
+func (o GetPbfListingTriggersTriggersCollectionOutput) Items() GetPbfListingTriggersTriggersCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPbfListingTriggersTriggersCollection) []GetPbfListingTriggersTriggersCollectionItem {
+		return v.Items
+	}).(GetPbfListingTriggersTriggersCollectionItemArrayOutput)
+}
+
+type GetPbfListingTriggersTriggersCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggersTriggersCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTriggersTriggersCollection)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggersTriggersCollectionArrayOutput) ToGetPbfListingTriggersTriggersCollectionArrayOutput() GetPbfListingTriggersTriggersCollectionArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersTriggersCollectionArrayOutput) ToGetPbfListingTriggersTriggersCollectionArrayOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersTriggersCollectionArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggersTriggersCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingTriggersTriggersCollection {
+		return vs[0].([]GetPbfListingTriggersTriggersCollection)[vs[1].(int)]
+	}).(GetPbfListingTriggersTriggersCollectionOutput)
+}
+
+type GetPbfListingTriggersTriggersCollectionItem struct {
+	// A filter to return only resources that match the service trigger source of a PBF.
+	Name string `pulumi:"name"`
+}
+
+// GetPbfListingTriggersTriggersCollectionItemInput is an input type that accepts GetPbfListingTriggersTriggersCollectionItemArgs and GetPbfListingTriggersTriggersCollectionItemOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggersTriggersCollectionItemInput` via:
+//
+//	GetPbfListingTriggersTriggersCollectionItemArgs{...}
+type GetPbfListingTriggersTriggersCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggersTriggersCollectionItemOutput() GetPbfListingTriggersTriggersCollectionItemOutput
+	ToGetPbfListingTriggersTriggersCollectionItemOutputWithContext(context.Context) GetPbfListingTriggersTriggersCollectionItemOutput
+}
+
+type GetPbfListingTriggersTriggersCollectionItemArgs struct {
+	// A filter to return only resources that match the service trigger source of a PBF.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPbfListingTriggersTriggersCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTriggersTriggersCollectionItem)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggersTriggersCollectionItemArgs) ToGetPbfListingTriggersTriggersCollectionItemOutput() GetPbfListingTriggersTriggersCollectionItemOutput {
+	return i.ToGetPbfListingTriggersTriggersCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggersTriggersCollectionItemArgs) ToGetPbfListingTriggersTriggersCollectionItemOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionItemOutput)
+}
+
+// GetPbfListingTriggersTriggersCollectionItemArrayInput is an input type that accepts GetPbfListingTriggersTriggersCollectionItemArray and GetPbfListingTriggersTriggersCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingTriggersTriggersCollectionItemArrayInput` via:
+//
+//	GetPbfListingTriggersTriggersCollectionItemArray{ GetPbfListingTriggersTriggersCollectionItemArgs{...} }
+type GetPbfListingTriggersTriggersCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingTriggersTriggersCollectionItemArrayOutput() GetPbfListingTriggersTriggersCollectionItemArrayOutput
+	ToGetPbfListingTriggersTriggersCollectionItemArrayOutputWithContext(context.Context) GetPbfListingTriggersTriggersCollectionItemArrayOutput
+}
+
+type GetPbfListingTriggersTriggersCollectionItemArray []GetPbfListingTriggersTriggersCollectionItemInput
+
+func (GetPbfListingTriggersTriggersCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTriggersTriggersCollectionItem)(nil)).Elem()
+}
+
+func (i GetPbfListingTriggersTriggersCollectionItemArray) ToGetPbfListingTriggersTriggersCollectionItemArrayOutput() GetPbfListingTriggersTriggersCollectionItemArrayOutput {
+	return i.ToGetPbfListingTriggersTriggersCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingTriggersTriggersCollectionItemArray) ToGetPbfListingTriggersTriggersCollectionItemArrayOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionItemArrayOutput)
+}
+
+type GetPbfListingTriggersTriggersCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggersTriggersCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingTriggersTriggersCollectionItem)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggersTriggersCollectionItemOutput) ToGetPbfListingTriggersTriggersCollectionItemOutput() GetPbfListingTriggersTriggersCollectionItemOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersTriggersCollectionItemOutput) ToGetPbfListingTriggersTriggersCollectionItemOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the service trigger source of a PBF.
+func (o GetPbfListingTriggersTriggersCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingTriggersTriggersCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPbfListingTriggersTriggersCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingTriggersTriggersCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingTriggersTriggersCollectionItem)(nil)).Elem()
+}
+
+func (o GetPbfListingTriggersTriggersCollectionItemArrayOutput) ToGetPbfListingTriggersTriggersCollectionItemArrayOutput() GetPbfListingTriggersTriggersCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersTriggersCollectionItemArrayOutput) ToGetPbfListingTriggersTriggersCollectionItemArrayOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPbfListingTriggersTriggersCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggersTriggersCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingTriggersTriggersCollectionItem {
+		return vs[0].([]GetPbfListingTriggersTriggersCollectionItem)[vs[1].(int)]
+	}).(GetPbfListingTriggersTriggersCollectionItemOutput)
+}
+
+type GetPbfListingVersionConfig struct {
+	// Details about why this policy is required and what it will be used for.
+	Description string `pulumi:"description"`
+	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
+	IsOptional bool `pulumi:"isOptional"`
+	// The key name of the config param.
+	Key string `pulumi:"key"`
+}
+
+// GetPbfListingVersionConfigInput is an input type that accepts GetPbfListingVersionConfigArgs and GetPbfListingVersionConfigOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionConfigInput` via:
+//
+//	GetPbfListingVersionConfigArgs{...}
+type GetPbfListingVersionConfigInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionConfigOutput() GetPbfListingVersionConfigOutput
+	ToGetPbfListingVersionConfigOutputWithContext(context.Context) GetPbfListingVersionConfigOutput
+}
+
+type GetPbfListingVersionConfigArgs struct {
+	// Details about why this policy is required and what it will be used for.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
+	IsOptional pulumi.BoolInput `pulumi:"isOptional"`
+	// The key name of the config param.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetPbfListingVersionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionConfig)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionConfigArgs) ToGetPbfListingVersionConfigOutput() GetPbfListingVersionConfigOutput {
+	return i.ToGetPbfListingVersionConfigOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionConfigArgs) ToGetPbfListingVersionConfigOutputWithContext(ctx context.Context) GetPbfListingVersionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionConfigOutput)
+}
+
+// GetPbfListingVersionConfigArrayInput is an input type that accepts GetPbfListingVersionConfigArray and GetPbfListingVersionConfigArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionConfigArrayInput` via:
+//
+//	GetPbfListingVersionConfigArray{ GetPbfListingVersionConfigArgs{...} }
+type GetPbfListingVersionConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionConfigArrayOutput() GetPbfListingVersionConfigArrayOutput
+	ToGetPbfListingVersionConfigArrayOutputWithContext(context.Context) GetPbfListingVersionConfigArrayOutput
+}
+
+type GetPbfListingVersionConfigArray []GetPbfListingVersionConfigInput
+
+func (GetPbfListingVersionConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionConfig)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionConfigArray) ToGetPbfListingVersionConfigArrayOutput() GetPbfListingVersionConfigArrayOutput {
+	return i.ToGetPbfListingVersionConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionConfigArray) ToGetPbfListingVersionConfigArrayOutputWithContext(ctx context.Context) GetPbfListingVersionConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionConfigArrayOutput)
+}
+
+type GetPbfListingVersionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionConfig)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionConfigOutput) ToGetPbfListingVersionConfigOutput() GetPbfListingVersionConfigOutput {
+	return o
+}
+
+func (o GetPbfListingVersionConfigOutput) ToGetPbfListingVersionConfigOutputWithContext(ctx context.Context) GetPbfListingVersionConfigOutput {
+	return o
+}
+
+// Details about why this policy is required and what it will be used for.
+func (o GetPbfListingVersionConfigOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionConfig) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Is this a required config or an optional one. Requests with required config params missing will be rejected.
+func (o GetPbfListingVersionConfigOutput) IsOptional() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPbfListingVersionConfig) bool { return v.IsOptional }).(pulumi.BoolOutput)
+}
+
+// The key name of the config param.
+func (o GetPbfListingVersionConfigOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionConfig) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetPbfListingVersionConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionConfig)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionConfigArrayOutput) ToGetPbfListingVersionConfigArrayOutput() GetPbfListingVersionConfigArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionConfigArrayOutput) ToGetPbfListingVersionConfigArrayOutputWithContext(ctx context.Context) GetPbfListingVersionConfigArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionConfigArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionConfig {
+		return vs[0].([]GetPbfListingVersionConfig)[vs[1].(int)]
+	}).(GetPbfListingVersionConfigOutput)
+}
+
+type GetPbfListingVersionRequirement struct {
+	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+	MinMemoryRequiredInMbs string `pulumi:"minMemoryRequiredInMbs"`
+	// List of policies required for this PBF execution.
+	Policies []GetPbfListingVersionRequirementPolicy `pulumi:"policies"`
+}
+
+// GetPbfListingVersionRequirementInput is an input type that accepts GetPbfListingVersionRequirementArgs and GetPbfListingVersionRequirementOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionRequirementInput` via:
+//
+//	GetPbfListingVersionRequirementArgs{...}
+type GetPbfListingVersionRequirementInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionRequirementOutput() GetPbfListingVersionRequirementOutput
+	ToGetPbfListingVersionRequirementOutputWithContext(context.Context) GetPbfListingVersionRequirementOutput
+}
+
+type GetPbfListingVersionRequirementArgs struct {
+	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+	MinMemoryRequiredInMbs pulumi.StringInput `pulumi:"minMemoryRequiredInMbs"`
+	// List of policies required for this PBF execution.
+	Policies GetPbfListingVersionRequirementPolicyArrayInput `pulumi:"policies"`
+}
+
+func (GetPbfListingVersionRequirementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionRequirement)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionRequirementArgs) ToGetPbfListingVersionRequirementOutput() GetPbfListingVersionRequirementOutput {
+	return i.ToGetPbfListingVersionRequirementOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionRequirementArgs) ToGetPbfListingVersionRequirementOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementOutput)
+}
+
+// GetPbfListingVersionRequirementArrayInput is an input type that accepts GetPbfListingVersionRequirementArray and GetPbfListingVersionRequirementArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionRequirementArrayInput` via:
+//
+//	GetPbfListingVersionRequirementArray{ GetPbfListingVersionRequirementArgs{...} }
+type GetPbfListingVersionRequirementArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionRequirementArrayOutput() GetPbfListingVersionRequirementArrayOutput
+	ToGetPbfListingVersionRequirementArrayOutputWithContext(context.Context) GetPbfListingVersionRequirementArrayOutput
+}
+
+type GetPbfListingVersionRequirementArray []GetPbfListingVersionRequirementInput
+
+func (GetPbfListingVersionRequirementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionRequirement)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionRequirementArray) ToGetPbfListingVersionRequirementArrayOutput() GetPbfListingVersionRequirementArrayOutput {
+	return i.ToGetPbfListingVersionRequirementArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionRequirementArray) ToGetPbfListingVersionRequirementArrayOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementArrayOutput)
+}
+
+type GetPbfListingVersionRequirementOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionRequirementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionRequirement)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionRequirementOutput) ToGetPbfListingVersionRequirementOutput() GetPbfListingVersionRequirementOutput {
+	return o
+}
+
+func (o GetPbfListingVersionRequirementOutput) ToGetPbfListingVersionRequirementOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementOutput {
+	return o
+}
+
+// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+func (o GetPbfListingVersionRequirementOutput) MinMemoryRequiredInMbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionRequirement) string { return v.MinMemoryRequiredInMbs }).(pulumi.StringOutput)
+}
+
+// List of policies required for this PBF execution.
+func (o GetPbfListingVersionRequirementOutput) Policies() GetPbfListingVersionRequirementPolicyArrayOutput {
+	return o.ApplyT(func(v GetPbfListingVersionRequirement) []GetPbfListingVersionRequirementPolicy { return v.Policies }).(GetPbfListingVersionRequirementPolicyArrayOutput)
+}
+
+type GetPbfListingVersionRequirementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionRequirementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionRequirement)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionRequirementArrayOutput) ToGetPbfListingVersionRequirementArrayOutput() GetPbfListingVersionRequirementArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionRequirementArrayOutput) ToGetPbfListingVersionRequirementArrayOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionRequirementArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionRequirementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionRequirement {
+		return vs[0].([]GetPbfListingVersionRequirement)[vs[1].(int)]
+	}).(GetPbfListingVersionRequirementOutput)
+}
+
+type GetPbfListingVersionRequirementPolicy struct {
+	// Details about why this policy is required and what it will be used for.
+	Description string `pulumi:"description"`
+	// Policy required for PBF execution
+	Policy string `pulumi:"policy"`
+}
+
+// GetPbfListingVersionRequirementPolicyInput is an input type that accepts GetPbfListingVersionRequirementPolicyArgs and GetPbfListingVersionRequirementPolicyOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionRequirementPolicyInput` via:
+//
+//	GetPbfListingVersionRequirementPolicyArgs{...}
+type GetPbfListingVersionRequirementPolicyInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionRequirementPolicyOutput() GetPbfListingVersionRequirementPolicyOutput
+	ToGetPbfListingVersionRequirementPolicyOutputWithContext(context.Context) GetPbfListingVersionRequirementPolicyOutput
+}
+
+type GetPbfListingVersionRequirementPolicyArgs struct {
+	// Details about why this policy is required and what it will be used for.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Policy required for PBF execution
+	Policy pulumi.StringInput `pulumi:"policy"`
+}
+
+func (GetPbfListingVersionRequirementPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionRequirementPolicy)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionRequirementPolicyArgs) ToGetPbfListingVersionRequirementPolicyOutput() GetPbfListingVersionRequirementPolicyOutput {
+	return i.ToGetPbfListingVersionRequirementPolicyOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionRequirementPolicyArgs) ToGetPbfListingVersionRequirementPolicyOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementPolicyOutput)
+}
+
+// GetPbfListingVersionRequirementPolicyArrayInput is an input type that accepts GetPbfListingVersionRequirementPolicyArray and GetPbfListingVersionRequirementPolicyArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionRequirementPolicyArrayInput` via:
+//
+//	GetPbfListingVersionRequirementPolicyArray{ GetPbfListingVersionRequirementPolicyArgs{...} }
+type GetPbfListingVersionRequirementPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionRequirementPolicyArrayOutput() GetPbfListingVersionRequirementPolicyArrayOutput
+	ToGetPbfListingVersionRequirementPolicyArrayOutputWithContext(context.Context) GetPbfListingVersionRequirementPolicyArrayOutput
+}
+
+type GetPbfListingVersionRequirementPolicyArray []GetPbfListingVersionRequirementPolicyInput
+
+func (GetPbfListingVersionRequirementPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionRequirementPolicy)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionRequirementPolicyArray) ToGetPbfListingVersionRequirementPolicyArrayOutput() GetPbfListingVersionRequirementPolicyArrayOutput {
+	return i.ToGetPbfListingVersionRequirementPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionRequirementPolicyArray) ToGetPbfListingVersionRequirementPolicyArrayOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementPolicyArrayOutput)
+}
+
+type GetPbfListingVersionRequirementPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionRequirementPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionRequirementPolicy)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionRequirementPolicyOutput) ToGetPbfListingVersionRequirementPolicyOutput() GetPbfListingVersionRequirementPolicyOutput {
+	return o
+}
+
+func (o GetPbfListingVersionRequirementPolicyOutput) ToGetPbfListingVersionRequirementPolicyOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementPolicyOutput {
+	return o
+}
+
+// Details about why this policy is required and what it will be used for.
+func (o GetPbfListingVersionRequirementPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionRequirementPolicy) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Policy required for PBF execution
+func (o GetPbfListingVersionRequirementPolicyOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionRequirementPolicy) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+type GetPbfListingVersionRequirementPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionRequirementPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionRequirementPolicy)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionRequirementPolicyArrayOutput) ToGetPbfListingVersionRequirementPolicyArrayOutput() GetPbfListingVersionRequirementPolicyArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionRequirementPolicyArrayOutput) ToGetPbfListingVersionRequirementPolicyArrayOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementPolicyArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionRequirementPolicyArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionRequirementPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionRequirementPolicy {
+		return vs[0].([]GetPbfListingVersionRequirementPolicy)[vs[1].(int)]
+	}).(GetPbfListingVersionRequirementPolicyOutput)
+}
+
+type GetPbfListingVersionTrigger struct {
+	// A brief descriptive name for the PBF trigger.
+	Name string `pulumi:"name"`
+}
+
+// GetPbfListingVersionTriggerInput is an input type that accepts GetPbfListingVersionTriggerArgs and GetPbfListingVersionTriggerOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionTriggerInput` via:
+//
+//	GetPbfListingVersionTriggerArgs{...}
+type GetPbfListingVersionTriggerInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionTriggerOutput() GetPbfListingVersionTriggerOutput
+	ToGetPbfListingVersionTriggerOutputWithContext(context.Context) GetPbfListingVersionTriggerOutput
+}
+
+type GetPbfListingVersionTriggerArgs struct {
+	// A brief descriptive name for the PBF trigger.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPbfListingVersionTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionTriggerArgs) ToGetPbfListingVersionTriggerOutput() GetPbfListingVersionTriggerOutput {
+	return i.ToGetPbfListingVersionTriggerOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionTriggerArgs) ToGetPbfListingVersionTriggerOutputWithContext(ctx context.Context) GetPbfListingVersionTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionTriggerOutput)
+}
+
+// GetPbfListingVersionTriggerArrayInput is an input type that accepts GetPbfListingVersionTriggerArray and GetPbfListingVersionTriggerArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionTriggerArrayInput` via:
+//
+//	GetPbfListingVersionTriggerArray{ GetPbfListingVersionTriggerArgs{...} }
+type GetPbfListingVersionTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionTriggerArrayOutput() GetPbfListingVersionTriggerArrayOutput
+	ToGetPbfListingVersionTriggerArrayOutputWithContext(context.Context) GetPbfListingVersionTriggerArrayOutput
+}
+
+type GetPbfListingVersionTriggerArray []GetPbfListingVersionTriggerInput
+
+func (GetPbfListingVersionTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionTriggerArray) ToGetPbfListingVersionTriggerArrayOutput() GetPbfListingVersionTriggerArrayOutput {
+	return i.ToGetPbfListingVersionTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionTriggerArray) ToGetPbfListingVersionTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingVersionTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionTriggerArrayOutput)
+}
+
+type GetPbfListingVersionTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionTriggerOutput) ToGetPbfListingVersionTriggerOutput() GetPbfListingVersionTriggerOutput {
+	return o
+}
+
+func (o GetPbfListingVersionTriggerOutput) ToGetPbfListingVersionTriggerOutputWithContext(ctx context.Context) GetPbfListingVersionTriggerOutput {
+	return o
+}
+
+// A brief descriptive name for the PBF trigger.
+func (o GetPbfListingVersionTriggerOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionTrigger) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPbfListingVersionTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionTriggerArrayOutput) ToGetPbfListingVersionTriggerArrayOutput() GetPbfListingVersionTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionTriggerArrayOutput) ToGetPbfListingVersionTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingVersionTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionTrigger {
+		return vs[0].([]GetPbfListingVersionTrigger)[vs[1].(int)]
+	}).(GetPbfListingVersionTriggerOutput)
+}
+
+type GetPbfListingVersionsFilter struct {
+	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPbfListingVersionsFilterInput is an input type that accepts GetPbfListingVersionsFilterArgs and GetPbfListingVersionsFilterOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsFilterInput` via:
+//
+//	GetPbfListingVersionsFilterArgs{...}
+type GetPbfListingVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsFilterOutput() GetPbfListingVersionsFilterOutput
+	ToGetPbfListingVersionsFilterOutputWithContext(context.Context) GetPbfListingVersionsFilterOutput
+}
+
+type GetPbfListingVersionsFilterArgs struct {
+	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPbfListingVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsFilter)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsFilterArgs) ToGetPbfListingVersionsFilterOutput() GetPbfListingVersionsFilterOutput {
+	return i.ToGetPbfListingVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsFilterArgs) ToGetPbfListingVersionsFilterOutputWithContext(ctx context.Context) GetPbfListingVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsFilterOutput)
+}
+
+// GetPbfListingVersionsFilterArrayInput is an input type that accepts GetPbfListingVersionsFilterArray and GetPbfListingVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsFilterArrayInput` via:
+//
+//	GetPbfListingVersionsFilterArray{ GetPbfListingVersionsFilterArgs{...} }
+type GetPbfListingVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsFilterArrayOutput() GetPbfListingVersionsFilterArrayOutput
+	ToGetPbfListingVersionsFilterArrayOutputWithContext(context.Context) GetPbfListingVersionsFilterArrayOutput
+}
+
+type GetPbfListingVersionsFilterArray []GetPbfListingVersionsFilterInput
+
+func (GetPbfListingVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsFilter)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsFilterArray) ToGetPbfListingVersionsFilterArrayOutput() GetPbfListingVersionsFilterArrayOutput {
+	return i.ToGetPbfListingVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsFilterArray) ToGetPbfListingVersionsFilterArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsFilterArrayOutput)
+}
+
+type GetPbfListingVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsFilter)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsFilterOutput) ToGetPbfListingVersionsFilterOutput() GetPbfListingVersionsFilterOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsFilterOutput) ToGetPbfListingVersionsFilterOutputWithContext(ctx context.Context) GetPbfListingVersionsFilterOutput {
+	return o
+}
+
+// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+func (o GetPbfListingVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPbfListingVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPbfListingVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPbfListingVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsFilter)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsFilterArrayOutput) ToGetPbfListingVersionsFilterArrayOutput() GetPbfListingVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsFilterArrayOutput) ToGetPbfListingVersionsFilterArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsFilter {
+		return vs[0].([]GetPbfListingVersionsFilter)[vs[1].(int)]
+	}).(GetPbfListingVersionsFilterOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollection struct {
+	// List of PbfListingVersionSummary.
+	Items []GetPbfListingVersionsPbfListingVersionsCollectionItem `pulumi:"items"`
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionArgs and GetPbfListingVersionsPbfListingVersionsCollectionOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionArgs{...}
+type GetPbfListingVersionsPbfListingVersionsCollectionInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionOutput() GetPbfListingVersionsPbfListingVersionsCollectionOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionArgs struct {
+	// List of PbfListingVersionSummary.
+	Items GetPbfListingVersionsPbfListingVersionsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollection)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionOutput() GetPbfListingVersionsPbfListingVersionsCollectionOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionOutput)
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionArray and GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionArrayInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionArray{ GetPbfListingVersionsPbfListingVersionsCollectionArgs{...} }
+type GetPbfListingVersionsPbfListingVersionsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionArray []GetPbfListingVersionsPbfListingVersionsCollectionInput
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollection)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionArray) ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionArray) ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollection)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionOutput() GetPbfListingVersionsPbfListingVersionsCollectionOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionOutput {
+	return o
+}
+
+// List of PbfListingVersionSummary.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionOutput) Items() GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollection) []GetPbfListingVersionsPbfListingVersionsCollectionItem {
+		return v.Items
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollection)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollection {
+		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollection)[vs[1].(int)]
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItem struct {
+	// Details changes are included in this version.
+	ChangeSummary string `pulumi:"changeSummary"`
+	// Details about the required and optional Function configurations needed for proper performance of the PBF.
+	Configs []GetPbfListingVersionsPbfListingVersionsCollectionItemConfig `pulumi:"configs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation
+	Id string `pulumi:"id"`
+	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+	Name string `pulumi:"name"`
+	// unique PbfListing identifier
+	PbfListingId string `pulumi:"pbfListingId"`
+	// Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
+	Requirements []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement `pulumi:"requirements"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// An array of Trigger. A list of triggers that may activate the PBF.
+	Triggers []GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger `pulumi:"triggers"`
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemArgs{...}
+type GetPbfListingVersionsPbfListingVersionsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemArgs struct {
+	// Details changes are included in this version.
+	ChangeSummary pulumi.StringInput `pulumi:"changeSummary"`
+	// Details about the required and optional Function configurations needed for proper performance of the PBF.
+	Configs GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput `pulumi:"configs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation
+	Id pulumi.StringInput `pulumi:"id"`
+	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+	Name pulumi.StringInput `pulumi:"name"`
+	// unique PbfListing identifier
+	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
+	// Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
+	Requirements GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayInput `pulumi:"requirements"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// An array of Trigger. A list of triggers that may activate the PBF.
+	Triggers GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayInput `pulumi:"triggers"`
+}
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemOutput)
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemArray and GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemArrayInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemArray{ GetPbfListingVersionsPbfListingVersionsCollectionItemArgs{...} }
+type GetPbfListingVersionsPbfListingVersionsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemArray []GetPbfListingVersionsPbfListingVersionsCollectionItemInput
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemOutput {
+	return o
+}
+
+// Details changes are included in this version.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ChangeSummary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.ChangeSummary }).(pulumi.StringOutput)
+}
+
+// Details about the required and optional Function configurations needed for proper performance of the PBF.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Configs() GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) []GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
+		return v.Configs
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Unique identifier that is immutable on creation
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// unique PbfListing identifier
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) PbfListingId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.PbfListingId }).(pulumi.StringOutput)
+}
+
+// Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Requirements() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement {
+		return v.Requirements
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// An array of Trigger. A list of triggers that may activate the PBF.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Triggers() GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) []GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger {
+		return v.Triggers
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItem {
+		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItem)[vs[1].(int)]
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemConfig struct {
+	// Details about why this policy is required and what it will be used for.
+	Description string `pulumi:"description"`
+	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
+	IsOptional bool `pulumi:"isOptional"`
+	// The key name of the config param.
+	Key string `pulumi:"key"`
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemConfigInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemConfigInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs{...}
+type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs struct {
+	// Details about why this policy is required and what it will be used for.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
+	IsOptional pulumi.BoolInput `pulumi:"isOptional"`
+	// The key name of the config param.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemConfig)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput)
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray and GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray{ GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs{...} }
+type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray []GetPbfListingVersionsPbfListingVersionsCollectionItemConfigInput
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemConfig)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput {
+	return o
+}
+
+// Details about why this policy is required and what it will be used for.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Is this a required config or an optional one. Requests with required config params missing will be rejected.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) IsOptional() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) bool { return v.IsOptional }).(pulumi.BoolOutput)
+}
+
+// The key name of the config param.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
+		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig)[vs[1].(int)]
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement struct {
+	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+	MinMemoryRequiredInMbs string `pulumi:"minMemoryRequiredInMbs"`
+	// List of policies required for this PBF execution.
+	Policies []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy `pulumi:"policies"`
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs{...}
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs struct {
+	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+	MinMemoryRequiredInMbs pulumi.StringInput `pulumi:"minMemoryRequiredInMbs"`
+	// List of policies required for this PBF execution.
+	Policies GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayInput `pulumi:"policies"`
+}
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput)
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray and GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray{ GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs{...} }
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementInput
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput {
+	return o
+}
+
+// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) MinMemoryRequiredInMbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement) string {
+		return v.MinMemoryRequiredInMbs
+	}).(pulumi.StringOutput)
+}
+
+// List of policies required for this PBF execution.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) Policies() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement) []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy {
+		return v.Policies
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement {
+		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement)[vs[1].(int)]
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy struct {
+	// Details about why this policy is required and what it will be used for.
+	Description string `pulumi:"description"`
+	// Policy required for PBF execution
+	Policy string `pulumi:"policy"`
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs{...}
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs struct {
+	// Details about why this policy is required and what it will be used for.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Policy required for PBF execution
+	Policy pulumi.StringInput `pulumi:"policy"`
+}
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput)
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray and GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray{ GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs{...} }
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyInput
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput {
+	return o
+}
+
+// Details about why this policy is required and what it will be used for.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Policy required for PBF execution
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy {
+		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy)[vs[1].(int)]
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger struct {
+	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+	Name string `pulumi:"name"`
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs{...}
+type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs struct {
+	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput)
+}
+
+// GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray and GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayInput` via:
+//
+//	GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray{ GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs{...} }
+type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput
+	ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutputWithContext(context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray []GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerInput
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput {
+	return i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput {
+	return o
+}
+
+// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput() GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger {
+		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger)[vs[1].(int)]
+	}).(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput)
+}
+
+type GetPbfListingsFilter struct {
+	// A filter to return only resources that match the entire PBF name given.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPbfListingsFilterInput is an input type that accepts GetPbfListingsFilterArgs and GetPbfListingsFilterOutput values.
+// You can construct a concrete instance of `GetPbfListingsFilterInput` via:
+//
+//	GetPbfListingsFilterArgs{...}
+type GetPbfListingsFilterInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsFilterOutput() GetPbfListingsFilterOutput
+	ToGetPbfListingsFilterOutputWithContext(context.Context) GetPbfListingsFilterOutput
+}
+
+type GetPbfListingsFilterArgs struct {
+	// A filter to return only resources that match the entire PBF name given.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPbfListingsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsFilter)(nil)).Elem()
+}
+
+func (i GetPbfListingsFilterArgs) ToGetPbfListingsFilterOutput() GetPbfListingsFilterOutput {
+	return i.ToGetPbfListingsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsFilterArgs) ToGetPbfListingsFilterOutputWithContext(ctx context.Context) GetPbfListingsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsFilterOutput)
+}
+
+// GetPbfListingsFilterArrayInput is an input type that accepts GetPbfListingsFilterArray and GetPbfListingsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingsFilterArrayInput` via:
+//
+//	GetPbfListingsFilterArray{ GetPbfListingsFilterArgs{...} }
+type GetPbfListingsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsFilterArrayOutput() GetPbfListingsFilterArrayOutput
+	ToGetPbfListingsFilterArrayOutputWithContext(context.Context) GetPbfListingsFilterArrayOutput
+}
+
+type GetPbfListingsFilterArray []GetPbfListingsFilterInput
+
+func (GetPbfListingsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsFilter)(nil)).Elem()
+}
+
+func (i GetPbfListingsFilterArray) ToGetPbfListingsFilterArrayOutput() GetPbfListingsFilterArrayOutput {
+	return i.ToGetPbfListingsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsFilterArray) ToGetPbfListingsFilterArrayOutputWithContext(ctx context.Context) GetPbfListingsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsFilterArrayOutput)
+}
+
+type GetPbfListingsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsFilter)(nil)).Elem()
+}
+
+func (o GetPbfListingsFilterOutput) ToGetPbfListingsFilterOutput() GetPbfListingsFilterOutput {
+	return o
+}
+
+func (o GetPbfListingsFilterOutput) ToGetPbfListingsFilterOutputWithContext(ctx context.Context) GetPbfListingsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire PBF name given.
+func (o GetPbfListingsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPbfListingsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPbfListingsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPbfListingsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPbfListingsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsFilter)(nil)).Elem()
+}
+
+func (o GetPbfListingsFilterArrayOutput) ToGetPbfListingsFilterArrayOutput() GetPbfListingsFilterArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsFilterArrayOutput) ToGetPbfListingsFilterArrayOutputWithContext(ctx context.Context) GetPbfListingsFilterArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsFilterArrayOutput) Index(i pulumi.IntInput) GetPbfListingsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsFilter {
+		return vs[0].([]GetPbfListingsFilter)[vs[1].(int)]
+	}).(GetPbfListingsFilterOutput)
+}
+
+type GetPbfListingsPbfListingsCollection struct {
+	// List of PbfListingSummary.
+	Items []GetPbfListingsPbfListingsCollectionItem `pulumi:"items"`
+}
+
+// GetPbfListingsPbfListingsCollectionInput is an input type that accepts GetPbfListingsPbfListingsCollectionArgs and GetPbfListingsPbfListingsCollectionOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionArgs{...}
+type GetPbfListingsPbfListingsCollectionInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionOutput() GetPbfListingsPbfListingsCollectionOutput
+	ToGetPbfListingsPbfListingsCollectionOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionOutput
+}
+
+type GetPbfListingsPbfListingsCollectionArgs struct {
+	// List of PbfListingSummary.
+	Items GetPbfListingsPbfListingsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPbfListingsPbfListingsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollection)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionArgs) ToGetPbfListingsPbfListingsCollectionOutput() GetPbfListingsPbfListingsCollectionOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionArgs) ToGetPbfListingsPbfListingsCollectionOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionOutput)
+}
+
+// GetPbfListingsPbfListingsCollectionArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionArray and GetPbfListingsPbfListingsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionArrayInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionArray{ GetPbfListingsPbfListingsCollectionArgs{...} }
+type GetPbfListingsPbfListingsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionArrayOutput() GetPbfListingsPbfListingsCollectionArrayOutput
+	ToGetPbfListingsPbfListingsCollectionArrayOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionArrayOutput
+}
+
+type GetPbfListingsPbfListingsCollectionArray []GetPbfListingsPbfListingsCollectionInput
+
+func (GetPbfListingsPbfListingsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollection)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionArray) ToGetPbfListingsPbfListingsCollectionArrayOutput() GetPbfListingsPbfListingsCollectionArrayOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionArray) ToGetPbfListingsPbfListingsCollectionArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionArrayOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollection)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionOutput) ToGetPbfListingsPbfListingsCollectionOutput() GetPbfListingsPbfListingsCollectionOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionOutput) ToGetPbfListingsPbfListingsCollectionOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionOutput {
+	return o
+}
+
+// List of PbfListingSummary.
+func (o GetPbfListingsPbfListingsCollectionOutput) Items() GetPbfListingsPbfListingsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollection) []GetPbfListingsPbfListingsCollectionItem { return v.Items }).(GetPbfListingsPbfListingsCollectionItemArrayOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollection)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionArrayOutput) ToGetPbfListingsPbfListingsCollectionArrayOutput() GetPbfListingsPbfListingsCollectionArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionArrayOutput) ToGetPbfListingsPbfListingsCollectionArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsPbfListingsCollection {
+		return vs[0].([]GetPbfListingsPbfListingsCollection)[vs[1].(int)]
+	}).(GetPbfListingsPbfListingsCollectionOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
+	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the entire PBF name given.
+	Name string `pulumi:"name"`
+	// Contains details about the publisher of this PBF Listing.
+	PublisherDetails []GetPbfListingsPbfListingsCollectionItemPublisherDetail `pulumi:"publisherDetails"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the PbfListing was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// An array of Trigger. A list of triggers that may activate the PBF.
+	Triggers []GetPbfListingsPbfListingsCollectionItemTrigger `pulumi:"triggers"`
+}
+
+// GetPbfListingsPbfListingsCollectionItemInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemArgs and GetPbfListingsPbfListingsCollectionItemOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionItemInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionItemArgs{...}
+type GetPbfListingsPbfListingsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionItemOutput() GetPbfListingsPbfListingsCollectionItemOutput
+	ToGetPbfListingsPbfListingsCollectionItemOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionItemOutput
+}
+
+type GetPbfListingsPbfListingsCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the entire PBF name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Contains details about the publisher of this PBF Listing.
+	PublisherDetails GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayInput `pulumi:"publisherDetails"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the PbfListing was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// An array of Trigger. A list of triggers that may activate the PBF.
+	Triggers GetPbfListingsPbfListingsCollectionItemTriggerArrayInput `pulumi:"triggers"`
+}
+
+func (GetPbfListingsPbfListingsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItem)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemArgs) ToGetPbfListingsPbfListingsCollectionItemOutput() GetPbfListingsPbfListingsCollectionItemOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemArgs) ToGetPbfListingsPbfListingsCollectionItemOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemOutput)
+}
+
+// GetPbfListingsPbfListingsCollectionItemArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemArray and GetPbfListingsPbfListingsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionItemArrayInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionItemArray{ GetPbfListingsPbfListingsCollectionItemArgs{...} }
+type GetPbfListingsPbfListingsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionItemArrayOutput() GetPbfListingsPbfListingsCollectionItemArrayOutput
+	ToGetPbfListingsPbfListingsCollectionItemArrayOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionItemArrayOutput
+}
+
+type GetPbfListingsPbfListingsCollectionItemArray []GetPbfListingsPbfListingsCollectionItemInput
+
+func (GetPbfListingsPbfListingsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollectionItem)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemArray) ToGetPbfListingsPbfListingsCollectionItemArrayOutput() GetPbfListingsPbfListingsCollectionItemArrayOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemArray) ToGetPbfListingsPbfListingsCollectionItemArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemArrayOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItem)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemOutput) ToGetPbfListingsPbfListingsCollectionItemOutput() GetPbfListingsPbfListingsCollectionItemOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemOutput) ToGetPbfListingsPbfListingsCollectionItemOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetPbfListingsPbfListingsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetPbfListingsPbfListingsCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Unique identifier that is immutable on creation.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire PBF name given.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Contains details about the publisher of this PBF Listing.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) PublisherDetails() GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) []GetPbfListingsPbfListingsCollectionItemPublisherDetail {
+		return v.PublisherDetails
+	}).(GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetPbfListingsPbfListingsCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the PbfListing was created. An RFC3339 formatted datetime string.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// An array of Trigger. A list of triggers that may activate the PBF.
+func (o GetPbfListingsPbfListingsCollectionItemOutput) Triggers() GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) []GetPbfListingsPbfListingsCollectionItemTrigger {
+		return v.Triggers
+	}).(GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollectionItem)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemArrayOutput) ToGetPbfListingsPbfListingsCollectionItemArrayOutput() GetPbfListingsPbfListingsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemArrayOutput) ToGetPbfListingsPbfListingsCollectionItemArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsPbfListingsCollectionItem {
+		return vs[0].([]GetPbfListingsPbfListingsCollectionItem)[vs[1].(int)]
+	}).(GetPbfListingsPbfListingsCollectionItemOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemPublisherDetail struct {
+	// A filter to return only resources that match the entire PBF name given.
+	Name string `pulumi:"name"`
+}
+
+// GetPbfListingsPbfListingsCollectionItemPublisherDetailInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs and GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionItemPublisherDetailInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs{...}
+type GetPbfListingsPbfListingsCollectionItemPublisherDetailInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutput() GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput
+	ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput
+}
+
+type GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs struct {
+	// A filter to return only resources that match the entire PBF name given.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemPublisherDetail)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutput() GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput)
+}
+
+// GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemPublisherDetailArray and GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionItemPublisherDetailArray{ GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs{...} }
+type GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput() GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput
+	ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput
+}
+
+type GetPbfListingsPbfListingsCollectionItemPublisherDetailArray []GetPbfListingsPbfListingsCollectionItemPublisherDetailInput
+
+func (GetPbfListingsPbfListingsCollectionItemPublisherDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollectionItemPublisherDetail)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArray) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput() GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArray) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemPublisherDetail)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutput() GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire PBF name given.
+func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItemPublisherDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollectionItemPublisherDetail)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput() GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsPbfListingsCollectionItemPublisherDetail {
+		return vs[0].([]GetPbfListingsPbfListingsCollectionItemPublisherDetail)[vs[1].(int)]
+	}).(GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemTrigger struct {
+	// A filter to return only resources that match the entire PBF name given.
+	Name string `pulumi:"name"`
+}
+
+// GetPbfListingsPbfListingsCollectionItemTriggerInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemTriggerArgs and GetPbfListingsPbfListingsCollectionItemTriggerOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionItemTriggerInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionItemTriggerArgs{...}
+type GetPbfListingsPbfListingsCollectionItemTriggerInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionItemTriggerOutput() GetPbfListingsPbfListingsCollectionItemTriggerOutput
+	ToGetPbfListingsPbfListingsCollectionItemTriggerOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionItemTriggerOutput
+}
+
+type GetPbfListingsPbfListingsCollectionItemTriggerArgs struct {
+	// A filter to return only resources that match the entire PBF name given.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPbfListingsPbfListingsCollectionItemTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemTriggerArgs) ToGetPbfListingsPbfListingsCollectionItemTriggerOutput() GetPbfListingsPbfListingsCollectionItemTriggerOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionItemTriggerOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemTriggerArgs) ToGetPbfListingsPbfListingsCollectionItemTriggerOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemTriggerOutput)
+}
+
+// GetPbfListingsPbfListingsCollectionItemTriggerArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemTriggerArray and GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput values.
+// You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionItemTriggerArrayInput` via:
+//
+//	GetPbfListingsPbfListingsCollectionItemTriggerArray{ GetPbfListingsPbfListingsCollectionItemTriggerArgs{...} }
+type GetPbfListingsPbfListingsCollectionItemTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutput() GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput
+	ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutputWithContext(context.Context) GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput
+}
+
+type GetPbfListingsPbfListingsCollectionItemTriggerArray []GetPbfListingsPbfListingsCollectionItemTriggerInput
+
+func (GetPbfListingsPbfListingsCollectionItemTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemTriggerArray) ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutput() GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput {
+	return i.ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetPbfListingsPbfListingsCollectionItemTriggerArray) ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionItemTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemTriggerOutput) ToGetPbfListingsPbfListingsCollectionItemTriggerOutput() GetPbfListingsPbfListingsCollectionItemTriggerOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemTriggerOutput) ToGetPbfListingsPbfListingsCollectionItemTriggerOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemTriggerOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire PBF name given.
+func (o GetPbfListingsPbfListingsCollectionItemTriggerOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItemTrigger) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPbfListingsPbfListingsCollectionItemTrigger)(nil)).Elem()
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutput() GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput {
+	return o
+}
+
+func (o GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionItemTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsPbfListingsCollectionItemTrigger {
+		return vs[0].([]GetPbfListingsPbfListingsCollectionItemTrigger)[vs[1].(int)]
+	}).(GetPbfListingsPbfListingsCollectionItemTriggerOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigInput)(nil)).Elem(), ApplicationImagePolicyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigPtrInput)(nil)).Elem(), ApplicationImagePolicyConfigArgs{})
@@ -9076,6 +11822,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationTraceConfigPtrInput)(nil)).Elem(), ApplicationTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), FunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionProvisionedConcurrencyConfigPtrInput)(nil)).Elem(), FunctionProvisionedConcurrencyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsInput)(nil)).Elem(), FunctionSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsPtrInput)(nil)).Elem(), FunctionSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTraceConfigInput)(nil)).Elem(), FunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTraceConfigPtrInput)(nil)).Elem(), FunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationImagePolicyConfigInput)(nil)).Elem(), GetApplicationImagePolicyConfigArgs{})
@@ -9096,6 +11844,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterArrayInput)(nil)).Elem(), GetApplicationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), GetFunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionProvisionedConcurrencyConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailInput)(nil)).Elem(), GetFunctionSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailArrayInput)(nil)).Elem(), GetFunctionSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTraceConfigInput)(nil)).Elem(), GetFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFilterInput)(nil)).Elem(), GetFunctionsFilterArgs{})
@@ -9104,6 +11854,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionArrayInput)(nil)).Elem(), GetFunctionsFunctionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailArrayInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUserItemInput)(nil)).Elem(), GetFusionEnvironmentAdminUserItemArgs{})
@@ -9210,6 +11962,48 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingPublisherDetailInput)(nil)).Elem(), GetPbfListingPublisherDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingPublisherDetailArrayInput)(nil)).Elem(), GetPbfListingPublisherDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggerInput)(nil)).Elem(), GetPbfListingTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggerArrayInput)(nil)).Elem(), GetPbfListingTriggerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggersFilterInput)(nil)).Elem(), GetPbfListingTriggersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggersFilterArrayInput)(nil)).Elem(), GetPbfListingTriggersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggersTriggersCollectionInput)(nil)).Elem(), GetPbfListingTriggersTriggersCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggersTriggersCollectionArrayInput)(nil)).Elem(), GetPbfListingTriggersTriggersCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggersTriggersCollectionItemInput)(nil)).Elem(), GetPbfListingTriggersTriggersCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingTriggersTriggersCollectionItemArrayInput)(nil)).Elem(), GetPbfListingTriggersTriggersCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionConfigInput)(nil)).Elem(), GetPbfListingVersionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionConfigArrayInput)(nil)).Elem(), GetPbfListingVersionConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionRequirementInput)(nil)).Elem(), GetPbfListingVersionRequirementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionRequirementArrayInput)(nil)).Elem(), GetPbfListingVersionRequirementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionRequirementPolicyInput)(nil)).Elem(), GetPbfListingVersionRequirementPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionRequirementPolicyArrayInput)(nil)).Elem(), GetPbfListingVersionRequirementPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionTriggerInput)(nil)).Elem(), GetPbfListingVersionTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionTriggerArrayInput)(nil)).Elem(), GetPbfListingVersionTriggerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsFilterInput)(nil)).Elem(), GetPbfListingVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsFilterArrayInput)(nil)).Elem(), GetPbfListingVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionArrayInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemArrayInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemConfigInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayInput)(nil)).Elem(), GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsFilterInput)(nil)).Elem(), GetPbfListingsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsFilterArrayInput)(nil)).Elem(), GetPbfListingsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionArrayInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemArrayInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemPublisherDetailInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionItemPublisherDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemTriggerInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionItemTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPbfListingsPbfListingsCollectionItemTriggerArrayInput)(nil)).Elem(), GetPbfListingsPbfListingsCollectionItemTriggerArray{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigOutput{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigKeyDetailOutput{})
@@ -9218,6 +12012,8 @@ func init() {
 	pulumi.RegisterOutputType(ApplicationTraceConfigPtrOutput{})
 	pulumi.RegisterOutputType(FunctionProvisionedConcurrencyConfigOutput{})
 	pulumi.RegisterOutputType(FunctionProvisionedConcurrencyConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionSourceDetailsOutput{})
+	pulumi.RegisterOutputType(FunctionSourceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(FunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(FunctionTraceConfigPtrOutput{})
 	pulumi.RegisterOutputType(GetApplicationImagePolicyConfigOutput{})
@@ -9238,6 +12034,8 @@ func init() {
 	pulumi.RegisterOutputType(GetApplicationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionProvisionedConcurrencyConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionProvisionedConcurrencyConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetFunctionSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFilterOutput{})
@@ -9246,6 +12044,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFunctionsFunctionArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUserItemOutput{})
@@ -9352,4 +12152,46 @@ func init() {
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingPublisherDetailOutput{})
+	pulumi.RegisterOutputType(GetPbfListingPublisherDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggerOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggerArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggersFilterOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggersTriggersCollectionOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggersTriggersCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggersTriggersCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPbfListingTriggersTriggersCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionConfigOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionRequirementOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionRequirementArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionRequirementPolicyOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionRequirementPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionTriggerOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionTriggerArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput{})
+	pulumi.RegisterOutputType(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsFilterOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionItemTriggerOutput{})
+	pulumi.RegisterOutputType(GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput{})
 }

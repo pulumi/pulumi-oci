@@ -83,14 +83,14 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+     * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
     @Import(name="deploymentType", required=true)
     private Output<String> deploymentType;
 
     /**
-     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
     public Output<String> deploymentType() {
@@ -402,7 +402,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentType The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+         * @param deploymentType The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentType The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
+         * @param deploymentType The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
          * 
          * @return builder
          * 

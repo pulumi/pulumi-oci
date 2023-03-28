@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection;
+import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig;
@@ -34,6 +35,11 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
      * 
      */
     private String buildPipelineStageType;
+    /**
+     * @return The information about build runner.
+     * 
+     */
+    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig;
     /**
      * @return Collection of build sources.
      * 
@@ -171,6 +177,13 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
      */
     public String buildPipelineStageType() {
         return this.buildPipelineStageType;
+    }
+    /**
+     * @return The information about build runner.
+     * 
+     */
+    public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig() {
+        return this.buildRunnerShapeConfig;
     }
     /**
      * @return Collection of build sources.
@@ -346,6 +359,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
         private String buildPipelineId;
         private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections;
         private String buildPipelineStageType;
+        private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig;
         private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection;
         private String buildSpecFile;
         private String compartmentId;
@@ -375,6 +389,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
     	      this.buildPipelineId = defaults.buildPipelineId;
     	      this.buildPipelineStagePredecessorCollections = defaults.buildPipelineStagePredecessorCollections;
     	      this.buildPipelineStageType = defaults.buildPipelineStageType;
+    	      this.buildRunnerShapeConfig = defaults.buildRunnerShapeConfig;
     	      this.buildSourceCollection = defaults.buildSourceCollection;
     	      this.buildSpecFile = defaults.buildSpecFile;
     	      this.compartmentId = defaults.compartmentId;
@@ -416,6 +431,11 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
         @CustomType.Setter
         public Builder buildPipelineStageType(String buildPipelineStageType) {
             this.buildPipelineStageType = Objects.requireNonNull(buildPipelineStageType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder buildRunnerShapeConfig(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig) {
+            this.buildRunnerShapeConfig = Objects.requireNonNull(buildRunnerShapeConfig);
             return this;
         }
         @CustomType.Setter
@@ -538,6 +558,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
             o.buildPipelineId = buildPipelineId;
             o.buildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
             o.buildPipelineStageType = buildPipelineStageType;
+            o.buildRunnerShapeConfig = buildRunnerShapeConfig;
             o.buildSourceCollection = buildSourceCollection;
             o.buildSpecFile = buildSpecFile;
             o.compartmentId = compartmentId;

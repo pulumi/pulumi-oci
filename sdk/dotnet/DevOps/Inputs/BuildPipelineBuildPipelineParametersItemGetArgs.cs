@@ -15,8 +15,8 @@ namespace Pulumi.Oci.DevOps.Inputs
         /// <summary>
         /// (Updatable) Default value of the parameter.
         /// </summary>
-        [Input("defaultValue")]
-        public Input<string>? DefaultValue { get; set; }
+        [Input("defaultValue", required: true)]
+        public Input<string> DefaultValue { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional description about the build pipeline.

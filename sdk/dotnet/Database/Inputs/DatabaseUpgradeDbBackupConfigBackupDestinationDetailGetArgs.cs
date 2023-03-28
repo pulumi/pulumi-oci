@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class DatabaseUpgradeDbBackupConfigBackupDestinationDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        /// </summary>
+        [Input("dbrsPolicyId")]
+        public Input<string>? DbrsPolicyId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
         [Input("id")]

@@ -343,8 +343,8 @@ class BuildPipeline(pulumi.CustomResource):
             project_id=oci_devops_project["test_project"]["id"],
             build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
                 items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
                     default_value=var["build_pipeline_build_pipeline_parameters_items_default_value"],
+                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
                     description=var["build_pipeline_build_pipeline_parameters_items_description"],
                 )],
             ),
@@ -396,8 +396,8 @@ class BuildPipeline(pulumi.CustomResource):
             project_id=oci_devops_project["test_project"]["id"],
             build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
                 items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
                     default_value=var["build_pipeline_build_pipeline_parameters_items_default_value"],
+                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
                     description=var["build_pipeline_build_pipeline_parameters_items_description"],
                 )],
             ),

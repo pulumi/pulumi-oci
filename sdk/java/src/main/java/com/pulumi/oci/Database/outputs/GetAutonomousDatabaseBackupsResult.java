@@ -45,6 +45,11 @@ public final class GetAutonomousDatabaseBackupsResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The type of backup.
+     * 
+     */
+    private @Nullable String type;
 
     private GetAutonomousDatabaseBackupsResult() {}
     /**
@@ -92,6 +97,13 @@ public final class GetAutonomousDatabaseBackupsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The type of backup.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -109,6 +121,7 @@ public final class GetAutonomousDatabaseBackupsResult {
         private @Nullable List<GetAutonomousDatabaseBackupsFilter> filters;
         private String id;
         private @Nullable String state;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetAutonomousDatabaseBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -119,6 +132,7 @@ public final class GetAutonomousDatabaseBackupsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -162,6 +176,11 @@ public final class GetAutonomousDatabaseBackupsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(@Nullable String type) {
+            this.type = type;
+            return this;
+        }
         public GetAutonomousDatabaseBackupsResult build() {
             final var o = new GetAutonomousDatabaseBackupsResult();
             o.autonomousDatabaseBackups = autonomousDatabaseBackups;
@@ -171,6 +190,7 @@ public final class GetAutonomousDatabaseBackupsResult {
             o.filters = filters;
             o.id = id;
             o.state = state;
+            o.type = type;
             return o;
         }
     }

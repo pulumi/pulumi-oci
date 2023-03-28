@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupBackupDestinationDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -31,6 +32,21 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
      */
     public Optional<Output<String>> autonomousDatabaseId() {
         return Optional.ofNullable(this.autonomousDatabaseId);
+    }
+
+    /**
+     * Backup destination details
+     * 
+     */
+    @Import(name="backupDestinationDetails")
+    private @Nullable Output<AutonomousDatabaseBackupBackupDestinationDetailsArgs> backupDestinationDetails;
+
+    /**
+     * @return Backup destination details
+     * 
+     */
+    public Optional<Output<AutonomousDatabaseBackupBackupDestinationDetailsArgs>> backupDestinationDetails() {
+        return Optional.ofNullable(this.backupDestinationDetails);
     }
 
     /**
@@ -337,6 +353,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
 
     private AutonomousDatabaseBackupState(AutonomousDatabaseBackupState $) {
         this.autonomousDatabaseId = $.autonomousDatabaseId;
+        this.backupDestinationDetails = $.backupDestinationDetails;
         this.compartmentId = $.compartmentId;
         this.databaseSizeInTbs = $.databaseSizeInTbs;
         this.dbVersion = $.dbVersion;
@@ -396,6 +413,27 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             return autonomousDatabaseId(Output.of(autonomousDatabaseId));
+        }
+
+        /**
+         * @param backupDestinationDetails Backup destination details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationDetails(@Nullable Output<AutonomousDatabaseBackupBackupDestinationDetailsArgs> backupDestinationDetails) {
+            $.backupDestinationDetails = backupDestinationDetails;
+            return this;
+        }
+
+        /**
+         * @param backupDestinationDetails Backup destination details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationDetails(AutonomousDatabaseBackupBackupDestinationDetailsArgs backupDestinationDetails) {
+            return backupDestinationDetails(Output.of(backupDestinationDetails));
         }
 
         /**

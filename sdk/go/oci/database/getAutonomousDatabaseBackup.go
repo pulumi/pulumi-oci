@@ -59,6 +59,8 @@ type LookupAutonomousDatabaseBackupResult struct {
 	AutonomousDatabaseBackupId string `pulumi:"autonomousDatabaseBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// Backup destination details
+	BackupDestinationDetails []GetAutonomousDatabaseBackupBackupDestinationDetail `pulumi:"backupDestinationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
@@ -147,6 +149,13 @@ func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseBackupId()
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
 func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// Backup destination details
+func (o LookupAutonomousDatabaseBackupResultOutput) BackupDestinationDetails() GetAutonomousDatabaseBackupBackupDestinationDetailArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) []GetAutonomousDatabaseBackupBackupDestinationDetail {
+		return v.BackupDestinationDetails
+	}).(GetAutonomousDatabaseBackupBackupDestinationDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

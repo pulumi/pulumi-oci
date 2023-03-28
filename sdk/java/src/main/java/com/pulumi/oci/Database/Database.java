@@ -63,7 +63,9 @@ import javax.annotation.Nullable;
  *                 .dbBackupConfig(DatabaseDatabaseDbBackupConfigArgs.builder()
  *                     .autoBackupEnabled(var_.database_database_db_backup_config_auto_backup_enabled())
  *                     .autoBackupWindow(var_.database_database_db_backup_config_auto_backup_window())
+ *                     .backupDeletionPolicy(var_.database_database_db_backup_config_backup_deletion_policy())
  *                     .backupDestinationDetails(DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs.builder()
+ *                         .dbrsPolicyId(oci_identity_policy.test_policy().id())
  *                         .id(var_.database_database_db_backup_config_backup_destination_details_id())
  *                         .type(var_.database_database_db_backup_config_backup_destination_details_type())
  *                         .build())
@@ -384,6 +386,20 @@ public class Database extends com.pulumi.resources.CustomResource {
         return this.kmsKeyVersionId;
     }
     /**
+     * The duration when the latest database backup created.
+     * 
+     */
+    @Export(name="lastBackupDurationInSeconds", type=Integer.class, parameters={})
+    private Output<Integer> lastBackupDurationInSeconds;
+
+    /**
+     * @return The duration when the latest database backup created.
+     * 
+     */
+    public Output<Integer> lastBackupDurationInSeconds() {
+        return this.lastBackupDurationInSeconds;
+    }
+    /**
      * The date and time when the latest database backup was created.
      * 
      */
@@ -396,6 +412,20 @@ public class Database extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lastBackupTimestamp() {
         return this.lastBackupTimestamp;
+    }
+    /**
+     * The date and time when the latest database backup failed.
+     * 
+     */
+    @Export(name="lastFailedBackupTimestamp", type=String.class, parameters={})
+    private Output<String> lastFailedBackupTimestamp;
+
+    /**
+     * @return The date and time when the latest database backup failed.
+     * 
+     */
+    public Output<String> lastFailedBackupTimestamp() {
+        return this.lastFailedBackupTimestamp;
     }
     /**
      * Additional information about the current lifecycle state.

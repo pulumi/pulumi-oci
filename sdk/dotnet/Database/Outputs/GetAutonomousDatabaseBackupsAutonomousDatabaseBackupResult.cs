@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousDatabaseId;
         /// <summary>
+        /// Backup destination details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult> BackupDestinationDetails;
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
@@ -91,7 +95,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeStarted;
         /// <summary>
-        /// The type of backup.
+        /// A filter to return only backups that matches with the given type of Backup.
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -102,6 +106,8 @@ namespace Pulumi.Oci.Database.Outputs
         [OutputConstructor]
         private GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(
             string autonomousDatabaseId,
+
+            ImmutableArray<Outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult> backupDestinationDetails,
 
             string compartmentId,
 
@@ -146,6 +152,7 @@ namespace Pulumi.Oci.Database.Outputs
             string vaultId)
         {
             AutonomousDatabaseId = autonomousDatabaseId;
+            BackupDestinationDetails = backupDestinationDetails;
             CompartmentId = compartmentId;
             DatabaseSizeInTbs = databaseSizeInTbs;
             DbVersion = dbVersion;

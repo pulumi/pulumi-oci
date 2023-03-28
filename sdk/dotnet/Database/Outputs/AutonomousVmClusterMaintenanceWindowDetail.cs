@@ -33,11 +33,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// (Updatable) Months during the year when maintenance should be performed.
         /// </summary>
         public readonly ImmutableArray<Outputs.AutonomousVmClusterMaintenanceWindowDetailMonth> Months;
+        /// <summary>
+        /// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        /// </summary>
         public readonly string? PatchingMode;
         /// <summary>
         /// (Updatable) The maintenance window scheduling preference.
         /// </summary>
-        public readonly string Preference;
+        public readonly string? Preference;
         /// <summary>
         /// (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         /// </summary>
@@ -61,7 +64,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? patchingMode,
 
-            string preference,
+            string? preference,
 
             ImmutableArray<int> weeksOfMonths)
         {

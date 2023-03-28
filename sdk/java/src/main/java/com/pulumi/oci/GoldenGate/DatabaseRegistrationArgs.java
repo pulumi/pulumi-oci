@@ -48,14 +48,14 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
     @Import(name="connectionString")
     private @Nullable Output<String> connectionString;
 
     /**
-     * @return (Updatable) Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * @return (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
     public Optional<Output<String>> connectionString() {
@@ -168,14 +168,14 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     @Import(name="keyId")
     private @Nullable Output<String> keyId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     public Optional<Output<String>> keyId() {
@@ -183,14 +183,14 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
     @Import(name="password", required=true)
     private Output<String> password;
 
     /**
-     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
     public Output<String> password() {
@@ -198,14 +198,14 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+     * The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     @Import(name="secretCompartmentId")
     private @Nullable Output<String> secretCompartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+     * @return The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     public Optional<Output<String>> secretCompartmentId() {
@@ -243,14 +243,14 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     @Import(name="username", required=true)
     private Output<String> username;
 
     /**
-     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     public Output<String> username() {
@@ -258,14 +258,14 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     @Import(name="vaultId")
     private @Nullable Output<String> vaultId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     public Optional<Output<String>> vaultId() {
@@ -371,7 +371,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param keyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+         * @param keyId Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param keyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+         * @param keyId Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param secretCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+         * @param secretCompartmentId The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param secretCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+         * @param secretCompartmentId The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+         * @param vaultId Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
          * 
          * @return builder
          * 
@@ -676,7 +676,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+         * @param vaultId Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
          * 
          * @return builder
          * 

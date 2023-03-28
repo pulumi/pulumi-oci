@@ -17,12 +17,12 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String aliasName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
     private String compartmentId;
     /**
-     * @return Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * @return Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
     private String connectionString;
@@ -67,7 +67,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String ipAddress;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     private String keyId;
@@ -78,17 +78,17 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
     private String lifecycleDetails;
     private String password;
     /**
-     * @return A Private Endpoint IP Address created in the customer&#39;s subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+     * @return A Private Endpoint IP address created in the customer&#39;s subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      * 
      */
     private String rcePrivateIp;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+     * @return The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     private String secretCompartmentId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+     * @return The OCID of the customer&#39;s GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
      * 
      */
     private String secretId;
@@ -123,12 +123,12 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     private String username;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     private String vaultId;
@@ -143,14 +143,14 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.aliasName;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * @return Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
     public String connectionString() {
@@ -213,7 +213,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.ipAddress;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     public String keyId() {
@@ -230,21 +230,21 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.password;
     }
     /**
-     * @return A Private Endpoint IP Address created in the customer&#39;s subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+     * @return A Private Endpoint IP address created in the customer&#39;s subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      * 
      */
     public String rcePrivateIp() {
         return this.rcePrivateIp;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+     * @return The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     public String secretCompartmentId() {
         return this.secretCompartmentId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+     * @return The OCID of the customer&#39;s GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
      * 
      */
     public String secretId() {
@@ -293,14 +293,14 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     public String username() {
         return this.username;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     public String vaultId() {

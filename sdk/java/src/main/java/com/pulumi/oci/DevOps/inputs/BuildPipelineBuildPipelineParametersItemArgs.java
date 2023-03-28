@@ -19,15 +19,15 @@ public final class BuildPipelineBuildPipelineParametersItemArgs extends com.pulu
      * (Updatable) Default value of the parameter.
      * 
      */
-    @Import(name="defaultValue")
-    private @Nullable Output<String> defaultValue;
+    @Import(name="defaultValue", required=true)
+    private Output<String> defaultValue;
 
     /**
      * @return (Updatable) Default value of the parameter.
      * 
      */
-    public Optional<Output<String>> defaultValue() {
-        return Optional.ofNullable(this.defaultValue);
+    public Output<String> defaultValue() {
+        return this.defaultValue;
     }
 
     /**
@@ -92,7 +92,7 @@ public final class BuildPipelineBuildPipelineParametersItemArgs extends com.pulu
          * @return builder
          * 
          */
-        public Builder defaultValue(@Nullable Output<String> defaultValue) {
+        public Builder defaultValue(Output<String> defaultValue) {
             $.defaultValue = defaultValue;
             return this;
         }
@@ -150,6 +150,7 @@ public final class BuildPipelineBuildPipelineParametersItemArgs extends com.pulu
         }
 
         public BuildPipelineBuildPipelineParametersItemArgs build() {
+            $.defaultValue = Objects.requireNonNull($.defaultValue, "expected parameter 'defaultValue' to be non-null");
             $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }

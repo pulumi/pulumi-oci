@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['AutonomousDatabaseBackupArgs', 'AutonomousDatabaseBackup']
 
@@ -15,17 +17,21 @@ __all__ = ['AutonomousDatabaseBackupArgs', 'AutonomousDatabaseBackup']
 class AutonomousDatabaseBackupArgs:
     def __init__(__self__, *,
                  autonomous_database_id: pulumi.Input[str],
+                 backup_destination_details: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_long_term_backup: Optional[pulumi.Input[bool]] = None,
                  retention_period_in_days: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseBackup resource.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if is_long_term_backup is not None:
@@ -44,6 +50,18 @@ class AutonomousDatabaseBackupArgs:
     @autonomous_database_id.setter
     def autonomous_database_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "autonomous_database_id", value)
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
+        """
+        Backup destination details
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, value: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]):
+        pulumi.set(self, "backup_destination_details", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -86,6 +104,7 @@ class AutonomousDatabaseBackupArgs:
 class _AutonomousDatabaseBackupState:
     def __init__(__self__, *,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 backup_destination_details: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
@@ -109,6 +128,7 @@ class _AutonomousDatabaseBackupState:
         """
         Input properties used for looking up and filtering AutonomousDatabaseBackup resources.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
         :param pulumi.Input[str] db_version: A valid Oracle Database version for Autonomous Database.
@@ -132,6 +152,8 @@ class _AutonomousDatabaseBackupState:
         """
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if database_size_in_tbs is not None:
@@ -184,6 +206,18 @@ class _AutonomousDatabaseBackupState:
     @autonomous_database_id.setter
     def autonomous_database_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "autonomous_database_id", value)
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
+        """
+        Backup destination details
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, value: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]):
+        pulumi.set(self, "backup_destination_details", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -432,6 +466,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 backup_destination_details: Optional[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_long_term_backup: Optional[pulumi.Input[bool]] = None,
                  retention_period_in_days: Optional[pulumi.Input[int]] = None,
@@ -465,6 +500,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] backup_destination_details: Backup destination details
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
@@ -517,6 +553,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 backup_destination_details: Optional[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_long_term_backup: Optional[pulumi.Input[bool]] = None,
                  retention_period_in_days: Optional[pulumi.Input[int]] = None,
@@ -532,6 +569,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             if autonomous_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'autonomous_database_id'")
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
+            __props__.__dict__["backup_destination_details"] = backup_destination_details
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["is_long_term_backup"] = is_long_term_backup
             __props__.__dict__["retention_period_in_days"] = retention_period_in_days
@@ -563,6 +601,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+            backup_destination_details: Optional[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             database_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
@@ -591,6 +630,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] backup_destination_details: Backup destination details
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
         :param pulumi.Input[str] db_version: A valid Oracle Database version for Autonomous Database.
@@ -617,6 +657,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         __props__ = _AutonomousDatabaseBackupState.__new__(_AutonomousDatabaseBackupState)
 
         __props__.__dict__["autonomous_database_id"] = autonomous_database_id
+        __props__.__dict__["backup_destination_details"] = backup_destination_details
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["database_size_in_tbs"] = database_size_in_tbs
         __props__.__dict__["db_version"] = db_version
@@ -646,6 +687,14 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         """
         return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> pulumi.Output['outputs.AutonomousDatabaseBackupBackupDestinationDetails']:
+        """
+        Backup destination details
+        """
+        return pulumi.get(self, "backup_destination_details")
 
     @property
     @pulumi.getter(name="compartmentId")

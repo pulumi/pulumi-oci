@@ -627,7 +627,7 @@ func (o DeploymentMaintenanceWindowPtrOutput) StartHour() pulumi.IntPtrOutput {
 }
 
 type DeploymentOggData struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
 	AdminPassword string `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername string `pulumi:"adminUsername"`
@@ -653,7 +653,7 @@ type DeploymentOggDataInput interface {
 }
 
 type DeploymentOggDataArgs struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
@@ -744,7 +744,7 @@ func (o DeploymentOggDataOutput) ToDeploymentOggDataPtrOutputWithContext(ctx con
 	}).(DeploymentOggDataPtrOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
 func (o DeploymentOggDataOutput) AdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v DeploymentOggData) string { return v.AdminPassword }).(pulumi.StringOutput)
 }
@@ -798,7 +798,7 @@ func (o DeploymentOggDataPtrOutput) Elem() DeploymentOggDataOutput {
 	}).(DeploymentOggDataOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
 func (o DeploymentOggDataPtrOutput) AdminPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
@@ -1063,7 +1063,7 @@ func (o GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput) Index
 type GetConnectionAssignmentsConnectionAssignmentCollectionItem struct {
 	// Credential store alias.
 	AliasName string `pulumi:"aliasName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId string `pulumi:"connectionId"`
@@ -1093,7 +1093,7 @@ type GetConnectionAssignmentsConnectionAssignmentCollectionItemInput interface {
 type GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs struct {
 	// Credential store alias.
 	AliasName pulumi.StringInput `pulumi:"aliasName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
@@ -1165,7 +1165,7 @@ func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) AliasN
 	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.AliasName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -1636,7 +1636,9 @@ func (o GetConnectionsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetConnectionsConnectionCollectionItem struct {
-	AccountKey string `pulumi:"accountKey"`
+	// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+	AccessKeyId string `pulumi:"accessKeyId"`
+	AccountKey  string `pulumi:"accountKey"`
 	// Sets the Azure storage account name.
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -1650,14 +1652,19 @@ type GetConnectionsConnectionCollectionItem struct {
 	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId     string `pulumi:"clientId"`
 	ClientSecret string `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+	ConnectionFactory string `pulumi:"connectionFactory"`
 	// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString string `pulumi:"connectionString"`
 	// The array of connection types.
-	ConnectionType     string `pulumi:"connectionType"`
+	ConnectionType string `pulumi:"connectionType"`
+	// JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	ConnectionUrl      string `pulumi:"connectionUrl"`
 	ConsumerProperties string `pulumi:"consumerProperties"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+	CoreSiteXml        string `pulumi:"coreSiteXml"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 	DatabaseId string `pulumi:"databaseId"`
 	// The name of the database.
 	DatabaseName string `pulumi:"databaseName"`
@@ -1679,9 +1686,18 @@ type GetConnectionsConnectionCollectionItem struct {
 	Host string `pulumi:"host"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id string `pulumi:"id"`
-	// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps []GetConnectionsConnectionCollectionItemIngressIp `pulumi:"ingressIps"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+	// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+	JndiConnectionFactory string `pulumi:"jndiConnectionFactory"`
+	// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+	JndiInitialContextFactory string `pulumi:"jndiInitialContextFactory"`
+	// The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+	JndiProviderUrl         string `pulumi:"jndiProviderUrl"`
+	JndiSecurityCredentials string `pulumi:"jndiSecurityCredentials"`
+	// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+	JndiSecurityPrincipal string `pulumi:"jndiSecurityPrincipal"`
+	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	KeyId            string `pulumi:"keyId"`
 	KeyStore         string `pulumi:"keyStore"`
 	KeyStorePassword string `pulumi:"keyStorePassword"`
@@ -1699,12 +1715,18 @@ type GetConnectionsConnectionCollectionItem struct {
 	ProducerProperties   string `pulumi:"producerProperties"`
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The name of the region. e.g.: us-ashburn-1
-	Region   string `pulumi:"region"`
-	SasToken string `pulumi:"sasToken"`
-	// Security protocol for PostgreSQL.
+	Region          string `pulumi:"region"`
+	SasToken        string `pulumi:"sasToken"`
+	SecretAccessKey string `pulumi:"secretAccessKey"`
+	// Security protocol for PostgreSQL / Microsoft SQL Server..
 	SecurityProtocol string `pulumi:"securityProtocol"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-	SessionMode    string `pulumi:"sessionMode"`
+	SessionMode string `pulumi:"sessionMode"`
+	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+	ShouldUseJndi bool `pulumi:"shouldUseJndi"`
+	// If set to true, the driver validates the certificate that is sent by the database server.
+	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
+	// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
 	SslCa          string `pulumi:"sslCa"`
 	SslCert        string `pulumi:"sslCert"`
 	SslCrl         string `pulumi:"sslCrl"`
@@ -1732,11 +1754,11 @@ type GetConnectionsConnectionCollectionItem struct {
 	TrustStorePassword string `pulumi:"trustStorePassword"`
 	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url string `pulumi:"url"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
 	UserId string `pulumi:"userId"`
-	// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
 	Username string `pulumi:"username"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId string `pulumi:"vaultId"`
 	Wallet  string `pulumi:"wallet"`
 }
@@ -1753,7 +1775,9 @@ type GetConnectionsConnectionCollectionItemInput interface {
 }
 
 type GetConnectionsConnectionCollectionItemArgs struct {
-	AccountKey pulumi.StringInput `pulumi:"accountKey"`
+	// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
+	AccountKey  pulumi.StringInput `pulumi:"accountKey"`
 	// Sets the Azure storage account name.
 	AccountName pulumi.StringInput `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -1767,14 +1791,19 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId     pulumi.StringInput `pulumi:"clientId"`
 	ClientSecret pulumi.StringInput `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+	ConnectionFactory pulumi.StringInput `pulumi:"connectionFactory"`
 	// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
 	// The array of connection types.
-	ConnectionType     pulumi.StringInput `pulumi:"connectionType"`
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	ConnectionUrl      pulumi.StringInput `pulumi:"connectionUrl"`
 	ConsumerProperties pulumi.StringInput `pulumi:"consumerProperties"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+	CoreSiteXml        pulumi.StringInput `pulumi:"coreSiteXml"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The name of the database.
 	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
@@ -1796,9 +1825,18 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	Host pulumi.StringInput `pulumi:"host"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
-	// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps GetConnectionsConnectionCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+	// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+	JndiConnectionFactory pulumi.StringInput `pulumi:"jndiConnectionFactory"`
+	// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+	JndiInitialContextFactory pulumi.StringInput `pulumi:"jndiInitialContextFactory"`
+	// The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+	JndiProviderUrl         pulumi.StringInput `pulumi:"jndiProviderUrl"`
+	JndiSecurityCredentials pulumi.StringInput `pulumi:"jndiSecurityCredentials"`
+	// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+	JndiSecurityPrincipal pulumi.StringInput `pulumi:"jndiSecurityPrincipal"`
+	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	KeyId            pulumi.StringInput `pulumi:"keyId"`
 	KeyStore         pulumi.StringInput `pulumi:"keyStore"`
 	KeyStorePassword pulumi.StringInput `pulumi:"keyStorePassword"`
@@ -1816,12 +1854,18 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	ProducerProperties   pulumi.StringInput `pulumi:"producerProperties"`
 	PublicKeyFingerprint pulumi.StringInput `pulumi:"publicKeyFingerprint"`
 	// The name of the region. e.g.: us-ashburn-1
-	Region   pulumi.StringInput `pulumi:"region"`
-	SasToken pulumi.StringInput `pulumi:"sasToken"`
-	// Security protocol for PostgreSQL.
+	Region          pulumi.StringInput `pulumi:"region"`
+	SasToken        pulumi.StringInput `pulumi:"sasToken"`
+	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
+	// Security protocol for PostgreSQL / Microsoft SQL Server..
 	SecurityProtocol pulumi.StringInput `pulumi:"securityProtocol"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-	SessionMode    pulumi.StringInput `pulumi:"sessionMode"`
+	SessionMode pulumi.StringInput `pulumi:"sessionMode"`
+	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+	ShouldUseJndi pulumi.BoolInput `pulumi:"shouldUseJndi"`
+	// If set to true, the driver validates the certificate that is sent by the database server.
+	ShouldValidateServerCertificate pulumi.BoolInput `pulumi:"shouldValidateServerCertificate"`
+	// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
 	SslCa          pulumi.StringInput `pulumi:"sslCa"`
 	SslCert        pulumi.StringInput `pulumi:"sslCert"`
 	SslCrl         pulumi.StringInput `pulumi:"sslCrl"`
@@ -1849,11 +1893,11 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	TrustStorePassword pulumi.StringInput `pulumi:"trustStorePassword"`
 	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url pulumi.StringInput `pulumi:"url"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
 	UserId pulumi.StringInput `pulumi:"userId"`
-	// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
 	Username pulumi.StringInput `pulumi:"username"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 	Wallet  pulumi.StringInput `pulumi:"wallet"`
 }
@@ -1909,6 +1953,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnection
 	return o
 }
 
+// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+func (o GetConnectionsConnectionCollectionItemOutput) AccessKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AccessKeyId }).(pulumi.StringOutput)
+}
+
 func (o GetConnectionsConnectionCollectionItemOutput) AccountKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AccountKey }).(pulumi.StringOutput)
 }
@@ -1951,9 +2000,14 @@ func (o GetConnectionsConnectionCollectionItemOutput) ClientSecret() pulumi.Stri
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 func (o GetConnectionsConnectionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+func (o GetConnectionsConnectionCollectionItemOutput) ConnectionFactory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionFactory }).(pulumi.StringOutput)
 }
 
 // JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
@@ -1966,11 +2020,20 @@ func (o GetConnectionsConnectionCollectionItemOutput) ConnectionType() pulumi.St
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
+// JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+func (o GetConnectionsConnectionCollectionItemOutput) ConnectionUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionUrl }).(pulumi.StringOutput)
+}
+
 func (o GetConnectionsConnectionCollectionItemOutput) ConsumerProperties() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConsumerProperties }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) CoreSiteXml() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.CoreSiteXml }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 func (o GetConnectionsConnectionCollectionItemOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
@@ -2025,14 +2088,38 @@ func (o GetConnectionsConnectionCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 func (o GetConnectionsConnectionCollectionItemOutput) IngressIps() GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemIngressIp {
 		return v.IngressIps
 	}).(GetConnectionsConnectionCollectionItemIngressIpArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+func (o GetConnectionsConnectionCollectionItemOutput) JndiConnectionFactory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.JndiConnectionFactory }).(pulumi.StringOutput)
+}
+
+// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+func (o GetConnectionsConnectionCollectionItemOutput) JndiInitialContextFactory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.JndiInitialContextFactory }).(pulumi.StringOutput)
+}
+
+// The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+func (o GetConnectionsConnectionCollectionItemOutput) JndiProviderUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.JndiProviderUrl }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) JndiSecurityCredentials() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.JndiSecurityCredentials }).(pulumi.StringOutput)
+}
+
+// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+func (o GetConnectionsConnectionCollectionItemOutput) JndiSecurityPrincipal() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.JndiSecurityPrincipal }).(pulumi.StringOutput)
+}
+
+// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 func (o GetConnectionsConnectionCollectionItemOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyId }).(pulumi.StringOutput)
 }
@@ -2094,7 +2181,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) SasToken() pulumi.StringOu
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SasToken }).(pulumi.StringOutput)
 }
 
-// Security protocol for PostgreSQL.
+func (o GetConnectionsConnectionCollectionItemOutput) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecretAccessKey }).(pulumi.StringOutput)
+}
+
+// Security protocol for PostgreSQL / Microsoft SQL Server..
 func (o GetConnectionsConnectionCollectionItemOutput) SecurityProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecurityProtocol }).(pulumi.StringOutput)
 }
@@ -2104,6 +2195,17 @@ func (o GetConnectionsConnectionCollectionItemOutput) SessionMode() pulumi.Strin
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SessionMode }).(pulumi.StringOutput)
 }
 
+// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+func (o GetConnectionsConnectionCollectionItemOutput) ShouldUseJndi() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.ShouldUseJndi }).(pulumi.BoolOutput)
+}
+
+// If set to true, the driver validates the certificate that is sent by the database server.
+func (o GetConnectionsConnectionCollectionItemOutput) ShouldValidateServerCertificate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
+}
+
+// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
 func (o GetConnectionsConnectionCollectionItemOutput) SslCa() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCa }).(pulumi.StringOutput)
 }
@@ -2182,17 +2284,17 @@ func (o GetConnectionsConnectionCollectionItemOutput) Url() pulumi.StringOutput 
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
 func (o GetConnectionsConnectionCollectionItemOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.UserId }).(pulumi.StringOutput)
 }
 
-// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
 func (o GetConnectionsConnectionCollectionItemOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Username }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 func (o GetConnectionsConnectionCollectionItemOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.VaultId }).(pulumi.StringOutput)
 }
@@ -2747,9 +2849,9 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayOutput) Index
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 	// Credential store alias.
 	AliasName string `pulumi:"aliasName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+	// Connect descriptor or Easy Connect Naming method used to connect to a database.
 	ConnectionString string `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId string `pulumi:"databaseId"`
@@ -2767,16 +2869,16 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
 	IpAddress string `pulumi:"ipAddress"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	KeyId string `pulumi:"keyId"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	Password         string `pulumi:"password"`
-	// A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+	// A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
 	RcePrivateIp string `pulumi:"rcePrivateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+	// The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	SecretCompartmentId string `pulumi:"secretCompartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+	// The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
 	SecretId string `pulumi:"secretId"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode string `pulumi:"sessionMode"`
@@ -2790,9 +2892,9 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 	Username string `pulumi:"username"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId string `pulumi:"vaultId"`
 	Wallet  string `pulumi:"wallet"`
 }
@@ -2811,9 +2913,9 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemInput interface {
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs struct {
 	// Credential store alias.
 	AliasName pulumi.StringInput `pulumi:"aliasName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+	// Connect descriptor or Easy Connect Naming method used to connect to a database.
 	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
@@ -2831,16 +2933,16 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	KeyId pulumi.StringInput `pulumi:"keyId"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	Password         pulumi.StringInput `pulumi:"password"`
-	// A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+	// A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
 	RcePrivateIp pulumi.StringInput `pulumi:"rcePrivateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+	// The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	SecretCompartmentId pulumi.StringInput `pulumi:"secretCompartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+	// The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringInput `pulumi:"sessionMode"`
@@ -2854,9 +2956,9 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 	Username pulumi.StringInput `pulumi:"username"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 	Wallet  pulumi.StringInput `pulumi:"wallet"`
 }
@@ -2917,12 +3019,12 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) AliasN
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.AliasName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+// Connect descriptor or Easy Connect Naming method used to connect to a database.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) ConnectionString() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.ConnectionString }).(pulumi.StringOutput)
 }
@@ -2971,7 +3073,7 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) IpAddr
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.KeyId }).(pulumi.StringOutput)
 }
@@ -2985,19 +3087,19 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) Passwo
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+// A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) RcePrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.RcePrivateIp }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+// The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) SecretCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string {
 		return v.SecretCompartmentId
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+// The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.SecretId }).(pulumi.StringOutput)
 }
@@ -3034,12 +3136,12 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) TimeUp
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.Username }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.VaultId }).(pulumi.StringOutput)
 }
@@ -3275,7 +3377,7 @@ type GetDeploymentBackupsDeploymentBackupCollectionItem struct {
 	BackupType string `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket string `pulumi:"bucket"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -3329,7 +3431,7 @@ type GetDeploymentBackupsDeploymentBackupCollectionItemArgs struct {
 	BackupType pulumi.StringInput `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -3428,7 +3530,7 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) Bucket() pulum
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -4627,7 +4729,7 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionArrayOutput) Index(i pul
 }
 
 type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -4693,7 +4795,7 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemInput interface {
 }
 
 type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -4798,7 +4900,7 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) ToGetDeploym
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -5490,7 +5592,7 @@ func (o GetDeploymentsDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDeploymentsDeploymentCollectionItem struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
@@ -5500,7 +5602,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	DeploymentBackupId string `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas []GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl string `pulumi:"deploymentUrl"`
@@ -5574,7 +5676,7 @@ type GetDeploymentsDeploymentCollectionItemInput interface {
 }
 
 type GetDeploymentsDeploymentCollectionItemArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
@@ -5584,7 +5686,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	DeploymentBackupId pulumi.StringInput `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput `pulumi:"deploymentDiagnosticDatas"`
-	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl pulumi.StringInput `pulumi:"deploymentUrl"`
@@ -5697,7 +5799,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) ToGetDeploymentsDeployment
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 func (o GetDeploymentsDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -5724,7 +5826,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentDiagnosticDatas(
 	}).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput)
 }
 
-// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
 }

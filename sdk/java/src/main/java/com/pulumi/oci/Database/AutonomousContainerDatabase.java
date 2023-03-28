@@ -31,6 +31,7 @@ import javax.annotation.Nullable;
  * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
  * 
  * ## Example Usage
+ * 
  * ```java
  * package generated_program;
  * 
@@ -64,6 +65,7 @@ import javax.annotation.Nullable;
  *             .backupConfig(AutonomousContainerDatabaseBackupConfigArgs.builder()
  *                 .backupDestinationDetails(AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs.builder()
  *                     .type(var_.autonomous_container_database_backup_config_backup_destination_details_type())
+ *                     .dbrsPolicyId(oci_identity_policy.test_policy().id())
  *                     .id(var_.autonomous_container_database_backup_config_backup_destination_details_id())
  *                     .internetProxy(var_.autonomous_container_database_backup_config_backup_destination_details_internet_proxy())
  *                     .vpcPassword(var_.autonomous_container_database_backup_config_backup_destination_details_vpc_password())
@@ -102,6 +104,7 @@ import javax.annotation.Nullable;
  *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs.builder()
  *                 .backupDestinationDetails(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
  *                     .type(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type())
+ *                     .dbrsPolicyId(oci_identity_policy.test_policy().id())
  *                     .id(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id())
  *                     .internetProxy(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy())
  *                     .vpcPassword(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password())

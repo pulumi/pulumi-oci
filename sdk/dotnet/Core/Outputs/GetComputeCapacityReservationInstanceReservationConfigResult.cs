@@ -14,7 +14,11 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetComputeCapacityReservationInstanceReservationConfigResult
     {
         /// <summary>
-        /// The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+        /// The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult> ClusterConfigs;
+        /// <summary>
+        /// The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         /// </summary>
         public readonly string FaultDomain;
         /// <summary>
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetComputeCapacityReservationInstanceReservationConfigResult(
+            ImmutableArray<Outputs.GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult> clusterConfigs,
+
             string faultDomain,
 
             string instanceShape,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string usedCount)
         {
+            ClusterConfigs = clusterConfigs;
             FaultDomain = faultDomain;
             InstanceShape = instanceShape;
             InstanceShapeConfigs = instanceShapeConfigs;

@@ -118,6 +118,7 @@ import javax.annotation.Nullable;
  *                 .isLiveMigrationPreferred(var_.instance_availability_config_is_live_migration_preferred())
  *                 .recoveryAction(var_.instance_availability_config_recovery_action())
  *                 .build())
+ *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
  *             .createVnicDetails(InstanceCreateVnicDetailsArgs.builder()
  *                 .assignPrivateDnsRecord(var_.instance_create_vnic_details_assign_private_dns_record())
  *                 .assignPublicIp(var_.instance_create_vnic_details_assign_public_ip())
@@ -294,6 +295,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    @Export(name="computeClusterId", type=String.class, parameters={})
+    private Output<String> computeClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public Output<String> computeClusterId() {
+        return this.computeClusterId;
     }
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).

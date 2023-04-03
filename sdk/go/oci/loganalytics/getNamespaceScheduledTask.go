@@ -70,8 +70,10 @@ type LookupNamespaceScheduledTaskResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-	Id        string `pulumi:"id"`
-	Kind      string `pulumi:"kind"`
+	Id string `pulumi:"id"`
+	// Discriminator.
+	Kind string `pulumi:"kind"`
+	// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace string `pulumi:"namespace"`
 	// Number of execution occurrences.
 	NumOccurrences string `pulumi:"numOccurrences"`
@@ -164,10 +166,12 @@ func (o LookupNamespaceScheduledTaskResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Discriminator.
 func (o LookupNamespaceScheduledTaskResultOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.Kind }).(pulumi.StringOutput)
 }
 
+// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 func (o LookupNamespaceScheduledTaskResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.Namespace }).(pulumi.StringOutput)
 }

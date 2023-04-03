@@ -46,6 +46,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Whether or not this rule is currently enabled.
+        /// </summary>
+        public readonly bool IsEnabled;
+        /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -136,6 +140,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string id,
 
+            bool isEnabled,
+
             string lifecycleDetails,
 
             string logGroupId,
@@ -180,6 +186,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             EntityId = entityId;
             FreeformTags = freeformTags;
             Id = id;
+            IsEnabled = isEnabled;
             LifecycleDetails = lifecycleDetails;
             LogGroupId = logGroupId;
             LogSet = logSet;

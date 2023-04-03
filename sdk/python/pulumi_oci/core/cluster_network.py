@@ -121,7 +121,9 @@ class _ClusterNetworkState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 hpc_island_id: Optional[pulumi.Input[str]] = None,
                  instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]] = None,
+                 network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  placement_configuration: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -132,7 +134,9 @@ class _ClusterNetworkState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs of the HPC island.
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[str] state: The current state of the cluster network.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -146,8 +150,12 @@ class _ClusterNetworkState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hpc_island_id is not None:
+            pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         if instance_pools is not None:
             pulumi.set(__self__, "instance_pools", instance_pools)
+        if network_block_ids is not None:
+            pulumi.set(__self__, "network_block_ids", network_block_ids)
         if placement_configuration is not None:
             pulumi.set(__self__, "placement_configuration", placement_configuration)
         if state is not None:
@@ -206,6 +214,18 @@ class _ClusterNetworkState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @hpc_island_id.setter
+    def hpc_island_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hpc_island_id", value)
+
+    @property
     @pulumi.getter(name="instancePools")
     def instance_pools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]]:
         """
@@ -216,6 +236,18 @@ class _ClusterNetworkState:
     @instance_pools.setter
     def instance_pools(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]]):
         pulumi.set(self, "instance_pools", value)
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of network block OCIDs of the HPC island.
+        """
+        return pulumi.get(self, "network_block_ids")
+
+    @network_block_ids.setter
+    def network_block_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "network_block_ids", value)
 
     @property
     @pulumi.getter(name="placementConfiguration")
@@ -435,6 +467,8 @@ class ClusterNetwork(pulumi.CustomResource):
             if placement_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'placement_configuration'")
             __props__.__dict__["placement_configuration"] = placement_configuration
+            __props__.__dict__["hpc_island_id"] = None
+            __props__.__dict__["network_block_ids"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -452,7 +486,9 @@ class ClusterNetwork(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            hpc_island_id: Optional[pulumi.Input[str]] = None,
             instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterNetworkInstancePoolArgs']]]]] = None,
+            network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             placement_configuration: Optional[pulumi.Input[pulumi.InputType['ClusterNetworkPlacementConfigurationArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -468,7 +504,9 @@ class ClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterNetworkInstancePoolArgs']]]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs of the HPC island.
         :param pulumi.Input[pulumi.InputType['ClusterNetworkPlacementConfigurationArgs']] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[str] state: The current state of the cluster network.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -482,7 +520,9 @@ class ClusterNetwork(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["hpc_island_id"] = hpc_island_id
         __props__.__dict__["instance_pools"] = instance_pools
+        __props__.__dict__["network_block_ids"] = network_block_ids
         __props__.__dict__["placement_configuration"] = placement_configuration
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -522,12 +562,28 @@ class ClusterNetwork(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @property
     @pulumi.getter(name="instancePools")
     def instance_pools(self) -> pulumi.Output[Sequence['outputs.ClusterNetworkInstancePool']]:
         """
         (Updatable) The data to create the instance pools in the cluster network.
         """
         return pulumi.get(self, "instance_pools")
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The list of network block OCIDs of the HPC island.
+        """
+        return pulumi.get(self, "network_block_ids")
 
     @property
     @pulumi.getter(name="placementConfiguration")

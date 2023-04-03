@@ -61,14 +61,14 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The OCID of the boot volume used to boot the instance.
+     * The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
     @Import(name="sourceId", required=true)
     private Output<String> sourceId;
 
     /**
-     * @return The OCID of the boot volume used to boot the instance.
+     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
     public Output<String> sourceId() {
@@ -182,7 +182,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId The OCID of the boot volume used to boot the instance.
+         * @param sourceId The OCID of an image or a boot volume to use, depending on the value of `source_type`.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId The OCID of the boot volume used to boot the instance.
+         * @param sourceId The OCID of an image or a boot volume to use, depending on the value of `source_type`.
          * 
          * @return builder
          * 

@@ -43,6 +43,7 @@ __all__ = [
     'BuildRunBuildRunSourceTriggerInfoActionFilterInclude',
     'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter',
     'BuildRunCommitInfo',
+    'ConnectionLastConnectionValidationResult',
     'ConnectionTlsVerifyConfig',
     'DeployArtifactDeployArtifactSource',
     'DeployArtifactDeployArtifactSourceHelmVerificationKeySource',
@@ -165,9 +166,11 @@ __all__ = [
     'GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeResult',
     'GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult',
     'GetBuildRunsFilterResult',
+    'GetConnectionLastConnectionValidationResultResult',
     'GetConnectionTlsVerifyConfigResult',
     'GetConnectionsConnectionCollectionResult',
     'GetConnectionsConnectionCollectionItemResult',
+    'GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult',
     'GetConnectionsConnectionCollectionItemTlsVerifyConfigResult',
     'GetConnectionsFilterResult',
     'GetDeployArtifactDeployArtifactSourceResult',
@@ -1860,6 +1863,66 @@ class BuildRunCommitInfo(dict):
         Repository URL.
         """
         return pulumi.get(self, "repository_url")
+
+
+@pulumi.output_type
+class ConnectionLastConnectionValidationResult(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeValidated":
+            suggest = "time_validated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionLastConnectionValidationResult. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionLastConnectionValidationResult.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionLastConnectionValidationResult.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 message: Optional[str] = None,
+                 result: Optional[str] = None,
+                 time_validated: Optional[str] = None):
+        """
+        :param str message: A message describing the result of connection validation in more detail.
+        :param str result: The latest result of whether the credentials pass the validation.
+        :param str time_validated: The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if result is not None:
+            pulumi.set(__self__, "result", result)
+        if time_validated is not None:
+            pulumi.set(__self__, "time_validated", time_validated)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message describing the result of connection validation in more detail.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def result(self) -> Optional[str]:
+        """
+        The latest result of whether the credentials pass the validation.
+        """
+        return pulumi.get(self, "result")
+
+    @property
+    @pulumi.getter(name="timeValidated")
+    def time_validated(self) -> Optional[str]:
+        """
+        The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_validated")
 
 
 @pulumi.output_type
@@ -7236,6 +7299,46 @@ class GetBuildRunsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionLastConnectionValidationResultResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 result: str,
+                 time_validated: str):
+        """
+        :param str message: A message describing the result of connection validation in more detail.
+        :param str result: The latest result of whether the credentials pass the validation.
+        :param str time_validated: The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "result", result)
+        pulumi.set(__self__, "time_validated", time_validated)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message describing the result of connection validation in more detail.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def result(self) -> str:
+        """
+        The latest result of whether the credentials pass the validation.
+        """
+        return pulumi.get(self, "result")
+
+    @property
+    @pulumi.getter(name="timeValidated")
+    def time_validated(self) -> str:
+        """
+        The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_validated")
+
+
+@pulumi.output_type
 class GetConnectionTlsVerifyConfigResult(dict):
     def __init__(__self__, *,
                  ca_certificate_bundle_id: str,
@@ -7289,6 +7392,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 last_connection_validation_results: Sequence['outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult'],
                  project_id: str,
                  state: str,
                  system_tags: Mapping[str, Any],
@@ -7307,6 +7411,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
+        :param Sequence['GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs'] last_connection_validation_results: The result of validating the credentials of a connection.
         :param str project_id: unique project identifier
         :param str state: A filter to return only connections that matches the given lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7325,6 +7430,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_connection_validation_results", last_connection_validation_results)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -7414,6 +7520,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lastConnectionValidationResults")
+    def last_connection_validation_results(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult']:
+        """
+        The result of validating the credentials of a connection.
+        """
+        return pulumi.get(self, "last_connection_validation_results")
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
@@ -7468,6 +7582,46 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         Public Bitbucket Cloud Username in plain text
         """
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 result: str,
+                 time_validated: str):
+        """
+        :param str message: A message describing the result of connection validation in more detail.
+        :param str result: The latest result of whether the credentials pass the validation.
+        :param str time_validated: The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "result", result)
+        pulumi.set(__self__, "time_validated", time_validated)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message describing the result of connection validation in more detail.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def result(self) -> str:
+        """
+        The latest result of whether the credentials pass the validation.
+        """
+        return pulumi.get(self, "result")
+
+    @property
+    @pulumi.getter(name="timeValidated")
+    def time_validated(self) -> str:
+        """
+        The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_validated")
 
 
 @pulumi.output_type

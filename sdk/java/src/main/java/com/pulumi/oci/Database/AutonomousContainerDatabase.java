@@ -74,6 +74,7 @@ import javax.annotation.Nullable;
  *                 .recoveryWindowInDays(var_.autonomous_container_database_backup_config_recovery_window_in_days())
  *                 .build())
  *             .compartmentId(var_.compartment_id())
+ *             .dbName(var_.autonomous_container_database_db_name())
  *             .dbUniqueName(var_.autonomous_container_database_db_unique_name())
  *             .dbVersion(var_.autonomous_container_database_db_version())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
@@ -239,6 +240,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
 
     public Output<String> computeModel() {
         return this.computeModel;
+    }
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * 
+     */
+    @Export(name="dbName", type=String.class, parameters={})
+    private Output<String> dbName;
+
+    /**
+     * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * 
+     */
+    public Output<String> dbName() {
+        return this.dbName;
     }
     @Export(name="dbUniqueName", type=String.class, parameters={})
     private Output<String> dbUniqueName;

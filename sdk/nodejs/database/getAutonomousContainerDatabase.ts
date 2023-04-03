@@ -74,6 +74,10 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly compartmentId: string;
     readonly computeModel: string;
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     */
+    readonly dbName: string;
     readonly dbUniqueName: string;
     /**
      * Oracle Database version of the Autonomous Container Database.

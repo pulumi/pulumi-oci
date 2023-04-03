@@ -112,6 +112,10 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * The result of validating the credentials of a connection.
+     */
+    public /*out*/ readonly lastConnectionValidationResults!: pulumi.Output<outputs.DevOps.ConnectionLastConnectionValidationResult[]>;
+    /**
      * The OCID of the DevOps project.
      */
     public readonly projectId!: pulumi.Output<string>;
@@ -162,6 +166,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["lastConnectionValidationResults"] = state ? state.lastConnectionValidationResults : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -189,6 +194,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["tlsVerifyConfig"] = args ? args.tlsVerifyConfig : undefined;
             resourceInputs["username"] = args ? args.username : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["lastConnectionValidationResults"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -241,6 +247,10 @@ export interface ConnectionState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * The result of validating the credentials of a connection.
+     */
+    lastConnectionValidationResults?: pulumi.Input<pulumi.Input<inputs.DevOps.ConnectionLastConnectionValidationResult>[]>;
     /**
      * The OCID of the DevOps project.
      */

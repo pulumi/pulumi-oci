@@ -25,6 +25,12 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public Input<string>? DataType { get; set; }
 
         /// <summary>
+        /// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+        /// </summary>
+        [Input("metricExtraction")]
+        public Input<Inputs.NamespaceScheduledTaskActionMetricExtractionArgs>? MetricExtraction { get; set; }
+
+        /// <summary>
         /// the compartment OCID under which the data will be purged
         /// </summary>
         [Input("purgeCompartmentId")]

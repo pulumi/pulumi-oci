@@ -102,9 +102,17 @@ export class ClusterNetwork extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     */
+    public /*out*/ readonly hpcIslandId!: pulumi.Output<string>;
+    /**
      * (Updatable) The data to create the instance pools in the cluster network.
      */
     public readonly instancePools!: pulumi.Output<outputs.Core.ClusterNetworkInstancePool[]>;
+    /**
+     * The list of network block OCIDs of the HPC island.
+     */
+    public /*out*/ readonly networkBlockIds!: pulumi.Output<string[]>;
     /**
      * The location for where the instance pools in a cluster network will place instances.
      */
@@ -139,7 +147,9 @@ export class ClusterNetwork extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["hpcIslandId"] = state ? state.hpcIslandId : undefined;
             resourceInputs["instancePools"] = state ? state.instancePools : undefined;
+            resourceInputs["networkBlockIds"] = state ? state.networkBlockIds : undefined;
             resourceInputs["placementConfiguration"] = state ? state.placementConfiguration : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -161,6 +171,8 @@ export class ClusterNetwork extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["instancePools"] = args ? args.instancePools : undefined;
             resourceInputs["placementConfiguration"] = args ? args.placementConfiguration : undefined;
+            resourceInputs["hpcIslandId"] = undefined /*out*/;
+            resourceInputs["networkBlockIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -191,9 +203,17 @@ export interface ClusterNetworkState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     */
+    hpcIslandId?: pulumi.Input<string>;
+    /**
      * (Updatable) The data to create the instance pools in the cluster network.
      */
     instancePools?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePool>[]>;
+    /**
+     * The list of network block OCIDs of the HPC island.
+     */
+    networkBlockIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The location for where the instance pools in a cluster network will place instances.
      */

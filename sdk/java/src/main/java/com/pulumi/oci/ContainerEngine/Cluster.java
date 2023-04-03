@@ -250,6 +250,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
+     * (Updatable) Type of cluster
+     * 
+     */
+    @Export(name="type", type=String.class, parameters={})
+    private Output<String> type;
+
+    /**
+     * @return (Updatable) Type of cluster
+     * 
+     */
+    public Output<String> type() {
+        return this.type;
+    }
+    /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      * 
      */

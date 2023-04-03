@@ -108,6 +108,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * (Updatable) Type of cluster
+     */
+    public readonly type!: pulumi.Output<string>;
+    /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      */
     public readonly vcnId!: pulumi.Output<string>;
@@ -140,6 +144,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["options"] = state ? state.options : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
             resourceInputs["vcnId"] = state ? state.vcnId : undefined;
         } else {
             const args = argsOrState as ClusterArgs | undefined;
@@ -162,6 +167,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["kubernetesVersion"] = args ? args.kubernetesVersion : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["options"] = args ? args.options : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["vcnId"] = args ? args.vcnId : undefined;
             resourceInputs["availableKubernetesUpgrades"] = undefined /*out*/;
             resourceInputs["endpoints"] = undefined /*out*/;
@@ -239,6 +245,10 @@ export interface ClusterState {
      */
     state?: pulumi.Input<string>;
     /**
+     * (Updatable) Type of cluster
+     */
+    type?: pulumi.Input<string>;
+    /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      */
     vcnId?: pulumi.Input<string>;
@@ -288,6 +298,10 @@ export interface ClusterArgs {
      * (Updatable) Optional attributes for the cluster.
      */
     options?: pulumi.Input<inputs.ContainerEngine.ClusterOptions>;
+    /**
+     * (Updatable) Type of cluster
+     */
+    type?: pulumi.Input<string>;
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      */

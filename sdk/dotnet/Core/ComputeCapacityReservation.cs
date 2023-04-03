@@ -46,6 +46,11 @@ namespace Pulumi.Oci.Core
     ///             {
     ///                 InstanceShape = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape,
     ///                 ReservedCount = @var.Compute_capacity_reservation_instance_reservation_configs_reserved_count,
+    ///                 ClusterConfig = new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs
+    ///                 {
+    ///                     HpcIslandId = oci_core_hpc_island.Test_hpc_island.Id,
+    ///                     NetworkBlockIds = @var.Compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
+    ///                 },
     ///                 FaultDomain = @var.Compute_capacity_reservation_instance_reservation_configs_fault_domain,
     ///                 InstanceShapeConfig = new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     ///                 {

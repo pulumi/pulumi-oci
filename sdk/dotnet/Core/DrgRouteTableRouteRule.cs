@@ -52,13 +52,13 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> Attributes { get; private set; } = null!;
 
         /// <summary>
-        /// Represents the range of IP addresses to match against when routing traffic.
+        /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
         /// </summary>
         [Output("destination")]
         public Output<string> Destination { get; private set; } = null!;
 
         /// <summary>
-        /// Type of destination for the rule. Allowed values:
+        /// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         /// </summary>
         [Output("destinationType")]
         public Output<string> DestinationType { get; private set; } = null!;
@@ -146,13 +146,13 @@ namespace Pulumi.Oci.Core
     public sealed class DrgRouteTableRouteRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Represents the range of IP addresses to match against when routing traffic.
+        /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
         /// </summary>
         [Input("destination", required: true)]
         public Input<string> Destination { get; set; } = null!;
 
         /// <summary>
-        /// Type of destination for the rule. Allowed values:
+        /// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         /// </summary>
         [Input("destinationType", required: true)]
         public Input<string> DestinationType { get; set; } = null!;
@@ -190,13 +190,13 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Represents the range of IP addresses to match against when routing traffic.
+        /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
         /// </summary>
         [Input("destination")]
         public Input<string>? Destination { get; set; }
 
         /// <summary>
-        /// Type of destination for the rule. Allowed values:
+        /// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }

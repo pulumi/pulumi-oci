@@ -95,14 +95,14 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
     }
 
     /**
-     * Discriminator.
+     * (Updatable) Discriminator.
      * 
      */
     @Import(name="kind")
     private @Nullable Output<String> kind;
 
     /**
-     * @return Discriminator.
+     * @return (Updatable) Discriminator.
      * 
      */
     public Optional<Output<String>> kind() {
@@ -412,7 +412,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param kind Discriminator.
+         * @param kind (Updatable) Discriminator.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param kind Discriminator.
+         * @param kind (Updatable) Discriminator.
          * 
          * @return builder
          * 

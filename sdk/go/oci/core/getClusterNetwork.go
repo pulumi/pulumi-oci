@@ -65,10 +65,14 @@ type LookupClusterNetworkResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+	HpcIslandId string `pulumi:"hpcIslandId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
 	Id string `pulumi:"id"`
 	// The instance pools in the cluster network.
 	InstancePools []GetClusterNetworkInstancePool `pulumi:"instancePools"`
+	// The list of network block OCIDs of the HPC island.
+	NetworkBlockIds []string `pulumi:"networkBlockIds"`
 	// The location for where the instance pools in a cluster network will place instances.
 	PlacementConfigurations []GetClusterNetworkPlacementConfiguration `pulumi:"placementConfigurations"`
 	// The current state of the cluster network.
@@ -141,6 +145,11 @@ func (o LookupClusterNetworkResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupClusterNetworkResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+func (o LookupClusterNetworkResultOutput) HpcIslandId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.HpcIslandId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
 func (o LookupClusterNetworkResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.Id }).(pulumi.StringOutput)
@@ -149,6 +158,11 @@ func (o LookupClusterNetworkResultOutput) Id() pulumi.StringOutput {
 // The instance pools in the cluster network.
 func (o LookupClusterNetworkResultOutput) InstancePools() GetClusterNetworkInstancePoolArrayOutput {
 	return o.ApplyT(func(v LookupClusterNetworkResult) []GetClusterNetworkInstancePool { return v.InstancePools }).(GetClusterNetworkInstancePoolArrayOutput)
+}
+
+// The list of network block OCIDs of the HPC island.
+func (o LookupClusterNetworkResultOutput) NetworkBlockIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) []string { return v.NetworkBlockIds }).(pulumi.StringArrayOutput)
 }
 
 // The location for where the instance pools in a cluster network will place instances.

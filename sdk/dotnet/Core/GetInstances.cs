@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = @var.Compartment_id,
         ///         AvailabilityDomain = @var.Instance_availability_domain,
         ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
+        ///         ComputeClusterId = oci_core_compute_cluster.Test_compute_cluster.Id,
         ///         DisplayName = @var.Instance_display_name,
         ///         State = @var.Instance_state,
         ///     });
@@ -77,6 +78,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = @var.Compartment_id,
         ///         AvailabilityDomain = @var.Instance_availability_domain,
         ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
+        ///         ComputeClusterId = oci_core_compute_cluster.Test_compute_cluster.Id,
         ///         DisplayName = @var.Instance_display_name,
         ///         State = @var.Instance_state,
         ///     });
@@ -110,6 +112,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+        /// </summary>
+        [Input("computeClusterId")]
+        public string? ComputeClusterId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -158,6 +166,12 @@ namespace Pulumi.Oci.Core
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+        /// </summary>
+        [Input("computeClusterId")]
+        public Input<string>? ComputeClusterId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         [Input("displayName")]
@@ -199,6 +213,7 @@ namespace Pulumi.Oci.Core
         /// The OCID of the compartment that contains the instance.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly string? ComputeClusterId;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -225,6 +240,8 @@ namespace Pulumi.Oci.Core
 
             string compartmentId,
 
+            string? computeClusterId,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetInstancesFilterResult> filters,
@@ -238,6 +255,7 @@ namespace Pulumi.Oci.Core
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
+            ComputeClusterId = computeClusterId;
             DisplayName = displayName;
             Filters = filters;
             Id = id;

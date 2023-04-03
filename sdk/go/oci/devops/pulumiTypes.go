@@ -3973,6 +3973,121 @@ func (o BuildRunCommitInfoPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type ConnectionLastConnectionValidationResult struct {
+	// A message describing the result of connection validation in more detail.
+	Message *string `pulumi:"message"`
+	// The latest result of whether the credentials pass the validation.
+	Result *string `pulumi:"result"`
+	// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeValidated *string `pulumi:"timeValidated"`
+}
+
+// ConnectionLastConnectionValidationResultInput is an input type that accepts ConnectionLastConnectionValidationResultArgs and ConnectionLastConnectionValidationResultOutput values.
+// You can construct a concrete instance of `ConnectionLastConnectionValidationResultInput` via:
+//
+//	ConnectionLastConnectionValidationResultArgs{...}
+type ConnectionLastConnectionValidationResultInput interface {
+	pulumi.Input
+
+	ToConnectionLastConnectionValidationResultOutput() ConnectionLastConnectionValidationResultOutput
+	ToConnectionLastConnectionValidationResultOutputWithContext(context.Context) ConnectionLastConnectionValidationResultOutput
+}
+
+type ConnectionLastConnectionValidationResultArgs struct {
+	// A message describing the result of connection validation in more detail.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The latest result of whether the credentials pass the validation.
+	Result pulumi.StringPtrInput `pulumi:"result"`
+	// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeValidated pulumi.StringPtrInput `pulumi:"timeValidated"`
+}
+
+func (ConnectionLastConnectionValidationResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (i ConnectionLastConnectionValidationResultArgs) ToConnectionLastConnectionValidationResultOutput() ConnectionLastConnectionValidationResultOutput {
+	return i.ToConnectionLastConnectionValidationResultOutputWithContext(context.Background())
+}
+
+func (i ConnectionLastConnectionValidationResultArgs) ToConnectionLastConnectionValidationResultOutputWithContext(ctx context.Context) ConnectionLastConnectionValidationResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionLastConnectionValidationResultOutput)
+}
+
+// ConnectionLastConnectionValidationResultArrayInput is an input type that accepts ConnectionLastConnectionValidationResultArray and ConnectionLastConnectionValidationResultArrayOutput values.
+// You can construct a concrete instance of `ConnectionLastConnectionValidationResultArrayInput` via:
+//
+//	ConnectionLastConnectionValidationResultArray{ ConnectionLastConnectionValidationResultArgs{...} }
+type ConnectionLastConnectionValidationResultArrayInput interface {
+	pulumi.Input
+
+	ToConnectionLastConnectionValidationResultArrayOutput() ConnectionLastConnectionValidationResultArrayOutput
+	ToConnectionLastConnectionValidationResultArrayOutputWithContext(context.Context) ConnectionLastConnectionValidationResultArrayOutput
+}
+
+type ConnectionLastConnectionValidationResultArray []ConnectionLastConnectionValidationResultInput
+
+func (ConnectionLastConnectionValidationResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (i ConnectionLastConnectionValidationResultArray) ToConnectionLastConnectionValidationResultArrayOutput() ConnectionLastConnectionValidationResultArrayOutput {
+	return i.ToConnectionLastConnectionValidationResultArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionLastConnectionValidationResultArray) ToConnectionLastConnectionValidationResultArrayOutputWithContext(ctx context.Context) ConnectionLastConnectionValidationResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionLastConnectionValidationResultArrayOutput)
+}
+
+type ConnectionLastConnectionValidationResultOutput struct{ *pulumi.OutputState }
+
+func (ConnectionLastConnectionValidationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (o ConnectionLastConnectionValidationResultOutput) ToConnectionLastConnectionValidationResultOutput() ConnectionLastConnectionValidationResultOutput {
+	return o
+}
+
+func (o ConnectionLastConnectionValidationResultOutput) ToConnectionLastConnectionValidationResultOutputWithContext(ctx context.Context) ConnectionLastConnectionValidationResultOutput {
+	return o
+}
+
+// A message describing the result of connection validation in more detail.
+func (o ConnectionLastConnectionValidationResultOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionLastConnectionValidationResult) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The latest result of whether the credentials pass the validation.
+func (o ConnectionLastConnectionValidationResultOutput) Result() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionLastConnectionValidationResult) *string { return v.Result }).(pulumi.StringPtrOutput)
+}
+
+// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o ConnectionLastConnectionValidationResultOutput) TimeValidated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionLastConnectionValidationResult) *string { return v.TimeValidated }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionLastConnectionValidationResultArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionLastConnectionValidationResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (o ConnectionLastConnectionValidationResultArrayOutput) ToConnectionLastConnectionValidationResultArrayOutput() ConnectionLastConnectionValidationResultArrayOutput {
+	return o
+}
+
+func (o ConnectionLastConnectionValidationResultArrayOutput) ToConnectionLastConnectionValidationResultArrayOutputWithContext(ctx context.Context) ConnectionLastConnectionValidationResultArrayOutput {
+	return o
+}
+
+func (o ConnectionLastConnectionValidationResultArrayOutput) Index(i pulumi.IntInput) ConnectionLastConnectionValidationResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionLastConnectionValidationResult {
+		return vs[0].([]ConnectionLastConnectionValidationResult)[vs[1].(int)]
+	}).(ConnectionLastConnectionValidationResultOutput)
+}
+
 type ConnectionTlsVerifyConfig struct {
 	// (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
 	CaCertificateBundleId string `pulumi:"caCertificateBundleId"`
@@ -19487,6 +19602,121 @@ func (o GetBuildRunsFilterArrayOutput) Index(i pulumi.IntInput) GetBuildRunsFilt
 	}).(GetBuildRunsFilterOutput)
 }
 
+type GetConnectionLastConnectionValidationResult struct {
+	// A message describing the result of connection validation in more detail.
+	Message string `pulumi:"message"`
+	// The latest result of whether the credentials pass the validation.
+	Result string `pulumi:"result"`
+	// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeValidated string `pulumi:"timeValidated"`
+}
+
+// GetConnectionLastConnectionValidationResultInput is an input type that accepts GetConnectionLastConnectionValidationResultArgs and GetConnectionLastConnectionValidationResultOutput values.
+// You can construct a concrete instance of `GetConnectionLastConnectionValidationResultInput` via:
+//
+//	GetConnectionLastConnectionValidationResultArgs{...}
+type GetConnectionLastConnectionValidationResultInput interface {
+	pulumi.Input
+
+	ToGetConnectionLastConnectionValidationResultOutput() GetConnectionLastConnectionValidationResultOutput
+	ToGetConnectionLastConnectionValidationResultOutputWithContext(context.Context) GetConnectionLastConnectionValidationResultOutput
+}
+
+type GetConnectionLastConnectionValidationResultArgs struct {
+	// A message describing the result of connection validation in more detail.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The latest result of whether the credentials pass the validation.
+	Result pulumi.StringInput `pulumi:"result"`
+	// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeValidated pulumi.StringInput `pulumi:"timeValidated"`
+}
+
+func (GetConnectionLastConnectionValidationResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (i GetConnectionLastConnectionValidationResultArgs) ToGetConnectionLastConnectionValidationResultOutput() GetConnectionLastConnectionValidationResultOutput {
+	return i.ToGetConnectionLastConnectionValidationResultOutputWithContext(context.Background())
+}
+
+func (i GetConnectionLastConnectionValidationResultArgs) ToGetConnectionLastConnectionValidationResultOutputWithContext(ctx context.Context) GetConnectionLastConnectionValidationResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionLastConnectionValidationResultOutput)
+}
+
+// GetConnectionLastConnectionValidationResultArrayInput is an input type that accepts GetConnectionLastConnectionValidationResultArray and GetConnectionLastConnectionValidationResultArrayOutput values.
+// You can construct a concrete instance of `GetConnectionLastConnectionValidationResultArrayInput` via:
+//
+//	GetConnectionLastConnectionValidationResultArray{ GetConnectionLastConnectionValidationResultArgs{...} }
+type GetConnectionLastConnectionValidationResultArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionLastConnectionValidationResultArrayOutput() GetConnectionLastConnectionValidationResultArrayOutput
+	ToGetConnectionLastConnectionValidationResultArrayOutputWithContext(context.Context) GetConnectionLastConnectionValidationResultArrayOutput
+}
+
+type GetConnectionLastConnectionValidationResultArray []GetConnectionLastConnectionValidationResultInput
+
+func (GetConnectionLastConnectionValidationResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (i GetConnectionLastConnectionValidationResultArray) ToGetConnectionLastConnectionValidationResultArrayOutput() GetConnectionLastConnectionValidationResultArrayOutput {
+	return i.ToGetConnectionLastConnectionValidationResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionLastConnectionValidationResultArray) ToGetConnectionLastConnectionValidationResultArrayOutputWithContext(ctx context.Context) GetConnectionLastConnectionValidationResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionLastConnectionValidationResultArrayOutput)
+}
+
+type GetConnectionLastConnectionValidationResultOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionLastConnectionValidationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (o GetConnectionLastConnectionValidationResultOutput) ToGetConnectionLastConnectionValidationResultOutput() GetConnectionLastConnectionValidationResultOutput {
+	return o
+}
+
+func (o GetConnectionLastConnectionValidationResultOutput) ToGetConnectionLastConnectionValidationResultOutputWithContext(ctx context.Context) GetConnectionLastConnectionValidationResultOutput {
+	return o
+}
+
+// A message describing the result of connection validation in more detail.
+func (o GetConnectionLastConnectionValidationResultOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionLastConnectionValidationResult) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The latest result of whether the credentials pass the validation.
+func (o GetConnectionLastConnectionValidationResultOutput) Result() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionLastConnectionValidationResult) string { return v.Result }).(pulumi.StringOutput)
+}
+
+// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetConnectionLastConnectionValidationResultOutput) TimeValidated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionLastConnectionValidationResult) string { return v.TimeValidated }).(pulumi.StringOutput)
+}
+
+type GetConnectionLastConnectionValidationResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionLastConnectionValidationResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (o GetConnectionLastConnectionValidationResultArrayOutput) ToGetConnectionLastConnectionValidationResultArrayOutput() GetConnectionLastConnectionValidationResultArrayOutput {
+	return o
+}
+
+func (o GetConnectionLastConnectionValidationResultArrayOutput) ToGetConnectionLastConnectionValidationResultArrayOutputWithContext(ctx context.Context) GetConnectionLastConnectionValidationResultArrayOutput {
+	return o
+}
+
+func (o GetConnectionLastConnectionValidationResultArrayOutput) Index(i pulumi.IntInput) GetConnectionLastConnectionValidationResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionLastConnectionValidationResult {
+		return vs[0].([]GetConnectionLastConnectionValidationResult)[vs[1].(int)]
+	}).(GetConnectionLastConnectionValidationResultOutput)
+}
+
 type GetConnectionTlsVerifyConfig struct {
 	// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
 	CaCertificateBundleId string `pulumi:"caCertificateBundleId"`
@@ -19708,6 +19938,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
+	// The result of validating the credentials of a connection.
+	LastConnectionValidationResults []GetConnectionsConnectionCollectionItemLastConnectionValidationResult `pulumi:"lastConnectionValidationResults"`
 	// unique project identifier
 	ProjectId string `pulumi:"projectId"`
 	// A filter to return only connections that matches the given lifecycle state.
@@ -19756,6 +19988,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The result of validating the credentials of a connection.
+	LastConnectionValidationResults GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayInput `pulumi:"lastConnectionValidationResults"`
 	// unique project identifier
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// A filter to return only connections that matches the given lifecycle state.
@@ -19873,6 +20107,13 @@ func (o GetConnectionsConnectionCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The result of validating the credentials of a connection.
+func (o GetConnectionsConnectionCollectionItemOutput) LastConnectionValidationResults() GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemLastConnectionValidationResult {
+		return v.LastConnectionValidationResults
+	}).(GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput)
+}
+
 // unique project identifier
 func (o GetConnectionsConnectionCollectionItemOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
@@ -19928,6 +20169,123 @@ func (o GetConnectionsConnectionCollectionItemArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItem {
 		return vs[0].([]GetConnectionsConnectionCollectionItem)[vs[1].(int)]
 	}).(GetConnectionsConnectionCollectionItemOutput)
+}
+
+type GetConnectionsConnectionCollectionItemLastConnectionValidationResult struct {
+	// A message describing the result of connection validation in more detail.
+	Message string `pulumi:"message"`
+	// The latest result of whether the credentials pass the validation.
+	Result string `pulumi:"result"`
+	// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeValidated string `pulumi:"timeValidated"`
+}
+
+// GetConnectionsConnectionCollectionItemLastConnectionValidationResultInput is an input type that accepts GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs and GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemLastConnectionValidationResultInput` via:
+//
+//	GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs{...}
+type GetConnectionsConnectionCollectionItemLastConnectionValidationResultInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput() GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput
+	ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput
+}
+
+type GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs struct {
+	// A message describing the result of connection validation in more detail.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The latest result of whether the credentials pass the validation.
+	Result pulumi.StringInput `pulumi:"result"`
+	// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeValidated pulumi.StringInput `pulumi:"timeValidated"`
+}
+
+func (GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput() GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput {
+	return i.ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput)
+}
+
+// GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemLastConnectionValidationResultArray and GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemLastConnectionValidationResultArray{ GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs{...} }
+type GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput() GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput
+	ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemLastConnectionValidationResultArray []GetConnectionsConnectionCollectionItemLastConnectionValidationResultInput
+
+func (GetConnectionsConnectionCollectionItemLastConnectionValidationResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemLastConnectionValidationResultArray) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput() GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemLastConnectionValidationResultArray) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput() GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput {
+	return o
+}
+
+// A message describing the result of connection validation in more detail.
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemLastConnectionValidationResult) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The latest result of whether the credentials pass the validation.
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput) Result() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemLastConnectionValidationResult) string { return v.Result }).(pulumi.StringOutput)
+}
+
+// The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput) TimeValidated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemLastConnectionValidationResult) string {
+		return v.TimeValidated
+	}).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemLastConnectionValidationResult)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput() GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput) ToGetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemLastConnectionValidationResult {
+		return vs[0].([]GetConnectionsConnectionCollectionItemLastConnectionValidationResult)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput)
 }
 
 type GetConnectionsConnectionCollectionItemTlsVerifyConfig struct {
@@ -41230,6 +41588,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunCommitInfoInput)(nil)).Elem(), BuildRunCommitInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunCommitInfoPtrInput)(nil)).Elem(), BuildRunCommitInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionLastConnectionValidationResultInput)(nil)).Elem(), ConnectionLastConnectionValidationResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionLastConnectionValidationResultArrayInput)(nil)).Elem(), ConnectionLastConnectionValidationResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTlsVerifyConfigInput)(nil)).Elem(), ConnectionTlsVerifyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTlsVerifyConfigPtrInput)(nil)).Elem(), ConnectionTlsVerifyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployArtifactDeployArtifactSourceInput)(nil)).Elem(), DeployArtifactDeployArtifactSourceArgs{})
@@ -41467,12 +41827,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunsBuildRunSummaryCollectionItemCommitInfoInput)(nil)).Elem(), GetBuildRunsBuildRunSummaryCollectionItemCommitInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunsFilterInput)(nil)).Elem(), GetBuildRunsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunsFilterArrayInput)(nil)).Elem(), GetBuildRunsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionLastConnectionValidationResultInput)(nil)).Elem(), GetConnectionLastConnectionValidationResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionLastConnectionValidationResultArrayInput)(nil)).Elem(), GetConnectionLastConnectionValidationResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionTlsVerifyConfigInput)(nil)).Elem(), GetConnectionTlsVerifyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionTlsVerifyConfigArrayInput)(nil)).Elem(), GetConnectionTlsVerifyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionInput)(nil)).Elem(), GetConnectionsConnectionCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemLastConnectionValidationResultInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemLastConnectionValidationResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemTlsVerifyConfigInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemTlsVerifyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterInput)(nil)).Elem(), GetConnectionsFilterArgs{})
@@ -41889,6 +42253,8 @@ func init() {
 	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(BuildRunCommitInfoOutput{})
 	pulumi.RegisterOutputType(BuildRunCommitInfoPtrOutput{})
+	pulumi.RegisterOutputType(ConnectionLastConnectionValidationResultOutput{})
+	pulumi.RegisterOutputType(ConnectionLastConnectionValidationResultArrayOutput{})
 	pulumi.RegisterOutputType(ConnectionTlsVerifyConfigOutput{})
 	pulumi.RegisterOutputType(ConnectionTlsVerifyConfigPtrOutput{})
 	pulumi.RegisterOutputType(DeployArtifactDeployArtifactSourceOutput{})
@@ -42126,12 +42492,16 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildRunsBuildRunSummaryCollectionItemCommitInfoOutput{})
 	pulumi.RegisterOutputType(GetBuildRunsFilterOutput{})
 	pulumi.RegisterOutputType(GetBuildRunsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionLastConnectionValidationResultOutput{})
+	pulumi.RegisterOutputType(GetConnectionLastConnectionValidationResultArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionTlsVerifyConfigOutput{})
 	pulumi.RegisterOutputType(GetConnectionTlsVerifyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemLastConnectionValidationResultOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemLastConnectionValidationResultArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsFilterOutput{})

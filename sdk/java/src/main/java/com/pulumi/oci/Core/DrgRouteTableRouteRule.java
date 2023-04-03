@@ -80,28 +80,28 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
         return this.attributes;
     }
     /**
-     * Represents the range of IP addresses to match against when routing traffic.
+     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      * 
      */
     @Export(name="destination", type=String.class, parameters={})
     private Output<String> destination;
 
     /**
-     * @return Represents the range of IP addresses to match against when routing traffic.
+     * @return (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      * 
      */
     public Output<String> destination() {
         return this.destination;
     }
     /**
-     * Type of destination for the rule. Allowed values:
+     * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      * 
      */
     @Export(name="destinationType", type=String.class, parameters={})
     private Output<String> destinationType;
 
     /**
-     * @return Type of destination for the rule. Allowed values:
+     * @return Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      * 
      */
     public Output<String> destinationType() {

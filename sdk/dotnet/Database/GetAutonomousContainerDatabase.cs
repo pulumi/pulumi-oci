@@ -133,6 +133,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         public readonly string ComputeModel;
+        /// <summary>
+        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// </summary>
+        public readonly string DbName;
         public readonly string DbUniqueName;
         /// <summary>
         /// Oracle Database version of the Autonomous Container Database.
@@ -279,6 +283,8 @@ namespace Pulumi.Oci.Database
 
             string computeModel,
 
+            string dbName,
+
             string dbUniqueName,
 
             string dbVersion,
@@ -370,6 +376,7 @@ namespace Pulumi.Oci.Database
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
+            DbName = dbName;
             DbUniqueName = dbUniqueName;
             DbVersion = dbVersion;
             DefinedTags = definedTags;

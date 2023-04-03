@@ -902,6 +902,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ContainerEngine/addon",
+  "fqn": "pulumi_oci.containerengine",
+  "classes": {
+   "oci:ContainerEngine/addon:Addon": "Addon"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ContainerEngine/cluster",
   "fqn": "pulumi_oci.containerengine",
   "classes": {
@@ -922,6 +930,14 @@ _utilities.register(
   "fqn": "pulumi_oci.containerengine",
   "classes": {
    "oci:ContainerEngine/nodePool:NodePool": "NodePool"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ContainerEngine/virtualNodePool",
+  "fqn": "pulumi_oci.containerengine",
+  "classes": {
+   "oci:ContainerEngine/virtualNodePool:VirtualNodePool": "VirtualNodePool"
   }
  },
  {
@@ -978,6 +994,14 @@ _utilities.register(
   "fqn": "pulumi_oci.core",
   "classes": {
    "oci:Core/computeCapacityReservation:ComputeCapacityReservation": "ComputeCapacityReservation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/computeCluster",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/computeCluster:ComputeCluster": "ComputeCluster"
   }
  },
  {

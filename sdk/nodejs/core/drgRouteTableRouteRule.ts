@@ -64,11 +64,11 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
      */
     public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Represents the range of IP addresses to match against when routing traffic.
+     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      */
     public readonly destination!: pulumi.Output<string>;
     /**
-     * Type of destination for the rule. Allowed values:
+     * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      */
     public readonly destinationType!: pulumi.Output<string>;
     /**
@@ -156,11 +156,11 @@ export interface DrgRouteTableRouteRuleState {
      */
     attributes?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Represents the range of IP addresses to match against when routing traffic.
+     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      */
     destination?: pulumi.Input<string>;
     /**
-     * Type of destination for the rule. Allowed values:
+     * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      */
     destinationType?: pulumi.Input<string>;
     /**
@@ -194,11 +194,11 @@ export interface DrgRouteTableRouteRuleState {
  */
 export interface DrgRouteTableRouteRuleArgs {
     /**
-     * Represents the range of IP addresses to match against when routing traffic.
+     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      */
     destination: pulumi.Input<string>;
     /**
-     * Type of destination for the rule. Allowed values:
+     * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      */
     destinationType: pulumi.Input<string>;
     /**

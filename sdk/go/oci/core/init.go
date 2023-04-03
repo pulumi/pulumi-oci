@@ -35,6 +35,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ClusterNetwork{}
 	case "oci:Core/computeCapacityReservation:ComputeCapacityReservation":
 		r = &ComputeCapacityReservation{}
+	case "oci:Core/computeCluster:ComputeCluster":
+		r = &ComputeCluster{}
 	case "oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema":
 		r = &ComputeImageCapabilitySchema{}
 	case "oci:Core/consoleHistory:ConsoleHistory":
@@ -195,6 +197,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/computeCapacityReservation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/computeCluster",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

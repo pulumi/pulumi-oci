@@ -22,7 +22,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_id=None, instance_options=None, ipxe_script=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_id=None, instance_options=None, ipxe_script=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -44,6 +44,9 @@ class GetInstanceResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_cluster_id and not isinstance(compute_cluster_id, str):
+            raise TypeError("Expected argument 'compute_cluster_id' to be a str")
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details and not isinstance(create_vnic_details, list):
             raise TypeError("Expected argument 'create_vnic_details' to be a list")
         pulumi.set(__self__, "create_vnic_details", create_vnic_details)
@@ -205,6 +208,11 @@ class GetInstanceResult:
         The OCID of the compartment that contains the instance.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> str:
+        return pulumi.get(self, "compute_cluster_id")
 
     @property
     @pulumi.getter(name="createVnicDetails")
@@ -461,6 +469,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             boot_volume_id=self.boot_volume_id,
             capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
+            compute_cluster_id=self.compute_cluster_id,
             create_vnic_details=self.create_vnic_details,
             dedicated_vm_host_id=self.dedicated_vm_host_id,
             defined_tags=self.defined_tags,
@@ -530,6 +539,7 @@ def get_instance(instance_id: Optional[str] = None,
         boot_volume_id=__ret__.boot_volume_id,
         capacity_reservation_id=__ret__.capacity_reservation_id,
         compartment_id=__ret__.compartment_id,
+        compute_cluster_id=__ret__.compute_cluster_id,
         create_vnic_details=__ret__.create_vnic_details,
         dedicated_vm_host_id=__ret__.dedicated_vm_host_id,
         defined_tags=__ret__.defined_tags,

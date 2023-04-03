@@ -21,6 +21,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// the type of the log data to be purged
         /// </summary>
         public readonly string DataType;
+        public readonly ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult> MetricExtractions;
         /// <summary>
         /// the compartment OCID under which the data will be purged
         /// </summary>
@@ -48,6 +49,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string dataType,
 
+            ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult> metricExtractions,
+
             string purgeCompartmentId,
 
             string purgeDuration,
@@ -60,6 +63,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         {
             CompartmentIdInSubtree = compartmentIdInSubtree;
             DataType = dataType;
+            MetricExtractions = metricExtractions;
             PurgeCompartmentId = purgeCompartmentId;
             PurgeDuration = purgeDuration;
             QueryString = queryString;

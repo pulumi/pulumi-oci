@@ -81,6 +81,21 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * 
+     */
+    @Import(name="hpcIslandId")
+    private @Nullable Output<String> hpcIslandId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * 
+     */
+    public Optional<Output<String>> hpcIslandId() {
+        return Optional.ofNullable(this.hpcIslandId);
+    }
+
+    /**
      * (Updatable) The data to create the instance pools in the cluster network.
      * 
      */
@@ -93,6 +108,21 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<List<ClusterNetworkInstancePoolArgs>>> instancePools() {
         return Optional.ofNullable(this.instancePools);
+    }
+
+    /**
+     * The list of network block OCIDs of the HPC island.
+     * 
+     */
+    @Import(name="networkBlockIds")
+    private @Nullable Output<List<String>> networkBlockIds;
+
+    /**
+     * @return The list of network block OCIDs of the HPC island.
+     * 
+     */
+    public Optional<Output<List<String>>> networkBlockIds() {
+        return Optional.ofNullable(this.networkBlockIds);
     }
 
     /**
@@ -162,7 +192,9 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.hpcIslandId = $.hpcIslandId;
         this.instancePools = $.instancePools;
+        this.networkBlockIds = $.networkBlockIds;
         this.placementConfiguration = $.placementConfiguration;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -272,6 +304,27 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hpcIslandId(@Nullable Output<String> hpcIslandId) {
+            $.hpcIslandId = hpcIslandId;
+            return this;
+        }
+
+        /**
+         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hpcIslandId(String hpcIslandId) {
+            return hpcIslandId(Output.of(hpcIslandId));
+        }
+
+        /**
          * @param instancePools (Updatable) The data to create the instance pools in the cluster network.
          * 
          * @return builder
@@ -300,6 +353,37 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
          */
         public Builder instancePools(ClusterNetworkInstancePoolArgs... instancePools) {
             return instancePools(List.of(instancePools));
+        }
+
+        /**
+         * @param networkBlockIds The list of network block OCIDs of the HPC island.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkBlockIds(@Nullable Output<List<String>> networkBlockIds) {
+            $.networkBlockIds = networkBlockIds;
+            return this;
+        }
+
+        /**
+         * @param networkBlockIds The list of network block OCIDs of the HPC island.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkBlockIds(List<String> networkBlockIds) {
+            return networkBlockIds(Output.of(networkBlockIds));
+        }
+
+        /**
+         * @param networkBlockIds The list of network block OCIDs of the HPC island.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkBlockIds(String... networkBlockIds) {
+            return networkBlockIds(List.of(networkBlockIds));
         }
 
         /**

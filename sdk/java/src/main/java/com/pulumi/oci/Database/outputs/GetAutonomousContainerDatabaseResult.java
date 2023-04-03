@@ -57,6 +57,11 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String compartmentId;
     private String computeModel;
+    /**
+     * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * 
+     */
+    private String dbName;
     private String dbUniqueName;
     /**
      * @return Oracle Database version of the Autonomous Container Database.
@@ -266,6 +271,13 @@ public final class GetAutonomousContainerDatabaseResult {
     }
     public String computeModel() {
         return this.computeModel;
+    }
+    /**
+     * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * 
+     */
+    public String dbName() {
+        return this.dbName;
     }
     public String dbUniqueName() {
         return this.dbUniqueName;
@@ -521,6 +533,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private String cloudAutonomousVmClusterId;
         private String compartmentId;
         private String computeModel;
+        private String dbName;
         private String dbUniqueName;
         private String dbVersion;
         private Map<String,Object> definedTags;
@@ -574,6 +587,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.cloudAutonomousVmClusterId = defaults.cloudAutonomousVmClusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
+    	      this.dbName = defaults.dbName;
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.dbVersion = defaults.dbVersion;
     	      this.definedTags = defaults.definedTags;
@@ -663,6 +677,11 @@ public final class GetAutonomousContainerDatabaseResult {
         @CustomType.Setter
         public Builder computeModel(String computeModel) {
             this.computeModel = Objects.requireNonNull(computeModel);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbName(String dbName) {
+            this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
         @CustomType.Setter
@@ -896,6 +915,7 @@ public final class GetAutonomousContainerDatabaseResult {
             o.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             o.compartmentId = compartmentId;
             o.computeModel = computeModel;
+            o.dbName = dbName;
             o.dbUniqueName = dbUniqueName;
             o.dbVersion = dbVersion;
             o.definedTags = definedTags;

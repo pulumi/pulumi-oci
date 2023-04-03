@@ -28,6 +28,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
                  log_set_key: Optional[pulumi.Input[str]] = None,
@@ -51,6 +52,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
@@ -79,6 +81,8 @@ class LogAnalyticsObjectCollectionRuleArgs:
             pulumi.set(__self__, "entity_id", entity_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if log_set is not None:
             pulumi.set(__self__, "log_set", log_set)
         if log_set_ext_regex is not None:
@@ -243,6 +247,18 @@ class LogAnalyticsObjectCollectionRuleArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether or not this rule is currently enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
     @pulumi.getter(name="logSet")
     def log_set(self) -> Optional[pulumi.Input[str]]:
         """
@@ -361,6 +377,7 @@ class _LogAnalyticsObjectCollectionRuleState:
                  description: Optional[pulumi.Input[str]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
@@ -388,6 +405,7 @@ class _LogAnalyticsObjectCollectionRuleState:
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -421,6 +439,8 @@ class _LogAnalyticsObjectCollectionRuleState:
             pulumi.set(__self__, "entity_id", entity_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if log_group_id is not None:
@@ -541,6 +561,18 @@ class _LogAnalyticsObjectCollectionRuleState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether or not this rule is currently enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -771,6 +803,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
@@ -814,6 +847,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_enabled=var["log_analytics_object_collection_rule_is_enabled"],
             log_set=var["log_analytics_object_collection_rule_log_set"],
             log_set_ext_regex=var["log_analytics_object_collection_rule_log_set_ext_regex"],
             log_set_key=var["log_analytics_object_collection_rule_log_set_key"],
@@ -841,6 +875,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
@@ -890,6 +925,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_enabled=var["log_analytics_object_collection_rule_is_enabled"],
             log_set=var["log_analytics_object_collection_rule_log_set"],
             log_set_ext_regex=var["log_analytics_object_collection_rule_log_set_ext_regex"],
             log_set_key=var["log_analytics_object_collection_rule_log_set_key"],
@@ -930,6 +966,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
@@ -962,6 +999,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["entity_id"] = entity_id
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_enabled"] = is_enabled
             if log_group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'log_group_id'")
             __props__.__dict__["log_group_id"] = log_group_id
@@ -1007,6 +1045,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             entity_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             log_group_id: Optional[pulumi.Input[str]] = None,
             log_set: Optional[pulumi.Input[str]] = None,
@@ -1039,6 +1078,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -1069,6 +1109,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["entity_id"] = entity_id
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_enabled"] = is_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_group_id"] = log_group_id
         __props__.__dict__["log_set"] = log_set
@@ -1144,6 +1185,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Whether or not this rule is currently enabled.
+        """
+        return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

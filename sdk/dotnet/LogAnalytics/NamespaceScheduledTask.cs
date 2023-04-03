@@ -56,7 +56,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Discriminator.
+        /// (Updatable) Discriminator.
         /// </summary>
         [Output("kind")]
         public Output<string> Kind { get; private set; } = null!;
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// Discriminator.
+        /// (Updatable) Discriminator.
         /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;
@@ -293,7 +293,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// Discriminator.
+        /// (Updatable) Discriminator.
         /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }

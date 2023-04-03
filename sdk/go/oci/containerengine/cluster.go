@@ -57,6 +57,8 @@ type Cluster struct {
 	Options ClusterOptionsOutput `pulumi:"options"`
 	// The state of the cluster masters.
 	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) Type of cluster
+	Type pulumi.StringOutput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
@@ -129,6 +131,8 @@ type clusterState struct {
 	Options *ClusterOptions `pulumi:"options"`
 	// The state of the cluster masters.
 	State *string `pulumi:"state"`
+	// (Updatable) Type of cluster
+	Type *string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
 	VcnId *string `pulumi:"vcnId"`
 }
@@ -164,6 +168,8 @@ type ClusterState struct {
 	Options ClusterOptionsPtrInput
 	// The state of the cluster masters.
 	State pulumi.StringPtrInput
+	// (Updatable) Type of cluster
+	Type pulumi.StringPtrInput
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
 	VcnId pulumi.StringPtrInput
 }
@@ -193,6 +199,8 @@ type clusterArgs struct {
 	Name *string `pulumi:"name"`
 	// (Updatable) Optional attributes for the cluster.
 	Options *ClusterOptions `pulumi:"options"`
+	// (Updatable) Type of cluster
+	Type *string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
 	VcnId string `pulumi:"vcnId"`
 }
@@ -219,6 +227,8 @@ type ClusterArgs struct {
 	Name pulumi.StringPtrInput
 	// (Updatable) Optional attributes for the cluster.
 	Options ClusterOptionsPtrInput
+	// (Updatable) Type of cluster
+	Type pulumi.StringPtrInput
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
 	VcnId pulumi.StringInput
 }
@@ -383,6 +393,11 @@ func (o ClusterOutput) Options() ClusterOptionsOutput {
 // The state of the cluster masters.
 func (o ClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of cluster
+func (o ClusterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
 // The OCID of the virtual cloud network (VCN) in which to create the cluster.

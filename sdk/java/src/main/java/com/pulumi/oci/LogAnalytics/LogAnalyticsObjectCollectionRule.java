@@ -11,6 +11,7 @@ import com.pulumi.oci.LogAnalytics.LogAnalyticsObjectCollectionRuleArgs;
 import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsObjectCollectionRuleState;
 import com.pulumi.oci.LogAnalytics.outputs.LogAnalyticsObjectCollectionRuleOverride;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -58,6 +59,7 @@ import javax.annotation.Nullable;
  *             .description(var_.log_analytics_object_collection_rule_description())
  *             .entityId(oci_log_analytics_entity.test_entity().id())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isEnabled(var_.log_analytics_object_collection_rule_is_enabled())
  *             .logSet(var_.log_analytics_object_collection_rule_log_set())
  *             .logSetExtRegex(var_.log_analytics_object_collection_rule_log_set_ext_regex())
  *             .logSetKey(var_.log_analytics_object_collection_rule_log_set_key())
@@ -180,6 +182,20 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) Whether or not this rule is currently enabled.
+     * 
+     */
+    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isEnabled;
+
+    /**
+     * @return (Updatable) Whether or not this rule is currently enabled.
+     * 
+     */
+    public Output<Boolean> isEnabled() {
+        return this.isEnabled;
     }
     /**
      * A detailed status of the life cycle state.

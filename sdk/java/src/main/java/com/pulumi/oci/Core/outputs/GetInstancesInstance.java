@@ -53,6 +53,11 @@ public final class GetInstancesInstance {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * 
+     */
+    private String computeClusterId;
     private List<GetInstancesInstanceCreateVnicDetail> createVnicDetails;
     /**
      * @return The OCID of the dedicated virtual machine host that the instance is placed on.
@@ -242,6 +247,13 @@ public final class GetInstancesInstance {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * 
+     */
+    public String computeClusterId() {
+        return this.computeClusterId;
     }
     public List<GetInstancesInstanceCreateVnicDetail> createVnicDetails() {
         return this.createVnicDetails;
@@ -465,6 +477,7 @@ public final class GetInstancesInstance {
         private String bootVolumeId;
         private String capacityReservationId;
         private String compartmentId;
+        private String computeClusterId;
         private List<GetInstancesInstanceCreateVnicDetail> createVnicDetails;
         private String dedicatedVmHostId;
         private Map<String,Object> definedTags;
@@ -506,6 +519,7 @@ public final class GetInstancesInstance {
     	      this.bootVolumeId = defaults.bootVolumeId;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.createVnicDetails = defaults.createVnicDetails;
     	      this.dedicatedVmHostId = defaults.dedicatedVmHostId;
     	      this.definedTags = defaults.definedTags;
@@ -578,6 +592,11 @@ public final class GetInstancesInstance {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = Objects.requireNonNull(computeClusterId);
             return this;
         }
         @CustomType.Setter
@@ -765,6 +784,7 @@ public final class GetInstancesInstance {
             o.bootVolumeId = bootVolumeId;
             o.capacityReservationId = capacityReservationId;
             o.compartmentId = compartmentId;
+            o.computeClusterId = computeClusterId;
             o.createVnicDetails = createVnicDetails;
             o.dedicatedVmHostId = dedicatedVmHostId;
             o.definedTags = definedTags;

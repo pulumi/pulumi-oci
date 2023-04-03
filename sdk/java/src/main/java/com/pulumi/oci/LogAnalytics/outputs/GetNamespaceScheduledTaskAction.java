@@ -4,8 +4,10 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskActionMetricExtraction;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -20,6 +22,11 @@ public final class GetNamespaceScheduledTaskAction {
      * 
      */
     private String dataType;
+    /**
+     * @return Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
+    private List<GetNamespaceScheduledTaskActionMetricExtraction> metricExtractions;
     /**
      * @return the compartment OCID under which the data will be purged
      * 
@@ -60,6 +67,13 @@ public final class GetNamespaceScheduledTaskAction {
      */
     public String dataType() {
         return this.dataType;
+    }
+    /**
+     * @return Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
+    public List<GetNamespaceScheduledTaskActionMetricExtraction> metricExtractions() {
+        return this.metricExtractions;
     }
     /**
      * @return the compartment OCID under which the data will be purged
@@ -108,6 +122,7 @@ public final class GetNamespaceScheduledTaskAction {
     public static final class Builder {
         private Boolean compartmentIdInSubtree;
         private String dataType;
+        private List<GetNamespaceScheduledTaskActionMetricExtraction> metricExtractions;
         private String purgeCompartmentId;
         private String purgeDuration;
         private String queryString;
@@ -118,6 +133,7 @@ public final class GetNamespaceScheduledTaskAction {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.dataType = defaults.dataType;
+    	      this.metricExtractions = defaults.metricExtractions;
     	      this.purgeCompartmentId = defaults.purgeCompartmentId;
     	      this.purgeDuration = defaults.purgeDuration;
     	      this.queryString = defaults.queryString;
@@ -134,6 +150,14 @@ public final class GetNamespaceScheduledTaskAction {
         public Builder dataType(String dataType) {
             this.dataType = Objects.requireNonNull(dataType);
             return this;
+        }
+        @CustomType.Setter
+        public Builder metricExtractions(List<GetNamespaceScheduledTaskActionMetricExtraction> metricExtractions) {
+            this.metricExtractions = Objects.requireNonNull(metricExtractions);
+            return this;
+        }
+        public Builder metricExtractions(GetNamespaceScheduledTaskActionMetricExtraction... metricExtractions) {
+            return metricExtractions(List.of(metricExtractions));
         }
         @CustomType.Setter
         public Builder purgeCompartmentId(String purgeCompartmentId) {
@@ -164,6 +188,7 @@ public final class GetNamespaceScheduledTaskAction {
             final var o = new GetNamespaceScheduledTaskAction();
             o.compartmentIdInSubtree = compartmentIdInSubtree;
             o.dataType = dataType;
+            o.metricExtractions = metricExtractions;
             o.purgeCompartmentId = purgeCompartmentId;
             o.purgeDuration = purgeDuration;
             o.queryString = queryString;

@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+        /// </summary>
+        public readonly string ComputeClusterId;
         public readonly ImmutableArray<Outputs.GetInstancesInstanceCreateVnicDetailResult> CreateVnicDetails;
         /// <summary>
         /// The OCID of the dedicated virtual machine host that the instance is placed on.
@@ -158,6 +162,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string compartmentId,
 
+            string computeClusterId,
+
             ImmutableArray<Outputs.GetInstancesInstanceCreateVnicDetailResult> createVnicDetails,
 
             string dedicatedVmHostId,
@@ -227,6 +233,7 @@ namespace Pulumi.Oci.Core.Outputs
             BootVolumeId = bootVolumeId;
             CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
+            ComputeClusterId = computeClusterId;
             CreateVnicDetails = createVnicDetails;
             DedicatedVmHostId = dedicatedVmHostId;
             DefinedTags = definedTags;

@@ -76,6 +76,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     */
+    public readonly dbName!: pulumi.Output<string>;
     public readonly dbUniqueName!: pulumi.Output<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -249,6 +253,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["cloudAutonomousVmClusterId"] = state ? state.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
+            resourceInputs["dbName"] = state ? state.dbName : undefined;
             resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -302,6 +307,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["backupConfig"] = args ? args.backupConfig : undefined;
             resourceInputs["cloudAutonomousVmClusterId"] = args ? args.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["dbName"] = args ? args.dbName : undefined;
             resourceInputs["dbUniqueName"] = args ? args.dbUniqueName : undefined;
             resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -384,6 +390,10 @@ export interface AutonomousContainerDatabaseState {
      */
     compartmentId?: pulumi.Input<string>;
     computeModel?: pulumi.Input<string>;
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     */
+    dbName?: pulumi.Input<string>;
     dbUniqueName?: pulumi.Input<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -561,6 +571,10 @@ export interface AutonomousContainerDatabaseArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     */
+    dbName?: pulumi.Input<string>;
     dbUniqueName?: pulumi.Input<string>;
     /**
      * The base version for the Autonomous Container Database.

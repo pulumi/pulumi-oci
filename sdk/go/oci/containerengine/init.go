@@ -21,12 +21,16 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:ContainerEngine/addon:Addon":
+		r = &Addon{}
 	case "oci:ContainerEngine/cluster:Cluster":
 		r = &Cluster{}
 	case "oci:ContainerEngine/containerInstance:ContainerInstance":
 		r = &ContainerInstance{}
 	case "oci:ContainerEngine/nodePool:NodePool":
 		r = &NodePool{}
+	case "oci:ContainerEngine/virtualNodePool:VirtualNodePool":
+		r = &VirtualNodePool{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -42,6 +46,11 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"oci",
+		"ContainerEngine/addon",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"ContainerEngine/cluster",
 		&module{version},
 	)
@@ -53,6 +62,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ContainerEngine/nodePool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ContainerEngine/virtualNodePool",
 		&module{version},
 	)
 }

@@ -68,7 +68,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Discriminator.
+     * (Updatable) Discriminator.
      */
     public readonly kind!: pulumi.Output<string>;
     /**
@@ -211,7 +211,7 @@ export interface NamespaceScheduledTaskState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Discriminator.
+     * (Updatable) Discriminator.
      */
     kind?: pulumi.Input<string>;
     /**
@@ -282,7 +282,7 @@ export interface NamespaceScheduledTaskArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Discriminator.
+     * (Updatable) Discriminator.
      */
     kind: pulumi.Input<string>;
     /**

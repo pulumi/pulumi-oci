@@ -46,6 +46,7 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				IsEnabled:         pulumi.Any(_var.Log_analytics_object_collection_rule_is_enabled),
 //				LogSet:            pulumi.Any(_var.Log_analytics_object_collection_rule_log_set),
 //				LogSetExtRegex:    pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_ext_regex),
 //				LogSetKey:         pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_key),
@@ -90,6 +91,8 @@ type LogAnalyticsObjectCollectionRule struct {
 	EntityId pulumi.StringOutput `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// (Updatable) Whether or not this rule is currently enabled.
+	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -189,6 +192,8 @@ type logAnalyticsObjectCollectionRuleState struct {
 	EntityId *string `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) Whether or not this rule is currently enabled.
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -242,6 +247,8 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	EntityId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) Whether or not this rule is currently enabled.
+	IsEnabled pulumi.BoolPtrInput
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -299,6 +306,8 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	EntityId *string `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) Whether or not this rule is currently enabled.
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId string `pulumi:"logGroupId"`
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -345,6 +354,8 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	EntityId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) Whether or not this rule is currently enabled.
+	IsEnabled pulumi.BoolPtrInput
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringInput
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -495,6 +506,11 @@ func (o LogAnalyticsObjectCollectionRuleOutput) EntityId() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o LogAnalyticsObjectCollectionRuleOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// (Updatable) Whether or not this rule is currently enabled.
+func (o LogAnalyticsObjectCollectionRuleOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
 // A detailed status of the life cycle state.

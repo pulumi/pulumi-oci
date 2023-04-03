@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs;
 import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class ComputeCapacityReservationInstanceReservationConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ComputeCapacityReservationInstanceReservationConfigArgs Empty = new ComputeCapacityReservationInstanceReservationConfigArgs();
+
+    /**
+     * (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+     * 
+     */
+    @Import(name="clusterConfig")
+    private @Nullable Output<ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs> clusterConfig;
+
+    /**
+     * @return (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+     * 
+     */
+    public Optional<Output<ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs>> clusterConfig() {
+        return Optional.ofNullable(this.clusterConfig);
+    }
 
     /**
      * (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
@@ -94,6 +110,7 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
     private ComputeCapacityReservationInstanceReservationConfigArgs() {}
 
     private ComputeCapacityReservationInstanceReservationConfigArgs(ComputeCapacityReservationInstanceReservationConfigArgs $) {
+        this.clusterConfig = $.clusterConfig;
         this.faultDomain = $.faultDomain;
         this.instanceShape = $.instanceShape;
         this.instanceShapeConfig = $.instanceShapeConfig;
@@ -117,6 +134,27 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
 
         public Builder(ComputeCapacityReservationInstanceReservationConfigArgs defaults) {
             $ = new ComputeCapacityReservationInstanceReservationConfigArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterConfig (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterConfig(@Nullable Output<ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs> clusterConfig) {
+            $.clusterConfig = clusterConfig;
+            return this;
+        }
+
+        /**
+         * @param clusterConfig (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterConfig(ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs clusterConfig) {
+            return clusterConfig(Output.of(clusterConfig));
         }
 
         /**

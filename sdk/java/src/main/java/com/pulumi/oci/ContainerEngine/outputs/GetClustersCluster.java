@@ -99,6 +99,11 @@ public final class GetClustersCluster {
      */
     private String state;
     /**
+     * @return Type of cluster
+     * 
+     */
+    private String type;
+    /**
      * @return The OCID of the virtual cloud network (VCN) in which the cluster exists.
      * 
      */
@@ -218,6 +223,13 @@ public final class GetClustersCluster {
         return this.state;
     }
     /**
+     * @return Type of cluster
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
+    /**
      * @return The OCID of the virtual cloud network (VCN) in which the cluster exists.
      * 
      */
@@ -250,6 +262,7 @@ public final class GetClustersCluster {
         private String name;
         private List<GetClustersClusterOption> options;
         private String state;
+        private String type;
         private String vcnId;
         public Builder() {}
         public Builder(GetClustersCluster defaults) {
@@ -270,6 +283,7 @@ public final class GetClustersCluster {
     	      this.name = defaults.name;
     	      this.options = defaults.options;
     	      this.state = defaults.state;
+    	      this.type = defaults.type;
     	      this.vcnId = defaults.vcnId;
         }
 
@@ -375,6 +389,11 @@ public final class GetClustersCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder type(String type) {
+            this.type = Objects.requireNonNull(type);
+            return this;
+        }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
@@ -397,6 +416,7 @@ public final class GetClustersCluster {
             o.name = name;
             o.options = options;
             o.state = state;
+            o.type = type;
             o.vcnId = vcnId;
             return o;
         }

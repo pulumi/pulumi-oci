@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AddonArgs, AddonState } from "./addon";
+export type Addon = import("./addon").Addon;
+export const Addon: typeof import("./addon").Addon = null as any;
+utilities.lazyLoad(exports, ["Addon"], () => require("./addon"));
+
 export { ClusterArgs, ClusterState } from "./cluster";
 export type Cluster = import("./cluster").Cluster;
 export const Cluster: typeof import("./cluster").Cluster = null as any;
@@ -14,6 +19,21 @@ export { ContainerInstanceArgs, ContainerInstanceState } from "./containerInstan
 export type ContainerInstance = import("./containerInstance").ContainerInstance;
 export const ContainerInstance: typeof import("./containerInstance").ContainerInstance = null as any;
 utilities.lazyLoad(exports, ["ContainerInstance"], () => require("./containerInstance"));
+
+export { GetAddonArgs, GetAddonResult, GetAddonOutputArgs } from "./getAddon";
+export const getAddon: typeof import("./getAddon").getAddon = null as any;
+export const getAddonOutput: typeof import("./getAddon").getAddonOutput = null as any;
+utilities.lazyLoad(exports, ["getAddon","getAddonOutput"], () => require("./getAddon"));
+
+export { GetAddonOptionsArgs, GetAddonOptionsResult, GetAddonOptionsOutputArgs } from "./getAddonOptions";
+export const getAddonOptions: typeof import("./getAddonOptions").getAddonOptions = null as any;
+export const getAddonOptionsOutput: typeof import("./getAddonOptions").getAddonOptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAddonOptions","getAddonOptionsOutput"], () => require("./getAddonOptions"));
+
+export { GetAddonsArgs, GetAddonsResult, GetAddonsOutputArgs } from "./getAddons";
+export const getAddons: typeof import("./getAddons").getAddons = null as any;
+export const getAddonsOutput: typeof import("./getAddons").getAddonsOutput = null as any;
+utilities.lazyLoad(exports, ["getAddons","getAddonsOutput"], () => require("./getAddons"));
 
 export { GetClusterKubeConfigArgs, GetClusterKubeConfigResult, GetClusterKubeConfigOutputArgs } from "./getClusterKubeConfig";
 export const getClusterKubeConfig: typeof import("./getClusterKubeConfig").getClusterKubeConfig = null as any;
@@ -50,6 +70,21 @@ export const getNodePools: typeof import("./getNodePools").getNodePools = null a
 export const getNodePoolsOutput: typeof import("./getNodePools").getNodePoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getNodePools","getNodePoolsOutput"], () => require("./getNodePools"));
 
+export { GetPodShapesArgs, GetPodShapesResult, GetPodShapesOutputArgs } from "./getPodShapes";
+export const getPodShapes: typeof import("./getPodShapes").getPodShapes = null as any;
+export const getPodShapesOutput: typeof import("./getPodShapes").getPodShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getPodShapes","getPodShapesOutput"], () => require("./getPodShapes"));
+
+export { GetVirtualNodePoolArgs, GetVirtualNodePoolResult, GetVirtualNodePoolOutputArgs } from "./getVirtualNodePool";
+export const getVirtualNodePool: typeof import("./getVirtualNodePool").getVirtualNodePool = null as any;
+export const getVirtualNodePoolOutput: typeof import("./getVirtualNodePool").getVirtualNodePoolOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualNodePool","getVirtualNodePoolOutput"], () => require("./getVirtualNodePool"));
+
+export { GetVirtualNodePoolsArgs, GetVirtualNodePoolsResult, GetVirtualNodePoolsOutputArgs } from "./getVirtualNodePools";
+export const getVirtualNodePools: typeof import("./getVirtualNodePools").getVirtualNodePools = null as any;
+export const getVirtualNodePoolsOutput: typeof import("./getVirtualNodePools").getVirtualNodePoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualNodePools","getVirtualNodePoolsOutput"], () => require("./getVirtualNodePools"));
+
 export { GetWorkRequestErrorsArgs, GetWorkRequestErrorsResult, GetWorkRequestErrorsOutputArgs } from "./getWorkRequestErrors";
 export const getWorkRequestErrors: typeof import("./getWorkRequestErrors").getWorkRequestErrors = null as any;
 export const getWorkRequestErrorsOutput: typeof import("./getWorkRequestErrors").getWorkRequestErrorsOutput = null as any;
@@ -70,22 +105,33 @@ export type NodePool = import("./nodePool").NodePool;
 export const NodePool: typeof import("./nodePool").NodePool = null as any;
 utilities.lazyLoad(exports, ["NodePool"], () => require("./nodePool"));
 
+export { VirtualNodePoolArgs, VirtualNodePoolState } from "./virtualNodePool";
+export type VirtualNodePool = import("./virtualNodePool").VirtualNodePool;
+export const VirtualNodePool: typeof import("./virtualNodePool").VirtualNodePool = null as any;
+utilities.lazyLoad(exports, ["VirtualNodePool"], () => require("./virtualNodePool"));
+
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:ContainerEngine/addon:Addon":
+                return new Addon(name, <any>undefined, { urn })
             case "oci:ContainerEngine/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
             case "oci:ContainerEngine/containerInstance:ContainerInstance":
                 return new ContainerInstance(name, <any>undefined, { urn })
             case "oci:ContainerEngine/nodePool:NodePool":
                 return new NodePool(name, <any>undefined, { urn })
+            case "oci:ContainerEngine/virtualNodePool:VirtualNodePool":
+                return new VirtualNodePool(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "ContainerEngine/addon", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/cluster", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/containerInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/nodePool", _module)
+pulumi.runtime.registerResourceModule("oci", "ContainerEngine/virtualNodePool", _module)

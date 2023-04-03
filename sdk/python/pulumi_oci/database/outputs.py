@@ -10964,6 +10964,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  cloud_autonomous_vm_cluster_id: str,
                  compartment_id: str,
                  compute_model: str,
+                 db_name: str,
                  db_unique_name: str,
                  db_version: str,
                  defined_tags: Mapping[str, Any],
@@ -11013,6 +11014,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -11050,6 +11052,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_model", compute_model)
+        pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -11152,6 +11155,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         return pulumi.get(self, "compute_model")
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> str:
+        """
+        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        """
+        return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbUniqueName")

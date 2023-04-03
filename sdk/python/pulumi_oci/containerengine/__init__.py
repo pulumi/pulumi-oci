@@ -5,8 +5,12 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .addon import *
 from .cluster import *
 from .container_instance import *
+from .get_addon import *
+from .get_addon_options import *
+from .get_addons import *
 from .get_cluster_kube_config import *
 from .get_cluster_option import *
 from .get_clusters import *
@@ -14,9 +18,13 @@ from .get_migrate_to_native_vcn_status import *
 from .get_node_pool import *
 from .get_node_pool_option import *
 from .get_node_pools import *
+from .get_pod_shapes import *
+from .get_virtual_node_pool import *
+from .get_virtual_node_pools import *
 from .get_work_request_errors import *
 from .get_work_request_log_entries import *
 from .get_work_requests import *
 from .node_pool import *
+from .virtual_node_pool import *
 from ._inputs import *
 from . import outputs

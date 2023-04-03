@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.ComputeCapacityReservation;
  * import com.pulumi.oci.Core.ComputeCapacityReservationArgs;
  * import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigArgs;
+ * import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs;
  * import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -60,6 +61,10 @@ import javax.annotation.Nullable;
  *             .instanceReservationConfigs(ComputeCapacityReservationInstanceReservationConfigArgs.builder()
  *                 .instanceShape(var_.compute_capacity_reservation_instance_reservation_configs_instance_shape())
  *                 .reservedCount(var_.compute_capacity_reservation_instance_reservation_configs_reserved_count())
+ *                 .clusterConfig(ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs.builder()
+ *                     .hpcIslandId(oci_core_hpc_island.test_hpc_island().id())
+ *                     .networkBlockIds(var_.compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids())
+ *                     .build())
  *                 .faultDomain(var_.compute_capacity_reservation_instance_reservation_configs_fault_domain())
  *                 .instanceShapeConfig(ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs.builder()
  *                     .memoryInGbs(var_.compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs())

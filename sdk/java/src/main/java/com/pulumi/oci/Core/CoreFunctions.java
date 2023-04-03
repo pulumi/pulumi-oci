@@ -61,6 +61,10 @@ import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesPlainArg
 import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
 import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
+import com.pulumi.oci.Core.inputs.GetComputeClusterPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
+import com.pulumi.oci.Core.inputs.GetComputeClustersPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
@@ -312,6 +316,8 @@ import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstanceShapesRe
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstancesResult;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationResult;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationsResult;
+import com.pulumi.oci.Core.outputs.GetComputeClusterResult;
+import com.pulumi.oci.Core.outputs.GetComputeClustersResult;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemaResult;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemasResult;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemasVersionResult;
@@ -4985,6 +4991,330 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetComputeCapacityReservationsResult> getComputeCapacityReservationsPlain(GetComputeCapacityReservationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", TypeShape.of(GetComputeCapacityReservationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeClusterResult> getComputeCluster(GetComputeClusterArgs args) {
+        return getComputeCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeClusterResult> getComputeClusterPlain(GetComputeClusterPlainArgs args) {
+        return getComputeClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeClusterResult> getComputeCluster(GetComputeClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCluster:getComputeCluster", TypeShape.of(GetComputeClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeClusterResult> getComputeClusterPlain(GetComputeClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeCluster:getComputeCluster", TypeShape.of(GetComputeClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute clusters in the specified compartment.
+     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_cluster_availability_domain())
+     *             .displayName(var_.compute_cluster_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeClustersResult> getComputeClusters(GetComputeClustersArgs args) {
+        return getComputeClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute clusters in the specified compartment.
+     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_cluster_availability_domain())
+     *             .displayName(var_.compute_cluster_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeClustersResult> getComputeClustersPlain(GetComputeClustersPlainArgs args) {
+        return getComputeClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute clusters in the specified compartment.
+     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_cluster_availability_domain())
+     *             .displayName(var_.compute_cluster_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeClustersResult> getComputeClusters(GetComputeClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeClusters:getComputeClusters", TypeShape.of(GetComputeClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute clusters in the specified compartment.
+     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_cluster_availability_domain())
+     *             .displayName(var_.compute_cluster_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeClustersResult> getComputeClustersPlain(GetComputeClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeClusters:getComputeClusters", TypeShape.of(GetComputeClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
@@ -13746,6 +14076,7 @@ public final class CoreFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .availabilityDomain(var_.instance_availability_domain())
      *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
      *             .displayName(var_.instance_display_name())
      *             .state(var_.instance_state())
      *             .build());
@@ -13794,6 +14125,7 @@ public final class CoreFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .availabilityDomain(var_.instance_availability_domain())
      *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
      *             .displayName(var_.instance_display_name())
      *             .state(var_.instance_state())
      *             .build());
@@ -13842,6 +14174,7 @@ public final class CoreFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .availabilityDomain(var_.instance_availability_domain())
      *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
      *             .displayName(var_.instance_display_name())
      *             .state(var_.instance_state())
      *             .build());
@@ -13890,6 +14223,7 @@ public final class CoreFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .availabilityDomain(var_.instance_availability_domain())
      *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
      *             .displayName(var_.instance_display_name())
      *             .state(var_.instance_state())
      *             .build());

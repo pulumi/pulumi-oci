@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.GetConnectionLastConnectionValidationResult;
 import com.pulumi.oci.DevOps.outputs.GetConnectionTlsVerifyConfig;
 import java.lang.Object;
 import java.lang.String;
@@ -64,6 +65,11 @@ public final class GetConnectionResult {
      * 
      */
     private String id;
+    /**
+     * @return The result of validating the credentials of a connection.
+     * 
+     */
+    private List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults;
     /**
      * @return The OCID of the DevOps project.
      * 
@@ -175,6 +181,13 @@ public final class GetConnectionResult {
         return this.id;
     }
     /**
+     * @return The result of validating the credentials of a connection.
+     * 
+     */
+    public List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults() {
+        return this.lastConnectionValidationResults;
+    }
+    /**
      * @return The OCID of the DevOps project.
      * 
      */
@@ -244,6 +257,7 @@ public final class GetConnectionResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults;
         private String projectId;
         private String state;
         private Map<String,Object> systemTags;
@@ -265,6 +279,7 @@ public final class GetConnectionResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lastConnectionValidationResults = defaults.lastConnectionValidationResults;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -330,6 +345,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lastConnectionValidationResults(List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults) {
+            this.lastConnectionValidationResults = Objects.requireNonNull(lastConnectionValidationResults);
+            return this;
+        }
+        public Builder lastConnectionValidationResults(GetConnectionLastConnectionValidationResult... lastConnectionValidationResults) {
+            return lastConnectionValidationResults(List.of(lastConnectionValidationResults));
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
@@ -380,6 +403,7 @@ public final class GetConnectionResult {
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.lastConnectionValidationResults = lastConnectionValidationResults;
             o.projectId = projectId;
             o.state = state;
             o.systemTags = systemTags;

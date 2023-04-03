@@ -53,6 +53,7 @@ public final class GetInstanceResult {
      * 
      */
     private String compartmentId;
+    private String computeClusterId;
     private List<GetInstanceCreateVnicDetail> createVnicDetails;
     /**
      * @return The OCID of the dedicated virtual machine host that the instance is placed on.
@@ -253,6 +254,9 @@ public final class GetInstanceResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public String computeClusterId() {
+        return this.computeClusterId;
     }
     public List<GetInstanceCreateVnicDetail> createVnicDetails() {
         return this.createVnicDetails;
@@ -489,6 +493,7 @@ public final class GetInstanceResult {
         private String bootVolumeId;
         private String capacityReservationId;
         private String compartmentId;
+        private String computeClusterId;
         private List<GetInstanceCreateVnicDetail> createVnicDetails;
         private String dedicatedVmHostId;
         private Map<String,Object> definedTags;
@@ -531,6 +536,7 @@ public final class GetInstanceResult {
     	      this.bootVolumeId = defaults.bootVolumeId;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.createVnicDetails = defaults.createVnicDetails;
     	      this.dedicatedVmHostId = defaults.dedicatedVmHostId;
     	      this.definedTags = defaults.definedTags;
@@ -604,6 +610,11 @@ public final class GetInstanceResult {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = Objects.requireNonNull(computeClusterId);
             return this;
         }
         @CustomType.Setter
@@ -796,6 +807,7 @@ public final class GetInstanceResult {
             o.bootVolumeId = bootVolumeId;
             o.capacityReservationId = capacityReservationId;
             o.compartmentId = compartmentId;
+            o.computeClusterId = computeClusterId;
             o.createVnicDetails = createVnicDetails;
             o.dedicatedVmHostId = dedicatedVmHostId;
             o.definedTags = definedTags;

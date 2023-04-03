@@ -22,7 +22,7 @@ class GetClusterNetworkResult:
     """
     A collection of values returned by getClusterNetwork.
     """
-    def __init__(__self__, cluster_network_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_pools=None, placement_configurations=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_network_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hpc_island_id=None, id=None, instance_pools=None, network_block_ids=None, placement_configurations=None, state=None, time_created=None, time_updated=None):
         if cluster_network_id and not isinstance(cluster_network_id, str):
             raise TypeError("Expected argument 'cluster_network_id' to be a str")
         pulumi.set(__self__, "cluster_network_id", cluster_network_id)
@@ -38,12 +38,18 @@ class GetClusterNetworkResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hpc_island_id and not isinstance(hpc_island_id, str):
+            raise TypeError("Expected argument 'hpc_island_id' to be a str")
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if instance_pools and not isinstance(instance_pools, list):
             raise TypeError("Expected argument 'instance_pools' to be a list")
         pulumi.set(__self__, "instance_pools", instance_pools)
+        if network_block_ids and not isinstance(network_block_ids, list):
+            raise TypeError("Expected argument 'network_block_ids' to be a list")
+        pulumi.set(__self__, "network_block_ids", network_block_ids)
         if placement_configurations and not isinstance(placement_configurations, list):
             raise TypeError("Expected argument 'placement_configurations' to be a list")
         pulumi.set(__self__, "placement_configurations", placement_configurations)
@@ -95,6 +101,14 @@ class GetClusterNetworkResult:
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -109,6 +123,14 @@ class GetClusterNetworkResult:
         The instance pools in the cluster network.
         """
         return pulumi.get(self, "instance_pools")
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Sequence[str]:
+        """
+        The list of network block OCIDs of the HPC island.
+        """
+        return pulumi.get(self, "network_block_ids")
 
     @property
     @pulumi.getter(name="placementConfigurations")
@@ -154,8 +176,10 @@ class AwaitableGetClusterNetworkResult(GetClusterNetworkResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            hpc_island_id=self.hpc_island_id,
             id=self.id,
             instance_pools=self.instance_pools,
+            network_block_ids=self.network_block_ids,
             placement_configurations=self.placement_configurations,
             state=self.state,
             time_created=self.time_created,
@@ -192,8 +216,10 @@ def get_cluster_network(cluster_network_id: Optional[str] = None,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
+        hpc_island_id=__ret__.hpc_island_id,
         id=__ret__.id,
         instance_pools=__ret__.instance_pools,
+        network_block_ids=__ret__.network_block_ids,
         placement_configurations=__ret__.placement_configurations,
         state=__ret__.state,
         time_created=__ret__.time_created,

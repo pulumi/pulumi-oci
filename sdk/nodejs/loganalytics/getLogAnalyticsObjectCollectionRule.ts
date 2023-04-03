@@ -83,6 +83,10 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      */
     readonly id: string;
     /**
+     * Whether or not this rule is currently enabled.
+     */
+    readonly isEnabled: boolean;
+    /**
      * A detailed status of the life cycle state.
      */
     readonly lifecycleDetails: string;

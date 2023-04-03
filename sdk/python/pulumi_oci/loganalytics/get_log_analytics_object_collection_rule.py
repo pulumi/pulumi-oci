@@ -22,7 +22,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     """
     A collection of values returned by getLogAnalyticsObjectCollectionRule.
     """
-    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_set=None, log_set_ext_regex=None, log_set_key=None, log_source_name=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, time_created=None, time_updated=None, timezone=None):
+    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_set=None, log_set_ext_regex=None, log_set_key=None, log_source_name=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, time_created=None, time_updated=None, timezone=None):
         if char_encoding and not isinstance(char_encoding, str):
             raise TypeError("Expected argument 'char_encoding' to be a str")
         pulumi.set(__self__, "char_encoding", char_encoding)
@@ -47,6 +47,9 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_enabled and not isinstance(is_enabled, bool):
+            raise TypeError("Expected argument 'is_enabled' to be a bool")
+        pulumi.set(__self__, "is_enabled", is_enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -168,6 +171,14 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Whether or not this rule is currently enabled.
+        """
+        return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -330,6 +341,7 @@ class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCo
             entity_id=self.entity_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_enabled=self.is_enabled,
             lifecycle_details=self.lifecycle_details,
             log_analytics_object_collection_rule_id=self.log_analytics_object_collection_rule_id,
             log_group_id=self.log_group_id,
@@ -388,6 +400,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         entity_id=__ret__.entity_id,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        is_enabled=__ret__.is_enabled,
         lifecycle_details=__ret__.lifecycle_details,
         log_analytics_object_collection_rule_id=__ret__.log_analytics_object_collection_rule_id,
         log_group_id=__ret__.log_group_id,

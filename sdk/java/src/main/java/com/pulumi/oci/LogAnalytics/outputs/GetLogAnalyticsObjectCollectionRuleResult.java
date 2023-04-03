@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsObjectCollectionRuleOverride;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -53,6 +54,11 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
      * 
      */
     private String id;
+    /**
+     * @return Whether or not this rule is currently enabled.
+     * 
+     */
+    private Boolean isEnabled;
     /**
      * @return A detailed status of the life cycle state.
      * 
@@ -199,6 +205,13 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         return this.id;
     }
     /**
+     * @return Whether or not this rule is currently enabled.
+     * 
+     */
+    public Boolean isEnabled() {
+        return this.isEnabled;
+    }
+    /**
      * @return A detailed status of the life cycle state.
      * 
      */
@@ -341,6 +354,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         private String entityId;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isEnabled;
         private String lifecycleDetails;
         private String logAnalyticsObjectCollectionRuleId;
         private String logGroupId;
@@ -371,6 +385,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
     	      this.entityId = defaults.entityId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isEnabled = defaults.isEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logAnalyticsObjectCollectionRuleId = defaults.logAnalyticsObjectCollectionRuleId;
     	      this.logGroupId = defaults.logGroupId;
@@ -430,6 +445,11 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
         @CustomType.Setter
@@ -543,6 +563,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
             o.entityId = entityId;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.isEnabled = isEnabled;
             o.lifecycleDetails = lifecycleDetails;
             o.logAnalyticsObjectCollectionRuleId = logAnalyticsObjectCollectionRuleId;
             o.logGroupId = logGroupId;

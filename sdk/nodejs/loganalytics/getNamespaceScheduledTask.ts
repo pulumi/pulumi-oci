@@ -74,7 +74,13 @@ export interface GetNamespaceScheduledTaskResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
      */
     readonly id: string;
+    /**
+     * Discriminator.
+     */
     readonly kind: string;
+    /**
+     * The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+     */
     readonly namespace: string;
     /**
      * Number of execution occurrences.

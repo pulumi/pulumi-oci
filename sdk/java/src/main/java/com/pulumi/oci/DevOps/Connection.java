@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DevOps.ConnectionArgs;
 import com.pulumi.oci.DevOps.inputs.ConnectionState;
+import com.pulumi.oci.DevOps.outputs.ConnectionLastConnectionValidationResult;
 import com.pulumi.oci.DevOps.outputs.ConnectionTlsVerifyConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
@@ -202,6 +203,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * The result of validating the credentials of a connection.
+     * 
+     */
+    @Export(name="lastConnectionValidationResults", type=List.class, parameters={ConnectionLastConnectionValidationResult.class})
+    private Output<List<ConnectionLastConnectionValidationResult>> lastConnectionValidationResults;
+
+    /**
+     * @return The result of validating the credentials of a connection.
+     * 
+     */
+    public Output<List<ConnectionLastConnectionValidationResult>> lastConnectionValidationResults() {
+        return this.lastConnectionValidationResults;
     }
     /**
      * The OCID of the DevOps project.

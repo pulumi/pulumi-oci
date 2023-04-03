@@ -10,6 +10,908 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetail struct {
+	AssignPrivateDnsRecord bool                   `pulumi:"assignPrivateDnsRecord"`
+	AssignPublicIp         string                 `pulumi:"assignPublicIp"`
+	DefinedTags            map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName         string                 `pulumi:"displayName"`
+	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
+	HostnameLabel       string                 `pulumi:"hostnameLabel"`
+	NsgIds              []string               `pulumi:"nsgIds"`
+	PrivateIp           string                 `pulumi:"privateIp"`
+	SkipSourceDestCheck bool                   `pulumi:"skipSourceDestCheck"`
+	// The OCID of the subnet to create the VNIC in.
+	SubnetId string `pulumi:"subnetId"`
+	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+	VlanId string `pulumi:"vlanId"`
+}
+
+// GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput is an input type that accepts GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs and GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput` via:
+//
+//	GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs{...}
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutputWithContext(context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs struct {
+	AssignPrivateDnsRecord pulumi.BoolInput   `pulumi:"assignPrivateDnsRecord"`
+	AssignPublicIp         pulumi.StringInput `pulumi:"assignPublicIp"`
+	DefinedTags            pulumi.MapInput    `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName         pulumi.StringInput      `pulumi:"displayName"`
+	FreeformTags        pulumi.MapInput         `pulumi:"freeformTags"`
+	HostnameLabel       pulumi.StringInput      `pulumi:"hostnameLabel"`
+	NsgIds              pulumi.StringArrayInput `pulumi:"nsgIds"`
+	PrivateIp           pulumi.StringInput      `pulumi:"privateIp"`
+	SkipSourceDestCheck pulumi.BoolInput        `pulumi:"skipSourceDestCheck"`
+	// The OCID of the subnet to create the VNIC in.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+	VlanId pulumi.StringInput `pulumi:"vlanId"`
+}
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput {
+	return i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput)
+}
+
+// GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput is an input type that accepts GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray and GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput` via:
+//
+//	GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray{ GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs{...} }
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutputWithContext(context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray []GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsVnicAttachmentCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput {
+	return i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput)
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) AssignPrivateDnsRecord() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) bool { return v.AssignPrivateDnsRecord }).(pulumi.BoolOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) AssignPublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.AssignPublicIp }).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) HostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.HostnameLabel }).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) bool { return v.SkipSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+// The OCID of the subnet to create the VNIC in.
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) VlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.VlanId }).(pulumi.StringOutput)
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsVnicAttachmentCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
+		return vs[0].([]GetVnicAttachmentsVnicAttachmentCreateVnicDetail)[vs[1].(int)]
+	}).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput)
+}
+
+type GetVolumeAttachmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVolumeAttachmentsFilterInput is an input type that accepts GetVolumeAttachmentsFilterArgs and GetVolumeAttachmentsFilterOutput values.
+// You can construct a concrete instance of `GetVolumeAttachmentsFilterInput` via:
+//
+//	GetVolumeAttachmentsFilterArgs{...}
+type GetVolumeAttachmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetVolumeAttachmentsFilterOutput() GetVolumeAttachmentsFilterOutput
+	ToGetVolumeAttachmentsFilterOutputWithContext(context.Context) GetVolumeAttachmentsFilterOutput
+}
+
+type GetVolumeAttachmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVolumeAttachmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetVolumeAttachmentsFilterArgs) ToGetVolumeAttachmentsFilterOutput() GetVolumeAttachmentsFilterOutput {
+	return i.ToGetVolumeAttachmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAttachmentsFilterArgs) ToGetVolumeAttachmentsFilterOutputWithContext(ctx context.Context) GetVolumeAttachmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsFilterOutput)
+}
+
+// GetVolumeAttachmentsFilterArrayInput is an input type that accepts GetVolumeAttachmentsFilterArray and GetVolumeAttachmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetVolumeAttachmentsFilterArrayInput` via:
+//
+//	GetVolumeAttachmentsFilterArray{ GetVolumeAttachmentsFilterArgs{...} }
+type GetVolumeAttachmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeAttachmentsFilterArrayOutput() GetVolumeAttachmentsFilterArrayOutput
+	ToGetVolumeAttachmentsFilterArrayOutputWithContext(context.Context) GetVolumeAttachmentsFilterArrayOutput
+}
+
+type GetVolumeAttachmentsFilterArray []GetVolumeAttachmentsFilterInput
+
+func (GetVolumeAttachmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetVolumeAttachmentsFilterArray) ToGetVolumeAttachmentsFilterArrayOutput() GetVolumeAttachmentsFilterArrayOutput {
+	return i.ToGetVolumeAttachmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAttachmentsFilterArray) ToGetVolumeAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsFilterArrayOutput)
+}
+
+type GetVolumeAttachmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAttachmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetVolumeAttachmentsFilterOutput) ToGetVolumeAttachmentsFilterOutput() GetVolumeAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsFilterOutput) ToGetVolumeAttachmentsFilterOutputWithContext(ctx context.Context) GetVolumeAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVolumeAttachmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVolumeAttachmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVolumeAttachmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAttachmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetVolumeAttachmentsFilterArrayOutput) ToGetVolumeAttachmentsFilterArrayOutput() GetVolumeAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsFilterArrayOutput) ToGetVolumeAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeAttachmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeAttachmentsFilter {
+		return vs[0].([]GetVolumeAttachmentsFilter)[vs[1].(int)]
+	}).(GetVolumeAttachmentsFilterOutput)
+}
+
+type GetVolumeAttachmentsVolumeAttachment struct {
+	// The type of volume attachment.
+	AttachmentType string `pulumi:"attachmentType"`
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
+	ChapSecret string `pulumi:"chapSecret"`
+	// The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
+	ChapUsername string `pulumi:"chapUsername"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	//
+	// Deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The device name.
+	Device string `pulumi:"device"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+	EncryptionInTransitType string `pulumi:"encryptionInTransitType"`
+	// The OCID of the volume attachment.
+	Id string `pulumi:"id"`
+	// The OCID of the instance.
+	InstanceId string `pulumi:"instanceId"`
+	// The volume's iSCSI IP address.  Example: `169.254.2.2`
+	Ipv4 string `pulumi:"ipv4"`
+	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+	Iqn string `pulumi:"iqn"`
+	// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+	IsAgentAutoIscsiLoginEnabled bool `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
+	IsMultipath bool `pulumi:"isMultipath"`
+	// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Whether the attachment was created in read-only mode.
+	IsReadOnly  bool `pulumi:"isReadOnly"`
+	IsShareable bool `pulumi:"isShareable"`
+	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+	IscsiLoginState string `pulumi:"iscsiLoginState"`
+	// A list of secondary multipath devices
+	MultipathDevices []GetVolumeAttachmentsVolumeAttachmentMultipathDevice `pulumi:"multipathDevices"`
+	// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
+	Port int `pulumi:"port"`
+	// The current state of the volume attachment.
+	State string `pulumi:"state"`
+	// The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	UseChap     bool   `pulumi:"useChap"`
+	// The OCID of the volume.
+	VolumeId string `pulumi:"volumeId"`
+}
+
+// GetVolumeAttachmentsVolumeAttachmentInput is an input type that accepts GetVolumeAttachmentsVolumeAttachmentArgs and GetVolumeAttachmentsVolumeAttachmentOutput values.
+// You can construct a concrete instance of `GetVolumeAttachmentsVolumeAttachmentInput` via:
+//
+//	GetVolumeAttachmentsVolumeAttachmentArgs{...}
+type GetVolumeAttachmentsVolumeAttachmentInput interface {
+	pulumi.Input
+
+	ToGetVolumeAttachmentsVolumeAttachmentOutput() GetVolumeAttachmentsVolumeAttachmentOutput
+	ToGetVolumeAttachmentsVolumeAttachmentOutputWithContext(context.Context) GetVolumeAttachmentsVolumeAttachmentOutput
+}
+
+type GetVolumeAttachmentsVolumeAttachmentArgs struct {
+	// The type of volume attachment.
+	AttachmentType pulumi.StringInput `pulumi:"attachmentType"`
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
+	ChapSecret pulumi.StringInput `pulumi:"chapSecret"`
+	// The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
+	ChapUsername pulumi.StringInput `pulumi:"chapUsername"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	//
+	// Deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The device name.
+	Device pulumi.StringInput `pulumi:"device"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+	EncryptionInTransitType pulumi.StringInput `pulumi:"encryptionInTransitType"`
+	// The OCID of the volume attachment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The volume's iSCSI IP address.  Example: `169.254.2.2`
+	Ipv4 pulumi.StringInput `pulumi:"ipv4"`
+	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+	Iqn pulumi.StringInput `pulumi:"iqn"`
+	// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+	IsAgentAutoIscsiLoginEnabled pulumi.BoolInput `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
+	IsMultipath pulumi.BoolInput `pulumi:"isMultipath"`
+	// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Whether the attachment was created in read-only mode.
+	IsReadOnly  pulumi.BoolInput `pulumi:"isReadOnly"`
+	IsShareable pulumi.BoolInput `pulumi:"isShareable"`
+	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+	IscsiLoginState pulumi.StringInput `pulumi:"iscsiLoginState"`
+	// A list of secondary multipath devices
+	MultipathDevices GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayInput `pulumi:"multipathDevices"`
+	// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
+	Port pulumi.IntInput `pulumi:"port"`
+	// The current state of the volume attachment.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	UseChap     pulumi.BoolInput   `pulumi:"useChap"`
+	// The OCID of the volume.
+	VolumeId pulumi.StringInput `pulumi:"volumeId"`
+}
+
+func (GetVolumeAttachmentsVolumeAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachment)(nil)).Elem()
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentArgs) ToGetVolumeAttachmentsVolumeAttachmentOutput() GetVolumeAttachmentsVolumeAttachmentOutput {
+	return i.ToGetVolumeAttachmentsVolumeAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentArgs) ToGetVolumeAttachmentsVolumeAttachmentOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentOutput)
+}
+
+// GetVolumeAttachmentsVolumeAttachmentArrayInput is an input type that accepts GetVolumeAttachmentsVolumeAttachmentArray and GetVolumeAttachmentsVolumeAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetVolumeAttachmentsVolumeAttachmentArrayInput` via:
+//
+//	GetVolumeAttachmentsVolumeAttachmentArray{ GetVolumeAttachmentsVolumeAttachmentArgs{...} }
+type GetVolumeAttachmentsVolumeAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeAttachmentsVolumeAttachmentArrayOutput() GetVolumeAttachmentsVolumeAttachmentArrayOutput
+	ToGetVolumeAttachmentsVolumeAttachmentArrayOutputWithContext(context.Context) GetVolumeAttachmentsVolumeAttachmentArrayOutput
+}
+
+type GetVolumeAttachmentsVolumeAttachmentArray []GetVolumeAttachmentsVolumeAttachmentInput
+
+func (GetVolumeAttachmentsVolumeAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAttachmentsVolumeAttachment)(nil)).Elem()
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentArray) ToGetVolumeAttachmentsVolumeAttachmentArrayOutput() GetVolumeAttachmentsVolumeAttachmentArrayOutput {
+	return i.ToGetVolumeAttachmentsVolumeAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentArray) ToGetVolumeAttachmentsVolumeAttachmentArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentArrayOutput)
+}
+
+type GetVolumeAttachmentsVolumeAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAttachmentsVolumeAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachment)(nil)).Elem()
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) ToGetVolumeAttachmentsVolumeAttachmentOutput() GetVolumeAttachmentsVolumeAttachmentOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) ToGetVolumeAttachmentsVolumeAttachmentOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentOutput {
+	return o
+}
+
+// The type of volume attachment.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) AttachmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.AttachmentType }).(pulumi.StringOutput)
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) ChapSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.ChapSecret }).(pulumi.StringOutput)
+}
+
+// The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) ChapUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.ChapUsername }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+//
+// Deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The device name.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) Device() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.Device }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) EncryptionInTransitType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.EncryptionInTransitType }).(pulumi.StringOutput)
+}
+
+// The OCID of the volume attachment.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the instance.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The volume's iSCSI IP address.  Example: `169.254.2.2`
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) Ipv4() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.Ipv4 }).(pulumi.StringOutput)
+}
+
+// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) Iqn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.Iqn }).(pulumi.StringOutput)
+}
+
+// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsMultipath() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsMultipath }).(pulumi.BoolOutput)
+}
+
+// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether the attachment was created in read-only mode.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsReadOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsReadOnly }).(pulumi.BoolOutput)
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsShareable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsShareable }).(pulumi.BoolOutput)
+}
+
+// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IscsiLoginState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.IscsiLoginState }).(pulumi.StringOutput)
+}
+
+// A list of secondary multipath devices
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) MultipathDevices() GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) []GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
+		return v.MultipathDevices
+	}).(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput)
+}
+
+// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The current state of the volume attachment.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) UseChap() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.UseChap }).(pulumi.BoolOutput)
+}
+
+// The OCID of the volume.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) VolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.VolumeId }).(pulumi.StringOutput)
+}
+
+type GetVolumeAttachmentsVolumeAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAttachmentsVolumeAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAttachmentsVolumeAttachment)(nil)).Elem()
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentArrayOutput) ToGetVolumeAttachmentsVolumeAttachmentArrayOutput() GetVolumeAttachmentsVolumeAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentArrayOutput) ToGetVolumeAttachmentsVolumeAttachmentArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentArrayOutput) Index(i pulumi.IntInput) GetVolumeAttachmentsVolumeAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeAttachmentsVolumeAttachment {
+		return vs[0].([]GetVolumeAttachmentsVolumeAttachment)[vs[1].(int)]
+	}).(GetVolumeAttachmentsVolumeAttachmentOutput)
+}
+
+type GetVolumeAttachmentsVolumeAttachmentMultipathDevice struct {
+	// The volume's iSCSI IP address.  Example: `169.254.2.2`
+	Ipv4 string `pulumi:"ipv4"`
+	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+	Iqn string `pulumi:"iqn"`
+	// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
+	Port int `pulumi:"port"`
+}
+
+// GetVolumeAttachmentsVolumeAttachmentMultipathDeviceInput is an input type that accepts GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs and GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput values.
+// You can construct a concrete instance of `GetVolumeAttachmentsVolumeAttachmentMultipathDeviceInput` via:
+//
+//	GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs{...}
+type GetVolumeAttachmentsVolumeAttachmentMultipathDeviceInput interface {
+	pulumi.Input
+
+	ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput() GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput
+	ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutputWithContext(context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput
+}
+
+type GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs struct {
+	// The volume's iSCSI IP address.  Example: `169.254.2.2`
+	Ipv4 pulumi.StringInput `pulumi:"ipv4"`
+	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+	Iqn pulumi.StringInput `pulumi:"iqn"`
+	// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachmentMultipathDevice)(nil)).Elem()
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput() GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput {
+	return i.ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput)
+}
+
+// GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayInput is an input type that accepts GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray and GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput values.
+// You can construct a concrete instance of `GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayInput` via:
+//
+//	GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray{ GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs{...} }
+type GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput() GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput
+	ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutputWithContext(context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput
+}
+
+type GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray []GetVolumeAttachmentsVolumeAttachmentMultipathDeviceInput
+
+func (GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAttachmentsVolumeAttachmentMultipathDevice)(nil)).Elem()
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput() GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput {
+	return i.ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput)
+}
+
+type GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachmentMultipathDevice)(nil)).Elem()
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput() GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput {
+	return o
+}
+
+// The volume's iSCSI IP address.  Example: `169.254.2.2`
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) Ipv4() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachmentMultipathDevice) string { return v.Ipv4 }).(pulumi.StringOutput)
+}
+
+// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) Iqn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachmentMultipathDevice) string { return v.Iqn }).(pulumi.StringOutput)
+}
+
+// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachmentMultipathDevice) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAttachmentsVolumeAttachmentMultipathDevice)(nil)).Elem()
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput() GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput {
+	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) Index(i pulumi.IntInput) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
+		return vs[0].([]GetVolumeAttachmentsVolumeAttachmentMultipathDevice)[vs[1].(int)]
+	}).(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput)
+}
+
+type GetVolumeAutotunePolicy struct {
+	// This specifies the type of autotunes supported by OCI.
+	AutotuneType string `pulumi:"autotuneType"`
+	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+	MaxVpusPerGb string `pulumi:"maxVpusPerGb"`
+}
+
+// GetVolumeAutotunePolicyInput is an input type that accepts GetVolumeAutotunePolicyArgs and GetVolumeAutotunePolicyOutput values.
+// You can construct a concrete instance of `GetVolumeAutotunePolicyInput` via:
+//
+//	GetVolumeAutotunePolicyArgs{...}
+type GetVolumeAutotunePolicyInput interface {
+	pulumi.Input
+
+	ToGetVolumeAutotunePolicyOutput() GetVolumeAutotunePolicyOutput
+	ToGetVolumeAutotunePolicyOutputWithContext(context.Context) GetVolumeAutotunePolicyOutput
+}
+
+type GetVolumeAutotunePolicyArgs struct {
+	// This specifies the type of autotunes supported by OCI.
+	AutotuneType pulumi.StringInput `pulumi:"autotuneType"`
+	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+	MaxVpusPerGb pulumi.StringInput `pulumi:"maxVpusPerGb"`
+}
+
+func (GetVolumeAutotunePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAutotunePolicy)(nil)).Elem()
+}
+
+func (i GetVolumeAutotunePolicyArgs) ToGetVolumeAutotunePolicyOutput() GetVolumeAutotunePolicyOutput {
+	return i.ToGetVolumeAutotunePolicyOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAutotunePolicyArgs) ToGetVolumeAutotunePolicyOutputWithContext(ctx context.Context) GetVolumeAutotunePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAutotunePolicyOutput)
+}
+
+// GetVolumeAutotunePolicyArrayInput is an input type that accepts GetVolumeAutotunePolicyArray and GetVolumeAutotunePolicyArrayOutput values.
+// You can construct a concrete instance of `GetVolumeAutotunePolicyArrayInput` via:
+//
+//	GetVolumeAutotunePolicyArray{ GetVolumeAutotunePolicyArgs{...} }
+type GetVolumeAutotunePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeAutotunePolicyArrayOutput() GetVolumeAutotunePolicyArrayOutput
+	ToGetVolumeAutotunePolicyArrayOutputWithContext(context.Context) GetVolumeAutotunePolicyArrayOutput
+}
+
+type GetVolumeAutotunePolicyArray []GetVolumeAutotunePolicyInput
+
+func (GetVolumeAutotunePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAutotunePolicy)(nil)).Elem()
+}
+
+func (i GetVolumeAutotunePolicyArray) ToGetVolumeAutotunePolicyArrayOutput() GetVolumeAutotunePolicyArrayOutput {
+	return i.ToGetVolumeAutotunePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeAutotunePolicyArray) ToGetVolumeAutotunePolicyArrayOutputWithContext(ctx context.Context) GetVolumeAutotunePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAutotunePolicyArrayOutput)
+}
+
+type GetVolumeAutotunePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAutotunePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeAutotunePolicy)(nil)).Elem()
+}
+
+func (o GetVolumeAutotunePolicyOutput) ToGetVolumeAutotunePolicyOutput() GetVolumeAutotunePolicyOutput {
+	return o
+}
+
+func (o GetVolumeAutotunePolicyOutput) ToGetVolumeAutotunePolicyOutputWithContext(ctx context.Context) GetVolumeAutotunePolicyOutput {
+	return o
+}
+
+// This specifies the type of autotunes supported by OCI.
+func (o GetVolumeAutotunePolicyOutput) AutotuneType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAutotunePolicy) string { return v.AutotuneType }).(pulumi.StringOutput)
+}
+
+// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+func (o GetVolumeAutotunePolicyOutput) MaxVpusPerGb() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAutotunePolicy) string { return v.MaxVpusPerGb }).(pulumi.StringOutput)
+}
+
+type GetVolumeAutotunePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeAutotunePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeAutotunePolicy)(nil)).Elem()
+}
+
+func (o GetVolumeAutotunePolicyArrayOutput) ToGetVolumeAutotunePolicyArrayOutput() GetVolumeAutotunePolicyArrayOutput {
+	return o
+}
+
+func (o GetVolumeAutotunePolicyArrayOutput) ToGetVolumeAutotunePolicyArrayOutputWithContext(ctx context.Context) GetVolumeAutotunePolicyArrayOutput {
+	return o
+}
+
+func (o GetVolumeAutotunePolicyArrayOutput) Index(i pulumi.IntInput) GetVolumeAutotunePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeAutotunePolicy {
+		return vs[0].([]GetVolumeAutotunePolicy)[vs[1].(int)]
+	}).(GetVolumeAutotunePolicyOutput)
+}
+
+type GetVolumeBackupPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVolumeBackupPoliciesFilterInput is an input type that accepts GetVolumeBackupPoliciesFilterArgs and GetVolumeBackupPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetVolumeBackupPoliciesFilterInput` via:
+//
+//	GetVolumeBackupPoliciesFilterArgs{...}
+type GetVolumeBackupPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetVolumeBackupPoliciesFilterOutput() GetVolumeBackupPoliciesFilterOutput
+	ToGetVolumeBackupPoliciesFilterOutputWithContext(context.Context) GetVolumeBackupPoliciesFilterOutput
+}
+
+type GetVolumeBackupPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVolumeBackupPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeBackupPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetVolumeBackupPoliciesFilterArgs) ToGetVolumeBackupPoliciesFilterOutput() GetVolumeBackupPoliciesFilterOutput {
+	return i.ToGetVolumeBackupPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetVolumeBackupPoliciesFilterArgs) ToGetVolumeBackupPoliciesFilterOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesFilterOutput)
+}
+
+// GetVolumeBackupPoliciesFilterArrayInput is an input type that accepts GetVolumeBackupPoliciesFilterArray and GetVolumeBackupPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetVolumeBackupPoliciesFilterArrayInput` via:
+//
+//	GetVolumeBackupPoliciesFilterArray{ GetVolumeBackupPoliciesFilterArgs{...} }
+type GetVolumeBackupPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeBackupPoliciesFilterArrayOutput() GetVolumeBackupPoliciesFilterArrayOutput
+	ToGetVolumeBackupPoliciesFilterArrayOutputWithContext(context.Context) GetVolumeBackupPoliciesFilterArrayOutput
+}
+
+type GetVolumeBackupPoliciesFilterArray []GetVolumeBackupPoliciesFilterInput
+
+func (GetVolumeBackupPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeBackupPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetVolumeBackupPoliciesFilterArray) ToGetVolumeBackupPoliciesFilterArrayOutput() GetVolumeBackupPoliciesFilterArrayOutput {
+	return i.ToGetVolumeBackupPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeBackupPoliciesFilterArray) ToGetVolumeBackupPoliciesFilterArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesFilterArrayOutput)
+}
+
+type GetVolumeBackupPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeBackupPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeBackupPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetVolumeBackupPoliciesFilterOutput) ToGetVolumeBackupPoliciesFilterOutput() GetVolumeBackupPoliciesFilterOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesFilterOutput) ToGetVolumeBackupPoliciesFilterOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesFilterOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVolumeBackupPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVolumeBackupPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVolumeBackupPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeBackupPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeBackupPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetVolumeBackupPoliciesFilterArrayOutput) ToGetVolumeBackupPoliciesFilterArrayOutput() GetVolumeBackupPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesFilterArrayOutput) ToGetVolumeBackupPoliciesFilterArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetVolumeBackupPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeBackupPoliciesFilter {
+		return vs[0].([]GetVolumeBackupPoliciesFilter)[vs[1].(int)]
+	}).(GetVolumeBackupPoliciesFilterOutput)
+}
+
 type GetVolumeBackupPoliciesVolumeBackupPolicy struct {
 	// The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -3993,6 +4895,18 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsFilterInput)(nil)).Elem(), GetVolumeAttachmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsFilterArrayInput)(nil)).Elem(), GetVolumeAttachmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachmentInput)(nil)).Elem(), GetVolumeAttachmentsVolumeAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachmentArrayInput)(nil)).Elem(), GetVolumeAttachmentsVolumeAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachmentMultipathDeviceInput)(nil)).Elem(), GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayInput)(nil)).Elem(), GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAutotunePolicyInput)(nil)).Elem(), GetVolumeAutotunePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAutotunePolicyArrayInput)(nil)).Elem(), GetVolumeAutotunePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesFilterInput)(nil)).Elem(), GetVolumeBackupPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesFilterArrayInput)(nil)).Elem(), GetVolumeBackupPoliciesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicyInput)(nil)).Elem(), GetVolumeBackupPoliciesVolumeBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicyArrayInput)(nil)).Elem(), GetVolumeBackupPoliciesVolumeBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBackupPoliciesVolumeBackupPolicyScheduleInput)(nil)).Elem(), GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs{})
@@ -4047,6 +4961,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeAttachmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetVolumeAttachmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeAttachmentsVolumeAttachmentOutput{})
+	pulumi.RegisterOutputType(GetVolumeAttachmentsVolumeAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput{})
+	pulumi.RegisterOutputType(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeAutotunePolicyOutput{})
+	pulumi.RegisterOutputType(GetVolumeAutotunePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeBackupPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetVolumeBackupPoliciesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeBackupPoliciesVolumeBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput{})

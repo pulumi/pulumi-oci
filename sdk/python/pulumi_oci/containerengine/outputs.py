@@ -11,6 +11,8 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AddonAddonError',
+    'AddonConfiguration',
     'ClusterClusterPodNetworkOption',
     'ClusterEndpoint',
     'ClusterEndpointConfig',
@@ -44,6 +46,22 @@ __all__ = [
     'NodePoolNodeShapeConfig',
     'NodePoolNodeSource',
     'NodePoolNodeSourceDetails',
+    'VirtualNodePoolInitialVirtualNodeLabel',
+    'VirtualNodePoolPlacementConfiguration',
+    'VirtualNodePoolPodConfiguration',
+    'VirtualNodePoolTaint',
+    'VirtualNodePoolVirtualNodeTags',
+    'GetAddonAddonErrorResult',
+    'GetAddonConfigurationResult',
+    'GetAddonOptionsAddonOptionResult',
+    'GetAddonOptionsAddonOptionVersionResult',
+    'GetAddonOptionsAddonOptionVersionConfigurationResult',
+    'GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult',
+    'GetAddonOptionsFilterResult',
+    'GetAddonsAddonResult',
+    'GetAddonsAddonAddonErrorResult',
+    'GetAddonsAddonConfigurationResult',
+    'GetAddonsFilterResult',
     'GetClusterOptionClusterPodNetworkOptionResult',
     'GetClustersClusterResult',
     'GetClustersClusterClusterPodNetworkOptionResult',
@@ -82,6 +100,23 @@ __all__ = [
     'GetNodePoolsNodePoolNodeShapeConfigResult',
     'GetNodePoolsNodePoolNodeSourceResult',
     'GetNodePoolsNodePoolNodeSourceDetailResult',
+    'GetPodShapesFilterResult',
+    'GetPodShapesPodShapeResult',
+    'GetPodShapesPodShapeMemoryOptionResult',
+    'GetPodShapesPodShapeNetworkBandwidthOptionResult',
+    'GetPodShapesPodShapeOcpuOptionResult',
+    'GetVirtualNodePoolInitialVirtualNodeLabelResult',
+    'GetVirtualNodePoolPlacementConfigurationResult',
+    'GetVirtualNodePoolPodConfigurationResult',
+    'GetVirtualNodePoolTaintResult',
+    'GetVirtualNodePoolVirtualNodeTagResult',
+    'GetVirtualNodePoolsFilterResult',
+    'GetVirtualNodePoolsVirtualNodePoolResult',
+    'GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult',
+    'GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult',
+    'GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult',
+    'GetVirtualNodePoolsVirtualNodePoolTaintResult',
+    'GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult',
     'GetWorkRequestErrorsFilterResult',
     'GetWorkRequestErrorsWorkRequestErrorResult',
     'GetWorkRequestLogEntriesFilterResult',
@@ -90,6 +125,80 @@ __all__ = [
     'GetWorkRequestsWorkRequestResult',
     'GetWorkRequestsWorkRequestResourceResult',
 ]
+
+@pulumi.output_type
+class AddonAddonError(dict):
+    def __init__(__self__, *,
+                 code: Optional[str] = None,
+                 message: Optional[str] = None,
+                 status: Optional[str] = None):
+        """
+        :param str code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        :param str message: A human-readable error string of the upstream error.
+        :param str status: The status of the HTTP response encountered in the upstream error.
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def code(self) -> Optional[str]:
+        """
+        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A human-readable error string of the upstream error.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the HTTP response encountered in the upstream error.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class AddonConfiguration(dict):
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str key: (Updatable) configuration key name
+        :param str value: (Updatable) configuration value name
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) configuration key name
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) configuration value name
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class ClusterClusterPodNetworkOption(dict):
@@ -2849,6 +2958,843 @@ class NodePoolNodeSourceDetails(dict):
 
 
 @pulumi.output_type
+class VirtualNodePoolInitialVirtualNodeLabel(dict):
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str key: (Updatable) The key of the pair.
+        :param str value: (Updatable) The value of the pair.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the pair.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) The value of the pair.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class VirtualNodePoolPlacementConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "faultDomains":
+            suggest = "fault_domains"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VirtualNodePoolPlacementConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VirtualNodePoolPlacementConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VirtualNodePoolPlacementConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 fault_domains: Sequence[str],
+                 subnet_id: str):
+        """
+        :param str availability_domain: (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+        :param Sequence[str] fault_domains: (Updatable) The fault domain of this virtual node.
+        :param str subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fault_domains", fault_domains)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Sequence[str]:
+        """
+        (Updatable) The fault domain of this virtual node.
+        """
+        return pulumi.get(self, "fault_domains")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        (Updatable) The regional subnet where pods' VNIC will be placed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class VirtualNodePoolPodConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VirtualNodePoolPodConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VirtualNodePoolPodConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VirtualNodePoolPodConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 shape: str,
+                 subnet_id: str,
+                 nsg_ids: Optional[Sequence[str]] = None):
+        """
+        :param str shape: (Updatable) Shape of the pods.
+        :param str subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
+        :param Sequence[str] nsg_ids: (Updatable) List of network security group IDs applied to the Pod VNIC.
+        """
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        (Updatable) Shape of the pods.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        (Updatable) The regional subnet where pods' VNIC will be placed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) List of network security group IDs applied to the Pod VNIC.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+
+@pulumi.output_type
+class VirtualNodePoolTaint(dict):
+    def __init__(__self__, *,
+                 effect: Optional[str] = None,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str effect: (Updatable) The effect of the pair.
+        :param str key: (Updatable) The key of the pair.
+        :param str value: (Updatable) The value of the pair.
+        """
+        if effect is not None:
+            pulumi.set(__self__, "effect", effect)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def effect(self) -> Optional[str]:
+        """
+        (Updatable) The effect of the pair.
+        """
+        return pulumi.get(self, "effect")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the pair.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) The value of the pair.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class VirtualNodePoolVirtualNodeTags(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VirtualNodePoolVirtualNodeTags. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VirtualNodePoolVirtualNodeTags.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VirtualNodePoolVirtualNodeTags.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None):
+        """
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+
+@pulumi.output_type
+class GetAddonAddonErrorResult(dict):
+    def __init__(__self__, *,
+                 code: str,
+                 message: str,
+                 status: str):
+        """
+        :param str code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        :param str message: A human-readable error string of the upstream error.
+        :param str status: The status of the HTTP response encountered in the upstream error.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def code(self) -> str:
+        """
+        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A human-readable error string of the upstream error.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the HTTP response encountered in the upstream error.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetAddonConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        """
+        :param str key: configuration key name
+        :param str value: configuration value name
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        configuration key name
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        configuration value name
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAddonOptionsAddonOptionResult(dict):
+    def __init__(__self__, *,
+                 addon_group: str,
+                 addon_schema_version: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 freeform_tags: Mapping[str, Any],
+                 is_essential: bool,
+                 name: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 versions: Sequence['outputs.GetAddonOptionsAddonOptionVersionResult']):
+        """
+        :param str addon_group: Addon group info, a namespace concept that groups addons with similar functionalities.
+        :param str addon_schema_version: Addon definition schema version to validate addon.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: Information about the addon version.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param bool is_essential: Is it an essential addon for cluster operation or not.
+        :param str name: Name of the addon and it would be unique.
+        :param str state: The life cycle state of the addon.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the work request was created.
+        :param Sequence['GetAddonOptionsAddonOptionVersionArgs'] versions: The resources this work request affects.
+        """
+        pulumi.set(__self__, "addon_group", addon_group)
+        pulumi.set(__self__, "addon_schema_version", addon_schema_version)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "is_essential", is_essential)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "versions", versions)
+
+    @property
+    @pulumi.getter(name="addonGroup")
+    def addon_group(self) -> str:
+        """
+        Addon group info, a namespace concept that groups addons with similar functionalities.
+        """
+        return pulumi.get(self, "addon_group")
+
+    @property
+    @pulumi.getter(name="addonSchemaVersion")
+    def addon_schema_version(self) -> str:
+        """
+        Addon definition schema version to validate addon.
+        """
+        return pulumi.get(self, "addon_schema_version")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Information about the addon version.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isEssential")
+    def is_essential(self) -> bool:
+        """
+        Is it an essential addon for cluster operation or not.
+        """
+        return pulumi.get(self, "is_essential")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the addon and it would be unique.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The life cycle state of the addon.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the work request was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def versions(self) -> Sequence['outputs.GetAddonOptionsAddonOptionVersionResult']:
+        """
+        The resources this work request affects.
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetAddonOptionsAddonOptionVersionResult(dict):
+    def __init__(__self__, *,
+                 configurations: Sequence['outputs.GetAddonOptionsAddonOptionVersionConfigurationResult'],
+                 description: str,
+                 kubernetes_version_filters: Sequence['outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult'],
+                 status: str,
+                 version_number: str):
+        """
+        :param Sequence['GetAddonOptionsAddonOptionVersionConfigurationArgs'] configurations: Addon version configuration details.
+        :param str description: Information about the addon version.
+        :param Sequence['GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs'] kubernetes_version_filters: The range of kubernetes versions an addon can be configured.
+        :param str status: Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
+        :param str version_number: Version number, need be comparable within an addon.
+        """
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "kubernetes_version_filters", kubernetes_version_filters)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "version_number", version_number)
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetAddonOptionsAddonOptionVersionConfigurationResult']:
+        """
+        Addon version configuration details.
+        """
+        return pulumi.get(self, "configurations")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Information about the addon version.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="kubernetesVersionFilters")
+    def kubernetes_version_filters(self) -> Sequence['outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult']:
+        """
+        The range of kubernetes versions an addon can be configured.
+        """
+        return pulumi.get(self, "kubernetes_version_filters")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> str:
+        """
+        Version number, need be comparable within an addon.
+        """
+        return pulumi.get(self, "version_number")
+
+
+@pulumi.output_type
+class GetAddonOptionsAddonOptionVersionConfigurationResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 display_name: str,
+                 is_required: bool,
+                 key: str,
+                 value: str):
+        """
+        :param str description: Information about the addon version.
+        :param str display_name: Display name of addon version.
+        :param bool is_required: If the the configuration is required or not.
+        :param str key: Addon configuration key
+        :param str value: Addon configuration value
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Information about the addon version.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Display name of addon version.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> bool:
+        """
+        If the the configuration is required or not.
+        """
+        return pulumi.get(self, "is_required")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Addon configuration key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Addon configuration value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult(dict):
+    def __init__(__self__, *,
+                 exact_kubernetes_versions: Sequence[str],
+                 maximum_version: str,
+                 minimal_version: str):
+        """
+        :param Sequence[str] exact_kubernetes_versions: The exact version of kubernetes that are compatible.
+        :param str maximum_version: The latest kubernetes version.
+        :param str minimal_version: The earliest kubernetes version.
+        """
+        pulumi.set(__self__, "exact_kubernetes_versions", exact_kubernetes_versions)
+        pulumi.set(__self__, "maximum_version", maximum_version)
+        pulumi.set(__self__, "minimal_version", minimal_version)
+
+    @property
+    @pulumi.getter(name="exactKubernetesVersions")
+    def exact_kubernetes_versions(self) -> Sequence[str]:
+        """
+        The exact version of kubernetes that are compatible.
+        """
+        return pulumi.get(self, "exact_kubernetes_versions")
+
+    @property
+    @pulumi.getter(name="maximumVersion")
+    def maximum_version(self) -> str:
+        """
+        The latest kubernetes version.
+        """
+        return pulumi.get(self, "maximum_version")
+
+    @property
+    @pulumi.getter(name="minimalVersion")
+    def minimal_version(self) -> str:
+        """
+        The earliest kubernetes version.
+        """
+        return pulumi.get(self, "minimal_version")
+
+
+@pulumi.output_type
+class GetAddonOptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of the addon and it would be unique.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the addon and it would be unique.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAddonsAddonResult(dict):
+    def __init__(__self__, *,
+                 addon_errors: Sequence['outputs.GetAddonsAddonAddonErrorResult'],
+                 addon_name: str,
+                 cluster_id: str,
+                 configurations: Sequence['outputs.GetAddonsAddonConfigurationResult'],
+                 current_installed_version: str,
+                 remove_addon_resources_on_delete: bool,
+                 state: str,
+                 time_created: str,
+                 version: str):
+        """
+        :param Sequence['GetAddonsAddonAddonErrorArgs'] addon_errors: The error info of the addon.
+        :param str addon_name: The name of the addon.
+        :param str cluster_id: The OCID of the cluster.
+        :param Sequence['GetAddonsAddonConfigurationArgs'] configurations: Addon configuration details.
+        :param str current_installed_version: current installed version of the addon
+        :param str state: The state of the addon.
+        :param str time_created: The time the cluster was created.
+        :param str version: selected addon version, or null indicates autoUpdate
+        """
+        pulumi.set(__self__, "addon_errors", addon_errors)
+        pulumi.set(__self__, "addon_name", addon_name)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "current_installed_version", current_installed_version)
+        pulumi.set(__self__, "remove_addon_resources_on_delete", remove_addon_resources_on_delete)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="addonErrors")
+    def addon_errors(self) -> Sequence['outputs.GetAddonsAddonAddonErrorResult']:
+        """
+        The error info of the addon.
+        """
+        return pulumi.get(self, "addon_errors")
+
+    @property
+    @pulumi.getter(name="addonName")
+    def addon_name(self) -> str:
+        """
+        The name of the addon.
+        """
+        return pulumi.get(self, "addon_name")
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetAddonsAddonConfigurationResult']:
+        """
+        Addon configuration details.
+        """
+        return pulumi.get(self, "configurations")
+
+    @property
+    @pulumi.getter(name="currentInstalledVersion")
+    def current_installed_version(self) -> str:
+        """
+        current installed version of the addon
+        """
+        return pulumi.get(self, "current_installed_version")
+
+    @property
+    @pulumi.getter(name="removeAddonResourcesOnDelete")
+    def remove_addon_resources_on_delete(self) -> bool:
+        return pulumi.get(self, "remove_addon_resources_on_delete")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the addon.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the cluster was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        selected addon version, or null indicates autoUpdate
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetAddonsAddonAddonErrorResult(dict):
+    def __init__(__self__, *,
+                 code: str,
+                 message: str,
+                 status: str):
+        """
+        :param str code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        :param str message: A human-readable error string of the upstream error.
+        :param str status: The status of the HTTP response encountered in the upstream error.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def code(self) -> str:
+        """
+        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A human-readable error string of the upstream error.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the HTTP response encountered in the upstream error.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetAddonsAddonConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        """
+        :param str key: configuration key name
+        :param str value: configuration value name
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        configuration key name
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        configuration value name
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAddonsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetClusterOptionClusterPodNetworkOptionResult(dict):
     def __init__(__self__, *,
                  cni_type: str):
@@ -2885,6 +3831,7 @@ class GetClustersClusterResult(dict):
                  name: str,
                  options: Sequence['outputs.GetClustersClusterOptionResult'],
                  state: str,
+                 type: str,
                  vcn_id: str):
         """
         :param Sequence[str] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
@@ -2903,6 +3850,7 @@ class GetClustersClusterResult(dict):
         :param str name: The name to filter on.
         :param Sequence['GetClustersClusterOptionArgs'] options: Optional attributes for the cluster.
         :param str state: A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+        :param str type: Type of cluster
         :param str vcn_id: The OCID of the virtual cloud network (VCN) in which the cluster exists.
         """
         pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
@@ -2921,6 +3869,7 @@ class GetClustersClusterResult(dict):
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "options", options)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
@@ -3050,6 +3999,14 @@ class GetClustersClusterResult(dict):
         A cluster lifecycle state to filter on. Can have multiple parameters of this name.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of cluster
+        """
+        return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vcnId")
@@ -5034,6 +5991,844 @@ class GetNodePoolsNodePoolNodeSourceDetailResult(dict):
         The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
         return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetPodShapesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name to filter on.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name to filter on.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPodShapesPodShapeResult(dict):
+    def __init__(__self__, *,
+                 memory_options: Sequence['outputs.GetPodShapesPodShapeMemoryOptionResult'],
+                 name: str,
+                 network_bandwidth_options: Sequence['outputs.GetPodShapesPodShapeNetworkBandwidthOptionResult'],
+                 ocpu_options: Sequence['outputs.GetPodShapesPodShapeOcpuOptionResult'],
+                 processor_description: str):
+        """
+        :param Sequence['GetPodShapesPodShapeMemoryOptionArgs'] memory_options: ShapeMemoryOptions.
+        :param str name: The name to filter on.
+        :param Sequence['GetPodShapesPodShapeNetworkBandwidthOptionArgs'] network_bandwidth_options: ShapeNetworkBandwidthOptions.
+        :param Sequence['GetPodShapesPodShapeOcpuOptionArgs'] ocpu_options: Options for OCPU shape.
+        :param str processor_description: A short description of the VM's processor (CPU).
+        """
+        pulumi.set(__self__, "memory_options", memory_options)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_bandwidth_options", network_bandwidth_options)
+        pulumi.set(__self__, "ocpu_options", ocpu_options)
+        pulumi.set(__self__, "processor_description", processor_description)
+
+    @property
+    @pulumi.getter(name="memoryOptions")
+    def memory_options(self) -> Sequence['outputs.GetPodShapesPodShapeMemoryOptionResult']:
+        """
+        ShapeMemoryOptions.
+        """
+        return pulumi.get(self, "memory_options")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name to filter on.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="networkBandwidthOptions")
+    def network_bandwidth_options(self) -> Sequence['outputs.GetPodShapesPodShapeNetworkBandwidthOptionResult']:
+        """
+        ShapeNetworkBandwidthOptions.
+        """
+        return pulumi.get(self, "network_bandwidth_options")
+
+    @property
+    @pulumi.getter(name="ocpuOptions")
+    def ocpu_options(self) -> Sequence['outputs.GetPodShapesPodShapeOcpuOptionResult']:
+        """
+        Options for OCPU shape.
+        """
+        return pulumi.get(self, "ocpu_options")
+
+    @property
+    @pulumi.getter(name="processorDescription")
+    def processor_description(self) -> str:
+        """
+        A short description of the VM's processor (CPU).
+        """
+        return pulumi.get(self, "processor_description")
+
+
+@pulumi.output_type
+class GetPodShapesPodShapeMemoryOptionResult(dict):
+    def __init__(__self__, *,
+                 default_per_ocpu_in_gbs: float,
+                 max_in_gbs: float,
+                 max_per_ocpu_in_gbs: float,
+                 min_in_gbs: float,
+                 min_per_ocpu_in_gbs: float):
+        """
+        :param float default_per_ocpu_in_gbs: The default amount of memory per OCPU available for this shape, in gigabytes.
+        :param float max_in_gbs: The maximum amount of memory, in gigabytes.
+        :param float max_per_ocpu_in_gbs: The maximum amount of memory per OCPU available for this shape, in gigabytes.
+        :param float min_in_gbs: The minimum amount of memory, in gigabytes.
+        :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape, in gigabytes.
+        """
+        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
+        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
+        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+
+    @property
+    @pulumi.getter(name="defaultPerOcpuInGbs")
+    def default_per_ocpu_in_gbs(self) -> float:
+        """
+        The default amount of memory per OCPU available for this shape, in gigabytes.
+        """
+        return pulumi.get(self, "default_per_ocpu_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxInGbs")
+    def max_in_gbs(self) -> float:
+        """
+        The maximum amount of memory, in gigabytes.
+        """
+        return pulumi.get(self, "max_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxPerOcpuInGbs")
+    def max_per_ocpu_in_gbs(self) -> float:
+        """
+        The maximum amount of memory per OCPU available for this shape, in gigabytes.
+        """
+        return pulumi.get(self, "max_per_ocpu_in_gbs")
+
+    @property
+    @pulumi.getter(name="minInGbs")
+    def min_in_gbs(self) -> float:
+        """
+        The minimum amount of memory, in gigabytes.
+        """
+        return pulumi.get(self, "min_in_gbs")
+
+    @property
+    @pulumi.getter(name="minPerOcpuInGbs")
+    def min_per_ocpu_in_gbs(self) -> float:
+        """
+        The minimum amount of memory per OCPU available for this shape, in gigabytes.
+        """
+        return pulumi.get(self, "min_per_ocpu_in_gbs")
+
+
+@pulumi.output_type
+class GetPodShapesPodShapeNetworkBandwidthOptionResult(dict):
+    def __init__(__self__, *,
+                 default_per_ocpu_in_gbps: float,
+                 max_in_gbps: float,
+                 min_in_gbps: float):
+        """
+        :param float default_per_ocpu_in_gbps: The default amount of networking bandwidth per OCPU, in gigabits per second.
+        :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
+        :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
+        """
+        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
+        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+
+    @property
+    @pulumi.getter(name="defaultPerOcpuInGbps")
+    def default_per_ocpu_in_gbps(self) -> float:
+        """
+        The default amount of networking bandwidth per OCPU, in gigabits per second.
+        """
+        return pulumi.get(self, "default_per_ocpu_in_gbps")
+
+    @property
+    @pulumi.getter(name="maxInGbps")
+    def max_in_gbps(self) -> float:
+        """
+        The maximum amount of networking bandwidth, in gigabits per second.
+        """
+        return pulumi.get(self, "max_in_gbps")
+
+    @property
+    @pulumi.getter(name="minInGbps")
+    def min_in_gbps(self) -> float:
+        """
+        The minimum amount of networking bandwidth, in gigabits per second.
+        """
+        return pulumi.get(self, "min_in_gbps")
+
+
+@pulumi.output_type
+class GetPodShapesPodShapeOcpuOptionResult(dict):
+    def __init__(__self__, *,
+                 max: float,
+                 min: float):
+        """
+        :param float max: The maximum number of OCPUs.
+        :param float min: The minimum number of OCPUs.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> float:
+        """
+        The maximum number of OCPUs.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> float:
+        """
+        The minimum number of OCPUs.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolInitialVirtualNodeLabelResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        """
+        :param str key: The key of the pair.
+        :param str value: The value of the pair.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the pair.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of the pair.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolPlacementConfigurationResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 fault_domains: Sequence[str],
+                 subnet_id: str):
+        """
+        :param str availability_domain: The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+        :param Sequence[str] fault_domains: The fault domain of this virtual node.
+        :param str subnet_id: The regional subnet where pods' VNIC will be placed.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fault_domains", fault_domains)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Sequence[str]:
+        """
+        The fault domain of this virtual node.
+        """
+        return pulumi.get(self, "fault_domains")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The regional subnet where pods' VNIC will be placed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolPodConfigurationResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[str],
+                 shape: str,
+                 subnet_id: str):
+        """
+        :param Sequence[str] nsg_ids: List of network security group IDs applied to the Pod VNIC.
+        :param str shape: Shape of the pods.
+        :param str subnet_id: The regional subnet where pods' VNIC will be placed.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        List of network security group IDs applied to the Pod VNIC.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the pods.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The regional subnet where pods' VNIC will be placed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolTaintResult(dict):
+    def __init__(__self__, *,
+                 effect: str,
+                 key: str,
+                 value: str):
+        """
+        :param str effect: The effect of the pair.
+        :param str key: The key of the pair.
+        :param str value: The value of the pair.
+        """
+        pulumi.set(__self__, "effect", effect)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def effect(self) -> str:
+        """
+        The effect of the pair.
+        """
+        return pulumi.get(self, "effect")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the pair.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of the pair.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolVirtualNodeTagResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any]):
+        """
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name to filter on.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name to filter on.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsVirtualNodePoolResult(dict):
+    def __init__(__self__, *,
+                 cluster_id: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 initial_virtual_node_labels: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult'],
+                 kubernetes_version: str,
+                 lifecycle_details: str,
+                 nsg_ids: Sequence[str],
+                 placement_configurations: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult'],
+                 pod_configurations: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult'],
+                 size: int,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 taints: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolTaintResult'],
+                 time_created: str,
+                 time_updated: str,
+                 virtual_node_pool_id: str,
+                 virtual_node_tags: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult']):
+        """
+        :param str cluster_id: The OCID of the cluster.
+        :param str compartment_id: The OCID of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: Display name of the virtual node pool. This is a non-unique value.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the virtual node pool.
+        :param Sequence['GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs'] initial_virtual_node_labels: Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
+        :param str kubernetes_version: The version of Kubernetes running on the nodes in the node pool.
+        :param str lifecycle_details: Details about the state of the Virtual Node Pool.
+        :param Sequence[str] nsg_ids: List of network security group IDs applied to the Pod VNIC.
+        :param Sequence['GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs'] placement_configurations: The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
+        :param Sequence['GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs'] pod_configurations: The pod configuration for pods run on virtual nodes of this virtual node pool.
+        :param int size: The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
+        :param str state: A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetVirtualNodePoolsVirtualNodePoolTaintArgs'] taints: A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+        :param str time_created: The time the virtual node pool was created.
+        :param str time_updated: The time the virtual node pool was updated.
+        :param Sequence['GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs'] virtual_node_tags: The tags associated to the virtual nodes in this virtual node pool.
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "initial_virtual_node_labels", initial_virtual_node_labels)
+        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "placement_configurations", placement_configurations)
+        pulumi.set(__self__, "pod_configurations", pod_configurations)
+        pulumi.set(__self__, "size", size)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "taints", taints)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "virtual_node_pool_id", virtual_node_pool_id)
+        pulumi.set(__self__, "virtual_node_tags", virtual_node_tags)
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Display name of the virtual node pool. This is a non-unique value.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the virtual node pool.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="initialVirtualNodeLabels")
+    def initial_virtual_node_labels(self) -> Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult']:
+        """
+        Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
+        """
+        return pulumi.get(self, "initial_virtual_node_labels")
+
+    @property
+    @pulumi.getter(name="kubernetesVersion")
+    def kubernetes_version(self) -> str:
+        """
+        The version of Kubernetes running on the nodes in the node pool.
+        """
+        return pulumi.get(self, "kubernetes_version")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the state of the Virtual Node Pool.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        List of network security group IDs applied to the Pod VNIC.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="placementConfigurations")
+    def placement_configurations(self) -> Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult']:
+        """
+        The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
+        """
+        return pulumi.get(self, "placement_configurations")
+
+    @property
+    @pulumi.getter(name="podConfigurations")
+    def pod_configurations(self) -> Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult']:
+        """
+        The pod configuration for pods run on virtual nodes of this virtual node pool.
+        """
+        return pulumi.get(self, "pod_configurations")
+
+    @property
+    @pulumi.getter
+    def size(self) -> int:
+        """
+        The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
+        """
+        return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter
+    def taints(self) -> Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolTaintResult']:
+        """
+        A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+        """
+        return pulumi.get(self, "taints")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the virtual node pool was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the virtual node pool was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="virtualNodePoolId")
+    def virtual_node_pool_id(self) -> str:
+        return pulumi.get(self, "virtual_node_pool_id")
+
+    @property
+    @pulumi.getter(name="virtualNodeTags")
+    def virtual_node_tags(self) -> Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult']:
+        """
+        The tags associated to the virtual nodes in this virtual node pool.
+        """
+        return pulumi.get(self, "virtual_node_tags")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        """
+        :param str key: The key of the pair.
+        :param str value: The value of the pair.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the pair.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of the pair.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 fault_domains: Sequence[str],
+                 subnet_id: str):
+        """
+        :param str availability_domain: The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+        :param Sequence[str] fault_domains: The fault domain of this virtual node.
+        :param str subnet_id: The regional subnet where pods' VNIC will be placed.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fault_domains", fault_domains)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Sequence[str]:
+        """
+        The fault domain of this virtual node.
+        """
+        return pulumi.get(self, "fault_domains")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The regional subnet where pods' VNIC will be placed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[str],
+                 shape: str,
+                 subnet_id: str):
+        """
+        :param Sequence[str] nsg_ids: List of network security group IDs applied to the Pod VNIC.
+        :param str shape: Shape of the pods.
+        :param str subnet_id: The regional subnet where pods' VNIC will be placed.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        List of network security group IDs applied to the Pod VNIC.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the pods.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The regional subnet where pods' VNIC will be placed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsVirtualNodePoolTaintResult(dict):
+    def __init__(__self__, *,
+                 effect: str,
+                 key: str,
+                 value: str):
+        """
+        :param str effect: The effect of the pair.
+        :param str key: The key of the pair.
+        :param str value: The value of the pair.
+        """
+        pulumi.set(__self__, "effect", effect)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def effect(self) -> str:
+        """
+        The effect of the pair.
+        """
+        return pulumi.get(self, "effect")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the pair.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of the pair.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any]):
+        """
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
 
 @pulumi.output_type

@@ -62,6 +62,21 @@ public final class GetInstancesPlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * 
+     */
+    @Import(name="computeClusterId")
+    private @Nullable String computeClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * 
+     */
+    public Optional<String> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
+    }
+
+    /**
      * A filter to return only resources that match the given display name exactly.
      * 
      */
@@ -104,6 +119,7 @@ public final class GetInstancesPlainArgs extends com.pulumi.resources.InvokeArgs
         this.availabilityDomain = $.availabilityDomain;
         this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
+        this.computeClusterId = $.computeClusterId;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.state = $.state;
@@ -157,6 +173,17 @@ public final class GetInstancesPlainArgs extends com.pulumi.resources.InvokeArgs
          */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(@Nullable String computeClusterId) {
+            $.computeClusterId = computeClusterId;
             return this;
         }
 

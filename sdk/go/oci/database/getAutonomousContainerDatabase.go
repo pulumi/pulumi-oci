@@ -72,7 +72,9 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	ComputeModel  string `pulumi:"computeModel"`
-	DbUniqueName  string `pulumi:"dbUniqueName"`
+	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+	DbName       string `pulumi:"dbName"`
+	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Oracle Database version of the Autonomous Container Database.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -224,6 +226,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) CompartmentId() pulumi.St
 
 func (o LookupAutonomousContainerDatabaseResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+func (o LookupAutonomousContainerDatabaseResultOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
 }
 
 func (o LookupAutonomousContainerDatabaseResultOutput) DbUniqueName() pulumi.StringOutput {

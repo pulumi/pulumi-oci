@@ -43,6 +43,7 @@ namespace Pulumi.Oci.LogAnalytics
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         IsEnabled = @var.Log_analytics_object_collection_rule_is_enabled,
     ///         LogSet = @var.Log_analytics_object_collection_rule_log_set,
     ///         LogSetExtRegex = @var.Log_analytics_object_collection_rule_log_set_ext_regex,
     ///         LogSetKey = @var.Log_analytics_object_collection_rule_log_set_key,
@@ -108,6 +109,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether or not this rule is currently enabled.
+        /// </summary>
+        [Output("isEnabled")]
+        public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// A detailed status of the life cycle state.
@@ -318,6 +325,12 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
+        /// (Updatable) Whether or not this rule is currently enabled.
+        /// </summary>
+        [Input("isEnabled")]
+        public Input<bool>? IsEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         /// </summary>
         [Input("logGroupId", required: true)]
@@ -474,6 +487,12 @@ namespace Pulumi.Oci.LogAnalytics
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Whether or not this rule is currently enabled.
+        /// </summary>
+        [Input("isEnabled")]
+        public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
         /// A detailed status of the life cycle state.

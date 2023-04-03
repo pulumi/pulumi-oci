@@ -78,6 +78,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Type of cluster
+        /// </summary>
+        public readonly string Type;
+        /// <summary>
         /// The OCID of the virtual cloud network (VCN) in which the cluster exists.
         /// </summary>
         public readonly string VcnId;
@@ -116,6 +120,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string state,
 
+            string type,
+
             string vcnId)
         {
             AvailableKubernetesUpgrades = availableKubernetesUpgrades;
@@ -134,6 +140,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             Name = name;
             Options = options;
             State = state;
+            Type = type;
             VcnId = vcnId;
         }
     }

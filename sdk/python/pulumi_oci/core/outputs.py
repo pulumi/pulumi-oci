@@ -30,6 +30,7 @@ __all__ = [
     'ClusterNetworkPlacementConfiguration',
     'ClusterNetworkPlacementConfigurationSecondaryVnicSubnet',
     'ComputeCapacityReservationInstanceReservationConfig',
+    'ComputeCapacityReservationInstanceReservationConfigClusterConfig',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig',
     'CrossConnectGroupMacsecProperties',
     'CrossConnectGroupMacsecPropertiesPrimaryKey',
@@ -201,6 +202,7 @@ __all__ = [
     'GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnetResult',
     'GetClusterNetworksFilterResult',
     'GetComputeCapacityReservationInstanceReservationConfigResult',
+    'GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult',
     'GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult',
     'GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShapeResult',
     'GetComputeCapacityReservationInstanceShapesFilterResult',
@@ -209,8 +211,12 @@ __all__ = [
     'GetComputeCapacityReservationInstancesFilterResult',
     'GetComputeCapacityReservationsComputeCapacityReservationResult',
     'GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigResult',
+    'GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfigResult',
     'GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult',
     'GetComputeCapacityReservationsFilterResult',
+    'GetComputeClustersComputeClusterCollectionResult',
+    'GetComputeClustersComputeClusterCollectionItemResult',
+    'GetComputeClustersFilterResult',
     'GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchemaResult',
     'GetComputeGlobalImageCapabilitySchemasFilterResult',
     'GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersionResult',
@@ -1654,6 +1660,8 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
             suggest = "instance_shape"
         elif key == "reservedCount":
             suggest = "reserved_count"
+        elif key == "clusterConfig":
+            suggest = "cluster_config"
         elif key == "faultDomain":
             suggest = "fault_domain"
         elif key == "instanceShapeConfig":
@@ -1675,18 +1683,22 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
     def __init__(__self__, *,
                  instance_shape: str,
                  reserved_count: str,
+                 cluster_config: Optional['outputs.ComputeCapacityReservationInstanceReservationConfigClusterConfig'] = None,
                  fault_domain: Optional[str] = None,
                  instance_shape_config: Optional['outputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig'] = None,
                  used_count: Optional[str] = None):
         """
         :param str instance_shape: (Updatable) The shape requested when launching instances using reserved capacity. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         :param str reserved_count: (Updatable) The total number of instances that can be launched from the capacity configuration.
+        :param 'ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs' cluster_config: (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
         :param str fault_domain: (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
         :param 'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs' instance_shape_config: (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
         :param str used_count: The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
         pulumi.set(__self__, "instance_shape", instance_shape)
         pulumi.set(__self__, "reserved_count", reserved_count)
+        if cluster_config is not None:
+            pulumi.set(__self__, "cluster_config", cluster_config)
         if fault_domain is not None:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if instance_shape_config is not None:
@@ -1711,6 +1723,14 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
         return pulumi.get(self, "reserved_count")
 
     @property
+    @pulumi.getter(name="clusterConfig")
+    def cluster_config(self) -> Optional['outputs.ComputeCapacityReservationInstanceReservationConfigClusterConfig']:
+        """
+        (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        """
+        return pulumi.get(self, "cluster_config")
+
+    @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[str]:
         """
@@ -1733,6 +1753,55 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
         The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
         return pulumi.get(self, "used_count")
+
+
+@pulumi.output_type
+class ComputeCapacityReservationInstanceReservationConfigClusterConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hpcIslandId":
+            suggest = "hpc_island_id"
+        elif key == "networkBlockIds":
+            suggest = "network_block_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeCapacityReservationInstanceReservationConfigClusterConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeCapacityReservationInstanceReservationConfigClusterConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeCapacityReservationInstanceReservationConfigClusterConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 hpc_island_id: str,
+                 network_block_ids: Optional[Sequence[str]] = None):
+        """
+        :param str hpc_island_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        :param Sequence[str] network_block_ids: (Updatable) The list of OCID of the network blocks.
+        """
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+        if network_block_ids is not None:
+            pulumi.set(__self__, "network_block_ids", network_block_ids)
+
+    @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The list of OCID of the network blocks.
+        """
+        return pulumi.get(self, "network_block_ids")
 
 
 @pulumi.output_type
@@ -6605,7 +6674,7 @@ class InstanceSourceDetails(dict):
                  boot_volume_vpus_per_gb: Optional[str] = None,
                  kms_key_id: Optional[str] = None):
         """
-        :param str source_id: The OCID of the boot volume used to boot the instance.
+        :param str source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         :param str boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -6624,7 +6693,7 @@ class InstanceSourceDetails(dict):
     @pulumi.getter(name="sourceId")
     def source_id(self) -> str:
         """
-        The OCID of the boot volume used to boot the instance.
+        The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         """
         return pulumi.get(self, "source_id")
 
@@ -12538,8 +12607,10 @@ class GetClusterNetworksClusterNetworkResult(dict):
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
+                 hpc_island_id: str,
                  id: str,
                  instance_pools: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolResult'],
+                 network_block_ids: Sequence[str],
                  placement_configurations: Sequence['outputs.GetClusterNetworksClusterNetworkPlacementConfigurationResult'],
                  state: str,
                  time_created: str,
@@ -12549,8 +12620,10 @@ class GetClusterNetworksClusterNetworkResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param Sequence['GetClusterNetworksClusterNetworkInstancePoolArgs'] instance_pools: The instance pools in the cluster network.
+        :param Sequence[str] network_block_ids: The list of network block OCIDs of the HPC island.
         :param Sequence['GetClusterNetworksClusterNetworkPlacementConfigurationArgs'] placement_configurations: The location for where the instance pools in a cluster network will place instances.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -12560,8 +12633,10 @@ class GetClusterNetworksClusterNetworkResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_pools", instance_pools)
+        pulumi.set(__self__, "network_block_ids", network_block_ids)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -12600,6 +12675,14 @@ class GetClusterNetworksClusterNetworkResult(dict):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -12614,6 +12697,14 @@ class GetClusterNetworksClusterNetworkResult(dict):
         The instance pools in the cluster network.
         """
         return pulumi.get(self, "instance_pools")
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Sequence[str]:
+        """
+        The list of network block OCIDs of the HPC island.
+        """
+        return pulumi.get(self, "network_block_ids")
 
     @property
     @pulumi.getter(name="placementConfigurations")
@@ -13039,18 +13130,21 @@ class GetClusterNetworksFilterResult(dict):
 @pulumi.output_type
 class GetComputeCapacityReservationInstanceReservationConfigResult(dict):
     def __init__(__self__, *,
+                 cluster_configs: Sequence['outputs.GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult'],
                  fault_domain: str,
                  instance_shape: str,
                  instance_shape_configs: Sequence['outputs.GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult'],
                  reserved_count: str,
                  used_count: str):
         """
-        :param str fault_domain: The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+        :param Sequence['GetComputeCapacityReservationInstanceReservationConfigClusterConfigArgs'] cluster_configs: The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        :param str fault_domain: The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         :param str instance_shape: The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         :param Sequence['GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs'] instance_shape_configs: The shape configuration requested when launching instances in a compute capacity reservation.
         :param str reserved_count: The total number of instances that can be launched from the capacity configuration.
         :param str used_count: The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
+        pulumi.set(__self__, "cluster_configs", cluster_configs)
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "instance_shape", instance_shape)
         pulumi.set(__self__, "instance_shape_configs", instance_shape_configs)
@@ -13058,10 +13152,18 @@ class GetComputeCapacityReservationInstanceReservationConfigResult(dict):
         pulumi.set(__self__, "used_count", used_count)
 
     @property
+    @pulumi.getter(name="clusterConfigs")
+    def cluster_configs(self) -> Sequence['outputs.GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult']:
+        """
+        The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        """
+        return pulumi.get(self, "cluster_configs")
+
+    @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
-        The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+        The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         """
         return pulumi.get(self, "fault_domain")
 
@@ -13096,6 +13198,35 @@ class GetComputeCapacityReservationInstanceReservationConfigResult(dict):
         The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
         return pulumi.get(self, "used_count")
+
+
+@pulumi.output_type
+class GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult(dict):
+    def __init__(__self__, *,
+                 hpc_island_id: str,
+                 network_block_ids: Sequence[str]):
+        """
+        :param str hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        :param Sequence[str] network_block_ids: The list of OCID of the network blocks.
+        """
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+        pulumi.set(__self__, "network_block_ids", network_block_ids)
+
+    @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Sequence[str]:
+        """
+        The list of OCID of the network blocks.
+        """
+        return pulumi.get(self, "network_block_ids")
 
 
 @pulumi.output_type
@@ -13465,18 +13596,21 @@ class GetComputeCapacityReservationsComputeCapacityReservationResult(dict):
 @pulumi.output_type
 class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigResult(dict):
     def __init__(__self__, *,
+                 cluster_configs: Sequence['outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfigResult'],
                  fault_domain: str,
                  instance_shape: str,
                  instance_shape_configs: Sequence['outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult'],
                  reserved_count: str,
                  used_count: str):
         """
-        :param str fault_domain: The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+        :param Sequence['GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfigArgs'] cluster_configs: The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        :param str fault_domain: The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         :param str instance_shape: The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         :param Sequence['GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs'] instance_shape_configs: The shape configuration requested when launching instances in a compute capacity reservation.
         :param str reserved_count: The total number of instances that can be launched from the capacity configuration.
         :param str used_count: The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
+        pulumi.set(__self__, "cluster_configs", cluster_configs)
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "instance_shape", instance_shape)
         pulumi.set(__self__, "instance_shape_configs", instance_shape_configs)
@@ -13484,10 +13618,18 @@ class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservatio
         pulumi.set(__self__, "used_count", used_count)
 
     @property
+    @pulumi.getter(name="clusterConfigs")
+    def cluster_configs(self) -> Sequence['outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfigResult']:
+        """
+        The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        """
+        return pulumi.get(self, "cluster_configs")
+
+    @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
-        The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+        The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         """
         return pulumi.get(self, "fault_domain")
 
@@ -13525,6 +13667,35 @@ class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservatio
 
 
 @pulumi.output_type
+class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfigResult(dict):
+    def __init__(__self__, *,
+                 hpc_island_id: str,
+                 network_block_ids: Sequence[str]):
+        """
+        :param str hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        :param Sequence[str] network_block_ids: The list of OCID of the network blocks.
+        """
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+        pulumi.set(__self__, "network_block_ids", network_block_ids)
+
+    @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Sequence[str]:
+        """
+        The list of OCID of the network blocks.
+        """
+        return pulumi.get(self, "network_block_ids")
+
+
+@pulumi.output_type
 class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: float,
@@ -13555,6 +13726,140 @@ class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservatio
 
 @pulumi.output_type
 class GetComputeCapacityReservationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComputeClustersComputeClusterCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComputeClustersComputeClusterCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComputeClustersComputeClusterCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComputeClustersComputeClusterCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 state: str,
+                 time_created: str):
+        """
+        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+        :param str state: The current state of the compute cluster.
+        :param str time_created: The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the compute cluster.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetComputeClustersFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -22405,6 +22710,7 @@ class GetInstancesInstanceResult(dict):
                  boot_volume_id: str,
                  capacity_reservation_id: str,
                  compartment_id: str,
+                 compute_cluster_id: str,
                  create_vnic_details: Sequence['outputs.GetInstancesInstanceCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
                  defined_tags: Mapping[str, Any],
@@ -22443,6 +22749,7 @@ class GetInstancesInstanceResult(dict):
         :param str boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param str capacity_reservation_id: The OCID of the compute capacity reservation.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host that the instance is placed on.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
@@ -22475,6 +22782,7 @@ class GetInstancesInstanceResult(dict):
         pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -22559,6 +22867,14 @@ class GetInstancesInstanceResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @property
     @pulumi.getter(name="createVnicDetails")
@@ -23406,7 +23722,7 @@ class GetInstancesInstanceSourceDetailResult(dict):
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
-        :param str source_id: The OCID of the boot volume used to boot the instance.
+        :param str source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         """
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -23443,7 +23759,7 @@ class GetInstancesInstanceSourceDetailResult(dict):
     @pulumi.getter(name="sourceId")
     def source_id(self) -> str:
         """
-        The OCID of the boot volume used to boot the instance.
+        The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         """
         return pulumi.get(self, "source_id")
 

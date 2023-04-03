@@ -26,7 +26,8 @@ class ClusterArgs:
                  image_policy_config: Optional[pulumi.Input['ClusterImagePolicyConfigArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 options: Optional[pulumi.Input['ClusterOptionsArgs']] = None):
+                 options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
+                 type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Cluster resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
@@ -40,6 +41,7 @@ class ClusterArgs:
         :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
+        :param pulumi.Input[str] type: (Updatable) Type of cluster
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
@@ -60,6 +62,8 @@ class ClusterArgs:
             pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -193,6 +197,18 @@ class ClusterArgs:
     def options(self, value: Optional[pulumi.Input['ClusterOptionsArgs']]):
         pulumi.set(self, "options", value)
 
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of cluster
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
 
 @pulumi.input_type
 class _ClusterState:
@@ -212,6 +228,7 @@ class _ClusterState:
                  name: Optional[pulumi.Input[str]] = None,
                  options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Cluster resources.
@@ -230,6 +247,7 @@ class _ClusterState:
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] state: The state of the cluster masters.
+        :param pulumi.Input[str] type: (Updatable) Type of cluster
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
         """
         if available_kubernetes_upgrades is not None:
@@ -262,6 +280,8 @@ class _ClusterState:
             pulumi.set(__self__, "options", options)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
         if vcn_id is not None:
             pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -446,6 +466,18 @@ class _ClusterState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of cluster
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -473,6 +505,7 @@ class Cluster(pulumi.CustomResource):
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  options: Optional[pulumi.Input[pulumi.InputType['ClusterOptionsArgs']]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -500,6 +533,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[pulumi.InputType['ClusterOptionsArgs']] options: (Updatable) Optional attributes for the cluster.
+        :param pulumi.Input[str] type: (Updatable) Type of cluster
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
         """
         ...
@@ -546,6 +580,7 @@ class Cluster(pulumi.CustomResource):
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  options: Optional[pulumi.Input[pulumi.InputType['ClusterOptionsArgs']]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -570,6 +605,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["kubernetes_version"] = kubernetes_version
             __props__.__dict__["name"] = name
             __props__.__dict__["options"] = options
+            __props__.__dict__["type"] = type
             if vcn_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vcn_id'")
             __props__.__dict__["vcn_id"] = vcn_id
@@ -603,6 +639,7 @@ class Cluster(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             options: Optional[pulumi.Input[pulumi.InputType['ClusterOptionsArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            type: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'Cluster':
         """
         Get an existing Cluster resource's state with the given name, id, and optional extra
@@ -626,6 +663,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[pulumi.InputType['ClusterOptionsArgs']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] state: The state of the cluster masters.
+        :param pulumi.Input[str] type: (Updatable) Type of cluster
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -647,6 +685,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["options"] = options
         __props__.__dict__["state"] = state
+        __props__.__dict__["type"] = type
         __props__.__dict__["vcn_id"] = vcn_id
         return Cluster(resource_name, opts=opts, __props__=__props__)
 
@@ -769,6 +808,14 @@ class Cluster(pulumi.CustomResource):
         The state of the cluster masters.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Type of cluster
+        """
+        return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vcnId")

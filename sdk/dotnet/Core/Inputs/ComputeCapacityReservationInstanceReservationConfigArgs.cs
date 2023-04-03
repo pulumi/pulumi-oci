@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class ComputeCapacityReservationInstanceReservationConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        /// </summary>
+        [Input("clusterConfig")]
+        public Input<Inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs>? ClusterConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
         /// </summary>
         [Input("faultDomain")]

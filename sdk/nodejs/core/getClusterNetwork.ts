@@ -62,6 +62,10 @@ export interface GetClusterNetworkResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     */
+    readonly hpcIslandId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      */
     readonly id: string;
@@ -69,6 +73,10 @@ export interface GetClusterNetworkResult {
      * The instance pools in the cluster network.
      */
     readonly instancePools: outputs.Core.GetClusterNetworkInstancePool[];
+    /**
+     * The list of network block OCIDs of the HPC island.
+     */
+    readonly networkBlockIds: string[];
     /**
      * The location for where the instance pools in a cluster network will place instances.
      */

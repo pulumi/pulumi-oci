@@ -70,6 +70,12 @@ namespace Pulumi.Oci.Database
         [Output("computeModel")]
         public Output<string> ComputeModel { get; private set; } = null!;
 
+        /// <summary>
+        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// </summary>
+        [Output("dbName")]
+        public Output<string> DbName { get; private set; } = null!;
+
         [Output("dbUniqueName")]
         public Output<string> DbUniqueName { get; private set; } = null!;
 
@@ -377,6 +383,12 @@ namespace Pulumi.Oci.Database
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// </summary>
+        [Input("dbName")]
+        public Input<string>? DbName { get; set; }
+
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
 
@@ -576,6 +588,12 @@ namespace Pulumi.Oci.Database
 
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
+        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// </summary>
+        [Input("dbName")]
+        public Input<string>? DbName { get; set; }
 
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }

@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     availabilityDomain: _var.instance_availability_domain,
  *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
+ *     computeClusterId: oci_core_compute_cluster.test_compute_cluster.id,
  *     displayName: _var.instance_display_name,
  *     state: _var.instance_state,
  * });
@@ -38,6 +39,7 @@ export function getInstances(args: GetInstancesArgs, opts?: pulumi.InvokeOptions
         "availabilityDomain": args.availabilityDomain,
         "capacityReservationId": args.capacityReservationId,
         "compartmentId": args.compartmentId,
+        "computeClusterId": args.computeClusterId,
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
@@ -60,6 +62,10 @@ export interface GetInstancesArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     */
+    computeClusterId?: string;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
@@ -87,6 +93,7 @@ export interface GetInstancesResult {
      * The OCID of the compartment that contains the instance.
      */
     readonly compartmentId: string;
+    readonly computeClusterId?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -125,6 +132,7 @@ export interface GetInstancesResult {
  *     compartmentId: _var.compartment_id,
  *     availabilityDomain: _var.instance_availability_domain,
  *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
+ *     computeClusterId: oci_core_compute_cluster.test_compute_cluster.id,
  *     displayName: _var.instance_display_name,
  *     state: _var.instance_state,
  * });
@@ -150,6 +158,10 @@ export interface GetInstancesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     */
+    computeClusterId?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */

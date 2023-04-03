@@ -72,6 +72,7 @@ export interface GetInstanceResult {
      * The OCID of the compartment that contains the instance.
      */
     readonly compartmentId: string;
+    readonly computeClusterId: string;
     readonly createVnicDetails: outputs.Core.GetInstanceCreateVnicDetail[];
     /**
      * The OCID of the dedicated virtual machine host that the instance is placed on.

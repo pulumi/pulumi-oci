@@ -72,6 +72,7 @@ import * as utilities from "../utilities";
  *         isLiveMigrationPreferred: _var.instance_availability_config_is_live_migration_preferred,
  *         recoveryAction: _var.instance_availability_config_recovery_action,
  *     },
+ *     computeClusterId: oci_core_compute_cluster.test_compute_cluster.id,
  *     createVnicDetails: {
  *         assignPrivateDnsRecord: _var.instance_create_vnic_details_assign_private_dns_record,
  *         assignPublicIp: _var.instance_create_vnic_details_assign_public_ip,
@@ -214,6 +215,10 @@ export class Instance extends pulumi.CustomResource {
      * (Updatable) The OCID of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     */
+    public readonly computeClusterId!: pulumi.Output<string>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
@@ -358,6 +363,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["bootVolumeId"] = state ? state.bootVolumeId : undefined;
             resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeClusterId"] = state ? state.computeClusterId : undefined;
             resourceInputs["createVnicDetails"] = state ? state.createVnicDetails : undefined;
             resourceInputs["dedicatedVmHostId"] = state ? state.dedicatedVmHostId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -405,6 +411,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["computeClusterId"] = args ? args.computeClusterId : undefined;
             resourceInputs["createVnicDetails"] = args ? args.createVnicDetails : undefined;
             resourceInputs["dedicatedVmHostId"] = args ? args.dedicatedVmHostId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -471,6 +478,10 @@ export interface InstanceState {
      * (Updatable) The OCID of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     */
+    computeClusterId?: pulumi.Input<string>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
@@ -621,6 +632,10 @@ export interface InstanceArgs {
      * (Updatable) The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     */
+    computeClusterId?: pulumi.Input<string>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */

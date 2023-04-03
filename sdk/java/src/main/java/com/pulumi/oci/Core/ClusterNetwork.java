@@ -142,6 +142,20 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * 
+     */
+    @Export(name="hpcIslandId", type=String.class, parameters={})
+    private Output<String> hpcIslandId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * 
+     */
+    public Output<String> hpcIslandId() {
+        return this.hpcIslandId;
+    }
+    /**
      * (Updatable) The data to create the instance pools in the cluster network.
      * 
      */
@@ -154,6 +168,20 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      */
     public Output<List<ClusterNetworkInstancePool>> instancePools() {
         return this.instancePools;
+    }
+    /**
+     * The list of network block OCIDs of the HPC island.
+     * 
+     */
+    @Export(name="networkBlockIds", type=List.class, parameters={String.class})
+    private Output<List<String>> networkBlockIds;
+
+    /**
+     * @return The list of network block OCIDs of the HPC island.
+     * 
+     */
+    public Output<List<String>> networkBlockIds() {
+        return this.networkBlockIds;
     }
     /**
      * The location for where the instance pools in a cluster network will place instances.

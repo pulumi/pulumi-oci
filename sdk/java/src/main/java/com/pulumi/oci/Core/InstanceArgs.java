@@ -110,6 +110,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    @Import(name="computeClusterId")
+    private @Nullable Output<String> computeClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public Optional<Output<String>> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
+    }
+
+    /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
@@ -479,6 +494,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.availabilityDomain = $.availabilityDomain;
         this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
+        this.computeClusterId = $.computeClusterId;
         this.createVnicDetails = $.createVnicDetails;
         this.dedicatedVmHostId = $.dedicatedVmHostId;
         this.definedTags = $.definedTags;
@@ -634,6 +650,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(@Nullable Output<String> computeClusterId) {
+            $.computeClusterId = computeClusterId;
+            return this;
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            return computeClusterId(Output.of(computeClusterId));
         }
 
         /**

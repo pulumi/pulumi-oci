@@ -129,11 +129,17 @@ class GetNamespaceScheduledTaskResult:
     @property
     @pulumi.getter
     def kind(self) -> str:
+        """
+        Discriminator.
+        """
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
+        """
+        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+        """
         return pulumi.get(self, "namespace")
 
     @property

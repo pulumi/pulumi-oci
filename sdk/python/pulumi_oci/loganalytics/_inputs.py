@@ -17,6 +17,7 @@ __all__ = [
     'NamespaceIngestTimeRuleConditionsArgs',
     'NamespaceIngestTimeRuleConditionsAdditionalConditionArgs',
     'NamespaceScheduledTaskActionArgs',
+    'NamespaceScheduledTaskActionMetricExtractionArgs',
     'NamespaceScheduledTaskSchedulesArgs',
     'NamespaceScheduledTaskSchedulesScheduleArgs',
     'GetLogAnalyticsEntitiesFilterArgs',
@@ -511,6 +512,7 @@ class NamespaceScheduledTaskActionArgs:
                  type: pulumi.Input[str],
                  compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                  data_type: Optional[pulumi.Input[str]] = None,
+                 metric_extraction: Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']] = None,
                  purge_compartment_id: Optional[pulumi.Input[str]] = None,
                  purge_duration: Optional[pulumi.Input[str]] = None,
                  query_string: Optional[pulumi.Input[str]] = None,
@@ -519,6 +521,7 @@ class NamespaceScheduledTaskActionArgs:
         :param pulumi.Input[str] type: (Updatable) Schedule type discriminator.
         :param pulumi.Input[bool] compartment_id_in_subtree: if true, purge child compartments data
         :param pulumi.Input[str] data_type: the type of the log data to be purged
+        :param pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs'] metric_extraction: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         :param pulumi.Input[str] purge_compartment_id: the compartment OCID under which the data will be purged
         :param pulumi.Input[str] purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param pulumi.Input[str] query_string: Purge query string.
@@ -529,6 +532,8 @@ class NamespaceScheduledTaskActionArgs:
             pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
         if data_type is not None:
             pulumi.set(__self__, "data_type", data_type)
+        if metric_extraction is not None:
+            pulumi.set(__self__, "metric_extraction", metric_extraction)
         if purge_compartment_id is not None:
             pulumi.set(__self__, "purge_compartment_id", purge_compartment_id)
         if purge_duration is not None:
@@ -573,6 +578,18 @@ class NamespaceScheduledTaskActionArgs:
     @data_type.setter
     def data_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "data_type", value)
+
+    @property
+    @pulumi.getter(name="metricExtraction")
+    def metric_extraction(self) -> Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']]:
+        """
+        Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+        """
+        return pulumi.get(self, "metric_extraction")
+
+    @metric_extraction.setter
+    def metric_extraction(self, value: Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']]):
+        pulumi.set(self, "metric_extraction", value)
 
     @property
     @pulumi.getter(name="purgeCompartmentId")
@@ -621,6 +638,77 @@ class NamespaceScheduledTaskActionArgs:
     @saved_search_id.setter
     def saved_search_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "saved_search_id", value)
+
+
+@pulumi.input_type
+class NamespaceScheduledTaskActionMetricExtractionArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 metric_name: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 resource_group: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @metric_name.setter
+    def metric_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metric_name", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Logging Analytics namespace used for the request.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "resource_group")
+
+    @resource_group.setter
+    def resource_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_group", value)
 
 
 @pulumi.input_type

@@ -107,10 +107,22 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        /// </summary>
+        [Output("hpcIslandId")]
+        public Output<string> HpcIslandId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The data to create the instance pools in the cluster network.
         /// </summary>
         [Output("instancePools")]
         public Output<ImmutableArray<Outputs.ClusterNetworkInstancePool>> InstancePools { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of network block OCIDs of the HPC island.
+        /// </summary>
+        [Output("networkBlockIds")]
+        public Output<ImmutableArray<string>> NetworkBlockIds { get; private set; } = null!;
 
         /// <summary>
         /// The location for where the instance pools in a cluster network will place instances.
@@ -280,6 +292,12 @@ namespace Pulumi.Oci.Core
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        /// </summary>
+        [Input("hpcIslandId")]
+        public Input<string>? HpcIslandId { get; set; }
+
         [Input("instancePools")]
         private InputList<Inputs.ClusterNetworkInstancePoolGetArgs>? _instancePools;
 
@@ -290,6 +308,18 @@ namespace Pulumi.Oci.Core
         {
             get => _instancePools ?? (_instancePools = new InputList<Inputs.ClusterNetworkInstancePoolGetArgs>());
             set => _instancePools = value;
+        }
+
+        [Input("networkBlockIds")]
+        private InputList<string>? _networkBlockIds;
+
+        /// <summary>
+        /// The list of network block OCIDs of the HPC island.
+        /// </summary>
+        public InputList<string> NetworkBlockIds
+        {
+            get => _networkBlockIds ?? (_networkBlockIds = new InputList<string>());
+            set => _networkBlockIds = value;
         }
 
         /// <summary>

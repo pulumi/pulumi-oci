@@ -23,6 +23,7 @@ class AutonomousContainerDatabaseArgs:
                  backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 db_name: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -54,6 +55,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
@@ -86,6 +88,8 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
         if db_unique_name is not None:
             pulumi.set(__self__, "db_unique_name", db_unique_name)
         if db_version is not None:
@@ -214,6 +218,18 @@ class AutonomousContainerDatabaseArgs:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_name", value)
 
     @property
     @pulumi.getter(name="dbUniqueName")
@@ -482,6 +498,7 @@ class _AutonomousContainerDatabaseState:
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
+                 db_name: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -531,6 +548,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -585,6 +603,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_model is not None:
             pulumi.set(__self__, "compute_model", compute_model)
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
         if db_unique_name is not None:
             pulumi.set(__self__, "db_unique_name", db_unique_name)
         if db_version is not None:
@@ -758,6 +778,18 @@ class _AutonomousContainerDatabaseState:
     @compute_model.setter
     def compute_model(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compute_model", value)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_name", value)
 
     @property
     @pulumi.getter(name="dbUniqueName")
@@ -1241,6 +1273,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']]] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 db_name: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1286,6 +1319,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -1347,6 +1381,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']]] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 db_name: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1385,6 +1420,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["backup_config"] = backup_config
             __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["db_name"] = db_name
             __props__.__dict__["db_unique_name"] = db_unique_name
             __props__.__dict__["db_version"] = db_version
             __props__.__dict__["defined_tags"] = defined_tags
@@ -1450,6 +1486,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_model: Optional[pulumi.Input[str]] = None,
+            db_name: Optional[pulumi.Input[str]] = None,
             db_unique_name: Optional[pulumi.Input[str]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1504,6 +1541,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -1554,6 +1592,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_model"] = compute_model
+        __props__.__dict__["db_name"] = db_name
         __props__.__dict__["db_unique_name"] = db_unique_name
         __props__.__dict__["db_version"] = db_version
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1656,6 +1695,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> pulumi.Output[str]:
         return pulumi.get(self, "compute_model")
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> pulumi.Output[str]:
+        """
+        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        """
+        return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbUniqueName")

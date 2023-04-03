@@ -6,6 +6,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsObjectCollectionRuleOverrideArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -122,6 +123,21 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) Whether or not this rule is currently enabled.
+     * 
+     */
+    @Import(name="isEnabled")
+    private @Nullable Output<Boolean> isEnabled;
+
+    /**
+     * @return (Updatable) Whether or not this rule is currently enabled.
+     * 
+     */
+    public Optional<Output<Boolean>> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
 
     /**
@@ -404,6 +420,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         this.description = $.description;
         this.entityId = $.entityId;
         this.freeformTags = $.freeformTags;
+        this.isEnabled = $.isEnabled;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logGroupId = $.logGroupId;
         this.logSet = $.logSet;
@@ -587,6 +604,27 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isEnabled (Updatable) Whether or not this rule is currently enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEnabled(@Nullable Output<Boolean> isEnabled) {
+            $.isEnabled = isEnabled;
+            return this;
+        }
+
+        /**
+         * @param isEnabled (Updatable) Whether or not this rule is currently enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEnabled(Boolean isEnabled) {
+            return isEnabled(Output.of(isEnabled));
         }
 
         /**

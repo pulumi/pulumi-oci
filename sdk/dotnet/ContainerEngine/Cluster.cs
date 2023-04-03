@@ -116,6 +116,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Type of cluster
+        /// </summary>
+        [Output("type")]
+        public Output<string> Type { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the virtual cloud network (VCN) in which to create the cluster.
         /// </summary>
         [Output("vcnId")]
@@ -244,6 +250,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("options")]
         public Input<Inputs.ClusterOptionsArgs>? Options { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of cluster
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) in which to create the cluster.
@@ -384,6 +396,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of cluster
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) in which to create the cluster.

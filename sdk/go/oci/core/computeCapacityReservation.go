@@ -47,7 +47,11 @@ import (
 //					&core.ComputeCapacityReservationInstanceReservationConfigArgs{
 //						InstanceShape: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape),
 //						ReservedCount: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_reserved_count),
-//						FaultDomain:   pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_fault_domain),
+//						ClusterConfig: &core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs{
+//							HpcIslandId:     pulumi.Any(oci_core_hpc_island.Test_hpc_island.Id),
+//							NetworkBlockIds: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids),
+//						},
+//						FaultDomain: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_fault_domain),
 //						InstanceShapeConfig: &core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs{
 //							MemoryInGbs: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs),
 //							Ocpus:       pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus),

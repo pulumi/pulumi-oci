@@ -86,6 +86,10 @@ export interface GetConnectionResult {
      */
     readonly id: string;
     /**
+     * The result of validating the credentials of a connection.
+     */
+    readonly lastConnectionValidationResults: outputs.DevOps.GetConnectionLastConnectionValidationResult[];
+    /**
      * The OCID of the DevOps project.
      */
     readonly projectId: string;

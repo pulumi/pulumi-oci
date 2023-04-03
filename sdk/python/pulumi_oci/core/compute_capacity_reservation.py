@@ -371,6 +371,10 @@ class ComputeCapacityReservation(pulumi.CustomResource):
             instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
                 instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
                 reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
+                cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
+                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
+                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
+                ),
                 fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
                     memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],
@@ -432,6 +436,10 @@ class ComputeCapacityReservation(pulumi.CustomResource):
             instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
                 instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
                 reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
+                cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
+                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
+                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
+                ),
                 fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
                     memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],

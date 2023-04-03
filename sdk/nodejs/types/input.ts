@@ -8332,6 +8332,32 @@ export namespace ComputeInstanceAgent {
 }
 
 export namespace ContainerEngine {
+    export interface AddonAddonError {
+        /**
+         * A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+         */
+        code?: pulumi.Input<string>;
+        /**
+         * A human-readable error string of the upstream error.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The status of the HTTP response encountered in the upstream error.
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface AddonConfiguration {
+        /**
+         * (Updatable) configuration key name
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) configuration value name
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface ClusterClusterPodNetworkOption {
         /**
          * The CNI used by the node pools of this cluster
@@ -8834,6 +8860,36 @@ export namespace ContainerEngine {
         path?: pulumi.Input<string>;
     }
 
+    export interface GetAddonOptionsFilter {
+        /**
+         * Name of the addon and it would be unique.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAddonOptionsFilterArgs {
+        /**
+         * Name of the addon and it would be unique.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAddonsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAddonsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetClustersFilter {
         /**
          * The name to filter on.
@@ -8862,6 +8918,42 @@ export namespace ContainerEngine {
     }
 
     export interface GetNodePoolsFilterArgs {
+        /**
+         * The name to filter on.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPodShapesFilter {
+        /**
+         * The name to filter on.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPodShapesFilterArgs {
+        /**
+         * The name to filter on.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVirtualNodePoolsFilter {
+        /**
+         * The name to filter on.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVirtualNodePoolsFilterArgs {
         /**
          * The name to filter on.
          */
@@ -9114,6 +9206,73 @@ export namespace ContainerEngine {
          * (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
          */
         sourceType: pulumi.Input<string>;
+    }
+
+    export interface VirtualNodePoolInitialVirtualNodeLabel {
+        /**
+         * (Updatable) The key of the pair.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the pair.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface VirtualNodePoolPlacementConfiguration {
+        /**
+         * (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: pulumi.Input<string>;
+        /**
+         * (Updatable) The fault domain of this virtual node.
+         */
+        faultDomains: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The regional subnet where pods' VNIC will be placed.
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface VirtualNodePoolPodConfiguration {
+        /**
+         * (Updatable) List of network security group IDs applied to the Pod VNIC.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Shape of the pods.
+         */
+        shape: pulumi.Input<string>;
+        /**
+         * (Updatable) The regional subnet where pods' VNIC will be placed.
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface VirtualNodePoolTaint {
+        /**
+         * (Updatable) The effect of the pair.
+         */
+        effect?: pulumi.Input<string>;
+        /**
+         * (Updatable) The key of the pair.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the pair.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface VirtualNodePoolVirtualNodeTags {
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
     }
 }
 
@@ -9458,6 +9617,10 @@ export namespace Core {
 
     export interface ComputeCapacityReservationInstanceReservationConfig {
         /**
+         * (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+         */
+        clusterConfig?: pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfigClusterConfig>;
+        /**
          * (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
          */
         faultDomain?: pulumi.Input<string>;
@@ -9477,6 +9640,17 @@ export namespace Core {
          * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
          */
         usedCount?: pulumi.Input<string>;
+    }
+
+    export interface ComputeCapacityReservationInstanceReservationConfigClusterConfig {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+         */
+        hpcIslandId: pulumi.Input<string>;
+        /**
+         * (Updatable) The list of OCID of the network blocks.
+         */
+        networkBlockIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig {
@@ -9945,6 +10119,18 @@ export namespace Core {
     }
 
     export interface GetComputeCapacityReservationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetComputeClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetComputeClustersFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -11801,7 +11987,7 @@ export namespace Core {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the boot volume used to boot the instance.
+         * The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
          */
         sourceId: pulumi.Input<string>;
         /**
@@ -23142,6 +23328,21 @@ export namespace DevOps {
         repositoryUrl: pulumi.Input<string>;
     }
 
+    export interface ConnectionLastConnectionValidationResult {
+        /**
+         * A message describing the result of connection validation in more detail.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The latest result of whether the credentials pass the validation.
+         */
+        result?: pulumi.Input<string>;
+        /**
+         * The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
+        timeValidated?: pulumi.Input<string>;
+    }
+
     export interface ConnectionTlsVerifyConfig {
         /**
          * (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
@@ -31948,6 +32149,10 @@ export namespace LogAnalytics {
          */
         dataType?: pulumi.Input<string>;
         /**
+         * Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+         */
+        metricExtraction?: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskActionMetricExtraction>;
+        /**
          * the compartment OCID under which the data will be purged
          */
         purgeCompartmentId?: pulumi.Input<string>;
@@ -31967,6 +32172,25 @@ export namespace LogAnalytics {
          * (Updatable) Schedule type discriminator.
          */
         type: pulumi.Input<string>;
+    }
+
+    export interface NamespaceScheduledTaskActionMetricExtraction {
+        /**
+         * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         */
+        metricName?: pulumi.Input<string>;
+        /**
+         * The Logging Analytics namespace used for the request.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         */
+        resourceGroup?: pulumi.Input<string>;
     }
 
     export interface NamespaceScheduledTaskSchedules {

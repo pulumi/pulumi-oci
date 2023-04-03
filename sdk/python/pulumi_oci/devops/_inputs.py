@@ -42,6 +42,7 @@ __all__ = [
     'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs',
     'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs',
     'BuildRunCommitInfoArgs',
+    'ConnectionLastConnectionValidationResultArgs',
     'ConnectionTlsVerifyConfigArgs',
     'DeployArtifactDeployArtifactSourceArgs',
     'DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs',
@@ -1550,6 +1551,61 @@ class BuildRunCommitInfoArgs:
     @repository_url.setter
     def repository_url(self, value: pulumi.Input[str]):
         pulumi.set(self, "repository_url", value)
+
+
+@pulumi.input_type
+class ConnectionLastConnectionValidationResultArgs:
+    def __init__(__self__, *,
+                 message: Optional[pulumi.Input[str]] = None,
+                 result: Optional[pulumi.Input[str]] = None,
+                 time_validated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] message: A message describing the result of connection validation in more detail.
+        :param pulumi.Input[str] result: The latest result of whether the credentials pass the validation.
+        :param pulumi.Input[str] time_validated: The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if result is not None:
+            pulumi.set(__self__, "result", result)
+        if time_validated is not None:
+            pulumi.set(__self__, "time_validated", time_validated)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message describing the result of connection validation in more detail.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter
+    def result(self) -> Optional[pulumi.Input[str]]:
+        """
+        The latest result of whether the credentials pass the validation.
+        """
+        return pulumi.get(self, "result")
+
+    @result.setter
+    def result(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "result", value)
+
+    @property
+    @pulumi.getter(name="timeValidated")
+    def time_validated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_validated")
+
+    @time_validated.setter
+    def time_validated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_validated", value)
 
 
 @pulumi.input_type

@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     isEnabled: _var.log_analytics_object_collection_rule_is_enabled,
  *     logSet: _var.log_analytics_object_collection_rule_log_set,
  *     logSetExtRegex: _var.log_analytics_object_collection_rule_log_set_ext_regex,
  *     logSetKey: _var.log_analytics_object_collection_rule_log_set_key,
@@ -109,6 +110,10 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * (Updatable) Whether or not this rule is currently enabled.
+     */
+    public readonly isEnabled!: pulumi.Output<boolean>;
     /**
      * A detailed status of the life cycle state.
      */
@@ -202,6 +207,7 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["entityId"] = state ? state.entityId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["logGroupId"] = state ? state.logGroupId : undefined;
             resourceInputs["logSet"] = state ? state.logSet : undefined;
@@ -247,6 +253,7 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["entityId"] = args ? args.entityId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
             resourceInputs["logGroupId"] = args ? args.logGroupId : undefined;
             resourceInputs["logSet"] = args ? args.logSet : undefined;
             resourceInputs["logSetExtRegex"] = args ? args.logSetExtRegex : undefined;
@@ -303,6 +310,10 @@ export interface LogAnalyticsObjectCollectionRuleState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Whether or not this rule is currently enabled.
+     */
+    isEnabled?: pulumi.Input<boolean>;
     /**
      * A detailed status of the life cycle state.
      */
@@ -409,6 +420,10 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Whether or not this rule is currently enabled.
+     */
+    isEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
      */

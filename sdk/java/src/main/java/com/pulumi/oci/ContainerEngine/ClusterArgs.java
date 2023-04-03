@@ -173,6 +173,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Type of cluster
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return (Updatable) Type of cluster
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
+    }
+
+    /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      * 
      */
@@ -200,6 +215,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.kubernetesVersion = $.kubernetesVersion;
         this.name = $.name;
         this.options = $.options;
+        this.type = $.type;
         this.vcnId = $.vcnId;
     }
 
@@ -439,6 +455,27 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder options(ClusterOptionsArgs options) {
             return options(Output.of(options));
+        }
+
+        /**
+         * @param type (Updatable) Type of cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type (Updatable) Type of cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         /**

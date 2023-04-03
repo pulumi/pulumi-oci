@@ -37,6 +37,7 @@ import (
 //				CompartmentId:         _var.Compartment_id,
 //				AvailabilityDomain:    pulumi.StringRef(_var.Instance_availability_domain),
 //				CapacityReservationId: pulumi.StringRef(oci_core_capacity_reservation.Test_capacity_reservation.Id),
+//				ComputeClusterId:      pulumi.StringRef(oci_core_compute_cluster.Test_compute_cluster.Id),
 //				DisplayName:           pulumi.StringRef(_var.Instance_display_name),
 //				State:                 pulumi.StringRef(_var.Instance_state),
 //			}, nil)
@@ -65,6 +66,8 @@ type GetInstancesArgs struct {
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+	ComputeClusterId *string `pulumi:"computeClusterId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetInstancesFilter `pulumi:"filters"`
@@ -79,7 +82,8 @@ type GetInstancesResult struct {
 	// The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The OCID of the compartment that contains the instance.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId    string  `pulumi:"compartmentId"`
+	ComputeClusterId *string `pulumi:"computeClusterId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetInstancesFilter `pulumi:"filters"`
@@ -112,6 +116,8 @@ type GetInstancesOutputArgs struct {
 	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+	ComputeClusterId pulumi.StringPtrInput `pulumi:"computeClusterId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
 	Filters     GetInstancesFilterArrayInput `pulumi:"filters"`
@@ -151,6 +157,10 @@ func (o GetInstancesResultOutput) CapacityReservationId() pulumi.StringPtrOutput
 // The OCID of the compartment that contains the instance.
 func (o GetInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesResultOutput) ComputeClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancesResult) *string { return v.ComputeClusterId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

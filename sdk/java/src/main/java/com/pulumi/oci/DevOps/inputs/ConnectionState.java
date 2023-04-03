@@ -5,9 +5,11 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DevOps.inputs.ConnectionLastConnectionValidationResultArgs;
 import com.pulumi.oci.DevOps.inputs.ConnectionTlsVerifyConfigArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -154,6 +156,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The result of validating the credentials of a connection.
+     * 
+     */
+    @Import(name="lastConnectionValidationResults")
+    private @Nullable Output<List<ConnectionLastConnectionValidationResultArgs>> lastConnectionValidationResults;
+
+    /**
+     * @return The result of validating the credentials of a connection.
+     * 
+     */
+    public Optional<Output<List<ConnectionLastConnectionValidationResultArgs>>> lastConnectionValidationResults() {
+        return Optional.ofNullable(this.lastConnectionValidationResults);
+    }
+
+    /**
      * The OCID of the DevOps project.
      * 
      */
@@ -270,6 +287,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.lastConnectionValidationResults = $.lastConnectionValidationResults;
         this.projectId = $.projectId;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -484,6 +502,37 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param lastConnectionValidationResults The result of validating the credentials of a connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastConnectionValidationResults(@Nullable Output<List<ConnectionLastConnectionValidationResultArgs>> lastConnectionValidationResults) {
+            $.lastConnectionValidationResults = lastConnectionValidationResults;
+            return this;
+        }
+
+        /**
+         * @param lastConnectionValidationResults The result of validating the credentials of a connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastConnectionValidationResults(List<ConnectionLastConnectionValidationResultArgs> lastConnectionValidationResults) {
+            return lastConnectionValidationResults(Output.of(lastConnectionValidationResults));
+        }
+
+        /**
+         * @param lastConnectionValidationResults The result of validating the credentials of a connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastConnectionValidationResults(ConnectionLastConnectionValidationResultArgs... lastConnectionValidationResults) {
+            return lastConnectionValidationResults(List.of(lastConnectionValidationResults));
         }
 
         /**

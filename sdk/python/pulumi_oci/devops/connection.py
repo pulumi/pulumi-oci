@@ -207,6 +207,7 @@ class _ConnectionState:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 last_connection_validation_results: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLastConnectionValidationResultArgs']]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -225,6 +226,7 @@ class _ConnectionState:
         :param pulumi.Input[str] description: (Updatable) Optional description about the connection.
         :param pulumi.Input[str] display_name: (Updatable) Optional connection display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectionLastConnectionValidationResultArgs']]] last_connection_validation_results: The result of validating the credentials of a connection.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[str] state: The current state of the connection.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -251,6 +253,8 @@ class _ConnectionState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if last_connection_validation_results is not None:
+            pulumi.set(__self__, "last_connection_validation_results", last_connection_validation_results)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
         if state is not None:
@@ -373,6 +377,18 @@ class _ConnectionState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="lastConnectionValidationResults")
+    def last_connection_validation_results(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLastConnectionValidationResultArgs']]]]:
+        """
+        The result of validating the credentials of a connection.
+        """
+        return pulumi.get(self, "last_connection_validation_results")
+
+    @last_connection_validation_results.setter
+    def last_connection_validation_results(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLastConnectionValidationResultArgs']]]]):
+        pulumi.set(self, "last_connection_validation_results", value)
 
     @property
     @pulumi.getter(name="projectId")
@@ -627,6 +643,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["tls_verify_config"] = tls_verify_config
             __props__.__dict__["username"] = username
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["last_connection_validation_results"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -652,6 +669,7 @@ class Connection(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            last_connection_validation_results: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionLastConnectionValidationResultArgs']]]]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -675,6 +693,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Optional description about the connection.
         :param pulumi.Input[str] display_name: (Updatable) Optional connection display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionLastConnectionValidationResultArgs']]]] last_connection_validation_results: The result of validating the credentials of a connection.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[str] state: The current state of the connection.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -696,6 +715,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["last_connection_validation_results"] = last_connection_validation_results
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -776,6 +796,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="lastConnectionValidationResults")
+    def last_connection_validation_results(self) -> pulumi.Output[Sequence['outputs.ConnectionLastConnectionValidationResult']]:
+        """
+        The result of validating the credentials of a connection.
+        """
+        return pulumi.get(self, "last_connection_validation_results")
 
     @property
     @pulumi.getter(name="projectId")

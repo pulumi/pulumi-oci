@@ -33,6 +33,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.LogAnalytics.NamespaceScheduledTask;
  * import com.pulumi.oci.LogAnalytics.NamespaceScheduledTaskArgs;
  * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionMetricExtractionArgs;
  * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskSchedulesArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -55,6 +56,12 @@ import javax.annotation.Nullable;
  *                 .type(var_.namespace_scheduled_task_action_type())
  *                 .compartmentIdInSubtree(var_.namespace_scheduled_task_action_compartment_id_in_subtree())
  *                 .dataType(var_.namespace_scheduled_task_action_data_type())
+ *                 .metricExtraction(NamespaceScheduledTaskActionMetricExtractionArgs.builder()
+ *                     .compartmentId(var_.compartment_id())
+ *                     .metricName(oci_monitoring_metric.test_metric().name())
+ *                     .namespace(var_.namespace_scheduled_task_action_metric_extraction_namespace())
+ *                     .resourceGroup(var_.namespace_scheduled_task_action_metric_extraction_resource_group())
+ *                     .build())
  *                 .purgeCompartmentId(oci_identity_compartment.test_compartment().id())
  *                 .purgeDuration(var_.namespace_scheduled_task_action_purge_duration())
  *                 .queryString(var_.namespace_scheduled_task_action_query_string())
@@ -161,14 +168,14 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
         return this.freeformTags;
     }
     /**
-     * Discriminator.
+     * (Updatable) Discriminator.
      * 
      */
     @Export(name="kind", type=String.class, parameters={})
     private Output<String> kind;
 
     /**
-     * @return Discriminator.
+     * @return (Updatable) Discriminator.
      * 
      */
     public Output<String> kind() {

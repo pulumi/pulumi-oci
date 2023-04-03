@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
-        /// The OCID of the boot volume used to boot the instance.
+        /// The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         /// </summary>
         public readonly string SourceId;
         /// <summary>

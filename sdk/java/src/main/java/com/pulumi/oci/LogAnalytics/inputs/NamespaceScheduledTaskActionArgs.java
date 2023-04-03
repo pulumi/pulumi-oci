@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionMetricExtractionArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -44,6 +45,21 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
      */
     public Optional<Output<String>> dataType() {
         return Optional.ofNullable(this.dataType);
+    }
+
+    /**
+     * Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
+    @Import(name="metricExtraction")
+    private @Nullable Output<NamespaceScheduledTaskActionMetricExtractionArgs> metricExtraction;
+
+    /**
+     * @return Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
+    public Optional<Output<NamespaceScheduledTaskActionMetricExtractionArgs>> metricExtraction() {
+        return Optional.ofNullable(this.metricExtraction);
     }
 
     /**
@@ -126,6 +142,7 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
     private NamespaceScheduledTaskActionArgs(NamespaceScheduledTaskActionArgs $) {
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.dataType = $.dataType;
+        this.metricExtraction = $.metricExtraction;
         this.purgeCompartmentId = $.purgeCompartmentId;
         this.purgeDuration = $.purgeDuration;
         this.queryString = $.queryString;
@@ -191,6 +208,27 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
          */
         public Builder dataType(String dataType) {
             return dataType(Output.of(dataType));
+        }
+
+        /**
+         * @param metricExtraction Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricExtraction(@Nullable Output<NamespaceScheduledTaskActionMetricExtractionArgs> metricExtraction) {
+            $.metricExtraction = metricExtraction;
+            return this;
+        }
+
+        /**
+         * @param metricExtraction Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricExtraction(NamespaceScheduledTaskActionMetricExtractionArgs metricExtraction) {
+            return metricExtraction(Output.of(metricExtraction));
         }
 
         /**

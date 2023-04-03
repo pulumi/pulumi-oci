@@ -37,7 +37,7 @@ type NamespaceScheduledTask struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// Discriminator.
+	// (Updatable) Discriminator.
 	Kind pulumi.StringOutput `pulumi:"kind"`
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
@@ -119,7 +119,7 @@ type namespaceScheduledTaskState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Discriminator.
+	// (Updatable) Discriminator.
 	Kind *string `pulumi:"kind"`
 	// The Logging Analytics namespace used for the request.
 	Namespace *string `pulumi:"namespace"`
@@ -155,7 +155,7 @@ type NamespaceScheduledTaskState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Discriminator.
+	// (Updatable) Discriminator.
 	Kind pulumi.StringPtrInput
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringPtrInput
@@ -195,7 +195,7 @@ type namespaceScheduledTaskArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Discriminator.
+	// (Updatable) Discriminator.
 	Kind string `pulumi:"kind"`
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
@@ -219,7 +219,7 @@ type NamespaceScheduledTaskArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Discriminator.
+	// (Updatable) Discriminator.
 	Kind pulumi.StringInput
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput
@@ -343,7 +343,7 @@ func (o NamespaceScheduledTaskOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Discriminator.
+// (Updatable) Discriminator.
 func (o NamespaceScheduledTaskOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.Kind }).(pulumi.StringOutput)
 }

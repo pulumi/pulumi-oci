@@ -874,6 +874,8 @@ type NamespaceScheduledTaskAction struct {
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
 	DataType *string `pulumi:"dataType"`
+	// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+	MetricExtraction *NamespaceScheduledTaskActionMetricExtraction `pulumi:"metricExtraction"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId *string `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
@@ -902,6 +904,8 @@ type NamespaceScheduledTaskActionArgs struct {
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
+	// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+	MetricExtraction NamespaceScheduledTaskActionMetricExtractionPtrInput `pulumi:"metricExtraction"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId pulumi.StringPtrInput `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
@@ -1001,6 +1005,13 @@ func (o NamespaceScheduledTaskActionOutput) DataType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
+// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+func (o NamespaceScheduledTaskActionOutput) MetricExtraction() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskAction) *NamespaceScheduledTaskActionMetricExtraction {
+		return v.MetricExtraction
+	}).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
+}
+
 // the compartment OCID under which the data will be purged
 func (o NamespaceScheduledTaskActionOutput) PurgeCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.PurgeCompartmentId }).(pulumi.StringPtrOutput)
@@ -1070,6 +1081,16 @@ func (o NamespaceScheduledTaskActionPtrOutput) DataType() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
+// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+func (o NamespaceScheduledTaskActionPtrOutput) MetricExtraction() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskAction) *NamespaceScheduledTaskActionMetricExtraction {
+		if v == nil {
+			return nil
+		}
+		return v.MetricExtraction
+	}).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
+}
+
 // the compartment OCID under which the data will be purged
 func (o NamespaceScheduledTaskActionPtrOutput) PurgeCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskAction) *string {
@@ -1117,6 +1138,200 @@ func (o NamespaceScheduledTaskActionPtrOutput) Type() pulumi.StringPtrOutput {
 			return nil
 		}
 		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type NamespaceScheduledTaskActionMetricExtraction struct {
+	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName *string `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace *string `pulumi:"namespace"`
+	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup *string `pulumi:"resourceGroup"`
+}
+
+// NamespaceScheduledTaskActionMetricExtractionInput is an input type that accepts NamespaceScheduledTaskActionMetricExtractionArgs and NamespaceScheduledTaskActionMetricExtractionOutput values.
+// You can construct a concrete instance of `NamespaceScheduledTaskActionMetricExtractionInput` via:
+//
+//	NamespaceScheduledTaskActionMetricExtractionArgs{...}
+type NamespaceScheduledTaskActionMetricExtractionInput interface {
+	pulumi.Input
+
+	ToNamespaceScheduledTaskActionMetricExtractionOutput() NamespaceScheduledTaskActionMetricExtractionOutput
+	ToNamespaceScheduledTaskActionMetricExtractionOutputWithContext(context.Context) NamespaceScheduledTaskActionMetricExtractionOutput
+}
+
+type NamespaceScheduledTaskActionMetricExtractionArgs struct {
+	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+}
+
+func (NamespaceScheduledTaskActionMetricExtractionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTaskActionMetricExtractionOutput() NamespaceScheduledTaskActionMetricExtractionOutput {
+	return i.ToNamespaceScheduledTaskActionMetricExtractionOutputWithContext(context.Background())
+}
+
+func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionMetricExtractionOutput)
+}
+
+func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTaskActionMetricExtractionPtrOutput() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return i.ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(context.Background())
+}
+
+func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionMetricExtractionOutput).ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx)
+}
+
+// NamespaceScheduledTaskActionMetricExtractionPtrInput is an input type that accepts NamespaceScheduledTaskActionMetricExtractionArgs, NamespaceScheduledTaskActionMetricExtractionPtr and NamespaceScheduledTaskActionMetricExtractionPtrOutput values.
+// You can construct a concrete instance of `NamespaceScheduledTaskActionMetricExtractionPtrInput` via:
+//
+//	        NamespaceScheduledTaskActionMetricExtractionArgs{...}
+//
+//	or:
+//
+//	        nil
+type NamespaceScheduledTaskActionMetricExtractionPtrInput interface {
+	pulumi.Input
+
+	ToNamespaceScheduledTaskActionMetricExtractionPtrOutput() NamespaceScheduledTaskActionMetricExtractionPtrOutput
+	ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(context.Context) NamespaceScheduledTaskActionMetricExtractionPtrOutput
+}
+
+type namespaceScheduledTaskActionMetricExtractionPtrType NamespaceScheduledTaskActionMetricExtractionArgs
+
+func NamespaceScheduledTaskActionMetricExtractionPtr(v *NamespaceScheduledTaskActionMetricExtractionArgs) NamespaceScheduledTaskActionMetricExtractionPtrInput {
+	return (*namespaceScheduledTaskActionMetricExtractionPtrType)(v)
+}
+
+func (*namespaceScheduledTaskActionMetricExtractionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (i *namespaceScheduledTaskActionMetricExtractionPtrType) ToNamespaceScheduledTaskActionMetricExtractionPtrOutput() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return i.ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(context.Background())
+}
+
+func (i *namespaceScheduledTaskActionMetricExtractionPtrType) ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
+}
+
+type NamespaceScheduledTaskActionMetricExtractionOutput struct{ *pulumi.OutputState }
+
+func (NamespaceScheduledTaskActionMetricExtractionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduledTaskActionMetricExtractionOutput() NamespaceScheduledTaskActionMetricExtractionOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduledTaskActionMetricExtractionPtrOutput() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return o.ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(context.Background())
+}
+
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceScheduledTaskActionMetricExtraction) *NamespaceScheduledTaskActionMetricExtraction {
+		return &v
+	}).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
+}
+
+// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.MetricName }).(pulumi.StringPtrOutput)
+}
+
+// The Logging Analytics namespace used for the request.
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o NamespaceScheduledTaskActionMetricExtractionOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceScheduledTaskActionMetricExtractionPtrOutput struct{ *pulumi.OutputState }
+
+func (NamespaceScheduledTaskActionMetricExtractionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToNamespaceScheduledTaskActionMetricExtractionPtrOutput() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionPtrOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) Elem() NamespaceScheduledTaskActionMetricExtractionOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) NamespaceScheduledTaskActionMetricExtraction {
+		if v != nil {
+			return *v
+		}
+		var ret NamespaceScheduledTaskActionMetricExtraction
+		return ret
+	}).(NamespaceScheduledTaskActionMetricExtractionOutput)
+}
+
+// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Logging Analytics namespace used for the request.
+func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceGroup
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3375,6 +3590,8 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id string `pulumi:"id"`
+	// Whether or not this rule is currently enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
@@ -3441,6 +3658,8 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Whether or not this rule is currently enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
@@ -3584,6 +3803,13 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
 		return v.Id
 	}).(pulumi.StringOutput)
+}
+
+// Whether or not this rule is currently enabled.
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
 }
 
 // A detailed status of the life cycle state.
@@ -5433,6 +5659,8 @@ type GetNamespaceScheduledTaskAction struct {
 	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
 	DataType string `pulumi:"dataType"`
+	// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+	MetricExtractions []GetNamespaceScheduledTaskActionMetricExtraction `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId string `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
@@ -5461,6 +5689,8 @@ type GetNamespaceScheduledTaskActionArgs struct {
 	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
 	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+	MetricExtractions GetNamespaceScheduledTaskActionMetricExtractionArrayInput `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId pulumi.StringInput `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
@@ -5534,6 +5764,13 @@ func (o GetNamespaceScheduledTaskActionOutput) DataType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.DataType }).(pulumi.StringOutput)
 }
 
+// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+func (o GetNamespaceScheduledTaskActionOutput) MetricExtractions() GetNamespaceScheduledTaskActionMetricExtractionArrayOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) []GetNamespaceScheduledTaskActionMetricExtraction {
+		return v.MetricExtractions
+	}).(GetNamespaceScheduledTaskActionMetricExtractionArrayOutput)
+}
+
 // the compartment OCID under which the data will be purged
 func (o GetNamespaceScheduledTaskActionOutput) PurgeCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.PurgeCompartmentId }).(pulumi.StringOutput)
@@ -5577,6 +5814,130 @@ func (o GetNamespaceScheduledTaskActionArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskAction {
 		return vs[0].([]GetNamespaceScheduledTaskAction)[vs[1].(int)]
 	}).(GetNamespaceScheduledTaskActionOutput)
+}
+
+type GetNamespaceScheduledTaskActionMetricExtraction struct {
+	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName string `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace string `pulumi:"namespace"`
+	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup string `pulumi:"resourceGroup"`
+}
+
+// GetNamespaceScheduledTaskActionMetricExtractionInput is an input type that accepts GetNamespaceScheduledTaskActionMetricExtractionArgs and GetNamespaceScheduledTaskActionMetricExtractionOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTaskActionMetricExtractionInput` via:
+//
+//	GetNamespaceScheduledTaskActionMetricExtractionArgs{...}
+type GetNamespaceScheduledTaskActionMetricExtractionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTaskActionMetricExtractionOutput() GetNamespaceScheduledTaskActionMetricExtractionOutput
+	ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(context.Context) GetNamespaceScheduledTaskActionMetricExtractionOutput
+}
+
+type GetNamespaceScheduledTaskActionMetricExtractionArgs struct {
+	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+}
+
+func (GetNamespaceScheduledTaskActionMetricExtractionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTaskActionMetricExtractionArgs) ToGetNamespaceScheduledTaskActionMetricExtractionOutput() GetNamespaceScheduledTaskActionMetricExtractionOutput {
+	return i.ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTaskActionMetricExtractionArgs) ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionMetricExtractionOutput)
+}
+
+// GetNamespaceScheduledTaskActionMetricExtractionArrayInput is an input type that accepts GetNamespaceScheduledTaskActionMetricExtractionArray and GetNamespaceScheduledTaskActionMetricExtractionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTaskActionMetricExtractionArrayInput` via:
+//
+//	GetNamespaceScheduledTaskActionMetricExtractionArray{ GetNamespaceScheduledTaskActionMetricExtractionArgs{...} }
+type GetNamespaceScheduledTaskActionMetricExtractionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutput() GetNamespaceScheduledTaskActionMetricExtractionArrayOutput
+	ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(context.Context) GetNamespaceScheduledTaskActionMetricExtractionArrayOutput
+}
+
+type GetNamespaceScheduledTaskActionMetricExtractionArray []GetNamespaceScheduledTaskActionMetricExtractionInput
+
+func (GetNamespaceScheduledTaskActionMetricExtractionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTaskActionMetricExtractionArray) ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutput() GetNamespaceScheduledTaskActionMetricExtractionArrayOutput {
+	return i.ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTaskActionMetricExtractionArray) ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionMetricExtractionArrayOutput)
+}
+
+type GetNamespaceScheduledTaskActionMetricExtractionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTaskActionMetricExtractionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToGetNamespaceScheduledTaskActionMetricExtractionOutput() GetNamespaceScheduledTaskActionMetricExtractionOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionOutput {
+	return o
+}
+
+// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// The Logging Analytics namespace used for the request.
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+type GetNamespaceScheduledTaskActionMetricExtractionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTaskActionMetricExtraction)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutput() GetNamespaceScheduledTaskActionMetricExtractionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskActionMetricExtractionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskActionMetricExtraction {
+		return vs[0].([]GetNamespaceScheduledTaskActionMetricExtraction)[vs[1].(int)]
+	}).(GetNamespaceScheduledTaskActionMetricExtractionOutput)
 }
 
 type GetNamespaceScheduledTaskSchedule struct {
@@ -6275,7 +6636,8 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemAction struct {
 	// if true, purge child compartments data
 	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
-	DataType string `pulumi:"dataType"`
+	DataType          string                                                                        `pulumi:"dataType"`
+	MetricExtractions []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId string `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
@@ -6303,7 +6665,8 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs struct {
 	// if true, purge child compartments data
 	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
-	DataType pulumi.StringInput `pulumi:"dataType"`
+	DataType          pulumi.StringInput                                                                    `pulumi:"dataType"`
+	MetricExtractions GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
 	PurgeCompartmentId pulumi.StringInput `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
@@ -6379,6 +6742,12 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) DataT
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.DataType }).(pulumi.StringOutput)
 }
 
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) MetricExtractions() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction {
+		return v.MetricExtractions
+	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput)
+}
+
 // the compartment OCID under which the data will be purged
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) PurgeCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string {
@@ -6424,6 +6793,132 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemAction {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction)[vs[1].(int)]
 	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	MetricName    string `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace     string `pulumi:"namespace"`
+	ResourceGroup string `pulumi:"resourceGroup"`
+}
+
+// GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionInput` via:
+//
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs{...}
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	MetricName    pulumi.StringInput `pulumi:"metricName"`
+	// The Logging Analytics namespace used for the request.
+	Namespace     pulumi.StringInput `pulumi:"namespace"`
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+}
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
+	return i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput)
+}
+
+// GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput` via:
+//
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs{...} }
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutputWithContext(context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionInput
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput {
+	return i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+		return v.MetricName
+	}).(pulumi.StringOutput)
+}
+
+// The Logging Analytics namespace used for the request.
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction {
+		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction)[vs[1].(int)]
+	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput)
 }
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule struct {
@@ -7119,6 +7614,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsAdditionalConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionInput)(nil)).Elem(), NamespaceScheduledTaskActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionPtrInput)(nil)).Elem(), NamespaceScheduledTaskActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionMetricExtractionInput)(nil)).Elem(), NamespaceScheduledTaskActionMetricExtractionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionMetricExtractionPtrInput)(nil)).Elem(), NamespaceScheduledTaskActionMetricExtractionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesPtrInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesScheduleInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesScheduleArgs{})
@@ -7183,6 +7680,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionItemArrayInput)(nil)).Elem(), GetNamespaceRulesRuleSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionInput)(nil)).Elem(), GetNamespaceScheduledTaskActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionMetricExtractionInput)(nil)).Elem(), GetNamespaceScheduledTaskActionMetricExtractionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionMetricExtractionArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskActionMetricExtractionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskScheduleInput)(nil)).Elem(), GetNamespaceScheduledTaskScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskScheduleScheduleInput)(nil)).Elem(), GetNamespaceScheduledTaskScheduleScheduleArgs{})
@@ -7195,6 +7694,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs{})
@@ -7221,6 +7722,8 @@ func init() {
 	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionPtrOutput{})
+	pulumi.RegisterOutputType(NamespaceScheduledTaskActionMetricExtractionOutput{})
+	pulumi.RegisterOutputType(NamespaceScheduledTaskActionMetricExtractionPtrOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesPtrOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesScheduleOutput{})
@@ -7285,6 +7788,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceRulesRuleSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionMetricExtractionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionMetricExtractionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskScheduleOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskScheduleScheduleOutput{})
@@ -7297,6 +7802,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput{})

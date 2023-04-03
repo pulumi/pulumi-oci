@@ -138,6 +138,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.computeModel);
     }
 
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * 
+     */
+    @Import(name="dbName")
+    private @Nullable Output<String> dbName;
+
+    /**
+     * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * 
+     */
+    public Optional<Output<String>> dbName() {
+        return Optional.ofNullable(this.dbName);
+    }
+
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
@@ -725,6 +740,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
         this.computeModel = $.computeModel;
+        this.dbName = $.dbName;
         this.dbUniqueName = $.dbUniqueName;
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
@@ -939,6 +955,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
         public Builder computeModel(String computeModel) {
             return computeModel(Output.of(computeModel));
+        }
+
+        /**
+         * @param dbName The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbName(@Nullable Output<String> dbName) {
+            $.dbName = dbName;
+            return this;
+        }
+
+        /**
+         * @param dbName The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbName(String dbName) {
+            return dbName(Output.of(dbName));
         }
 
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {

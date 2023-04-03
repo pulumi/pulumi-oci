@@ -23,6 +23,7 @@ class InstanceArgs:
                  async_: Optional[pulumi.Input[bool]] = None,
                  availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+                 compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -53,6 +54,7 @@ class InstanceArgs:
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         :param pulumi.Input['InstanceAvailabilityConfigArgs'] availability_config: (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -86,6 +88,8 @@ class InstanceArgs:
             pulumi.set(__self__, "availability_config", availability_config)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
@@ -220,6 +224,18 @@ class InstanceArgs:
     @capacity_reservation_id.setter
     def capacity_reservation_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "capacity_reservation_id", value)
+
+    @property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_cluster_id", value)
 
     @property
     @pulumi.getter(name="createVnicDetails")
@@ -493,6 +509,7 @@ class _InstanceState:
                  boot_volume_id: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -531,6 +548,7 @@ class _InstanceState:
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -575,6 +593,8 @@ class _InstanceState:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
@@ -725,6 +745,18 @@ class _InstanceState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_cluster_id", value)
 
     @property
     @pulumi.getter(name="createVnicDetails")
@@ -1095,6 +1127,7 @@ class Instance(pulumi.CustomResource):
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']]] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1185,6 +1218,7 @@ class Instance(pulumi.CustomResource):
                 is_live_migration_preferred=var["instance_availability_config_is_live_migration_preferred"],
                 recovery_action=var["instance_availability_config_recovery_action"],
             ),
+            compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
             create_vnic_details=oci.core.InstanceCreateVnicDetailsArgs(
                 assign_private_dns_record=var["instance_create_vnic_details_assign_private_dns_record"],
                 assign_public_ip=var["instance_create_vnic_details_assign_public_ip"],
@@ -1280,6 +1314,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1375,6 +1410,7 @@ class Instance(pulumi.CustomResource):
                 is_live_migration_preferred=var["instance_availability_config_is_live_migration_preferred"],
                 recovery_action=var["instance_availability_config_recovery_action"],
             ),
+            compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
             create_vnic_details=oci.core.InstanceCreateVnicDetailsArgs(
                 assign_private_dns_record=var["instance_create_vnic_details_assign_private_dns_record"],
                 assign_public_ip=var["instance_create_vnic_details_assign_public_ip"],
@@ -1484,6 +1520,7 @@ class Instance(pulumi.CustomResource):
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']]] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1526,6 +1563,7 @@ class Instance(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compute_cluster_id"] = compute_cluster_id
             __props__.__dict__["create_vnic_details"] = create_vnic_details
             __props__.__dict__["dedicated_vm_host_id"] = dedicated_vm_host_id
             __props__.__dict__["defined_tags"] = defined_tags
@@ -1585,6 +1623,7 @@ class Instance(pulumi.CustomResource):
             boot_volume_id: Optional[pulumi.Input[str]] = None,
             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compute_cluster_id: Optional[pulumi.Input[str]] = None,
             create_vnic_details: Optional[pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']]] = None,
             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1628,6 +1667,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1669,6 +1709,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["boot_volume_id"] = boot_volume_id
         __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_cluster_id"] = compute_cluster_id
         __props__.__dict__["create_vnic_details"] = create_vnic_details
         __props__.__dict__["dedicated_vm_host_id"] = dedicated_vm_host_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1753,6 +1794,14 @@ class Instance(pulumi.CustomResource):
         (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @property
     @pulumi.getter(name="createVnicDetails")

@@ -42,7 +42,9 @@ type AutonomousContainerDatabase struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	ComputeModel  pulumi.StringOutput `pulumi:"computeModel"`
-	DbUniqueName  pulumi.StringOutput `pulumi:"dbUniqueName"`
+	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+	DbName       pulumi.StringOutput `pulumi:"dbName"`
+	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -171,7 +173,9 @@ type autonomousContainerDatabaseState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
 	ComputeModel  *string `pulumi:"computeModel"`
-	DbUniqueName  *string `pulumi:"dbUniqueName"`
+	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+	DbName       *string `pulumi:"dbName"`
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -266,7 +270,9 @@ type AutonomousContainerDatabaseState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
 	ComputeModel  pulumi.StringPtrInput
-	DbUniqueName  pulumi.StringPtrInput
+	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+	DbName       pulumi.StringPtrInput
+	DbUniqueName pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -360,7 +366,9 @@ type autonomousContainerDatabaseArgs struct {
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
-	DbUniqueName  *string `pulumi:"dbUniqueName"`
+	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+	DbName       *string `pulumi:"dbName"`
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -419,7 +427,9 @@ type AutonomousContainerDatabaseArgs struct {
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
-	DbUniqueName  pulumi.StringPtrInput
+	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+	DbName       pulumi.StringPtrInput
+	DbUniqueName pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -592,6 +602,11 @@ func (o AutonomousContainerDatabaseOutput) CompartmentId() pulumi.StringOutput {
 
 func (o AutonomousContainerDatabaseOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+func (o AutonomousContainerDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DbName }).(pulumi.StringOutput)
 }
 
 func (o AutonomousContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {

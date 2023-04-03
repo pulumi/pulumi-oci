@@ -22,6 +22,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string DataType;
         /// <summary>
+        /// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNamespaceScheduledTaskActionMetricExtractionResult> MetricExtractions;
+        /// <summary>
         /// the compartment OCID under which the data will be purged
         /// </summary>
         public readonly string PurgeCompartmentId;
@@ -48,6 +52,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string dataType,
 
+            ImmutableArray<Outputs.GetNamespaceScheduledTaskActionMetricExtractionResult> metricExtractions,
+
             string purgeCompartmentId,
 
             string purgeDuration,
@@ -60,6 +66,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         {
             CompartmentIdInSubtree = compartmentIdInSubtree;
             DataType = dataType;
+            MetricExtractions = metricExtractions;
             PurgeCompartmentId = purgeCompartmentId;
             PurgeDuration = purgeDuration;
             QueryString = queryString;

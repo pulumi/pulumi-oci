@@ -72,6 +72,7 @@ type LookupInstanceResult struct {
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The OCID of the compartment that contains the instance.
 	CompartmentId     string                        `pulumi:"compartmentId"`
+	ComputeClusterId  string                        `pulumi:"computeClusterId"`
 	CreateVnicDetails []GetInstanceCreateVnicDetail `pulumi:"createVnicDetails"`
 	// The OCID of the dedicated virtual machine host that the instance is placed on.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
@@ -208,6 +209,10 @@ func (o LookupInstanceResultOutput) CapacityReservationId() pulumi.StringOutput 
 // The OCID of the compartment that contains the instance.
 func (o LookupInstanceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupInstanceResultOutput) ComputeClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.ComputeClusterId }).(pulumi.StringOutput)
 }
 
 func (o LookupInstanceResultOutput) CreateVnicDetails() GetInstanceCreateVnicDetailArrayOutput {

@@ -12,6 +12,7 @@ from .boot_volume_backup import *
 from .capture_filter import *
 from .cluster_network import *
 from .compute_capacity_reservation import *
+from .compute_cluster import *
 from .compute_image_capability_schema import *
 from .console_history import *
 from .cpe import *
@@ -57,6 +58,8 @@ from .get_compute_capacity_reservation import *
 from .get_compute_capacity_reservation_instance_shapes import *
 from .get_compute_capacity_reservation_instances import *
 from .get_compute_capacity_reservations import *
+from .get_compute_cluster import *
+from .get_compute_clusters import *
 from .get_compute_global_image_capability_schema import *
 from .get_compute_global_image_capability_schemas import *
 from .get_compute_global_image_capability_schemas_version import *

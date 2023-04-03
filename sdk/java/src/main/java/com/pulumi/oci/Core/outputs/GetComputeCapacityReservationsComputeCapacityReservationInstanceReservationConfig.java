@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig;
 import java.lang.String;
 import java.util.List;
@@ -12,7 +13,12 @@ import java.util.Objects;
 @CustomType
 public final class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig {
     /**
-     * @return The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * @return The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+     * 
+     */
+    private List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
+    /**
+     * @return The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      * 
      */
     private String faultDomain;
@@ -39,7 +45,14 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
 
     private GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig() {}
     /**
-     * @return The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * @return The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+     * 
+     */
+    public List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs() {
+        return this.clusterConfigs;
+    }
+    /**
+     * @return The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      * 
      */
     public String faultDomain() {
@@ -83,6 +96,7 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
         private String faultDomain;
         private String instanceShape;
         private List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
@@ -91,6 +105,7 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
         public Builder() {}
         public Builder(GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterConfigs = defaults.clusterConfigs;
     	      this.faultDomain = defaults.faultDomain;
     	      this.instanceShape = defaults.instanceShape;
     	      this.instanceShapeConfigs = defaults.instanceShapeConfigs;
@@ -98,6 +113,14 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
     	      this.usedCount = defaults.usedCount;
         }
 
+        @CustomType.Setter
+        public Builder clusterConfigs(List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs) {
+            this.clusterConfigs = Objects.requireNonNull(clusterConfigs);
+            return this;
+        }
+        public Builder clusterConfigs(GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig... clusterConfigs) {
+            return clusterConfigs(List.of(clusterConfigs));
+        }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
@@ -128,6 +151,7 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
         }
         public GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig build() {
             final var o = new GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig();
+            o.clusterConfigs = clusterConfigs;
             o.faultDomain = faultDomain;
             o.instanceShape = instanceShape;
             o.instanceShapeConfigs = instanceShapeConfigs;

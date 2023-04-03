@@ -44,7 +44,15 @@ public final class GetNamespaceScheduledTaskResult {
      * 
      */
     private String id;
+    /**
+     * @return Discriminator.
+     * 
+     */
     private String kind;
+    /**
+     * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+     * 
+     */
     private String namespace;
     /**
      * @return Number of execution occurrences.
@@ -136,9 +144,17 @@ public final class GetNamespaceScheduledTaskResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Discriminator.
+     * 
+     */
     public String kind() {
         return this.kind;
     }
+    /**
+     * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }

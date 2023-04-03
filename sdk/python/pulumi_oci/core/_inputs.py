@@ -29,6 +29,7 @@ __all__ = [
     'ClusterNetworkPlacementConfigurationArgs',
     'ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs',
     'ComputeCapacityReservationInstanceReservationConfigArgs',
+    'ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs',
     'CrossConnectGroupMacsecPropertiesArgs',
     'CrossConnectGroupMacsecPropertiesPrimaryKeyArgs',
@@ -148,6 +149,7 @@ __all__ = [
     'GetComputeCapacityReservationInstanceShapesFilterArgs',
     'GetComputeCapacityReservationInstancesFilterArgs',
     'GetComputeCapacityReservationsFilterArgs',
+    'GetComputeClustersFilterArgs',
     'GetComputeGlobalImageCapabilitySchemasFilterArgs',
     'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs',
     'GetComputeImageCapabilitySchemasFilterArgs',
@@ -1314,18 +1316,22 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     def __init__(__self__, *,
                  instance_shape: pulumi.Input[str],
                  reserved_count: pulumi.Input[str],
+                 cluster_config: Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs']] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
                  instance_shape_config: Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs']] = None,
                  used_count: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] instance_shape: (Updatable) The shape requested when launching instances using reserved capacity. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         :param pulumi.Input[str] reserved_count: (Updatable) The total number of instances that can be launched from the capacity configuration.
+        :param pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs'] cluster_config: (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
         :param pulumi.Input[str] fault_domain: (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
         :param pulumi.Input['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs'] instance_shape_config: (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
         :param pulumi.Input[str] used_count: The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
         pulumi.set(__self__, "instance_shape", instance_shape)
         pulumi.set(__self__, "reserved_count", reserved_count)
+        if cluster_config is not None:
+            pulumi.set(__self__, "cluster_config", cluster_config)
         if fault_domain is not None:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if instance_shape_config is not None:
@@ -1356,6 +1362,18 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @reserved_count.setter
     def reserved_count(self, value: pulumi.Input[str]):
         pulumi.set(self, "reserved_count", value)
+
+    @property
+    @pulumi.getter(name="clusterConfig")
+    def cluster_config(self) -> Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs']]:
+        """
+        (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        """
+        return pulumi.get(self, "cluster_config")
+
+    @cluster_config.setter
+    def cluster_config(self, value: Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs']]):
+        pulumi.set(self, "cluster_config", value)
 
     @property
     @pulumi.getter(name="faultDomain")
@@ -1392,6 +1410,44 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @used_count.setter
     def used_count(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "used_count", value)
+
+
+@pulumi.input_type
+class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
+    def __init__(__self__, *,
+                 hpc_island_id: pulumi.Input[str],
+                 network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] hpc_island_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: (Updatable) The list of OCID of the network blocks.
+        """
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+        if network_block_ids is not None:
+            pulumi.set(__self__, "network_block_ids", network_block_ids)
+
+    @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @hpc_island_id.setter
+    def hpc_island_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hpc_island_id", value)
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The list of OCID of the network blocks.
+        """
+        return pulumi.get(self, "network_block_ids")
+
+    @network_block_ids.setter
+    def network_block_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "network_block_ids", value)
 
 
 @pulumi.input_type
@@ -6134,7 +6190,7 @@ class InstanceSourceDetailsArgs:
                  boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] source_id: The OCID of the boot volume used to boot the instance.
+        :param pulumi.Input[str] source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         :param pulumi.Input[str] source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         :param pulumi.Input[str] boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
         :param pulumi.Input[str] boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -6153,7 +6209,7 @@ class InstanceSourceDetailsArgs:
     @pulumi.getter(name="sourceId")
     def source_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the boot volume used to boot the instance.
+        The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         """
         return pulumi.get(self, "source_id")
 
@@ -9339,6 +9395,45 @@ class GetComputeCapacityReservationInstancesFilterArgs:
 
 @pulumi.input_type
 class GetComputeCapacityReservationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetComputeClustersFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

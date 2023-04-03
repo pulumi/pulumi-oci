@@ -141,7 +141,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Discriminator.
+        /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+        /// </summary>
         public readonly string Namespace;
         /// <summary>
         /// Number of execution occurrences.

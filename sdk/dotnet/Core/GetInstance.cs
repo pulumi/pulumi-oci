@@ -136,6 +136,7 @@ namespace Pulumi.Oci.Core
         /// The OCID of the compartment that contains the instance.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly string ComputeClusterId;
         public readonly ImmutableArray<Outputs.GetInstanceCreateVnicDetailResult> CreateVnicDetails;
         /// <summary>
         /// The OCID of the dedicated virtual machine host that the instance is placed on.
@@ -266,6 +267,8 @@ namespace Pulumi.Oci.Core
 
             string compartmentId,
 
+            string computeClusterId,
+
             ImmutableArray<Outputs.GetInstanceCreateVnicDetailResult> createVnicDetails,
 
             string dedicatedVmHostId,
@@ -337,6 +340,7 @@ namespace Pulumi.Oci.Core
             BootVolumeId = bootVolumeId;
             CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
+            ComputeClusterId = computeClusterId;
             CreateVnicDetails = createVnicDetails;
             DedicatedVmHostId = dedicatedVmHostId;
             DefinedTags = definedTags;

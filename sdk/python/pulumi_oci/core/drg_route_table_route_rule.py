@@ -20,8 +20,8 @@ class DrgRouteTableRouteRuleArgs:
                  next_hop_drg_attachment_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a DrgRouteTableRouteRule resource.
-        :param pulumi.Input[str] destination: Represents the range of IP addresses to match against when routing traffic.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Allowed values:
+        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
         :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
         """
@@ -34,7 +34,7 @@ class DrgRouteTableRouteRuleArgs:
     @pulumi.getter
     def destination(self) -> pulumi.Input[str]:
         """
-        Represents the range of IP addresses to match against when routing traffic.
+        (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
         """
         return pulumi.get(self, "destination")
 
@@ -46,7 +46,7 @@ class DrgRouteTableRouteRuleArgs:
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> pulumi.Input[str]:
         """
-        Type of destination for the rule. Allowed values:
+        Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         """
         return pulumi.get(self, "destination_type")
 
@@ -94,8 +94,8 @@ class _DrgRouteTableRouteRuleState:
         """
         Input properties used for looking up and filtering DrgRouteTableRouteRule resources.
         :param pulumi.Input[Mapping[str, Any]] attributes: Additional properties for the route, computed by the service.
-        :param pulumi.Input[str] destination: Represents the range of IP addresses to match against when routing traffic.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Allowed values:
+        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
         :param pulumi.Input[bool] is_blackhole: Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
         :param pulumi.Input[bool] is_conflict: Indicates that the route was not imported due to a conflict between route rules.
@@ -138,7 +138,7 @@ class _DrgRouteTableRouteRuleState:
     @pulumi.getter
     def destination(self) -> Optional[pulumi.Input[str]]:
         """
-        Represents the range of IP addresses to match against when routing traffic.
+        (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
         """
         return pulumi.get(self, "destination")
 
@@ -150,7 +150,7 @@ class _DrgRouteTableRouteRuleState:
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of destination for the rule. Allowed values:
+        Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         """
         return pulumi.get(self, "destination_type")
 
@@ -269,8 +269,8 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] destination: Represents the range of IP addresses to match against when routing traffic.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Allowed values:
+        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
         :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
         """
@@ -378,8 +378,8 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] attributes: Additional properties for the route, computed by the service.
-        :param pulumi.Input[str] destination: Represents the range of IP addresses to match against when routing traffic.
-        :param pulumi.Input[str] destination_type: Type of destination for the rule. Allowed values:
+        :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
         :param pulumi.Input[bool] is_blackhole: Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
         :param pulumi.Input[bool] is_conflict: Indicates that the route was not imported due to a conflict between route rules.
@@ -414,7 +414,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     @pulumi.getter
     def destination(self) -> pulumi.Output[str]:
         """
-        Represents the range of IP addresses to match against when routing traffic.
+        (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
         """
         return pulumi.get(self, "destination")
 
@@ -422,7 +422,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> pulumi.Output[str]:
         """
-        Type of destination for the rule. Allowed values:
+        Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         """
         return pulumi.get(self, "destination_type")
 

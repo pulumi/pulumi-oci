@@ -117,6 +117,12 @@ namespace Pulumi.Oci.DevOps
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The result of validating the credentials of a connection.
+        /// </summary>
+        [Output("lastConnectionValidationResults")]
+        public Output<ImmutableArray<Outputs.ConnectionLastConnectionValidationResult>> LastConnectionValidationResults { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the DevOps project.
         /// </summary>
         [Output("projectId")]
@@ -378,6 +384,18 @@ namespace Pulumi.Oci.DevOps
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("lastConnectionValidationResults")]
+        private InputList<Inputs.ConnectionLastConnectionValidationResultGetArgs>? _lastConnectionValidationResults;
+
+        /// <summary>
+        /// The result of validating the credentials of a connection.
+        /// </summary>
+        public InputList<Inputs.ConnectionLastConnectionValidationResultGetArgs> LastConnectionValidationResults
+        {
+            get => _lastConnectionValidationResults ?? (_lastConnectionValidationResults = new InputList<Inputs.ConnectionLastConnectionValidationResultGetArgs>());
+            set => _lastConnectionValidationResults = value;
         }
 
         /// <summary>

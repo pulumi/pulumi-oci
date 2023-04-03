@@ -88,6 +88,8 @@ type Connection struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// The result of validating the credentials of a connection.
+	LastConnectionValidationResults ConnectionLastConnectionValidationResultArrayOutput `pulumi:"lastConnectionValidationResults"`
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the connection.
@@ -164,6 +166,8 @@ type connectionState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The result of validating the credentials of a connection.
+	LastConnectionValidationResults []ConnectionLastConnectionValidationResult `pulumi:"lastConnectionValidationResults"`
 	// The OCID of the DevOps project.
 	ProjectId *string `pulumi:"projectId"`
 	// The current state of the connection.
@@ -199,6 +203,8 @@ type ConnectionState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// The result of validating the credentials of a connection.
+	LastConnectionValidationResults ConnectionLastConnectionValidationResultArrayInput
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringPtrInput
 	// The current state of the connection.
@@ -400,6 +406,13 @@ func (o ConnectionOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 func (o ConnectionOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Connection) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The result of validating the credentials of a connection.
+func (o ConnectionOutput) LastConnectionValidationResults() ConnectionLastConnectionValidationResultArrayOutput {
+	return o.ApplyT(func(v *Connection) ConnectionLastConnectionValidationResultArrayOutput {
+		return v.LastConnectionValidationResults
+	}).(ConnectionLastConnectionValidationResultArrayOutput)
 }
 
 // The OCID of the DevOps project.

@@ -7,6 +7,12 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetAddonPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetAddonsPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
@@ -21,12 +27,21 @@ import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsPlainArgs;
+import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetAddonResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetAddonsResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterKubeConfigResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersResult;
@@ -34,6 +49,9 @@ import com.pulumi.oci.ContainerEngine.outputs.GetMigrateToNativeVcnStatusResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolOptionResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetPodShapesResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestErrorsResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestLogEntriesResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestsResult;
@@ -41,6 +59,482 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class ContainerEngineFunctions {
+    /**
+     * This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified addon for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddonResult> getAddon(GetAddonArgs args) {
+        return getAddon(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified addon for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddonResult> getAddonPlain(GetAddonPlainArgs args) {
+        return getAddonPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified addon for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddonResult> getAddon(GetAddonArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getAddon:getAddon", TypeShape.of(GetAddonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified addon for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddonResult> getAddonPlain(GetAddonPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getAddon:getAddon", TypeShape.of(GetAddonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get list of supported addons for a specific kubernetes version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
+     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddonOptionsResult> getAddonOptions(GetAddonOptionsArgs args) {
+        return getAddonOptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get list of supported addons for a specific kubernetes version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
+     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddonOptionsResult> getAddonOptionsPlain(GetAddonOptionsPlainArgs args) {
+        return getAddonOptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get list of supported addons for a specific kubernetes version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
+     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddonOptionsResult> getAddonOptions(GetAddonOptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getAddonOptions:getAddonOptions", TypeShape.of(GetAddonOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get list of supported addons for a specific kubernetes version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
+     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
+     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddonOptionsResult> getAddonOptionsPlain(GetAddonOptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getAddonOptions:getAddonOptions", TypeShape.of(GetAddonOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List addon for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddonsResult> getAddons(GetAddonsArgs args) {
+        return getAddons(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List addon for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddonsResult> getAddonsPlain(GetAddonsPlainArgs args) {
+        return getAddonsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List addon for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddonsResult> getAddons(GetAddonsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getAddons:getAddons", TypeShape.of(GetAddonsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List addon for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddonsResult> getAddonsPlain(GetAddonsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getAddons:getAddons", TypeShape.of(GetAddonsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
      * 
@@ -1028,6 +1522,498 @@ public final class ContainerEngineFunctions {
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(GetNodePoolsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getNodePools:getNodePools", TypeShape.of(GetNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the Pod Shapes in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.pod_shape_availability_domain())
+     *             .name(var_.pod_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPodShapesResult> getPodShapes(GetPodShapesArgs args) {
+        return getPodShapes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the Pod Shapes in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.pod_shape_availability_domain())
+     *             .name(var_.pod_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPodShapesResult> getPodShapesPlain(GetPodShapesPlainArgs args) {
+        return getPodShapesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the Pod Shapes in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.pod_shape_availability_domain())
+     *             .name(var_.pod_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPodShapesResult> getPodShapes(GetPodShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getPodShapes:getPodShapes", TypeShape.of(GetPodShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the Pod Shapes in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.pod_shape_availability_domain())
+     *             .name(var_.pod_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPodShapesResult> getPodShapesPlain(GetPodShapesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getPodShapes:getPodShapes", TypeShape.of(GetPodShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the details of a virtual node pool.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
+     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetVirtualNodePoolResult> getVirtualNodePool(GetVirtualNodePoolArgs args) {
+        return getVirtualNodePool(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the details of a virtual node pool.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
+     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetVirtualNodePoolResult> getVirtualNodePoolPlain(GetVirtualNodePoolPlainArgs args) {
+        return getVirtualNodePoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the details of a virtual node pool.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
+     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetVirtualNodePoolResult> getVirtualNodePool(GetVirtualNodePoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", TypeShape.of(GetVirtualNodePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the details of a virtual node pool.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
+     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetVirtualNodePoolResult> getVirtualNodePoolPlain(GetVirtualNodePoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", TypeShape.of(GetVirtualNodePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.virtual_node_pool_name())
+     *             .states(var_.virtual_node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args) {
+        return getVirtualNodePools(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.virtual_node_pool_name())
+     *             .states(var_.virtual_node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args) {
+        return getVirtualNodePoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.virtual_node_pool_name())
+     *             .states(var_.virtual_node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.virtual_node_pool_name())
+     *             .states(var_.virtual_node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.

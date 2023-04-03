@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        /// </summary>
+        public readonly string HpcIslandId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         /// </summary>
         public readonly string Id;
@@ -37,6 +41,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The instance pools in the cluster network.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolResult> InstancePools;
+        /// <summary>
+        /// The list of network block OCIDs of the HPC island.
+        /// </summary>
+        public readonly ImmutableArray<string> NetworkBlockIds;
         /// <summary>
         /// The location for where the instance pools in a cluster network will place instances.
         /// </summary>
@@ -64,9 +72,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableDictionary<string, object> freeformTags,
 
+            string hpcIslandId,
+
             string id,
 
             ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolResult> instancePools,
+
+            ImmutableArray<string> networkBlockIds,
 
             ImmutableArray<Outputs.GetClusterNetworksClusterNetworkPlacementConfigurationResult> placementConfigurations,
 
@@ -80,8 +92,10 @@ namespace Pulumi.Oci.Core.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            HpcIslandId = hpcIslandId;
             Id = id;
             InstancePools = instancePools;
+            NetworkBlockIds = networkBlockIds;
             PlacementConfigurations = placementConfigurations;
             State = state;
             TimeCreated = timeCreated;

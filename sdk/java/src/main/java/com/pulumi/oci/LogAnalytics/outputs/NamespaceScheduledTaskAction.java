@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.LogAnalytics.outputs.NamespaceScheduledTaskActionMetricExtraction;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -22,6 +23,11 @@ public final class NamespaceScheduledTaskAction {
      * 
      */
     private @Nullable String dataType;
+    /**
+     * @return Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
+    private @Nullable NamespaceScheduledTaskActionMetricExtraction metricExtraction;
     /**
      * @return the compartment OCID under which the data will be purged
      * 
@@ -62,6 +68,13 @@ public final class NamespaceScheduledTaskAction {
      */
     public Optional<String> dataType() {
         return Optional.ofNullable(this.dataType);
+    }
+    /**
+     * @return Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
+    public Optional<NamespaceScheduledTaskActionMetricExtraction> metricExtraction() {
+        return Optional.ofNullable(this.metricExtraction);
     }
     /**
      * @return the compartment OCID under which the data will be purged
@@ -110,6 +123,7 @@ public final class NamespaceScheduledTaskAction {
     public static final class Builder {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String dataType;
+        private @Nullable NamespaceScheduledTaskActionMetricExtraction metricExtraction;
         private @Nullable String purgeCompartmentId;
         private @Nullable String purgeDuration;
         private @Nullable String queryString;
@@ -120,6 +134,7 @@ public final class NamespaceScheduledTaskAction {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.dataType = defaults.dataType;
+    	      this.metricExtraction = defaults.metricExtraction;
     	      this.purgeCompartmentId = defaults.purgeCompartmentId;
     	      this.purgeDuration = defaults.purgeDuration;
     	      this.queryString = defaults.queryString;
@@ -135,6 +150,11 @@ public final class NamespaceScheduledTaskAction {
         @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
             this.dataType = dataType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder metricExtraction(@Nullable NamespaceScheduledTaskActionMetricExtraction metricExtraction) {
+            this.metricExtraction = metricExtraction;
             return this;
         }
         @CustomType.Setter
@@ -166,6 +186,7 @@ public final class NamespaceScheduledTaskAction {
             final var o = new NamespaceScheduledTaskAction();
             o.compartmentIdInSubtree = compartmentIdInSubtree;
             o.dataType = dataType;
+            o.metricExtraction = metricExtraction;
             o.purgeCompartmentId = purgeCompartmentId;
             o.purgeDuration = purgeDuration;
             o.queryString = queryString;

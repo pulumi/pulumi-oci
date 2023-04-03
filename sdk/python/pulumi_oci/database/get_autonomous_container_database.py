@@ -22,7 +22,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, reclaimable_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, reclaimable_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -50,6 +50,9 @@ class GetAutonomousContainerDatabaseResult:
         if compute_model and not isinstance(compute_model, str):
             raise TypeError("Expected argument 'compute_model' to be a str")
         pulumi.set(__self__, "compute_model", compute_model)
+        if db_name and not isinstance(db_name, str):
+            raise TypeError("Expected argument 'db_name' to be a str")
+        pulumi.set(__self__, "db_name", db_name)
         if db_unique_name and not isinstance(db_unique_name, str):
             raise TypeError("Expected argument 'db_unique_name' to be a str")
         pulumi.set(__self__, "db_unique_name", db_unique_name)
@@ -239,6 +242,14 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         return pulumi.get(self, "compute_model")
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> str:
+        """
+        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        """
+        return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbUniqueName")
@@ -545,6 +556,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             cloud_autonomous_vm_cluster_id=self.cloud_autonomous_vm_cluster_id,
             compartment_id=self.compartment_id,
             compute_model=self.compute_model,
+            db_name=self.db_name,
             db_unique_name=self.db_unique_name,
             db_version=self.db_version,
             defined_tags=self.defined_tags,
@@ -622,6 +634,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         cloud_autonomous_vm_cluster_id=__ret__.cloud_autonomous_vm_cluster_id,
         compartment_id=__ret__.compartment_id,
         compute_model=__ret__.compute_model,
+        db_name=__ret__.db_name,
         db_unique_name=__ret__.db_unique_name,
         db_version=__ret__.db_version,
         defined_tags=__ret__.defined_tags,

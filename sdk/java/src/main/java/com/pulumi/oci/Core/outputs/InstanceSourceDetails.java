@@ -27,7 +27,7 @@ public final class InstanceSourceDetails {
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return The OCID of the boot volume used to boot the instance.
+     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
     private String sourceId;
@@ -60,7 +60,7 @@ public final class InstanceSourceDetails {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return The OCID of the boot volume used to boot the instance.
+     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
     public String sourceId() {

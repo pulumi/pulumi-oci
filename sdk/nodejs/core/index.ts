@@ -40,6 +40,11 @@ export type ComputeCapacityReservation = import("./computeCapacityReservation").
 export const ComputeCapacityReservation: typeof import("./computeCapacityReservation").ComputeCapacityReservation = null as any;
 utilities.lazyLoad(exports, ["ComputeCapacityReservation"], () => require("./computeCapacityReservation"));
 
+export { ComputeClusterArgs, ComputeClusterState } from "./computeCluster";
+export type ComputeCluster = import("./computeCluster").ComputeCluster;
+export const ComputeCluster: typeof import("./computeCluster").ComputeCluster = null as any;
+utilities.lazyLoad(exports, ["ComputeCluster"], () => require("./computeCluster"));
+
 export { ComputeImageCapabilitySchemaArgs, ComputeImageCapabilitySchemaState } from "./computeImageCapabilitySchema";
 export type ComputeImageCapabilitySchema = import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema;
 export const ComputeImageCapabilitySchema: typeof import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema = null as any;
@@ -264,6 +269,16 @@ export { GetComputeCapacityReservationsArgs, GetComputeCapacityReservationsResul
 export const getComputeCapacityReservations: typeof import("./getComputeCapacityReservations").getComputeCapacityReservations = null as any;
 export const getComputeCapacityReservationsOutput: typeof import("./getComputeCapacityReservations").getComputeCapacityReservationsOutput = null as any;
 utilities.lazyLoad(exports, ["getComputeCapacityReservations","getComputeCapacityReservationsOutput"], () => require("./getComputeCapacityReservations"));
+
+export { GetComputeClusterArgs, GetComputeClusterResult, GetComputeClusterOutputArgs } from "./getComputeCluster";
+export const getComputeCluster: typeof import("./getComputeCluster").getComputeCluster = null as any;
+export const getComputeClusterOutput: typeof import("./getComputeCluster").getComputeClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCluster","getComputeClusterOutput"], () => require("./getComputeCluster"));
+
+export { GetComputeClustersArgs, GetComputeClustersResult, GetComputeClustersOutputArgs } from "./getComputeClusters";
+export const getComputeClusters: typeof import("./getComputeClusters").getComputeClusters = null as any;
+export const getComputeClustersOutput: typeof import("./getComputeClusters").getComputeClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeClusters","getComputeClustersOutput"], () => require("./getComputeClusters"));
 
 export { GetComputeGlobalImageCapabilitySchemaArgs, GetComputeGlobalImageCapabilitySchemaResult, GetComputeGlobalImageCapabilitySchemaOutputArgs } from "./getComputeGlobalImageCapabilitySchema";
 export const getComputeGlobalImageCapabilitySchema: typeof import("./getComputeGlobalImageCapabilitySchema").getComputeGlobalImageCapabilitySchema = null as any;
@@ -1043,6 +1058,8 @@ const _module = {
                 return new ClusterNetwork(name, <any>undefined, { urn })
             case "oci:Core/computeCapacityReservation:ComputeCapacityReservation":
                 return new ComputeCapacityReservation(name, <any>undefined, { urn })
+            case "oci:Core/computeCluster:ComputeCluster":
+                return new ComputeCluster(name, <any>undefined, { urn })
             case "oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema":
                 return new ComputeImageCapabilitySchema(name, <any>undefined, { urn })
             case "oci:Core/consoleHistory:ConsoleHistory":
@@ -1169,6 +1186,7 @@ pulumi.runtime.registerResourceModule("oci", "Core/bootVolumeBackup", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/captureFilter", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/clusterNetwork", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReservation", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/computeCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeImageCapabilitySchema", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/consoleHistory", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/cpe", _module)

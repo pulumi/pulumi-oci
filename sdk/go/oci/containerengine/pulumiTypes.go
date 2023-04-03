@@ -10,6 +10,227 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type AddonAddonError struct {
+	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+	Code *string `pulumi:"code"`
+	// A human-readable error string of the upstream error.
+	Message *string `pulumi:"message"`
+	// The status of the HTTP response encountered in the upstream error.
+	Status *string `pulumi:"status"`
+}
+
+// AddonAddonErrorInput is an input type that accepts AddonAddonErrorArgs and AddonAddonErrorOutput values.
+// You can construct a concrete instance of `AddonAddonErrorInput` via:
+//
+//	AddonAddonErrorArgs{...}
+type AddonAddonErrorInput interface {
+	pulumi.Input
+
+	ToAddonAddonErrorOutput() AddonAddonErrorOutput
+	ToAddonAddonErrorOutputWithContext(context.Context) AddonAddonErrorOutput
+}
+
+type AddonAddonErrorArgs struct {
+	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// A human-readable error string of the upstream error.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The status of the HTTP response encountered in the upstream error.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (AddonAddonErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddonAddonError)(nil)).Elem()
+}
+
+func (i AddonAddonErrorArgs) ToAddonAddonErrorOutput() AddonAddonErrorOutput {
+	return i.ToAddonAddonErrorOutputWithContext(context.Background())
+}
+
+func (i AddonAddonErrorArgs) ToAddonAddonErrorOutputWithContext(ctx context.Context) AddonAddonErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddonAddonErrorOutput)
+}
+
+// AddonAddonErrorArrayInput is an input type that accepts AddonAddonErrorArray and AddonAddonErrorArrayOutput values.
+// You can construct a concrete instance of `AddonAddonErrorArrayInput` via:
+//
+//	AddonAddonErrorArray{ AddonAddonErrorArgs{...} }
+type AddonAddonErrorArrayInput interface {
+	pulumi.Input
+
+	ToAddonAddonErrorArrayOutput() AddonAddonErrorArrayOutput
+	ToAddonAddonErrorArrayOutputWithContext(context.Context) AddonAddonErrorArrayOutput
+}
+
+type AddonAddonErrorArray []AddonAddonErrorInput
+
+func (AddonAddonErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddonAddonError)(nil)).Elem()
+}
+
+func (i AddonAddonErrorArray) ToAddonAddonErrorArrayOutput() AddonAddonErrorArrayOutput {
+	return i.ToAddonAddonErrorArrayOutputWithContext(context.Background())
+}
+
+func (i AddonAddonErrorArray) ToAddonAddonErrorArrayOutputWithContext(ctx context.Context) AddonAddonErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddonAddonErrorArrayOutput)
+}
+
+type AddonAddonErrorOutput struct{ *pulumi.OutputState }
+
+func (AddonAddonErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddonAddonError)(nil)).Elem()
+}
+
+func (o AddonAddonErrorOutput) ToAddonAddonErrorOutput() AddonAddonErrorOutput {
+	return o
+}
+
+func (o AddonAddonErrorOutput) ToAddonAddonErrorOutputWithContext(ctx context.Context) AddonAddonErrorOutput {
+	return o
+}
+
+// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+func (o AddonAddonErrorOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddonAddonError) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// A human-readable error string of the upstream error.
+func (o AddonAddonErrorOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddonAddonError) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The status of the HTTP response encountered in the upstream error.
+func (o AddonAddonErrorOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddonAddonError) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type AddonAddonErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (AddonAddonErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddonAddonError)(nil)).Elem()
+}
+
+func (o AddonAddonErrorArrayOutput) ToAddonAddonErrorArrayOutput() AddonAddonErrorArrayOutput {
+	return o
+}
+
+func (o AddonAddonErrorArrayOutput) ToAddonAddonErrorArrayOutputWithContext(ctx context.Context) AddonAddonErrorArrayOutput {
+	return o
+}
+
+func (o AddonAddonErrorArrayOutput) Index(i pulumi.IntInput) AddonAddonErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AddonAddonError {
+		return vs[0].([]AddonAddonError)[vs[1].(int)]
+	}).(AddonAddonErrorOutput)
+}
+
+type AddonConfiguration struct {
+	// (Updatable) configuration key name
+	Key *string `pulumi:"key"`
+	// (Updatable) configuration value name
+	Value *string `pulumi:"value"`
+}
+
+// AddonConfigurationInput is an input type that accepts AddonConfigurationArgs and AddonConfigurationOutput values.
+// You can construct a concrete instance of `AddonConfigurationInput` via:
+//
+//	AddonConfigurationArgs{...}
+type AddonConfigurationInput interface {
+	pulumi.Input
+
+	ToAddonConfigurationOutput() AddonConfigurationOutput
+	ToAddonConfigurationOutputWithContext(context.Context) AddonConfigurationOutput
+}
+
+type AddonConfigurationArgs struct {
+	// (Updatable) configuration key name
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) configuration value name
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AddonConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddonConfiguration)(nil)).Elem()
+}
+
+func (i AddonConfigurationArgs) ToAddonConfigurationOutput() AddonConfigurationOutput {
+	return i.ToAddonConfigurationOutputWithContext(context.Background())
+}
+
+func (i AddonConfigurationArgs) ToAddonConfigurationOutputWithContext(ctx context.Context) AddonConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddonConfigurationOutput)
+}
+
+// AddonConfigurationArrayInput is an input type that accepts AddonConfigurationArray and AddonConfigurationArrayOutput values.
+// You can construct a concrete instance of `AddonConfigurationArrayInput` via:
+//
+//	AddonConfigurationArray{ AddonConfigurationArgs{...} }
+type AddonConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToAddonConfigurationArrayOutput() AddonConfigurationArrayOutput
+	ToAddonConfigurationArrayOutputWithContext(context.Context) AddonConfigurationArrayOutput
+}
+
+type AddonConfigurationArray []AddonConfigurationInput
+
+func (AddonConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddonConfiguration)(nil)).Elem()
+}
+
+func (i AddonConfigurationArray) ToAddonConfigurationArrayOutput() AddonConfigurationArrayOutput {
+	return i.ToAddonConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i AddonConfigurationArray) ToAddonConfigurationArrayOutputWithContext(ctx context.Context) AddonConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddonConfigurationArrayOutput)
+}
+
+type AddonConfigurationOutput struct{ *pulumi.OutputState }
+
+func (AddonConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddonConfiguration)(nil)).Elem()
+}
+
+func (o AddonConfigurationOutput) ToAddonConfigurationOutput() AddonConfigurationOutput {
+	return o
+}
+
+func (o AddonConfigurationOutput) ToAddonConfigurationOutputWithContext(ctx context.Context) AddonConfigurationOutput {
+	return o
+}
+
+// (Updatable) configuration key name
+func (o AddonConfigurationOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddonConfiguration) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) configuration value name
+func (o AddonConfigurationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddonConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AddonConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (AddonConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddonConfiguration)(nil)).Elem()
+}
+
+func (o AddonConfigurationArrayOutput) ToAddonConfigurationArrayOutput() AddonConfigurationArrayOutput {
+	return o
+}
+
+func (o AddonConfigurationArrayOutput) ToAddonConfigurationArrayOutputWithContext(ctx context.Context) AddonConfigurationArrayOutput {
+	return o
+}
+
+func (o AddonConfigurationArrayOutput) Index(i pulumi.IntInput) AddonConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AddonConfiguration {
+		return vs[0].([]AddonConfiguration)[vs[1].(int)]
+	}).(AddonConfigurationOutput)
+}
+
 type ClusterClusterPodNetworkOption struct {
 	// The CNI used by the node pools of this cluster
 	CniType string `pulumi:"cniType"`
@@ -5278,6 +5499,2070 @@ func (o NodePoolNodeSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
+type VirtualNodePoolInitialVirtualNodeLabel struct {
+	// (Updatable) The key of the pair.
+	Key *string `pulumi:"key"`
+	// (Updatable) The value of the pair.
+	Value *string `pulumi:"value"`
+}
+
+// VirtualNodePoolInitialVirtualNodeLabelInput is an input type that accepts VirtualNodePoolInitialVirtualNodeLabelArgs and VirtualNodePoolInitialVirtualNodeLabelOutput values.
+// You can construct a concrete instance of `VirtualNodePoolInitialVirtualNodeLabelInput` via:
+//
+//	VirtualNodePoolInitialVirtualNodeLabelArgs{...}
+type VirtualNodePoolInitialVirtualNodeLabelInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolInitialVirtualNodeLabelOutput() VirtualNodePoolInitialVirtualNodeLabelOutput
+	ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(context.Context) VirtualNodePoolInitialVirtualNodeLabelOutput
+}
+
+type VirtualNodePoolInitialVirtualNodeLabelArgs struct {
+	// (Updatable) The key of the pair.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The value of the pair.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VirtualNodePoolInitialVirtualNodeLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (i VirtualNodePoolInitialVirtualNodeLabelArgs) ToVirtualNodePoolInitialVirtualNodeLabelOutput() VirtualNodePoolInitialVirtualNodeLabelOutput {
+	return i.ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolInitialVirtualNodeLabelArgs) ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolInitialVirtualNodeLabelOutput)
+}
+
+// VirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts VirtualNodePoolInitialVirtualNodeLabelArray and VirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
+// You can construct a concrete instance of `VirtualNodePoolInitialVirtualNodeLabelArrayInput` via:
+//
+//	VirtualNodePoolInitialVirtualNodeLabelArray{ VirtualNodePoolInitialVirtualNodeLabelArgs{...} }
+type VirtualNodePoolInitialVirtualNodeLabelArrayInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolInitialVirtualNodeLabelArrayOutput() VirtualNodePoolInitialVirtualNodeLabelArrayOutput
+	ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(context.Context) VirtualNodePoolInitialVirtualNodeLabelArrayOutput
+}
+
+type VirtualNodePoolInitialVirtualNodeLabelArray []VirtualNodePoolInitialVirtualNodeLabelInput
+
+func (VirtualNodePoolInitialVirtualNodeLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (i VirtualNodePoolInitialVirtualNodeLabelArray) ToVirtualNodePoolInitialVirtualNodeLabelArrayOutput() VirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return i.ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolInitialVirtualNodeLabelArray) ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolInitialVirtualNodeLabelArrayOutput)
+}
+
+type VirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToVirtualNodePoolInitialVirtualNodeLabelOutput() VirtualNodePoolInitialVirtualNodeLabelOutput {
+	return o
+}
+
+func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelOutput {
+	return o
+}
+
+// (Updatable) The key of the pair.
+func (o VirtualNodePoolInitialVirtualNodeLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolInitialVirtualNodeLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the pair.
+func (o VirtualNodePoolInitialVirtualNodeLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolInitialVirtualNodeLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VirtualNodePoolInitialVirtualNodeLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToVirtualNodePoolInitialVirtualNodeLabelArrayOutput() VirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return o
+}
+
+func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return o
+}
+
+func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolInitialVirtualNodeLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualNodePoolInitialVirtualNodeLabel {
+		return vs[0].([]VirtualNodePoolInitialVirtualNodeLabel)[vs[1].(int)]
+	}).(VirtualNodePoolInitialVirtualNodeLabelOutput)
+}
+
+type VirtualNodePoolPlacementConfiguration struct {
+	// (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// (Updatable) The fault domain of this virtual node.
+	FaultDomains []string `pulumi:"faultDomains"`
+	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// VirtualNodePoolPlacementConfigurationInput is an input type that accepts VirtualNodePoolPlacementConfigurationArgs and VirtualNodePoolPlacementConfigurationOutput values.
+// You can construct a concrete instance of `VirtualNodePoolPlacementConfigurationInput` via:
+//
+//	VirtualNodePoolPlacementConfigurationArgs{...}
+type VirtualNodePoolPlacementConfigurationInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolPlacementConfigurationOutput() VirtualNodePoolPlacementConfigurationOutput
+	ToVirtualNodePoolPlacementConfigurationOutputWithContext(context.Context) VirtualNodePoolPlacementConfigurationOutput
+}
+
+type VirtualNodePoolPlacementConfigurationArgs struct {
+	// (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// (Updatable) The fault domain of this virtual node.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (VirtualNodePoolPlacementConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i VirtualNodePoolPlacementConfigurationArgs) ToVirtualNodePoolPlacementConfigurationOutput() VirtualNodePoolPlacementConfigurationOutput {
+	return i.ToVirtualNodePoolPlacementConfigurationOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolPlacementConfigurationArgs) ToVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPlacementConfigurationOutput)
+}
+
+// VirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts VirtualNodePoolPlacementConfigurationArray and VirtualNodePoolPlacementConfigurationArrayOutput values.
+// You can construct a concrete instance of `VirtualNodePoolPlacementConfigurationArrayInput` via:
+//
+//	VirtualNodePoolPlacementConfigurationArray{ VirtualNodePoolPlacementConfigurationArgs{...} }
+type VirtualNodePoolPlacementConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolPlacementConfigurationArrayOutput() VirtualNodePoolPlacementConfigurationArrayOutput
+	ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(context.Context) VirtualNodePoolPlacementConfigurationArrayOutput
+}
+
+type VirtualNodePoolPlacementConfigurationArray []VirtualNodePoolPlacementConfigurationInput
+
+func (VirtualNodePoolPlacementConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i VirtualNodePoolPlacementConfigurationArray) ToVirtualNodePoolPlacementConfigurationArrayOutput() VirtualNodePoolPlacementConfigurationArrayOutput {
+	return i.ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolPlacementConfigurationArray) ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPlacementConfigurationArrayOutput)
+}
+
+type VirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o VirtualNodePoolPlacementConfigurationOutput) ToVirtualNodePoolPlacementConfigurationOutput() VirtualNodePoolPlacementConfigurationOutput {
+	return o
+}
+
+func (o VirtualNodePoolPlacementConfigurationOutput) ToVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationOutput {
+	return o
+}
+
+// (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+func (o VirtualNodePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v VirtualNodePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// (Updatable) The fault domain of this virtual node.
+func (o VirtualNodePoolPlacementConfigurationOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v VirtualNodePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The regional subnet where pods' VNIC will be placed.
+func (o VirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v VirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type VirtualNodePoolPlacementConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolPlacementConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToVirtualNodePoolPlacementConfigurationArrayOutput() VirtualNodePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o VirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolPlacementConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualNodePoolPlacementConfiguration {
+		return vs[0].([]VirtualNodePoolPlacementConfiguration)[vs[1].(int)]
+	}).(VirtualNodePoolPlacementConfigurationOutput)
+}
+
+type VirtualNodePoolPodConfiguration struct {
+	// (Updatable) List of network security group IDs applied to the Pod VNIC.
+	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) Shape of the pods.
+	Shape string `pulumi:"shape"`
+	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// VirtualNodePoolPodConfigurationInput is an input type that accepts VirtualNodePoolPodConfigurationArgs and VirtualNodePoolPodConfigurationOutput values.
+// You can construct a concrete instance of `VirtualNodePoolPodConfigurationInput` via:
+//
+//	VirtualNodePoolPodConfigurationArgs{...}
+type VirtualNodePoolPodConfigurationInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolPodConfigurationOutput() VirtualNodePoolPodConfigurationOutput
+	ToVirtualNodePoolPodConfigurationOutputWithContext(context.Context) VirtualNodePoolPodConfigurationOutput
+}
+
+type VirtualNodePoolPodConfigurationArgs struct {
+	// (Updatable) List of network security group IDs applied to the Pod VNIC.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// (Updatable) Shape of the pods.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (VirtualNodePoolPodConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationOutput() VirtualNodePoolPodConfigurationOutput {
+	return i.ToVirtualNodePoolPodConfigurationOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPodConfigurationOutput)
+}
+
+func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationPtrOutput() VirtualNodePoolPodConfigurationPtrOutput {
+	return i.ToVirtualNodePoolPodConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPodConfigurationOutput).ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx)
+}
+
+// VirtualNodePoolPodConfigurationPtrInput is an input type that accepts VirtualNodePoolPodConfigurationArgs, VirtualNodePoolPodConfigurationPtr and VirtualNodePoolPodConfigurationPtrOutput values.
+// You can construct a concrete instance of `VirtualNodePoolPodConfigurationPtrInput` via:
+//
+//	        VirtualNodePoolPodConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type VirtualNodePoolPodConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolPodConfigurationPtrOutput() VirtualNodePoolPodConfigurationPtrOutput
+	ToVirtualNodePoolPodConfigurationPtrOutputWithContext(context.Context) VirtualNodePoolPodConfigurationPtrOutput
+}
+
+type virtualNodePoolPodConfigurationPtrType VirtualNodePoolPodConfigurationArgs
+
+func VirtualNodePoolPodConfigurationPtr(v *VirtualNodePoolPodConfigurationArgs) VirtualNodePoolPodConfigurationPtrInput {
+	return (*virtualNodePoolPodConfigurationPtrType)(v)
+}
+
+func (*virtualNodePoolPodConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (i *virtualNodePoolPodConfigurationPtrType) ToVirtualNodePoolPodConfigurationPtrOutput() VirtualNodePoolPodConfigurationPtrOutput {
+	return i.ToVirtualNodePoolPodConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *virtualNodePoolPodConfigurationPtrType) ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPodConfigurationPtrOutput)
+}
+
+type VirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (o VirtualNodePoolPodConfigurationOutput) ToVirtualNodePoolPodConfigurationOutput() VirtualNodePoolPodConfigurationOutput {
+	return o
+}
+
+func (o VirtualNodePoolPodConfigurationOutput) ToVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationOutput {
+	return o
+}
+
+func (o VirtualNodePoolPodConfigurationOutput) ToVirtualNodePoolPodConfigurationPtrOutput() VirtualNodePoolPodConfigurationPtrOutput {
+	return o.ToVirtualNodePoolPodConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o VirtualNodePoolPodConfigurationOutput) ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualNodePoolPodConfiguration) *VirtualNodePoolPodConfiguration {
+		return &v
+	}).(VirtualNodePoolPodConfigurationPtrOutput)
+}
+
+// (Updatable) List of network security group IDs applied to the Pod VNIC.
+func (o VirtualNodePoolPodConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v VirtualNodePoolPodConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Shape of the pods.
+func (o VirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v VirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// (Updatable) The regional subnet where pods' VNIC will be placed.
+func (o VirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v VirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type VirtualNodePoolPodConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolPodConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (o VirtualNodePoolPodConfigurationPtrOutput) ToVirtualNodePoolPodConfigurationPtrOutput() VirtualNodePoolPodConfigurationPtrOutput {
+	return o
+}
+
+func (o VirtualNodePoolPodConfigurationPtrOutput) ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationPtrOutput {
+	return o
+}
+
+func (o VirtualNodePoolPodConfigurationPtrOutput) Elem() VirtualNodePoolPodConfigurationOutput {
+	return o.ApplyT(func(v *VirtualNodePoolPodConfiguration) VirtualNodePoolPodConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret VirtualNodePoolPodConfiguration
+		return ret
+	}).(VirtualNodePoolPodConfigurationOutput)
+}
+
+// (Updatable) List of network security group IDs applied to the Pod VNIC.
+func (o VirtualNodePoolPodConfigurationPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *VirtualNodePoolPodConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Shape of the pods.
+func (o VirtualNodePoolPodConfigurationPtrOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePoolPodConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Shape
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The regional subnet where pods' VNIC will be placed.
+func (o VirtualNodePoolPodConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePoolPodConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type VirtualNodePoolTaint struct {
+	// (Updatable) The effect of the pair.
+	Effect *string `pulumi:"effect"`
+	// (Updatable) The key of the pair.
+	Key *string `pulumi:"key"`
+	// (Updatable) The value of the pair.
+	Value *string `pulumi:"value"`
+}
+
+// VirtualNodePoolTaintInput is an input type that accepts VirtualNodePoolTaintArgs and VirtualNodePoolTaintOutput values.
+// You can construct a concrete instance of `VirtualNodePoolTaintInput` via:
+//
+//	VirtualNodePoolTaintArgs{...}
+type VirtualNodePoolTaintInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolTaintOutput() VirtualNodePoolTaintOutput
+	ToVirtualNodePoolTaintOutputWithContext(context.Context) VirtualNodePoolTaintOutput
+}
+
+type VirtualNodePoolTaintArgs struct {
+	// (Updatable) The effect of the pair.
+	Effect pulumi.StringPtrInput `pulumi:"effect"`
+	// (Updatable) The key of the pair.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The value of the pair.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VirtualNodePoolTaintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (i VirtualNodePoolTaintArgs) ToVirtualNodePoolTaintOutput() VirtualNodePoolTaintOutput {
+	return i.ToVirtualNodePoolTaintOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolTaintArgs) ToVirtualNodePoolTaintOutputWithContext(ctx context.Context) VirtualNodePoolTaintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolTaintOutput)
+}
+
+// VirtualNodePoolTaintArrayInput is an input type that accepts VirtualNodePoolTaintArray and VirtualNodePoolTaintArrayOutput values.
+// You can construct a concrete instance of `VirtualNodePoolTaintArrayInput` via:
+//
+//	VirtualNodePoolTaintArray{ VirtualNodePoolTaintArgs{...} }
+type VirtualNodePoolTaintArrayInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolTaintArrayOutput() VirtualNodePoolTaintArrayOutput
+	ToVirtualNodePoolTaintArrayOutputWithContext(context.Context) VirtualNodePoolTaintArrayOutput
+}
+
+type VirtualNodePoolTaintArray []VirtualNodePoolTaintInput
+
+func (VirtualNodePoolTaintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (i VirtualNodePoolTaintArray) ToVirtualNodePoolTaintArrayOutput() VirtualNodePoolTaintArrayOutput {
+	return i.ToVirtualNodePoolTaintArrayOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolTaintArray) ToVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) VirtualNodePoolTaintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolTaintArrayOutput)
+}
+
+type VirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolTaintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (o VirtualNodePoolTaintOutput) ToVirtualNodePoolTaintOutput() VirtualNodePoolTaintOutput {
+	return o
+}
+
+func (o VirtualNodePoolTaintOutput) ToVirtualNodePoolTaintOutputWithContext(ctx context.Context) VirtualNodePoolTaintOutput {
+	return o
+}
+
+// (Updatable) The effect of the pair.
+func (o VirtualNodePoolTaintOutput) Effect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The key of the pair.
+func (o VirtualNodePoolTaintOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the pair.
+func (o VirtualNodePoolTaintOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VirtualNodePoolTaintArrayOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolTaintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (o VirtualNodePoolTaintArrayOutput) ToVirtualNodePoolTaintArrayOutput() VirtualNodePoolTaintArrayOutput {
+	return o
+}
+
+func (o VirtualNodePoolTaintArrayOutput) ToVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) VirtualNodePoolTaintArrayOutput {
+	return o
+}
+
+func (o VirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolTaintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualNodePoolTaint {
+		return vs[0].([]VirtualNodePoolTaint)[vs[1].(int)]
+	}).(VirtualNodePoolTaintOutput)
+}
+
+type VirtualNodePoolVirtualNodeTags struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+}
+
+// VirtualNodePoolVirtualNodeTagsInput is an input type that accepts VirtualNodePoolVirtualNodeTagsArgs and VirtualNodePoolVirtualNodeTagsOutput values.
+// You can construct a concrete instance of `VirtualNodePoolVirtualNodeTagsInput` via:
+//
+//	VirtualNodePoolVirtualNodeTagsArgs{...}
+type VirtualNodePoolVirtualNodeTagsInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolVirtualNodeTagsOutput() VirtualNodePoolVirtualNodeTagsOutput
+	ToVirtualNodePoolVirtualNodeTagsOutputWithContext(context.Context) VirtualNodePoolVirtualNodeTagsOutput
+}
+
+type VirtualNodePoolVirtualNodeTagsArgs struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+}
+
+func (VirtualNodePoolVirtualNodeTagsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolVirtualNodeTags)(nil)).Elem()
+}
+
+func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsOutput() VirtualNodePoolVirtualNodeTagsOutput {
+	return i.ToVirtualNodePoolVirtualNodeTagsOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodeTagsOutput)
+}
+
+func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsPtrOutput() VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return i.ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodeTagsOutput).ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx)
+}
+
+// VirtualNodePoolVirtualNodeTagsPtrInput is an input type that accepts VirtualNodePoolVirtualNodeTagsArgs, VirtualNodePoolVirtualNodeTagsPtr and VirtualNodePoolVirtualNodeTagsPtrOutput values.
+// You can construct a concrete instance of `VirtualNodePoolVirtualNodeTagsPtrInput` via:
+//
+//	        VirtualNodePoolVirtualNodeTagsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VirtualNodePoolVirtualNodeTagsPtrInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolVirtualNodeTagsPtrOutput() VirtualNodePoolVirtualNodeTagsPtrOutput
+	ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(context.Context) VirtualNodePoolVirtualNodeTagsPtrOutput
+}
+
+type virtualNodePoolVirtualNodeTagsPtrType VirtualNodePoolVirtualNodeTagsArgs
+
+func VirtualNodePoolVirtualNodeTagsPtr(v *VirtualNodePoolVirtualNodeTagsArgs) VirtualNodePoolVirtualNodeTagsPtrInput {
+	return (*virtualNodePoolVirtualNodeTagsPtrType)(v)
+}
+
+func (*virtualNodePoolVirtualNodeTagsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VirtualNodePoolVirtualNodeTags)(nil)).Elem()
+}
+
+func (i *virtualNodePoolVirtualNodeTagsPtrType) ToVirtualNodePoolVirtualNodeTagsPtrOutput() VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return i.ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(context.Background())
+}
+
+func (i *virtualNodePoolVirtualNodeTagsPtrType) ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodeTagsPtrOutput)
+}
+
+type VirtualNodePoolVirtualNodeTagsOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolVirtualNodeTagsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolVirtualNodeTags)(nil)).Elem()
+}
+
+func (o VirtualNodePoolVirtualNodeTagsOutput) ToVirtualNodePoolVirtualNodeTagsOutput() VirtualNodePoolVirtualNodeTagsOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodeTagsOutput) ToVirtualNodePoolVirtualNodeTagsOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodeTagsOutput) ToVirtualNodePoolVirtualNodeTagsPtrOutput() VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return o.ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(context.Background())
+}
+
+func (o VirtualNodePoolVirtualNodeTagsOutput) ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualNodePoolVirtualNodeTags) *VirtualNodePoolVirtualNodeTags {
+		return &v
+	}).(VirtualNodePoolVirtualNodeTagsPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o VirtualNodePoolVirtualNodeTagsOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v VirtualNodePoolVirtualNodeTags) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o VirtualNodePoolVirtualNodeTagsOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v VirtualNodePoolVirtualNodeTags) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+type VirtualNodePoolVirtualNodeTagsPtrOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolVirtualNodeTagsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VirtualNodePoolVirtualNodeTags)(nil)).Elem()
+}
+
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToVirtualNodePoolVirtualNodeTagsPtrOutput() VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) Elem() VirtualNodePoolVirtualNodeTagsOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) VirtualNodePoolVirtualNodeTags {
+		if v != nil {
+			return *v
+		}
+		var ret VirtualNodePoolVirtualNodeTags
+		return ret
+	}).(VirtualNodePoolVirtualNodeTagsOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+type GetAddonAddonError struct {
+	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+	Code string `pulumi:"code"`
+	// A human-readable error string of the upstream error.
+	Message string `pulumi:"message"`
+	// The status of the HTTP response encountered in the upstream error.
+	Status string `pulumi:"status"`
+}
+
+// GetAddonAddonErrorInput is an input type that accepts GetAddonAddonErrorArgs and GetAddonAddonErrorOutput values.
+// You can construct a concrete instance of `GetAddonAddonErrorInput` via:
+//
+//	GetAddonAddonErrorArgs{...}
+type GetAddonAddonErrorInput interface {
+	pulumi.Input
+
+	ToGetAddonAddonErrorOutput() GetAddonAddonErrorOutput
+	ToGetAddonAddonErrorOutputWithContext(context.Context) GetAddonAddonErrorOutput
+}
+
+type GetAddonAddonErrorArgs struct {
+	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+	Code pulumi.StringInput `pulumi:"code"`
+	// A human-readable error string of the upstream error.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The status of the HTTP response encountered in the upstream error.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetAddonAddonErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonAddonError)(nil)).Elem()
+}
+
+func (i GetAddonAddonErrorArgs) ToGetAddonAddonErrorOutput() GetAddonAddonErrorOutput {
+	return i.ToGetAddonAddonErrorOutputWithContext(context.Background())
+}
+
+func (i GetAddonAddonErrorArgs) ToGetAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonAddonErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonAddonErrorOutput)
+}
+
+// GetAddonAddonErrorArrayInput is an input type that accepts GetAddonAddonErrorArray and GetAddonAddonErrorArrayOutput values.
+// You can construct a concrete instance of `GetAddonAddonErrorArrayInput` via:
+//
+//	GetAddonAddonErrorArray{ GetAddonAddonErrorArgs{...} }
+type GetAddonAddonErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonAddonErrorArrayOutput() GetAddonAddonErrorArrayOutput
+	ToGetAddonAddonErrorArrayOutputWithContext(context.Context) GetAddonAddonErrorArrayOutput
+}
+
+type GetAddonAddonErrorArray []GetAddonAddonErrorInput
+
+func (GetAddonAddonErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonAddonError)(nil)).Elem()
+}
+
+func (i GetAddonAddonErrorArray) ToGetAddonAddonErrorArrayOutput() GetAddonAddonErrorArrayOutput {
+	return i.ToGetAddonAddonErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonAddonErrorArray) ToGetAddonAddonErrorArrayOutputWithContext(ctx context.Context) GetAddonAddonErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonAddonErrorArrayOutput)
+}
+
+type GetAddonAddonErrorOutput struct{ *pulumi.OutputState }
+
+func (GetAddonAddonErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonAddonError)(nil)).Elem()
+}
+
+func (o GetAddonAddonErrorOutput) ToGetAddonAddonErrorOutput() GetAddonAddonErrorOutput {
+	return o
+}
+
+func (o GetAddonAddonErrorOutput) ToGetAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonAddonErrorOutput {
+	return o
+}
+
+// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+func (o GetAddonAddonErrorOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonAddonError) string { return v.Code }).(pulumi.StringOutput)
+}
+
+// A human-readable error string of the upstream error.
+func (o GetAddonAddonErrorOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonAddonError) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The status of the HTTP response encountered in the upstream error.
+func (o GetAddonAddonErrorOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonAddonError) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetAddonAddonErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonAddonErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonAddonError)(nil)).Elem()
+}
+
+func (o GetAddonAddonErrorArrayOutput) ToGetAddonAddonErrorArrayOutput() GetAddonAddonErrorArrayOutput {
+	return o
+}
+
+func (o GetAddonAddonErrorArrayOutput) ToGetAddonAddonErrorArrayOutputWithContext(ctx context.Context) GetAddonAddonErrorArrayOutput {
+	return o
+}
+
+func (o GetAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonAddonErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonAddonError {
+		return vs[0].([]GetAddonAddonError)[vs[1].(int)]
+	}).(GetAddonAddonErrorOutput)
+}
+
+type GetAddonConfiguration struct {
+	// configuration key name
+	Key string `pulumi:"key"`
+	// configuration value name
+	Value string `pulumi:"value"`
+}
+
+// GetAddonConfigurationInput is an input type that accepts GetAddonConfigurationArgs and GetAddonConfigurationOutput values.
+// You can construct a concrete instance of `GetAddonConfigurationInput` via:
+//
+//	GetAddonConfigurationArgs{...}
+type GetAddonConfigurationInput interface {
+	pulumi.Input
+
+	ToGetAddonConfigurationOutput() GetAddonConfigurationOutput
+	ToGetAddonConfigurationOutputWithContext(context.Context) GetAddonConfigurationOutput
+}
+
+type GetAddonConfigurationArgs struct {
+	// configuration key name
+	Key pulumi.StringInput `pulumi:"key"`
+	// configuration value name
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAddonConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonConfiguration)(nil)).Elem()
+}
+
+func (i GetAddonConfigurationArgs) ToGetAddonConfigurationOutput() GetAddonConfigurationOutput {
+	return i.ToGetAddonConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetAddonConfigurationArgs) ToGetAddonConfigurationOutputWithContext(ctx context.Context) GetAddonConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonConfigurationOutput)
+}
+
+// GetAddonConfigurationArrayInput is an input type that accepts GetAddonConfigurationArray and GetAddonConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetAddonConfigurationArrayInput` via:
+//
+//	GetAddonConfigurationArray{ GetAddonConfigurationArgs{...} }
+type GetAddonConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonConfigurationArrayOutput() GetAddonConfigurationArrayOutput
+	ToGetAddonConfigurationArrayOutputWithContext(context.Context) GetAddonConfigurationArrayOutput
+}
+
+type GetAddonConfigurationArray []GetAddonConfigurationInput
+
+func (GetAddonConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonConfiguration)(nil)).Elem()
+}
+
+func (i GetAddonConfigurationArray) ToGetAddonConfigurationArrayOutput() GetAddonConfigurationArrayOutput {
+	return i.ToGetAddonConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonConfigurationArray) ToGetAddonConfigurationArrayOutputWithContext(ctx context.Context) GetAddonConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonConfigurationArrayOutput)
+}
+
+type GetAddonConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetAddonConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonConfiguration)(nil)).Elem()
+}
+
+func (o GetAddonConfigurationOutput) ToGetAddonConfigurationOutput() GetAddonConfigurationOutput {
+	return o
+}
+
+func (o GetAddonConfigurationOutput) ToGetAddonConfigurationOutputWithContext(ctx context.Context) GetAddonConfigurationOutput {
+	return o
+}
+
+// configuration key name
+func (o GetAddonConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// configuration value name
+func (o GetAddonConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAddonConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonConfiguration)(nil)).Elem()
+}
+
+func (o GetAddonConfigurationArrayOutput) ToGetAddonConfigurationArrayOutput() GetAddonConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAddonConfigurationArrayOutput) ToGetAddonConfigurationArrayOutputWithContext(ctx context.Context) GetAddonConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAddonConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonConfiguration {
+		return vs[0].([]GetAddonConfiguration)[vs[1].(int)]
+	}).(GetAddonConfigurationOutput)
+}
+
+type GetAddonOptionsAddonOption struct {
+	// Addon group info, a namespace concept that groups addons with similar functionalities.
+	AddonGroup string `pulumi:"addonGroup"`
+	// Addon definition schema version to validate addon.
+	AddonSchemaVersion string `pulumi:"addonSchemaVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Information about the addon version.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Is it an essential addon for cluster operation or not.
+	IsEssential bool `pulumi:"isEssential"`
+	// Name of the addon and it would be unique.
+	Name string `pulumi:"name"`
+	// The life cycle state of the addon.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the work request was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The resources this work request affects.
+	Versions []GetAddonOptionsAddonOptionVersion `pulumi:"versions"`
+}
+
+// GetAddonOptionsAddonOptionInput is an input type that accepts GetAddonOptionsAddonOptionArgs and GetAddonOptionsAddonOptionOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionInput` via:
+//
+//	GetAddonOptionsAddonOptionArgs{...}
+type GetAddonOptionsAddonOptionInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionOutput() GetAddonOptionsAddonOptionOutput
+	ToGetAddonOptionsAddonOptionOutputWithContext(context.Context) GetAddonOptionsAddonOptionOutput
+}
+
+type GetAddonOptionsAddonOptionArgs struct {
+	// Addon group info, a namespace concept that groups addons with similar functionalities.
+	AddonGroup pulumi.StringInput `pulumi:"addonGroup"`
+	// Addon definition schema version to validate addon.
+	AddonSchemaVersion pulumi.StringInput `pulumi:"addonSchemaVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Information about the addon version.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Is it an essential addon for cluster operation or not.
+	IsEssential pulumi.BoolInput `pulumi:"isEssential"`
+	// Name of the addon and it would be unique.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The life cycle state of the addon.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the work request was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The resources this work request affects.
+	Versions GetAddonOptionsAddonOptionVersionArrayInput `pulumi:"versions"`
+}
+
+func (GetAddonOptionsAddonOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOption)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionArgs) ToGetAddonOptionsAddonOptionOutput() GetAddonOptionsAddonOptionOutput {
+	return i.ToGetAddonOptionsAddonOptionOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionArgs) ToGetAddonOptionsAddonOptionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionOutput)
+}
+
+// GetAddonOptionsAddonOptionArrayInput is an input type that accepts GetAddonOptionsAddonOptionArray and GetAddonOptionsAddonOptionArrayOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionArrayInput` via:
+//
+//	GetAddonOptionsAddonOptionArray{ GetAddonOptionsAddonOptionArgs{...} }
+type GetAddonOptionsAddonOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionArrayOutput() GetAddonOptionsAddonOptionArrayOutput
+	ToGetAddonOptionsAddonOptionArrayOutputWithContext(context.Context) GetAddonOptionsAddonOptionArrayOutput
+}
+
+type GetAddonOptionsAddonOptionArray []GetAddonOptionsAddonOptionInput
+
+func (GetAddonOptionsAddonOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOption)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionArray) ToGetAddonOptionsAddonOptionArrayOutput() GetAddonOptionsAddonOptionArrayOutput {
+	return i.ToGetAddonOptionsAddonOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionArray) ToGetAddonOptionsAddonOptionArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionArrayOutput)
+}
+
+type GetAddonOptionsAddonOptionOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOption)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionOutput) ToGetAddonOptionsAddonOptionOutput() GetAddonOptionsAddonOptionOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionOutput) ToGetAddonOptionsAddonOptionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionOutput {
+	return o
+}
+
+// Addon group info, a namespace concept that groups addons with similar functionalities.
+func (o GetAddonOptionsAddonOptionOutput) AddonGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.AddonGroup }).(pulumi.StringOutput)
+}
+
+// Addon definition schema version to validate addon.
+func (o GetAddonOptionsAddonOptionOutput) AddonSchemaVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.AddonSchemaVersion }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetAddonOptionsAddonOptionOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Information about the addon version.
+func (o GetAddonOptionsAddonOptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetAddonOptionsAddonOptionOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Is it an essential addon for cluster operation or not.
+func (o GetAddonOptionsAddonOptionOutput) IsEssential() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) bool { return v.IsEssential }).(pulumi.BoolOutput)
+}
+
+// Name of the addon and it would be unique.
+func (o GetAddonOptionsAddonOptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The life cycle state of the addon.
+func (o GetAddonOptionsAddonOptionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAddonOptionsAddonOptionOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the work request was created.
+func (o GetAddonOptionsAddonOptionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The resources this work request affects.
+func (o GetAddonOptionsAddonOptionOutput) Versions() GetAddonOptionsAddonOptionVersionArrayOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) []GetAddonOptionsAddonOptionVersion { return v.Versions }).(GetAddonOptionsAddonOptionVersionArrayOutput)
+}
+
+type GetAddonOptionsAddonOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOption)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionArrayOutput) ToGetAddonOptionsAddonOptionArrayOutput() GetAddonOptionsAddonOptionArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionArrayOutput) ToGetAddonOptionsAddonOptionArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOption {
+		return vs[0].([]GetAddonOptionsAddonOption)[vs[1].(int)]
+	}).(GetAddonOptionsAddonOptionOutput)
+}
+
+type GetAddonOptionsAddonOptionVersion struct {
+	// Addon version configuration details.
+	Configurations []GetAddonOptionsAddonOptionVersionConfiguration `pulumi:"configurations"`
+	// Information about the addon version.
+	Description string `pulumi:"description"`
+	// The range of kubernetes versions an addon can be configured.
+	KubernetesVersionFilters []GetAddonOptionsAddonOptionVersionKubernetesVersionFilter `pulumi:"kubernetesVersionFilters"`
+	// Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
+	Status string `pulumi:"status"`
+	// Version number, need be comparable within an addon.
+	VersionNumber string `pulumi:"versionNumber"`
+}
+
+// GetAddonOptionsAddonOptionVersionInput is an input type that accepts GetAddonOptionsAddonOptionVersionArgs and GetAddonOptionsAddonOptionVersionOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionInput` via:
+//
+//	GetAddonOptionsAddonOptionVersionArgs{...}
+type GetAddonOptionsAddonOptionVersionInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionVersionOutput() GetAddonOptionsAddonOptionVersionOutput
+	ToGetAddonOptionsAddonOptionVersionOutputWithContext(context.Context) GetAddonOptionsAddonOptionVersionOutput
+}
+
+type GetAddonOptionsAddonOptionVersionArgs struct {
+	// Addon version configuration details.
+	Configurations GetAddonOptionsAddonOptionVersionConfigurationArrayInput `pulumi:"configurations"`
+	// Information about the addon version.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The range of kubernetes versions an addon can be configured.
+	KubernetesVersionFilters GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput `pulumi:"kubernetesVersionFilters"`
+	// Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Version number, need be comparable within an addon.
+	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+}
+
+func (GetAddonOptionsAddonOptionVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOptionVersion)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionVersionArgs) ToGetAddonOptionsAddonOptionVersionOutput() GetAddonOptionsAddonOptionVersionOutput {
+	return i.ToGetAddonOptionsAddonOptionVersionOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionVersionArgs) ToGetAddonOptionsAddonOptionVersionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionOutput)
+}
+
+// GetAddonOptionsAddonOptionVersionArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionArray and GetAddonOptionsAddonOptionVersionArrayOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionArrayInput` via:
+//
+//	GetAddonOptionsAddonOptionVersionArray{ GetAddonOptionsAddonOptionVersionArgs{...} }
+type GetAddonOptionsAddonOptionVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionVersionArrayOutput() GetAddonOptionsAddonOptionVersionArrayOutput
+	ToGetAddonOptionsAddonOptionVersionArrayOutputWithContext(context.Context) GetAddonOptionsAddonOptionVersionArrayOutput
+}
+
+type GetAddonOptionsAddonOptionVersionArray []GetAddonOptionsAddonOptionVersionInput
+
+func (GetAddonOptionsAddonOptionVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOptionVersion)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionVersionArray) ToGetAddonOptionsAddonOptionVersionArrayOutput() GetAddonOptionsAddonOptionVersionArrayOutput {
+	return i.ToGetAddonOptionsAddonOptionVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionVersionArray) ToGetAddonOptionsAddonOptionVersionArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionArrayOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOptionVersion)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionVersionOutput) ToGetAddonOptionsAddonOptionVersionOutput() GetAddonOptionsAddonOptionVersionOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionOutput) ToGetAddonOptionsAddonOptionVersionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionOutput {
+	return o
+}
+
+// Addon version configuration details.
+func (o GetAddonOptionsAddonOptionVersionOutput) Configurations() GetAddonOptionsAddonOptionVersionConfigurationArrayOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) []GetAddonOptionsAddonOptionVersionConfiguration {
+		return v.Configurations
+	}).(GetAddonOptionsAddonOptionVersionConfigurationArrayOutput)
+}
+
+// Information about the addon version.
+func (o GetAddonOptionsAddonOptionVersionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The range of kubernetes versions an addon can be configured.
+func (o GetAddonOptionsAddonOptionVersionOutput) KubernetesVersionFilters() GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) []GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
+		return v.KubernetesVersionFilters
+	}).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput)
+}
+
+// Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
+func (o GetAddonOptionsAddonOptionVersionOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Version number, need be comparable within an addon.
+func (o GetAddonOptionsAddonOptionVersionOutput) VersionNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) string { return v.VersionNumber }).(pulumi.StringOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOptionVersion)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionVersionArrayOutput) ToGetAddonOptionsAddonOptionVersionArrayOutput() GetAddonOptionsAddonOptionVersionArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionArrayOutput) ToGetAddonOptionsAddonOptionVersionArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOptionVersion {
+		return vs[0].([]GetAddonOptionsAddonOptionVersion)[vs[1].(int)]
+	}).(GetAddonOptionsAddonOptionVersionOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionConfiguration struct {
+	// Information about the addon version.
+	Description string `pulumi:"description"`
+	// Display name of addon version.
+	DisplayName string `pulumi:"displayName"`
+	// If the the configuration is required or not.
+	IsRequired bool `pulumi:"isRequired"`
+	// Addon configuration key
+	Key string `pulumi:"key"`
+	// Addon configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetAddonOptionsAddonOptionVersionConfigurationInput is an input type that accepts GetAddonOptionsAddonOptionVersionConfigurationArgs and GetAddonOptionsAddonOptionVersionConfigurationOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionConfigurationInput` via:
+//
+//	GetAddonOptionsAddonOptionVersionConfigurationArgs{...}
+type GetAddonOptionsAddonOptionVersionConfigurationInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionVersionConfigurationOutput() GetAddonOptionsAddonOptionVersionConfigurationOutput
+	ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(context.Context) GetAddonOptionsAddonOptionVersionConfigurationOutput
+}
+
+type GetAddonOptionsAddonOptionVersionConfigurationArgs struct {
+	// Information about the addon version.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Display name of addon version.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// If the the configuration is required or not.
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// Addon configuration key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Addon configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAddonOptionsAddonOptionVersionConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOptionVersionConfiguration)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionVersionConfigurationArgs) ToGetAddonOptionsAddonOptionVersionConfigurationOutput() GetAddonOptionsAddonOptionVersionConfigurationOutput {
+	return i.ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionVersionConfigurationArgs) ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionConfigurationOutput)
+}
+
+// GetAddonOptionsAddonOptionVersionConfigurationArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionConfigurationArray and GetAddonOptionsAddonOptionVersionConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionConfigurationArrayInput` via:
+//
+//	GetAddonOptionsAddonOptionVersionConfigurationArray{ GetAddonOptionsAddonOptionVersionConfigurationArgs{...} }
+type GetAddonOptionsAddonOptionVersionConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutput() GetAddonOptionsAddonOptionVersionConfigurationArrayOutput
+	ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutputWithContext(context.Context) GetAddonOptionsAddonOptionVersionConfigurationArrayOutput
+}
+
+type GetAddonOptionsAddonOptionVersionConfigurationArray []GetAddonOptionsAddonOptionVersionConfigurationInput
+
+func (GetAddonOptionsAddonOptionVersionConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOptionVersionConfiguration)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionVersionConfigurationArray) ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutput() GetAddonOptionsAddonOptionVersionConfigurationArrayOutput {
+	return i.ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionVersionConfigurationArray) ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionConfigurationArrayOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionVersionConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOptionVersionConfiguration)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) ToGetAddonOptionsAddonOptionVersionConfigurationOutput() GetAddonOptionsAddonOptionVersionConfigurationOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionConfigurationOutput {
+	return o
+}
+
+// Information about the addon version.
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Display name of addon version.
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// If the the configuration is required or not.
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) bool { return v.IsRequired }).(pulumi.BoolOutput)
+}
+
+// Addon configuration key
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Addon configuration value
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOptionVersionConfiguration)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutput() GetAddonOptionsAddonOptionVersionConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOptionVersionConfiguration {
+		return vs[0].([]GetAddonOptionsAddonOptionVersionConfiguration)[vs[1].(int)]
+	}).(GetAddonOptionsAddonOptionVersionConfigurationOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionKubernetesVersionFilter struct {
+	// The exact version of kubernetes that are compatible.
+	ExactKubernetesVersions []string `pulumi:"exactKubernetesVersions"`
+	// The latest kubernetes version.
+	MaximumVersion string `pulumi:"maximumVersion"`
+	// The earliest kubernetes version.
+	MinimalVersion string `pulumi:"minimalVersion"`
+}
+
+// GetAddonOptionsAddonOptionVersionKubernetesVersionFilterInput is an input type that accepts GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs and GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionKubernetesVersionFilterInput` via:
+//
+//	GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs{...}
+type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput() GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput
+	ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput
+}
+
+type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs struct {
+	// The exact version of kubernetes that are compatible.
+	ExactKubernetesVersions pulumi.StringArrayInput `pulumi:"exactKubernetesVersions"`
+	// The latest kubernetes version.
+	MaximumVersion pulumi.StringInput `pulumi:"maximumVersion"`
+	// The earliest kubernetes version.
+	MinimalVersion pulumi.StringInput `pulumi:"minimalVersion"`
+}
+
+func (GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOptionVersionKubernetesVersionFilter)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput() GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
+	return i.ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput)
+}
+
+// GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray and GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput values.
+// You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput` via:
+//
+//	GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray{ GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs{...} }
+type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput() GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput
+	ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput
+}
+
+type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray []GetAddonOptionsAddonOptionVersionKubernetesVersionFilterInput
+
+func (GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter)(nil)).Elem()
+}
+
+func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput() GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput {
+	return i.ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsAddonOptionVersionKubernetesVersionFilter)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput() GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
+	return o
+}
+
+// The exact version of kubernetes that are compatible.
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ExactKubernetesVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) []string {
+		return v.ExactKubernetesVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+// The latest kubernetes version.
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) MaximumVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) string { return v.MaximumVersion }).(pulumi.StringOutput)
+}
+
+// The earliest kubernetes version.
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) MinimalVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) string { return v.MinimalVersion }).(pulumi.StringOutput)
+}
+
+type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter)(nil)).Elem()
+}
+
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput() GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
+		return vs[0].([]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter)[vs[1].(int)]
+	}).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput)
+}
+
+type GetAddonOptionsFilter struct {
+	// Name of the addon and it would be unique.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAddonOptionsFilterInput is an input type that accepts GetAddonOptionsFilterArgs and GetAddonOptionsFilterOutput values.
+// You can construct a concrete instance of `GetAddonOptionsFilterInput` via:
+//
+//	GetAddonOptionsFilterArgs{...}
+type GetAddonOptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsFilterOutput() GetAddonOptionsFilterOutput
+	ToGetAddonOptionsFilterOutputWithContext(context.Context) GetAddonOptionsFilterOutput
+}
+
+type GetAddonOptionsFilterArgs struct {
+	// Name of the addon and it would be unique.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAddonOptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsFilter)(nil)).Elem()
+}
+
+func (i GetAddonOptionsFilterArgs) ToGetAddonOptionsFilterOutput() GetAddonOptionsFilterOutput {
+	return i.ToGetAddonOptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsFilterArgs) ToGetAddonOptionsFilterOutputWithContext(ctx context.Context) GetAddonOptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsFilterOutput)
+}
+
+// GetAddonOptionsFilterArrayInput is an input type that accepts GetAddonOptionsFilterArray and GetAddonOptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAddonOptionsFilterArrayInput` via:
+//
+//	GetAddonOptionsFilterArray{ GetAddonOptionsFilterArgs{...} }
+type GetAddonOptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonOptionsFilterArrayOutput() GetAddonOptionsFilterArrayOutput
+	ToGetAddonOptionsFilterArrayOutputWithContext(context.Context) GetAddonOptionsFilterArrayOutput
+}
+
+type GetAddonOptionsFilterArray []GetAddonOptionsFilterInput
+
+func (GetAddonOptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsFilter)(nil)).Elem()
+}
+
+func (i GetAddonOptionsFilterArray) ToGetAddonOptionsFilterArrayOutput() GetAddonOptionsFilterArrayOutput {
+	return i.ToGetAddonOptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonOptionsFilterArray) ToGetAddonOptionsFilterArrayOutputWithContext(ctx context.Context) GetAddonOptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsFilterArrayOutput)
+}
+
+type GetAddonOptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonOptionsFilter)(nil)).Elem()
+}
+
+func (o GetAddonOptionsFilterOutput) ToGetAddonOptionsFilterOutput() GetAddonOptionsFilterOutput {
+	return o
+}
+
+func (o GetAddonOptionsFilterOutput) ToGetAddonOptionsFilterOutputWithContext(ctx context.Context) GetAddonOptionsFilterOutput {
+	return o
+}
+
+// Name of the addon and it would be unique.
+func (o GetAddonOptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonOptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAddonOptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAddonOptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAddonOptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAddonOptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonOptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonOptionsFilter)(nil)).Elem()
+}
+
+func (o GetAddonOptionsFilterArrayOutput) ToGetAddonOptionsFilterArrayOutput() GetAddonOptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsFilterArrayOutput) ToGetAddonOptionsFilterArrayOutputWithContext(ctx context.Context) GetAddonOptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetAddonOptionsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsFilter {
+		return vs[0].([]GetAddonOptionsFilter)[vs[1].(int)]
+	}).(GetAddonOptionsFilterOutput)
+}
+
+type GetAddonsAddon struct {
+	// The error info of the addon.
+	AddonErrors []GetAddonsAddonAddonError `pulumi:"addonErrors"`
+	// The name of the addon.
+	AddonName string `pulumi:"addonName"`
+	// The OCID of the cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// Addon configuration details.
+	Configurations []GetAddonsAddonConfiguration `pulumi:"configurations"`
+	// current installed version of the addon
+	CurrentInstalledVersion      string `pulumi:"currentInstalledVersion"`
+	RemoveAddonResourcesOnDelete bool   `pulumi:"removeAddonResourcesOnDelete"`
+	// The state of the addon.
+	State string `pulumi:"state"`
+	// The time the cluster was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// selected addon version, or null indicates autoUpdate
+	Version string `pulumi:"version"`
+}
+
+// GetAddonsAddonInput is an input type that accepts GetAddonsAddonArgs and GetAddonsAddonOutput values.
+// You can construct a concrete instance of `GetAddonsAddonInput` via:
+//
+//	GetAddonsAddonArgs{...}
+type GetAddonsAddonInput interface {
+	pulumi.Input
+
+	ToGetAddonsAddonOutput() GetAddonsAddonOutput
+	ToGetAddonsAddonOutputWithContext(context.Context) GetAddonsAddonOutput
+}
+
+type GetAddonsAddonArgs struct {
+	// The error info of the addon.
+	AddonErrors GetAddonsAddonAddonErrorArrayInput `pulumi:"addonErrors"`
+	// The name of the addon.
+	AddonName pulumi.StringInput `pulumi:"addonName"`
+	// The OCID of the cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// Addon configuration details.
+	Configurations GetAddonsAddonConfigurationArrayInput `pulumi:"configurations"`
+	// current installed version of the addon
+	CurrentInstalledVersion      pulumi.StringInput `pulumi:"currentInstalledVersion"`
+	RemoveAddonResourcesOnDelete pulumi.BoolInput   `pulumi:"removeAddonResourcesOnDelete"`
+	// The state of the addon.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the cluster was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// selected addon version, or null indicates autoUpdate
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetAddonsAddonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsAddon)(nil)).Elem()
+}
+
+func (i GetAddonsAddonArgs) ToGetAddonsAddonOutput() GetAddonsAddonOutput {
+	return i.ToGetAddonsAddonOutputWithContext(context.Background())
+}
+
+func (i GetAddonsAddonArgs) ToGetAddonsAddonOutputWithContext(ctx context.Context) GetAddonsAddonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonOutput)
+}
+
+// GetAddonsAddonArrayInput is an input type that accepts GetAddonsAddonArray and GetAddonsAddonArrayOutput values.
+// You can construct a concrete instance of `GetAddonsAddonArrayInput` via:
+//
+//	GetAddonsAddonArray{ GetAddonsAddonArgs{...} }
+type GetAddonsAddonArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonsAddonArrayOutput() GetAddonsAddonArrayOutput
+	ToGetAddonsAddonArrayOutputWithContext(context.Context) GetAddonsAddonArrayOutput
+}
+
+type GetAddonsAddonArray []GetAddonsAddonInput
+
+func (GetAddonsAddonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsAddon)(nil)).Elem()
+}
+
+func (i GetAddonsAddonArray) ToGetAddonsAddonArrayOutput() GetAddonsAddonArrayOutput {
+	return i.ToGetAddonsAddonArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonsAddonArray) ToGetAddonsAddonArrayOutputWithContext(ctx context.Context) GetAddonsAddonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonArrayOutput)
+}
+
+type GetAddonsAddonOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsAddonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsAddon)(nil)).Elem()
+}
+
+func (o GetAddonsAddonOutput) ToGetAddonsAddonOutput() GetAddonsAddonOutput {
+	return o
+}
+
+func (o GetAddonsAddonOutput) ToGetAddonsAddonOutputWithContext(ctx context.Context) GetAddonsAddonOutput {
+	return o
+}
+
+// The error info of the addon.
+func (o GetAddonsAddonOutput) AddonErrors() GetAddonsAddonAddonErrorArrayOutput {
+	return o.ApplyT(func(v GetAddonsAddon) []GetAddonsAddonAddonError { return v.AddonErrors }).(GetAddonsAddonAddonErrorArrayOutput)
+}
+
+// The name of the addon.
+func (o GetAddonsAddonOutput) AddonName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddon) string { return v.AddonName }).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster.
+func (o GetAddonsAddonOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddon) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// Addon configuration details.
+func (o GetAddonsAddonOutput) Configurations() GetAddonsAddonConfigurationArrayOutput {
+	return o.ApplyT(func(v GetAddonsAddon) []GetAddonsAddonConfiguration { return v.Configurations }).(GetAddonsAddonConfigurationArrayOutput)
+}
+
+// current installed version of the addon
+func (o GetAddonsAddonOutput) CurrentInstalledVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddon) string { return v.CurrentInstalledVersion }).(pulumi.StringOutput)
+}
+
+func (o GetAddonsAddonOutput) RemoveAddonResourcesOnDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAddonsAddon) bool { return v.RemoveAddonResourcesOnDelete }).(pulumi.BoolOutput)
+}
+
+// The state of the addon.
+func (o GetAddonsAddonOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddon) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the cluster was created.
+func (o GetAddonsAddonOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddon) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// selected addon version, or null indicates autoUpdate
+func (o GetAddonsAddonOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddon) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetAddonsAddonArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsAddonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsAddon)(nil)).Elem()
+}
+
+func (o GetAddonsAddonArrayOutput) ToGetAddonsAddonArrayOutput() GetAddonsAddonArrayOutput {
+	return o
+}
+
+func (o GetAddonsAddonArrayOutput) ToGetAddonsAddonArrayOutputWithContext(ctx context.Context) GetAddonsAddonArrayOutput {
+	return o
+}
+
+func (o GetAddonsAddonArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsAddon {
+		return vs[0].([]GetAddonsAddon)[vs[1].(int)]
+	}).(GetAddonsAddonOutput)
+}
+
+type GetAddonsAddonAddonError struct {
+	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+	Code string `pulumi:"code"`
+	// A human-readable error string of the upstream error.
+	Message string `pulumi:"message"`
+	// The status of the HTTP response encountered in the upstream error.
+	Status string `pulumi:"status"`
+}
+
+// GetAddonsAddonAddonErrorInput is an input type that accepts GetAddonsAddonAddonErrorArgs and GetAddonsAddonAddonErrorOutput values.
+// You can construct a concrete instance of `GetAddonsAddonAddonErrorInput` via:
+//
+//	GetAddonsAddonAddonErrorArgs{...}
+type GetAddonsAddonAddonErrorInput interface {
+	pulumi.Input
+
+	ToGetAddonsAddonAddonErrorOutput() GetAddonsAddonAddonErrorOutput
+	ToGetAddonsAddonAddonErrorOutputWithContext(context.Context) GetAddonsAddonAddonErrorOutput
+}
+
+type GetAddonsAddonAddonErrorArgs struct {
+	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+	Code pulumi.StringInput `pulumi:"code"`
+	// A human-readable error string of the upstream error.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The status of the HTTP response encountered in the upstream error.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetAddonsAddonAddonErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsAddonAddonError)(nil)).Elem()
+}
+
+func (i GetAddonsAddonAddonErrorArgs) ToGetAddonsAddonAddonErrorOutput() GetAddonsAddonAddonErrorOutput {
+	return i.ToGetAddonsAddonAddonErrorOutputWithContext(context.Background())
+}
+
+func (i GetAddonsAddonAddonErrorArgs) ToGetAddonsAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonsAddonAddonErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonAddonErrorOutput)
+}
+
+// GetAddonsAddonAddonErrorArrayInput is an input type that accepts GetAddonsAddonAddonErrorArray and GetAddonsAddonAddonErrorArrayOutput values.
+// You can construct a concrete instance of `GetAddonsAddonAddonErrorArrayInput` via:
+//
+//	GetAddonsAddonAddonErrorArray{ GetAddonsAddonAddonErrorArgs{...} }
+type GetAddonsAddonAddonErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonsAddonAddonErrorArrayOutput() GetAddonsAddonAddonErrorArrayOutput
+	ToGetAddonsAddonAddonErrorArrayOutputWithContext(context.Context) GetAddonsAddonAddonErrorArrayOutput
+}
+
+type GetAddonsAddonAddonErrorArray []GetAddonsAddonAddonErrorInput
+
+func (GetAddonsAddonAddonErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsAddonAddonError)(nil)).Elem()
+}
+
+func (i GetAddonsAddonAddonErrorArray) ToGetAddonsAddonAddonErrorArrayOutput() GetAddonsAddonAddonErrorArrayOutput {
+	return i.ToGetAddonsAddonAddonErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonsAddonAddonErrorArray) ToGetAddonsAddonAddonErrorArrayOutputWithContext(ctx context.Context) GetAddonsAddonAddonErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonAddonErrorArrayOutput)
+}
+
+type GetAddonsAddonAddonErrorOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsAddonAddonErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsAddonAddonError)(nil)).Elem()
+}
+
+func (o GetAddonsAddonAddonErrorOutput) ToGetAddonsAddonAddonErrorOutput() GetAddonsAddonAddonErrorOutput {
+	return o
+}
+
+func (o GetAddonsAddonAddonErrorOutput) ToGetAddonsAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonsAddonAddonErrorOutput {
+	return o
+}
+
+// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+func (o GetAddonsAddonAddonErrorOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddonAddonError) string { return v.Code }).(pulumi.StringOutput)
+}
+
+// A human-readable error string of the upstream error.
+func (o GetAddonsAddonAddonErrorOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddonAddonError) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The status of the HTTP response encountered in the upstream error.
+func (o GetAddonsAddonAddonErrorOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddonAddonError) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetAddonsAddonAddonErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsAddonAddonErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsAddonAddonError)(nil)).Elem()
+}
+
+func (o GetAddonsAddonAddonErrorArrayOutput) ToGetAddonsAddonAddonErrorArrayOutput() GetAddonsAddonAddonErrorArrayOutput {
+	return o
+}
+
+func (o GetAddonsAddonAddonErrorArrayOutput) ToGetAddonsAddonAddonErrorArrayOutputWithContext(ctx context.Context) GetAddonsAddonAddonErrorArrayOutput {
+	return o
+}
+
+func (o GetAddonsAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonAddonErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsAddonAddonError {
+		return vs[0].([]GetAddonsAddonAddonError)[vs[1].(int)]
+	}).(GetAddonsAddonAddonErrorOutput)
+}
+
+type GetAddonsAddonConfiguration struct {
+	// configuration key name
+	Key string `pulumi:"key"`
+	// configuration value name
+	Value string `pulumi:"value"`
+}
+
+// GetAddonsAddonConfigurationInput is an input type that accepts GetAddonsAddonConfigurationArgs and GetAddonsAddonConfigurationOutput values.
+// You can construct a concrete instance of `GetAddonsAddonConfigurationInput` via:
+//
+//	GetAddonsAddonConfigurationArgs{...}
+type GetAddonsAddonConfigurationInput interface {
+	pulumi.Input
+
+	ToGetAddonsAddonConfigurationOutput() GetAddonsAddonConfigurationOutput
+	ToGetAddonsAddonConfigurationOutputWithContext(context.Context) GetAddonsAddonConfigurationOutput
+}
+
+type GetAddonsAddonConfigurationArgs struct {
+	// configuration key name
+	Key pulumi.StringInput `pulumi:"key"`
+	// configuration value name
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAddonsAddonConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsAddonConfiguration)(nil)).Elem()
+}
+
+func (i GetAddonsAddonConfigurationArgs) ToGetAddonsAddonConfigurationOutput() GetAddonsAddonConfigurationOutput {
+	return i.ToGetAddonsAddonConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetAddonsAddonConfigurationArgs) ToGetAddonsAddonConfigurationOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonConfigurationOutput)
+}
+
+// GetAddonsAddonConfigurationArrayInput is an input type that accepts GetAddonsAddonConfigurationArray and GetAddonsAddonConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetAddonsAddonConfigurationArrayInput` via:
+//
+//	GetAddonsAddonConfigurationArray{ GetAddonsAddonConfigurationArgs{...} }
+type GetAddonsAddonConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonsAddonConfigurationArrayOutput() GetAddonsAddonConfigurationArrayOutput
+	ToGetAddonsAddonConfigurationArrayOutputWithContext(context.Context) GetAddonsAddonConfigurationArrayOutput
+}
+
+type GetAddonsAddonConfigurationArray []GetAddonsAddonConfigurationInput
+
+func (GetAddonsAddonConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsAddonConfiguration)(nil)).Elem()
+}
+
+func (i GetAddonsAddonConfigurationArray) ToGetAddonsAddonConfigurationArrayOutput() GetAddonsAddonConfigurationArrayOutput {
+	return i.ToGetAddonsAddonConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonsAddonConfigurationArray) ToGetAddonsAddonConfigurationArrayOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonConfigurationArrayOutput)
+}
+
+type GetAddonsAddonConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsAddonConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsAddonConfiguration)(nil)).Elem()
+}
+
+func (o GetAddonsAddonConfigurationOutput) ToGetAddonsAddonConfigurationOutput() GetAddonsAddonConfigurationOutput {
+	return o
+}
+
+func (o GetAddonsAddonConfigurationOutput) ToGetAddonsAddonConfigurationOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationOutput {
+	return o
+}
+
+// configuration key name
+func (o GetAddonsAddonConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddonConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// configuration value name
+func (o GetAddonsAddonConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsAddonConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAddonsAddonConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsAddonConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsAddonConfiguration)(nil)).Elem()
+}
+
+func (o GetAddonsAddonConfigurationArrayOutput) ToGetAddonsAddonConfigurationArrayOutput() GetAddonsAddonConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAddonsAddonConfigurationArrayOutput) ToGetAddonsAddonConfigurationArrayOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAddonsAddonConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsAddonConfiguration {
+		return vs[0].([]GetAddonsAddonConfiguration)[vs[1].(int)]
+	}).(GetAddonsAddonConfigurationOutput)
+}
+
+type GetAddonsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAddonsFilterInput is an input type that accepts GetAddonsFilterArgs and GetAddonsFilterOutput values.
+// You can construct a concrete instance of `GetAddonsFilterInput` via:
+//
+//	GetAddonsFilterArgs{...}
+type GetAddonsFilterInput interface {
+	pulumi.Input
+
+	ToGetAddonsFilterOutput() GetAddonsFilterOutput
+	ToGetAddonsFilterOutputWithContext(context.Context) GetAddonsFilterOutput
+}
+
+type GetAddonsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAddonsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsFilter)(nil)).Elem()
+}
+
+func (i GetAddonsFilterArgs) ToGetAddonsFilterOutput() GetAddonsFilterOutput {
+	return i.ToGetAddonsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAddonsFilterArgs) ToGetAddonsFilterOutputWithContext(ctx context.Context) GetAddonsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsFilterOutput)
+}
+
+// GetAddonsFilterArrayInput is an input type that accepts GetAddonsFilterArray and GetAddonsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAddonsFilterArrayInput` via:
+//
+//	GetAddonsFilterArray{ GetAddonsFilterArgs{...} }
+type GetAddonsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAddonsFilterArrayOutput() GetAddonsFilterArrayOutput
+	ToGetAddonsFilterArrayOutputWithContext(context.Context) GetAddonsFilterArrayOutput
+}
+
+type GetAddonsFilterArray []GetAddonsFilterInput
+
+func (GetAddonsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsFilter)(nil)).Elem()
+}
+
+func (i GetAddonsFilterArray) ToGetAddonsFilterArrayOutput() GetAddonsFilterArrayOutput {
+	return i.ToGetAddonsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddonsFilterArray) ToGetAddonsFilterArrayOutputWithContext(ctx context.Context) GetAddonsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsFilterArrayOutput)
+}
+
+type GetAddonsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddonsFilter)(nil)).Elem()
+}
+
+func (o GetAddonsFilterOutput) ToGetAddonsFilterOutput() GetAddonsFilterOutput {
+	return o
+}
+
+func (o GetAddonsFilterOutput) ToGetAddonsFilterOutputWithContext(ctx context.Context) GetAddonsFilterOutput {
+	return o
+}
+
+func (o GetAddonsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddonsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAddonsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddonsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAddonsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAddonsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAddonsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddonsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddonsFilter)(nil)).Elem()
+}
+
+func (o GetAddonsFilterArrayOutput) ToGetAddonsFilterArrayOutput() GetAddonsFilterArrayOutput {
+	return o
+}
+
+func (o GetAddonsFilterArrayOutput) ToGetAddonsFilterArrayOutputWithContext(ctx context.Context) GetAddonsFilterArrayOutput {
+	return o
+}
+
+func (o GetAddonsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsFilter {
+		return vs[0].([]GetAddonsFilter)[vs[1].(int)]
+	}).(GetAddonsFilterOutput)
+}
+
 type GetClusterOptionClusterPodNetworkOption struct {
 	// The CNI used by the node pools of this cluster
 	CniType string `pulumi:"cniType"`
@@ -5408,6 +7693,8 @@ type GetClustersCluster struct {
 	Options []GetClustersClusterOption `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 	State string `pulumi:"state"`
+	// Type of cluster
+	Type string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
 	VcnId string `pulumi:"vcnId"`
 }
@@ -5456,6 +7743,8 @@ type GetClustersClusterArgs struct {
 	Options GetClustersClusterOptionArrayInput `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 	State pulumi.StringInput `pulumi:"state"`
+	// Type of cluster
+	Type pulumi.StringInput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 }
@@ -5591,6 +7880,11 @@ func (o GetClustersClusterOutput) Options() GetClustersClusterOptionArrayOutput 
 // A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 func (o GetClustersClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersCluster) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Type of cluster
+func (o GetClustersClusterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersCluster) string { return v.Type }).(pulumi.StringOutput)
 }
 
 // The OCID of the virtual cloud network (VCN) in which the cluster exists.
@@ -10232,6 +12526,2100 @@ func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput
 	}).(GetNodePoolsNodePoolNodeSourceDetailOutput)
 }
 
+type GetPodShapesFilter struct {
+	// The name to filter on.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPodShapesFilterInput is an input type that accepts GetPodShapesFilterArgs and GetPodShapesFilterOutput values.
+// You can construct a concrete instance of `GetPodShapesFilterInput` via:
+//
+//	GetPodShapesFilterArgs{...}
+type GetPodShapesFilterInput interface {
+	pulumi.Input
+
+	ToGetPodShapesFilterOutput() GetPodShapesFilterOutput
+	ToGetPodShapesFilterOutputWithContext(context.Context) GetPodShapesFilterOutput
+}
+
+type GetPodShapesFilterArgs struct {
+	// The name to filter on.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPodShapesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesFilter)(nil)).Elem()
+}
+
+func (i GetPodShapesFilterArgs) ToGetPodShapesFilterOutput() GetPodShapesFilterOutput {
+	return i.ToGetPodShapesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesFilterArgs) ToGetPodShapesFilterOutputWithContext(ctx context.Context) GetPodShapesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesFilterOutput)
+}
+
+// GetPodShapesFilterArrayInput is an input type that accepts GetPodShapesFilterArray and GetPodShapesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPodShapesFilterArrayInput` via:
+//
+//	GetPodShapesFilterArray{ GetPodShapesFilterArgs{...} }
+type GetPodShapesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPodShapesFilterArrayOutput() GetPodShapesFilterArrayOutput
+	ToGetPodShapesFilterArrayOutputWithContext(context.Context) GetPodShapesFilterArrayOutput
+}
+
+type GetPodShapesFilterArray []GetPodShapesFilterInput
+
+func (GetPodShapesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesFilter)(nil)).Elem()
+}
+
+func (i GetPodShapesFilterArray) ToGetPodShapesFilterArrayOutput() GetPodShapesFilterArrayOutput {
+	return i.ToGetPodShapesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesFilterArray) ToGetPodShapesFilterArrayOutputWithContext(ctx context.Context) GetPodShapesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesFilterArrayOutput)
+}
+
+type GetPodShapesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesFilter)(nil)).Elem()
+}
+
+func (o GetPodShapesFilterOutput) ToGetPodShapesFilterOutput() GetPodShapesFilterOutput {
+	return o
+}
+
+func (o GetPodShapesFilterOutput) ToGetPodShapesFilterOutputWithContext(ctx context.Context) GetPodShapesFilterOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetPodShapesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPodShapesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPodShapesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPodShapesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPodShapesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPodShapesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPodShapesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesFilter)(nil)).Elem()
+}
+
+func (o GetPodShapesFilterArrayOutput) ToGetPodShapesFilterArrayOutput() GetPodShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetPodShapesFilterArrayOutput) ToGetPodShapesFilterArrayOutputWithContext(ctx context.Context) GetPodShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetPodShapesFilterArrayOutput) Index(i pulumi.IntInput) GetPodShapesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesFilter {
+		return vs[0].([]GetPodShapesFilter)[vs[1].(int)]
+	}).(GetPodShapesFilterOutput)
+}
+
+type GetPodShapesPodShape struct {
+	// ShapeMemoryOptions.
+	MemoryOptions []GetPodShapesPodShapeMemoryOption `pulumi:"memoryOptions"`
+	// The name to filter on.
+	Name string `pulumi:"name"`
+	// ShapeNetworkBandwidthOptions.
+	NetworkBandwidthOptions []GetPodShapesPodShapeNetworkBandwidthOption `pulumi:"networkBandwidthOptions"`
+	// Options for OCPU shape.
+	OcpuOptions []GetPodShapesPodShapeOcpuOption `pulumi:"ocpuOptions"`
+	// A short description of the VM's processor (CPU).
+	ProcessorDescription string `pulumi:"processorDescription"`
+}
+
+// GetPodShapesPodShapeInput is an input type that accepts GetPodShapesPodShapeArgs and GetPodShapesPodShapeOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeInput` via:
+//
+//	GetPodShapesPodShapeArgs{...}
+type GetPodShapesPodShapeInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeOutput() GetPodShapesPodShapeOutput
+	ToGetPodShapesPodShapeOutputWithContext(context.Context) GetPodShapesPodShapeOutput
+}
+
+type GetPodShapesPodShapeArgs struct {
+	// ShapeMemoryOptions.
+	MemoryOptions GetPodShapesPodShapeMemoryOptionArrayInput `pulumi:"memoryOptions"`
+	// The name to filter on.
+	Name pulumi.StringInput `pulumi:"name"`
+	// ShapeNetworkBandwidthOptions.
+	NetworkBandwidthOptions GetPodShapesPodShapeNetworkBandwidthOptionArrayInput `pulumi:"networkBandwidthOptions"`
+	// Options for OCPU shape.
+	OcpuOptions GetPodShapesPodShapeOcpuOptionArrayInput `pulumi:"ocpuOptions"`
+	// A short description of the VM's processor (CPU).
+	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
+}
+
+func (GetPodShapesPodShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShape)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeArgs) ToGetPodShapesPodShapeOutput() GetPodShapesPodShapeOutput {
+	return i.ToGetPodShapesPodShapeOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeArgs) ToGetPodShapesPodShapeOutputWithContext(ctx context.Context) GetPodShapesPodShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOutput)
+}
+
+// GetPodShapesPodShapeArrayInput is an input type that accepts GetPodShapesPodShapeArray and GetPodShapesPodShapeArrayOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeArrayInput` via:
+//
+//	GetPodShapesPodShapeArray{ GetPodShapesPodShapeArgs{...} }
+type GetPodShapesPodShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeArrayOutput() GetPodShapesPodShapeArrayOutput
+	ToGetPodShapesPodShapeArrayOutputWithContext(context.Context) GetPodShapesPodShapeArrayOutput
+}
+
+type GetPodShapesPodShapeArray []GetPodShapesPodShapeInput
+
+func (GetPodShapesPodShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShape)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeArray) ToGetPodShapesPodShapeArrayOutput() GetPodShapesPodShapeArrayOutput {
+	return i.ToGetPodShapesPodShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeArray) ToGetPodShapesPodShapeArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeArrayOutput)
+}
+
+type GetPodShapesPodShapeOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShape)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeOutput) ToGetPodShapesPodShapeOutput() GetPodShapesPodShapeOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeOutput) ToGetPodShapesPodShapeOutputWithContext(ctx context.Context) GetPodShapesPodShapeOutput {
+	return o
+}
+
+// ShapeMemoryOptions.
+func (o GetPodShapesPodShapeOutput) MemoryOptions() GetPodShapesPodShapeMemoryOptionArrayOutput {
+	return o.ApplyT(func(v GetPodShapesPodShape) []GetPodShapesPodShapeMemoryOption { return v.MemoryOptions }).(GetPodShapesPodShapeMemoryOptionArrayOutput)
+}
+
+// The name to filter on.
+func (o GetPodShapesPodShapeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPodShapesPodShape) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// ShapeNetworkBandwidthOptions.
+func (o GetPodShapesPodShapeOutput) NetworkBandwidthOptions() GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput {
+	return o.ApplyT(func(v GetPodShapesPodShape) []GetPodShapesPodShapeNetworkBandwidthOption {
+		return v.NetworkBandwidthOptions
+	}).(GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput)
+}
+
+// Options for OCPU shape.
+func (o GetPodShapesPodShapeOutput) OcpuOptions() GetPodShapesPodShapeOcpuOptionArrayOutput {
+	return o.ApplyT(func(v GetPodShapesPodShape) []GetPodShapesPodShapeOcpuOption { return v.OcpuOptions }).(GetPodShapesPodShapeOcpuOptionArrayOutput)
+}
+
+// A short description of the VM's processor (CPU).
+func (o GetPodShapesPodShapeOutput) ProcessorDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPodShapesPodShape) string { return v.ProcessorDescription }).(pulumi.StringOutput)
+}
+
+type GetPodShapesPodShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShape)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeArrayOutput) ToGetPodShapesPodShapeArrayOutput() GetPodShapesPodShapeArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeArrayOutput) ToGetPodShapesPodShapeArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShape {
+		return vs[0].([]GetPodShapesPodShape)[vs[1].(int)]
+	}).(GetPodShapesPodShapeOutput)
+}
+
+type GetPodShapesPodShapeMemoryOption struct {
+	// The default amount of memory per OCPU available for this shape, in gigabytes.
+	DefaultPerOcpuInGbs float64 `pulumi:"defaultPerOcpuInGbs"`
+	// The maximum amount of memory, in gigabytes.
+	MaxInGbs float64 `pulumi:"maxInGbs"`
+	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+	MaxPerOcpuInGbs float64 `pulumi:"maxPerOcpuInGbs"`
+	// The minimum amount of memory, in gigabytes.
+	MinInGbs float64 `pulumi:"minInGbs"`
+	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+	MinPerOcpuInGbs float64 `pulumi:"minPerOcpuInGbs"`
+}
+
+// GetPodShapesPodShapeMemoryOptionInput is an input type that accepts GetPodShapesPodShapeMemoryOptionArgs and GetPodShapesPodShapeMemoryOptionOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeMemoryOptionInput` via:
+//
+//	GetPodShapesPodShapeMemoryOptionArgs{...}
+type GetPodShapesPodShapeMemoryOptionInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeMemoryOptionOutput() GetPodShapesPodShapeMemoryOptionOutput
+	ToGetPodShapesPodShapeMemoryOptionOutputWithContext(context.Context) GetPodShapesPodShapeMemoryOptionOutput
+}
+
+type GetPodShapesPodShapeMemoryOptionArgs struct {
+	// The default amount of memory per OCPU available for this shape, in gigabytes.
+	DefaultPerOcpuInGbs pulumi.Float64Input `pulumi:"defaultPerOcpuInGbs"`
+	// The maximum amount of memory, in gigabytes.
+	MaxInGbs pulumi.Float64Input `pulumi:"maxInGbs"`
+	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+	MaxPerOcpuInGbs pulumi.Float64Input `pulumi:"maxPerOcpuInGbs"`
+	// The minimum amount of memory, in gigabytes.
+	MinInGbs pulumi.Float64Input `pulumi:"minInGbs"`
+	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+	MinPerOcpuInGbs pulumi.Float64Input `pulumi:"minPerOcpuInGbs"`
+}
+
+func (GetPodShapesPodShapeMemoryOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeMemoryOptionArgs) ToGetPodShapesPodShapeMemoryOptionOutput() GetPodShapesPodShapeMemoryOptionOutput {
+	return i.ToGetPodShapesPodShapeMemoryOptionOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeMemoryOptionArgs) ToGetPodShapesPodShapeMemoryOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeMemoryOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeMemoryOptionOutput)
+}
+
+// GetPodShapesPodShapeMemoryOptionArrayInput is an input type that accepts GetPodShapesPodShapeMemoryOptionArray and GetPodShapesPodShapeMemoryOptionArrayOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeMemoryOptionArrayInput` via:
+//
+//	GetPodShapesPodShapeMemoryOptionArray{ GetPodShapesPodShapeMemoryOptionArgs{...} }
+type GetPodShapesPodShapeMemoryOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeMemoryOptionArrayOutput() GetPodShapesPodShapeMemoryOptionArrayOutput
+	ToGetPodShapesPodShapeMemoryOptionArrayOutputWithContext(context.Context) GetPodShapesPodShapeMemoryOptionArrayOutput
+}
+
+type GetPodShapesPodShapeMemoryOptionArray []GetPodShapesPodShapeMemoryOptionInput
+
+func (GetPodShapesPodShapeMemoryOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeMemoryOptionArray) ToGetPodShapesPodShapeMemoryOptionArrayOutput() GetPodShapesPodShapeMemoryOptionArrayOutput {
+	return i.ToGetPodShapesPodShapeMemoryOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeMemoryOptionArray) ToGetPodShapesPodShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeMemoryOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeMemoryOptionArrayOutput)
+}
+
+type GetPodShapesPodShapeMemoryOptionOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeMemoryOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeMemoryOptionOutput) ToGetPodShapesPodShapeMemoryOptionOutput() GetPodShapesPodShapeMemoryOptionOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeMemoryOptionOutput) ToGetPodShapesPodShapeMemoryOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeMemoryOptionOutput {
+	return o
+}
+
+// The default amount of memory per OCPU available for this shape, in gigabytes.
+func (o GetPodShapesPodShapeMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.DefaultPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+// The maximum amount of memory, in gigabytes.
+func (o GetPodShapesPodShapeMemoryOptionOutput) MaxInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MaxInGbs }).(pulumi.Float64Output)
+}
+
+// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+func (o GetPodShapesPodShapeMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MaxPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+// The minimum amount of memory, in gigabytes.
+func (o GetPodShapesPodShapeMemoryOptionOutput) MinInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MinInGbs }).(pulumi.Float64Output)
+}
+
+// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+func (o GetPodShapesPodShapeMemoryOptionOutput) MinPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MinPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+type GetPodShapesPodShapeMemoryOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeMemoryOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeMemoryOptionArrayOutput) ToGetPodShapesPodShapeMemoryOptionArrayOutput() GetPodShapesPodShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeMemoryOptionArrayOutput) ToGetPodShapesPodShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeMemoryOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShapeMemoryOption {
+		return vs[0].([]GetPodShapesPodShapeMemoryOption)[vs[1].(int)]
+	}).(GetPodShapesPodShapeMemoryOptionOutput)
+}
+
+type GetPodShapesPodShapeNetworkBandwidthOption struct {
+	// The default amount of networking bandwidth per OCPU, in gigabits per second.
+	DefaultPerOcpuInGbps float64 `pulumi:"defaultPerOcpuInGbps"`
+	// The maximum amount of networking bandwidth, in gigabits per second.
+	MaxInGbps float64 `pulumi:"maxInGbps"`
+	// The minimum amount of networking bandwidth, in gigabits per second.
+	MinInGbps float64 `pulumi:"minInGbps"`
+}
+
+// GetPodShapesPodShapeNetworkBandwidthOptionInput is an input type that accepts GetPodShapesPodShapeNetworkBandwidthOptionArgs and GetPodShapesPodShapeNetworkBandwidthOptionOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeNetworkBandwidthOptionInput` via:
+//
+//	GetPodShapesPodShapeNetworkBandwidthOptionArgs{...}
+type GetPodShapesPodShapeNetworkBandwidthOptionInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeNetworkBandwidthOptionOutput() GetPodShapesPodShapeNetworkBandwidthOptionOutput
+	ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(context.Context) GetPodShapesPodShapeNetworkBandwidthOptionOutput
+}
+
+type GetPodShapesPodShapeNetworkBandwidthOptionArgs struct {
+	// The default amount of networking bandwidth per OCPU, in gigabits per second.
+	DefaultPerOcpuInGbps pulumi.Float64Input `pulumi:"defaultPerOcpuInGbps"`
+	// The maximum amount of networking bandwidth, in gigabits per second.
+	MaxInGbps pulumi.Float64Input `pulumi:"maxInGbps"`
+	// The minimum amount of networking bandwidth, in gigabits per second.
+	MinInGbps pulumi.Float64Input `pulumi:"minInGbps"`
+}
+
+func (GetPodShapesPodShapeNetworkBandwidthOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShapeNetworkBandwidthOption)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeNetworkBandwidthOptionArgs) ToGetPodShapesPodShapeNetworkBandwidthOptionOutput() GetPodShapesPodShapeNetworkBandwidthOptionOutput {
+	return i.ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeNetworkBandwidthOptionArgs) ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeNetworkBandwidthOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeNetworkBandwidthOptionOutput)
+}
+
+// GetPodShapesPodShapeNetworkBandwidthOptionArrayInput is an input type that accepts GetPodShapesPodShapeNetworkBandwidthOptionArray and GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeNetworkBandwidthOptionArrayInput` via:
+//
+//	GetPodShapesPodShapeNetworkBandwidthOptionArray{ GetPodShapesPodShapeNetworkBandwidthOptionArgs{...} }
+type GetPodShapesPodShapeNetworkBandwidthOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutput() GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput
+	ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutputWithContext(context.Context) GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput
+}
+
+type GetPodShapesPodShapeNetworkBandwidthOptionArray []GetPodShapesPodShapeNetworkBandwidthOptionInput
+
+func (GetPodShapesPodShapeNetworkBandwidthOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShapeNetworkBandwidthOption)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeNetworkBandwidthOptionArray) ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutput() GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput {
+	return i.ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeNetworkBandwidthOptionArray) ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput)
+}
+
+type GetPodShapesPodShapeNetworkBandwidthOptionOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeNetworkBandwidthOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShapeNetworkBandwidthOption)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) ToGetPodShapesPodShapeNetworkBandwidthOptionOutput() GetPodShapesPodShapeNetworkBandwidthOptionOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeNetworkBandwidthOptionOutput {
+	return o
+}
+
+// The default amount of networking bandwidth per OCPU, in gigabits per second.
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) DefaultPerOcpuInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) float64 { return v.DefaultPerOcpuInGbps }).(pulumi.Float64Output)
+}
+
+// The maximum amount of networking bandwidth, in gigabits per second.
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) MaxInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) float64 { return v.MaxInGbps }).(pulumi.Float64Output)
+}
+
+// The minimum amount of networking bandwidth, in gigabits per second.
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) MinInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) float64 { return v.MinInGbps }).(pulumi.Float64Output)
+}
+
+type GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShapeNetworkBandwidthOption)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutput() GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeNetworkBandwidthOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShapeNetworkBandwidthOption {
+		return vs[0].([]GetPodShapesPodShapeNetworkBandwidthOption)[vs[1].(int)]
+	}).(GetPodShapesPodShapeNetworkBandwidthOptionOutput)
+}
+
+type GetPodShapesPodShapeOcpuOption struct {
+	// The maximum number of OCPUs.
+	Max float64 `pulumi:"max"`
+	// The minimum number of OCPUs.
+	Min float64 `pulumi:"min"`
+}
+
+// GetPodShapesPodShapeOcpuOptionInput is an input type that accepts GetPodShapesPodShapeOcpuOptionArgs and GetPodShapesPodShapeOcpuOptionOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeOcpuOptionInput` via:
+//
+//	GetPodShapesPodShapeOcpuOptionArgs{...}
+type GetPodShapesPodShapeOcpuOptionInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeOcpuOptionOutput() GetPodShapesPodShapeOcpuOptionOutput
+	ToGetPodShapesPodShapeOcpuOptionOutputWithContext(context.Context) GetPodShapesPodShapeOcpuOptionOutput
+}
+
+type GetPodShapesPodShapeOcpuOptionArgs struct {
+	// The maximum number of OCPUs.
+	Max pulumi.Float64Input `pulumi:"max"`
+	// The minimum number of OCPUs.
+	Min pulumi.Float64Input `pulumi:"min"`
+}
+
+func (GetPodShapesPodShapeOcpuOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeOcpuOptionArgs) ToGetPodShapesPodShapeOcpuOptionOutput() GetPodShapesPodShapeOcpuOptionOutput {
+	return i.ToGetPodShapesPodShapeOcpuOptionOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeOcpuOptionArgs) ToGetPodShapesPodShapeOcpuOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeOcpuOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOcpuOptionOutput)
+}
+
+// GetPodShapesPodShapeOcpuOptionArrayInput is an input type that accepts GetPodShapesPodShapeOcpuOptionArray and GetPodShapesPodShapeOcpuOptionArrayOutput values.
+// You can construct a concrete instance of `GetPodShapesPodShapeOcpuOptionArrayInput` via:
+//
+//	GetPodShapesPodShapeOcpuOptionArray{ GetPodShapesPodShapeOcpuOptionArgs{...} }
+type GetPodShapesPodShapeOcpuOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetPodShapesPodShapeOcpuOptionArrayOutput() GetPodShapesPodShapeOcpuOptionArrayOutput
+	ToGetPodShapesPodShapeOcpuOptionArrayOutputWithContext(context.Context) GetPodShapesPodShapeOcpuOptionArrayOutput
+}
+
+type GetPodShapesPodShapeOcpuOptionArray []GetPodShapesPodShapeOcpuOptionInput
+
+func (GetPodShapesPodShapeOcpuOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetPodShapesPodShapeOcpuOptionArray) ToGetPodShapesPodShapeOcpuOptionArrayOutput() GetPodShapesPodShapeOcpuOptionArrayOutput {
+	return i.ToGetPodShapesPodShapeOcpuOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPodShapesPodShapeOcpuOptionArray) ToGetPodShapesPodShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeOcpuOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOcpuOptionArrayOutput)
+}
+
+type GetPodShapesPodShapeOcpuOptionOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeOcpuOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPodShapesPodShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeOcpuOptionOutput) ToGetPodShapesPodShapeOcpuOptionOutput() GetPodShapesPodShapeOcpuOptionOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeOcpuOptionOutput) ToGetPodShapesPodShapeOcpuOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeOcpuOptionOutput {
+	return o
+}
+
+// The maximum number of OCPUs.
+func (o GetPodShapesPodShapeOcpuOptionOutput) Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeOcpuOption) float64 { return v.Max }).(pulumi.Float64Output)
+}
+
+// The minimum number of OCPUs.
+func (o GetPodShapesPodShapeOcpuOptionOutput) Min() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPodShapesPodShapeOcpuOption) float64 { return v.Min }).(pulumi.Float64Output)
+}
+
+type GetPodShapesPodShapeOcpuOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPodShapesPodShapeOcpuOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPodShapesPodShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetPodShapesPodShapeOcpuOptionArrayOutput) ToGetPodShapesPodShapeOcpuOptionArrayOutput() GetPodShapesPodShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeOcpuOptionArrayOutput) ToGetPodShapesPodShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetPodShapesPodShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeOcpuOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShapeOcpuOption {
+		return vs[0].([]GetPodShapesPodShapeOcpuOption)[vs[1].(int)]
+	}).(GetPodShapesPodShapeOcpuOptionOutput)
+}
+
+type GetVirtualNodePoolInitialVirtualNodeLabel struct {
+	// The key of the pair.
+	Key string `pulumi:"key"`
+	// The value of the pair.
+	Value string `pulumi:"value"`
+}
+
+// GetVirtualNodePoolInitialVirtualNodeLabelInput is an input type that accepts GetVirtualNodePoolInitialVirtualNodeLabelArgs and GetVirtualNodePoolInitialVirtualNodeLabelOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolInitialVirtualNodeLabelInput` via:
+//
+//	GetVirtualNodePoolInitialVirtualNodeLabelArgs{...}
+type GetVirtualNodePoolInitialVirtualNodeLabelInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolInitialVirtualNodeLabelOutput() GetVirtualNodePoolInitialVirtualNodeLabelOutput
+	ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(context.Context) GetVirtualNodePoolInitialVirtualNodeLabelOutput
+}
+
+type GetVirtualNodePoolInitialVirtualNodeLabelArgs struct {
+	// The key of the pair.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of the pair.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVirtualNodePoolInitialVirtualNodeLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolInitialVirtualNodeLabelOutput() GetVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return i.ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolInitialVirtualNodeLabelOutput)
+}
+
+// GetVirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts GetVirtualNodePoolInitialVirtualNodeLabelArray and GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolInitialVirtualNodeLabelArrayInput` via:
+//
+//	GetVirtualNodePoolInitialVirtualNodeLabelArray{ GetVirtualNodePoolInitialVirtualNodeLabelArgs{...} }
+type GetVirtualNodePoolInitialVirtualNodeLabelArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutput() GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput
+	ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(context.Context) GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput
+}
+
+type GetVirtualNodePoolInitialVirtualNodeLabelArray []GetVirtualNodePoolInitialVirtualNodeLabelInput
+
+func (GetVirtualNodePoolInitialVirtualNodeLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutput() GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return i.ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput)
+}
+
+type GetVirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolInitialVirtualNodeLabelOutput() GetVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return o
+}
+
+// The key of the pair.
+func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolInitialVirtualNodeLabel) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The value of the pair.
+func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolInitialVirtualNodeLabel) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutput() GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolInitialVirtualNodeLabel {
+		return vs[0].([]GetVirtualNodePoolInitialVirtualNodeLabel)[vs[1].(int)]
+	}).(GetVirtualNodePoolInitialVirtualNodeLabelOutput)
+}
+
+type GetVirtualNodePoolPlacementConfiguration struct {
+	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The fault domain of this virtual node.
+	FaultDomains []string `pulumi:"faultDomains"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetVirtualNodePoolPlacementConfigurationInput is an input type that accepts GetVirtualNodePoolPlacementConfigurationArgs and GetVirtualNodePoolPlacementConfigurationOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolPlacementConfigurationInput` via:
+//
+//	GetVirtualNodePoolPlacementConfigurationArgs{...}
+type GetVirtualNodePoolPlacementConfigurationInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolPlacementConfigurationOutput() GetVirtualNodePoolPlacementConfigurationOutput
+	ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(context.Context) GetVirtualNodePoolPlacementConfigurationOutput
+}
+
+type GetVirtualNodePoolPlacementConfigurationArgs struct {
+	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The fault domain of this virtual node.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetVirtualNodePoolPlacementConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolPlacementConfigurationOutput() GetVirtualNodePoolPlacementConfigurationOutput {
+	return i.ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPlacementConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPlacementConfigurationOutput)
+}
+
+// GetVirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts GetVirtualNodePoolPlacementConfigurationArray and GetVirtualNodePoolPlacementConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolPlacementConfigurationArrayInput` via:
+//
+//	GetVirtualNodePoolPlacementConfigurationArray{ GetVirtualNodePoolPlacementConfigurationArgs{...} }
+type GetVirtualNodePoolPlacementConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolPlacementConfigurationArrayOutput() GetVirtualNodePoolPlacementConfigurationArrayOutput
+	ToGetVirtualNodePoolPlacementConfigurationArrayOutputWithContext(context.Context) GetVirtualNodePoolPlacementConfigurationArrayOutput
+}
+
+type GetVirtualNodePoolPlacementConfigurationArray []GetVirtualNodePoolPlacementConfigurationInput
+
+func (GetVirtualNodePoolPlacementConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolPlacementConfigurationArray) ToGetVirtualNodePoolPlacementConfigurationArrayOutput() GetVirtualNodePoolPlacementConfigurationArrayOutput {
+	return i.ToGetVirtualNodePoolPlacementConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolPlacementConfigurationArray) ToGetVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolPlacementConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPlacementConfigurationArrayOutput)
+}
+
+type GetVirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolPlacementConfigurationOutput() GetVirtualNodePoolPlacementConfigurationOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPlacementConfigurationOutput {
+	return o
+}
+
+// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+func (o GetVirtualNodePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The fault domain of this virtual node.
+func (o GetVirtualNodePoolPlacementConfigurationOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// The regional subnet where pods' VNIC will be placed.
+func (o GetVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolPlacementConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolPlacementConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoolPlacementConfigurationArrayOutput() GetVirtualNodePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolPlacementConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolPlacementConfiguration {
+		return vs[0].([]GetVirtualNodePoolPlacementConfiguration)[vs[1].(int)]
+	}).(GetVirtualNodePoolPlacementConfigurationOutput)
+}
+
+type GetVirtualNodePoolPodConfiguration struct {
+	// List of network security group IDs applied to the Pod VNIC.
+	NsgIds []string `pulumi:"nsgIds"`
+	// Shape of the pods.
+	Shape string `pulumi:"shape"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetVirtualNodePoolPodConfigurationInput is an input type that accepts GetVirtualNodePoolPodConfigurationArgs and GetVirtualNodePoolPodConfigurationOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolPodConfigurationInput` via:
+//
+//	GetVirtualNodePoolPodConfigurationArgs{...}
+type GetVirtualNodePoolPodConfigurationInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolPodConfigurationOutput() GetVirtualNodePoolPodConfigurationOutput
+	ToGetVirtualNodePoolPodConfigurationOutputWithContext(context.Context) GetVirtualNodePoolPodConfigurationOutput
+}
+
+type GetVirtualNodePoolPodConfigurationArgs struct {
+	// List of network security group IDs applied to the Pod VNIC.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Shape of the pods.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetVirtualNodePoolPodConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolPodConfigurationOutput() GetVirtualNodePoolPodConfigurationOutput {
+	return i.ToGetVirtualNodePoolPodConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPodConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPodConfigurationOutput)
+}
+
+// GetVirtualNodePoolPodConfigurationArrayInput is an input type that accepts GetVirtualNodePoolPodConfigurationArray and GetVirtualNodePoolPodConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolPodConfigurationArrayInput` via:
+//
+//	GetVirtualNodePoolPodConfigurationArray{ GetVirtualNodePoolPodConfigurationArgs{...} }
+type GetVirtualNodePoolPodConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolPodConfigurationArrayOutput() GetVirtualNodePoolPodConfigurationArrayOutput
+	ToGetVirtualNodePoolPodConfigurationArrayOutputWithContext(context.Context) GetVirtualNodePoolPodConfigurationArrayOutput
+}
+
+type GetVirtualNodePoolPodConfigurationArray []GetVirtualNodePoolPodConfigurationInput
+
+func (GetVirtualNodePoolPodConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolPodConfigurationArray) ToGetVirtualNodePoolPodConfigurationArrayOutput() GetVirtualNodePoolPodConfigurationArrayOutput {
+	return i.ToGetVirtualNodePoolPodConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolPodConfigurationArray) ToGetVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolPodConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPodConfigurationArrayOutput)
+}
+
+type GetVirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolPodConfigurationOutput() GetVirtualNodePoolPodConfigurationOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPodConfigurationOutput {
+	return o
+}
+
+// List of network security group IDs applied to the Pod VNIC.
+func (o GetVirtualNodePoolPodConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Shape of the pods.
+func (o GetVirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The regional subnet where pods' VNIC will be placed.
+func (o GetVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolPodConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolPodConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolPodConfigurationArrayOutput() GetVirtualNodePoolPodConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolPodConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolPodConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolPodConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolPodConfiguration {
+		return vs[0].([]GetVirtualNodePoolPodConfiguration)[vs[1].(int)]
+	}).(GetVirtualNodePoolPodConfigurationOutput)
+}
+
+type GetVirtualNodePoolTaint struct {
+	// The effect of the pair.
+	Effect string `pulumi:"effect"`
+	// The key of the pair.
+	Key string `pulumi:"key"`
+	// The value of the pair.
+	Value string `pulumi:"value"`
+}
+
+// GetVirtualNodePoolTaintInput is an input type that accepts GetVirtualNodePoolTaintArgs and GetVirtualNodePoolTaintOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolTaintInput` via:
+//
+//	GetVirtualNodePoolTaintArgs{...}
+type GetVirtualNodePoolTaintInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolTaintOutput() GetVirtualNodePoolTaintOutput
+	ToGetVirtualNodePoolTaintOutputWithContext(context.Context) GetVirtualNodePoolTaintOutput
+}
+
+type GetVirtualNodePoolTaintArgs struct {
+	// The effect of the pair.
+	Effect pulumi.StringInput `pulumi:"effect"`
+	// The key of the pair.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of the pair.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVirtualNodePoolTaintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolTaintArgs) ToGetVirtualNodePoolTaintOutput() GetVirtualNodePoolTaintOutput {
+	return i.ToGetVirtualNodePoolTaintOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolTaintArgs) ToGetVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolTaintOutput)
+}
+
+// GetVirtualNodePoolTaintArrayInput is an input type that accepts GetVirtualNodePoolTaintArray and GetVirtualNodePoolTaintArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolTaintArrayInput` via:
+//
+//	GetVirtualNodePoolTaintArray{ GetVirtualNodePoolTaintArgs{...} }
+type GetVirtualNodePoolTaintArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolTaintArrayOutput() GetVirtualNodePoolTaintArrayOutput
+	ToGetVirtualNodePoolTaintArrayOutputWithContext(context.Context) GetVirtualNodePoolTaintArrayOutput
+}
+
+type GetVirtualNodePoolTaintArray []GetVirtualNodePoolTaintInput
+
+func (GetVirtualNodePoolTaintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolTaintArray) ToGetVirtualNodePoolTaintArrayOutput() GetVirtualNodePoolTaintArrayOutput {
+	return i.ToGetVirtualNodePoolTaintArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolTaintArray) ToGetVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolTaintArrayOutput)
+}
+
+type GetVirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolTaintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolTaintOutput) ToGetVirtualNodePoolTaintOutput() GetVirtualNodePoolTaintOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolTaintOutput) ToGetVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintOutput {
+	return o
+}
+
+// The effect of the pair.
+func (o GetVirtualNodePoolTaintOutput) Effect() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolTaint) string { return v.Effect }).(pulumi.StringOutput)
+}
+
+// The key of the pair.
+func (o GetVirtualNodePoolTaintOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolTaint) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The value of the pair.
+func (o GetVirtualNodePoolTaintOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolTaint) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolTaintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolTaintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolTaintArrayOutput() GetVirtualNodePoolTaintArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolTaintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolTaint {
+		return vs[0].([]GetVirtualNodePoolTaint)[vs[1].(int)]
+	}).(GetVirtualNodePoolTaintOutput)
+}
+
+type GetVirtualNodePoolVirtualNodeTag struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+}
+
+// GetVirtualNodePoolVirtualNodeTagInput is an input type that accepts GetVirtualNodePoolVirtualNodeTagArgs and GetVirtualNodePoolVirtualNodeTagOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolVirtualNodeTagInput` via:
+//
+//	GetVirtualNodePoolVirtualNodeTagArgs{...}
+type GetVirtualNodePoolVirtualNodeTagInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolVirtualNodeTagOutput() GetVirtualNodePoolVirtualNodeTagOutput
+	ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(context.Context) GetVirtualNodePoolVirtualNodeTagOutput
+}
+
+type GetVirtualNodePoolVirtualNodeTagArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+}
+
+func (GetVirtualNodePoolVirtualNodeTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePoolVirtualNodeTagOutput() GetVirtualNodePoolVirtualNodeTagOutput {
+	return i.ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodeTagOutput)
+}
+
+// GetVirtualNodePoolVirtualNodeTagArrayInput is an input type that accepts GetVirtualNodePoolVirtualNodeTagArray and GetVirtualNodePoolVirtualNodeTagArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolVirtualNodeTagArrayInput` via:
+//
+//	GetVirtualNodePoolVirtualNodeTagArray{ GetVirtualNodePoolVirtualNodeTagArgs{...} }
+type GetVirtualNodePoolVirtualNodeTagArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolVirtualNodeTagArrayOutput() GetVirtualNodePoolVirtualNodeTagArrayOutput
+	ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(context.Context) GetVirtualNodePoolVirtualNodeTagArrayOutput
+}
+
+type GetVirtualNodePoolVirtualNodeTagArray []GetVirtualNodePoolVirtualNodeTagInput
+
+func (GetVirtualNodePoolVirtualNodeTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodePoolVirtualNodeTagArrayOutput() GetVirtualNodePoolVirtualNodeTagArrayOutput {
+	return i.ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodeTagArrayOutput)
+}
+
+type GetVirtualNodePoolVirtualNodeTagOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolVirtualNodeTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolVirtualNodeTagOutput() GetVirtualNodePoolVirtualNodeTagOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetVirtualNodePoolVirtualNodeTagOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetVirtualNodePoolVirtualNodeTagOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+type GetVirtualNodePoolVirtualNodeTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolVirtualNodeTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolVirtualNodeTagArrayOutput() GetVirtualNodePoolVirtualNodeTagArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolVirtualNodeTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolVirtualNodeTag {
+		return vs[0].([]GetVirtualNodePoolVirtualNodeTag)[vs[1].(int)]
+	}).(GetVirtualNodePoolVirtualNodeTagOutput)
+}
+
+type GetVirtualNodePoolsFilter struct {
+	// The name to filter on.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVirtualNodePoolsFilterInput is an input type that accepts GetVirtualNodePoolsFilterArgs and GetVirtualNodePoolsFilterOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsFilterInput` via:
+//
+//	GetVirtualNodePoolsFilterArgs{...}
+type GetVirtualNodePoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsFilterOutput() GetVirtualNodePoolsFilterOutput
+	ToGetVirtualNodePoolsFilterOutputWithContext(context.Context) GetVirtualNodePoolsFilterOutput
+}
+
+type GetVirtualNodePoolsFilterArgs struct {
+	// The name to filter on.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVirtualNodePoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsFilter)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsFilterArgs) ToGetVirtualNodePoolsFilterOutput() GetVirtualNodePoolsFilterOutput {
+	return i.ToGetVirtualNodePoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsFilterArgs) ToGetVirtualNodePoolsFilterOutputWithContext(ctx context.Context) GetVirtualNodePoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsFilterOutput)
+}
+
+// GetVirtualNodePoolsFilterArrayInput is an input type that accepts GetVirtualNodePoolsFilterArray and GetVirtualNodePoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsFilterArrayInput` via:
+//
+//	GetVirtualNodePoolsFilterArray{ GetVirtualNodePoolsFilterArgs{...} }
+type GetVirtualNodePoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsFilterArrayOutput() GetVirtualNodePoolsFilterArrayOutput
+	ToGetVirtualNodePoolsFilterArrayOutputWithContext(context.Context) GetVirtualNodePoolsFilterArrayOutput
+}
+
+type GetVirtualNodePoolsFilterArray []GetVirtualNodePoolsFilterInput
+
+func (GetVirtualNodePoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsFilter)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsFilterArray) ToGetVirtualNodePoolsFilterArrayOutput() GetVirtualNodePoolsFilterArrayOutput {
+	return i.ToGetVirtualNodePoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsFilterArray) ToGetVirtualNodePoolsFilterArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsFilterArrayOutput)
+}
+
+type GetVirtualNodePoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsFilter)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsFilterOutput) ToGetVirtualNodePoolsFilterOutput() GetVirtualNodePoolsFilterOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsFilterOutput) ToGetVirtualNodePoolsFilterOutputWithContext(ctx context.Context) GetVirtualNodePoolsFilterOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetVirtualNodePoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNodePoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVirtualNodePoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVirtualNodePoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsFilter)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsFilterArrayOutput) ToGetVirtualNodePoolsFilterArrayOutput() GetVirtualNodePoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsFilterArrayOutput) ToGetVirtualNodePoolsFilterArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsFilter {
+		return vs[0].([]GetVirtualNodePoolsFilter)[vs[1].(int)]
+	}).(GetVirtualNodePoolsFilterOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePool struct {
+	// The OCID of the cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Display name of the virtual node pool. This is a non-unique value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the virtual node pool.
+	Id string `pulumi:"id"`
+	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
+	InitialVirtualNodeLabels []GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
+	// The version of Kubernetes running on the nodes in the node pool.
+	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	// Details about the state of the Virtual Node Pool.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// List of network security group IDs applied to the Pod VNIC.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
+	PlacementConfigurations []GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration `pulumi:"placementConfigurations"`
+	// The pod configuration for pods run on virtual nodes of this virtual node pool.
+	PodConfigurations []GetVirtualNodePoolsVirtualNodePoolPodConfiguration `pulumi:"podConfigurations"`
+	// The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
+	Size int `pulumi:"size"`
+	// A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+	Taints []GetVirtualNodePoolsVirtualNodePoolTaint `pulumi:"taints"`
+	// The time the virtual node pool was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the virtual node pool was updated.
+	TimeUpdated       string `pulumi:"timeUpdated"`
+	VirtualNodePoolId string `pulumi:"virtualNodePoolId"`
+	// The tags associated to the virtual nodes in this virtual node pool.
+	VirtualNodeTags []GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag `pulumi:"virtualNodeTags"`
+}
+
+// GetVirtualNodePoolsVirtualNodePoolInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolArgs and GetVirtualNodePoolsVirtualNodePoolOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolArgs{...}
+type GetVirtualNodePoolsVirtualNodePoolInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolOutput() GetVirtualNodePoolsVirtualNodePoolOutput
+	ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolArgs struct {
+	// The OCID of the cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Display name of the virtual node pool. This is a non-unique value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the virtual node pool.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
+	InitialVirtualNodeLabels GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput `pulumi:"initialVirtualNodeLabels"`
+	// The version of Kubernetes running on the nodes in the node pool.
+	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	// Details about the state of the Virtual Node Pool.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// List of network security group IDs applied to the Pod VNIC.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
+	PlacementConfigurations GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput `pulumi:"placementConfigurations"`
+	// The pod configuration for pods run on virtual nodes of this virtual node pool.
+	PodConfigurations GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput `pulumi:"podConfigurations"`
+	// The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
+	Size pulumi.IntInput `pulumi:"size"`
+	// A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+	Taints GetVirtualNodePoolsVirtualNodePoolTaintArrayInput `pulumi:"taints"`
+	// The time the virtual node pool was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the virtual node pool was updated.
+	TimeUpdated       pulumi.StringInput `pulumi:"timeUpdated"`
+	VirtualNodePoolId pulumi.StringInput `pulumi:"virtualNodePoolId"`
+	// The tags associated to the virtual nodes in this virtual node pool.
+	VirtualNodeTags GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput `pulumi:"virtualNodeTags"`
+}
+
+func (GetVirtualNodePoolsVirtualNodePoolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePool)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolArgs) ToGetVirtualNodePoolsVirtualNodePoolOutput() GetVirtualNodePoolsVirtualNodePoolOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolArgs) ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolOutput)
+}
+
+// GetVirtualNodePoolsVirtualNodePoolArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolArray and GetVirtualNodePoolsVirtualNodePoolArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolArrayInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolArray{ GetVirtualNodePoolsVirtualNodePoolArgs{...} }
+type GetVirtualNodePoolsVirtualNodePoolArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolArrayOutput() GetVirtualNodePoolsVirtualNodePoolArrayOutput
+	ToGetVirtualNodePoolsVirtualNodePoolArrayOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolArrayOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolArray []GetVirtualNodePoolsVirtualNodePoolInput
+
+func (GetVirtualNodePoolsVirtualNodePoolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePool)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolArray) ToGetVirtualNodePoolsVirtualNodePoolArrayOutput() GetVirtualNodePoolsVirtualNodePoolArrayOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolArray) ToGetVirtualNodePoolsVirtualNodePoolArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePool)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) ToGetVirtualNodePoolsVirtualNodePoolOutput() GetVirtualNodePoolsVirtualNodePoolOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolOutput {
+	return o
+}
+
+// The OCID of the cluster.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Display name of the virtual node pool. This is a non-unique value.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the virtual node pool.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) InitialVirtualNodeLabels() GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) []GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel {
+		return v.InitialVirtualNodeLabels
+	}).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput)
+}
+
+// The version of Kubernetes running on the nodes in the node pool.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) KubernetesVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+}
+
+// Details about the state of the Virtual Node Pool.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// List of network security group IDs applied to the Pod VNIC.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) PlacementConfigurations() GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) []GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration {
+		return v.PlacementConfigurations
+	}).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput)
+}
+
+// The pod configuration for pods run on virtual nodes of this virtual node pool.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) PodConfigurations() GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) []GetVirtualNodePoolsVirtualNodePoolPodConfiguration {
+		return v.PodConfigurations
+	}).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput)
+}
+
+// The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) Taints() GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) []GetVirtualNodePoolsVirtualNodePoolTaint { return v.Taints }).(GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput)
+}
+
+// The time the virtual node pool was created.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the virtual node pool was updated.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) VirtualNodePoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.VirtualNodePoolId }).(pulumi.StringOutput)
+}
+
+// The tags associated to the virtual nodes in this virtual node pool.
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) VirtualNodeTags() GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) []GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag {
+		return v.VirtualNodeTags
+	}).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePool)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolArrayOutput() GetVirtualNodePoolsVirtualNodePoolArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePool {
+		return vs[0].([]GetVirtualNodePoolsVirtualNodePool)[vs[1].(int)]
+	}).(GetVirtualNodePoolsVirtualNodePoolOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel struct {
+	// The key of the pair.
+	Key string `pulumi:"key"`
+	// The value of the pair.
+	Value string `pulumi:"value"`
+}
+
+// GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs and GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs{...}
+type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput() GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput
+	ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs struct {
+	// The key of the pair.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of the pair.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput() GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput)
+}
+
+// GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray and GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray{ GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs{...} }
+type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput() GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput
+	ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray []GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelInput
+
+func (GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput() GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput() GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return o
+}
+
+// The key of the pair.
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The value of the pair.
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput() GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel {
+		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel)[vs[1].(int)]
+	}).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration struct {
+	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The fault domain of this virtual node.
+	FaultDomains []string `pulumi:"faultDomains"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs and GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs{...}
+type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput() GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput
+	ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs struct {
+	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The fault domain of this virtual node.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput() GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput)
+}
+
+// GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray and GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray{ GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs{...} }
+type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput() GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput
+	ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray []GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationInput
+
+func (GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput() GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput() GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
+	return o
+}
+
+// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The fault domain of this virtual node.
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// The regional subnet where pods' VNIC will be placed.
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput() GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration {
+		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration)[vs[1].(int)]
+	}).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPodConfiguration struct {
+	// List of network security group IDs applied to the Pod VNIC.
+	NsgIds []string `pulumi:"nsgIds"`
+	// Shape of the pods.
+	Shape string `pulumi:"shape"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetVirtualNodePoolsVirtualNodePoolPodConfigurationInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs and GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolPodConfigurationInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs{...}
+type GetVirtualNodePoolsVirtualNodePoolPodConfigurationInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput() GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput
+	ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs struct {
+	// List of network security group IDs applied to the Pod VNIC.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Shape of the pods.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The regional subnet where pods' VNIC will be placed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput() GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput)
+}
+
+// GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray and GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray{ GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs{...} }
+type GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput() GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput
+	ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray []GetVirtualNodePoolsVirtualNodePoolPodConfigurationInput
+
+func (GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput() GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput() GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
+	return o
+}
+
+// List of network security group IDs applied to the Pod VNIC.
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Shape of the pods.
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The regional subnet where pods' VNIC will be placed.
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput() GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolPodConfiguration {
+		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolPodConfiguration)[vs[1].(int)]
+	}).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolTaint struct {
+	// The effect of the pair.
+	Effect string `pulumi:"effect"`
+	// The key of the pair.
+	Key string `pulumi:"key"`
+	// The value of the pair.
+	Value string `pulumi:"value"`
+}
+
+// GetVirtualNodePoolsVirtualNodePoolTaintInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolTaintArgs and GetVirtualNodePoolsVirtualNodePoolTaintOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolTaintInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolTaintArgs{...}
+type GetVirtualNodePoolsVirtualNodePoolTaintInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolTaintOutput() GetVirtualNodePoolsVirtualNodePoolTaintOutput
+	ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolTaintOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolTaintArgs struct {
+	// The effect of the pair.
+	Effect pulumi.StringInput `pulumi:"effect"`
+	// The key of the pair.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of the pair.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVirtualNodePoolsVirtualNodePoolTaintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolTaintArgs) ToGetVirtualNodePoolsVirtualNodePoolTaintOutput() GetVirtualNodePoolsVirtualNodePoolTaintOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolTaintArgs) ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolTaintOutput)
+}
+
+// GetVirtualNodePoolsVirtualNodePoolTaintArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolTaintArray and GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolTaintArrayInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolTaintArray{ GetVirtualNodePoolsVirtualNodePoolTaintArgs{...} }
+type GetVirtualNodePoolsVirtualNodePoolTaintArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutput() GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput
+	ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolTaintArray []GetVirtualNodePoolsVirtualNodePoolTaintInput
+
+func (GetVirtualNodePoolsVirtualNodePoolTaintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolTaintArray) ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutput() GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolTaintArray) ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolTaintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) ToGetVirtualNodePoolsVirtualNodePoolTaintOutput() GetVirtualNodePoolsVirtualNodePoolTaintOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintOutput {
+	return o
+}
+
+// The effect of the pair.
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Effect() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) string { return v.Effect }).(pulumi.StringOutput)
+}
+
+// The key of the pair.
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The value of the pair.
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolTaint)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutput() GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolTaintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolTaint {
+		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolTaint)[vs[1].(int)]
+	}).(GetVirtualNodePoolsVirtualNodePoolTaintOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+}
+
+// GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs and GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs{...}
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+}
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput)
+}
+
+// GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray and GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray{ GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs{...} }
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray []GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag {
+		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag)[vs[1].(int)]
+	}).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput)
+}
+
 type GetWorkRequestErrorsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -11056,6 +15444,10 @@ func (o GetWorkRequestsWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AddonAddonErrorInput)(nil)).Elem(), AddonAddonErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddonAddonErrorArrayInput)(nil)).Elem(), AddonAddonErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddonConfigurationInput)(nil)).Elem(), AddonConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddonConfigurationArrayInput)(nil)).Elem(), AddonConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterPodNetworkOptionInput)(nil)).Elem(), ClusterClusterPodNetworkOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterPodNetworkOptionArrayInput)(nil)).Elem(), ClusterClusterPodNetworkOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterEndpointInput)(nil)).Elem(), ClusterEndpointArgs{})
@@ -11122,6 +15514,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceArrayInput)(nil)).Elem(), NodePoolNodeSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsPtrInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolInitialVirtualNodeLabelInput)(nil)).Elem(), VirtualNodePoolInitialVirtualNodeLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolInitialVirtualNodeLabelArrayInput)(nil)).Elem(), VirtualNodePoolInitialVirtualNodeLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolPlacementConfigurationInput)(nil)).Elem(), VirtualNodePoolPlacementConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolPlacementConfigurationArrayInput)(nil)).Elem(), VirtualNodePoolPlacementConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolPodConfigurationInput)(nil)).Elem(), VirtualNodePoolPodConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolPodConfigurationPtrInput)(nil)).Elem(), VirtualNodePoolPodConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolTaintInput)(nil)).Elem(), VirtualNodePoolTaintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolTaintArrayInput)(nil)).Elem(), VirtualNodePoolTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolVirtualNodeTagsInput)(nil)).Elem(), VirtualNodePoolVirtualNodeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolVirtualNodeTagsPtrInput)(nil)).Elem(), VirtualNodePoolVirtualNodeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonAddonErrorInput)(nil)).Elem(), GetAddonAddonErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonAddonErrorArrayInput)(nil)).Elem(), GetAddonAddonErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonConfigurationInput)(nil)).Elem(), GetAddonConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonConfigurationArrayInput)(nil)).Elem(), GetAddonConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionInput)(nil)).Elem(), GetAddonOptionsAddonOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionArrayInput)(nil)).Elem(), GetAddonOptionsAddonOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionVersionInput)(nil)).Elem(), GetAddonOptionsAddonOptionVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionVersionArrayInput)(nil)).Elem(), GetAddonOptionsAddonOptionVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionVersionConfigurationInput)(nil)).Elem(), GetAddonOptionsAddonOptionVersionConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionVersionConfigurationArrayInput)(nil)).Elem(), GetAddonOptionsAddonOptionVersionConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionVersionKubernetesVersionFilterInput)(nil)).Elem(), GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput)(nil)).Elem(), GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsFilterInput)(nil)).Elem(), GetAddonOptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonOptionsFilterArrayInput)(nil)).Elem(), GetAddonOptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsAddonInput)(nil)).Elem(), GetAddonsAddonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsAddonArrayInput)(nil)).Elem(), GetAddonsAddonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsAddonAddonErrorInput)(nil)).Elem(), GetAddonsAddonAddonErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsAddonAddonErrorArrayInput)(nil)).Elem(), GetAddonsAddonAddonErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsAddonConfigurationInput)(nil)).Elem(), GetAddonsAddonConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsAddonConfigurationArrayInput)(nil)).Elem(), GetAddonsAddonConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsFilterInput)(nil)).Elem(), GetAddonsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsFilterArrayInput)(nil)).Elem(), GetAddonsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionArrayInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterInput)(nil)).Elem(), GetClustersClusterArgs{})
@@ -11198,6 +15622,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceDetailInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesFilterInput)(nil)).Elem(), GetPodShapesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesFilterArrayInput)(nil)).Elem(), GetPodShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeInput)(nil)).Elem(), GetPodShapesPodShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeArrayInput)(nil)).Elem(), GetPodShapesPodShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeMemoryOptionInput)(nil)).Elem(), GetPodShapesPodShapeMemoryOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeMemoryOptionArrayInput)(nil)).Elem(), GetPodShapesPodShapeMemoryOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeNetworkBandwidthOptionInput)(nil)).Elem(), GetPodShapesPodShapeNetworkBandwidthOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeNetworkBandwidthOptionArrayInput)(nil)).Elem(), GetPodShapesPodShapeNetworkBandwidthOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeOcpuOptionInput)(nil)).Elem(), GetPodShapesPodShapeOcpuOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeOcpuOptionArrayInput)(nil)).Elem(), GetPodShapesPodShapeOcpuOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolInitialVirtualNodeLabelInput)(nil)).Elem(), GetVirtualNodePoolInitialVirtualNodeLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolInitialVirtualNodeLabelArrayInput)(nil)).Elem(), GetVirtualNodePoolInitialVirtualNodeLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolPlacementConfigurationInput)(nil)).Elem(), GetVirtualNodePoolPlacementConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolPlacementConfigurationArrayInput)(nil)).Elem(), GetVirtualNodePoolPlacementConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolPodConfigurationInput)(nil)).Elem(), GetVirtualNodePoolPodConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolPodConfigurationArrayInput)(nil)).Elem(), GetVirtualNodePoolPodConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolTaintInput)(nil)).Elem(), GetVirtualNodePoolTaintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolTaintArrayInput)(nil)).Elem(), GetVirtualNodePoolTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolVirtualNodeTagInput)(nil)).Elem(), GetVirtualNodePoolVirtualNodeTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolVirtualNodeTagArrayInput)(nil)).Elem(), GetVirtualNodePoolVirtualNodeTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsFilterInput)(nil)).Elem(), GetVirtualNodePoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsFilterArrayInput)(nil)).Elem(), GetVirtualNodePoolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPodConfigurationInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolTaintInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolTaintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolTaintArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestErrorsFilterInput)(nil)).Elem(), GetWorkRequestErrorsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestErrorsFilterArrayInput)(nil)).Elem(), GetWorkRequestErrorsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestErrorsWorkRequestErrorInput)(nil)).Elem(), GetWorkRequestErrorsWorkRequestErrorArgs{})
@@ -11212,6 +15670,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestsWorkRequestArrayInput)(nil)).Elem(), GetWorkRequestsWorkRequestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestsWorkRequestResourceInput)(nil)).Elem(), GetWorkRequestsWorkRequestResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestsWorkRequestResourceArrayInput)(nil)).Elem(), GetWorkRequestsWorkRequestResourceArray{})
+	pulumi.RegisterOutputType(AddonAddonErrorOutput{})
+	pulumi.RegisterOutputType(AddonAddonErrorArrayOutput{})
+	pulumi.RegisterOutputType(AddonConfigurationOutput{})
+	pulumi.RegisterOutputType(AddonConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(ClusterClusterPodNetworkOptionOutput{})
 	pulumi.RegisterOutputType(ClusterClusterPodNetworkOptionArrayOutput{})
 	pulumi.RegisterOutputType(ClusterEndpointOutput{})
@@ -11278,6 +15740,38 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolNodeSourceArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolInitialVirtualNodeLabelOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolInitialVirtualNodeLabelArrayOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolPlacementConfigurationOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolPlacementConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolPodConfigurationOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolPodConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolTaintOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolTaintArrayOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolVirtualNodeTagsOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolVirtualNodeTagsPtrOutput{})
+	pulumi.RegisterOutputType(GetAddonAddonErrorOutput{})
+	pulumi.RegisterOutputType(GetAddonAddonErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonConfigurationOutput{})
+	pulumi.RegisterOutputType(GetAddonConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionVersionOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionVersionConfigurationOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionVersionConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetAddonOptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonsAddonOutput{})
+	pulumi.RegisterOutputType(GetAddonsAddonArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonsAddonAddonErrorOutput{})
+	pulumi.RegisterOutputType(GetAddonsAddonAddonErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonsAddonConfigurationOutput{})
+	pulumi.RegisterOutputType(GetAddonsAddonConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetAddonsFilterOutput{})
+	pulumi.RegisterOutputType(GetAddonsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOutput{})
@@ -11354,6 +15848,40 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPodShapesFilterOutput{})
+	pulumi.RegisterOutputType(GetPodShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeMemoryOptionOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeMemoryOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeNetworkBandwidthOptionOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeOcpuOptionOutput{})
+	pulumi.RegisterOutputType(GetPodShapesPodShapeOcpuOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolInitialVirtualNodeLabelOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolPlacementConfigurationOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolPlacementConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolPodConfigurationOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolPodConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolTaintOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolTaintArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolVirtualNodeTagOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolVirtualNodeTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolTaintOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkRequestErrorsFilterOutput{})
 	pulumi.RegisterOutputType(GetWorkRequestErrorsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkRequestErrorsWorkRequestErrorOutput{})

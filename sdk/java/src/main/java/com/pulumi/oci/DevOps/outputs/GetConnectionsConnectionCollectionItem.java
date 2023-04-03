@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResult;
 import com.pulumi.oci.DevOps.outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfig;
 import java.lang.Object;
 import java.lang.String;
@@ -63,6 +64,11 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return The result of validating the credentials of a connection.
+     * 
+     */
+    private List<GetConnectionsConnectionCollectionItemLastConnectionValidationResult> lastConnectionValidationResults;
     /**
      * @return unique project identifier
      * 
@@ -171,6 +177,13 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.id;
     }
     /**
+     * @return The result of validating the credentials of a connection.
+     * 
+     */
+    public List<GetConnectionsConnectionCollectionItemLastConnectionValidationResult> lastConnectionValidationResults() {
+        return this.lastConnectionValidationResults;
+    }
+    /**
      * @return unique project identifier
      * 
      */
@@ -239,6 +252,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<GetConnectionsConnectionCollectionItemLastConnectionValidationResult> lastConnectionValidationResults;
         private String projectId;
         private String state;
         private Map<String,Object> systemTags;
@@ -259,6 +273,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lastConnectionValidationResults = defaults.lastConnectionValidationResults;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -319,6 +334,14 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder lastConnectionValidationResults(List<GetConnectionsConnectionCollectionItemLastConnectionValidationResult> lastConnectionValidationResults) {
+            this.lastConnectionValidationResults = Objects.requireNonNull(lastConnectionValidationResults);
+            return this;
+        }
+        public Builder lastConnectionValidationResults(GetConnectionsConnectionCollectionItemLastConnectionValidationResult... lastConnectionValidationResults) {
+            return lastConnectionValidationResults(List.of(lastConnectionValidationResults));
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
@@ -368,6 +391,7 @@ public final class GetConnectionsConnectionCollectionItem {
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.lastConnectionValidationResults = lastConnectionValidationResults;
             o.projectId = projectId;
             o.state = state;
             o.systemTags = systemTags;

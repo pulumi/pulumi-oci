@@ -35,6 +35,11 @@ public final class GetClusterNetworksClusterNetwork {
      */
     private Map<String,Object> freeformTags;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * 
+     */
+    private String hpcIslandId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
@@ -44,6 +49,11 @@ public final class GetClusterNetworksClusterNetwork {
      * 
      */
     private List<GetClusterNetworksClusterNetworkInstancePool> instancePools;
+    /**
+     * @return The list of network block OCIDs of the HPC island.
+     * 
+     */
+    private List<String> networkBlockIds;
     /**
      * @return The location for where the instance pools in a cluster network will place instances.
      * 
@@ -95,6 +105,13 @@ public final class GetClusterNetworksClusterNetwork {
         return this.freeformTags;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * 
+     */
+    public String hpcIslandId() {
+        return this.hpcIslandId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
@@ -107,6 +124,13 @@ public final class GetClusterNetworksClusterNetwork {
      */
     public List<GetClusterNetworksClusterNetworkInstancePool> instancePools() {
         return this.instancePools;
+    }
+    /**
+     * @return The list of network block OCIDs of the HPC island.
+     * 
+     */
+    public List<String> networkBlockIds() {
+        return this.networkBlockIds;
     }
     /**
      * @return The location for where the instance pools in a cluster network will place instances.
@@ -150,8 +174,10 @@ public final class GetClusterNetworksClusterNetwork {
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
+        private String hpcIslandId;
         private String id;
         private List<GetClusterNetworksClusterNetworkInstancePool> instancePools;
+        private List<String> networkBlockIds;
         private List<GetClusterNetworksClusterNetworkPlacementConfiguration> placementConfigurations;
         private String state;
         private String timeCreated;
@@ -163,8 +189,10 @@ public final class GetClusterNetworksClusterNetwork {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.hpcIslandId = defaults.hpcIslandId;
     	      this.id = defaults.id;
     	      this.instancePools = defaults.instancePools;
+    	      this.networkBlockIds = defaults.networkBlockIds;
     	      this.placementConfigurations = defaults.placementConfigurations;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -192,6 +220,11 @@ public final class GetClusterNetworksClusterNetwork {
             return this;
         }
         @CustomType.Setter
+        public Builder hpcIslandId(String hpcIslandId) {
+            this.hpcIslandId = Objects.requireNonNull(hpcIslandId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -203,6 +236,14 @@ public final class GetClusterNetworksClusterNetwork {
         }
         public Builder instancePools(GetClusterNetworksClusterNetworkInstancePool... instancePools) {
             return instancePools(List.of(instancePools));
+        }
+        @CustomType.Setter
+        public Builder networkBlockIds(List<String> networkBlockIds) {
+            this.networkBlockIds = Objects.requireNonNull(networkBlockIds);
+            return this;
+        }
+        public Builder networkBlockIds(String... networkBlockIds) {
+            return networkBlockIds(List.of(networkBlockIds));
         }
         @CustomType.Setter
         public Builder placementConfigurations(List<GetClusterNetworksClusterNetworkPlacementConfiguration> placementConfigurations) {
@@ -233,8 +274,10 @@ public final class GetClusterNetworksClusterNetwork {
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
+            o.hpcIslandId = hpcIslandId;
             o.id = id;
             o.instancePools = instancePools;
+            o.networkBlockIds = networkBlockIds;
             o.placementConfigurations = placementConfigurations;
             o.state = state;
             o.timeCreated = timeCreated;

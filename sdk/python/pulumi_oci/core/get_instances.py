@@ -23,7 +23,7 @@ class GetInstancesResult:
     """
     A collection of values returned by getInstances.
     """
-    def __init__(__self__, availability_domain=None, capacity_reservation_id=None, compartment_id=None, display_name=None, filters=None, id=None, instances=None, state=None):
+    def __init__(__self__, availability_domain=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, display_name=None, filters=None, id=None, instances=None, state=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -33,6 +33,9 @@ class GetInstancesResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_cluster_id and not isinstance(compute_cluster_id, str):
+            raise TypeError("Expected argument 'compute_cluster_id' to be a str")
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -72,6 +75,11 @@ class GetInstancesResult:
         The OCID of the compartment that contains the instance.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[str]:
+        return pulumi.get(self, "compute_cluster_id")
 
     @property
     @pulumi.getter(name="displayName")
@@ -120,6 +128,7 @@ class AwaitableGetInstancesResult(GetInstancesResult):
             availability_domain=self.availability_domain,
             capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
+            compute_cluster_id=self.compute_cluster_id,
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
@@ -130,6 +139,7 @@ class AwaitableGetInstancesResult(GetInstancesResult):
 def get_instances(availability_domain: Optional[str] = None,
                   capacity_reservation_id: Optional[str] = None,
                   compartment_id: Optional[str] = None,
+                  compute_cluster_id: Optional[str] = None,
                   display_name: Optional[str] = None,
                   filters: Optional[Sequence[pulumi.InputType['GetInstancesFilterArgs']]] = None,
                   state: Optional[str] = None,
@@ -153,6 +163,7 @@ def get_instances(availability_domain: Optional[str] = None,
     test_instances = oci.Core.get_instances(compartment_id=var["compartment_id"],
         availability_domain=var["instance_availability_domain"],
         capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
+        compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
         display_name=var["instance_display_name"],
         state=var["instance_state"])
     ```
@@ -161,6 +172,7 @@ def get_instances(availability_domain: Optional[str] = None,
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str capacity_reservation_id: The OCID of the compute capacity reservation.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
     """
@@ -168,6 +180,7 @@ def get_instances(availability_domain: Optional[str] = None,
     __args__['availabilityDomain'] = availability_domain
     __args__['capacityReservationId'] = capacity_reservation_id
     __args__['compartmentId'] = compartment_id
+    __args__['computeClusterId'] = compute_cluster_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
@@ -178,6 +191,7 @@ def get_instances(availability_domain: Optional[str] = None,
         availability_domain=__ret__.availability_domain,
         capacity_reservation_id=__ret__.capacity_reservation_id,
         compartment_id=__ret__.compartment_id,
+        compute_cluster_id=__ret__.compute_cluster_id,
         display_name=__ret__.display_name,
         filters=__ret__.filters,
         id=__ret__.id,
@@ -189,6 +203,7 @@ def get_instances(availability_domain: Optional[str] = None,
 def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                          capacity_reservation_id: Optional[pulumi.Input[Optional[str]]] = None,
                          compartment_id: Optional[pulumi.Input[str]] = None,
+                         compute_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstancesFilterArgs']]]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -212,6 +227,7 @@ def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[str
     test_instances = oci.Core.get_instances(compartment_id=var["compartment_id"],
         availability_domain=var["instance_availability_domain"],
         capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
+        compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
         display_name=var["instance_display_name"],
         state=var["instance_state"])
     ```
@@ -220,6 +236,7 @@ def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[str
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str capacity_reservation_id: The OCID of the compute capacity reservation.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
     """

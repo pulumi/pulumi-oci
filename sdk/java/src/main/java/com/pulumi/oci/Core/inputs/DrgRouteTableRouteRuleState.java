@@ -34,14 +34,14 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
     }
 
     /**
-     * Represents the range of IP addresses to match against when routing traffic.
+     * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      * 
      */
     @Import(name="destination")
     private @Nullable Output<String> destination;
 
     /**
-     * @return Represents the range of IP addresses to match against when routing traffic.
+     * @return (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      * 
      */
     public Optional<Output<String>> destination() {
@@ -49,14 +49,14 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
     }
 
     /**
-     * Type of destination for the rule. Allowed values:
+     * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      * 
      */
     @Import(name="destinationType")
     private @Nullable Output<String> destinationType;
 
     /**
-     * @return Type of destination for the rule. Allowed values:
+     * @return Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      * 
      */
     public Optional<Output<String>> destinationType() {
@@ -207,7 +207,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destination Represents the range of IP addresses to match against when routing traffic.
+         * @param destination (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destination Represents the range of IP addresses to match against when routing traffic.
+         * @param destination (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationType Type of destination for the rule. Allowed values:
+         * @param destinationType Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationType Type of destination for the rule. Allowed values:
+         * @param destinationType Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
          * 
          * @return builder
          * 

@@ -75,6 +75,8 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id string `pulumi:"id"`
+	// Whether or not this rule is currently enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails                   string `pulumi:"lifecycleDetails"`
 	LogAnalyticsObjectCollectionRuleId string `pulumi:"logAnalyticsObjectCollectionRuleId"`
@@ -191,6 +193,11 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) FreeformTags() pulum
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether or not this rule is currently enabled.
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
 // A detailed status of the life cycle state.

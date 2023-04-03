@@ -29,6 +29,7 @@ public final class GetInstancesResult {
      * 
      */
     private String compartmentId;
+    private @Nullable String computeClusterId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -72,6 +73,9 @@ public final class GetInstancesResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public Optional<String> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -117,6 +121,7 @@ public final class GetInstancesResult {
         private @Nullable String availabilityDomain;
         private @Nullable String capacityReservationId;
         private String compartmentId;
+        private @Nullable String computeClusterId;
         private @Nullable String displayName;
         private @Nullable List<GetInstancesFilter> filters;
         private String id;
@@ -128,6 +133,7 @@ public final class GetInstancesResult {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -148,6 +154,11 @@ public final class GetInstancesResult {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(@Nullable String computeClusterId) {
+            this.computeClusterId = computeClusterId;
             return this;
         }
         @CustomType.Setter
@@ -186,6 +197,7 @@ public final class GetInstancesResult {
             o.availabilityDomain = availabilityDomain;
             o.capacityReservationId = capacityReservationId;
             o.compartmentId = compartmentId;
+            o.computeClusterId = computeClusterId;
             o.displayName = displayName;
             o.filters = filters;
             o.id = id;

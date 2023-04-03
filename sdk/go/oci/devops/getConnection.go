@@ -77,6 +77,8 @@ type LookupConnectionResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
+	// The result of validating the credentials of a connection.
+	LastConnectionValidationResults []GetConnectionLastConnectionValidationResult `pulumi:"lastConnectionValidationResults"`
 	// The OCID of the DevOps project.
 	ProjectId string `pulumi:"projectId"`
 	// The current state of the connection.
@@ -183,6 +185,13 @@ func (o LookupConnectionResultOutput) FreeformTags() pulumi.MapOutput {
 // Unique identifier that is immutable on creation.
 func (o LookupConnectionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The result of validating the credentials of a connection.
+func (o LookupConnectionResultOutput) LastConnectionValidationResults() GetConnectionLastConnectionValidationResultArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionLastConnectionValidationResult {
+		return v.LastConnectionValidationResults
+	}).(GetConnectionLastConnectionValidationResultArrayOutput)
 }
 
 // The OCID of the DevOps project.

@@ -54,6 +54,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The result of validating the credentials of a connection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult> LastConnectionValidationResults;
+        /// <summary>
         /// unique project identifier
         /// </summary>
         public readonly string ProjectId;
@@ -104,6 +108,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string id,
 
+            ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult> lastConnectionValidationResults,
+
             string projectId,
 
             string state,
@@ -128,6 +134,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            LastConnectionValidationResults = lastConnectionValidationResults;
             ProjectId = projectId;
             State = state;
             SystemTags = systemTags;

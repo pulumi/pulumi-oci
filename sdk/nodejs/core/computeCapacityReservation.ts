@@ -34,6 +34,10 @@ import * as utilities from "../utilities";
  *     instanceReservationConfigs: [{
  *         instanceShape: _var.compute_capacity_reservation_instance_reservation_configs_instance_shape,
  *         reservedCount: _var.compute_capacity_reservation_instance_reservation_configs_reserved_count,
+ *         clusterConfig: {
+ *             hpcIslandId: oci_core_hpc_island.test_hpc_island.id,
+ *             networkBlockIds: _var.compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
+ *         },
  *         faultDomain: _var.compute_capacity_reservation_instance_reservation_configs_fault_domain,
  *         instanceShapeConfig: {
  *             memoryInGbs: _var.compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,

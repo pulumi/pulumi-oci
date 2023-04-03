@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.ComputeCapacityReservationInstanceReservationConfigClusterConfig;
 import com.pulumi.oci.Core.outputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig;
 import java.lang.String;
 import java.util.Objects;
@@ -12,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ComputeCapacityReservationInstanceReservationConfig {
+    /**
+     * @return (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+     * 
+     */
+    private @Nullable ComputeCapacityReservationInstanceReservationConfigClusterConfig clusterConfig;
     /**
      * @return (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
      * 
@@ -39,6 +45,13 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
     private @Nullable String usedCount;
 
     private ComputeCapacityReservationInstanceReservationConfig() {}
+    /**
+     * @return (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+     * 
+     */
+    public Optional<ComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfig() {
+        return Optional.ofNullable(this.clusterConfig);
+    }
     /**
      * @return (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
      * 
@@ -84,6 +97,7 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable ComputeCapacityReservationInstanceReservationConfigClusterConfig clusterConfig;
         private @Nullable String faultDomain;
         private String instanceShape;
         private @Nullable ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig instanceShapeConfig;
@@ -92,6 +106,7 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
         public Builder() {}
         public Builder(ComputeCapacityReservationInstanceReservationConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterConfig = defaults.clusterConfig;
     	      this.faultDomain = defaults.faultDomain;
     	      this.instanceShape = defaults.instanceShape;
     	      this.instanceShapeConfig = defaults.instanceShapeConfig;
@@ -99,6 +114,11 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
     	      this.usedCount = defaults.usedCount;
         }
 
+        @CustomType.Setter
+        public Builder clusterConfig(@Nullable ComputeCapacityReservationInstanceReservationConfigClusterConfig clusterConfig) {
+            this.clusterConfig = clusterConfig;
+            return this;
+        }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
             this.faultDomain = faultDomain;
@@ -126,6 +146,7 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
         }
         public ComputeCapacityReservationInstanceReservationConfig build() {
             final var o = new ComputeCapacityReservationInstanceReservationConfig();
+            o.clusterConfig = clusterConfig;
             o.faultDomain = faultDomain;
             o.instanceShape = instanceShape;
             o.instanceShapeConfig = instanceShapeConfig;

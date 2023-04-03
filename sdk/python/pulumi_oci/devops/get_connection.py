@@ -22,7 +22,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_token=None, app_password=None, base_url=None, compartment_id=None, connection_id=None, connection_type=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_verify_configs=None, username=None):
+    def __init__(__self__, access_token=None, app_password=None, base_url=None, compartment_id=None, connection_id=None, connection_type=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, last_connection_validation_results=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_verify_configs=None, username=None):
         if access_token and not isinstance(access_token, str):
             raise TypeError("Expected argument 'access_token' to be a str")
         pulumi.set(__self__, "access_token", access_token)
@@ -56,6 +56,9 @@ class GetConnectionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if last_connection_validation_results and not isinstance(last_connection_validation_results, list):
+            raise TypeError("Expected argument 'last_connection_validation_results' to be a list")
+        pulumi.set(__self__, "last_connection_validation_results", last_connection_validation_results)
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
@@ -164,6 +167,14 @@ class GetConnectionResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lastConnectionValidationResults")
+    def last_connection_validation_results(self) -> Sequence['outputs.GetConnectionLastConnectionValidationResultResult']:
+        """
+        The result of validating the credentials of a connection.
+        """
+        return pulumi.get(self, "last_connection_validation_results")
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
@@ -237,6 +248,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            last_connection_validation_results=self.last_connection_validation_results,
             project_id=self.project_id,
             state=self.state,
             system_tags=self.system_tags,
@@ -282,6 +294,7 @@ def get_connection(connection_id: Optional[str] = None,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        last_connection_validation_results=__ret__.last_connection_validation_results,
         project_id=__ret__.project_id,
         state=__ret__.state,
         system_tags=__ret__.system_tags,

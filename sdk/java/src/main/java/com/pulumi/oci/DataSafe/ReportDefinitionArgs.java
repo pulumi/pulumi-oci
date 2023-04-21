@@ -98,14 +98,14 @@ public final class ReportDefinitionArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) A description of the report definition.
+     * (Updatable) The description of the report definition.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the report definition.
+     * @return (Updatable) The description of the report definition.
      * 
      */
     public Optional<Output<String>> description() {
@@ -341,7 +341,7 @@ public final class ReportDefinitionArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description (Updatable) A description of the report definition.
+         * @param description (Updatable) The description of the report definition.
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class ReportDefinitionArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description (Updatable) A description of the report definition.
+         * @param description (Updatable) The description of the report definition.
          * 
          * @return builder
          * 

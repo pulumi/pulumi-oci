@@ -38,6 +38,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("findingKey")]
         public string? FindingKey { get; set; }
 
+        [Input("references")]
+        public string? References { get; set; }
+
         [Input("securityAssessmentId", required: true)]
         public string SecurityAssessmentId { get; set; } = null!;
 
@@ -69,6 +72,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("findingKey")]
         public Input<string>? FindingKey { get; set; }
 
+        [Input("references")]
+        public Input<string>? References { get; set; }
+
         [Input("securityAssessmentId", required: true)]
         public Input<string> SecurityAssessmentId { get; set; } = null!;
 
@@ -94,6 +100,7 @@ namespace Pulumi.Oci.DataSafe
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? References;
         public readonly string SecurityAssessmentId;
         public readonly string? Severity;
 
@@ -111,6 +118,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            string? references,
+
             string securityAssessmentId,
 
             string? severity)
@@ -121,6 +130,7 @@ namespace Pulumi.Oci.DataSafe
             FindingKey = findingKey;
             Findings = findings;
             Id = id;
+            References = references;
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
         }

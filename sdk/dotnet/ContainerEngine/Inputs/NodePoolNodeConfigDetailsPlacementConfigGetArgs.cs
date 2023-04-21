@@ -37,6 +37,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
+        /// (Updatable) Configuration options for preemptible nodes.
+        /// </summary>
+        [Input("preemptibleNodeConfig")]
+        public Input<Inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigGetArgs>? PreemptibleNodeConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the subnet in which to place nodes.
         /// </summary>
         [Input("subnetId", required: true)]

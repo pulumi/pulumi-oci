@@ -94,6 +94,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeLastAssessed;
+        /// <summary>
         /// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
@@ -148,6 +152,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string timeCreated,
 
+            string timeLastAssessed,
+
             string timeUpdated,
 
             string triggeredBy,
@@ -174,6 +180,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             TargetId = targetId;
             TargetIds = targetIds;
             TimeCreated = timeCreated;
+            TimeLastAssessed = timeLastAssessed;
             TimeUpdated = timeUpdated;
             TriggeredBy = triggeredBy;
             Type = type;

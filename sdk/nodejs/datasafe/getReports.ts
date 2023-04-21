@@ -106,11 +106,11 @@ export interface GetReportsResult {
      */
     readonly reportDefinitionId?: string;
     /**
-     * The current state of the report.
+     * The current state of the audit report.
      */
     readonly state?: string;
     /**
-     * The type of the report.
+     * The type of the audit report.
      */
     readonly type?: string;
 }

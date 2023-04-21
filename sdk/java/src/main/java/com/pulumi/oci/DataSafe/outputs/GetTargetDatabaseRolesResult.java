@@ -33,7 +33,7 @@ public final class GetTargetDatabaseRolesResult {
     private @Nullable Boolean isOracleMaintained;
     private @Nullable String roleNameContains;
     /**
-     * @return Name of the role.
+     * @return The name of the role.
      * 
      */
     private @Nullable List<String> roleNames;
@@ -73,7 +73,7 @@ public final class GetTargetDatabaseRolesResult {
         return Optional.ofNullable(this.roleNameContains);
     }
     /**
-     * @return Name of the role.
+     * @return The name of the role.
      * 
      */
     public List<String> roleNames() {

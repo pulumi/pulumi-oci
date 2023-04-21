@@ -29,6 +29,11 @@ public final class GetSecurityAssessmentFindingsResult {
      * 
      */
     private String id;
+    /**
+     * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+     * 
+     */
+    private @Nullable String references;
     private String securityAssessmentId;
     /**
      * @return The severity of the finding.
@@ -63,6 +68,13 @@ public final class GetSecurityAssessmentFindingsResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+     * 
+     */
+    public Optional<String> references() {
+        return Optional.ofNullable(this.references);
+    }
     public String securityAssessmentId() {
         return this.securityAssessmentId;
     }
@@ -89,6 +101,7 @@ public final class GetSecurityAssessmentFindingsResult {
         private @Nullable String findingKey;
         private List<GetSecurityAssessmentFindingsFinding> findings;
         private String id;
+        private @Nullable String references;
         private String securityAssessmentId;
         private @Nullable String severity;
         public Builder() {}
@@ -100,6 +113,7 @@ public final class GetSecurityAssessmentFindingsResult {
     	      this.findingKey = defaults.findingKey;
     	      this.findings = defaults.findings;
     	      this.id = defaults.id;
+    	      this.references = defaults.references;
     	      this.securityAssessmentId = defaults.securityAssessmentId;
     	      this.severity = defaults.severity;
         }
@@ -141,6 +155,11 @@ public final class GetSecurityAssessmentFindingsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder references(@Nullable String references) {
+            this.references = references;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAssessmentId(String securityAssessmentId) {
             this.securityAssessmentId = Objects.requireNonNull(securityAssessmentId);
             return this;
@@ -158,6 +177,7 @@ public final class GetSecurityAssessmentFindingsResult {
             o.findingKey = findingKey;
             o.findings = findings;
             o.id = id;
+            o.references = references;
             o.securityAssessmentId = securityAssessmentId;
             o.severity = severity;
             return o;

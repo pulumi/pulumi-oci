@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -62,6 +63,21 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
     }
 
     /**
+     * (Updatable) Configuration options for preemptible nodes.
+     * 
+     */
+    @Import(name="preemptibleNodeConfig")
+    private @Nullable Output<NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs> preemptibleNodeConfig;
+
+    /**
+     * @return (Updatable) Configuration options for preemptible nodes.
+     * 
+     */
+    public Optional<Output<NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs>> preemptibleNodeConfig() {
+        return Optional.ofNullable(this.preemptibleNodeConfig);
+    }
+
+    /**
      * (Updatable) The OCID of the subnet in which to place nodes.
      * 
      */
@@ -82,6 +98,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
         this.availabilityDomain = $.availabilityDomain;
         this.capacityReservationId = $.capacityReservationId;
         this.faultDomains = $.faultDomains;
+        this.preemptibleNodeConfig = $.preemptibleNodeConfig;
         this.subnetId = $.subnetId;
     }
 
@@ -174,6 +191,27 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
          */
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
+        }
+
+        /**
+         * @param preemptibleNodeConfig (Updatable) Configuration options for preemptible nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preemptibleNodeConfig(@Nullable Output<NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs> preemptibleNodeConfig) {
+            $.preemptibleNodeConfig = preemptibleNodeConfig;
+            return this;
+        }
+
+        /**
+         * @param preemptibleNodeConfig (Updatable) Configuration options for preemptible nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preemptibleNodeConfig(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs preemptibleNodeConfig) {
+            return preemptibleNodeConfig(Output.of(preemptibleNodeConfig));
         }
 
         /**

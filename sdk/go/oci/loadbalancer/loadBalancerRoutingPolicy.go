@@ -37,8 +37,8 @@ import (
 //					&loadbalancer.LoadBalancerRoutingPolicyRuleArgs{
 //						Actions: loadbalancer.LoadBalancerRoutingPolicyRuleActionArray{
 //							&loadbalancer.LoadBalancerRoutingPolicyRuleActionArgs{
-//								Name:           pulumi.Any(_var.Load_balancer_routing_policy_rules_actions_name),
 //								BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
+//								Name:           pulumi.Any(_var.Load_balancer_routing_policy_rules_actions_name),
 //							},
 //						},
 //						Condition: pulumi.Any(_var.Load_balancer_routing_policy_rules_condition),

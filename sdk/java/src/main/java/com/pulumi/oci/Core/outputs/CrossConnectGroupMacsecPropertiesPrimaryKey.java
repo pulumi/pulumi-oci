@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
@@ -18,7 +20,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
      * @return The secret version of the `connectivityAssociationKey` secret in Vault.
      * 
      */
-    private String connectivityAssociationKeySecretVersion;
+    private @Nullable String connectivityAssociationKeySecretVersion;
     /**
      * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
@@ -28,7 +30,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
      * @return The secret version of the connectivity association name secret in Vault.
      * 
      */
-    private String connectivityAssociationNameSecretVersion;
+    private @Nullable String connectivityAssociationNameSecretVersion;
 
     private CrossConnectGroupMacsecPropertiesPrimaryKey() {}
     /**
@@ -42,8 +44,8 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
      * @return The secret version of the `connectivityAssociationKey` secret in Vault.
      * 
      */
-    public String connectivityAssociationKeySecretVersion() {
-        return this.connectivityAssociationKeySecretVersion;
+    public Optional<String> connectivityAssociationKeySecretVersion() {
+        return Optional.ofNullable(this.connectivityAssociationKeySecretVersion);
     }
     /**
      * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
@@ -56,8 +58,8 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
      * @return The secret version of the connectivity association name secret in Vault.
      * 
      */
-    public String connectivityAssociationNameSecretVersion() {
-        return this.connectivityAssociationNameSecretVersion;
+    public Optional<String> connectivityAssociationNameSecretVersion() {
+        return Optional.ofNullable(this.connectivityAssociationNameSecretVersion);
     }
 
     public static Builder builder() {
@@ -70,9 +72,9 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
     @CustomType.Builder
     public static final class Builder {
         private String connectivityAssociationKeySecretId;
-        private String connectivityAssociationKeySecretVersion;
+        private @Nullable String connectivityAssociationKeySecretVersion;
         private String connectivityAssociationNameSecretId;
-        private String connectivityAssociationNameSecretVersion;
+        private @Nullable String connectivityAssociationNameSecretVersion;
         public Builder() {}
         public Builder(CrossConnectGroupMacsecPropertiesPrimaryKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,8 +90,8 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
             return this;
         }
         @CustomType.Setter
-        public Builder connectivityAssociationKeySecretVersion(String connectivityAssociationKeySecretVersion) {
-            this.connectivityAssociationKeySecretVersion = Objects.requireNonNull(connectivityAssociationKeySecretVersion);
+        public Builder connectivityAssociationKeySecretVersion(@Nullable String connectivityAssociationKeySecretVersion) {
+            this.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
             return this;
         }
         @CustomType.Setter
@@ -98,8 +100,8 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
             return this;
         }
         @CustomType.Setter
-        public Builder connectivityAssociationNameSecretVersion(String connectivityAssociationNameSecretVersion) {
-            this.connectivityAssociationNameSecretVersion = Objects.requireNonNull(connectivityAssociationNameSecretVersion);
+        public Builder connectivityAssociationNameSecretVersion(@Nullable String connectivityAssociationNameSecretVersion) {
+            this.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
             return this;
         }
         public CrossConnectGroupMacsecPropertiesPrimaryKey build() {

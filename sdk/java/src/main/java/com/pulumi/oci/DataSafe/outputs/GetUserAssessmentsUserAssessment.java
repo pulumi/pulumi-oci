@@ -115,6 +115,11 @@ public final class GetUserAssessmentsUserAssessment {
      */
     private String timeCreated;
     /**
+     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeLastAssessed;
+    /**
      * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -272,6 +277,13 @@ public final class GetUserAssessmentsUserAssessment {
         return this.timeCreated;
     }
     /**
+     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeLastAssessed() {
+        return this.timeLastAssessed;
+    }
+    /**
      * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -322,6 +334,7 @@ public final class GetUserAssessmentsUserAssessment {
         private String targetId;
         private List<String> targetIds;
         private String timeCreated;
+        private String timeLastAssessed;
         private String timeUpdated;
         private String triggeredBy;
         private String type;
@@ -348,6 +361,7 @@ public final class GetUserAssessmentsUserAssessment {
     	      this.targetId = defaults.targetId;
     	      this.targetIds = defaults.targetIds;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastAssessed = defaults.timeLastAssessed;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.triggeredBy = defaults.triggeredBy;
     	      this.type = defaults.type;
@@ -463,6 +477,11 @@ public final class GetUserAssessmentsUserAssessment {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastAssessed(String timeLastAssessed) {
+            this.timeLastAssessed = Objects.requireNonNull(timeLastAssessed);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
@@ -499,6 +518,7 @@ public final class GetUserAssessmentsUserAssessment {
             o.targetId = targetId;
             o.targetIds = targetIds;
             o.timeCreated = timeCreated;
+            o.timeLastAssessed = timeLastAssessed;
             o.timeUpdated = timeUpdated;
             o.triggeredBy = triggeredBy;
             o.type = type;

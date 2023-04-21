@@ -60,7 +60,7 @@ public final class GetUserAssessmentsResult {
      */
     private @Nullable String triggeredBy;
     /**
-     * @return Type of user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     private @Nullable String type;
@@ -145,7 +145,7 @@ public final class GetUserAssessmentsResult {
         return Optional.ofNullable(this.triggeredBy);
     }
     /**
-     * @return Type of user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     public Optional<String> type() {

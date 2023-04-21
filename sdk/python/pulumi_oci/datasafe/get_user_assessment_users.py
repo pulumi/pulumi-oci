@@ -23,7 +23,7 @@ class GetUserAssessmentUsersResult:
     """
     A collection of values returned by getUserAssessmentUsers.
     """
-    def __init__(__self__, access_level=None, account_status=None, authentication_type=None, compartment_id_in_subtree=None, filters=None, id=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None, users=None):
+    def __init__(__self__, access_level=None, account_status=None, authentication_type=None, compartment_id_in_subtree=None, filters=None, id=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None, user_profile=None, user_role=None, user_type=None, users=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -75,6 +75,15 @@ class GetUserAssessmentUsersResult:
         if user_name and not isinstance(user_name, str):
             raise TypeError("Expected argument 'user_name' to be a str")
         pulumi.set(__self__, "user_name", user_name)
+        if user_profile and not isinstance(user_profile, str):
+            raise TypeError("Expected argument 'user_profile' to be a str")
+        pulumi.set(__self__, "user_profile", user_profile)
+        if user_role and not isinstance(user_role, str):
+            raise TypeError("Expected argument 'user_role' to be a str")
+        pulumi.set(__self__, "user_role", user_role)
+        if user_type and not isinstance(user_type, str):
+            raise TypeError("Expected argument 'user_type' to be a str")
+        pulumi.set(__self__, "user_type", user_type)
         if users and not isinstance(users, list):
             raise TypeError("Expected argument 'users' to be a list")
         pulumi.set(__self__, "users", users)
@@ -183,6 +192,24 @@ class GetUserAssessmentUsersResult:
         return pulumi.get(self, "user_name")
 
     @property
+    @pulumi.getter(name="userProfile")
+    def user_profile(self) -> Optional[str]:
+        """
+        The user profile name.
+        """
+        return pulumi.get(self, "user_profile")
+
+    @property
+    @pulumi.getter(name="userRole")
+    def user_role(self) -> Optional[str]:
+        return pulumi.get(self, "user_role")
+
+    @property
+    @pulumi.getter(name="userType")
+    def user_type(self) -> Optional[str]:
+        return pulumi.get(self, "user_type")
+
+    @property
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetUserAssessmentUsersUserResult']:
         """
@@ -214,6 +241,9 @@ class AwaitableGetUserAssessmentUsersResult(GetUserAssessmentUsersResult):
             user_category=self.user_category,
             user_key=self.user_key,
             user_name=self.user_name,
+            user_profile=self.user_profile,
+            user_role=self.user_role,
+            user_type=self.user_type,
             users=self.users)
 
 
@@ -233,6 +263,9 @@ def get_user_assessment_users(access_level: Optional[str] = None,
                               user_category: Optional[str] = None,
                               user_key: Optional[str] = None,
                               user_name: Optional[str] = None,
+                              user_profile: Optional[str] = None,
+                              user_role: Optional[str] = None,
+                              user_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserAssessmentUsersResult:
     """
     This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
@@ -262,7 +295,10 @@ def get_user_assessment_users(access_level: Optional[str] = None,
         time_user_created_less_than=var["user_assessment_user_time_user_created_less_than"],
         user_category=var["user_assessment_user_user_category"],
         user_key=var["user_assessment_user_user_key"],
-        user_name=oci_identity_user["test_user"]["name"])
+        user_name=oci_identity_user["test_user"]["name"],
+        user_profile=var["user_assessment_user_user_profile"],
+        user_role=var["user_assessment_user_user_role"],
+        user_type=var["user_assessment_user_user_type"])
     ```
 
 
@@ -281,6 +317,14 @@ def get_user_assessment_users(access_level: Optional[str] = None,
     :param str user_category: A filter to return only items that match the specified user category.
     :param str user_key: A filter to return only items that match the specified user key.
     :param str user_name: A filter to return only items that match the specified user name.
+    :param str user_profile: A filter to return only items that match the specified user profile.
+    :param str user_role: A filter to return only items that match the specified user role.
+    :param str user_type: A filter to return only items that match the specified user type. The possible values can be
+           * ADMIN_PRIVILEGED
+           * APPLICATION
+           * PRIVILEGED
+           * SCHEMA
+           * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -299,6 +343,9 @@ def get_user_assessment_users(access_level: Optional[str] = None,
     __args__['userCategory'] = user_category
     __args__['userKey'] = user_key
     __args__['userName'] = user_name
+    __args__['userProfile'] = user_profile
+    __args__['userRole'] = user_role
+    __args__['userType'] = user_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers', __args__, opts=opts, typ=GetUserAssessmentUsersResult).value
 
@@ -320,6 +367,9 @@ def get_user_assessment_users(access_level: Optional[str] = None,
         user_category=__ret__.user_category,
         user_key=__ret__.user_key,
         user_name=__ret__.user_name,
+        user_profile=__ret__.user_profile,
+        user_role=__ret__.user_role,
+        user_type=__ret__.user_type,
         users=__ret__.users)
 
 
@@ -340,6 +390,9 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
                                      user_category: Optional[pulumi.Input[Optional[str]]] = None,
                                      user_key: Optional[pulumi.Input[Optional[str]]] = None,
                                      user_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                     user_profile: Optional[pulumi.Input[Optional[str]]] = None,
+                                     user_role: Optional[pulumi.Input[Optional[str]]] = None,
+                                     user_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentUsersResult]:
     """
     This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
@@ -369,7 +422,10 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
         time_user_created_less_than=var["user_assessment_user_time_user_created_less_than"],
         user_category=var["user_assessment_user_user_category"],
         user_key=var["user_assessment_user_user_key"],
-        user_name=oci_identity_user["test_user"]["name"])
+        user_name=oci_identity_user["test_user"]["name"],
+        user_profile=var["user_assessment_user_user_profile"],
+        user_role=var["user_assessment_user_user_role"],
+        user_type=var["user_assessment_user_user_type"])
     ```
 
 
@@ -388,5 +444,13 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
     :param str user_category: A filter to return only items that match the specified user category.
     :param str user_key: A filter to return only items that match the specified user key.
     :param str user_name: A filter to return only items that match the specified user name.
+    :param str user_profile: A filter to return only items that match the specified user profile.
+    :param str user_role: A filter to return only items that match the specified user role.
+    :param str user_type: A filter to return only items that match the specified user type. The possible values can be
+           * ADMIN_PRIVILEGED
+           * APPLICATION
+           * PRIVILEGED
+           * SCHEMA
+           * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
     """
     ...

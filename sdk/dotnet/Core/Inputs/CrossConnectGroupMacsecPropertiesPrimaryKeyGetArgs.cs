@@ -21,8 +21,8 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// The secret version of the `connectivityAssociationKey` secret in Vault.
         /// </summary>
-        [Input("connectivityAssociationKeySecretVersion", required: true)]
-        public Input<string> ConnectivityAssociationKeySecretVersion { get; set; } = null!;
+        [Input("connectivityAssociationKeySecretVersion")]
+        public Input<string>? ConnectivityAssociationKeySecretVersion { get; set; }
 
         /// <summary>
         /// Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
@@ -33,8 +33,8 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// The secret version of the connectivity association name secret in Vault.
         /// </summary>
-        [Input("connectivityAssociationNameSecretVersion", required: true)]
-        public Input<string> ConnectivityAssociationNameSecretVersion { get; set; } = null!;
+        [Input("connectivityAssociationNameSecretVersion")]
+        public Input<string>? ConnectivityAssociationNameSecretVersion { get; set; }
 
         public CrossConnectGroupMacsecPropertiesPrimaryKeyGetArgs()
         {

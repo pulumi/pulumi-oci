@@ -132,6 +132,12 @@ __all__ = [
     'GetMaskingPoliciesMaskingPolicyCollectionItemResult',
     'GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult',
     'GetMaskingPolicyColumnSourceResult',
+    'GetMaskingPolicyMaskingObjectsFilterResult',
+    'GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult',
+    'GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult',
+    'GetMaskingPolicyMaskingSchemasFilterResult',
+    'GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult',
+    'GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult',
     'GetMaskingReportMaskedColumnsFilterResult',
     'GetMaskingReportMaskedColumnsMaskedColumnCollectionResult',
     'GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult',
@@ -155,6 +161,12 @@ __all__ = [
     'GetReportsFilterResult',
     'GetReportsReportCollectionResult',
     'GetReportsReportCollectionItemResult',
+    'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult',
+    'GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionResult',
+    'GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult',
+    'GetSdmMaskingPolicyDifferencesFilterResult',
+    'GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult',
+    'GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult',
     'GetSecurityAssessmentComparisonTargetResult',
     'GetSecurityAssessmentComparisonTargetAuditingResult',
     'GetSecurityAssessmentComparisonTargetAuditingBaselineResult',
@@ -213,6 +225,12 @@ __all__ = [
     'GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticPassResult',
+    'GetSensitiveDataModelSensitiveObjectsFilterResult',
+    'GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult',
+    'GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult',
+    'GetSensitiveDataModelSensitiveSchemasFilterResult',
+    'GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult',
+    'GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult',
     'GetSensitiveDataModelsFilterResult',
     'GetSensitiveDataModelsSensitiveColumnsFilterResult',
     'GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult',
@@ -249,6 +267,10 @@ __all__ = [
     'GetUserAssessmentComparisonSummaryBaselineResult',
     'GetUserAssessmentComparisonSummaryCurrentResult',
     'GetUserAssessmentIgnoredTargetResult',
+    'GetUserAssessmentProfileAnalyticsFilterResult',
+    'GetUserAssessmentProfileAnalyticsProfileAggregationResult',
+    'GetUserAssessmentProfilesFilterResult',
+    'GetUserAssessmentProfilesProfileResult',
     'GetUserAssessmentUserAnalyticsFilterResult',
     'GetUserAssessmentUserAnalyticsUserAggregationResult',
     'GetUserAssessmentUserAnalyticsUserAggregationItemResult',
@@ -675,7 +697,7 @@ class AuditProfileAuditTrail(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: The OCID of the Data Safe target for which the audit profile is created.
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
-        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -843,7 +865,7 @@ class AuditProfileAuditTrail(dict):
     @pulumi.getter(name="timeLastCollected")
     def time_last_collected(self) -> Optional[str]:
         """
-        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
@@ -1814,7 +1836,7 @@ class ReportDefinitionColumnFilter(dict):
         """
         :param Sequence[str] expressions: (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
         :param str field_name: (Updatable) Name of the column that must be sorted.
-        :param bool is_enabled: (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        :param bool is_enabled: (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
         """
@@ -1844,7 +1866,7 @@ class ReportDefinitionColumnFilter(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -3195,8 +3217,8 @@ class TargetDatabaseDatabaseDetails(dict):
         """
         :param str database_type: (Updatable) The database type.
         :param str infrastructure_type: (Updatable) The infrastructure type the database is running on.
-        :param str autonomous_database_id: (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
-        :param str db_system_id: (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+        :param str autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str db_system_id: (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         :param str instance_id: (Updatable) The OCID of the compute instance on which the database is running.
         :param Sequence[str] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         :param int listener_port: (Updatable) The port number of the database listener.
@@ -3240,7 +3262,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
@@ -3248,7 +3270,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -5005,14 +5027,14 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                  time_collected: str):
         """
         :param str action_taken: The action taken for this audit event.
-        :param str audit_event_time: Time of audit event occurrence in the target database.
+        :param str audit_event_time: The time of the audit event occurrence in the target database.
         :param str audit_location: The location of the audit. Currently the value is audit table.
         :param str audit_policies: Comma-seperated list of audit policies that caused the current audit event.
         :param str audit_trail_id: The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
-        :param str audit_type: Type of auditing.
-        :param str client_hostname: Name of the host machine from which the session was spawned.
+        :param str audit_type: The type of the auditing.
+        :param str client_hostname: The name of the host machine from which the session was spawned.
         :param str client_id: The client identifier in each Oracle session.
-        :param str client_ip: IP address of the host from which the session was spawned.
+        :param str client_ip: The IP address of the host machine from which the session was spawned.
         :param str client_program: The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
         :param str command_param: List of bind variables associated with the command text.
         :param str command_text: The SQL associated with the audit event.
@@ -5021,26 +5043,26 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                * DATABASE_CLOUD_SERVICE - Represents Oracle Database Cloud Services.
                * AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases.
                * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
-        :param str db_user_name: Name of the database user whose actions were audited.
+        :param str db_user_name: The name of the database user whose actions were audited.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param str error_code: Oracle Error code generated by the action. Zero indicates the action was successful.
-        :param str error_message: Detailed message on why the Error occurred.
-        :param str event_name: Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        :param str error_message: The detailed message on why the Error occurred.
+        :param str event_name: The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
         :param str extended_event_attributes: List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the audit event.
         :param bool is_alerted: Indicates whether an alert was raised for this audit event.
-        :param str object: Name of the object affected by the action.
-        :param str object_owner: Schema name of object affected but the action.
-        :param str object_type: Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
-        :param str operation: Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        :param str object: The name of the object affected by the action.
+        :param str object_owner: The schema name of the object affected by the action.
+        :param str object_type: The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        :param str operation: The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
         :param str operation_status: Indicates whether the operation was a success or a failure.
         :param str os_terminal: The operating system terminal of the user session.
-        :param str os_user_name: Name of the operating system user for the database session.
-        :param str target_class: Class of the target that was audited.
+        :param str os_user_name: The name of the operating system user for the database session.
+        :param str target_class: The class of the target that was audited.
         :param str target_id: The OCID of the target database that was audited.
         :param str target_name: The name of the target database that was audited.
-        :param str time_collected: Timestamp when this audit event was collected from the target database by Data Safe.
+        :param str time_collected: The timestamp when this audit event was collected from the target database by Data Safe.
         """
         pulumi.set(__self__, "action_taken", action_taken)
         pulumi.set(__self__, "audit_event_time", audit_event_time)
@@ -5089,7 +5111,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="auditEventTime")
     def audit_event_time(self) -> str:
         """
-        Time of audit event occurrence in the target database.
+        The time of the audit event occurrence in the target database.
         """
         return pulumi.get(self, "audit_event_time")
 
@@ -5121,7 +5143,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="auditType")
     def audit_type(self) -> str:
         """
-        Type of auditing.
+        The type of the auditing.
         """
         return pulumi.get(self, "audit_type")
 
@@ -5129,7 +5151,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="clientHostname")
     def client_hostname(self) -> str:
         """
-        Name of the host machine from which the session was spawned.
+        The name of the host machine from which the session was spawned.
         """
         return pulumi.get(self, "client_hostname")
 
@@ -5145,7 +5167,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="clientIp")
     def client_ip(self) -> str:
         """
-        IP address of the host from which the session was spawned.
+        The IP address of the host machine from which the session was spawned.
         """
         return pulumi.get(self, "client_ip")
 
@@ -5196,7 +5218,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="dbUserName")
     def db_user_name(self) -> str:
         """
-        Name of the database user whose actions were audited.
+        The name of the database user whose actions were audited.
         """
         return pulumi.get(self, "db_user_name")
 
@@ -5220,7 +5242,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="errorMessage")
     def error_message(self) -> str:
         """
-        Detailed message on why the Error occurred.
+        The detailed message on why the Error occurred.
         """
         return pulumi.get(self, "error_message")
 
@@ -5228,7 +5250,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="eventName")
     def event_name(self) -> str:
         """
-        Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
         """
         return pulumi.get(self, "event_name")
 
@@ -5268,7 +5290,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter
     def object(self) -> str:
         """
-        Name of the object affected by the action.
+        The name of the object affected by the action.
         """
         return pulumi.get(self, "object")
 
@@ -5276,7 +5298,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="objectOwner")
     def object_owner(self) -> str:
         """
-        Schema name of object affected but the action.
+        The schema name of the object affected by the action.
         """
         return pulumi.get(self, "object_owner")
 
@@ -5284,7 +5306,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="objectType")
     def object_type(self) -> str:
         """
-        Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
         """
         return pulumi.get(self, "object_type")
 
@@ -5292,7 +5314,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter
     def operation(self) -> str:
         """
-        Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
         """
         return pulumi.get(self, "operation")
 
@@ -5316,7 +5338,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="osUserName")
     def os_user_name(self) -> str:
         """
-        Name of the operating system user for the database session.
+        The name of the operating system user for the database session.
         """
         return pulumi.get(self, "os_user_name")
 
@@ -5324,7 +5346,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="targetClass")
     def target_class(self) -> str:
         """
-        Class of the target that was audited.
+        The class of the target that was audited.
         """
         return pulumi.get(self, "target_class")
 
@@ -5348,7 +5370,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="timeCollected")
     def time_collected(self) -> str:
         """
-        Timestamp when this audit event was collected from the target database by Data Safe.
+        The timestamp when this audit event was collected from the target database by Data Safe.
         """
         return pulumi.get(self, "time_collected")
 
@@ -6183,7 +6205,7 @@ class GetAuditProfileAuditTrailResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: The OCID of the Data Safe target for which the audit profile is created.
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
-        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -6332,7 +6354,7 @@ class GetAuditProfileAuditTrailResult(dict):
     @pulumi.getter(name="timeLastCollected")
     def time_last_collected(self) -> str:
         """
-        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
@@ -6964,7 +6986,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
-        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -7113,7 +7135,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
     @pulumi.getter(name="timeLastCollected")
     def time_last_collected(self) -> str:
         """
-        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
@@ -7302,7 +7324,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_created: The date and time the audit trail was created, in the format defined by RFC3339.
-        :param str time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit trail was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -7466,7 +7488,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
     @pulumi.getter(name="timeLastCollected")
     def time_last_collected(self) -> str:
         """
-        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
@@ -10269,10 +10291,10 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         :param bool is_drop_temp_tables_enabled: Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         :param bool is_redo_logging_enabled: Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         :param bool is_refresh_stats_enabled: Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        :param str parallel_degree: Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+        :param str parallel_degree: Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
         :param str post_masking_script: A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
         :param str pre_masking_script: A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        :param str recompile: Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used.
+        :param str recompile: Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
         :param str state: A filter to return only the resources that match the specified lifecycle states.
         :param str time_created: The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -10385,7 +10407,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
     @pulumi.getter(name="parallelDegree")
     def parallel_degree(self) -> str:
         """
-        Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+        Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
         """
         return pulumi.get(self, "parallel_degree")
 
@@ -10409,7 +10431,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
     @pulumi.getter
     def recompile(self) -> str:
         """
-        Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used.
+        Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
         """
         return pulumi.get(self, "recompile")
 
@@ -10516,6 +10538,154 @@ class GetMaskingPolicyColumnSourceResult(dict):
         The OCID of the target database that's used as the source of masking columns.
         """
         return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetMaskingPolicyMaskingObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult']):
+        """
+        :param Sequence['GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs'] items: An array of masking object summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult']:
+        """
+        An array of masking object summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 object: str,
+                 object_type: str,
+                 schema_name: str):
+        """
+        :param str object: A filter to return only items related to a specific object name.
+        :param str object_type: A filter to return only items related to a specific object type.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        A filter to return only items related to a specific object type.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+
+@pulumi.output_type
+class GetMaskingPolicyMaskingSchemasFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult']):
+        """
+        :param Sequence['GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs'] items: An array of masking schema summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult']:
+        """
+        An array of masking schema summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 schema_name: str):
+        """
+        :param str schema_name: A filter to return only items related to specific schema name.
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
 
 
 @pulumi.output_type
@@ -10841,8 +11011,13 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  id: str,
+                 is_drop_temp_tables_enabled: bool,
+                 is_redo_logging_enabled: bool,
+                 is_refresh_stats_enabled: bool,
                  masking_policy_id: str,
                  masking_work_request_id: str,
+                 parallel_degree: str,
+                 recompile: str,
                  state: str,
                  target_id: str,
                  time_created: str,
@@ -10856,8 +11031,13 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str id: The OCID of the masking report.
+        :param bool is_drop_temp_tables_enabled: Indicates if the temporary tables created during the masking operation were dropped after masking.
+        :param bool is_redo_logging_enabled: Indicates if redo logging was enabled during the masking operation.
+        :param bool is_refresh_stats_enabled: Indicates if statistics gathering was enabled during the masking operation.
         :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
         :param str masking_work_request_id: The OCID of the masking work request that resulted in this masking report.
+        :param str parallel_degree: Indicates if parallel execution was enabled during the masking operation.
+        :param str recompile: Indicates how invalid objects were recompiled post the masking operation.
         :param str state: The current state of the masking report.
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_created: The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -10871,8 +11051,13 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
         pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
+        pulumi.set(__self__, "parallel_degree", parallel_degree)
+        pulumi.set(__self__, "recompile", recompile)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
@@ -10901,6 +11086,30 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isDropTempTablesEnabled")
+    def is_drop_temp_tables_enabled(self) -> bool:
+        """
+        Indicates if the temporary tables created during the masking operation were dropped after masking.
+        """
+        return pulumi.get(self, "is_drop_temp_tables_enabled")
+
+    @property
+    @pulumi.getter(name="isRedoLoggingEnabled")
+    def is_redo_logging_enabled(self) -> bool:
+        """
+        Indicates if redo logging was enabled during the masking operation.
+        """
+        return pulumi.get(self, "is_redo_logging_enabled")
+
+    @property
+    @pulumi.getter(name="isRefreshStatsEnabled")
+    def is_refresh_stats_enabled(self) -> bool:
+        """
+        Indicates if statistics gathering was enabled during the masking operation.
+        """
+        return pulumi.get(self, "is_refresh_stats_enabled")
+
+    @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> str:
         """
@@ -10915,6 +11124,22 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         The OCID of the masking work request that resulted in this masking report.
         """
         return pulumi.get(self, "masking_work_request_id")
+
+    @property
+    @pulumi.getter(name="parallelDegree")
+    def parallel_degree(self) -> str:
+        """
+        Indicates if parallel execution was enabled during the masking operation.
+        """
+        return pulumi.get(self, "parallel_degree")
+
+    @property
+    @pulumi.getter
+    def recompile(self) -> str:
+        """
+        Indicates how invalid objects were recompiled post the masking operation.
+        """
+        return pulumi.get(self, "recompile")
 
     @property
     @pulumi.getter
@@ -11174,7 +11399,7 @@ class GetReportDefinitionColumnFilterResult(dict):
         """
         :param Sequence[str] expressions: An array of expressions based on the operator type. A filter may have one or more expressions.
         :param str field_name: Name of the column that must be sorted.
-        :param bool is_enabled: Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        :param bool is_enabled: Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: Specifies the type of operator that must be applied for example in, eq etc.
         """
@@ -11204,7 +11429,7 @@ class GetReportDefinitionColumnFilterResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -11477,11 +11702,11 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str category: An optional filter to return only resources that match the specified category.
-        :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs'] column_filters: An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs'] column_filters: An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs'] column_infos: An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
         :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs'] column_sortings: An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Sequence[str] compliance_standards: The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        :param Sequence[str] compliance_standards: The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         :param str data_source: Specifies the name of a resource that provides data for the report. For example  alerts, events.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param str description: A description of the report definition.
@@ -11491,18 +11716,18 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param str id: The OCID of the report definition.
         :param bool is_seeded: A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
         :param str parent_id: The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
-        :param str record_time_span: The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
-        :param str schedule: Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
-        :param str scheduled_report_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
-        :param str scheduled_report_mime_type: Specifies the format of report to be excel or pdf
+        :param str record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        :param str schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        :param str scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource should be created.
+        :param str scheduled_report_mime_type: Specifies the format of the report ( either XLS or PDF )
         :param str scheduled_report_name: The name of the report to be scheduled.
-        :param int scheduled_report_row_limit: Specifies the limit on number of rows in report.
+        :param int scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param str scim_filter: Additional scim filters used to get the specific summary.
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs'] summaries: An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: Specifies the time at which the report definition was created.
-        :param str time_updated: The date and time of the report definition update in Data Safe.
+        :param str time_created: Specifies the data and time the report definition was created.
+        :param str time_updated: The date and time the report definition was update.
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "column_filters", column_filters)
@@ -11544,7 +11769,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="columnFilters")
     def column_filters(self) -> Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult']:
         """
-        An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         """
         return pulumi.get(self, "column_filters")
 
@@ -11576,7 +11801,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="complianceStandards")
     def compliance_standards(self) -> Sequence[str]:
         """
-        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         """
         return pulumi.get(self, "compliance_standards")
 
@@ -11656,7 +11881,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="recordTimeSpan")
     def record_time_span(self) -> str:
         """
-        The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         """
         return pulumi.get(self, "record_time_span")
 
@@ -11664,7 +11889,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter
     def schedule(self) -> str:
         """
-        Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
         """
         return pulumi.get(self, "schedule")
 
@@ -11672,7 +11897,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="scheduledReportCompartmentId")
     def scheduled_report_compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource should be created.
         """
         return pulumi.get(self, "scheduled_report_compartment_id")
 
@@ -11680,7 +11905,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> str:
         """
-        Specifies the format of report to be excel or pdf
+        Specifies the format of the report ( either XLS or PDF )
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -11696,7 +11921,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="scheduledReportRowLimit")
     def scheduled_report_row_limit(self) -> int:
         """
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
         """
         return pulumi.get(self, "scheduled_report_row_limit")
 
@@ -11736,7 +11961,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Specifies the time at which the report definition was created.
+        Specifies the data and time the report definition was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -11744,7 +11969,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time of the report definition update in Data Safe.
+        The date and time the report definition was update.
         """
         return pulumi.get(self, "time_updated")
 
@@ -11760,7 +11985,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult(dict)
         """
         :param Sequence[str] expressions: An array of expressions based on the operator type. A filter may have one or more expressions.
         :param str field_name: Name of the column that must be sorted.
-        :param bool is_enabled: Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        :param bool is_enabled: Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: Specifies the type of operator that must be applied for example in, eq etc.
         """
@@ -11790,7 +12015,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult(dict)
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -12051,7 +12276,7 @@ class GetReportsReportCollectionItemResult(dict):
         :param str report_definition_id: The ID of the report definition to filter the list of reports
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_generated: Specifies the time at which the report was generated.
+        :param str time_generated: Specifies the date and time the report was generated.
         :param str type: An optional filter to return only resources that match the specified type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -12151,7 +12376,7 @@ class GetReportsReportCollectionItemResult(dict):
     @pulumi.getter(name="timeGenerated")
     def time_generated(self) -> str:
         """
-        Specifies the time at which the report was generated.
+        Specifies the date and time the report was generated.
         """
         return pulumi.get(self, "time_generated")
 
@@ -12162,6 +12387,351 @@ class GetReportsReportCollectionItemResult(dict):
         An optional filter to return only resources that match the specified type.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 column_name: str,
+                 difference_type: str,
+                 key: str,
+                 masking_columnkey: str,
+                 object: str,
+                 planned_action: str,
+                 schema_name: str,
+                 sensitive_columnkey: str,
+                 sensitive_type_id: str,
+                 sync_status: str,
+                 time_last_synced: str):
+        """
+        :param str column_name: A filter to return only a specific column based on column name.
+        :param str difference_type: A filter to return only the SDM masking policy difference columns that match the specified difference type
+        :param str key: The unique key that identifies the SDM masking policy difference column.
+        :param str masking_columnkey: The unique key that identifies the masking column represented by the SDM masking policy difference column.
+        :param str object: A filter to return only items related to a specific object name.
+        :param str planned_action: A filter to return only the SDM masking policy difference columns that match the specified planned action.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        :param str sensitive_columnkey: The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
+        :param str sensitive_type_id: The OCID of the sensitive type associated with the difference column.
+        :param str sync_status: A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
+        :param str time_last_synced: The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "difference_type", difference_type)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "masking_columnkey", masking_columnkey)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "planned_action", planned_action)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_columnkey", sensitive_columnkey)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "sync_status", sync_status)
+        pulumi.set(__self__, "time_last_synced", time_last_synced)
+
+    @property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> str:
+        """
+        A filter to return only a specific column based on column name.
+        """
+        return pulumi.get(self, "column_name")
+
+    @property
+    @pulumi.getter(name="differenceType")
+    def difference_type(self) -> str:
+        """
+        A filter to return only the SDM masking policy difference columns that match the specified difference type
+        """
+        return pulumi.get(self, "difference_type")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The unique key that identifies the SDM masking policy difference column.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="maskingColumnkey")
+    def masking_columnkey(self) -> str:
+        """
+        The unique key that identifies the masking column represented by the SDM masking policy difference column.
+        """
+        return pulumi.get(self, "masking_columnkey")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="plannedAction")
+    def planned_action(self) -> str:
+        """
+        A filter to return only the SDM masking policy difference columns that match the specified planned action.
+        """
+        return pulumi.get(self, "planned_action")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveColumnkey")
+    def sensitive_columnkey(self) -> str:
+        """
+        The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
+        """
+        return pulumi.get(self, "sensitive_columnkey")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> str:
+        """
+        The OCID of the sensitive type associated with the difference column.
+        """
+        return pulumi.get(self, "sensitive_type_id")
+
+    @property
+    @pulumi.getter(name="syncStatus")
+    def sync_status(self) -> str:
+        """
+        A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
+        """
+        return pulumi.get(self, "sync_status")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> str:
+        """
+        The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_synced")
+
+
+@pulumi.output_type
+class GetSdmMaskingPolicyDifferencesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 difference_type: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 masking_policy_id: str,
+                 sensitive_data_model_id: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_creation_started: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str difference_type: The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the SDM masking policy difference.
+        :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+        :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
+        :param str state: A filter to return only the resources that match the specified lifecycle states.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_creation_started: The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "difference_type", difference_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_creation_started", time_creation_started)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="differenceType")
+    def difference_type(self) -> str:
+        """
+        The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
+        """
+        return pulumi.get(self, "difference_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the SDM masking policy difference.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="maskingPolicyId")
+    def masking_policy_id(self) -> str:
+        """
+        A filter to return only the resources that match the specified masking policy OCID.
+        """
+        return pulumi.get(self, "masking_policy_id")
+
+    @property
+    @pulumi.getter(name="sensitiveDataModelId")
+    def sensitive_data_model_id(self) -> str:
+        """
+        A filter to return only the resources that match the specified sensitive data model OCID.
+        """
+        return pulumi.get(self, "sensitive_data_model_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only the resources that match the specified lifecycle states.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeCreationStarted")
+    def time_creation_started(self) -> str:
+        """
+        The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_creation_started")
 
 
 @pulumi.output_type
@@ -14681,7 +15251,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
         :param str key: The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
-        :param Sequence['GetSecurityAssessmentFindingsFindingReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+        :param Sequence['GetSecurityAssessmentFindingsFindingReferenceArgs'] references: An optional filter to return only findings containing the specified reference.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: A filter to return only findings of a particular risk level.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
@@ -14726,7 +15296,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
     @pulumi.getter
     def references(self) -> Sequence['outputs.GetSecurityAssessmentFindingsFindingReferenceResult']:
         """
-        Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+        An optional filter to return only findings containing the specified reference.
         """
         return pulumi.get(self, "references")
 
@@ -15517,6 +16087,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
                  target_ids: Sequence[str],
                  target_version: str,
                  time_created: str,
+                 time_last_assessed: str,
                  time_updated: str,
                  triggered_by: str,
                  type: str):
@@ -15543,6 +16114,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         :param Sequence[str] target_ids: Array of database target OCIDs.
         :param str target_version: The version of the target database.
         :param str time_created: The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_last_assessed: The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str triggered_by: A filter to return only security asessments that were created by either user or system.
         :param str type: A filter to return only items that match the specified security assessment type.
@@ -15569,6 +16141,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         pulumi.set(__self__, "target_ids", target_ids)
         pulumi.set(__self__, "target_version", target_version)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "triggered_by", triggered_by)
         pulumi.set(__self__, "type", type)
@@ -15748,6 +16321,14 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> str:
+        """
+        The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_assessed")
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -16426,6 +17007,154 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticPassResult(dict):
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult']):
+        """
+        :param Sequence['GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs'] items: An array of sensitive object summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult']:
+        """
+        An array of sensitive object summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 object: str,
+                 object_type: str,
+                 schema_name: str):
+        """
+        :param str object: A filter to return only items related to a specific object name.
+        :param str object_type: A filter to return only items related to a specific object type.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        A filter to return only items related to a specific object type.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveSchemasFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult']):
+        """
+        :param Sequence['GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs'] items: An array of sensitive schema summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult']:
+        """
+        An array of sensitive schema summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 schema_name: str):
+        """
+        :param str schema_name: A filter to return only items related to specific schema name.
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
 
 
 @pulumi.output_type
@@ -17490,9 +18219,9 @@ class GetTargetDatabaseDatabaseDetailResult(dict):
                  service_name: str,
                  vm_cluster_id: str):
         """
-        :param str autonomous_database_id: The OCID of the autonomous database registered as a target database in Data Safe.
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
         :param str database_type: The database type.
-        :param str db_system_id: The OCID of the cloud database system registered as a target database in Data Safe.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
         :param str infrastructure_type: The infrastructure type the database is running on.
         :param str instance_id: The OCID of the compute instance on which the database is running.
         :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
@@ -17514,7 +18243,7 @@ class GetTargetDatabaseDatabaseDetailResult(dict):
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
         """
-        The OCID of the autonomous database registered as a target database in Data Safe.
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
@@ -17530,7 +18259,7 @@ class GetTargetDatabaseDatabaseDetailResult(dict):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
         """
-        The OCID of the cloud database system registered as a target database in Data Safe.
+        The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -18118,18 +18847,18 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
                  time_updated: str,
                  tls_configs: Sequence['outputs.GetTargetDatabasesTargetDatabaseTlsConfigResult']):
         """
-        :param Sequence[str] associated_resource_ids: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        :param Sequence[str] associated_resource_ids: The OCIDs of associated resources like database, Data Safe private endpoint etc.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param Sequence['GetTargetDatabasesTargetDatabaseConnectionOptionArgs'] connection_options: Types of connection supported by Data Safe.
         :param Sequence['GetTargetDatabasesTargetDatabaseCredentialArgs'] credentials: The database credentials required for Data Safe to connect to the database.
-        :param Sequence['GetTargetDatabasesTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        :param Sequence['GetTargetDatabasesTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the target database in Data Safe.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the Data Safe target database.
         :param str lifecycle_details: Details about the current state of the target database in Data Safe.
-        :param str state: A filter to return the target databases that matches the current state of the target database.
+        :param str state: A filter to return only target databases that match the specified lifecycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
         :param str time_updated: The date and time of the target database update in Data Safe.
@@ -18156,7 +18885,7 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
     @pulumi.getter(name="associatedResourceIds")
     def associated_resource_ids(self) -> Sequence[str]:
         """
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
         """
         return pulumi.get(self, "associated_resource_ids")
 
@@ -18188,7 +18917,7 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabaseDatabaseDetailResult']:
         """
-        Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
@@ -18244,7 +18973,7 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return the target databases that matches the current state of the target database.
+        A filter to return only target databases that match the specified lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -18367,10 +19096,10 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
                  service_name: str,
                  vm_cluster_id: str):
         """
-        :param str autonomous_database_id: The OCID of the autonomous database registered as a target database in Data Safe.
-        :param str database_type: A filter to return target databases that match the database type of the target database.
-        :param str db_system_id: The OCID of the cloud database system registered as a target database in Data Safe.
-        :param str infrastructure_type: A filter to return target databases that match the infrastructure type of the target database.
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: A filter to return only target databases that match the specified database type.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
         :param str instance_id: The OCID of the compute instance on which the database is running.
         :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         :param int listener_port: The port number of the database listener.
@@ -18391,7 +19120,7 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
         """
-        The OCID of the autonomous database registered as a target database in Data Safe.
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
@@ -18399,7 +19128,7 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
     @pulumi.getter(name="databaseType")
     def database_type(self) -> str:
         """
-        A filter to return target databases that match the database type of the target database.
+        A filter to return only target databases that match the specified database type.
         """
         return pulumi.get(self, "database_type")
 
@@ -18407,7 +19136,7 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
         """
-        The OCID of the cloud database system registered as a target database in Data Safe.
+        The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -18415,7 +19144,7 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> str:
         """
-        A filter to return target databases that match the infrastructure type of the target database.
+        A filter to return only target databases that match the specified infrastructure type.
         """
         return pulumi.get(self, "infrastructure_type")
 
@@ -18631,6 +19360,404 @@ class GetUserAssessmentIgnoredTargetResult(dict):
 
 
 @pulumi.output_type
+class GetUserAssessmentProfileAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUserAssessmentProfileAnalyticsProfileAggregationResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any],
+                 items: Sequence[Any]):
+        """
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param Sequence[Any] items: The array of profile aggregation data.
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence[Any]:
+        """
+        The array of profile aggregation data.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUserAssessmentProfilesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUserAssessmentProfilesProfileResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 composite_limit: str,
+                 connect_time: str,
+                 cpu_per_call: str,
+                 cpu_per_session: str,
+                 defined_tags: Mapping[str, Any],
+                 failed_login_attempts: str,
+                 freeform_tags: Mapping[str, Any],
+                 idle_time: str,
+                 inactive_account_time: str,
+                 is_user_created: bool,
+                 logical_reads_per_call: str,
+                 logical_reads_per_session: str,
+                 password_grace_time: str,
+                 password_life_time: str,
+                 password_lock_time: str,
+                 password_reuse_max: str,
+                 password_reuse_time: str,
+                 password_rollover_time: str,
+                 password_verification_function: str,
+                 password_verification_function_details: str,
+                 private_sga: str,
+                 profile_name: str,
+                 sessions_per_user: str,
+                 target_id: str,
+                 user_assessment_id: str,
+                 user_count: int):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param str composite_limit: Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+        :param str connect_time: Specify the total elapsed time limit for a session, expressed in minutes.
+        :param str cpu_per_call: Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
+        :param str cpu_per_session: Specify the CPU time limit for a session, expressed in hundredth of seconds.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str failed_login_attempts: Maximum times the user is allowed in fail login before the user account is locked.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str idle_time: Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
+        :param str inactive_account_time: The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
+        :param bool is_user_created: An optional filter to return the user created profiles.
+        :param str logical_reads_per_call: Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
+        :param str logical_reads_per_session: Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
+        :param str password_grace_time: Number of grace days for user to change password.
+        :param str password_life_time: Number of days the password is valid before expiry.
+        :param str password_lock_time: Number of days the user account remains locked after failed login.
+        :param str password_reuse_max: Number of day after the user can use the already used password.
+        :param str password_reuse_time: Number of days before which a password cannot be reused.
+        :param str password_rollover_time: Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
+        :param str password_verification_function: An optional filter to filter the profiles based on password verification function.
+        :param str password_verification_function_details: Details about the PL/SQL that can be used for password verification.
+        :param str private_sga: Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA), expressed in bytes.
+        :param str profile_name: A filter to return only items that match the specified profile name.
+        :param str sessions_per_user: Specify the number of concurrent sessions to which you want to limit the user.
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str user_assessment_id: The OCID of the user assessment.
+        :param int user_count: The number of users having a given profile.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "composite_limit", composite_limit)
+        pulumi.set(__self__, "connect_time", connect_time)
+        pulumi.set(__self__, "cpu_per_call", cpu_per_call)
+        pulumi.set(__self__, "cpu_per_session", cpu_per_session)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "failed_login_attempts", failed_login_attempts)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "idle_time", idle_time)
+        pulumi.set(__self__, "inactive_account_time", inactive_account_time)
+        pulumi.set(__self__, "is_user_created", is_user_created)
+        pulumi.set(__self__, "logical_reads_per_call", logical_reads_per_call)
+        pulumi.set(__self__, "logical_reads_per_session", logical_reads_per_session)
+        pulumi.set(__self__, "password_grace_time", password_grace_time)
+        pulumi.set(__self__, "password_life_time", password_life_time)
+        pulumi.set(__self__, "password_lock_time", password_lock_time)
+        pulumi.set(__self__, "password_reuse_max", password_reuse_max)
+        pulumi.set(__self__, "password_reuse_time", password_reuse_time)
+        pulumi.set(__self__, "password_rollover_time", password_rollover_time)
+        pulumi.set(__self__, "password_verification_function", password_verification_function)
+        pulumi.set(__self__, "password_verification_function_details", password_verification_function_details)
+        pulumi.set(__self__, "private_sga", private_sga)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "sessions_per_user", sessions_per_user)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        pulumi.set(__self__, "user_count", user_count)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compositeLimit")
+    def composite_limit(self) -> str:
+        """
+        Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+        """
+        return pulumi.get(self, "composite_limit")
+
+    @property
+    @pulumi.getter(name="connectTime")
+    def connect_time(self) -> str:
+        """
+        Specify the total elapsed time limit for a session, expressed in minutes.
+        """
+        return pulumi.get(self, "connect_time")
+
+    @property
+    @pulumi.getter(name="cpuPerCall")
+    def cpu_per_call(self) -> str:
+        """
+        Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
+        """
+        return pulumi.get(self, "cpu_per_call")
+
+    @property
+    @pulumi.getter(name="cpuPerSession")
+    def cpu_per_session(self) -> str:
+        """
+        Specify the CPU time limit for a session, expressed in hundredth of seconds.
+        """
+        return pulumi.get(self, "cpu_per_session")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="failedLoginAttempts")
+    def failed_login_attempts(self) -> str:
+        """
+        Maximum times the user is allowed in fail login before the user account is locked.
+        """
+        return pulumi.get(self, "failed_login_attempts")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="idleTime")
+    def idle_time(self) -> str:
+        """
+        Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
+        """
+        return pulumi.get(self, "idle_time")
+
+    @property
+    @pulumi.getter(name="inactiveAccountTime")
+    def inactive_account_time(self) -> str:
+        """
+        The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
+        """
+        return pulumi.get(self, "inactive_account_time")
+
+    @property
+    @pulumi.getter(name="isUserCreated")
+    def is_user_created(self) -> bool:
+        """
+        An optional filter to return the user created profiles.
+        """
+        return pulumi.get(self, "is_user_created")
+
+    @property
+    @pulumi.getter(name="logicalReadsPerCall")
+    def logical_reads_per_call(self) -> str:
+        """
+        Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
+        """
+        return pulumi.get(self, "logical_reads_per_call")
+
+    @property
+    @pulumi.getter(name="logicalReadsPerSession")
+    def logical_reads_per_session(self) -> str:
+        """
+        Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
+        """
+        return pulumi.get(self, "logical_reads_per_session")
+
+    @property
+    @pulumi.getter(name="passwordGraceTime")
+    def password_grace_time(self) -> str:
+        """
+        Number of grace days for user to change password.
+        """
+        return pulumi.get(self, "password_grace_time")
+
+    @property
+    @pulumi.getter(name="passwordLifeTime")
+    def password_life_time(self) -> str:
+        """
+        Number of days the password is valid before expiry.
+        """
+        return pulumi.get(self, "password_life_time")
+
+    @property
+    @pulumi.getter(name="passwordLockTime")
+    def password_lock_time(self) -> str:
+        """
+        Number of days the user account remains locked after failed login.
+        """
+        return pulumi.get(self, "password_lock_time")
+
+    @property
+    @pulumi.getter(name="passwordReuseMax")
+    def password_reuse_max(self) -> str:
+        """
+        Number of day after the user can use the already used password.
+        """
+        return pulumi.get(self, "password_reuse_max")
+
+    @property
+    @pulumi.getter(name="passwordReuseTime")
+    def password_reuse_time(self) -> str:
+        """
+        Number of days before which a password cannot be reused.
+        """
+        return pulumi.get(self, "password_reuse_time")
+
+    @property
+    @pulumi.getter(name="passwordRolloverTime")
+    def password_rollover_time(self) -> str:
+        """
+        Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
+        """
+        return pulumi.get(self, "password_rollover_time")
+
+    @property
+    @pulumi.getter(name="passwordVerificationFunction")
+    def password_verification_function(self) -> str:
+        """
+        An optional filter to filter the profiles based on password verification function.
+        """
+        return pulumi.get(self, "password_verification_function")
+
+    @property
+    @pulumi.getter(name="passwordVerificationFunctionDetails")
+    def password_verification_function_details(self) -> str:
+        """
+        Details about the PL/SQL that can be used for password verification.
+        """
+        return pulumi.get(self, "password_verification_function_details")
+
+    @property
+    @pulumi.getter(name="privateSga")
+    def private_sga(self) -> str:
+        """
+        Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA), expressed in bytes.
+        """
+        return pulumi.get(self, "private_sga")
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> str:
+        """
+        A filter to return only items that match the specified profile name.
+        """
+        return pulumi.get(self, "profile_name")
+
+    @property
+    @pulumi.getter(name="sessionsPerUser")
+    def sessions_per_user(self) -> str:
+        """
+        Specify the number of concurrent sessions to which you want to limit the user.
+        """
+        return pulumi.get(self, "sessions_per_user")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="userAssessmentId")
+    def user_assessment_id(self) -> str:
+        """
+        The OCID of the user assessment.
+        """
+        return pulumi.get(self, "user_assessment_id")
+
+    @property
+    @pulumi.getter(name="userCount")
+    def user_count(self) -> int:
+        """
+        The number of users having a given profile.
+        """
+        return pulumi.get(self, "user_count")
+
+
+@pulumi.output_type
 class GetUserAssessmentUserAnalyticsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -18734,7 +19861,7 @@ class GetUserAssessmentUsersUserResult(dict):
         :param str time_user_created: The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str user_category: A filter to return only items that match the specified user category.
         :param str user_name: A filter to return only items that match the specified user name.
-        :param str user_profile: The user profile name.
+        :param str user_profile: A filter to return only items that match the specified user profile.
         :param Sequence[str] user_types: The user type, which can be a combination of the following:
         """
         pulumi.set(__self__, "account_status", account_status)
@@ -18834,7 +19961,7 @@ class GetUserAssessmentUsersUserResult(dict):
     @pulumi.getter(name="userProfile")
     def user_profile(self) -> str:
         """
-        The user profile name.
+        A filter to return only items that match the specified user profile.
         """
         return pulumi.get(self, "user_profile")
 
@@ -18929,6 +20056,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
                  target_id: str,
                  target_ids: Sequence[str],
                  time_created: str,
+                 time_last_assessed: str,
                  time_updated: str,
                  triggered_by: str,
                  type: str):
@@ -18953,6 +20081,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param Sequence[str] target_ids: Array of database target OCIDs.
         :param str time_created: The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_last_assessed: The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str triggered_by: A filter to return user assessments that were created by either the system or by a user only.
         :param str type: A filter to return only items that match the specified assessment type.
@@ -18977,6 +20106,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "target_ids", target_ids)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "triggered_by", triggered_by)
         pulumi.set(__self__, "type", type)
@@ -19140,6 +20270,14 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> str:
+        """
+        The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_assessed")
 
     @property
     @pulumi.getter(name="timeUpdated")

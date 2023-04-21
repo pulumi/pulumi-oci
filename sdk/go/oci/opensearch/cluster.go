@@ -112,17 +112,17 @@ type Cluster struct {
 	AvailabilityDomains pulumi.StringArrayOutput `pulumi:"availabilityDomains"`
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The number of data nodes to configure for the cluster.
+	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntOutput `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
 	DataNodeHostBareMetalShape pulumi.StringOutput `pulumi:"dataNodeHostBareMetalShape"`
-	// The amount of memory in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
 	DataNodeHostMemoryGb pulumi.IntOutput `pulumi:"dataNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluster's data nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
 	DataNodeHostOcpuCount pulumi.IntOutput `pulumi:"dataNodeHostOcpuCount"`
 	// TThe instance type for the cluster's data nodes.
 	DataNodeHostType pulumi.StringOutput `pulumi:"dataNodeHostType"`
-	// The amount of storage in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb pulumi.IntOutput `pulumi:"dataNodeStorageGb"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -134,23 +134,23 @@ type Cluster struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The number of master nodes to configure for the cluster.
+	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount pulumi.IntOutput `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
 	MasterNodeHostBareMetalShape pulumi.StringOutput `pulumi:"masterNodeHostBareMetalShape"`
-	// The amount of memory in GB, to configure per node for the cluster's master nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
 	MasterNodeHostMemoryGb pulumi.IntOutput `pulumi:"masterNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluser's master nodes.
+	// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
 	MasterNodeHostOcpuCount pulumi.IntOutput `pulumi:"masterNodeHostOcpuCount"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringOutput `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn pulumi.StringOutput `pulumi:"opendashboardFqdn"`
-	// The number of OpenSearch Dashboard nodes to configure for the cluster.
+	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount pulumi.IntOutput `pulumi:"opendashboardNodeCount"`
-	// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostMemoryGb pulumi.IntOutput `pulumi:"opendashboardNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount pulumi.IntOutput `pulumi:"opendashboardNodeHostOcpuCount"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
 	OpendashboardPrivateIp pulumi.StringOutput `pulumi:"opendashboardPrivateIp"`
@@ -285,17 +285,17 @@ type clusterState struct {
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The number of data nodes to configure for the cluster.
+	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount *int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
 	DataNodeHostBareMetalShape *string `pulumi:"dataNodeHostBareMetalShape"`
-	// The amount of memory in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
 	DataNodeHostMemoryGb *int `pulumi:"dataNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluster's data nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
 	DataNodeHostOcpuCount *int `pulumi:"dataNodeHostOcpuCount"`
 	// TThe instance type for the cluster's data nodes.
 	DataNodeHostType *string `pulumi:"dataNodeHostType"`
-	// The amount of storage in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb *int `pulumi:"dataNodeStorageGb"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -307,23 +307,23 @@ type clusterState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The number of master nodes to configure for the cluster.
+	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount *int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
 	MasterNodeHostBareMetalShape *string `pulumi:"masterNodeHostBareMetalShape"`
-	// The amount of memory in GB, to configure per node for the cluster's master nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
 	MasterNodeHostMemoryGb *int `pulumi:"masterNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluser's master nodes.
+	// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
 	MasterNodeHostOcpuCount *int `pulumi:"masterNodeHostOcpuCount"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType *string `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn *string `pulumi:"opendashboardFqdn"`
-	// The number of OpenSearch Dashboard nodes to configure for the cluster.
+	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount *int `pulumi:"opendashboardNodeCount"`
-	// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostMemoryGb *int `pulumi:"opendashboardNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount *int `pulumi:"opendashboardNodeHostOcpuCount"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
 	OpendashboardPrivateIp *string `pulumi:"opendashboardPrivateIp"`
@@ -366,17 +366,17 @@ type ClusterState struct {
 	AvailabilityDomains pulumi.StringArrayInput
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringPtrInput
-	// The number of data nodes to configure for the cluster.
+	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntPtrInput
 	// The bare metal shape for the cluster's data nodes.
 	DataNodeHostBareMetalShape pulumi.StringPtrInput
-	// The amount of memory in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
 	DataNodeHostMemoryGb pulumi.IntPtrInput
-	// The number of OCPUs to configure for the cluster's data nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
 	DataNodeHostOcpuCount pulumi.IntPtrInput
 	// TThe instance type for the cluster's data nodes.
 	DataNodeHostType pulumi.StringPtrInput
-	// The amount of storage in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -388,23 +388,23 @@ type ClusterState struct {
 	FreeformTags pulumi.MapInput
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringPtrInput
-	// The number of master nodes to configure for the cluster.
+	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount pulumi.IntPtrInput
 	// The bare metal shape for the cluster's master nodes.
 	MasterNodeHostBareMetalShape pulumi.StringPtrInput
-	// The amount of memory in GB, to configure per node for the cluster's master nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
 	MasterNodeHostMemoryGb pulumi.IntPtrInput
-	// The number of OCPUs to configure for the cluser's master nodes.
+	// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
 	MasterNodeHostOcpuCount pulumi.IntPtrInput
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn pulumi.StringPtrInput
-	// The number of OpenSearch Dashboard nodes to configure for the cluster.
+	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount pulumi.IntPtrInput
-	// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostMemoryGb pulumi.IntPtrInput
-	// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount pulumi.IntPtrInput
 	// The private IP address for the cluster's OpenSearch Dashboard.
 	OpendashboardPrivateIp pulumi.StringPtrInput
@@ -449,17 +449,17 @@ func (ClusterState) ElementType() reflect.Type {
 type clusterArgs struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The number of data nodes to configure for the cluster.
+	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
 	DataNodeHostBareMetalShape *string `pulumi:"dataNodeHostBareMetalShape"`
-	// The amount of memory in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
 	DataNodeHostMemoryGb int `pulumi:"dataNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluster's data nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
 	DataNodeHostOcpuCount int `pulumi:"dataNodeHostOcpuCount"`
 	// TThe instance type for the cluster's data nodes.
 	DataNodeHostType string `pulumi:"dataNodeHostType"`
-	// The amount of storage in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb int `pulumi:"dataNodeStorageGb"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -467,21 +467,21 @@ type clusterArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The number of master nodes to configure for the cluster.
+	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
 	MasterNodeHostBareMetalShape *string `pulumi:"masterNodeHostBareMetalShape"`
-	// The amount of memory in GB, to configure per node for the cluster's master nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
 	MasterNodeHostMemoryGb int `pulumi:"masterNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluser's master nodes.
+	// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
 	MasterNodeHostOcpuCount int `pulumi:"masterNodeHostOcpuCount"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType string `pulumi:"masterNodeHostType"`
-	// The number of OpenSearch Dashboard nodes to configure for the cluster.
+	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount int `pulumi:"opendashboardNodeCount"`
-	// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostMemoryGb int `pulumi:"opendashboardNodeHostMemoryGb"`
-	// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount int `pulumi:"opendashboardNodeHostOcpuCount"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
@@ -507,17 +507,17 @@ type clusterArgs struct {
 type ClusterArgs struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringInput
-	// The number of data nodes to configure for the cluster.
+	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntInput
 	// The bare metal shape for the cluster's data nodes.
 	DataNodeHostBareMetalShape pulumi.StringPtrInput
-	// The amount of memory in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
 	DataNodeHostMemoryGb pulumi.IntInput
-	// The number of OCPUs to configure for the cluster's data nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
 	DataNodeHostOcpuCount pulumi.IntInput
 	// TThe instance type for the cluster's data nodes.
 	DataNodeHostType pulumi.StringInput
-	// The amount of storage in GB, to configure per node for the cluster's data nodes.
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb pulumi.IntInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -525,21 +525,21 @@ type ClusterArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// The number of master nodes to configure for the cluster.
+	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount pulumi.IntInput
 	// The bare metal shape for the cluster's master nodes.
 	MasterNodeHostBareMetalShape pulumi.StringPtrInput
-	// The amount of memory in GB, to configure per node for the cluster's master nodes.
+	// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
 	MasterNodeHostMemoryGb pulumi.IntInput
-	// The number of OCPUs to configure for the cluser's master nodes.
+	// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
 	MasterNodeHostOcpuCount pulumi.IntInput
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringInput
-	// The number of OpenSearch Dashboard nodes to configure for the cluster.
+	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount pulumi.IntInput
-	// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostMemoryGb pulumi.IntInput
-	// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+	// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount pulumi.IntInput
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringPtrInput
@@ -658,7 +658,7 @@ func (o ClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The number of data nodes to configure for the cluster.
+// (Updatable) The number of data nodes to configure for the cluster.
 func (o ClusterOutput) DataNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.DataNodeCount }).(pulumi.IntOutput)
 }
@@ -668,12 +668,12 @@ func (o ClusterOutput) DataNodeHostBareMetalShape() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.DataNodeHostBareMetalShape }).(pulumi.StringOutput)
 }
 
-// The amount of memory in GB, to configure per node for the cluster's data nodes.
+// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
 func (o ClusterOutput) DataNodeHostMemoryGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.DataNodeHostMemoryGb }).(pulumi.IntOutput)
 }
 
-// The number of OCPUs to configure for the cluster's data nodes.
+// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
 func (o ClusterOutput) DataNodeHostOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.DataNodeHostOcpuCount }).(pulumi.IntOutput)
 }
@@ -683,7 +683,7 @@ func (o ClusterOutput) DataNodeHostType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.DataNodeHostType }).(pulumi.StringOutput)
 }
 
-// The amount of storage in GB, to configure per node for the cluster's data nodes.
+// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 func (o ClusterOutput) DataNodeStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.DataNodeStorageGb }).(pulumi.IntOutput)
 }
@@ -713,7 +713,7 @@ func (o ClusterOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The number of master nodes to configure for the cluster.
+// (Updatable) The number of master nodes to configure for the cluster.
 func (o ClusterOutput) MasterNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MasterNodeCount }).(pulumi.IntOutput)
 }
@@ -723,12 +723,12 @@ func (o ClusterOutput) MasterNodeHostBareMetalShape() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.MasterNodeHostBareMetalShape }).(pulumi.StringOutput)
 }
 
-// The amount of memory in GB, to configure per node for the cluster's master nodes.
+// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
 func (o ClusterOutput) MasterNodeHostMemoryGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MasterNodeHostMemoryGb }).(pulumi.IntOutput)
 }
 
-// The number of OCPUs to configure for the cluser's master nodes.
+// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
 func (o ClusterOutput) MasterNodeHostOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MasterNodeHostOcpuCount }).(pulumi.IntOutput)
 }
@@ -743,17 +743,17 @@ func (o ClusterOutput) OpendashboardFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.OpendashboardFqdn }).(pulumi.StringOutput)
 }
 
-// The number of OpenSearch Dashboard nodes to configure for the cluster.
+// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 func (o ClusterOutput) OpendashboardNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.OpendashboardNodeCount }).(pulumi.IntOutput)
 }
 
-// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
 func (o ClusterOutput) OpendashboardNodeHostMemoryGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.OpendashboardNodeHostMemoryGb }).(pulumi.IntOutput)
 }
 
-// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 func (o ClusterOutput) OpendashboardNodeHostOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.OpendashboardNodeHostOcpuCount }).(pulumi.IntOutput)
 }

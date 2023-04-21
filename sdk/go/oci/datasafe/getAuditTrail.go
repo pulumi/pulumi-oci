@@ -61,7 +61,7 @@ type LookupAuditTrailResult struct {
 	// The OCID of the  parent audit.
 	AuditProfileId string `pulumi:"auditProfileId"`
 	AuditTrailId   string `pulumi:"auditTrailId"`
-	// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+	// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -88,7 +88,7 @@ type LookupAuditTrailResult struct {
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected string `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -150,7 +150,7 @@ func (o LookupAuditTrailResultOutput) AuditTrailId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.AuditTrailId }).(pulumi.StringOutput)
 }
 
-// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 func (o LookupAuditTrailResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -219,7 +219,7 @@ func (o LookupAuditTrailResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 func (o LookupAuditTrailResultOutput) TimeLastCollected() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TimeLastCollected }).(pulumi.StringOutput)
 }

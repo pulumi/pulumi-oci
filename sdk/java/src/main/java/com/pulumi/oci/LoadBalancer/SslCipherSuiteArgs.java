@@ -35,15 +35,15 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      * 
      */
-    @Import(name="loadBalancerId")
-    private @Nullable Output<String> loadBalancerId;
+    @Import(name="loadBalancerId", required=true)
+    private Output<String> loadBalancerId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      * 
      */
-    public Optional<Output<String>> loadBalancerId() {
-        return Optional.ofNullable(this.loadBalancerId);
+    public Output<String> loadBalancerId() {
+        return this.loadBalancerId;
     }
 
     /**
@@ -124,7 +124,7 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder loadBalancerId(@Nullable Output<String> loadBalancerId) {
+        public Builder loadBalancerId(Output<String> loadBalancerId) {
             $.loadBalancerId = loadBalancerId;
             return this;
         }
@@ -162,6 +162,7 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
 
         public SslCipherSuiteArgs build() {
             $.ciphers = Objects.requireNonNull($.ciphers, "expected parameter 'ciphers' to be non-null");
+            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
             return $;
         }
     }

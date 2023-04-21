@@ -145,6 +145,8 @@ __all__ = [
     'VmClusterNetworkVmNetworkNode',
     'VmClusterRemoveVirtualMachineDataCollectionOption',
     'VmClusterRemoveVirtualMachineDbServer',
+    'GetApplicationVipsApplicationVipResult',
+    'GetApplicationVipsFilterResult',
     'GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult',
     'GetAutonomousCharacterSetsFilterResult',
     'GetAutonomousContainerDatabaseBackupConfigResult',
@@ -10000,6 +10002,168 @@ class VmClusterRemoveVirtualMachineDbServer(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
         """
         return pulumi.get(self, "db_server_id")
+
+
+@pulumi.output_type
+class GetApplicationVipsApplicationVipResult(dict):
+    def __init__(__self__, *,
+                 cloud_vm_cluster_id: str,
+                 compartment_id: str,
+                 db_node_id: str,
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any],
+                 hostname_label: str,
+                 id: str,
+                 ip_address: str,
+                 lifecycle_details: str,
+                 state: str,
+                 subnet_id: str,
+                 time_assigned: str):
+        """
+        :param str cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str hostname_label: The hostname of the application virtual IP (VIP) address.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
+        :param str ip_address: The application virtual IP (VIP) address.
+        :param str lifecycle_details: Additional information about the current lifecycle state of the application virtual IP (VIP) address.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+        :param str time_assigned: The date and time when the create operation for the application virtual IP (VIP) address completed.
+        """
+        pulumi.set(__self__, "cloud_vm_cluster_id", cloud_vm_cluster_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_node_id", db_node_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hostname_label", hostname_label)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "time_assigned", time_assigned)
+
+    @property
+    @pulumi.getter(name="cloudVmClusterId")
+    def cloud_vm_cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
+        """
+        return pulumi.get(self, "cloud_vm_cluster_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbNodeId")
+    def db_node_id(self) -> str:
+        return pulumi.get(self, "db_node_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="hostnameLabel")
+    def hostname_label(self) -> str:
+        """
+        The hostname of the application virtual IP (VIP) address.
+        """
+        return pulumi.get(self, "hostname_label")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> str:
+        """
+        The application virtual IP (VIP) address.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state of the application virtual IP (VIP) address.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="timeAssigned")
+    def time_assigned(self) -> str:
+        """
+        The date and time when the create operation for the application virtual IP (VIP) address completed.
+        """
+        return pulumi.get(self, "time_assigned")
+
+
+@pulumi.output_type
+class GetApplicationVipsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

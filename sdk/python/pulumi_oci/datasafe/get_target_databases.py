@@ -201,10 +201,10 @@ def get_target_databases(access_level: Optional[str] = None,
     :param str associated_resource_id: A filter to return the target databases that are associated to the resource id passed in as a parameter value.
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str database_type: A filter to return target databases that match the database type of the target database.
+    :param str database_type: A filter to return only target databases that match the specified database type.
     :param str display_name: A filter to return only resources that match the specified display name.
-    :param str infrastructure_type: A filter to return target databases that match the infrastructure type of the target database.
-    :param str state: A filter to return the target databases that matches the current state of the target database.
+    :param str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
+    :param str state: A filter to return only target databases that match the specified lifecycle state.
     :param str target_database_id: A filter to return the target database that matches the specified OCID.
     """
     __args__ = dict()
@@ -275,10 +275,10 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str
     :param str associated_resource_id: A filter to return the target databases that are associated to the resource id passed in as a parameter value.
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str database_type: A filter to return target databases that match the database type of the target database.
+    :param str database_type: A filter to return only target databases that match the specified database type.
     :param str display_name: A filter to return only resources that match the specified display name.
-    :param str infrastructure_type: A filter to return target databases that match the infrastructure type of the target database.
-    :param str state: A filter to return the target databases that matches the current state of the target database.
+    :param str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
+    :param str state: A filter to return only target databases that match the specified lifecycle state.
     :param str target_database_id: A filter to return the target database that matches the specified OCID.
     """
     ...

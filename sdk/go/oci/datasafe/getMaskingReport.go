@@ -60,11 +60,21 @@ type GetMaskingReportResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Indicates if the temporary tables created during the masking operation were dropped after masking.
+	IsDropTempTablesEnabled bool `pulumi:"isDropTempTablesEnabled"`
+	// Indicates if redo logging was enabled during the masking operation.
+	IsRedoLoggingEnabled bool `pulumi:"isRedoLoggingEnabled"`
+	// Indicates if statistics gathering was enabled during the masking operation.
+	IsRefreshStatsEnabled bool `pulumi:"isRefreshStatsEnabled"`
 	// The OCID of the masking policy used.
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
 	MaskingReportId string `pulumi:"maskingReportId"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
+	// Indicates if parallel execution was enabled during the masking operation.
+	ParallelDegree string `pulumi:"parallelDegree"`
+	// Indicates how invalid objects were recompiled post the masking operation.
+	Recompile string `pulumi:"recompile"`
 	// The current state of the masking report.
 	State string `pulumi:"state"`
 	// The OCID of the target database masked.
@@ -135,6 +145,21 @@ func (o GetMaskingReportResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates if the temporary tables created during the masking operation were dropped after masking.
+func (o GetMaskingReportResultOutput) IsDropTempTablesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) bool { return v.IsDropTempTablesEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if redo logging was enabled during the masking operation.
+func (o GetMaskingReportResultOutput) IsRedoLoggingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) bool { return v.IsRedoLoggingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if statistics gathering was enabled during the masking operation.
+func (o GetMaskingReportResultOutput) IsRefreshStatsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) bool { return v.IsRefreshStatsEnabled }).(pulumi.BoolOutput)
+}
+
 // The OCID of the masking policy used.
 func (o GetMaskingReportResultOutput) MaskingPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingPolicyId }).(pulumi.StringOutput)
@@ -147,6 +172,16 @@ func (o GetMaskingReportResultOutput) MaskingReportId() pulumi.StringOutput {
 // The OCID of the masking work request that resulted in this masking report.
 func (o GetMaskingReportResultOutput) MaskingWorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
+}
+
+// Indicates if parallel execution was enabled during the masking operation.
+func (o GetMaskingReportResultOutput) ParallelDegree() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.ParallelDegree }).(pulumi.StringOutput)
+}
+
+// Indicates how invalid objects were recompiled post the masking operation.
+func (o GetMaskingReportResultOutput) Recompile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.Recompile }).(pulumi.StringOutput)
 }
 
 // The current state of the masking report.

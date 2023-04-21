@@ -77,7 +77,7 @@ type GetTargetDatabaseRolesResult struct {
 	// Is the role oracle maintained.
 	IsOracleMaintained *bool   `pulumi:"isOracleMaintained"`
 	RoleNameContains   *string `pulumi:"roleNameContains"`
-	// Name of the role.
+	// The name of the role.
 	RoleNames []string `pulumi:"roleNames"`
 	// The list of roles.
 	Roles            []GetTargetDatabaseRolesRole `pulumi:"roles"`
@@ -154,7 +154,7 @@ func (o GetTargetDatabaseRolesResultOutput) RoleNameContains() pulumi.StringPtrO
 	return o.ApplyT(func(v GetTargetDatabaseRolesResult) *string { return v.RoleNameContains }).(pulumi.StringPtrOutput)
 }
 
-// Name of the role.
+// The name of the role.
 func (o GetTargetDatabaseRolesResultOutput) RoleNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTargetDatabaseRolesResult) []string { return v.RoleNames }).(pulumi.StringArrayOutput)
 }

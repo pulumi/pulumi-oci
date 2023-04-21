@@ -164,6 +164,8 @@ func (o BackendSetBackendArrayOutput) Index(i pulumi.IntInput) BackendSetBackend
 type BackendSetHealthChecker struct {
 	// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 	IntervalMs *int `pulumi:"intervalMs"`
+	// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+	IsForcePlainText *bool `pulumi:"isForcePlainText"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port *int `pulumi:"port"`
 	// (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
@@ -194,6 +196,8 @@ type BackendSetHealthCheckerInput interface {
 type BackendSetHealthCheckerArgs struct {
 	// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 	IntervalMs pulumi.IntPtrInput `pulumi:"intervalMs"`
+	// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+	IsForcePlainText pulumi.BoolPtrInput `pulumi:"isForcePlainText"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
@@ -292,6 +296,11 @@ func (o BackendSetHealthCheckerOutput) IntervalMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetHealthChecker) *int { return v.IntervalMs }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+func (o BackendSetHealthCheckerOutput) IsForcePlainText() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v BackendSetHealthChecker) *bool { return v.IsForcePlainText }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 func (o BackendSetHealthCheckerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetHealthChecker) *int { return v.Port }).(pulumi.IntPtrOutput)
@@ -359,6 +368,16 @@ func (o BackendSetHealthCheckerPtrOutput) IntervalMs() pulumi.IntPtrOutput {
 		}
 		return v.IntervalMs
 	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+func (o BackendSetHealthCheckerPtrOutput) IsForcePlainText() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthChecker) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsForcePlainText
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
@@ -1960,7 +1979,7 @@ func (o LoadBalancerRoutingPolicyRuleArrayOutput) Index(i pulumi.IntInput) LoadB
 
 type LoadBalancerRoutingPolicyRuleAction struct {
 	// (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-	BackendSetName *string `pulumi:"backendSetName"`
+	BackendSetName string `pulumi:"backendSetName"`
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
 	Name string `pulumi:"name"`
 }
@@ -1978,7 +1997,7 @@ type LoadBalancerRoutingPolicyRuleActionInput interface {
 
 type LoadBalancerRoutingPolicyRuleActionArgs struct {
 	// (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-	BackendSetName pulumi.StringPtrInput `pulumi:"backendSetName"`
+	BackendSetName pulumi.StringInput `pulumi:"backendSetName"`
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
 	Name pulumi.StringInput `pulumi:"name"`
 }
@@ -2035,8 +2054,8 @@ func (o LoadBalancerRoutingPolicyRuleActionOutput) ToLoadBalancerRoutingPolicyRu
 }
 
 // (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-func (o LoadBalancerRoutingPolicyRuleActionOutput) BackendSetName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v LoadBalancerRoutingPolicyRuleAction) *string { return v.BackendSetName }).(pulumi.StringPtrOutput)
+func (o LoadBalancerRoutingPolicyRuleActionOutput) BackendSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v LoadBalancerRoutingPolicyRuleAction) string { return v.BackendSetName }).(pulumi.StringOutput)
 }
 
 // (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
@@ -3431,8 +3450,10 @@ func (o GetBackendSetsBackendsetBackendArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetBackendSetsBackendsetHealthChecker struct {
-	// The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+	// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
 	IntervalMs int `pulumi:"intervalMs"`
+	// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+	IsForcePlainText bool `pulumi:"isForcePlainText"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port int `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
@@ -3461,8 +3482,10 @@ type GetBackendSetsBackendsetHealthCheckerInput interface {
 }
 
 type GetBackendSetsBackendsetHealthCheckerArgs struct {
-	// The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+	// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
 	IntervalMs pulumi.IntInput `pulumi:"intervalMs"`
+	// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+	IsForcePlainText pulumi.BoolInput `pulumi:"isForcePlainText"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
@@ -3530,9 +3553,14 @@ func (o GetBackendSetsBackendsetHealthCheckerOutput) ToGetBackendSetsBackendsetH
 	return o
 }
 
-// The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
 func (o GetBackendSetsBackendsetHealthCheckerOutput) IntervalMs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.IntervalMs }).(pulumi.IntOutput)
+}
+
+// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+func (o GetBackendSetsBackendsetHealthCheckerOutput) IsForcePlainText() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) bool { return v.IsForcePlainText }).(pulumi.BoolOutput)
 }
 
 // The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`

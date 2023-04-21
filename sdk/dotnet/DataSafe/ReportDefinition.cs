@@ -18,6 +18,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -127,7 +128,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        /// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         /// </summary>
         [Output("complianceStandards")]
         public Output<ImmutableArray<string>> ComplianceStandards { get; private set; } = null!;
@@ -145,7 +146,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A description of the report definition.
+        /// (Updatable) The description of the report definition.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -181,25 +182,25 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> ParentId { get; private set; } = null!;
 
         /// <summary>
-        /// The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        /// The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         /// </summary>
         [Output("recordTimeSpan")]
         public Output<string> RecordTimeSpan { get; private set; } = null!;
 
         /// <summary>
-        /// Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
         [Output("schedule")]
         public Output<string> Schedule { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        /// The OCID of the compartment in which the scheduled resource should be created.
         /// </summary>
         [Output("scheduledReportCompartmentId")]
         public Output<string> ScheduledReportCompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the format of report to be excel or pdf
+        /// Specifies the format of the report ( either XLS or PDF )
         /// </summary>
         [Output("scheduledReportMimeType")]
         public Output<string> ScheduledReportMimeType { get; private set; } = null!;
@@ -211,7 +212,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> ScheduledReportName { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the limit on number of rows in report.
+        /// Specifies the limit on the number of rows in the report.
         /// </summary>
         [Output("scheduledReportRowLimit")]
         public Output<int> ScheduledReportRowLimit { get; private set; } = null!;
@@ -241,13 +242,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the time at which the report definition was created.
+        /// Specifies the data and time the report definition was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time of the report definition update in Data Safe.
+        /// The date and time the report definition was update.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -353,7 +354,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) A description of the report definition.
+        /// (Updatable) The description of the report definition.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -454,7 +455,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _complianceStandards;
 
         /// <summary>
-        /// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        /// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         /// </summary>
         public InputList<string> ComplianceStandards
         {
@@ -481,7 +482,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) A description of the report definition.
+        /// (Updatable) The description of the report definition.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -523,25 +524,25 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? ParentId { get; set; }
 
         /// <summary>
-        /// The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        /// The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         /// </summary>
         [Input("recordTimeSpan")]
         public Input<string>? RecordTimeSpan { get; set; }
 
         /// <summary>
-        /// Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
         [Input("schedule")]
         public Input<string>? Schedule { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        /// The OCID of the compartment in which the scheduled resource should be created.
         /// </summary>
         [Input("scheduledReportCompartmentId")]
         public Input<string>? ScheduledReportCompartmentId { get; set; }
 
         /// <summary>
-        /// Specifies the format of report to be excel or pdf
+        /// Specifies the format of the report ( either XLS or PDF )
         /// </summary>
         [Input("scheduledReportMimeType")]
         public Input<string>? ScheduledReportMimeType { get; set; }
@@ -553,7 +554,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? ScheduledReportName { get; set; }
 
         /// <summary>
-        /// Specifies the limit on number of rows in report.
+        /// Specifies the limit on the number of rows in the report.
         /// </summary>
         [Input("scheduledReportRowLimit")]
         public Input<int>? ScheduledReportRowLimit { get; set; }
@@ -595,13 +596,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Specifies the time at which the report definition was created.
+        /// Specifies the data and time the report definition was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time of the report definition update in Data Safe.
+        /// The date and time the report definition was update.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

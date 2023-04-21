@@ -93,6 +93,9 @@ export class SslCipherSuite extends pulumi.CustomResource {
             if ((!args || args.ciphers === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ciphers'");
             }
+            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'loadBalancerId'");
+            }
             resourceInputs["ciphers"] = args ? args.ciphers : undefined;
             resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -133,7 +136,7 @@ export interface SslCipherSuiteArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId: pulumi.Input<string>;
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      */

@@ -76,7 +76,7 @@ export interface GetReportResult {
     readonly reportDefinitionId: string;
     readonly reportId: string;
     /**
-     * The current state of the report.
+     * The current state of the audit report.
      */
     readonly state: string;
     /**
@@ -84,11 +84,11 @@ export interface GetReportResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * Specifies the time at which the report was generated.
+     * Specifies the date and time the report was generated.
      */
     readonly timeGenerated: string;
     /**
-     * The type of the report.
+     * The type of the audit report.
      */
     readonly type: string;
 }

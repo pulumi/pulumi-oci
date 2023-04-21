@@ -22,6 +22,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -37,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GetSslCipherSuitesResult> InvokeAsync(GetSslCipherSuitesArgs? args = null, InvokeOptions? options = null)
+        public static Task<GetSslCipherSuitesResult> InvokeAsync(GetSslCipherSuitesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSslCipherSuitesResult>("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args ?? new GetSslCipherSuitesArgs(), options.WithDefaults());
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -66,7 +68,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GetSslCipherSuitesResult> Invoke(GetSslCipherSuitesInvokeArgs? args = null, InvokeOptions? options = null)
+        public static Output<GetSslCipherSuitesResult> Invoke(GetSslCipherSuitesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSslCipherSuitesResult>("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args ?? new GetSslCipherSuitesInvokeArgs(), options.WithDefaults());
     }
 
@@ -84,8 +86,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         /// </summary>
-        [Input("loadBalancerId")]
-        public string? LoadBalancerId { get; set; }
+        [Input("loadBalancerId", required: true)]
+        public string LoadBalancerId { get; set; } = null!;
 
         public GetSslCipherSuitesArgs()
         {
@@ -106,8 +108,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         /// </summary>
-        [Input("loadBalancerId")]
-        public Input<string>? LoadBalancerId { get; set; }
+        [Input("loadBalancerId", required: true)]
+        public Input<string> LoadBalancerId { get; set; } = null!;
 
         public GetSslCipherSuitesInvokeArgs()
         {
@@ -124,7 +126,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string? LoadBalancerId;
+        public readonly string LoadBalancerId;
         /// <summary>
         /// The list of ssl_cipher_suites.
         /// </summary>
@@ -136,7 +138,7 @@ namespace Pulumi.Oci.LoadBalancer
 
             string id,
 
-            string? loadBalancerId,
+            string loadBalancerId,
 
             ImmutableArray<Outputs.GetSslCipherSuitesSslCipherSuiteResult> sslCipherSuites)
         {

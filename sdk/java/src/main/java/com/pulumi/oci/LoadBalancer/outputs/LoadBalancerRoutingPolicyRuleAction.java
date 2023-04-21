@@ -6,8 +6,6 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class LoadBalancerRoutingPolicyRuleAction {
@@ -15,7 +13,7 @@ public final class LoadBalancerRoutingPolicyRuleAction {
      * @return (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
      */
-    private @Nullable String backendSetName;
+    private String backendSetName;
     /**
      * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
      * 
@@ -27,8 +25,8 @@ public final class LoadBalancerRoutingPolicyRuleAction {
      * @return (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
      */
-    public Optional<String> backendSetName() {
-        return Optional.ofNullable(this.backendSetName);
+    public String backendSetName() {
+        return this.backendSetName;
     }
     /**
      * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
@@ -47,7 +45,7 @@ public final class LoadBalancerRoutingPolicyRuleAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String backendSetName;
+        private String backendSetName;
         private String name;
         public Builder() {}
         public Builder(LoadBalancerRoutingPolicyRuleAction defaults) {
@@ -57,8 +55,8 @@ public final class LoadBalancerRoutingPolicyRuleAction {
         }
 
         @CustomType.Setter
-        public Builder backendSetName(@Nullable String backendSetName) {
-            this.backendSetName = backendSetName;
+        public Builder backendSetName(String backendSetName) {
+            this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
         @CustomType.Setter

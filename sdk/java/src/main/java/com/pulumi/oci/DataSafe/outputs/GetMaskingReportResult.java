@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -20,6 +21,21 @@ public final class GetMaskingReportResult {
      */
     private String id;
     /**
+     * @return Indicates if the temporary tables created during the masking operation were dropped after masking.
+     * 
+     */
+    private Boolean isDropTempTablesEnabled;
+    /**
+     * @return Indicates if redo logging was enabled during the masking operation.
+     * 
+     */
+    private Boolean isRedoLoggingEnabled;
+    /**
+     * @return Indicates if statistics gathering was enabled during the masking operation.
+     * 
+     */
+    private Boolean isRefreshStatsEnabled;
+    /**
      * @return The OCID of the masking policy used.
      * 
      */
@@ -30,6 +46,16 @@ public final class GetMaskingReportResult {
      * 
      */
     private String maskingWorkRequestId;
+    /**
+     * @return Indicates if parallel execution was enabled during the masking operation.
+     * 
+     */
+    private String parallelDegree;
+    /**
+     * @return Indicates how invalid objects were recompiled post the masking operation.
+     * 
+     */
+    private String recompile;
     /**
      * @return The current state of the masking report.
      * 
@@ -97,6 +123,27 @@ public final class GetMaskingReportResult {
         return this.id;
     }
     /**
+     * @return Indicates if the temporary tables created during the masking operation were dropped after masking.
+     * 
+     */
+    public Boolean isDropTempTablesEnabled() {
+        return this.isDropTempTablesEnabled;
+    }
+    /**
+     * @return Indicates if redo logging was enabled during the masking operation.
+     * 
+     */
+    public Boolean isRedoLoggingEnabled() {
+        return this.isRedoLoggingEnabled;
+    }
+    /**
+     * @return Indicates if statistics gathering was enabled during the masking operation.
+     * 
+     */
+    public Boolean isRefreshStatsEnabled() {
+        return this.isRefreshStatsEnabled;
+    }
+    /**
      * @return The OCID of the masking policy used.
      * 
      */
@@ -112,6 +159,20 @@ public final class GetMaskingReportResult {
      */
     public String maskingWorkRequestId() {
         return this.maskingWorkRequestId;
+    }
+    /**
+     * @return Indicates if parallel execution was enabled during the masking operation.
+     * 
+     */
+    public String parallelDegree() {
+        return this.parallelDegree;
+    }
+    /**
+     * @return Indicates how invalid objects were recompiled post the masking operation.
+     * 
+     */
+    public String recompile() {
+        return this.recompile;
     }
     /**
      * @return The current state of the masking report.
@@ -195,9 +256,14 @@ public final class GetMaskingReportResult {
     public static final class Builder {
         private String compartmentId;
         private String id;
+        private Boolean isDropTempTablesEnabled;
+        private Boolean isRedoLoggingEnabled;
+        private Boolean isRefreshStatsEnabled;
         private String maskingPolicyId;
         private String maskingReportId;
         private String maskingWorkRequestId;
+        private String parallelDegree;
+        private String recompile;
         private String state;
         private String targetId;
         private String timeCreated;
@@ -213,9 +279,14 @@ public final class GetMaskingReportResult {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.id = defaults.id;
+    	      this.isDropTempTablesEnabled = defaults.isDropTempTablesEnabled;
+    	      this.isRedoLoggingEnabled = defaults.isRedoLoggingEnabled;
+    	      this.isRefreshStatsEnabled = defaults.isRefreshStatsEnabled;
     	      this.maskingPolicyId = defaults.maskingPolicyId;
     	      this.maskingReportId = defaults.maskingReportId;
     	      this.maskingWorkRequestId = defaults.maskingWorkRequestId;
+    	      this.parallelDegree = defaults.parallelDegree;
+    	      this.recompile = defaults.recompile;
     	      this.state = defaults.state;
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
@@ -239,6 +310,21 @@ public final class GetMaskingReportResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
+            this.isDropTempTablesEnabled = Objects.requireNonNull(isDropTempTablesEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
+            this.isRedoLoggingEnabled = Objects.requireNonNull(isRedoLoggingEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
+            this.isRefreshStatsEnabled = Objects.requireNonNull(isRefreshStatsEnabled);
+            return this;
+        }
+        @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
             this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
             return this;
@@ -251,6 +337,16 @@ public final class GetMaskingReportResult {
         @CustomType.Setter
         public Builder maskingWorkRequestId(String maskingWorkRequestId) {
             this.maskingWorkRequestId = Objects.requireNonNull(maskingWorkRequestId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parallelDegree(String parallelDegree) {
+            this.parallelDegree = Objects.requireNonNull(parallelDegree);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder recompile(String recompile) {
+            this.recompile = Objects.requireNonNull(recompile);
             return this;
         }
         @CustomType.Setter
@@ -307,9 +403,14 @@ public final class GetMaskingReportResult {
             final var o = new GetMaskingReportResult();
             o.compartmentId = compartmentId;
             o.id = id;
+            o.isDropTempTablesEnabled = isDropTempTablesEnabled;
+            o.isRedoLoggingEnabled = isRedoLoggingEnabled;
+            o.isRefreshStatsEnabled = isRefreshStatsEnabled;
             o.maskingPolicyId = maskingPolicyId;
             o.maskingReportId = maskingReportId;
             o.maskingWorkRequestId = maskingWorkRequestId;
+            o.parallelDegree = parallelDegree;
+            o.recompile = recompile;
             o.state = state;
             o.targetId = targetId;
             o.timeCreated = timeCreated;

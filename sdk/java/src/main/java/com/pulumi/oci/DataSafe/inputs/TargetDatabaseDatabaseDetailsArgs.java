@@ -18,14 +18,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     public static final TargetDatabaseDatabaseDetailsArgs Empty = new TargetDatabaseDatabaseDetailsArgs();
 
     /**
-     * (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+     * (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     @Import(name="autonomousDatabaseId")
     private @Nullable Output<String> autonomousDatabaseId;
 
     /**
-     * @return (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     public Optional<Output<String>> autonomousDatabaseId() {
@@ -48,14 +48,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+     * (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     @Import(name="dbSystemId")
     private @Nullable Output<String> dbSystemId;
 
     /**
-     * @return (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     public Optional<Output<String>> dbSystemId() {
@@ -185,7 +185,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param autonomousDatabaseId (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+         * @param autonomousDatabaseId (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param autonomousDatabaseId (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+         * @param autonomousDatabaseId (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbSystemId (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+         * @param dbSystemId (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbSystemId (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+         * @param dbSystemId (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
          * 
          * @return builder
          * 

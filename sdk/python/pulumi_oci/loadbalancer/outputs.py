@@ -195,6 +195,8 @@ class BackendSetHealthChecker(dict):
         suggest = None
         if key == "intervalMs":
             suggest = "interval_ms"
+        elif key == "isForcePlainText":
+            suggest = "is_force_plain_text"
         elif key == "responseBodyRegex":
             suggest = "response_body_regex"
         elif key == "returnCode":
@@ -218,6 +220,7 @@ class BackendSetHealthChecker(dict):
     def __init__(__self__, *,
                  protocol: str,
                  interval_ms: Optional[int] = None,
+                 is_force_plain_text: Optional[bool] = None,
                  port: Optional[int] = None,
                  response_body_regex: Optional[str] = None,
                  retries: Optional[int] = None,
@@ -227,6 +230,7 @@ class BackendSetHealthChecker(dict):
         """
         :param str protocol: (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
         :param int interval_ms: (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
+        :param bool is_force_plain_text: (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
         :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
         :param str response_body_regex: (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
         :param int retries: (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state.  Example: `3`
@@ -237,6 +241,8 @@ class BackendSetHealthChecker(dict):
         pulumi.set(__self__, "protocol", protocol)
         if interval_ms is not None:
             pulumi.set(__self__, "interval_ms", interval_ms)
+        if is_force_plain_text is not None:
+            pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if response_body_regex is not None:
@@ -265,6 +271,14 @@ class BackendSetHealthChecker(dict):
         (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
         """
         return pulumi.get(self, "interval_ms")
+
+    @property
+    @pulumi.getter(name="isForcePlainText")
+    def is_force_plain_text(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+        """
+        return pulumi.get(self, "is_force_plain_text")
 
     @property
     @pulumi.getter
@@ -955,15 +969,22 @@ class LoadBalancerRoutingPolicyRuleAction(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 name: str,
-                 backend_set_name: Optional[str] = None):
+                 backend_set_name: str,
+                 name: str):
         """
-        :param str name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         :param str backend_set_name: (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
+        :param str name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         """
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
         pulumi.set(__self__, "name", name)
-        if backend_set_name is not None:
-            pulumi.set(__self__, "backend_set_name", backend_set_name)
+
+    @property
+    @pulumi.getter(name="backendSetName")
+    def backend_set_name(self) -> str:
+        """
+        (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
+        """
+        return pulumi.get(self, "backend_set_name")
 
     @property
     @pulumi.getter
@@ -972,14 +993,6 @@ class LoadBalancerRoutingPolicyRuleAction(dict):
         (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="backendSetName")
-    def backend_set_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-        """
-        return pulumi.get(self, "backend_set_name")
 
 
 @pulumi.output_type
@@ -1724,6 +1737,7 @@ class GetBackendSetsBackendsetBackendResult(dict):
 class GetBackendSetsBackendsetHealthCheckerResult(dict):
     def __init__(__self__, *,
                  interval_ms: int,
+                 is_force_plain_text: bool,
                  port: int,
                  protocol: str,
                  response_body_regex: str,
@@ -1732,7 +1746,8 @@ class GetBackendSetsBackendsetHealthCheckerResult(dict):
                  timeout_in_millis: int,
                  url_path: str):
         """
-        :param int interval_ms: The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+        :param int interval_ms: The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
+        :param bool is_force_plain_text: Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
         :param int port: The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
         :param str protocol: The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
         :param str response_body_regex: A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
@@ -1742,6 +1757,7 @@ class GetBackendSetsBackendsetHealthCheckerResult(dict):
         :param str url_path: The path against which to run the health check.  Example: `/healthcheck`
         """
         pulumi.set(__self__, "interval_ms", interval_ms)
+        pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
         pulumi.set(__self__, "response_body_regex", response_body_regex)
@@ -1754,9 +1770,17 @@ class GetBackendSetsBackendsetHealthCheckerResult(dict):
     @pulumi.getter(name="intervalMs")
     def interval_ms(self) -> int:
         """
-        The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+        The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
         """
         return pulumi.get(self, "interval_ms")
+
+    @property
+    @pulumi.getter(name="isForcePlainText")
+    def is_force_plain_text(self) -> bool:
+        """
+        Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+        """
+        return pulumi.get(self, "is_force_plain_text")
 
     @property
     @pulumi.getter

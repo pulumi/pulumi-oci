@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ActionTaken;
         /// <summary>
-        /// Time of audit event occurrence in the target database.
+        /// The time of the audit event occurrence in the target database.
         /// </summary>
         public readonly string AuditEventTime;
         /// <summary>
@@ -34,11 +34,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string AuditTrailId;
         /// <summary>
-        /// Type of auditing.
+        /// The type of the auditing.
         /// </summary>
         public readonly string AuditType;
         /// <summary>
-        /// Name of the host machine from which the session was spawned.
+        /// The name of the host machine from which the session was spawned.
         /// </summary>
         public readonly string ClientHostname;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ClientId;
         /// <summary>
-        /// IP address of the host from which the session was spawned.
+        /// The IP address of the host machine from which the session was spawned.
         /// </summary>
         public readonly string ClientIp;
         /// <summary>
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
-        /// Name of the database user whose actions were audited.
+        /// The name of the database user whose actions were audited.
         /// </summary>
         public readonly string DbUserName;
         /// <summary>
@@ -85,11 +85,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ErrorCode;
         /// <summary>
-        /// Detailed message on why the Error occurred.
+        /// The detailed message on why the Error occurred.
         /// </summary>
         public readonly string ErrorMessage;
         /// <summary>
-        /// Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        /// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
         /// </summary>
         public readonly string EventName;
         /// <summary>
@@ -109,19 +109,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly bool IsAlerted;
         /// <summary>
-        /// Name of the object affected by the action.
+        /// The name of the object affected by the action.
         /// </summary>
         public readonly string Object;
         /// <summary>
-        /// Schema name of object affected but the action.
+        /// The schema name of the object affected by the action.
         /// </summary>
         public readonly string ObjectOwner;
         /// <summary>
-        /// Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        /// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
         /// </summary>
         public readonly string ObjectType;
         /// <summary>
-        /// Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        /// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
         /// </summary>
         public readonly string Operation;
         /// <summary>
@@ -133,11 +133,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string OsTerminal;
         /// <summary>
-        /// Name of the operating system user for the database session.
+        /// The name of the operating system user for the database session.
         /// </summary>
         public readonly string OsUserName;
         /// <summary>
-        /// Class of the target that was audited.
+        /// The class of the target that was audited.
         /// </summary>
         public readonly string TargetClass;
         /// <summary>
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TargetName;
         /// <summary>
-        /// Timestamp when this audit event was collected from the target database by Data Safe.
+        /// The timestamp when this audit event was collected from the target database by Data Safe.
         /// </summary>
         public readonly string TimeCollected;
 

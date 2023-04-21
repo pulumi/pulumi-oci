@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string UserName;
         /// <summary>
-        /// The user profile name.
+        /// A filter to return only items that match the specified user profile.
         /// </summary>
         public readonly string UserProfile;
         /// <summary>

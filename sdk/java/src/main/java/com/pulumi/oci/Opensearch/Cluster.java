@@ -149,14 +149,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The number of data nodes to configure for the cluster.
+     * (Updatable) The number of data nodes to configure for the cluster.
      * 
      */
     @Export(name="dataNodeCount", type=Integer.class, parameters={})
     private Output<Integer> dataNodeCount;
 
     /**
-     * @return The number of data nodes to configure for the cluster.
+     * @return (Updatable) The number of data nodes to configure for the cluster.
      * 
      */
     public Output<Integer> dataNodeCount() {
@@ -177,28 +177,28 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.dataNodeHostBareMetalShape;
     }
     /**
-     * The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     @Export(name="dataNodeHostMemoryGb", type=Integer.class, parameters={})
     private Output<Integer> dataNodeHostMemoryGb;
 
     /**
-     * @return The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
+     * @return (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     public Output<Integer> dataNodeHostMemoryGb() {
         return this.dataNodeHostMemoryGb;
     }
     /**
-     * The number of OCPUs to configure for the cluster&#39;s data nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster&#39;s data nodes.
      * 
      */
     @Export(name="dataNodeHostOcpuCount", type=Integer.class, parameters={})
     private Output<Integer> dataNodeHostOcpuCount;
 
     /**
-     * @return The number of OCPUs to configure for the cluster&#39;s data nodes.
+     * @return (Updatable) The number of OCPUs to configure for the cluster&#39;s data nodes.
      * 
      */
     public Output<Integer> dataNodeHostOcpuCount() {
@@ -219,14 +219,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.dataNodeHostType;
     }
     /**
-     * The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     @Export(name="dataNodeStorageGb", type=Integer.class, parameters={})
     private Output<Integer> dataNodeStorageGb;
 
     /**
-     * @return The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
+     * @return (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     public Output<Integer> dataNodeStorageGb() {
@@ -303,14 +303,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The number of master nodes to configure for the cluster.
+     * (Updatable) The number of master nodes to configure for the cluster.
      * 
      */
     @Export(name="masterNodeCount", type=Integer.class, parameters={})
     private Output<Integer> masterNodeCount;
 
     /**
-     * @return The number of master nodes to configure for the cluster.
+     * @return (Updatable) The number of master nodes to configure for the cluster.
      * 
      */
     public Output<Integer> masterNodeCount() {
@@ -331,28 +331,28 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.masterNodeHostBareMetalShape;
     }
     /**
-     * The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
      * 
      */
     @Export(name="masterNodeHostMemoryGb", type=Integer.class, parameters={})
     private Output<Integer> masterNodeHostMemoryGb;
 
     /**
-     * @return The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
+     * @return (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
      * 
      */
     public Output<Integer> masterNodeHostMemoryGb() {
         return this.masterNodeHostMemoryGb;
     }
     /**
-     * The number of OCPUs to configure for the cluser&#39;s master nodes.
+     * (Updatable) The number of OCPUs to configure for the cluser&#39;s master nodes.
      * 
      */
     @Export(name="masterNodeHostOcpuCount", type=Integer.class, parameters={})
     private Output<Integer> masterNodeHostOcpuCount;
 
     /**
-     * @return The number of OCPUs to configure for the cluser&#39;s master nodes.
+     * @return (Updatable) The number of OCPUs to configure for the cluser&#39;s master nodes.
      * 
      */
     public Output<Integer> masterNodeHostOcpuCount() {
@@ -387,42 +387,42 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.opendashboardFqdn;
     }
     /**
-     * The number of OpenSearch Dashboard nodes to configure for the cluster.
+     * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      * 
      */
     @Export(name="opendashboardNodeCount", type=Integer.class, parameters={})
     private Output<Integer> opendashboardNodeCount;
 
     /**
-     * @return The number of OpenSearch Dashboard nodes to configure for the cluster.
+     * @return (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      * 
      */
     public Output<Integer> opendashboardNodeCount() {
         return this.opendashboardNodeCount;
     }
     /**
-     * The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * (Updatable) The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     @Export(name="opendashboardNodeHostMemoryGb", type=Integer.class, parameters={})
     private Output<Integer> opendashboardNodeHostMemoryGb;
 
     /**
-     * @return The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * @return (Updatable) The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     public Output<Integer> opendashboardNodeHostMemoryGb() {
         return this.opendashboardNodeHostMemoryGb;
     }
     /**
-     * The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     @Export(name="opendashboardNodeHostOcpuCount", type=Integer.class, parameters={})
     private Output<Integer> opendashboardNodeHostOcpuCount;
 
     /**
-     * @return The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * @return (Updatable) The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     public Output<Integer> opendashboardNodeHostOcpuCount() {

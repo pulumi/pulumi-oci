@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -31,6 +32,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isCaseInSensitive;
     /**
      * @return The type of the database object that contains the sensitive column.
      * 
@@ -105,6 +107,9 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> isCaseInSensitive() {
+        return Optional.ofNullable(this.isCaseInSensitive);
     }
     /**
      * @return The type of the database object that contains the sensitive column.
@@ -195,6 +200,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         private @Nullable List<String> dataTypes;
         private @Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters;
         private String id;
+        private @Nullable Boolean isCaseInSensitive;
         private @Nullable List<String> objectTypes;
         private @Nullable List<String> objects;
         private @Nullable List<String> parentColumnKeys;
@@ -217,6 +223,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
     	      this.dataTypes = defaults.dataTypes;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isCaseInSensitive = defaults.isCaseInSensitive;
     	      this.objectTypes = defaults.objectTypes;
     	      this.objects = defaults.objects;
     	      this.parentColumnKeys = defaults.parentColumnKeys;
@@ -265,6 +272,11 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCaseInSensitive(@Nullable Boolean isCaseInSensitive) {
+            this.isCaseInSensitive = isCaseInSensitive;
             return this;
         }
         @CustomType.Setter
@@ -368,6 +380,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
             o.dataTypes = dataTypes;
             o.filters = filters;
             o.id = id;
+            o.isCaseInSensitive = isCaseInSensitive;
             o.objectTypes = objectTypes;
             o.objects = objects;
             o.parentColumnKeys = parentColumnKeys;

@@ -23,6 +23,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Oda/odaInstance:OdaInstance":
 		r = &OdaInstance{}
+	case "oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint":
+		r = &OdaPrivateEndpoint{}
+	case "oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment":
+		r = &OdaPrivateEndpointAttachment{}
+	case "oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy":
+		r = &OdaPrivateEndpointScanProxy{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +45,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Oda/odaInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Oda/odaPrivateEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Oda/odaPrivateEndpointAttachment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Oda/odaPrivateEndpointScanProxy",
 		&module{version},
 	)
 }

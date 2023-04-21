@@ -22,6 +22,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -33,6 +34,7 @@ namespace Pulumi.Oci.LoadBalancer
     ///         {
     ///             Protocol = @var.Backend_set_health_checker_protocol,
     ///             IntervalMs = @var.Backend_set_health_checker_interval_ms,
+    ///             IsForcePlainText = @var.Backend_set_health_checker_is_force_plain_text,
     ///             Port = @var.Backend_set_health_checker_port,
     ///             ResponseBodyRegex = @var.Backend_set_health_checker_response_body_regex,
     ///             Retries = @var.Backend_set_health_checker_retries,

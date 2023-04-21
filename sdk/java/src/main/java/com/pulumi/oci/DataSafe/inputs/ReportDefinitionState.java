@@ -100,14 +100,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
     @Import(name="complianceStandards")
     private @Nullable Output<List<String>> complianceStandards;
 
     /**
-     * @return The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * @return The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
     public Optional<Output<List<String>>> complianceStandards() {
@@ -145,14 +145,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A description of the report definition.
+     * (Updatable) The description of the report definition.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the report definition.
+     * @return (Updatable) The description of the report definition.
      * 
      */
     public Optional<Output<String>> description() {
@@ -235,14 +235,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
     @Import(name="recordTimeSpan")
     private @Nullable Output<String> recordTimeSpan;
 
     /**
-     * @return The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * @return The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
     public Optional<Output<String>> recordTimeSpan() {
@@ -250,14 +250,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
     @Import(name="schedule")
     private @Nullable Output<String> schedule;
 
     /**
-     * @return Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * @return The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
     public Optional<Output<String>> schedule() {
@@ -265,14 +265,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
     @Import(name="scheduledReportCompartmentId")
     private @Nullable Output<String> scheduledReportCompartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * @return The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
     public Optional<Output<String>> scheduledReportCompartmentId() {
@@ -280,14 +280,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of the report ( either XLS or PDF )
      * 
      */
     @Import(name="scheduledReportMimeType")
     private @Nullable Output<String> scheduledReportMimeType;
 
     /**
-     * @return Specifies the format of report to be excel or pdf
+     * @return Specifies the format of the report ( either XLS or PDF )
      * 
      */
     public Optional<Output<String>> scheduledReportMimeType() {
@@ -310,14 +310,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      * 
      */
     @Import(name="scheduledReportRowLimit")
     private @Nullable Output<Integer> scheduledReportRowLimit;
 
     /**
-     * @return Specifies the limit on number of rows in report.
+     * @return Specifies the limit on the number of rows in the report.
      * 
      */
     public Optional<Output<Integer>> scheduledReportRowLimit() {
@@ -385,14 +385,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Specifies the time at which the report definition was created.
+     * Specifies the data and time the report definition was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Specifies the time at which the report definition was created.
+     * @return Specifies the data and time the report definition was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -400,14 +400,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The date and time of the report definition update in Data Safe.
+     * The date and time the report definition was update.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time of the report definition update in Data Safe.
+     * @return The date and time the report definition was update.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -599,7 +599,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param complianceStandards The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * @param complianceStandards The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param complianceStandards The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * @param complianceStandards The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param complianceStandards The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * @param complianceStandards The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
          * 
          * @return builder
          * 
@@ -672,7 +672,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A description of the report definition.
+         * @param description (Updatable) The description of the report definition.
          * 
          * @return builder
          * 
@@ -683,7 +683,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A description of the report definition.
+         * @param description (Updatable) The description of the report definition.
          * 
          * @return builder
          * 
@@ -798,7 +798,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param recordTimeSpan The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+         * @param recordTimeSpan The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
          * 
          * @return builder
          * 
@@ -809,7 +809,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param recordTimeSpan The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+         * @param recordTimeSpan The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
          * 
          * @return builder
          * 
@@ -819,7 +819,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param schedule Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+         * @param schedule The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
          * 
          * @return builder
          * 
@@ -830,7 +830,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param schedule Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+         * @param schedule The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
          * 
          * @return builder
          * 
@@ -840,7 +840,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+         * @param scheduledReportCompartmentId The OCID of the compartment in which the scheduled resource should be created.
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+         * @param scheduledReportCompartmentId The OCID of the compartment in which the scheduled resource should be created.
          * 
          * @return builder
          * 
@@ -861,7 +861,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportMimeType Specifies the format of report to be excel or pdf
+         * @param scheduledReportMimeType Specifies the format of the report ( either XLS or PDF )
          * 
          * @return builder
          * 
@@ -872,7 +872,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportMimeType Specifies the format of report to be excel or pdf
+         * @param scheduledReportMimeType Specifies the format of the report ( either XLS or PDF )
          * 
          * @return builder
          * 
@@ -903,7 +903,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportRowLimit Specifies the limit on number of rows in report.
+         * @param scheduledReportRowLimit Specifies the limit on the number of rows in the report.
          * 
          * @return builder
          * 
@@ -914,7 +914,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportRowLimit Specifies the limit on number of rows in report.
+         * @param scheduledReportRowLimit Specifies the limit on the number of rows in the report.
          * 
          * @return builder
          * 
@@ -1018,7 +1018,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated Specifies the time at which the report definition was created.
+         * @param timeCreated Specifies the data and time the report definition was created.
          * 
          * @return builder
          * 
@@ -1029,7 +1029,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated Specifies the time at which the report definition was created.
+         * @param timeCreated Specifies the data and time the report definition was created.
          * 
          * @return builder
          * 
@@ -1039,7 +1039,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeUpdated The date and time of the report definition update in Data Safe.
+         * @param timeUpdated The date and time the report definition was update.
          * 
          * @return builder
          * 
@@ -1050,7 +1050,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeUpdated The date and time of the report definition update in Data Safe.
+         * @param timeUpdated The date and time the report definition was update.
          * 
          * @return builder
          * 

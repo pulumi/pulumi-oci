@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetTargetDatabasesTargetDatabaseResult
     {
         /// <summary>
-        /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        /// The OCIDs of associated resources like database, Data Safe private endpoint etc.
         /// </summary>
         public readonly ImmutableArray<string> AssociatedResourceIds;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTargetDatabasesTargetDatabaseCredentialResult> Credentials;
         /// <summary>
-        /// Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        /// Details of the database for the registration in Data Safe.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTargetDatabasesTargetDatabaseDatabaseDetailResult> DatabaseDetails;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// A filter to return the target databases that matches the current state of the target database.
+        /// A filter to return only target databases that match the specified lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>

@@ -73,8 +73,6 @@ if typing.TYPE_CHECKING:
     databasetools = __databasetools
     import pulumi_oci.datacatalog as __datacatalog
     datacatalog = __datacatalog
-    import pulumi_oci.dataconnectivity as __dataconnectivity
-    dataconnectivity = __dataconnectivity
     import pulumi_oci.dataflow as __dataflow
     dataflow = __dataflow
     import pulumi_oci.dataintegration as __dataintegration
@@ -254,7 +252,6 @@ else:
     databasemigration = _utilities.lazy_import('pulumi_oci.databasemigration')
     databasetools = _utilities.lazy_import('pulumi_oci.databasetools')
     datacatalog = _utilities.lazy_import('pulumi_oci.datacatalog')
-    dataconnectivity = _utilities.lazy_import('pulumi_oci.dataconnectivity')
     dataflow = _utilities.lazy_import('pulumi_oci.dataflow')
     dataintegration = _utilities.lazy_import('pulumi_oci.dataintegration')
     datalabellingservice = _utilities.lazy_import('pulumi_oci.datalabellingservice')
@@ -1502,38 +1499,6 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "DataConnectivity/registry",
-  "fqn": "pulumi_oci.dataconnectivity",
-  "classes": {
-   "oci:DataConnectivity/registry:Registry": "Registry"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "DataConnectivity/registryConnection",
-  "fqn": "pulumi_oci.dataconnectivity",
-  "classes": {
-   "oci:DataConnectivity/registryConnection:RegistryConnection": "RegistryConnection"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "DataConnectivity/registryDataAsset",
-  "fqn": "pulumi_oci.dataconnectivity",
-  "classes": {
-   "oci:DataConnectivity/registryDataAsset:RegistryDataAsset": "RegistryDataAsset"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "DataConnectivity/registryFolder",
-  "fqn": "pulumi_oci.dataconnectivity",
-  "classes": {
-   "oci:DataConnectivity/registryFolder:RegistryFolder": "RegistryFolder"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "DataFlow/application",
   "fqn": "pulumi_oci.dataflow",
   "classes": {
@@ -1710,6 +1675,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns": "MaskingPoliciesApplyDifferenceToMaskingColumns"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/maskingPoliciesMaskingColumn",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -1738,6 +1711,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/reportDefinition:ReportDefinition": "ReportDefinition"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/sdmMaskingPolicyDifference",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference": "SdmMaskingPolicyDifference"
   }
  },
  {
@@ -1930,6 +1911,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datascience",
   "classes": {
    "oci:DataScience/project:Project": "Project"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/applicationVip",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/applicationVip:ApplicationVip": "ApplicationVip"
   }
  },
  {
@@ -3970,6 +3959,30 @@ _utilities.register(
   "fqn": "pulumi_oci.oda",
   "classes": {
    "oci:Oda/odaInstance:OdaInstance": "OdaInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Oda/odaPrivateEndpoint",
+  "fqn": "pulumi_oci.oda",
+  "classes": {
+   "oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint": "OdaPrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Oda/odaPrivateEndpointAttachment",
+  "fqn": "pulumi_oci.oda",
+  "classes": {
+   "oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment": "OdaPrivateEndpointAttachment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Oda/odaPrivateEndpointScanProxy",
+  "fqn": "pulumi_oci.oda",
+  "classes": {
+   "oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy": "OdaPrivateEndpointScanProxy"
   }
  },
  {

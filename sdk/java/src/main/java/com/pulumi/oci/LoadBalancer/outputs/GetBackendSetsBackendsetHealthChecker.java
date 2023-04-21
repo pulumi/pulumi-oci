@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -11,10 +12,15 @@ import java.util.Objects;
 @CustomType
 public final class GetBackendSetsBackendsetHealthChecker {
     /**
-     * @return The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+     * @return The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
      * 
      */
     private Integer intervalMs;
+    /**
+     * @return Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+     * 
+     */
+    private Boolean isForcePlainText;
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
      * 
@@ -53,11 +59,18 @@ public final class GetBackendSetsBackendsetHealthChecker {
 
     private GetBackendSetsBackendsetHealthChecker() {}
     /**
-     * @return The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+     * @return The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
      * 
      */
     public Integer intervalMs() {
         return this.intervalMs;
+    }
+    /**
+     * @return Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+     * 
+     */
+    public Boolean isForcePlainText() {
+        return this.isForcePlainText;
     }
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
@@ -119,6 +132,7 @@ public final class GetBackendSetsBackendsetHealthChecker {
     @CustomType.Builder
     public static final class Builder {
         private Integer intervalMs;
+        private Boolean isForcePlainText;
         private Integer port;
         private String protocol;
         private String responseBodyRegex;
@@ -130,6 +144,7 @@ public final class GetBackendSetsBackendsetHealthChecker {
         public Builder(GetBackendSetsBackendsetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.intervalMs = defaults.intervalMs;
+    	      this.isForcePlainText = defaults.isForcePlainText;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
     	      this.responseBodyRegex = defaults.responseBodyRegex;
@@ -142,6 +157,11 @@ public final class GetBackendSetsBackendsetHealthChecker {
         @CustomType.Setter
         public Builder intervalMs(Integer intervalMs) {
             this.intervalMs = Objects.requireNonNull(intervalMs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isForcePlainText(Boolean isForcePlainText) {
+            this.isForcePlainText = Objects.requireNonNull(isForcePlainText);
             return this;
         }
         @CustomType.Setter
@@ -182,6 +202,7 @@ public final class GetBackendSetsBackendsetHealthChecker {
         public GetBackendSetsBackendsetHealthChecker build() {
             final var o = new GetBackendSetsBackendsetHealthChecker();
             o.intervalMs = intervalMs;
+            o.isForcePlainText = isForcePlainText;
             o.port = port;
             o.protocol = protocol;
             o.responseBodyRegex = responseBodyRegex;

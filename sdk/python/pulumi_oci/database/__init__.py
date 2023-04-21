@@ -5,6 +5,7 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .application_vip import *
 from .autonomous_container_database import *
 from .autonomous_container_database_dataguard_association import *
 from .autonomous_container_database_dataguard_association_operation import *
@@ -47,6 +48,8 @@ from .external_pluggable_database import *
 from .external_pluggable_database_management import *
 from .external_pluggable_database_operations_insights_management import *
 from .external_pluggable_databases_stack_monitoring import *
+from .get_application_vip import *
+from .get_application_vips import *
 from .get_autonomous_character_sets import *
 from .get_autonomous_container_database import *
 from .get_autonomous_container_database_dataguard_association import *

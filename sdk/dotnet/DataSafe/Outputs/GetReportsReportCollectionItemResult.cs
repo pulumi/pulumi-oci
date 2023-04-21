@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Specifies the time at which the report was generated.
+        /// Specifies the date and time the report was generated.
         /// </summary>
         public readonly string TimeGenerated;
         /// <summary>

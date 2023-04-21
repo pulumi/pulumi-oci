@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
     public sealed class TargetDatabaseDatabaseDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+        /// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         /// </summary>
         [Input("autonomousDatabaseId")]
         public Input<string>? AutonomousDatabaseId { get; set; }
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string> DatabaseType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+        /// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         /// </summary>
         [Input("dbSystemId")]
         public Input<string>? DbSystemId { get; set; }

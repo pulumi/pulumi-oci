@@ -14,6 +14,7 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "findingKey": args.findingKey,
+        "references": args.references,
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
     }, opts);
@@ -27,6 +28,7 @@ export interface GetSecurityAssessmentFindingArgs {
     compartmentIdInSubtree?: boolean;
     filters?: inputs.DataSafe.GetSecurityAssessmentFindingFilter[];
     findingKey?: string;
+    references?: string;
     securityAssessmentId: string;
     severity?: string;
 }
@@ -44,6 +46,7 @@ export interface GetSecurityAssessmentFindingResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly references?: string;
     readonly securityAssessmentId: string;
     readonly severity?: string;
 }
@@ -59,6 +62,7 @@ export interface GetSecurityAssessmentFindingOutputArgs {
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingFilterArgs>[]>;
     findingKey?: pulumi.Input<string>;
+    references?: pulumi.Input<string>;
     securityAssessmentId: pulumi.Input<string>;
     severity?: pulumi.Input<string>;
 }

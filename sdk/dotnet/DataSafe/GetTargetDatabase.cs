@@ -23,6 +23,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -53,6 +54,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -106,7 +108,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetTargetDatabaseResult
     {
         /// <summary>
-        /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        /// The OCIDs of associated resources like database, Data Safe private endpoint etc.
         /// </summary>
         public readonly ImmutableArray<string> AssociatedResourceIds;
         /// <summary>
@@ -122,7 +124,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTargetDatabaseCredentialResult> Credentials;
         /// <summary>
-        /// Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        /// Details of the database for the registration in Data Safe.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTargetDatabaseDatabaseDetailResult> DatabaseDetails;
         /// <summary>

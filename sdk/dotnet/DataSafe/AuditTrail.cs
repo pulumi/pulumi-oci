@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> AuditTrailId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+        /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -122,7 +122,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         /// </summary>
         [Output("timeLastCollected")]
         public Output<string> TimeLastCollected { get; private set; } = null!;
@@ -278,7 +278,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? AuditTrailId { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+        /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -374,7 +374,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         /// </summary>
         [Input("timeLastCollected")]
         public Input<string>? TimeLastCollected { get; set; }

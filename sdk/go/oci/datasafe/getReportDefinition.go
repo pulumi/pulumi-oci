@@ -58,7 +58,7 @@ type LookupReportDefinitionArgs struct {
 type LookupReportDefinitionResult struct {
 	// Specifies the name of the category that this report belongs to.
 	Category string `pulumi:"category"`
-	// An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+	// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 	ColumnFilters []GetReportDefinitionColumnFilter `pulumi:"columnFilters"`
 	// An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
 	ColumnInfos []GetReportDefinitionColumnInfo `pulumi:"columnInfos"`
@@ -66,7 +66,7 @@ type LookupReportDefinitionResult struct {
 	ColumnSortings []GetReportDefinitionColumnSorting `pulumi:"columnSortings"`
 	// The OCID of the compartment containing the report definition.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+	// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 	ComplianceStandards []string `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
 	DataSource string `pulumi:"dataSource"`
@@ -86,18 +86,18 @@ type LookupReportDefinitionResult struct {
 	IsSeeded bool `pulumi:"isSeeded"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId string `pulumi:"parentId"`
-	// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
 	RecordTimeSpan     string `pulumi:"recordTimeSpan"`
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
-	// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule string `pulumi:"schedule"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource should be created.
 	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of the report ( either XLS or PDF )
 	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName string `pulumi:"scheduledReportName"`
-	// Specifies the limit on number of rows in report.
+	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit int `pulumi:"scheduledReportRowLimit"`
 	// Additional scim filters used to get the specific summary.
 	ScimFilter string `pulumi:"scimFilter"`
@@ -107,9 +107,9 @@ type LookupReportDefinitionResult struct {
 	Summaries []GetReportDefinitionSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Specifies the time at which the report definition was created.
+	// Specifies the data and time the report definition was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time of the report definition update in Data Safe.
+	// The date and time the report definition was update.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -156,7 +156,7 @@ func (o LookupReportDefinitionResultOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Category }).(pulumi.StringOutput)
 }
 
-// An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 func (o LookupReportDefinitionResultOutput) ColumnFilters() GetReportDefinitionColumnFilterArrayOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) []GetReportDefinitionColumnFilter { return v.ColumnFilters }).(GetReportDefinitionColumnFilterArrayOutput)
 }
@@ -176,7 +176,7 @@ func (o LookupReportDefinitionResultOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 func (o LookupReportDefinitionResultOutput) ComplianceStandards() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) []string { return v.ComplianceStandards }).(pulumi.StringArrayOutput)
 }
@@ -226,7 +226,7 @@ func (o LookupReportDefinitionResultOutput) ParentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ParentId }).(pulumi.StringOutput)
 }
 
-// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
 func (o LookupReportDefinitionResultOutput) RecordTimeSpan() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.RecordTimeSpan }).(pulumi.StringOutput)
 }
@@ -235,17 +235,17 @@ func (o LookupReportDefinitionResultOutput) ReportDefinitionId() pulumi.StringOu
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ReportDefinitionId }).(pulumi.StringOutput)
 }
 
-// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 func (o LookupReportDefinitionResultOutput) Schedule() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Schedule }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+// The OCID of the compartment in which the scheduled resource should be created.
 func (o LookupReportDefinitionResultOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportCompartmentId }).(pulumi.StringOutput)
 }
 
-// Specifies the format of report to be excel or pdf
+// Specifies the format of the report ( either XLS or PDF )
 func (o LookupReportDefinitionResultOutput) ScheduledReportMimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
 }
@@ -255,7 +255,7 @@ func (o LookupReportDefinitionResultOutput) ScheduledReportName() pulumi.StringO
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportName }).(pulumi.StringOutput)
 }
 
-// Specifies the limit on number of rows in report.
+// Specifies the limit on the number of rows in the report.
 func (o LookupReportDefinitionResultOutput) ScheduledReportRowLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) int { return v.ScheduledReportRowLimit }).(pulumi.IntOutput)
 }
@@ -280,12 +280,12 @@ func (o LookupReportDefinitionResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Specifies the time at which the report definition was created.
+// Specifies the data and time the report definition was created.
 func (o LookupReportDefinitionResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time of the report definition update in Data Safe.
+// The date and time the report definition was update.
 func (o LookupReportDefinitionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

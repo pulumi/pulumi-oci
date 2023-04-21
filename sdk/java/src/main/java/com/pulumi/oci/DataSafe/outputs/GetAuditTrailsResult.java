@@ -23,7 +23,7 @@ public final class GetAuditTrailsResult {
     private List<GetAuditTrailsAuditTrailCollection> auditTrailCollections;
     private @Nullable String auditTrailId;
     /**
-     * @return The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+     * @return The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */
     private String compartmentId;
@@ -70,7 +70,7 @@ public final class GetAuditTrailsResult {
         return Optional.ofNullable(this.auditTrailId);
     }
     /**
-     * @return The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+     * @return The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */
     public String compartmentId() {

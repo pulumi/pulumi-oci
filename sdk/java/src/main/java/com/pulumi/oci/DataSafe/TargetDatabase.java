@@ -102,14 +102,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/targetDatabase:TargetDatabase")
 public class TargetDatabase extends com.pulumi.resources.CustomResource {
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     @Export(name="associatedResourceIds", type=List.class, parameters={String.class})
     private Output<List<String>> associatedResourceIds;
 
     /**
-     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * @return The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     public Output<List<String>> associatedResourceIds() {
@@ -158,14 +158,14 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return this.credentials;
     }
     /**
-     * (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     @Export(name="databaseDetails", type=TargetDatabaseDatabaseDetails.class, parameters={})
     private Output<TargetDatabaseDatabaseDetails> databaseDetails;
 
     /**
-     * @return (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     public Output<TargetDatabaseDatabaseDetails> databaseDetails() {

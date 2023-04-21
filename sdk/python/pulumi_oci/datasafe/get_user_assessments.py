@@ -176,7 +176,7 @@ class GetUserAssessmentsResult:
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Type of user assessment. The possible types are:
+        Type of user assessment. Type can be:
         """
         return pulumi.get(self, "type")
 

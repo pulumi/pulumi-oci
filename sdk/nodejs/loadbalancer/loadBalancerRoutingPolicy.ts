@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  *     rules: [{
  *         actions: [{
- *             name: _var.load_balancer_routing_policy_rules_actions_name,
  *             backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
+ *             name: _var.load_balancer_routing_policy_rules_actions_name,
  *         }],
  *         condition: _var.load_balancer_routing_policy_rules_condition,
  *         name: _var.load_balancer_routing_policy_rules_name,

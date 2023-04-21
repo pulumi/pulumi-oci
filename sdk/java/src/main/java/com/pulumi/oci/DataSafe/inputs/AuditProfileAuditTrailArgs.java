@@ -244,14 +244,14 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
     @Import(name="timeLastCollected")
     private @Nullable Output<String> timeLastCollected;
 
     /**
-     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * @return The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeLastCollected() {
@@ -661,7 +661,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeLastCollected The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+         * @param timeLastCollected The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -672,7 +672,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeLastCollected The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+         * @param timeLastCollected The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
          * 
          * @return builder
          * 

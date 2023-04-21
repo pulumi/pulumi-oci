@@ -22,7 +22,7 @@ public final class ReportDefinitionColumnFilter {
      */
     private String fieldName;
     /**
-     * @return (Updatable) Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     private Boolean isEnabled;
@@ -53,7 +53,7 @@ public final class ReportDefinitionColumnFilter {
         return this.fieldName;
     }
     /**
-     * @return (Updatable) Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     public Boolean isEnabled() {

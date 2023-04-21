@@ -79,7 +79,7 @@ class GetTargetDatabaseResult:
     @pulumi.getter(name="associatedResourceIds")
     def associated_resource_ids(self) -> Sequence[str]:
         """
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
         """
         return pulumi.get(self, "associated_resource_ids")
 
@@ -111,7 +111,7 @@ class GetTargetDatabaseResult:
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> Sequence['outputs.GetTargetDatabaseDatabaseDetailResult']:
         """
-        Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 

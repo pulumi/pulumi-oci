@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
+import com.pulumi.oci.Database.inputs.GetApplicationVipPlainArgs;
+import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
+import com.pulumi.oci.Database.inputs.GetApplicationVipsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
@@ -221,6 +225,8 @@ import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
 import com.pulumi.oci.Database.inputs.GetVmClustersPlainArgs;
+import com.pulumi.oci.Database.outputs.GetApplicationVipResult;
+import com.pulumi.oci.Database.outputs.GetApplicationVipsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsResult;
@@ -334,6 +340,326 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DatabaseFunctions {
+    /**
+     * This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified application virtual IP (VIP) address.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
+     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetApplicationVipResult> getApplicationVip(GetApplicationVipArgs args) {
+        return getApplicationVip(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified application virtual IP (VIP) address.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
+     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetApplicationVipResult> getApplicationVipPlain(GetApplicationVipPlainArgs args) {
+        return getApplicationVipPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified application virtual IP (VIP) address.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
+     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetApplicationVipResult> getApplicationVip(GetApplicationVipArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getApplicationVip:getApplicationVip", TypeShape.of(GetApplicationVipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified application virtual IP (VIP) address.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
+     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetApplicationVipResult> getApplicationVipPlain(GetApplicationVipPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getApplicationVip:getApplicationVip", TypeShape.of(GetApplicationVipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.application_vip_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetApplicationVipsResult> getApplicationVips(GetApplicationVipsArgs args) {
+        return getApplicationVips(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.application_vip_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetApplicationVipsResult> getApplicationVipsPlain(GetApplicationVipsPlainArgs args) {
+        return getApplicationVipsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.application_vip_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetApplicationVipsResult> getApplicationVips(GetApplicationVipsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getApplicationVips:getApplicationVips", TypeShape.of(GetApplicationVipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.application_vip_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetApplicationVipsResult> getApplicationVipsPlain(GetApplicationVipsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getApplicationVips:getApplicationVips", TypeShape.of(GetApplicationVipsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
      * 

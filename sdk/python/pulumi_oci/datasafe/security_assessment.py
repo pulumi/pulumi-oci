@@ -155,6 +155,7 @@ class _SecurityAssessmentState:
                  target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  target_version: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_last_assessed: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  triggered_by: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
@@ -181,6 +182,7 @@ class _SecurityAssessmentState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[str] target_version: The version of the target database.
         :param pulumi.Input[str] time_created: The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_last_assessed: The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] triggered_by: Indicates whether the security assessment was created by system or by a user.
         :param pulumi.Input[str] type: The type of this security assessment. The possible types are:
@@ -227,6 +229,8 @@ class _SecurityAssessmentState:
             pulumi.set(__self__, "target_version", target_version)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_last_assessed is not None:
+            pulumi.set(__self__, "time_last_assessed", time_last_assessed)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if triggered_by is not None:
@@ -487,6 +491,18 @@ class _SecurityAssessmentState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @time_last_assessed.setter
+    def time_last_assessed(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_assessed", value)
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
@@ -678,6 +694,7 @@ class SecurityAssessment(pulumi.CustomResource):
             __props__.__dict__["target_ids"] = None
             __props__.__dict__["target_version"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_last_assessed"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["triggered_by"] = None
             __props__.__dict__["type"] = None
@@ -712,6 +729,7 @@ class SecurityAssessment(pulumi.CustomResource):
             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             target_version: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_last_assessed: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             triggered_by: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None) -> 'SecurityAssessment':
@@ -743,6 +761,7 @@ class SecurityAssessment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[str] target_version: The version of the target database.
         :param pulumi.Input[str] time_created: The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_last_assessed: The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] triggered_by: Indicates whether the security assessment was created by system or by a user.
         :param pulumi.Input[str] type: The type of this security assessment. The possible types are:
@@ -772,6 +791,7 @@ class SecurityAssessment(pulumi.CustomResource):
         __props__.__dict__["target_ids"] = target_ids
         __props__.__dict__["target_version"] = target_version
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_last_assessed"] = time_last_assessed
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["triggered_by"] = triggered_by
         __props__.__dict__["type"] = type
@@ -944,6 +964,14 @@ class SecurityAssessment(pulumi.CustomResource):
         The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> pulumi.Output[str]:
+        """
+        The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_assessed")
 
     @property
     @pulumi.getter(name="timeUpdated")

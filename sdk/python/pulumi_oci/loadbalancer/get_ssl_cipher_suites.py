@@ -52,7 +52,7 @@ class GetSslCipherSuitesResult:
 
     @property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[str]:
+    def load_balancer_id(self) -> str:
         return pulumi.get(self, "load_balancer_id")
 
     @property
@@ -111,7 +111,7 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[pulumi.InputType['GetSslCip
 
 @_utilities.lift_output_func(get_ssl_cipher_suites)
 def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSslCipherSuitesFilterArgs']]]]] = None,
-                                 load_balancer_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                 load_balancer_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSslCipherSuitesResult]:
     """
     This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.

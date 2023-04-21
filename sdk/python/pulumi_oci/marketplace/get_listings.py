@@ -228,7 +228,7 @@ def get_listings(categories: Optional[Sequence[str]] = None,
 
 
     :param Sequence[str] categories: Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
-    :param str compartment_id: The unique identifier for the compartment.
+    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
     :param str image_id: The image identifier of the listing.
     :param bool is_featured: Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
     :param str listing_id: The unique identifier for the listing.
@@ -326,7 +326,7 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
 
 
     :param Sequence[str] categories: Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
-    :param str compartment_id: The unique identifier for the compartment.
+    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
     :param str image_id: The image identifier of the listing.
     :param bool is_featured: Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
     :param str listing_id: The unique identifier for the listing.

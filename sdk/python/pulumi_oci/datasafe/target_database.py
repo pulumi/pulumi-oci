@@ -28,7 +28,7 @@ class TargetDatabaseArgs:
         """
         The set of arguments for constructing a TargetDatabase resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -70,7 +70,7 @@ class TargetDatabaseArgs:
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> pulumi.Input['TargetDatabaseDatabaseDetailsArgs']:
         """
-        (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        (Updatable) Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
@@ -183,11 +183,11 @@ class _TargetDatabaseState:
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
         """
         Input properties used for looking up and filtering TargetDatabase resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_resource_ids: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_resource_ids: The OCIDs of associated resources like database, Data Safe private endpoint etc.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
@@ -234,7 +234,7 @@ class _TargetDatabaseState:
     @pulumi.getter(name="associatedResourceIds")
     def associated_resource_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
         """
         return pulumi.get(self, "associated_resource_ids")
 
@@ -282,7 +282,7 @@ class _TargetDatabaseState:
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']]:
         """
-        (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        (Updatable) Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
@@ -489,7 +489,7 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseConnectionOptionArgs']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseCredentialsArgs']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
@@ -644,11 +644,11 @@ class TargetDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_resource_ids: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_resource_ids: The OCIDs of associated resources like database, Data Safe private endpoint etc.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseConnectionOptionArgs']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseCredentialsArgs']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
@@ -685,7 +685,7 @@ class TargetDatabase(pulumi.CustomResource):
     @pulumi.getter(name="associatedResourceIds")
     def associated_resource_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
         """
         return pulumi.get(self, "associated_resource_ids")
 
@@ -717,7 +717,7 @@ class TargetDatabase(pulumi.CustomResource):
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> pulumi.Output['outputs.TargetDatabaseDatabaseDetails']:
         """
-        (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        (Updatable) Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 

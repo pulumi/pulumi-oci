@@ -115,7 +115,7 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      */
     public /*out*/ readonly complianceStandards!: pulumi.Output<string[]>;
     /**
@@ -127,7 +127,7 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the report definition.
+     * (Updatable) The description of the report definition.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -151,19 +151,19 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public readonly parentId!: pulumi.Output<string>;
     /**
-     * The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      */
     public /*out*/ readonly recordTimeSpan!: pulumi.Output<string>;
     /**
-     * Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+     * The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
      */
     public /*out*/ readonly schedule!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource should be created.
      */
     public /*out*/ readonly scheduledReportCompartmentId!: pulumi.Output<string>;
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of the report ( either XLS or PDF )
      */
     public /*out*/ readonly scheduledReportMimeType!: pulumi.Output<string>;
     /**
@@ -171,7 +171,7 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly scheduledReportName!: pulumi.Output<string>;
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      */
     public /*out*/ readonly scheduledReportRowLimit!: pulumi.Output<number>;
     /**
@@ -191,11 +191,11 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Specifies the time at which the report definition was created.
+     * Specifies the data and time the report definition was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time of the report definition update in Data Safe.
+     * The date and time the report definition was update.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -318,7 +318,7 @@ export interface ReportDefinitionState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      */
     complianceStandards?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -330,7 +330,7 @@ export interface ReportDefinitionState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the report definition.
+     * (Updatable) The description of the report definition.
      */
     description?: pulumi.Input<string>;
     /**
@@ -354,19 +354,19 @@ export interface ReportDefinitionState {
      */
     parentId?: pulumi.Input<string>;
     /**
-     * The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      */
     recordTimeSpan?: pulumi.Input<string>;
     /**
-     * Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+     * The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
      */
     schedule?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource should be created.
      */
     scheduledReportCompartmentId?: pulumi.Input<string>;
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of the report ( either XLS or PDF )
      */
     scheduledReportMimeType?: pulumi.Input<string>;
     /**
@@ -374,7 +374,7 @@ export interface ReportDefinitionState {
      */
     scheduledReportName?: pulumi.Input<string>;
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      */
     scheduledReportRowLimit?: pulumi.Input<number>;
     /**
@@ -394,11 +394,11 @@ export interface ReportDefinitionState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Specifies the time at which the report definition was created.
+     * Specifies the data and time the report definition was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time of the report definition update in Data Safe.
+     * The date and time the report definition was update.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -428,7 +428,7 @@ export interface ReportDefinitionArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the report definition.
+     * (Updatable) The description of the report definition.
      */
     description?: pulumi.Input<string>;
     /**

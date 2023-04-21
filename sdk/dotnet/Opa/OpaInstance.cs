@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Opa
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 

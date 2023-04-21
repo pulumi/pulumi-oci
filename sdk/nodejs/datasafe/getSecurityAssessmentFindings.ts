@@ -10,21 +10,6 @@ import * as utilities from "../utilities";
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
  * List all the findings from all the targets in the specified assessment.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testSecurityAssessmentFindings = oci.DataSafe.getSecurityAssessmentFindings({
- *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
- *     accessLevel: _var.security_assessment_finding_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_finding_compartment_id_in_subtree,
- *     findingKey: _var.security_assessment_finding_finding_key,
- *     severity: _var.security_assessment_finding_severity,
- * });
- * ```
  */
 export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFindingsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingsResult> {
 
@@ -34,6 +19,7 @@ export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFinding
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "findingKey": args.findingKey,
+        "references": args.references,
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
     }, opts);
@@ -56,6 +42,10 @@ export interface GetSecurityAssessmentFindingsArgs {
      * Each finding has a key. This key is same for the finding across targets
      */
     findingKey?: string;
+    /**
+     * An optional filter to return only findings containing the specified reference.
+     */
+    references?: string;
     /**
      * The OCID of the security assessment.
      */
@@ -82,6 +72,10 @@ export interface GetSecurityAssessmentFindingsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+     */
+    readonly references?: string;
     readonly securityAssessmentId: string;
     /**
      * The severity of the finding.
@@ -92,21 +86,6 @@ export interface GetSecurityAssessmentFindingsResult {
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
  * List all the findings from all the targets in the specified assessment.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testSecurityAssessmentFindings = oci.DataSafe.getSecurityAssessmentFindings({
- *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
- *     accessLevel: _var.security_assessment_finding_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_finding_compartment_id_in_subtree,
- *     findingKey: _var.security_assessment_finding_finding_key,
- *     severity: _var.security_assessment_finding_severity,
- * });
- * ```
  */
 export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentFindingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindings(a, opts))
@@ -129,6 +108,10 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      * Each finding has a key. This key is same for the finding across targets
      */
     findingKey?: pulumi.Input<string>;
+    /**
+     * An optional filter to return only findings containing the specified reference.
+     */
+    references?: pulumi.Input<string>;
     /**
      * The OCID of the security assessment.
      */

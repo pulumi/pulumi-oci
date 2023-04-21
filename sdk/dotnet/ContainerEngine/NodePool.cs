@@ -18,6 +18,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -55,6 +56,14 @@ namespace Pulumi.Oci.ContainerEngine
     ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
     ///                     CapacityReservationId = oci_containerengine_capacity_reservation.Test_capacity_reservation.Id,
     ///                     FaultDomains = @var.Node_pool_node_config_details_placement_configs_fault_domains,
+    ///                     PreemptibleNodeConfig = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs
+    ///                     {
+    ///                         PreemptionAction = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs
+    ///                         {
+    ///                             Type = @var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
+    ///                             IsPreserveBootVolume = @var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+    ///                         },
+    ///                     },
     ///                 },
     ///             },
     ///             Size = @var.Node_pool_node_config_details_size,

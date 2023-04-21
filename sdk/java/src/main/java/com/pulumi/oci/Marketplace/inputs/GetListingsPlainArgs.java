@@ -33,14 +33,14 @@ public final class GetListingsPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The unique identifier for the compartment.
+     * The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The unique identifier for the compartment.
+     * @return The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      * 
      */
     public Optional<String> compartmentId() {
@@ -246,7 +246,7 @@ public final class GetListingsPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param compartmentId The unique identifier for the compartment.
+         * @param compartmentId The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
          * 
          * @return builder
          * 

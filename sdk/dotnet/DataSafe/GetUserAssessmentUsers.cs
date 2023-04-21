@@ -26,6 +26,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -48,6 +49,9 @@ namespace Pulumi.Oci.DataSafe
         ///         UserCategory = @var.User_assessment_user_user_category,
         ///         UserKey = @var.User_assessment_user_user_key,
         ///         UserName = oci_identity_user.Test_user.Name,
+        ///         UserProfile = @var.User_assessment_user_user_profile,
+        ///         UserRole = @var.User_assessment_user_user_role,
+        ///         UserType = @var.User_assessment_user_user_type,
         ///     });
         /// 
         /// });
@@ -73,6 +77,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -95,6 +100,9 @@ namespace Pulumi.Oci.DataSafe
         ///         UserCategory = @var.User_assessment_user_user_category,
         ///         UserKey = @var.User_assessment_user_user_key,
         ///         UserName = oci_identity_user.Test_user.Name,
+        ///         UserProfile = @var.User_assessment_user_user_profile,
+        ///         UserRole = @var.User_assessment_user_user_role,
+        ///         UserType = @var.User_assessment_user_user_type,
         ///     });
         /// 
         /// });
@@ -207,6 +215,29 @@ namespace Pulumi.Oci.DataSafe
         [Input("userName")]
         public string? UserName { get; set; }
 
+        /// <summary>
+        /// A filter to return only items that match the specified user profile.
+        /// </summary>
+        [Input("userProfile")]
+        public string? UserProfile { get; set; }
+
+        /// <summary>
+        /// A filter to return only items that match the specified user role.
+        /// </summary>
+        [Input("userRole")]
+        public string? UserRole { get; set; }
+
+        /// <summary>
+        /// A filter to return only items that match the specified user type. The possible values can be
+        /// * ADMIN_PRIVILEGED
+        /// * APPLICATION
+        /// * PRIVILEGED
+        /// * SCHEMA
+        /// * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+        /// </summary>
+        [Input("userType")]
+        public string? UserType { get; set; }
+
         public GetUserAssessmentUsersArgs()
         {
         }
@@ -313,6 +344,29 @@ namespace Pulumi.Oci.DataSafe
         [Input("userName")]
         public Input<string>? UserName { get; set; }
 
+        /// <summary>
+        /// A filter to return only items that match the specified user profile.
+        /// </summary>
+        [Input("userProfile")]
+        public Input<string>? UserProfile { get; set; }
+
+        /// <summary>
+        /// A filter to return only items that match the specified user role.
+        /// </summary>
+        [Input("userRole")]
+        public Input<string>? UserRole { get; set; }
+
+        /// <summary>
+        /// A filter to return only items that match the specified user type. The possible values can be
+        /// * ADMIN_PRIVILEGED
+        /// * APPLICATION
+        /// * PRIVILEGED
+        /// * SCHEMA
+        /// * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+        /// </summary>
+        [Input("userType")]
+        public Input<string>? UserType { get; set; }
+
         public GetUserAssessmentUsersInvokeArgs()
         {
         }
@@ -359,6 +413,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string? UserName;
         /// <summary>
+        /// The user profile name.
+        /// </summary>
+        public readonly string? UserProfile;
+        public readonly string? UserRole;
+        public readonly string? UserType;
+        /// <summary>
         /// The list of users.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUserAssessmentUsersUserResult> Users;
@@ -399,6 +459,12 @@ namespace Pulumi.Oci.DataSafe
 
             string? userName,
 
+            string? userProfile,
+
+            string? userRole,
+
+            string? userType,
+
             ImmutableArray<Outputs.GetUserAssessmentUsersUserResult> users)
         {
             AccessLevel = accessLevel;
@@ -418,6 +484,9 @@ namespace Pulumi.Oci.DataSafe
             UserCategory = userCategory;
             UserKey = userKey;
             UserName = userName;
+            UserProfile = userProfile;
+            UserRole = userRole;
+            UserType = userType;
             Users = users;
         }
     }

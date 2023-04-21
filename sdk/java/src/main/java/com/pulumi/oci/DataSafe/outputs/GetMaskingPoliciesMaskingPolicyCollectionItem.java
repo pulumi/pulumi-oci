@@ -67,7 +67,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
      */
     private Boolean isRefreshStatsEnabled;
     /**
-     * @return Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+     * @return Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
     private String parallelDegree;
@@ -82,7 +82,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
      */
     private String preMaskingScript;
     /**
-     * @return Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used.
+     * @return Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
      * 
      */
     private String recompile;
@@ -177,7 +177,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
         return this.isRefreshStatsEnabled;
     }
     /**
-     * @return Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+     * @return Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
     public String parallelDegree() {
@@ -198,7 +198,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
         return this.preMaskingScript;
     }
     /**
-     * @return Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used.
+     * @return Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
      * 
      */
     public String recompile() {

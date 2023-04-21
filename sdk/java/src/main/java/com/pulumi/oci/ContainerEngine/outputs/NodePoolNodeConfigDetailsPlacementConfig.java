@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -27,6 +28,11 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
      * 
      */
     private @Nullable List<String> faultDomains;
+    /**
+     * @return (Updatable) Configuration options for preemptible nodes.
+     * 
+     */
+    private @Nullable NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig preemptibleNodeConfig;
     /**
      * @return (Updatable) The OCID of the subnet in which to place nodes.
      * 
@@ -56,6 +62,13 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
         return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
+     * @return (Updatable) Configuration options for preemptible nodes.
+     * 
+     */
+    public Optional<NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfig() {
+        return Optional.ofNullable(this.preemptibleNodeConfig);
+    }
+    /**
      * @return (Updatable) The OCID of the subnet in which to place nodes.
      * 
      */
@@ -75,6 +88,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
         private String availabilityDomain;
         private @Nullable String capacityReservationId;
         private @Nullable List<String> faultDomains;
+        private @Nullable NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig preemptibleNodeConfig;
         private String subnetId;
         public Builder() {}
         public Builder(NodePoolNodeConfigDetailsPlacementConfig defaults) {
@@ -82,6 +96,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.faultDomains = defaults.faultDomains;
+    	      this.preemptibleNodeConfig = defaults.preemptibleNodeConfig;
     	      this.subnetId = defaults.subnetId;
         }
 
@@ -104,6 +119,11 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
+        public Builder preemptibleNodeConfig(@Nullable NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig preemptibleNodeConfig) {
+            this.preemptibleNodeConfig = preemptibleNodeConfig;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
@@ -113,6 +133,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
             o.availabilityDomain = availabilityDomain;
             o.capacityReservationId = capacityReservationId;
             o.faultDomains = faultDomains;
+            o.preemptibleNodeConfig = preemptibleNodeConfig;
             o.subnetId = subnetId;
             return o;
         }

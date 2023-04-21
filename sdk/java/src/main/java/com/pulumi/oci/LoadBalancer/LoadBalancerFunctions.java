@@ -2844,8 +2844,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .name(var_.ssl_cipher_suite_name())
      *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.ssl_cipher_suite_name())
      *             .build());
      * 
      *     }
@@ -2884,8 +2884,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .name(var_.ssl_cipher_suite_name())
      *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.ssl_cipher_suite_name())
      *             .build());
      * 
      *     }
@@ -2924,8 +2924,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .name(var_.ssl_cipher_suite_name())
      *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.ssl_cipher_suite_name())
      *             .build());
      * 
      *     }
@@ -2964,8 +2964,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .name(var_.ssl_cipher_suite_name())
      *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.ssl_cipher_suite_name())
      *             .build());
      * 
      *     }
@@ -2975,84 +2975,6 @@ public final class LoadBalancerFunctions {
      */
     public static CompletableFuture<GetSslCipherSuiteResult> getSslCipherSuitePlain(GetSslCipherSuitePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", TypeShape.of(GetSslCipherSuiteResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
-     * 
-     * Lists all SSL cipher suites associated with the specified load balancer.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static Output<GetSslCipherSuitesResult> getSslCipherSuites() {
-        return getSslCipherSuites(GetSslCipherSuitesArgs.Empty, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
-     * 
-     * Lists all SSL cipher suites associated with the specified load balancer.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
-     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static CompletableFuture<GetSslCipherSuitesResult> getSslCipherSuitesPlain() {
-        return getSslCipherSuitesPlain(GetSslCipherSuitesPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.

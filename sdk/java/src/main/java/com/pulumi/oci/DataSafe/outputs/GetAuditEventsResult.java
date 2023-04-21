@@ -22,7 +22,7 @@ public final class GetAuditEventsResult {
      */
     private List<GetAuditEventsAuditEventCollection> auditEventCollections;
     /**
-     * @return The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+     * @return The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
      * 
      */
     private String compartmentId;
@@ -47,7 +47,7 @@ public final class GetAuditEventsResult {
         return this.auditEventCollections;
     }
     /**
-     * @return The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+     * @return The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
      * 
      */
     public String compartmentId() {

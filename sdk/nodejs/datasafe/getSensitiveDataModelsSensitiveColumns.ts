@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     columnGroup: _var.sensitive_data_models_sensitive_column_column_group,
  *     columnNames: _var.sensitive_data_models_sensitive_column_column_name,
  *     dataTypes: _var.sensitive_data_models_sensitive_column_data_type,
+ *     isCaseInSensitive: _var.sensitive_data_models_sensitive_column_is_case_in_sensitive,
  *     objects: _var.sensitive_data_models_sensitive_column_object,
  *     objectTypes: _var.sensitive_data_models_sensitive_column_object_type,
  *     parentColumnKeys: _var.sensitive_data_models_sensitive_column_parent_column_key,
@@ -45,6 +46,7 @@ export function getSensitiveDataModelsSensitiveColumns(args: GetSensitiveDataMod
         "columnNames": args.columnNames,
         "dataTypes": args.dataTypes,
         "filters": args.filters,
+        "isCaseInSensitive": args.isCaseInSensitive,
         "objectTypes": args.objectTypes,
         "objects": args.objects,
         "parentColumnKeys": args.parentColumnKeys,
@@ -78,6 +80,10 @@ export interface GetSensitiveDataModelsSensitiveColumnsArgs {
      */
     dataTypes?: string[];
     filters?: inputs.DataSafe.GetSensitiveDataModelsSensitiveColumnsFilter[];
+    /**
+     * A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     */
+    isCaseInSensitive?: boolean;
     /**
      * A filter to return only items related to a specific object type.
      */
@@ -150,6 +156,7 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isCaseInSensitive?: boolean;
     /**
      * The type of the database object that contains the sensitive column.
      */
@@ -205,6 +212,7 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  *     columnGroup: _var.sensitive_data_models_sensitive_column_column_group,
  *     columnNames: _var.sensitive_data_models_sensitive_column_column_name,
  *     dataTypes: _var.sensitive_data_models_sensitive_column_data_type,
+ *     isCaseInSensitive: _var.sensitive_data_models_sensitive_column_is_case_in_sensitive,
  *     objects: _var.sensitive_data_models_sensitive_column_object,
  *     objectTypes: _var.sensitive_data_models_sensitive_column_object_type,
  *     parentColumnKeys: _var.sensitive_data_models_sensitive_column_parent_column_key,
@@ -241,6 +249,10 @@ export interface GetSensitiveDataModelsSensitiveColumnsOutputArgs {
      */
     dataTypes?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelsSensitiveColumnsFilterArgs>[]>;
+    /**
+     * A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     */
+    isCaseInSensitive?: pulumi.Input<boolean>;
     /**
      * A filter to return only items related to a specific object type.
      */

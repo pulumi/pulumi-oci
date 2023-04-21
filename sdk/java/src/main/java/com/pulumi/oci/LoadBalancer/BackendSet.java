@@ -59,6 +59,7 @@ import javax.annotation.Nullable;
  *             .healthChecker(BackendSetHealthCheckerArgs.builder()
  *                 .protocol(var_.backend_set_health_checker_protocol())
  *                 .intervalMs(var_.backend_set_health_checker_interval_ms())
+ *                 .isForcePlainText(var_.backend_set_health_checker_is_force_plain_text())
  *                 .port(var_.backend_set_health_checker_port())
  *                 .responseBodyRegex(var_.backend_set_health_checker_response_body_regex())
  *                 .retries(var_.backend_set_health_checker_retries())

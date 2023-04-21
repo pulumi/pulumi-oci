@@ -18,6 +18,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -125,8 +126,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         /// </summary>
-        [Input("loadBalancerId")]
-        public Input<string>? LoadBalancerId { get; set; }
+        [Input("loadBalancerId", required: true)]
+        public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.

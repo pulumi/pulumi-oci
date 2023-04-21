@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -29,6 +30,21 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<Integer>> intervalMs() {
         return Optional.ofNullable(this.intervalMs);
+    }
+
+    /**
+     * (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+     * 
+     */
+    @Import(name="isForcePlainText")
+    private @Nullable Output<Boolean> isForcePlainText;
+
+    /**
+     * @return (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+     * 
+     */
+    public Optional<Output<Boolean>> isForcePlainText() {
+        return Optional.ofNullable(this.isForcePlainText);
     }
 
     /**
@@ -140,6 +156,7 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
 
     private BackendSetHealthCheckerArgs(BackendSetHealthCheckerArgs $) {
         this.intervalMs = $.intervalMs;
+        this.isForcePlainText = $.isForcePlainText;
         this.port = $.port;
         this.protocol = $.protocol;
         this.responseBodyRegex = $.responseBodyRegex;
@@ -186,6 +203,27 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
          */
         public Builder intervalMs(Integer intervalMs) {
             return intervalMs(Output.of(intervalMs));
+        }
+
+        /**
+         * @param isForcePlainText (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForcePlainText(@Nullable Output<Boolean> isForcePlainText) {
+            $.isForcePlainText = isForcePlainText;
+            return this;
+        }
+
+        /**
+         * @param isForcePlainText (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForcePlainText(Boolean isForcePlainText) {
+            return isForcePlainText(Output.of(isForcePlainText));
         }
 
         /**

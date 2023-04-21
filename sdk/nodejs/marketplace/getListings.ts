@@ -75,7 +75,7 @@ export interface GetListingsArgs {
      */
     categories?: string[];
     /**
-     * The unique identifier for the compartment.
+     * The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      */
     compartmentId?: string;
     filters?: inputs.Marketplace.GetListingsFilter[];
@@ -204,7 +204,7 @@ export interface GetListingsOutputArgs {
      */
     categories?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The unique identifier for the compartment.
+     * The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      */
     compartmentId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetListingsFilterArgs>[]>;

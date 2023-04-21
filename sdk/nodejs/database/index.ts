@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ApplicationVipArgs, ApplicationVipState } from "./applicationVip";
+export type ApplicationVip = import("./applicationVip").ApplicationVip;
+export const ApplicationVip: typeof import("./applicationVip").ApplicationVip = null as any;
+utilities.lazyLoad(exports, ["ApplicationVip"], () => require("./applicationVip"));
+
 export { AutonomousContainerDatabaseArgs, AutonomousContainerDatabaseState } from "./autonomousContainerDatabase";
 export type AutonomousContainerDatabase = import("./autonomousContainerDatabase").AutonomousContainerDatabase;
 export const AutonomousContainerDatabase: typeof import("./autonomousContainerDatabase").AutonomousContainerDatabase = null as any;
@@ -214,6 +219,16 @@ export { ExternalPluggableDatabasesStackMonitoringArgs, ExternalPluggableDatabas
 export type ExternalPluggableDatabasesStackMonitoring = import("./externalPluggableDatabasesStackMonitoring").ExternalPluggableDatabasesStackMonitoring;
 export const ExternalPluggableDatabasesStackMonitoring: typeof import("./externalPluggableDatabasesStackMonitoring").ExternalPluggableDatabasesStackMonitoring = null as any;
 utilities.lazyLoad(exports, ["ExternalPluggableDatabasesStackMonitoring"], () => require("./externalPluggableDatabasesStackMonitoring"));
+
+export { GetApplicationVipArgs, GetApplicationVipResult, GetApplicationVipOutputArgs } from "./getApplicationVip";
+export const getApplicationVip: typeof import("./getApplicationVip").getApplicationVip = null as any;
+export const getApplicationVipOutput: typeof import("./getApplicationVip").getApplicationVipOutput = null as any;
+utilities.lazyLoad(exports, ["getApplicationVip","getApplicationVipOutput"], () => require("./getApplicationVip"));
+
+export { GetApplicationVipsArgs, GetApplicationVipsResult, GetApplicationVipsOutputArgs } from "./getApplicationVips";
+export const getApplicationVips: typeof import("./getApplicationVips").getApplicationVips = null as any;
+export const getApplicationVipsOutput: typeof import("./getApplicationVips").getApplicationVipsOutput = null as any;
+utilities.lazyLoad(exports, ["getApplicationVips","getApplicationVipsOutput"], () => require("./getApplicationVips"));
 
 export { GetAutonomousCharacterSetsArgs, GetAutonomousCharacterSetsResult, GetAutonomousCharacterSetsOutputArgs } from "./getAutonomousCharacterSets";
 export const getAutonomousCharacterSets: typeof import("./getAutonomousCharacterSets").getAutonomousCharacterSets = null as any;
@@ -809,6 +824,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Database/applicationVip:ApplicationVip":
+                return new ApplicationVip(name, <any>undefined, { urn })
             case "oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase":
                 return new AutonomousContainerDatabase(name, <any>undefined, { urn })
             case "oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation":
@@ -918,6 +935,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Database/applicationVip", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabaseDataguardAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabaseDataguardAssociationOperation", _module)

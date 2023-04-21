@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Opensearch
     /// ##### {Compartment-Name} - Name of  your compartment
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
@@ -35,6 +36,7 @@ namespace Pulumi.Oci.Opensearch
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -104,7 +106,7 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The number of data nodes to configure for the cluster.
+        /// (Updatable) The number of data nodes to configure for the cluster.
         /// </summary>
         [Output("dataNodeCount")]
         public Output<int> DataNodeCount { get; private set; } = null!;
@@ -116,13 +118,13 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> DataNodeHostBareMetalShape { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory in GB, to configure per node for the cluster's data nodes.
+        /// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         /// </summary>
         [Output("dataNodeHostMemoryGb")]
         public Output<int> DataNodeHostMemoryGb { get; private set; } = null!;
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluster's data nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         /// </summary>
         [Output("dataNodeHostOcpuCount")]
         public Output<int> DataNodeHostOcpuCount { get; private set; } = null!;
@@ -134,7 +136,7 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> DataNodeHostType { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of storage in GB, to configure per node for the cluster's data nodes.
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         /// </summary>
         [Output("dataNodeStorageGb")]
         public Output<int> DataNodeStorageGb { get; private set; } = null!;
@@ -170,7 +172,7 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The number of master nodes to configure for the cluster.
+        /// (Updatable) The number of master nodes to configure for the cluster.
         /// </summary>
         [Output("masterNodeCount")]
         public Output<int> MasterNodeCount { get; private set; } = null!;
@@ -182,13 +184,13 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> MasterNodeHostBareMetalShape { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory in GB, to configure per node for the cluster's master nodes.
+        /// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         /// </summary>
         [Output("masterNodeHostMemoryGb")]
         public Output<int> MasterNodeHostMemoryGb { get; private set; } = null!;
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluser's master nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         /// </summary>
         [Output("masterNodeHostOcpuCount")]
         public Output<int> MasterNodeHostOcpuCount { get; private set; } = null!;
@@ -206,19 +208,19 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> OpendashboardFqdn { get; private set; } = null!;
 
         /// <summary>
-        /// The number of OpenSearch Dashboard nodes to configure for the cluster.
+        /// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         /// </summary>
         [Output("opendashboardNodeCount")]
         public Output<int> OpendashboardNodeCount { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        /// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
         [Output("opendashboardNodeHostMemoryGb")]
         public Output<int> OpendashboardNodeHostMemoryGb { get; private set; } = null!;
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
         [Output("opendashboardNodeHostOcpuCount")]
         public Output<int> OpendashboardNodeHostOcpuCount { get; private set; } = null!;
@@ -382,7 +384,7 @@ namespace Pulumi.Oci.Opensearch
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The number of data nodes to configure for the cluster.
+        /// (Updatable) The number of data nodes to configure for the cluster.
         /// </summary>
         [Input("dataNodeCount", required: true)]
         public Input<int> DataNodeCount { get; set; } = null!;
@@ -394,13 +396,13 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? DataNodeHostBareMetalShape { get; set; }
 
         /// <summary>
-        /// The amount of memory in GB, to configure per node for the cluster's data nodes.
+        /// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         /// </summary>
         [Input("dataNodeHostMemoryGb", required: true)]
         public Input<int> DataNodeHostMemoryGb { get; set; } = null!;
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluster's data nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         /// </summary>
         [Input("dataNodeHostOcpuCount", required: true)]
         public Input<int> DataNodeHostOcpuCount { get; set; } = null!;
@@ -412,7 +414,7 @@ namespace Pulumi.Oci.Opensearch
         public Input<string> DataNodeHostType { get; set; } = null!;
 
         /// <summary>
-        /// The amount of storage in GB, to configure per node for the cluster's data nodes.
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         /// </summary>
         [Input("dataNodeStorageGb", required: true)]
         public Input<int> DataNodeStorageGb { get; set; } = null!;
@@ -448,7 +450,7 @@ namespace Pulumi.Oci.Opensearch
         }
 
         /// <summary>
-        /// The number of master nodes to configure for the cluster.
+        /// (Updatable) The number of master nodes to configure for the cluster.
         /// </summary>
         [Input("masterNodeCount", required: true)]
         public Input<int> MasterNodeCount { get; set; } = null!;
@@ -460,13 +462,13 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? MasterNodeHostBareMetalShape { get; set; }
 
         /// <summary>
-        /// The amount of memory in GB, to configure per node for the cluster's master nodes.
+        /// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         /// </summary>
         [Input("masterNodeHostMemoryGb", required: true)]
         public Input<int> MasterNodeHostMemoryGb { get; set; } = null!;
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluser's master nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         /// </summary>
         [Input("masterNodeHostOcpuCount", required: true)]
         public Input<int> MasterNodeHostOcpuCount { get; set; } = null!;
@@ -478,19 +480,19 @@ namespace Pulumi.Oci.Opensearch
         public Input<string> MasterNodeHostType { get; set; } = null!;
 
         /// <summary>
-        /// The number of OpenSearch Dashboard nodes to configure for the cluster.
+        /// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         /// </summary>
         [Input("opendashboardNodeCount", required: true)]
         public Input<int> OpendashboardNodeCount { get; set; } = null!;
 
         /// <summary>
-        /// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        /// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
         [Input("opendashboardNodeHostMemoryGb", required: true)]
         public Input<int> OpendashboardNodeHostMemoryGb { get; set; } = null!;
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
         [Input("opendashboardNodeHostOcpuCount", required: true)]
         public Input<int> OpendashboardNodeHostOcpuCount { get; set; } = null!;
@@ -592,7 +594,7 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The number of data nodes to configure for the cluster.
+        /// (Updatable) The number of data nodes to configure for the cluster.
         /// </summary>
         [Input("dataNodeCount")]
         public Input<int>? DataNodeCount { get; set; }
@@ -604,13 +606,13 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? DataNodeHostBareMetalShape { get; set; }
 
         /// <summary>
-        /// The amount of memory in GB, to configure per node for the cluster's data nodes.
+        /// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         /// </summary>
         [Input("dataNodeHostMemoryGb")]
         public Input<int>? DataNodeHostMemoryGb { get; set; }
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluster's data nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         /// </summary>
         [Input("dataNodeHostOcpuCount")]
         public Input<int>? DataNodeHostOcpuCount { get; set; }
@@ -622,7 +624,7 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? DataNodeHostType { get; set; }
 
         /// <summary>
-        /// The amount of storage in GB, to configure per node for the cluster's data nodes.
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         /// </summary>
         [Input("dataNodeStorageGb")]
         public Input<int>? DataNodeStorageGb { get; set; }
@@ -670,7 +672,7 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The number of master nodes to configure for the cluster.
+        /// (Updatable) The number of master nodes to configure for the cluster.
         /// </summary>
         [Input("masterNodeCount")]
         public Input<int>? MasterNodeCount { get; set; }
@@ -682,13 +684,13 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? MasterNodeHostBareMetalShape { get; set; }
 
         /// <summary>
-        /// The amount of memory in GB, to configure per node for the cluster's master nodes.
+        /// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         /// </summary>
         [Input("masterNodeHostMemoryGb")]
         public Input<int>? MasterNodeHostMemoryGb { get; set; }
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluser's master nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         /// </summary>
         [Input("masterNodeHostOcpuCount")]
         public Input<int>? MasterNodeHostOcpuCount { get; set; }
@@ -706,19 +708,19 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? OpendashboardFqdn { get; set; }
 
         /// <summary>
-        /// The number of OpenSearch Dashboard nodes to configure for the cluster.
+        /// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         /// </summary>
         [Input("opendashboardNodeCount")]
         public Input<int>? OpendashboardNodeCount { get; set; }
 
         /// <summary>
-        /// The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        /// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
         [Input("opendashboardNodeHostMemoryGb")]
         public Input<int>? OpendashboardNodeHostMemoryGb { get; set; }
 
         /// <summary>
-        /// The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        /// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
         [Input("opendashboardNodeHostOcpuCount")]
         public Input<int>? OpendashboardNodeHostOcpuCount { get; set; }

@@ -46,6 +46,13 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         return Optional.ofNullable(this.findingKey);
     }
 
+    @Import(name="references")
+    private @Nullable Output<String> references;
+
+    public Optional<Output<String>> references() {
+        return Optional.ofNullable(this.references);
+    }
+
     @Import(name="securityAssessmentId", required=true)
     private Output<String> securityAssessmentId;
 
@@ -67,6 +74,7 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
+        this.references = $.references;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
     }
@@ -127,6 +135,15 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
 
         public Builder findingKey(String findingKey) {
             return findingKey(Output.of(findingKey));
+        }
+
+        public Builder references(@Nullable Output<String> references) {
+            $.references = references;
+            return this;
+        }
+
+        public Builder references(String references) {
+            return references(Output.of(references));
         }
 
         public Builder securityAssessmentId(Output<String> securityAssessmentId) {

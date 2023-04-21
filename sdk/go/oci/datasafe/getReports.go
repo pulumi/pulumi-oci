@@ -88,9 +88,9 @@ type GetReportsResult struct {
 	ReportCollections []GetReportsReportCollection `pulumi:"reportCollections"`
 	// The OCID of the report definition.
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
-	// The current state of the report.
+	// The current state of the audit report.
 	State *string `pulumi:"state"`
-	// The type of the report.
+	// The type of the audit report.
 	Type *string `pulumi:"type"`
 }
 
@@ -182,12 +182,12 @@ func (o GetReportsResultOutput) ReportDefinitionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetReportsResult) *string { return v.ReportDefinitionId }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the report.
+// The current state of the audit report.
 func (o GetReportsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetReportsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The type of the report.
+// The type of the audit report.
 func (o GetReportsResultOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetReportsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

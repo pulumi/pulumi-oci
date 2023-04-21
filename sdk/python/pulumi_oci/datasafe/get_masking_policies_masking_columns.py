@@ -278,7 +278,7 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
     :param Sequence[str] data_types: A filter to return only resources that match the specified data types.
     :param bool is_masking_enabled: A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
-    :param bool is_seed_required: A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+    :param bool is_seed_required: A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
     :param Sequence[str] masking_column_groups: A filter to return only the resources that match the specified masking column group.
     :param str masking_column_lifecycle_state: A filter to return only the resources that match the specified lifecycle states.
     :param str masking_policy_id: The OCID of the masking policy.
@@ -382,7 +382,7 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
     :param Sequence[str] data_types: A filter to return only resources that match the specified data types.
     :param bool is_masking_enabled: A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
-    :param bool is_seed_required: A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+    :param bool is_seed_required: A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
     :param Sequence[str] masking_column_groups: A filter to return only the resources that match the specified masking column group.
     :param str masking_column_lifecycle_state: A filter to return only the resources that match the specified lifecycle states.
     :param str masking_policy_id: The OCID of the masking policy.

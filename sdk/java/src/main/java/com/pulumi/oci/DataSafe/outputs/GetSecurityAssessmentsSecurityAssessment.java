@@ -125,6 +125,11 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      */
     private String timeCreated;
     /**
+     * @return The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeLastAssessed;
+    /**
      * @return The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -296,6 +301,13 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         return this.timeCreated;
     }
     /**
+     * @return The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeLastAssessed() {
+        return this.timeLastAssessed;
+    }
+    /**
      * @return The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -348,6 +360,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         private List<String> targetIds;
         private String targetVersion;
         private String timeCreated;
+        private String timeLastAssessed;
         private String timeUpdated;
         private String triggeredBy;
         private String type;
@@ -376,6 +389,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     	      this.targetIds = defaults.targetIds;
     	      this.targetVersion = defaults.targetVersion;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastAssessed = defaults.timeLastAssessed;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.triggeredBy = defaults.triggeredBy;
     	      this.type = defaults.type;
@@ -504,6 +518,11 @@ public final class GetSecurityAssessmentsSecurityAssessment {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastAssessed(String timeLastAssessed) {
+            this.timeLastAssessed = Objects.requireNonNull(timeLastAssessed);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
@@ -542,6 +561,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
             o.targetIds = targetIds;
             o.targetVersion = targetVersion;
             o.timeCreated = timeCreated;
+            o.timeLastAssessed = timeLastAssessed;
             o.timeUpdated = timeUpdated;
             o.triggeredBy = triggeredBy;
             o.type = type;

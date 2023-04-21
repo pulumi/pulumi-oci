@@ -339,6 +339,20 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    @Export(name="timeLastAssessed", type=String.class, parameters={})
+    private Output<String> timeLastAssessed;
+
+    /**
+     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public Output<String> timeLastAssessed() {
+        return this.timeLastAssessed;
+    }
+    /**
      * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -367,14 +381,14 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
         return this.triggeredBy;
     }
     /**
-     * Type of user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      * 
      */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
     /**
-     * @return Type of user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     public Output<String> type() {

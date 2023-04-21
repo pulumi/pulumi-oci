@@ -46,14 +46,14 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * (Updatable) Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -171,7 +171,7 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
         }
 
         /**
-         * @param isEnabled (Updatable) Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * @param isEnabled (Updatable) Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
         }
 
         /**
-         * @param isEnabled (Updatable) Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * @param isEnabled (Updatable) Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
          * 
          * @return builder
          * 

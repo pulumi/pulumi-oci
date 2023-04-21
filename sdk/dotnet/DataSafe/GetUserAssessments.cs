@@ -37,6 +37,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -93,6 +94,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -354,7 +356,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string? TriggeredBy;
         /// <summary>
-        /// Type of user assessment. The possible types are:
+        /// Type of user assessment. Type can be:
         /// </summary>
         public readonly string? Type;
         /// <summary>

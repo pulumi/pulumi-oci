@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetTargetDatabasesTargetDatabase {
     /**
-     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * @return The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     private List<String> associatedResourceIds;
@@ -37,7 +37,7 @@ public final class GetTargetDatabasesTargetDatabase {
      */
     private List<GetTargetDatabasesTargetDatabaseCredential> credentials;
     /**
-     * @return Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * @return Details of the database for the registration in Data Safe.
      * 
      */
     private List<GetTargetDatabasesTargetDatabaseDatabaseDetail> databaseDetails;
@@ -72,7 +72,7 @@ public final class GetTargetDatabasesTargetDatabase {
      */
     private String lifecycleDetails;
     /**
-     * @return A filter to return the target databases that matches the current state of the target database.
+     * @return A filter to return only target databases that match the specified lifecycle state.
      * 
      */
     private String state;
@@ -99,7 +99,7 @@ public final class GetTargetDatabasesTargetDatabase {
 
     private GetTargetDatabasesTargetDatabase() {}
     /**
-     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * @return The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     public List<String> associatedResourceIds() {
@@ -127,7 +127,7 @@ public final class GetTargetDatabasesTargetDatabase {
         return this.credentials;
     }
     /**
-     * @return Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * @return Details of the database for the registration in Data Safe.
      * 
      */
     public List<GetTargetDatabasesTargetDatabaseDatabaseDetail> databaseDetails() {
@@ -176,7 +176,7 @@ public final class GetTargetDatabasesTargetDatabase {
         return this.lifecycleDetails;
     }
     /**
-     * @return A filter to return the target databases that matches the current state of the target database.
+     * @return A filter to return only target databases that match the specified lifecycle state.
      * 
      */
     public String state() {

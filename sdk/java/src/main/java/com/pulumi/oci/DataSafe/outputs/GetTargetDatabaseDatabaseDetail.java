@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetTargetDatabaseDatabaseDetail {
     /**
-     * @return The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     private String autonomousDatabaseId;
@@ -22,7 +22,7 @@ public final class GetTargetDatabaseDatabaseDetail {
      */
     private String databaseType;
     /**
-     * @return The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     private String dbSystemId;
@@ -59,7 +59,7 @@ public final class GetTargetDatabaseDatabaseDetail {
 
     private GetTargetDatabaseDatabaseDetail() {}
     /**
-     * @return The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     public String autonomousDatabaseId() {
@@ -73,7 +73,7 @@ public final class GetTargetDatabaseDatabaseDetail {
         return this.databaseType;
     }
     /**
-     * @return The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     public String dbSystemId() {

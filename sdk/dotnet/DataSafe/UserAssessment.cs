@@ -20,6 +20,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -171,6 +172,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        [Output("timeLastAssessed")]
+        public Output<string> TimeLastAssessed { get; private set; } = null!;
+
+        /// <summary>
         /// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
@@ -183,7 +190,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> TriggeredBy { get; private set; } = null!;
 
         /// <summary>
-        /// Type of user assessment. The possible types are:
+        /// Type of user assessment. Type can be:
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -447,6 +454,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
+        /// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        [Input("timeLastAssessed")]
+        public Input<string>? TimeLastAssessed { get; set; }
+
+        /// <summary>
         /// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Input("timeUpdated")]
@@ -459,7 +472,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TriggeredBy { get; set; }
 
         /// <summary>
-        /// Type of user assessment. The possible types are:
+        /// Type of user assessment. Type can be:
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

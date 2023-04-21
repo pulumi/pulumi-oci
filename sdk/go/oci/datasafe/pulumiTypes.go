@@ -478,7 +478,7 @@ type AuditProfileAuditTrail struct {
 	TargetId *string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected *string `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -530,7 +530,7 @@ type AuditProfileAuditTrailArgs struct {
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected pulumi.StringPtrInput `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
@@ -666,7 +666,7 @@ func (o AuditProfileAuditTrailOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 func (o AuditProfileAuditTrailOutput) TimeLastCollected() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.TimeLastCollected }).(pulumi.StringPtrOutput)
 }
@@ -1754,7 +1754,7 @@ type ReportDefinitionColumnFilter struct {
 	Expressions []string `pulumi:"expressions"`
 	// (Updatable) Name of the column that must be sorted.
 	FieldName string `pulumi:"fieldName"`
-	// (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+	// (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
 	IsHidden bool `pulumi:"isHidden"`
@@ -1778,7 +1778,7 @@ type ReportDefinitionColumnFilterArgs struct {
 	Expressions pulumi.StringArrayInput `pulumi:"expressions"`
 	// (Updatable) Name of the column that must be sorted.
 	FieldName pulumi.StringInput `pulumi:"fieldName"`
-	// (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+	// (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
 	IsHidden pulumi.BoolInput `pulumi:"isHidden"`
@@ -1847,7 +1847,7 @@ func (o ReportDefinitionColumnFilterOutput) FieldName() pulumi.StringOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnFilter) string { return v.FieldName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+// (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 func (o ReportDefinitionColumnFilterOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnFilter) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -3723,11 +3723,11 @@ func (o TargetDatabaseCredentialsPtrOutput) UserName() pulumi.StringPtrOutput {
 }
 
 type TargetDatabaseDatabaseDetails struct {
-	// (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
 	// (Updatable) The database type.
 	DatabaseType string `pulumi:"databaseType"`
-	// (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) The infrastructure type the database is running on.
 	InfrastructureType string `pulumi:"infrastructureType"`
@@ -3755,11 +3755,11 @@ type TargetDatabaseDatabaseDetailsInput interface {
 }
 
 type TargetDatabaseDatabaseDetailsArgs struct {
-	// (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
 	// (Updatable) The database type.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
-	// (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// (Updatable) The infrastructure type the database is running on.
 	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
@@ -3852,7 +3852,7 @@ func (o TargetDatabaseDatabaseDetailsOutput) ToTargetDatabaseDatabaseDetailsPtrO
 	}).(TargetDatabaseDatabaseDetailsPtrOutput)
 }
 
-// (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
 }
@@ -3862,7 +3862,7 @@ func (o TargetDatabaseDatabaseDetailsOutput) DatabaseType() pulumi.StringOutput 
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
@@ -3921,7 +3921,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) Elem() TargetDatabaseDatabaseDet
 	}).(TargetDatabaseDatabaseDetailsOutput)
 }
 
-// (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -3941,7 +3941,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) DatabaseType() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -7178,7 +7178,7 @@ func (o GetAuditEventsAuditEventCollectionArrayOutput) Index(i pulumi.IntInput) 
 type GetAuditEventsAuditEventCollectionItem struct {
 	// The action taken for this audit event.
 	ActionTaken string `pulumi:"actionTaken"`
-	// Time of audit event occurrence in the target database.
+	// The time of the audit event occurrence in the target database.
 	AuditEventTime string `pulumi:"auditEventTime"`
 	// The location of the audit. Currently the value is audit table.
 	AuditLocation string `pulumi:"auditLocation"`
@@ -7186,13 +7186,13 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	AuditPolicies string `pulumi:"auditPolicies"`
 	// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 	AuditTrailId string `pulumi:"auditTrailId"`
-	// Type of auditing.
+	// The type of the auditing.
 	AuditType string `pulumi:"auditType"`
-	// Name of the host machine from which the session was spawned.
+	// The name of the host machine from which the session was spawned.
 	ClientHostname string `pulumi:"clientHostname"`
 	// The client identifier in each Oracle session.
 	ClientId string `pulumi:"clientId"`
-	// IP address of the host from which the session was spawned.
+	// The IP address of the host machine from which the session was spawned.
 	ClientIp string `pulumi:"clientIp"`
 	// The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
 	ClientProgram string `pulumi:"clientProgram"`
@@ -7207,15 +7207,15 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	// * AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases.
 	// * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
 	DatabaseType string `pulumi:"databaseType"`
-	// Name of the database user whose actions were audited.
+	// The name of the database user whose actions were audited.
 	DbUserName string `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode string `pulumi:"errorCode"`
-	// Detailed message on why the Error occurred.
+	// The detailed message on why the Error occurred.
 	ErrorMessage string `pulumi:"errorMessage"`
-	// Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+	// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
 	EventName string `pulumi:"eventName"`
 	// List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
 	ExtendedEventAttributes string `pulumi:"extendedEventAttributes"`
@@ -7225,27 +7225,27 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Indicates whether an alert was raised for this audit event.
 	IsAlerted bool `pulumi:"isAlerted"`
-	// Name of the object affected by the action.
+	// The name of the object affected by the action.
 	Object string `pulumi:"object"`
-	// Schema name of object affected but the action.
+	// The schema name of the object affected by the action.
 	ObjectOwner string `pulumi:"objectOwner"`
-	// Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+	// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
 	ObjectType string `pulumi:"objectType"`
-	// Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+	// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
 	Operation string `pulumi:"operation"`
 	// Indicates whether the operation was a success or a failure.
 	OperationStatus string `pulumi:"operationStatus"`
 	// The operating system terminal of the user session.
 	OsTerminal string `pulumi:"osTerminal"`
-	// Name of the operating system user for the database session.
+	// The name of the operating system user for the database session.
 	OsUserName string `pulumi:"osUserName"`
-	// Class of the target that was audited.
+	// The class of the target that was audited.
 	TargetClass string `pulumi:"targetClass"`
 	// The OCID of the target database that was audited.
 	TargetId string `pulumi:"targetId"`
 	// The name of the target database that was audited.
 	TargetName string `pulumi:"targetName"`
-	// Timestamp when this audit event was collected from the target database by Data Safe.
+	// The timestamp when this audit event was collected from the target database by Data Safe.
 	TimeCollected string `pulumi:"timeCollected"`
 }
 
@@ -7263,7 +7263,7 @@ type GetAuditEventsAuditEventCollectionItemInput interface {
 type GetAuditEventsAuditEventCollectionItemArgs struct {
 	// The action taken for this audit event.
 	ActionTaken pulumi.StringInput `pulumi:"actionTaken"`
-	// Time of audit event occurrence in the target database.
+	// The time of the audit event occurrence in the target database.
 	AuditEventTime pulumi.StringInput `pulumi:"auditEventTime"`
 	// The location of the audit. Currently the value is audit table.
 	AuditLocation pulumi.StringInput `pulumi:"auditLocation"`
@@ -7271,13 +7271,13 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	AuditPolicies pulumi.StringInput `pulumi:"auditPolicies"`
 	// The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 	AuditTrailId pulumi.StringInput `pulumi:"auditTrailId"`
-	// Type of auditing.
+	// The type of the auditing.
 	AuditType pulumi.StringInput `pulumi:"auditType"`
-	// Name of the host machine from which the session was spawned.
+	// The name of the host machine from which the session was spawned.
 	ClientHostname pulumi.StringInput `pulumi:"clientHostname"`
 	// The client identifier in each Oracle session.
 	ClientId pulumi.StringInput `pulumi:"clientId"`
-	// IP address of the host from which the session was spawned.
+	// The IP address of the host machine from which the session was spawned.
 	ClientIp pulumi.StringInput `pulumi:"clientIp"`
 	// The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
 	ClientProgram pulumi.StringInput `pulumi:"clientProgram"`
@@ -7292,15 +7292,15 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	// * AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases.
 	// * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
-	// Name of the database user whose actions were audited.
+	// The name of the database user whose actions were audited.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode pulumi.StringInput `pulumi:"errorCode"`
-	// Detailed message on why the Error occurred.
+	// The detailed message on why the Error occurred.
 	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
-	// Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+	// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
 	EventName pulumi.StringInput `pulumi:"eventName"`
 	// List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
 	ExtendedEventAttributes pulumi.StringInput `pulumi:"extendedEventAttributes"`
@@ -7310,27 +7310,27 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether an alert was raised for this audit event.
 	IsAlerted pulumi.BoolInput `pulumi:"isAlerted"`
-	// Name of the object affected by the action.
+	// The name of the object affected by the action.
 	Object pulumi.StringInput `pulumi:"object"`
-	// Schema name of object affected but the action.
+	// The schema name of the object affected by the action.
 	ObjectOwner pulumi.StringInput `pulumi:"objectOwner"`
-	// Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+	// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
 	ObjectType pulumi.StringInput `pulumi:"objectType"`
-	// Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+	// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
 	Operation pulumi.StringInput `pulumi:"operation"`
 	// Indicates whether the operation was a success or a failure.
 	OperationStatus pulumi.StringInput `pulumi:"operationStatus"`
 	// The operating system terminal of the user session.
 	OsTerminal pulumi.StringInput `pulumi:"osTerminal"`
-	// Name of the operating system user for the database session.
+	// The name of the operating system user for the database session.
 	OsUserName pulumi.StringInput `pulumi:"osUserName"`
-	// Class of the target that was audited.
+	// The class of the target that was audited.
 	TargetClass pulumi.StringInput `pulumi:"targetClass"`
 	// The OCID of the target database that was audited.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The name of the target database that was audited.
 	TargetName pulumi.StringInput `pulumi:"targetName"`
-	// Timestamp when this audit event was collected from the target database by Data Safe.
+	// The timestamp when this audit event was collected from the target database by Data Safe.
 	TimeCollected pulumi.StringInput `pulumi:"timeCollected"`
 }
 
@@ -7390,7 +7390,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ActionTaken() pulumi.Strin
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ActionTaken }).(pulumi.StringOutput)
 }
 
-// Time of audit event occurrence in the target database.
+// The time of the audit event occurrence in the target database.
 func (o GetAuditEventsAuditEventCollectionItemOutput) AuditEventTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.AuditEventTime }).(pulumi.StringOutput)
 }
@@ -7410,12 +7410,12 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) AuditTrailId() pulumi.Stri
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.AuditTrailId }).(pulumi.StringOutput)
 }
 
-// Type of auditing.
+// The type of the auditing.
 func (o GetAuditEventsAuditEventCollectionItemOutput) AuditType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.AuditType }).(pulumi.StringOutput)
 }
 
-// Name of the host machine from which the session was spawned.
+// The name of the host machine from which the session was spawned.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ClientHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ClientHostname }).(pulumi.StringOutput)
 }
@@ -7425,7 +7425,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ClientId() pulumi.StringOu
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ClientId }).(pulumi.StringOutput)
 }
 
-// IP address of the host from which the session was spawned.
+// The IP address of the host machine from which the session was spawned.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ClientIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ClientIp }).(pulumi.StringOutput)
 }
@@ -7458,7 +7458,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) DatabaseType() pulumi.Stri
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
-// Name of the database user whose actions were audited.
+// The name of the database user whose actions were audited.
 func (o GetAuditEventsAuditEventCollectionItemOutput) DbUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
 }
@@ -7473,12 +7473,12 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ErrorCode() pulumi.StringO
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ErrorCode }).(pulumi.StringOutput)
 }
 
-// Detailed message on why the Error occurred.
+// The detailed message on why the Error occurred.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ErrorMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ErrorMessage }).(pulumi.StringOutput)
 }
 
-// Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
 func (o GetAuditEventsAuditEventCollectionItemOutput) EventName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.EventName }).(pulumi.StringOutput)
 }
@@ -7503,22 +7503,22 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) IsAlerted() pulumi.BoolOut
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) bool { return v.IsAlerted }).(pulumi.BoolOutput)
 }
 
-// Name of the object affected by the action.
+// The name of the object affected by the action.
 func (o GetAuditEventsAuditEventCollectionItemOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.Object }).(pulumi.StringOutput)
 }
 
-// Schema name of object affected but the action.
+// The schema name of the object affected by the action.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ObjectOwner() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ObjectOwner }).(pulumi.StringOutput)
 }
 
-// Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ObjectType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ObjectType }).(pulumi.StringOutput)
 }
 
-// Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
 func (o GetAuditEventsAuditEventCollectionItemOutput) Operation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.Operation }).(pulumi.StringOutput)
 }
@@ -7533,12 +7533,12 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) OsTerminal() pulumi.String
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.OsTerminal }).(pulumi.StringOutput)
 }
 
-// Name of the operating system user for the database session.
+// The name of the operating system user for the database session.
 func (o GetAuditEventsAuditEventCollectionItemOutput) OsUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.OsUserName }).(pulumi.StringOutput)
 }
 
-// Class of the target that was audited.
+// The class of the target that was audited.
 func (o GetAuditEventsAuditEventCollectionItemOutput) TargetClass() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.TargetClass }).(pulumi.StringOutput)
 }
@@ -7553,7 +7553,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) TargetName() pulumi.String
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.TargetName }).(pulumi.StringOutput)
 }
 
-// Timestamp when this audit event was collected from the target database by Data Safe.
+// The timestamp when this audit event was collected from the target database by Data Safe.
 func (o GetAuditEventsAuditEventCollectionItemOutput) TimeCollected() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.TimeCollected }).(pulumi.StringOutput)
 }
@@ -9280,7 +9280,7 @@ type GetAuditProfileAuditTrail struct {
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected string `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -9332,7 +9332,7 @@ type GetAuditProfileAuditTrailArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
@@ -9468,7 +9468,7 @@ func (o GetAuditProfileAuditTrailOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 func (o GetAuditProfileAuditTrailOutput) TimeLastCollected() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.TimeLastCollected }).(pulumi.StringOutput)
 }
@@ -11022,7 +11022,7 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected string `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -11074,7 +11074,7 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
@@ -11216,7 +11216,7 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TimeCreated(
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TimeLastCollected() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.TimeLastCollected }).(pulumi.StringOutput)
 }
@@ -11720,7 +11720,7 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected string `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -11775,7 +11775,7 @@ type GetAuditTrailsAuditTrailCollectionItemArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+	// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
 	// The date and time the audit trail was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
@@ -11920,7 +11920,7 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) TimeCreated() pulumi.Strin
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
 func (o GetAuditTrailsAuditTrailCollectionItemOutput) TimeLastCollected() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.TimeLastCollected }).(pulumi.StringOutput)
 }
@@ -17785,13 +17785,13 @@ type GetMaskingPoliciesMaskingPolicyCollectionItem struct {
 	IsRedoLoggingEnabled bool `pulumi:"isRedoLoggingEnabled"`
 	// Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
 	IsRefreshStatsEnabled bool `pulumi:"isRefreshStatsEnabled"`
-	// Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+	// Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
 	ParallelDegree string `pulumi:"parallelDegree"`
 	// A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
 	PostMaskingScript string `pulumi:"postMaskingScript"`
 	// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
 	PreMaskingScript string `pulumi:"preMaskingScript"`
-	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used.
+	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
 	Recompile string `pulumi:"recompile"`
 	// A filter to return only the resources that match the specified lifecycle states.
 	State string `pulumi:"state"`
@@ -17834,13 +17834,13 @@ type GetMaskingPoliciesMaskingPolicyCollectionItemArgs struct {
 	IsRedoLoggingEnabled pulumi.BoolInput `pulumi:"isRedoLoggingEnabled"`
 	// Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
 	IsRefreshStatsEnabled pulumi.BoolInput `pulumi:"isRefreshStatsEnabled"`
-	// Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+	// Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
 	ParallelDegree pulumi.StringInput `pulumi:"parallelDegree"`
 	// A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
 	PostMaskingScript pulumi.StringInput `pulumi:"postMaskingScript"`
 	// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
 	PreMaskingScript pulumi.StringInput `pulumi:"preMaskingScript"`
-	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used.
+	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
 	Recompile pulumi.StringInput `pulumi:"recompile"`
 	// A filter to return only the resources that match the specified lifecycle states.
 	State pulumi.StringInput `pulumi:"state"`
@@ -17957,7 +17957,7 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) IsRefreshStatsEnabl
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) bool { return v.IsRefreshStatsEnabled }).(pulumi.BoolOutput)
 }
 
-// Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+// Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) ParallelDegree() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.ParallelDegree }).(pulumi.StringOutput)
 }
@@ -17972,7 +17972,7 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) PreMaskingScript() 
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.PreMaskingScript }).(pulumi.StringOutput)
 }
 
-// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used.
+// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) Recompile() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.Recompile }).(pulumi.StringOutput)
 }
@@ -18242,6 +18242,628 @@ func (o GetMaskingPolicyColumnSourceArrayOutput) Index(i pulumi.IntInput) GetMas
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyColumnSource {
 		return vs[0].([]GetMaskingPolicyColumnSource)[vs[1].(int)]
 	}).(GetMaskingPolicyColumnSourceOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaskingPolicyMaskingObjectsFilterInput is an input type that accepts GetMaskingPolicyMaskingObjectsFilterArgs and GetMaskingPolicyMaskingObjectsFilterOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsFilterInput` via:
+//
+//	GetMaskingPolicyMaskingObjectsFilterArgs{...}
+type GetMaskingPolicyMaskingObjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingObjectsFilterOutput() GetMaskingPolicyMaskingObjectsFilterOutput
+	ToGetMaskingPolicyMaskingObjectsFilterOutputWithContext(context.Context) GetMaskingPolicyMaskingObjectsFilterOutput
+}
+
+type GetMaskingPolicyMaskingObjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaskingPolicyMaskingObjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingObjectsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingObjectsFilterArgs) ToGetMaskingPolicyMaskingObjectsFilterOutput() GetMaskingPolicyMaskingObjectsFilterOutput {
+	return i.ToGetMaskingPolicyMaskingObjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingObjectsFilterArgs) ToGetMaskingPolicyMaskingObjectsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsFilterOutput)
+}
+
+// GetMaskingPolicyMaskingObjectsFilterArrayInput is an input type that accepts GetMaskingPolicyMaskingObjectsFilterArray and GetMaskingPolicyMaskingObjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsFilterArrayInput` via:
+//
+//	GetMaskingPolicyMaskingObjectsFilterArray{ GetMaskingPolicyMaskingObjectsFilterArgs{...} }
+type GetMaskingPolicyMaskingObjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingObjectsFilterArrayOutput() GetMaskingPolicyMaskingObjectsFilterArrayOutput
+	ToGetMaskingPolicyMaskingObjectsFilterArrayOutputWithContext(context.Context) GetMaskingPolicyMaskingObjectsFilterArrayOutput
+}
+
+type GetMaskingPolicyMaskingObjectsFilterArray []GetMaskingPolicyMaskingObjectsFilterInput
+
+func (GetMaskingPolicyMaskingObjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingObjectsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingObjectsFilterArray) ToGetMaskingPolicyMaskingObjectsFilterArrayOutput() GetMaskingPolicyMaskingObjectsFilterArrayOutput {
+	return i.ToGetMaskingPolicyMaskingObjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingObjectsFilterArray) ToGetMaskingPolicyMaskingObjectsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsFilterArrayOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingObjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingObjectsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterOutput) ToGetMaskingPolicyMaskingObjectsFilterOutput() GetMaskingPolicyMaskingObjectsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterOutput) ToGetMaskingPolicyMaskingObjectsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingObjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingObjectsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterArrayOutput) ToGetMaskingPolicyMaskingObjectsFilterArrayOutput() GetMaskingPolicyMaskingObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterArrayOutput) ToGetMaskingPolicyMaskingObjectsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingObjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyMaskingObjectsFilter {
+		return vs[0].([]GetMaskingPolicyMaskingObjectsFilter)[vs[1].(int)]
+	}).(GetMaskingPolicyMaskingObjectsFilterOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollection struct {
+	// An array of masking object summary objects.
+	Items []GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem `pulumi:"items"`
+}
+
+// GetMaskingPolicyMaskingObjectsMaskingObjectCollectionInput is an input type that accepts GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs and GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsMaskingObjectCollectionInput` via:
+//
+//	GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs{...}
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutputWithContext(context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs struct {
+	// An array of masking object summary objects.
+	Items GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput {
+	return i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput)
+}
+
+// GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayInput is an input type that accepts GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray and GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayInput` via:
+//
+//	GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray{ GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs{...} }
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutputWithContext(context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray []GetMaskingPolicyMaskingObjectsMaskingObjectCollectionInput
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingObjectsMaskingObjectCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput {
+	return i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput {
+	return o
+}
+
+// An array of masking object summary objects.
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) Items() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsMaskingObjectCollection) []GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
+		return v.Items
+	}).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingObjectsMaskingObjectCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyMaskingObjectsMaskingObjectCollection {
+		return vs[0].([]GetMaskingPolicyMaskingObjectsMaskingObjectCollection)[vs[1].(int)]
+	}).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem struct {
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// A filter to return only items related to a specific object type.
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemInput is an input type that accepts GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs and GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemInput` via:
+//
+//	GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs{...}
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutputWithContext(context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs struct {
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// A filter to return only items related to a specific object type.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput {
+	return i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput)
+}
+
+// GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayInput is an input type that accepts GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray and GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayInput` via:
+//
+//	GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray{ GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs{...} }
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput
+	ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutputWithContext(context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray []GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemInput
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput {
+	return i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput {
+	return o
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific object type.
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput() GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
+		return vs[0].([]GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem)[vs[1].(int)]
+	}).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaskingPolicyMaskingSchemasFilterInput is an input type that accepts GetMaskingPolicyMaskingSchemasFilterArgs and GetMaskingPolicyMaskingSchemasFilterOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasFilterInput` via:
+//
+//	GetMaskingPolicyMaskingSchemasFilterArgs{...}
+type GetMaskingPolicyMaskingSchemasFilterInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingSchemasFilterOutput() GetMaskingPolicyMaskingSchemasFilterOutput
+	ToGetMaskingPolicyMaskingSchemasFilterOutputWithContext(context.Context) GetMaskingPolicyMaskingSchemasFilterOutput
+}
+
+type GetMaskingPolicyMaskingSchemasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaskingPolicyMaskingSchemasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingSchemasFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingSchemasFilterArgs) ToGetMaskingPolicyMaskingSchemasFilterOutput() GetMaskingPolicyMaskingSchemasFilterOutput {
+	return i.ToGetMaskingPolicyMaskingSchemasFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingSchemasFilterArgs) ToGetMaskingPolicyMaskingSchemasFilterOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasFilterOutput)
+}
+
+// GetMaskingPolicyMaskingSchemasFilterArrayInput is an input type that accepts GetMaskingPolicyMaskingSchemasFilterArray and GetMaskingPolicyMaskingSchemasFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasFilterArrayInput` via:
+//
+//	GetMaskingPolicyMaskingSchemasFilterArray{ GetMaskingPolicyMaskingSchemasFilterArgs{...} }
+type GetMaskingPolicyMaskingSchemasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingSchemasFilterArrayOutput() GetMaskingPolicyMaskingSchemasFilterArrayOutput
+	ToGetMaskingPolicyMaskingSchemasFilterArrayOutputWithContext(context.Context) GetMaskingPolicyMaskingSchemasFilterArrayOutput
+}
+
+type GetMaskingPolicyMaskingSchemasFilterArray []GetMaskingPolicyMaskingSchemasFilterInput
+
+func (GetMaskingPolicyMaskingSchemasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingSchemasFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingSchemasFilterArray) ToGetMaskingPolicyMaskingSchemasFilterArrayOutput() GetMaskingPolicyMaskingSchemasFilterArrayOutput {
+	return i.ToGetMaskingPolicyMaskingSchemasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingSchemasFilterArray) ToGetMaskingPolicyMaskingSchemasFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasFilterArrayOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingSchemasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingSchemasFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterOutput) ToGetMaskingPolicyMaskingSchemasFilterOutput() GetMaskingPolicyMaskingSchemasFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterOutput) ToGetMaskingPolicyMaskingSchemasFilterOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingSchemasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingSchemasFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterArrayOutput) ToGetMaskingPolicyMaskingSchemasFilterArrayOutput() GetMaskingPolicyMaskingSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterArrayOutput) ToGetMaskingPolicyMaskingSchemasFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingSchemasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyMaskingSchemasFilter {
+		return vs[0].([]GetMaskingPolicyMaskingSchemasFilter)[vs[1].(int)]
+	}).(GetMaskingPolicyMaskingSchemasFilterOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollection struct {
+	// An array of masking schema summary objects.
+	Items []GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem `pulumi:"items"`
+}
+
+// GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionInput is an input type that accepts GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs and GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionInput` via:
+//
+//	GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs{...}
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutputWithContext(context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs struct {
+	// An array of masking schema summary objects.
+	Items GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput {
+	return i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput)
+}
+
+// GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayInput is an input type that accepts GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray and GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayInput` via:
+//
+//	GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray{ GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs{...} }
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutputWithContext(context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray []GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionInput
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput {
+	return i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput {
+	return o
+}
+
+// An array of masking schema summary objects.
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) Items() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasMaskingSchemaCollection) []GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
+		return v.Items
+	}).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyMaskingSchemasMaskingSchemaCollection {
+		return vs[0].([]GetMaskingPolicyMaskingSchemasMaskingSchemaCollection)[vs[1].(int)]
+	}).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem struct {
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemInput is an input type that accepts GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs and GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemInput` via:
+//
+//	GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs{...}
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutputWithContext(context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs struct {
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput {
+	return i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput)
+}
+
+// GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput is an input type that accepts GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray and GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput` via:
+//
+//	GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray{ GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs{...} }
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput
+	ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutputWithContext(context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray []GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemInput
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput {
+	return i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput {
+	return o
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput() GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
+		return vs[0].([]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem)[vs[1].(int)]
+	}).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput)
 }
 
 type GetMaskingReportMaskedColumnsFilter struct {
@@ -19012,10 +19634,20 @@ type GetMaskingReportsMaskingReportCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the masking report.
 	Id string `pulumi:"id"`
+	// Indicates if the temporary tables created during the masking operation were dropped after masking.
+	IsDropTempTablesEnabled bool `pulumi:"isDropTempTablesEnabled"`
+	// Indicates if redo logging was enabled during the masking operation.
+	IsRedoLoggingEnabled bool `pulumi:"isRedoLoggingEnabled"`
+	// Indicates if statistics gathering was enabled during the masking operation.
+	IsRefreshStatsEnabled bool `pulumi:"isRefreshStatsEnabled"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
+	// Indicates if parallel execution was enabled during the masking operation.
+	ParallelDegree string `pulumi:"parallelDegree"`
+	// Indicates how invalid objects were recompiled post the masking operation.
+	Recompile string `pulumi:"recompile"`
 	// The current state of the masking report.
 	State string `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
@@ -19054,10 +19686,20 @@ type GetMaskingReportsMaskingReportCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The OCID of the masking report.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if the temporary tables created during the masking operation were dropped after masking.
+	IsDropTempTablesEnabled pulumi.BoolInput `pulumi:"isDropTempTablesEnabled"`
+	// Indicates if redo logging was enabled during the masking operation.
+	IsRedoLoggingEnabled pulumi.BoolInput `pulumi:"isRedoLoggingEnabled"`
+	// Indicates if statistics gathering was enabled during the masking operation.
+	IsRefreshStatsEnabled pulumi.BoolInput `pulumi:"isRefreshStatsEnabled"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId pulumi.StringInput `pulumi:"maskingWorkRequestId"`
+	// Indicates if parallel execution was enabled during the masking operation.
+	ParallelDegree pulumi.StringInput `pulumi:"parallelDegree"`
+	// Indicates how invalid objects were recompiled post the masking operation.
+	Recompile pulumi.StringInput `pulumi:"recompile"`
 	// The current state of the masking report.
 	State pulumi.StringInput `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
@@ -19141,6 +19783,21 @@ func (o GetMaskingReportsMaskingReportCollectionItemOutput) Id() pulumi.StringOu
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates if the temporary tables created during the masking operation were dropped after masking.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) IsDropTempTablesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) bool { return v.IsDropTempTablesEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if redo logging was enabled during the masking operation.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) IsRedoLoggingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) bool { return v.IsRedoLoggingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if statistics gathering was enabled during the masking operation.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) IsRefreshStatsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) bool { return v.IsRefreshStatsEnabled }).(pulumi.BoolOutput)
+}
+
 // A filter to return only the resources that match the specified masking policy OCID.
 func (o GetMaskingReportsMaskingReportCollectionItemOutput) MaskingPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.MaskingPolicyId }).(pulumi.StringOutput)
@@ -19149,6 +19806,16 @@ func (o GetMaskingReportsMaskingReportCollectionItemOutput) MaskingPolicyId() pu
 // The OCID of the masking work request that resulted in this masking report.
 func (o GetMaskingReportsMaskingReportCollectionItemOutput) MaskingWorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
+}
+
+// Indicates if parallel execution was enabled during the masking operation.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) ParallelDegree() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.ParallelDegree }).(pulumi.StringOutput)
+}
+
+// Indicates how invalid objects were recompiled post the masking operation.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) Recompile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.Recompile }).(pulumi.StringOutput)
 }
 
 // The current state of the masking report.
@@ -19528,7 +20195,7 @@ type GetReportDefinitionColumnFilter struct {
 	Expressions []string `pulumi:"expressions"`
 	// Name of the column that must be sorted.
 	FieldName string `pulumi:"fieldName"`
-	// Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+	// Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
 	IsHidden bool `pulumi:"isHidden"`
@@ -19552,7 +20219,7 @@ type GetReportDefinitionColumnFilterArgs struct {
 	Expressions pulumi.StringArrayInput `pulumi:"expressions"`
 	// Name of the column that must be sorted.
 	FieldName pulumi.StringInput `pulumi:"fieldName"`
-	// Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+	// Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
 	IsHidden pulumi.BoolInput `pulumi:"isHidden"`
@@ -19621,7 +20288,7 @@ func (o GetReportDefinitionColumnFilterOutput) FieldName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionColumnFilter) string { return v.FieldName }).(pulumi.StringOutput)
 }
 
-// Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+// Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 func (o GetReportDefinitionColumnFilterOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetReportDefinitionColumnFilter) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -20254,7 +20921,7 @@ func (o GetReportDefinitionsReportDefinitionCollectionArrayOutput) Index(i pulum
 type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	// An optional filter to return only resources that match the specified category.
 	Category string `pulumi:"category"`
-	// An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+	// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 	ColumnFilters []GetReportDefinitionsReportDefinitionCollectionItemColumnFilter `pulumi:"columnFilters"`
 	// An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
 	ColumnInfos []GetReportDefinitionsReportDefinitionCollectionItemColumnInfo `pulumi:"columnInfos"`
@@ -20262,7 +20929,7 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	ColumnSortings []GetReportDefinitionsReportDefinitionCollectionItemColumnSorting `pulumi:"columnSortings"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+	// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 	ComplianceStandards []string `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource string `pulumi:"dataSource"`
@@ -20282,17 +20949,17 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	IsSeeded bool `pulumi:"isSeeded"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId string `pulumi:"parentId"`
-	// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
 	RecordTimeSpan string `pulumi:"recordTimeSpan"`
-	// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule string `pulumi:"schedule"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource should be created.
 	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of the report ( either XLS or PDF )
 	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName string `pulumi:"scheduledReportName"`
-	// Specifies the limit on number of rows in report.
+	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit int `pulumi:"scheduledReportRowLimit"`
 	// Additional scim filters used to get the specific summary.
 	ScimFilter string `pulumi:"scimFilter"`
@@ -20302,9 +20969,9 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	Summaries []GetReportDefinitionsReportDefinitionCollectionItemSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Specifies the time at which the report definition was created.
+	// Specifies the data and time the report definition was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time of the report definition update in Data Safe.
+	// The date and time the report definition was update.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -20322,7 +20989,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemInput interface {
 type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	// An optional filter to return only resources that match the specified category.
 	Category pulumi.StringInput `pulumi:"category"`
-	// An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+	// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 	ColumnFilters GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayInput `pulumi:"columnFilters"`
 	// An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
 	ColumnInfos GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayInput `pulumi:"columnInfos"`
@@ -20330,7 +20997,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	ColumnSortings GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayInput `pulumi:"columnSortings"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+	// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 	ComplianceStandards pulumi.StringArrayInput `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource pulumi.StringInput `pulumi:"dataSource"`
@@ -20350,17 +21017,17 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	IsSeeded pulumi.BoolInput `pulumi:"isSeeded"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId pulumi.StringInput `pulumi:"parentId"`
-	// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
 	RecordTimeSpan pulumi.StringInput `pulumi:"recordTimeSpan"`
-	// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule pulumi.StringInput `pulumi:"schedule"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource should be created.
 	ScheduledReportCompartmentId pulumi.StringInput `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of the report ( either XLS or PDF )
 	ScheduledReportMimeType pulumi.StringInput `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName pulumi.StringInput `pulumi:"scheduledReportName"`
-	// Specifies the limit on number of rows in report.
+	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit pulumi.IntInput `pulumi:"scheduledReportRowLimit"`
 	// Additional scim filters used to get the specific summary.
 	ScimFilter pulumi.StringInput `pulumi:"scimFilter"`
@@ -20370,9 +21037,9 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	Summaries GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// Specifies the time at which the report definition was created.
+	// Specifies the data and time the report definition was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time of the report definition update in Data Safe.
+	// The date and time the report definition was update.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -20432,7 +21099,7 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) Category() pul
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.Category }).(pulumi.StringOutput)
 }
 
-// An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ColumnFilters() GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) []GetReportDefinitionsReportDefinitionCollectionItemColumnFilter {
 		return v.ColumnFilters
@@ -20458,7 +21125,7 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) CompartmentId(
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ComplianceStandards() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) []string { return v.ComplianceStandards }).(pulumi.StringArrayOutput)
 }
@@ -20512,24 +21179,24 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ParentId() pul
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.ParentId }).(pulumi.StringOutput)
 }
 
-// The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) RecordTimeSpan() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.RecordTimeSpan }).(pulumi.StringOutput)
 }
 
-// Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) Schedule() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.Schedule }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+// The OCID of the compartment in which the scheduled resource should be created.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string {
 		return v.ScheduledReportCompartmentId
 	}).(pulumi.StringOutput)
 }
 
-// Specifies the format of report to be excel or pdf
+// Specifies the format of the report ( either XLS or PDF )
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportMimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
 }
@@ -20539,7 +21206,7 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledRepor
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.ScheduledReportName }).(pulumi.StringOutput)
 }
 
-// Specifies the limit on number of rows in report.
+// Specifies the limit on the number of rows in the report.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportRowLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) int { return v.ScheduledReportRowLimit }).(pulumi.IntOutput)
 }
@@ -20566,12 +21233,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) SystemTags() p
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Specifies the time at which the report definition was created.
+// Specifies the data and time the report definition was created.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time of the report definition update in Data Safe.
+// The date and time the report definition was update.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -20601,7 +21268,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemColumnFilter struct {
 	Expressions []string `pulumi:"expressions"`
 	// Name of the column that must be sorted.
 	FieldName string `pulumi:"fieldName"`
-	// Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+	// Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
 	IsHidden bool `pulumi:"isHidden"`
@@ -20625,7 +21292,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs struct {
 	Expressions pulumi.StringArrayInput `pulumi:"expressions"`
 	// Name of the column that must be sorted.
 	FieldName pulumi.StringInput `pulumi:"fieldName"`
-	// Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+	// Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
 	IsHidden pulumi.BoolInput `pulumi:"isHidden"`
@@ -20694,7 +21361,7 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput) Fi
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItemColumnFilter) string { return v.FieldName }).(pulumi.StringOutput)
 }
 
-// Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+// Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItemColumnFilter) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -21340,7 +22007,7 @@ type GetReportsReportCollectionItem struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Specifies the time at which the report was generated.
+	// Specifies the date and time the report was generated.
 	TimeGenerated string `pulumi:"timeGenerated"`
 	// An optional filter to return only resources that match the specified type.
 	Type string `pulumi:"type"`
@@ -21378,7 +22045,7 @@ type GetReportsReportCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// Specifies the time at which the report was generated.
+	// Specifies the date and time the report was generated.
 	TimeGenerated pulumi.StringInput `pulumi:"timeGenerated"`
 	// An optional filter to return only resources that match the specified type.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -21485,7 +22152,7 @@ func (o GetReportsReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Specifies the time at which the report was generated.
+// Specifies the date and time the report was generated.
 func (o GetReportsReportCollectionItemOutput) TimeGenerated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.TimeGenerated }).(pulumi.StringOutput)
 }
@@ -21513,6 +22180,835 @@ func (o GetReportsReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetR
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportsReportCollectionItem {
 		return vs[0].([]GetReportsReportCollectionItem)[vs[1].(int)]
 	}).(GetReportsReportCollectionItemOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs and GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterInput` via:
+//
+//	GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs{...}
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutputWithContext(context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput {
+	return i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput)
+}
+
+// GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray and GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayInput` via:
+//
+//	GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray{ GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs{...} }
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutputWithContext(context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray []GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterInput
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput {
+	return i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter {
+		return vs[0].([]GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter)[vs[1].(int)]
+	}).(GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection struct {
+	Items []GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem `pulumi:"items"`
+}
+
+// GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs and GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionInput` via:
+//
+//	GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs{...}
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutputWithContext(context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs struct {
+	Items GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput {
+	return i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput)
+}
+
+// GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray and GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayInput` via:
+//
+//	GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray{ GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs{...} }
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutputWithContext(context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray []GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionInput
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput {
+	return i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) Items() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection) []GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem {
+		return v.Items
+	}).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection {
+		return vs[0].([]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection)[vs[1].(int)]
+	}).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem struct {
+	// A filter to return only a specific column based on column name.
+	ColumnName string `pulumi:"columnName"`
+	// A filter to return only the SDM masking policy difference columns that match the specified difference type
+	DifferenceType string `pulumi:"differenceType"`
+	// The unique key that identifies the SDM masking policy difference column.
+	Key string `pulumi:"key"`
+	// The unique key that identifies the masking column represented by the SDM masking policy difference column.
+	MaskingColumnkey string `pulumi:"maskingColumnkey"`
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// A filter to return only the SDM masking policy difference columns that match the specified planned action.
+	PlannedAction string `pulumi:"plannedAction"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
+	SensitiveColumnkey string `pulumi:"sensitiveColumnkey"`
+	// The OCID of the sensitive type associated with the difference column.
+	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
+	// A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
+	SyncStatus string `pulumi:"syncStatus"`
+	// The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastSynced string `pulumi:"timeLastSynced"`
+}
+
+// GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs and GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemInput` via:
+//
+//	GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs{...}
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutputWithContext(context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs struct {
+	// A filter to return only a specific column based on column name.
+	ColumnName pulumi.StringInput `pulumi:"columnName"`
+	// A filter to return only the SDM masking policy difference columns that match the specified difference type
+	DifferenceType pulumi.StringInput `pulumi:"differenceType"`
+	// The unique key that identifies the SDM masking policy difference column.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The unique key that identifies the masking column represented by the SDM masking policy difference column.
+	MaskingColumnkey pulumi.StringInput `pulumi:"maskingColumnkey"`
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// A filter to return only the SDM masking policy difference columns that match the specified planned action.
+	PlannedAction pulumi.StringInput `pulumi:"plannedAction"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
+	SensitiveColumnkey pulumi.StringInput `pulumi:"sensitiveColumnkey"`
+	// The OCID of the sensitive type associated with the difference column.
+	SensitiveTypeId pulumi.StringInput `pulumi:"sensitiveTypeId"`
+	// A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
+	SyncStatus pulumi.StringInput `pulumi:"syncStatus"`
+	// The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastSynced pulumi.StringInput `pulumi:"timeLastSynced"`
+}
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput {
+	return i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput)
+}
+
+// GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray and GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayInput` via:
+//
+//	GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray{ GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs{...} }
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput
+	ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutputWithContext(context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray []GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemInput
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput {
+	return i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput {
+	return o
+}
+
+// A filter to return only a specific column based on column name.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) ColumnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.ColumnName
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the SDM masking policy difference columns that match the specified difference type
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) DifferenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.DifferenceType
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies the SDM masking policy difference column.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies the masking column represented by the SDM masking policy difference column.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) MaskingColumnkey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.MaskingColumnkey
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the SDM masking policy difference columns that match the specified planned action.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) PlannedAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.PlannedAction
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) SensitiveColumnkey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.SensitiveColumnkey
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the sensitive type associated with the difference column.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) SensitiveTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.SensitiveTypeId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) SyncStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.SyncStatus
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) TimeLastSynced() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem) string {
+		return v.TimeLastSynced
+	}).(pulumi.StringOutput)
+}
+
+type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem {
+		return vs[0].([]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem)[vs[1].(int)]
+	}).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSdmMaskingPolicyDifferencesFilterInput is an input type that accepts GetSdmMaskingPolicyDifferencesFilterArgs and GetSdmMaskingPolicyDifferencesFilterOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesFilterInput` via:
+//
+//	GetSdmMaskingPolicyDifferencesFilterArgs{...}
+type GetSdmMaskingPolicyDifferencesFilterInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferencesFilterOutput() GetSdmMaskingPolicyDifferencesFilterOutput
+	ToGetSdmMaskingPolicyDifferencesFilterOutputWithContext(context.Context) GetSdmMaskingPolicyDifferencesFilterOutput
+}
+
+type GetSdmMaskingPolicyDifferencesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSdmMaskingPolicyDifferencesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferencesFilter)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferencesFilterArgs) ToGetSdmMaskingPolicyDifferencesFilterOutput() GetSdmMaskingPolicyDifferencesFilterOutput {
+	return i.ToGetSdmMaskingPolicyDifferencesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferencesFilterArgs) ToGetSdmMaskingPolicyDifferencesFilterOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesFilterOutput)
+}
+
+// GetSdmMaskingPolicyDifferencesFilterArrayInput is an input type that accepts GetSdmMaskingPolicyDifferencesFilterArray and GetSdmMaskingPolicyDifferencesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesFilterArrayInput` via:
+//
+//	GetSdmMaskingPolicyDifferencesFilterArray{ GetSdmMaskingPolicyDifferencesFilterArgs{...} }
+type GetSdmMaskingPolicyDifferencesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferencesFilterArrayOutput() GetSdmMaskingPolicyDifferencesFilterArrayOutput
+	ToGetSdmMaskingPolicyDifferencesFilterArrayOutputWithContext(context.Context) GetSdmMaskingPolicyDifferencesFilterArrayOutput
+}
+
+type GetSdmMaskingPolicyDifferencesFilterArray []GetSdmMaskingPolicyDifferencesFilterInput
+
+func (GetSdmMaskingPolicyDifferencesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferencesFilter)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferencesFilterArray) ToGetSdmMaskingPolicyDifferencesFilterArrayOutput() GetSdmMaskingPolicyDifferencesFilterArrayOutput {
+	return i.ToGetSdmMaskingPolicyDifferencesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferencesFilterArray) ToGetSdmMaskingPolicyDifferencesFilterArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesFilterArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferencesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferencesFilter)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterOutput) ToGetSdmMaskingPolicyDifferencesFilterOutput() GetSdmMaskingPolicyDifferencesFilterOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterOutput) ToGetSdmMaskingPolicyDifferencesFilterOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesFilterOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferencesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferencesFilter)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterArrayOutput) ToGetSdmMaskingPolicyDifferencesFilterArrayOutput() GetSdmMaskingPolicyDifferencesFilterArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterArrayOutput) ToGetSdmMaskingPolicyDifferencesFilterArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesFilterArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferencesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferencesFilter {
+		return vs[0].([]GetSdmMaskingPolicyDifferencesFilter)[vs[1].(int)]
+	}).(GetSdmMaskingPolicyDifferencesFilterOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection struct {
+	Items []GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem `pulumi:"items"`
+}
+
+// GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionInput is an input type that accepts GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs and GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionInput` via:
+//
+//	GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs{...}
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutputWithContext(context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs struct {
+	Items GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput {
+	return i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput)
+}
+
+// GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayInput is an input type that accepts GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray and GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayInput` via:
+//
+//	GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray{ GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs{...} }
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutputWithContext(context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray []GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionInput
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput {
+	return i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) Items() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection) []GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem {
+		return v.Items
+	}).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection {
+		return vs[0].([]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection)[vs[1].(int)]
+	}).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
+	DifferenceType string `pulumi:"differenceType"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the SDM masking policy difference.
+	Id string `pulumi:"id"`
+	// A filter to return only the resources that match the specified masking policy OCID.
+	MaskingPolicyId string `pulumi:"maskingPolicyId"`
+	// A filter to return only the resources that match the specified sensitive data model OCID.
+	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreationStarted string `pulumi:"timeCreationStarted"`
+}
+
+// GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemInput is an input type that accepts GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs and GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemInput` via:
+//
+//	GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs{...}
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutputWithContext(context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
+	DifferenceType pulumi.StringInput `pulumi:"differenceType"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the SDM masking policy difference.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only the resources that match the specified masking policy OCID.
+	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
+	// A filter to return only the resources that match the specified sensitive data model OCID.
+	SensitiveDataModelId pulumi.StringInput `pulumi:"sensitiveDataModelId"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreationStarted pulumi.StringInput `pulumi:"timeCreationStarted"`
+}
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput {
+	return i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput)
+}
+
+// GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayInput is an input type that accepts GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray and GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayInput` via:
+//
+//	GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray{ GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs{...} }
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput
+	ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutputWithContext(context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray []GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemInput
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem)(nil)).Elem()
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput {
+	return i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) DifferenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string {
+		return v.DifferenceType
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the SDM masking policy difference.
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified masking policy OCID.
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) MaskingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string {
+		return v.MaskingPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified sensitive data model OCID.
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) SensitiveDataModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string {
+		return v.SensitiveDataModelId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified lifecycle states.
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) TimeCreationStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string {
+		return v.TimeCreationStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem)(nil)).Elem()
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem {
+		return vs[0].([]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem)[vs[1].(int)]
+	}).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput)
 }
 
 type GetSecurityAssessmentComparisonTarget struct {
@@ -26969,7 +28465,7 @@ type GetSecurityAssessmentFindingsFinding struct {
 	Details []string `pulumi:"details"`
 	// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
 	Key string `pulumi:"key"`
-	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+	// An optional filter to return only findings containing the specified reference.
 	References []GetSecurityAssessmentFindingsFindingReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
@@ -27001,7 +28497,7 @@ type GetSecurityAssessmentFindingsFindingArgs struct {
 	Details pulumi.StringArrayInput `pulumi:"details"`
 	// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+	// An optional filter to return only findings containing the specified reference.
 	References GetSecurityAssessmentFindingsFindingReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
@@ -27081,7 +28577,7 @@ func (o GetSecurityAssessmentFindingsFindingOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+// An optional filter to return only findings containing the specified reference.
 func (o GetSecurityAssessmentFindingsFindingOutput) References() GetSecurityAssessmentFindingsFindingReferenceArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) []GetSecurityAssessmentFindingsFindingReference {
 		return v.References
@@ -28512,6 +30008,8 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	TargetVersion string `pulumi:"targetVersion"`
 	// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastAssessed string `pulumi:"timeLastAssessed"`
 	// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return only security asessments that were created by either user or system.
@@ -28576,6 +30074,8 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
 	// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastAssessed pulumi.StringInput `pulumi:"timeLastAssessed"`
 	// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return only security asessments that were created by either user or system.
@@ -28745,6 +30245,11 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) TargetVersion() pulumi.S
 // The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
 // The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -29975,6 +31480,628 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessmentStatisticPass {
 		return vs[0].([]GetSecurityAssessmentsSecurityAssessmentStatisticPass)[vs[1].(int)]
 	}).(GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSensitiveDataModelSensitiveObjectsFilterInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsFilterArgs and GetSensitiveDataModelSensitiveObjectsFilterOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsFilterInput` via:
+//
+//	GetSensitiveDataModelSensitiveObjectsFilterArgs{...}
+type GetSensitiveDataModelSensitiveObjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveObjectsFilterOutput() GetSensitiveDataModelSensitiveObjectsFilterOutput
+	ToGetSensitiveDataModelSensitiveObjectsFilterOutputWithContext(context.Context) GetSensitiveDataModelSensitiveObjectsFilterOutput
+}
+
+type GetSensitiveDataModelSensitiveObjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSensitiveDataModelSensitiveObjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsFilterArgs) ToGetSensitiveDataModelSensitiveObjectsFilterOutput() GetSensitiveDataModelSensitiveObjectsFilterOutput {
+	return i.ToGetSensitiveDataModelSensitiveObjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsFilterArgs) ToGetSensitiveDataModelSensitiveObjectsFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsFilterOutput)
+}
+
+// GetSensitiveDataModelSensitiveObjectsFilterArrayInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsFilterArray and GetSensitiveDataModelSensitiveObjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsFilterArrayInput` via:
+//
+//	GetSensitiveDataModelSensitiveObjectsFilterArray{ GetSensitiveDataModelSensitiveObjectsFilterArgs{...} }
+type GetSensitiveDataModelSensitiveObjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutput() GetSensitiveDataModelSensitiveObjectsFilterArrayOutput
+	ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutputWithContext(context.Context) GetSensitiveDataModelSensitiveObjectsFilterArrayOutput
+}
+
+type GetSensitiveDataModelSensitiveObjectsFilterArray []GetSensitiveDataModelSensitiveObjectsFilterInput
+
+func (GetSensitiveDataModelSensitiveObjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsFilterArray) ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutput() GetSensitiveDataModelSensitiveObjectsFilterArrayOutput {
+	return i.ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsFilterArray) ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsFilterArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveObjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) ToGetSensitiveDataModelSensitiveObjectsFilterOutput() GetSensitiveDataModelSensitiveObjectsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) ToGetSensitiveDataModelSensitiveObjectsFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutput() GetSensitiveDataModelSensitiveObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveObjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelSensitiveObjectsFilter {
+		return vs[0].([]GetSensitiveDataModelSensitiveObjectsFilter)[vs[1].(int)]
+	}).(GetSensitiveDataModelSensitiveObjectsFilterOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection struct {
+	// An array of sensitive object summary objects.
+	Items []GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem `pulumi:"items"`
+}
+
+// GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs and GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput` via:
+//
+//	GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs{...}
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutputWithContext(context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs struct {
+	// An array of sensitive object summary objects.
+	Items GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput {
+	return i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput)
+}
+
+// GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray and GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayInput` via:
+//
+//	GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray{ GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs{...} }
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutputWithContext(context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray []GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput {
+	return i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput {
+	return o
+}
+
+// An array of sensitive object summary objects.
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) Items() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection) []GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem {
+		return v.Items
+	}).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection {
+		return vs[0].([]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection)[vs[1].(int)]
+	}).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem struct {
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// A filter to return only items related to a specific object type.
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs and GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemInput` via:
+//
+//	GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs{...}
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutputWithContext(context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs struct {
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// A filter to return only items related to a specific object type.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput {
+	return i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput)
+}
+
+// GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray and GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayInput` via:
+//
+//	GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray{ GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs{...} }
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput
+	ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutputWithContext(context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray []GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemInput
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput {
+	return i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput {
+	return o
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific object type.
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput() GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem {
+		return vs[0].([]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem)[vs[1].(int)]
+	}).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSensitiveDataModelSensitiveSchemasFilterInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasFilterArgs and GetSensitiveDataModelSensitiveSchemasFilterOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasFilterInput` via:
+//
+//	GetSensitiveDataModelSensitiveSchemasFilterArgs{...}
+type GetSensitiveDataModelSensitiveSchemasFilterInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveSchemasFilterOutput() GetSensitiveDataModelSensitiveSchemasFilterOutput
+	ToGetSensitiveDataModelSensitiveSchemasFilterOutputWithContext(context.Context) GetSensitiveDataModelSensitiveSchemasFilterOutput
+}
+
+type GetSensitiveDataModelSensitiveSchemasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSensitiveDataModelSensitiveSchemasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasFilterArgs) ToGetSensitiveDataModelSensitiveSchemasFilterOutput() GetSensitiveDataModelSensitiveSchemasFilterOutput {
+	return i.ToGetSensitiveDataModelSensitiveSchemasFilterOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasFilterArgs) ToGetSensitiveDataModelSensitiveSchemasFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasFilterOutput)
+}
+
+// GetSensitiveDataModelSensitiveSchemasFilterArrayInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasFilterArray and GetSensitiveDataModelSensitiveSchemasFilterArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasFilterArrayInput` via:
+//
+//	GetSensitiveDataModelSensitiveSchemasFilterArray{ GetSensitiveDataModelSensitiveSchemasFilterArgs{...} }
+type GetSensitiveDataModelSensitiveSchemasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutput() GetSensitiveDataModelSensitiveSchemasFilterArrayOutput
+	ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutputWithContext(context.Context) GetSensitiveDataModelSensitiveSchemasFilterArrayOutput
+}
+
+type GetSensitiveDataModelSensitiveSchemasFilterArray []GetSensitiveDataModelSensitiveSchemasFilterInput
+
+func (GetSensitiveDataModelSensitiveSchemasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveSchemasFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasFilterArray) ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutput() GetSensitiveDataModelSensitiveSchemasFilterArrayOutput {
+	return i.ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasFilterArray) ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasFilterArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveSchemasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) ToGetSensitiveDataModelSensitiveSchemasFilterOutput() GetSensitiveDataModelSensitiveSchemasFilterOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) ToGetSensitiveDataModelSensitiveSchemasFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasFilterOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveSchemasFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutput() GetSensitiveDataModelSensitiveSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveSchemasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelSensitiveSchemasFilter {
+		return vs[0].([]GetSensitiveDataModelSensitiveSchemasFilter)[vs[1].(int)]
+	}).(GetSensitiveDataModelSensitiveSchemasFilterOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection struct {
+	// An array of sensitive schema summary objects.
+	Items []GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem `pulumi:"items"`
+}
+
+// GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs and GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionInput` via:
+//
+//	GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs{...}
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutputWithContext(context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs struct {
+	// An array of sensitive schema summary objects.
+	Items GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput {
+	return i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput)
+}
+
+// GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray and GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayInput` via:
+//
+//	GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray{ GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs{...} }
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutputWithContext(context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray []GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionInput
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput {
+	return i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput {
+	return o
+}
+
+// An array of sensitive schema summary objects.
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) Items() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection) []GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem {
+		return v.Items
+	}).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection {
+		return vs[0].([]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection)[vs[1].(int)]
+	}).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem struct {
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs and GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemInput` via:
+//
+//	GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs{...}
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutputWithContext(context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs struct {
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput {
+	return i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput)
+}
+
+// GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray and GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayInput` via:
+//
+//	GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray{ GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs{...} }
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput
+	ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutputWithContext(context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray []GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemInput
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput {
+	return i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput {
+	return o
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput() GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem {
+		return vs[0].([]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem)[vs[1].(int)]
+	}).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput)
 }
 
 type GetSensitiveDataModelsFilter struct {
@@ -32083,11 +34210,11 @@ func (o GetTargetDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetTarg
 }
 
 type GetTargetDatabaseDatabaseDetail struct {
-	// The OCID of the autonomous database registered as a target database in Data Safe.
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	// The database type.
 	DatabaseType string `pulumi:"databaseType"`
-	// The OCID of the cloud database system registered as a target database in Data Safe.
+	// The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// The infrastructure type the database is running on.
 	InfrastructureType string `pulumi:"infrastructureType"`
@@ -32115,11 +34242,11 @@ type GetTargetDatabaseDatabaseDetailInput interface {
 }
 
 type GetTargetDatabaseDatabaseDetailArgs struct {
-	// The OCID of the autonomous database registered as a target database in Data Safe.
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
 	// The database type.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
-	// The OCID of the cloud database system registered as a target database in Data Safe.
+	// The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// The infrastructure type the database is running on.
 	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
@@ -32186,7 +34313,7 @@ func (o GetTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabaseDatabaseDetail
 	return o
 }
 
-// The OCID of the autonomous database registered as a target database in Data Safe.
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o GetTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
@@ -32196,7 +34323,7 @@ func (o GetTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutpu
 	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
-// The OCID of the cloud database system registered as a target database in Data Safe.
+// The OCID of the cloud database registered as a target database in Data Safe.
 func (o GetTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -33674,7 +35801,7 @@ func (o GetTargetDatabasesTablesTableArrayOutput) Index(i pulumi.IntInput) GetTa
 }
 
 type GetTargetDatabasesTargetDatabase struct {
-	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 	AssociatedResourceIds []string `pulumi:"associatedResourceIds"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -33682,7 +35809,7 @@ type GetTargetDatabasesTargetDatabase struct {
 	ConnectionOptions []GetTargetDatabasesTargetDatabaseConnectionOption `pulumi:"connectionOptions"`
 	// The database credentials required for Data Safe to connect to the database.
 	Credentials []GetTargetDatabasesTargetDatabaseCredential `pulumi:"credentials"`
-	// Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// Details of the database for the registration in Data Safe.
 	DatabaseDetails []GetTargetDatabasesTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -33696,7 +35823,7 @@ type GetTargetDatabasesTargetDatabase struct {
 	Id string `pulumi:"id"`
 	// Details about the current state of the target database in Data Safe.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// A filter to return the target databases that matches the current state of the target database.
+	// A filter to return only target databases that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -33720,7 +35847,7 @@ type GetTargetDatabasesTargetDatabaseInput interface {
 }
 
 type GetTargetDatabasesTargetDatabaseArgs struct {
-	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 	AssociatedResourceIds pulumi.StringArrayInput `pulumi:"associatedResourceIds"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -33728,7 +35855,7 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	ConnectionOptions GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput `pulumi:"connectionOptions"`
 	// The database credentials required for Data Safe to connect to the database.
 	Credentials GetTargetDatabasesTargetDatabaseCredentialArrayInput `pulumi:"credentials"`
-	// Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// Details of the database for the registration in Data Safe.
 	DatabaseDetails GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -33742,7 +35869,7 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the target database in Data Safe.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// A filter to return the target databases that matches the current state of the target database.
+	// A filter to return only target databases that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
@@ -33805,7 +35932,7 @@ func (o GetTargetDatabasesTargetDatabaseOutput) ToGetTargetDatabasesTargetDataba
 	return o
 }
 
-// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 func (o GetTargetDatabasesTargetDatabaseOutput) AssociatedResourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []string { return v.AssociatedResourceIds }).(pulumi.StringArrayOutput)
 }
@@ -33829,7 +35956,7 @@ func (o GetTargetDatabasesTargetDatabaseOutput) Credentials() GetTargetDatabases
 	}).(GetTargetDatabasesTargetDatabaseCredentialArrayOutput)
 }
 
-// Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+// Details of the database for the registration in Data Safe.
 func (o GetTargetDatabasesTargetDatabaseOutput) DatabaseDetails() GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabaseDatabaseDetail {
 		return v.DatabaseDetails
@@ -33866,7 +35993,7 @@ func (o GetTargetDatabasesTargetDatabaseOutput) LifecycleDetails() pulumi.String
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// A filter to return the target databases that matches the current state of the target database.
+// A filter to return only target databases that match the specified lifecycle state.
 func (o GetTargetDatabasesTargetDatabaseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.State }).(pulumi.StringOutput)
 }
@@ -34141,13 +36268,13 @@ func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) Index(i pulumi.In
 }
 
 type GetTargetDatabasesTargetDatabaseDatabaseDetail struct {
-	// The OCID of the autonomous database registered as a target database in Data Safe.
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
-	// A filter to return target databases that match the database type of the target database.
+	// A filter to return only target databases that match the specified database type.
 	DatabaseType string `pulumi:"databaseType"`
-	// The OCID of the cloud database system registered as a target database in Data Safe.
+	// The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId string `pulumi:"dbSystemId"`
-	// A filter to return target databases that match the infrastructure type of the target database.
+	// A filter to return only target databases that match the specified infrastructure type.
 	InfrastructureType string `pulumi:"infrastructureType"`
 	// The OCID of the compute instance on which the database is running.
 	InstanceId string `pulumi:"instanceId"`
@@ -34173,13 +36300,13 @@ type GetTargetDatabasesTargetDatabaseDatabaseDetailInput interface {
 }
 
 type GetTargetDatabasesTargetDatabaseDatabaseDetailArgs struct {
-	// The OCID of the autonomous database registered as a target database in Data Safe.
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
-	// A filter to return target databases that match the database type of the target database.
+	// A filter to return only target databases that match the specified database type.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
-	// The OCID of the cloud database system registered as a target database in Data Safe.
+	// The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
-	// A filter to return target databases that match the infrastructure type of the target database.
+	// A filter to return only target databases that match the specified infrastructure type.
 	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
 	// The OCID of the compute instance on which the database is running.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
@@ -34244,22 +36371,22 @@ func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabas
 	return o
 }
 
-// The OCID of the autonomous database registered as a target database in Data Safe.
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
 
-// A filter to return target databases that match the database type of the target database.
+// A filter to return only target databases that match the specified database type.
 func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
-// The OCID of the cloud database system registered as a target database in Data Safe.
+// The OCID of the cloud database registered as a target database in Data Safe.
 func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
-// A filter to return target databases that match the infrastructure type of the target database.
+// A filter to return only target databases that match the specified infrastructure type.
 func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.InfrastructureType }).(pulumi.StringOutput)
 }
@@ -34867,6 +36994,668 @@ func (o GetUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi.IntInput) GetU
 	}).(GetUserAssessmentIgnoredTargetOutput)
 }
 
+type GetUserAssessmentProfileAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUserAssessmentProfileAnalyticsFilterInput is an input type that accepts GetUserAssessmentProfileAnalyticsFilterArgs and GetUserAssessmentProfileAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfileAnalyticsFilterInput` via:
+//
+//	GetUserAssessmentProfileAnalyticsFilterArgs{...}
+type GetUserAssessmentProfileAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfileAnalyticsFilterOutput() GetUserAssessmentProfileAnalyticsFilterOutput
+	ToGetUserAssessmentProfileAnalyticsFilterOutputWithContext(context.Context) GetUserAssessmentProfileAnalyticsFilterOutput
+}
+
+type GetUserAssessmentProfileAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUserAssessmentProfileAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfileAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfileAnalyticsFilterArgs) ToGetUserAssessmentProfileAnalyticsFilterOutput() GetUserAssessmentProfileAnalyticsFilterOutput {
+	return i.ToGetUserAssessmentProfileAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfileAnalyticsFilterArgs) ToGetUserAssessmentProfileAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsFilterOutput)
+}
+
+// GetUserAssessmentProfileAnalyticsFilterArrayInput is an input type that accepts GetUserAssessmentProfileAnalyticsFilterArray and GetUserAssessmentProfileAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfileAnalyticsFilterArrayInput` via:
+//
+//	GetUserAssessmentProfileAnalyticsFilterArray{ GetUserAssessmentProfileAnalyticsFilterArgs{...} }
+type GetUserAssessmentProfileAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfileAnalyticsFilterArrayOutput() GetUserAssessmentProfileAnalyticsFilterArrayOutput
+	ToGetUserAssessmentProfileAnalyticsFilterArrayOutputWithContext(context.Context) GetUserAssessmentProfileAnalyticsFilterArrayOutput
+}
+
+type GetUserAssessmentProfileAnalyticsFilterArray []GetUserAssessmentProfileAnalyticsFilterInput
+
+func (GetUserAssessmentProfileAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfileAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfileAnalyticsFilterArray) ToGetUserAssessmentProfileAnalyticsFilterArrayOutput() GetUserAssessmentProfileAnalyticsFilterArrayOutput {
+	return i.ToGetUserAssessmentProfileAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfileAnalyticsFilterArray) ToGetUserAssessmentProfileAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsFilterArrayOutput)
+}
+
+type GetUserAssessmentProfileAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfileAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfileAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterOutput) ToGetUserAssessmentProfileAnalyticsFilterOutput() GetUserAssessmentProfileAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterOutput) ToGetUserAssessmentProfileAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUserAssessmentProfileAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfileAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfileAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) ToGetUserAssessmentProfileAnalyticsFilterArrayOutput() GetUserAssessmentProfileAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) ToGetUserAssessmentProfileAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfileAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentProfileAnalyticsFilter {
+		return vs[0].([]GetUserAssessmentProfileAnalyticsFilter)[vs[1].(int)]
+	}).(GetUserAssessmentProfileAnalyticsFilterOutput)
+}
+
+type GetUserAssessmentProfileAnalyticsProfileAggregation struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The array of profile aggregation data.
+	Items []interface{} `pulumi:"items"`
+}
+
+// GetUserAssessmentProfileAnalyticsProfileAggregationInput is an input type that accepts GetUserAssessmentProfileAnalyticsProfileAggregationArgs and GetUserAssessmentProfileAnalyticsProfileAggregationOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfileAnalyticsProfileAggregationInput` via:
+//
+//	GetUserAssessmentProfileAnalyticsProfileAggregationArgs{...}
+type GetUserAssessmentProfileAnalyticsProfileAggregationInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfileAnalyticsProfileAggregationOutput() GetUserAssessmentProfileAnalyticsProfileAggregationOutput
+	ToGetUserAssessmentProfileAnalyticsProfileAggregationOutputWithContext(context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationOutput
+}
+
+type GetUserAssessmentProfileAnalyticsProfileAggregationArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The array of profile aggregation data.
+	Items pulumi.ArrayInput `pulumi:"items"`
+}
+
+func (GetUserAssessmentProfileAnalyticsProfileAggregationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfileAnalyticsProfileAggregation)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfileAnalyticsProfileAggregationArgs) ToGetUserAssessmentProfileAnalyticsProfileAggregationOutput() GetUserAssessmentProfileAnalyticsProfileAggregationOutput {
+	return i.ToGetUserAssessmentProfileAnalyticsProfileAggregationOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfileAnalyticsProfileAggregationArgs) ToGetUserAssessmentProfileAnalyticsProfileAggregationOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsProfileAggregationOutput)
+}
+
+// GetUserAssessmentProfileAnalyticsProfileAggregationArrayInput is an input type that accepts GetUserAssessmentProfileAnalyticsProfileAggregationArray and GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfileAnalyticsProfileAggregationArrayInput` via:
+//
+//	GetUserAssessmentProfileAnalyticsProfileAggregationArray{ GetUserAssessmentProfileAnalyticsProfileAggregationArgs{...} }
+type GetUserAssessmentProfileAnalyticsProfileAggregationArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput() GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput
+	ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutputWithContext(context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput
+}
+
+type GetUserAssessmentProfileAnalyticsProfileAggregationArray []GetUserAssessmentProfileAnalyticsProfileAggregationInput
+
+func (GetUserAssessmentProfileAnalyticsProfileAggregationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfileAnalyticsProfileAggregation)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfileAnalyticsProfileAggregationArray) ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput() GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput {
+	return i.ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfileAnalyticsProfileAggregationArray) ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput)
+}
+
+type GetUserAssessmentProfileAnalyticsProfileAggregationOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfileAnalyticsProfileAggregation)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ToGetUserAssessmentProfileAnalyticsProfileAggregationOutput() GetUserAssessmentProfileAnalyticsProfileAggregationOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ToGetUserAssessmentProfileAnalyticsProfileAggregationOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsProfileAggregation) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsProfileAggregation) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The array of profile aggregation data.
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) Items() pulumi.ArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsProfileAggregation) []interface{} { return v.Items }).(pulumi.ArrayOutput)
+}
+
+type GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfileAnalyticsProfileAggregation)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput() GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfileAnalyticsProfileAggregationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentProfileAnalyticsProfileAggregation {
+		return vs[0].([]GetUserAssessmentProfileAnalyticsProfileAggregation)[vs[1].(int)]
+	}).(GetUserAssessmentProfileAnalyticsProfileAggregationOutput)
+}
+
+type GetUserAssessmentProfilesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUserAssessmentProfilesFilterInput is an input type that accepts GetUserAssessmentProfilesFilterArgs and GetUserAssessmentProfilesFilterOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfilesFilterInput` via:
+//
+//	GetUserAssessmentProfilesFilterArgs{...}
+type GetUserAssessmentProfilesFilterInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfilesFilterOutput() GetUserAssessmentProfilesFilterOutput
+	ToGetUserAssessmentProfilesFilterOutputWithContext(context.Context) GetUserAssessmentProfilesFilterOutput
+}
+
+type GetUserAssessmentProfilesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUserAssessmentProfilesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfilesFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfilesFilterArgs) ToGetUserAssessmentProfilesFilterOutput() GetUserAssessmentProfilesFilterOutput {
+	return i.ToGetUserAssessmentProfilesFilterOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfilesFilterArgs) ToGetUserAssessmentProfilesFilterOutputWithContext(ctx context.Context) GetUserAssessmentProfilesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesFilterOutput)
+}
+
+// GetUserAssessmentProfilesFilterArrayInput is an input type that accepts GetUserAssessmentProfilesFilterArray and GetUserAssessmentProfilesFilterArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfilesFilterArrayInput` via:
+//
+//	GetUserAssessmentProfilesFilterArray{ GetUserAssessmentProfilesFilterArgs{...} }
+type GetUserAssessmentProfilesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfilesFilterArrayOutput() GetUserAssessmentProfilesFilterArrayOutput
+	ToGetUserAssessmentProfilesFilterArrayOutputWithContext(context.Context) GetUserAssessmentProfilesFilterArrayOutput
+}
+
+type GetUserAssessmentProfilesFilterArray []GetUserAssessmentProfilesFilterInput
+
+func (GetUserAssessmentProfilesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfilesFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfilesFilterArray) ToGetUserAssessmentProfilesFilterArrayOutput() GetUserAssessmentProfilesFilterArrayOutput {
+	return i.ToGetUserAssessmentProfilesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfilesFilterArray) ToGetUserAssessmentProfilesFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfilesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesFilterArrayOutput)
+}
+
+type GetUserAssessmentProfilesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfilesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfilesFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfilesFilterOutput) ToGetUserAssessmentProfilesFilterOutput() GetUserAssessmentProfilesFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfilesFilterOutput) ToGetUserAssessmentProfilesFilterOutputWithContext(ctx context.Context) GetUserAssessmentProfilesFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfilesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUserAssessmentProfilesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUserAssessmentProfilesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUserAssessmentProfilesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfilesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfilesFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfilesFilterArrayOutput) ToGetUserAssessmentProfilesFilterArrayOutput() GetUserAssessmentProfilesFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfilesFilterArrayOutput) ToGetUserAssessmentProfilesFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfilesFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfilesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentProfilesFilter {
+		return vs[0].([]GetUserAssessmentProfilesFilter)[vs[1].(int)]
+	}).(GetUserAssessmentProfilesFilterOutput)
+}
+
+type GetUserAssessmentProfilesProfile struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+	CompositeLimit string `pulumi:"compositeLimit"`
+	// Specify the total elapsed time limit for a session, expressed in minutes.
+	ConnectTime string `pulumi:"connectTime"`
+	// Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
+	CpuPerCall string `pulumi:"cpuPerCall"`
+	// Specify the CPU time limit for a session, expressed in hundredth of seconds.
+	CpuPerSession string `pulumi:"cpuPerSession"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Maximum times the user is allowed in fail login before the user account is locked.
+	FailedLoginAttempts string `pulumi:"failedLoginAttempts"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
+	IdleTime string `pulumi:"idleTime"`
+	// The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
+	InactiveAccountTime string `pulumi:"inactiveAccountTime"`
+	// An optional filter to return the user created profiles.
+	IsUserCreated bool `pulumi:"isUserCreated"`
+	// Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
+	LogicalReadsPerCall string `pulumi:"logicalReadsPerCall"`
+	// Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
+	LogicalReadsPerSession string `pulumi:"logicalReadsPerSession"`
+	// Number of grace days for user to change password.
+	PasswordGraceTime string `pulumi:"passwordGraceTime"`
+	// Number of days the password is valid before expiry.
+	PasswordLifeTime string `pulumi:"passwordLifeTime"`
+	// Number of days the user account remains locked after failed login.
+	PasswordLockTime string `pulumi:"passwordLockTime"`
+	// Number of day after the user can use the already used password.
+	PasswordReuseMax string `pulumi:"passwordReuseMax"`
+	// Number of days before which a password cannot be reused.
+	PasswordReuseTime string `pulumi:"passwordReuseTime"`
+	// Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
+	PasswordRolloverTime string `pulumi:"passwordRolloverTime"`
+	// An optional filter to filter the profiles based on password verification function.
+	PasswordVerificationFunction string `pulumi:"passwordVerificationFunction"`
+	// Details about the PL/SQL that can be used for password verification.
+	PasswordVerificationFunctionDetails string `pulumi:"passwordVerificationFunctionDetails"`
+	// Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA), expressed in bytes.
+	PrivateSga string `pulumi:"privateSga"`
+	// A filter to return only items that match the specified profile name.
+	ProfileName string `pulumi:"profileName"`
+	// Specify the number of concurrent sessions to which you want to limit the user.
+	SessionsPerUser string `pulumi:"sessionsPerUser"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The OCID of the user assessment.
+	UserAssessmentId string `pulumi:"userAssessmentId"`
+	// The number of users having a given profile.
+	UserCount int `pulumi:"userCount"`
+}
+
+// GetUserAssessmentProfilesProfileInput is an input type that accepts GetUserAssessmentProfilesProfileArgs and GetUserAssessmentProfilesProfileOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfilesProfileInput` via:
+//
+//	GetUserAssessmentProfilesProfileArgs{...}
+type GetUserAssessmentProfilesProfileInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfilesProfileOutput() GetUserAssessmentProfilesProfileOutput
+	ToGetUserAssessmentProfilesProfileOutputWithContext(context.Context) GetUserAssessmentProfilesProfileOutput
+}
+
+type GetUserAssessmentProfilesProfileArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+	CompositeLimit pulumi.StringInput `pulumi:"compositeLimit"`
+	// Specify the total elapsed time limit for a session, expressed in minutes.
+	ConnectTime pulumi.StringInput `pulumi:"connectTime"`
+	// Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
+	CpuPerCall pulumi.StringInput `pulumi:"cpuPerCall"`
+	// Specify the CPU time limit for a session, expressed in hundredth of seconds.
+	CpuPerSession pulumi.StringInput `pulumi:"cpuPerSession"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Maximum times the user is allowed in fail login before the user account is locked.
+	FailedLoginAttempts pulumi.StringInput `pulumi:"failedLoginAttempts"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
+	IdleTime pulumi.StringInput `pulumi:"idleTime"`
+	// The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
+	InactiveAccountTime pulumi.StringInput `pulumi:"inactiveAccountTime"`
+	// An optional filter to return the user created profiles.
+	IsUserCreated pulumi.BoolInput `pulumi:"isUserCreated"`
+	// Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
+	LogicalReadsPerCall pulumi.StringInput `pulumi:"logicalReadsPerCall"`
+	// Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
+	LogicalReadsPerSession pulumi.StringInput `pulumi:"logicalReadsPerSession"`
+	// Number of grace days for user to change password.
+	PasswordGraceTime pulumi.StringInput `pulumi:"passwordGraceTime"`
+	// Number of days the password is valid before expiry.
+	PasswordLifeTime pulumi.StringInput `pulumi:"passwordLifeTime"`
+	// Number of days the user account remains locked after failed login.
+	PasswordLockTime pulumi.StringInput `pulumi:"passwordLockTime"`
+	// Number of day after the user can use the already used password.
+	PasswordReuseMax pulumi.StringInput `pulumi:"passwordReuseMax"`
+	// Number of days before which a password cannot be reused.
+	PasswordReuseTime pulumi.StringInput `pulumi:"passwordReuseTime"`
+	// Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
+	PasswordRolloverTime pulumi.StringInput `pulumi:"passwordRolloverTime"`
+	// An optional filter to filter the profiles based on password verification function.
+	PasswordVerificationFunction pulumi.StringInput `pulumi:"passwordVerificationFunction"`
+	// Details about the PL/SQL that can be used for password verification.
+	PasswordVerificationFunctionDetails pulumi.StringInput `pulumi:"passwordVerificationFunctionDetails"`
+	// Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA), expressed in bytes.
+	PrivateSga pulumi.StringInput `pulumi:"privateSga"`
+	// A filter to return only items that match the specified profile name.
+	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	// Specify the number of concurrent sessions to which you want to limit the user.
+	SessionsPerUser pulumi.StringInput `pulumi:"sessionsPerUser"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The OCID of the user assessment.
+	UserAssessmentId pulumi.StringInput `pulumi:"userAssessmentId"`
+	// The number of users having a given profile.
+	UserCount pulumi.IntInput `pulumi:"userCount"`
+}
+
+func (GetUserAssessmentProfilesProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfilesProfile)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfilesProfileArgs) ToGetUserAssessmentProfilesProfileOutput() GetUserAssessmentProfilesProfileOutput {
+	return i.ToGetUserAssessmentProfilesProfileOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfilesProfileArgs) ToGetUserAssessmentProfilesProfileOutputWithContext(ctx context.Context) GetUserAssessmentProfilesProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesProfileOutput)
+}
+
+// GetUserAssessmentProfilesProfileArrayInput is an input type that accepts GetUserAssessmentProfilesProfileArray and GetUserAssessmentProfilesProfileArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentProfilesProfileArrayInput` via:
+//
+//	GetUserAssessmentProfilesProfileArray{ GetUserAssessmentProfilesProfileArgs{...} }
+type GetUserAssessmentProfilesProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentProfilesProfileArrayOutput() GetUserAssessmentProfilesProfileArrayOutput
+	ToGetUserAssessmentProfilesProfileArrayOutputWithContext(context.Context) GetUserAssessmentProfilesProfileArrayOutput
+}
+
+type GetUserAssessmentProfilesProfileArray []GetUserAssessmentProfilesProfileInput
+
+func (GetUserAssessmentProfilesProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfilesProfile)(nil)).Elem()
+}
+
+func (i GetUserAssessmentProfilesProfileArray) ToGetUserAssessmentProfilesProfileArrayOutput() GetUserAssessmentProfilesProfileArrayOutput {
+	return i.ToGetUserAssessmentProfilesProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentProfilesProfileArray) ToGetUserAssessmentProfilesProfileArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfilesProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesProfileArrayOutput)
+}
+
+type GetUserAssessmentProfilesProfileOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfilesProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentProfilesProfile)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfilesProfileOutput) ToGetUserAssessmentProfilesProfileOutput() GetUserAssessmentProfilesProfileOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfilesProfileOutput) ToGetUserAssessmentProfilesProfileOutputWithContext(ctx context.Context) GetUserAssessmentProfilesProfileOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetUserAssessmentProfilesProfileOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+func (o GetUserAssessmentProfilesProfileOutput) CompositeLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.CompositeLimit }).(pulumi.StringOutput)
+}
+
+// Specify the total elapsed time limit for a session, expressed in minutes.
+func (o GetUserAssessmentProfilesProfileOutput) ConnectTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.ConnectTime }).(pulumi.StringOutput)
+}
+
+// Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
+func (o GetUserAssessmentProfilesProfileOutput) CpuPerCall() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.CpuPerCall }).(pulumi.StringOutput)
+}
+
+// Specify the CPU time limit for a session, expressed in hundredth of seconds.
+func (o GetUserAssessmentProfilesProfileOutput) CpuPerSession() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.CpuPerSession }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetUserAssessmentProfilesProfileOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Maximum times the user is allowed in fail login before the user account is locked.
+func (o GetUserAssessmentProfilesProfileOutput) FailedLoginAttempts() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.FailedLoginAttempts }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetUserAssessmentProfilesProfileOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
+func (o GetUserAssessmentProfilesProfileOutput) IdleTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.IdleTime }).(pulumi.StringOutput)
+}
+
+// The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
+func (o GetUserAssessmentProfilesProfileOutput) InactiveAccountTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.InactiveAccountTime }).(pulumi.StringOutput)
+}
+
+// An optional filter to return the user created profiles.
+func (o GetUserAssessmentProfilesProfileOutput) IsUserCreated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) bool { return v.IsUserCreated }).(pulumi.BoolOutput)
+}
+
+// Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
+func (o GetUserAssessmentProfilesProfileOutput) LogicalReadsPerCall() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.LogicalReadsPerCall }).(pulumi.StringOutput)
+}
+
+// Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
+func (o GetUserAssessmentProfilesProfileOutput) LogicalReadsPerSession() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.LogicalReadsPerSession }).(pulumi.StringOutput)
+}
+
+// Number of grace days for user to change password.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordGraceTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordGraceTime }).(pulumi.StringOutput)
+}
+
+// Number of days the password is valid before expiry.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordLifeTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordLifeTime }).(pulumi.StringOutput)
+}
+
+// Number of days the user account remains locked after failed login.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordLockTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordLockTime }).(pulumi.StringOutput)
+}
+
+// Number of day after the user can use the already used password.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordReuseMax() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordReuseMax }).(pulumi.StringOutput)
+}
+
+// Number of days before which a password cannot be reused.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordReuseTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordReuseTime }).(pulumi.StringOutput)
+}
+
+// Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordRolloverTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordRolloverTime }).(pulumi.StringOutput)
+}
+
+// An optional filter to filter the profiles based on password verification function.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordVerificationFunction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordVerificationFunction }).(pulumi.StringOutput)
+}
+
+// Details about the PL/SQL that can be used for password verification.
+func (o GetUserAssessmentProfilesProfileOutput) PasswordVerificationFunctionDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PasswordVerificationFunctionDetails }).(pulumi.StringOutput)
+}
+
+// Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA), expressed in bytes.
+func (o GetUserAssessmentProfilesProfileOutput) PrivateSga() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.PrivateSga }).(pulumi.StringOutput)
+}
+
+// A filter to return only items that match the specified profile name.
+func (o GetUserAssessmentProfilesProfileOutput) ProfileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.ProfileName }).(pulumi.StringOutput)
+}
+
+// Specify the number of concurrent sessions to which you want to limit the user.
+func (o GetUserAssessmentProfilesProfileOutput) SessionsPerUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.SessionsPerUser }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetUserAssessmentProfilesProfileOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The OCID of the user assessment.
+func (o GetUserAssessmentProfilesProfileOutput) UserAssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.UserAssessmentId }).(pulumi.StringOutput)
+}
+
+// The number of users having a given profile.
+func (o GetUserAssessmentProfilesProfileOutput) UserCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) int { return v.UserCount }).(pulumi.IntOutput)
+}
+
+type GetUserAssessmentProfilesProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentProfilesProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentProfilesProfile)(nil)).Elem()
+}
+
+func (o GetUserAssessmentProfilesProfileArrayOutput) ToGetUserAssessmentProfilesProfileArrayOutput() GetUserAssessmentProfilesProfileArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfilesProfileArrayOutput) ToGetUserAssessmentProfilesProfileArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfilesProfileArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentProfilesProfileArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfilesProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentProfilesProfile {
+		return vs[0].([]GetUserAssessmentProfilesProfile)[vs[1].(int)]
+	}).(GetUserAssessmentProfilesProfileOutput)
+}
+
 type GetUserAssessmentUserAnalyticsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -35287,7 +38076,7 @@ type GetUserAssessmentUsersUser struct {
 	UserCategory string `pulumi:"userCategory"`
 	// A filter to return only items that match the specified user name.
 	UserName string `pulumi:"userName"`
-	// The user profile name.
+	// A filter to return only items that match the specified user profile.
 	UserProfile string `pulumi:"userProfile"`
 	// The user type, which can be a combination of the following:
 	UserTypes []string `pulumi:"userTypes"`
@@ -35325,7 +38114,7 @@ type GetUserAssessmentUsersUserArgs struct {
 	UserCategory pulumi.StringInput `pulumi:"userCategory"`
 	// A filter to return only items that match the specified user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
-	// The user profile name.
+	// A filter to return only items that match the specified user profile.
 	UserProfile pulumi.StringInput `pulumi:"userProfile"`
 	// The user type, which can be a combination of the following:
 	UserTypes pulumi.StringArrayInput `pulumi:"userTypes"`
@@ -35432,7 +38221,7 @@ func (o GetUserAssessmentUsersUserOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.UserName }).(pulumi.StringOutput)
 }
 
-// The user profile name.
+// A filter to return only items that match the specified user profile.
 func (o GetUserAssessmentUsersUserOutput) UserProfile() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.UserProfile }).(pulumi.StringOutput)
 }
@@ -35718,6 +38507,8 @@ type GetUserAssessmentsUserAssessment struct {
 	TargetIds []string `pulumi:"targetIds"`
 	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastAssessed string `pulumi:"timeLastAssessed"`
 	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return user assessments that were created by either the system or by a user only.
@@ -35778,6 +38569,8 @@ type GetUserAssessmentsUserAssessmentArgs struct {
 	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
 	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastAssessed pulumi.StringInput `pulumi:"timeLastAssessed"`
 	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return user assessments that were created by either the system or by a user only.
@@ -35937,6 +38730,11 @@ func (o GetUserAssessmentsUserAssessmentOutput) TargetIds() pulumi.StringArrayOu
 // The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentsUserAssessmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetUserAssessmentsUserAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
 // The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -36326,6 +39124,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput)(nil)).Elem(), GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyColumnSourceInput)(nil)).Elem(), GetMaskingPolicyColumnSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyColumnSourceArrayInput)(nil)).Elem(), GetMaskingPolicyColumnSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsFilterInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsFilterArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollectionInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasFilterInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasFilterArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsFilterInput)(nil)).Elem(), GetMaskingReportMaskedColumnsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsFilterArrayInput)(nil)).Elem(), GetMaskingReportMaskedColumnsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsMaskedColumnCollectionInput)(nil)).Elem(), GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs{})
@@ -36372,6 +39182,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReportsReportCollectionArrayInput)(nil)).Elem(), GetReportsReportCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReportsReportCollectionItemInput)(nil)).Elem(), GetReportsReportCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReportsReportCollectionItemArrayInput)(nil)).Elem(), GetReportsReportCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterInput)(nil)).Elem(), GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayInput)(nil)).Elem(), GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionInput)(nil)).Elem(), GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayInput)(nil)).Elem(), GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemInput)(nil)).Elem(), GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayInput)(nil)).Elem(), GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferencesFilterInput)(nil)).Elem(), GetSdmMaskingPolicyDifferencesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferencesFilterArrayInput)(nil)).Elem(), GetSdmMaskingPolicyDifferencesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionInput)(nil)).Elem(), GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayInput)(nil)).Elem(), GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemInput)(nil)).Elem(), GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayInput)(nil)).Elem(), GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentComparisonTargetInput)(nil)).Elem(), GetSecurityAssessmentComparisonTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentComparisonTargetArrayInput)(nil)).Elem(), GetSecurityAssessmentComparisonTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentComparisonTargetAuditingInput)(nil)).Elem(), GetSecurityAssessmentComparisonTargetAuditingArgs{})
@@ -36488,6 +39310,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticPassInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticPassArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasFilterInput)(nil)).Elem(), GetSensitiveDataModelSensitiveSchemasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasFilterArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveSchemasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionInput)(nil)).Elem(), GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemInput)(nil)).Elem(), GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsFilterInput)(nil)).Elem(), GetSensitiveDataModelsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsFilterArrayInput)(nil)).Elem(), GetSensitiveDataModelsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsSensitiveColumnsFilterInput)(nil)).Elem(), GetSensitiveDataModelsSensitiveColumnsFilterArgs{})
@@ -36560,6 +39394,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentComparisonSummaryCurrentArrayInput)(nil)).Elem(), GetUserAssessmentComparisonSummaryCurrentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfileAnalyticsFilterInput)(nil)).Elem(), GetUserAssessmentProfileAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfileAnalyticsFilterArrayInput)(nil)).Elem(), GetUserAssessmentProfileAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfileAnalyticsProfileAggregationInput)(nil)).Elem(), GetUserAssessmentProfileAnalyticsProfileAggregationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfileAnalyticsProfileAggregationArrayInput)(nil)).Elem(), GetUserAssessmentProfileAnalyticsProfileAggregationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfilesFilterInput)(nil)).Elem(), GetUserAssessmentProfilesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfilesFilterArrayInput)(nil)).Elem(), GetUserAssessmentProfilesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfilesProfileInput)(nil)).Elem(), GetUserAssessmentProfilesProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfilesProfileArrayInput)(nil)).Elem(), GetUserAssessmentProfilesProfileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAnalyticsFilterInput)(nil)).Elem(), GetUserAssessmentUserAnalyticsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAnalyticsFilterArrayInput)(nil)).Elem(), GetUserAssessmentUserAnalyticsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAnalyticsUserAggregationInput)(nil)).Elem(), GetUserAssessmentUserAnalyticsUserAggregationArgs{})
@@ -36820,6 +39662,18 @@ func init() {
 	pulumi.RegisterOutputType(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyColumnSourceOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyColumnSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasFilterOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsFilterOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput{})
@@ -36866,6 +39720,18 @@ func init() {
 	pulumi.RegisterOutputType(GetReportsReportCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetReportsReportCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetReportsReportCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferencesFilterOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferencesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentComparisonTargetOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentComparisonTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentComparisonTargetAuditingOutput{})
@@ -36982,6 +39848,18 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveSchemasFilterOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveSchemasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelsFilterOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelsSensitiveColumnsFilterOutput{})
@@ -37054,6 +39932,14 @@ func init() {
 	pulumi.RegisterOutputType(GetUserAssessmentComparisonSummaryCurrentArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentIgnoredTargetOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentIgnoredTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfileAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfileAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfileAnalyticsProfileAggregationOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfilesFilterOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfilesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfilesProfileOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentProfilesProfileArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentUserAnalyticsFilterOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentUserAnalyticsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentUserAnalyticsUserAggregationOutput{})

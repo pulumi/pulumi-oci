@@ -122,6 +122,10 @@ export interface GetUserAssessmentResult {
      */
     readonly timeCreated: string;
     /**
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    readonly timeLastAssessed: string;
+    /**
      * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeUpdated: string;
@@ -130,7 +134,7 @@ export interface GetUserAssessmentResult {
      */
     readonly triggeredBy: string;
     /**
-     * Type of user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      */
     readonly type: string;
     readonly userAssessmentId: string;

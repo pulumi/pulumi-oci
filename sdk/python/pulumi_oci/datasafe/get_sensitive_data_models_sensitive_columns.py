@@ -23,7 +23,7 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
     """
     A collection of values returned by getSensitiveDataModelsSensitiveColumns.
     """
-    def __init__(__self__, column_group=None, column_names=None, data_types=None, filters=None, id=None, object_types=None, objects=None, parent_column_keys=None, relation_types=None, schema_names=None, sensitive_column_collections=None, sensitive_column_lifecycle_state=None, sensitive_data_model_id=None, sensitive_type_ids=None, statuses=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, time_updated_greater_than_or_equal_to=None, time_updated_less_than=None):
+    def __init__(__self__, column_group=None, column_names=None, data_types=None, filters=None, id=None, is_case_in_sensitive=None, object_types=None, objects=None, parent_column_keys=None, relation_types=None, schema_names=None, sensitive_column_collections=None, sensitive_column_lifecycle_state=None, sensitive_data_model_id=None, sensitive_type_ids=None, statuses=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, time_updated_greater_than_or_equal_to=None, time_updated_less_than=None):
         if column_group and not isinstance(column_group, str):
             raise TypeError("Expected argument 'column_group' to be a str")
         pulumi.set(__self__, "column_group", column_group)
@@ -39,6 +39,9 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_case_in_sensitive and not isinstance(is_case_in_sensitive, bool):
+            raise TypeError("Expected argument 'is_case_in_sensitive' to be a bool")
+        pulumi.set(__self__, "is_case_in_sensitive", is_case_in_sensitive)
         if object_types and not isinstance(object_types, list):
             raise TypeError("Expected argument 'object_types' to be a list")
         pulumi.set(__self__, "object_types", object_types)
@@ -115,6 +118,11 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCaseInSensitive")
+    def is_case_in_sensitive(self) -> Optional[bool]:
+        return pulumi.get(self, "is_case_in_sensitive")
 
     @property
     @pulumi.getter(name="objectTypes")
@@ -222,6 +230,7 @@ class AwaitableGetSensitiveDataModelsSensitiveColumnsResult(GetSensitiveDataMode
             data_types=self.data_types,
             filters=self.filters,
             id=self.id,
+            is_case_in_sensitive=self.is_case_in_sensitive,
             object_types=self.object_types,
             objects=self.objects,
             parent_column_keys=self.parent_column_keys,
@@ -242,6 +251,7 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
                                                 column_names: Optional[Sequence[str]] = None,
                                                 data_types: Optional[Sequence[str]] = None,
                                                 filters: Optional[Sequence[pulumi.InputType['GetSensitiveDataModelsSensitiveColumnsFilterArgs']]] = None,
+                                                is_case_in_sensitive: Optional[bool] = None,
                                                 object_types: Optional[Sequence[str]] = None,
                                                 objects: Optional[Sequence[str]] = None,
                                                 parent_column_keys: Optional[Sequence[str]] = None,
@@ -271,6 +281,7 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
         column_group=var["sensitive_data_models_sensitive_column_column_group"],
         column_names=var["sensitive_data_models_sensitive_column_column_name"],
         data_types=var["sensitive_data_models_sensitive_column_data_type"],
+        is_case_in_sensitive=var["sensitive_data_models_sensitive_column_is_case_in_sensitive"],
         objects=var["sensitive_data_models_sensitive_column_object"],
         object_types=var["sensitive_data_models_sensitive_column_object_type"],
         parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_key"],
@@ -289,6 +300,7 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
     :param str column_group: A filter to return only the sensitive columns that belong to the specified column group.
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
     :param Sequence[str] data_types: A filter to return only the resources that match the specified data types.
+    :param bool is_case_in_sensitive: A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
     :param Sequence[str] object_types: A filter to return only items related to a specific object type.
     :param Sequence[str] objects: A filter to return only items related to a specific object name.
     :param Sequence[str] parent_column_keys: A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
@@ -308,6 +320,7 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
     __args__['columnNames'] = column_names
     __args__['dataTypes'] = data_types
     __args__['filters'] = filters
+    __args__['isCaseInSensitive'] = is_case_in_sensitive
     __args__['objectTypes'] = object_types
     __args__['objects'] = objects
     __args__['parentColumnKeys'] = parent_column_keys
@@ -330,6 +343,7 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
         data_types=__ret__.data_types,
         filters=__ret__.filters,
         id=__ret__.id,
+        is_case_in_sensitive=__ret__.is_case_in_sensitive,
         object_types=__ret__.object_types,
         objects=__ret__.objects,
         parent_column_keys=__ret__.parent_column_keys,
@@ -351,6 +365,7 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
                                                        column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                        data_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSensitiveDataModelsSensitiveColumnsFilterArgs']]]]] = None,
+                                                       is_case_in_sensitive: Optional[pulumi.Input[Optional[bool]]] = None,
                                                        object_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                        objects: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                        parent_column_keys: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -380,6 +395,7 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
         column_group=var["sensitive_data_models_sensitive_column_column_group"],
         column_names=var["sensitive_data_models_sensitive_column_column_name"],
         data_types=var["sensitive_data_models_sensitive_column_data_type"],
+        is_case_in_sensitive=var["sensitive_data_models_sensitive_column_is_case_in_sensitive"],
         objects=var["sensitive_data_models_sensitive_column_object"],
         object_types=var["sensitive_data_models_sensitive_column_object_type"],
         parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_key"],
@@ -398,6 +414,7 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     :param str column_group: A filter to return only the sensitive columns that belong to the specified column group.
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
     :param Sequence[str] data_types: A filter to return only the resources that match the specified data types.
+    :param bool is_case_in_sensitive: A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
     :param Sequence[str] object_types: A filter to return only items related to a specific object type.
     :param Sequence[str] objects: A filter to return only items related to a specific object name.
     :param Sequence[str] parent_column_keys: A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.

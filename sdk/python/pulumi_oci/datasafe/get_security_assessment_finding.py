@@ -23,7 +23,7 @@ class GetSecurityAssessmentFindingResult:
     """
     A collection of values returned by getSecurityAssessmentFinding.
     """
-    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, security_assessment_id=None, severity=None):
+    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, references=None, security_assessment_id=None, severity=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -42,6 +42,9 @@ class GetSecurityAssessmentFindingResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if references and not isinstance(references, str):
+            raise TypeError("Expected argument 'references' to be a str")
+        pulumi.set(__self__, "references", references)
         if security_assessment_id and not isinstance(security_assessment_id, str):
             raise TypeError("Expected argument 'security_assessment_id' to be a str")
         pulumi.set(__self__, "security_assessment_id", security_assessment_id)
@@ -83,6 +86,11 @@ class GetSecurityAssessmentFindingResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def references(self) -> Optional[str]:
+        return pulumi.get(self, "references")
+
+    @property
     @pulumi.getter(name="securityAssessmentId")
     def security_assessment_id(self) -> str:
         return pulumi.get(self, "security_assessment_id")
@@ -105,6 +113,7 @@ class AwaitableGetSecurityAssessmentFindingResult(GetSecurityAssessmentFindingRe
             finding_key=self.finding_key,
             findings=self.findings,
             id=self.id,
+            references=self.references,
             security_assessment_id=self.security_assessment_id,
             severity=self.severity)
 
@@ -113,6 +122,7 @@ def get_security_assessment_finding(access_level: Optional[str] = None,
                                     compartment_id_in_subtree: Optional[bool] = None,
                                     filters: Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingFilterArgs']]] = None,
                                     finding_key: Optional[str] = None,
+                                    references: Optional[str] = None,
                                     security_assessment_id: Optional[str] = None,
                                     severity: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentFindingResult:
@@ -124,6 +134,7 @@ def get_security_assessment_finding(access_level: Optional[str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['findingKey'] = finding_key
+    __args__['references'] = references
     __args__['securityAssessmentId'] = security_assessment_id
     __args__['severity'] = severity
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -136,6 +147,7 @@ def get_security_assessment_finding(access_level: Optional[str] = None,
         finding_key=__ret__.finding_key,
         findings=__ret__.findings,
         id=__ret__.id,
+        references=__ret__.references,
         security_assessment_id=__ret__.security_assessment_id,
         severity=__ret__.severity)
 
@@ -145,6 +157,7 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
                                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingFilterArgs']]]]] = None,
                                            finding_key: Optional[pulumi.Input[Optional[str]]] = None,
+                                           references: Optional[pulumi.Input[Optional[str]]] = None,
                                            security_assessment_id: Optional[pulumi.Input[str]] = None,
                                            severity: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingResult]:

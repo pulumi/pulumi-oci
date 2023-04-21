@@ -57,6 +57,13 @@ public final class GetUserAssessmentUsersResult {
      */
     private @Nullable String userName;
     /**
+     * @return The user profile name.
+     * 
+     */
+    private @Nullable String userProfile;
+    private @Nullable String userRole;
+    private @Nullable String userType;
+    /**
      * @return The list of users.
      * 
      */
@@ -139,6 +146,19 @@ public final class GetUserAssessmentUsersResult {
         return Optional.ofNullable(this.userName);
     }
     /**
+     * @return The user profile name.
+     * 
+     */
+    public Optional<String> userProfile() {
+        return Optional.ofNullable(this.userProfile);
+    }
+    public Optional<String> userRole() {
+        return Optional.ofNullable(this.userRole);
+    }
+    public Optional<String> userType() {
+        return Optional.ofNullable(this.userType);
+    }
+    /**
      * @return The list of users.
      * 
      */
@@ -172,6 +192,9 @@ public final class GetUserAssessmentUsersResult {
         private @Nullable String userCategory;
         private @Nullable String userKey;
         private @Nullable String userName;
+        private @Nullable String userProfile;
+        private @Nullable String userRole;
+        private @Nullable String userType;
         private List<GetUserAssessmentUsersUser> users;
         public Builder() {}
         public Builder(GetUserAssessmentUsersResult defaults) {
@@ -193,6 +216,9 @@ public final class GetUserAssessmentUsersResult {
     	      this.userCategory = defaults.userCategory;
     	      this.userKey = defaults.userKey;
     	      this.userName = defaults.userName;
+    	      this.userProfile = defaults.userProfile;
+    	      this.userRole = defaults.userRole;
+    	      this.userType = defaults.userType;
     	      this.users = defaults.users;
         }
 
@@ -285,6 +311,21 @@ public final class GetUserAssessmentUsersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder userProfile(@Nullable String userProfile) {
+            this.userProfile = userProfile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder userRole(@Nullable String userRole) {
+            this.userRole = userRole;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder userType(@Nullable String userType) {
+            this.userType = userType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder users(List<GetUserAssessmentUsersUser> users) {
             this.users = Objects.requireNonNull(users);
             return this;
@@ -311,6 +352,9 @@ public final class GetUserAssessmentUsersResult {
             o.userCategory = userCategory;
             o.userKey = userKey;
             o.userName = userName;
+            o.userProfile = userProfile;
+            o.userRole = userRole;
+            o.userType = userType;
             o.users = users;
             return o;
         }

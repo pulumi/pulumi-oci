@@ -279,6 +279,16 @@ export const getMaskingPolicy: typeof import("./getMaskingPolicy").getMaskingPol
 export const getMaskingPolicyOutput: typeof import("./getMaskingPolicy").getMaskingPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getMaskingPolicy","getMaskingPolicyOutput"], () => require("./getMaskingPolicy"));
 
+export { GetMaskingPolicyMaskingObjectsArgs, GetMaskingPolicyMaskingObjectsResult, GetMaskingPolicyMaskingObjectsOutputArgs } from "./getMaskingPolicyMaskingObjects";
+export const getMaskingPolicyMaskingObjects: typeof import("./getMaskingPolicyMaskingObjects").getMaskingPolicyMaskingObjects = null as any;
+export const getMaskingPolicyMaskingObjectsOutput: typeof import("./getMaskingPolicyMaskingObjects").getMaskingPolicyMaskingObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicyMaskingObjects","getMaskingPolicyMaskingObjectsOutput"], () => require("./getMaskingPolicyMaskingObjects"));
+
+export { GetMaskingPolicyMaskingSchemasArgs, GetMaskingPolicyMaskingSchemasResult, GetMaskingPolicyMaskingSchemasOutputArgs } from "./getMaskingPolicyMaskingSchemas";
+export const getMaskingPolicyMaskingSchemas: typeof import("./getMaskingPolicyMaskingSchemas").getMaskingPolicyMaskingSchemas = null as any;
+export const getMaskingPolicyMaskingSchemasOutput: typeof import("./getMaskingPolicyMaskingSchemas").getMaskingPolicyMaskingSchemasOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicyMaskingSchemas","getMaskingPolicyMaskingSchemasOutput"], () => require("./getMaskingPolicyMaskingSchemas"));
+
 export { GetMaskingReportArgs, GetMaskingReportResult, GetMaskingReportOutputArgs } from "./getMaskingReport";
 export const getMaskingReport: typeof import("./getMaskingReport").getMaskingReport = null as any;
 export const getMaskingReportOutput: typeof import("./getMaskingReport").getMaskingReportOutput = null as any;
@@ -334,6 +344,26 @@ export const getReports: typeof import("./getReports").getReports = null as any;
 export const getReportsOutput: typeof import("./getReports").getReportsOutput = null as any;
 utilities.lazyLoad(exports, ["getReports","getReportsOutput"], () => require("./getReports"));
 
+export { GetSdmMaskingPolicyDifferenceArgs, GetSdmMaskingPolicyDifferenceResult, GetSdmMaskingPolicyDifferenceOutputArgs } from "./getSdmMaskingPolicyDifference";
+export const getSdmMaskingPolicyDifference: typeof import("./getSdmMaskingPolicyDifference").getSdmMaskingPolicyDifference = null as any;
+export const getSdmMaskingPolicyDifferenceOutput: typeof import("./getSdmMaskingPolicyDifference").getSdmMaskingPolicyDifferenceOutput = null as any;
+utilities.lazyLoad(exports, ["getSdmMaskingPolicyDifference","getSdmMaskingPolicyDifferenceOutput"], () => require("./getSdmMaskingPolicyDifference"));
+
+export { GetSdmMaskingPolicyDifferenceDifferenceColumnArgs, GetSdmMaskingPolicyDifferenceDifferenceColumnResult, GetSdmMaskingPolicyDifferenceDifferenceColumnOutputArgs } from "./getSdmMaskingPolicyDifferenceDifferenceColumn";
+export const getSdmMaskingPolicyDifferenceDifferenceColumn: typeof import("./getSdmMaskingPolicyDifferenceDifferenceColumn").getSdmMaskingPolicyDifferenceDifferenceColumn = null as any;
+export const getSdmMaskingPolicyDifferenceDifferenceColumnOutput: typeof import("./getSdmMaskingPolicyDifferenceDifferenceColumn").getSdmMaskingPolicyDifferenceDifferenceColumnOutput = null as any;
+utilities.lazyLoad(exports, ["getSdmMaskingPolicyDifferenceDifferenceColumn","getSdmMaskingPolicyDifferenceDifferenceColumnOutput"], () => require("./getSdmMaskingPolicyDifferenceDifferenceColumn"));
+
+export { GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs, GetSdmMaskingPolicyDifferenceDifferenceColumnsResult, GetSdmMaskingPolicyDifferenceDifferenceColumnsOutputArgs } from "./getSdmMaskingPolicyDifferenceDifferenceColumns";
+export const getSdmMaskingPolicyDifferenceDifferenceColumns: typeof import("./getSdmMaskingPolicyDifferenceDifferenceColumns").getSdmMaskingPolicyDifferenceDifferenceColumns = null as any;
+export const getSdmMaskingPolicyDifferenceDifferenceColumnsOutput: typeof import("./getSdmMaskingPolicyDifferenceDifferenceColumns").getSdmMaskingPolicyDifferenceDifferenceColumnsOutput = null as any;
+utilities.lazyLoad(exports, ["getSdmMaskingPolicyDifferenceDifferenceColumns","getSdmMaskingPolicyDifferenceDifferenceColumnsOutput"], () => require("./getSdmMaskingPolicyDifferenceDifferenceColumns"));
+
+export { GetSdmMaskingPolicyDifferencesArgs, GetSdmMaskingPolicyDifferencesResult, GetSdmMaskingPolicyDifferencesOutputArgs } from "./getSdmMaskingPolicyDifferences";
+export const getSdmMaskingPolicyDifferences: typeof import("./getSdmMaskingPolicyDifferences").getSdmMaskingPolicyDifferences = null as any;
+export const getSdmMaskingPolicyDifferencesOutput: typeof import("./getSdmMaskingPolicyDifferences").getSdmMaskingPolicyDifferencesOutput = null as any;
+utilities.lazyLoad(exports, ["getSdmMaskingPolicyDifferences","getSdmMaskingPolicyDifferencesOutput"], () => require("./getSdmMaskingPolicyDifferences"));
+
 export { GetSecurityAssessmentArgs, GetSecurityAssessmentResult, GetSecurityAssessmentOutputArgs } from "./getSecurityAssessment";
 export const getSecurityAssessment: typeof import("./getSecurityAssessment").getSecurityAssessment = null as any;
 export const getSecurityAssessmentOutput: typeof import("./getSecurityAssessment").getSecurityAssessmentOutput = null as any;
@@ -363,6 +393,16 @@ export { GetSensitiveDataModelArgs, GetSensitiveDataModelResult, GetSensitiveDat
 export const getSensitiveDataModel: typeof import("./getSensitiveDataModel").getSensitiveDataModel = null as any;
 export const getSensitiveDataModelOutput: typeof import("./getSensitiveDataModel").getSensitiveDataModelOutput = null as any;
 utilities.lazyLoad(exports, ["getSensitiveDataModel","getSensitiveDataModelOutput"], () => require("./getSensitiveDataModel"));
+
+export { GetSensitiveDataModelSensitiveObjectsArgs, GetSensitiveDataModelSensitiveObjectsResult, GetSensitiveDataModelSensitiveObjectsOutputArgs } from "./getSensitiveDataModelSensitiveObjects";
+export const getSensitiveDataModelSensitiveObjects: typeof import("./getSensitiveDataModelSensitiveObjects").getSensitiveDataModelSensitiveObjects = null as any;
+export const getSensitiveDataModelSensitiveObjectsOutput: typeof import("./getSensitiveDataModelSensitiveObjects").getSensitiveDataModelSensitiveObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModelSensitiveObjects","getSensitiveDataModelSensitiveObjectsOutput"], () => require("./getSensitiveDataModelSensitiveObjects"));
+
+export { GetSensitiveDataModelSensitiveSchemasArgs, GetSensitiveDataModelSensitiveSchemasResult, GetSensitiveDataModelSensitiveSchemasOutputArgs } from "./getSensitiveDataModelSensitiveSchemas";
+export const getSensitiveDataModelSensitiveSchemas: typeof import("./getSensitiveDataModelSensitiveSchemas").getSensitiveDataModelSensitiveSchemas = null as any;
+export const getSensitiveDataModelSensitiveSchemasOutput: typeof import("./getSensitiveDataModelSensitiveSchemas").getSensitiveDataModelSensitiveSchemasOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModelSensitiveSchemas","getSensitiveDataModelSensitiveSchemasOutput"], () => require("./getSensitiveDataModelSensitiveSchemas"));
 
 export { GetSensitiveDataModelsArgs, GetSensitiveDataModelsResult, GetSensitiveDataModelsOutputArgs } from "./getSensitiveDataModels";
 export const getSensitiveDataModels: typeof import("./getSensitiveDataModels").getSensitiveDataModels = null as any;
@@ -444,6 +484,16 @@ export const getUserAssessmentComparison: typeof import("./getUserAssessmentComp
 export const getUserAssessmentComparisonOutput: typeof import("./getUserAssessmentComparison").getUserAssessmentComparisonOutput = null as any;
 utilities.lazyLoad(exports, ["getUserAssessmentComparison","getUserAssessmentComparisonOutput"], () => require("./getUserAssessmentComparison"));
 
+export { GetUserAssessmentProfileAnalyticsArgs, GetUserAssessmentProfileAnalyticsResult, GetUserAssessmentProfileAnalyticsOutputArgs } from "./getUserAssessmentProfileAnalytics";
+export const getUserAssessmentProfileAnalytics: typeof import("./getUserAssessmentProfileAnalytics").getUserAssessmentProfileAnalytics = null as any;
+export const getUserAssessmentProfileAnalyticsOutput: typeof import("./getUserAssessmentProfileAnalytics").getUserAssessmentProfileAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessmentProfileAnalytics","getUserAssessmentProfileAnalyticsOutput"], () => require("./getUserAssessmentProfileAnalytics"));
+
+export { GetUserAssessmentProfilesArgs, GetUserAssessmentProfilesResult, GetUserAssessmentProfilesOutputArgs } from "./getUserAssessmentProfiles";
+export const getUserAssessmentProfiles: typeof import("./getUserAssessmentProfiles").getUserAssessmentProfiles = null as any;
+export const getUserAssessmentProfilesOutput: typeof import("./getUserAssessmentProfiles").getUserAssessmentProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessmentProfiles","getUserAssessmentProfilesOutput"], () => require("./getUserAssessmentProfiles"));
+
 export { GetUserAssessmentUserAnalyticsArgs, GetUserAssessmentUserAnalyticsResult, GetUserAssessmentUserAnalyticsOutputArgs } from "./getUserAssessmentUserAnalytics";
 export const getUserAssessmentUserAnalytics: typeof import("./getUserAssessmentUserAnalytics").getUserAssessmentUserAnalytics = null as any;
 export const getUserAssessmentUserAnalyticsOutput: typeof import("./getUserAssessmentUserAnalytics").getUserAssessmentUserAnalyticsOutput = null as any;
@@ -469,6 +519,11 @@ export type MaskData = import("./maskData").MaskData;
 export const MaskData: typeof import("./maskData").MaskData = null as any;
 utilities.lazyLoad(exports, ["MaskData"], () => require("./maskData"));
 
+export { MaskingPoliciesApplyDifferenceToMaskingColumnsArgs, MaskingPoliciesApplyDifferenceToMaskingColumnsState } from "./maskingPoliciesApplyDifferenceToMaskingColumns";
+export type MaskingPoliciesApplyDifferenceToMaskingColumns = import("./maskingPoliciesApplyDifferenceToMaskingColumns").MaskingPoliciesApplyDifferenceToMaskingColumns;
+export const MaskingPoliciesApplyDifferenceToMaskingColumns: typeof import("./maskingPoliciesApplyDifferenceToMaskingColumns").MaskingPoliciesApplyDifferenceToMaskingColumns = null as any;
+utilities.lazyLoad(exports, ["MaskingPoliciesApplyDifferenceToMaskingColumns"], () => require("./maskingPoliciesApplyDifferenceToMaskingColumns"));
+
 export { MaskingPoliciesMaskingColumnArgs, MaskingPoliciesMaskingColumnState } from "./maskingPoliciesMaskingColumn";
 export type MaskingPoliciesMaskingColumn = import("./maskingPoliciesMaskingColumn").MaskingPoliciesMaskingColumn;
 export const MaskingPoliciesMaskingColumn: typeof import("./maskingPoliciesMaskingColumn").MaskingPoliciesMaskingColumn = null as any;
@@ -488,6 +543,11 @@ export { ReportDefinitionArgs, ReportDefinitionState } from "./reportDefinition"
 export type ReportDefinition = import("./reportDefinition").ReportDefinition;
 export const ReportDefinition: typeof import("./reportDefinition").ReportDefinition = null as any;
 utilities.lazyLoad(exports, ["ReportDefinition"], () => require("./reportDefinition"));
+
+export { SdmMaskingPolicyDifferenceArgs, SdmMaskingPolicyDifferenceState } from "./sdmMaskingPolicyDifference";
+export type SdmMaskingPolicyDifference = import("./sdmMaskingPolicyDifference").SdmMaskingPolicyDifference;
+export const SdmMaskingPolicyDifference: typeof import("./sdmMaskingPolicyDifference").SdmMaskingPolicyDifference = null as any;
+utilities.lazyLoad(exports, ["SdmMaskingPolicyDifference"], () => require("./sdmMaskingPolicyDifference"));
 
 export { SecurityAssessmentArgs, SecurityAssessmentState } from "./securityAssessment";
 export type SecurityAssessment = import("./securityAssessment").SecurityAssessment;
@@ -582,6 +642,8 @@ const _module = {
                 return new LibraryMasingFormat(name, <any>undefined, { urn })
             case "oci:DataSafe/maskData:MaskData":
                 return new MaskData(name, <any>undefined, { urn })
+            case "oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns":
+                return new MaskingPoliciesApplyDifferenceToMaskingColumns(name, <any>undefined, { urn })
             case "oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn":
                 return new MaskingPoliciesMaskingColumn(name, <any>undefined, { urn })
             case "oci:DataSafe/maskingPolicy:MaskingPolicy":
@@ -590,6 +652,8 @@ const _module = {
                 return new OnPremConnector(name, <any>undefined, { urn })
             case "oci:DataSafe/reportDefinition:ReportDefinition":
                 return new ReportDefinition(name, <any>undefined, { urn })
+            case "oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference":
+                return new SdmMaskingPolicyDifference(name, <any>undefined, { urn })
             case "oci:DataSafe/securityAssessment:SecurityAssessment":
                 return new SecurityAssessment(name, <any>undefined, { urn })
             case "oci:DataSafe/sensitiveDataModel:SensitiveDataModel":
@@ -633,10 +697,12 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/discoveryJobsResult", _mo
 pulumi.runtime.registerResourceModule("oci", "DataSafe/discoveryMod", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/libraryMasingFormat", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskData", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPoliciesMaskingColumn", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/onPremConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/reportDefinition", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/sdmMaskingPolicyDifference", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityAssessment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModel", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsApplyDiscoveryJobResults", _module)

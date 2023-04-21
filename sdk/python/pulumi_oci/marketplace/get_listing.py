@@ -444,7 +444,7 @@ def get_listing(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The unique identifier for the compartment.
+    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
     :param str listing_id: The unique identifier for the listing.
     """
     __args__ = dict()
@@ -522,7 +522,7 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     ```
 
 
-    :param str compartment_id: The unique identifier for the compartment.
+    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
     :param str listing_id: The unique identifier for the listing.
     """
     ...

@@ -22,6 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -51,6 +52,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -190,6 +192,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeLastAssessed;
+        /// <summary>
         /// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
@@ -250,6 +256,8 @@ namespace Pulumi.Oci.DataSafe
 
             string timeCreated,
 
+            string timeLastAssessed,
+
             string timeUpdated,
 
             string triggeredBy,
@@ -279,6 +287,7 @@ namespace Pulumi.Oci.DataSafe
             TargetIds = targetIds;
             TargetVersion = targetVersion;
             TimeCreated = timeCreated;
+            TimeLastAssessed = timeLastAssessed;
             TimeUpdated = timeUpdated;
             TriggeredBy = triggeredBy;
             Type = type;

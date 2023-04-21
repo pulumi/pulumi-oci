@@ -36,6 +36,9 @@ import * as utilities from "../utilities";
  *     userCategory: _var.user_assessment_user_user_category,
  *     userKey: _var.user_assessment_user_user_key,
  *     userName: oci_identity_user.test_user.name,
+ *     userProfile: _var.user_assessment_user_user_profile,
+ *     userRole: _var.user_assessment_user_user_role,
+ *     userType: _var.user_assessment_user_user_type,
  * });
  * ```
  */
@@ -59,6 +62,9 @@ export function getUserAssessmentUsers(args: GetUserAssessmentUsersArgs, opts?: 
         "userCategory": args.userCategory,
         "userKey": args.userKey,
         "userName": args.userName,
+        "userProfile": args.userProfile,
+        "userRole": args.userRole,
+        "userType": args.userType,
     }, opts);
 }
 
@@ -127,6 +133,23 @@ export interface GetUserAssessmentUsersArgs {
      * A filter to return only items that match the specified user name.
      */
     userName?: string;
+    /**
+     * A filter to return only items that match the specified user profile.
+     */
+    userProfile?: string;
+    /**
+     * A filter to return only items that match the specified user role.
+     */
+    userRole?: string;
+    /**
+     * A filter to return only items that match the specified user type. The possible values can be
+     * * ADMIN_PRIVILEGED
+     * * APPLICATION
+     * * PRIVILEGED
+     * * SCHEMA
+     * * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+     */
+    userType?: string;
 }
 
 /**
@@ -169,6 +192,12 @@ export interface GetUserAssessmentUsersResult {
      */
     readonly userName?: string;
     /**
+     * The user profile name.
+     */
+    readonly userProfile?: string;
+    readonly userRole?: string;
+    readonly userType?: string;
+    /**
      * The list of users.
      */
     readonly users: outputs.DataSafe.GetUserAssessmentUsersUser[];
@@ -203,6 +232,9 @@ export interface GetUserAssessmentUsersResult {
  *     userCategory: _var.user_assessment_user_user_category,
  *     userKey: _var.user_assessment_user_user_key,
  *     userName: oci_identity_user.test_user.name,
+ *     userProfile: _var.user_assessment_user_user_profile,
+ *     userRole: _var.user_assessment_user_user_role,
+ *     userType: _var.user_assessment_user_user_type,
  * });
  * ```
  */
@@ -275,4 +307,21 @@ export interface GetUserAssessmentUsersOutputArgs {
      * A filter to return only items that match the specified user name.
      */
     userName?: pulumi.Input<string>;
+    /**
+     * A filter to return only items that match the specified user profile.
+     */
+    userProfile?: pulumi.Input<string>;
+    /**
+     * A filter to return only items that match the specified user role.
+     */
+    userRole?: pulumi.Input<string>;
+    /**
+     * A filter to return only items that match the specified user type. The possible values can be
+     * * ADMIN_PRIVILEGED
+     * * APPLICATION
+     * * PRIVILEGED
+     * * SCHEMA
+     * * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+     */
+    userType?: pulumi.Input<string>;
 }

@@ -15,7 +15,7 @@ __all__ = ['SslCipherSuiteArgs', 'SslCipherSuite']
 class SslCipherSuiteArgs:
     def __init__(__self__, *,
                  ciphers: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 load_balancer_id: Optional[pulumi.Input[str]] = None,
+                 load_balancer_id: pulumi.Input[str],
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SslCipherSuite resource.
@@ -24,8 +24,7 @@ class SslCipherSuiteArgs:
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
         pulumi.set(__self__, "ciphers", ciphers)
-        if load_balancer_id is not None:
-            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -43,14 +42,14 @@ class SslCipherSuiteArgs:
 
     @property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+    def load_balancer_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
-    def load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+    def load_balancer_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "load_balancer_id", value)
 
     @property
@@ -233,6 +232,8 @@ class SslCipherSuite(pulumi.CustomResource):
             if ciphers is None and not opts.urn:
                 raise TypeError("Missing required property 'ciphers'")
             __props__.__dict__["ciphers"] = ciphers
+            if load_balancer_id is None and not opts.urn:
+                raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
             __props__.__dict__["name"] = name
             __props__.__dict__["state"] = None

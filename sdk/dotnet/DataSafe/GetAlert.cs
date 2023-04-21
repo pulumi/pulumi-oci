@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets the details of alert by its ID.
+        /// Gets the details of the specified alerts.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -22,6 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -43,7 +44,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets the details of alert by its ID.
+        /// Gets the details of the specified alerts.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,6 +52,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 

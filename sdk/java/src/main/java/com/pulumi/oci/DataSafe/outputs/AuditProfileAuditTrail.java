@@ -90,7 +90,7 @@ public final class AuditProfileAuditTrail {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * @return The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
     private @Nullable String timeLastCollected;
@@ -217,7 +217,7 @@ public final class AuditProfileAuditTrail {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * @return The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
     public Optional<String> timeLastCollected() {

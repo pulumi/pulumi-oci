@@ -33,6 +33,7 @@ import (
 //				ColumnGroup:                     pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_column_group),
 //				ColumnNames:                     _var.Sensitive_data_models_sensitive_column_column_name,
 //				DataTypes:                       _var.Sensitive_data_models_sensitive_column_data_type,
+//				IsCaseInSensitive:               pulumi.BoolRef(_var.Sensitive_data_models_sensitive_column_is_case_in_sensitive),
 //				Objects:                         _var.Sensitive_data_models_sensitive_column_object,
 //				ObjectTypes:                     _var.Sensitive_data_models_sensitive_column_object_type,
 //				ParentColumnKeys:                _var.Sensitive_data_models_sensitive_column_parent_column_key,
@@ -72,6 +73,8 @@ type GetSensitiveDataModelsSensitiveColumnsArgs struct {
 	// A filter to return only the resources that match the specified data types.
 	DataTypes []string                                       `pulumi:"dataTypes"`
 	Filters   []GetSensitiveDataModelsSensitiveColumnsFilter `pulumi:"filters"`
+	// A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+	IsCaseInSensitive *bool `pulumi:"isCaseInSensitive"`
 	// A filter to return only items related to a specific object type.
 	ObjectTypes []string `pulumi:"objectTypes"`
 	// A filter to return only items related to a specific object name.
@@ -109,7 +112,8 @@ type GetSensitiveDataModelsSensitiveColumnsResult struct {
 	DataTypes []string                                       `pulumi:"dataTypes"`
 	Filters   []GetSensitiveDataModelsSensitiveColumnsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                string `pulumi:"id"`
+	IsCaseInSensitive *bool  `pulumi:"isCaseInSensitive"`
 	// The type of the database object that contains the sensitive column.
 	ObjectTypes []string `pulumi:"objectTypes"`
 	// The database object that contains the sensitive column.
@@ -156,6 +160,8 @@ type GetSensitiveDataModelsSensitiveColumnsOutputArgs struct {
 	// A filter to return only the resources that match the specified data types.
 	DataTypes pulumi.StringArrayInput                                `pulumi:"dataTypes"`
 	Filters   GetSensitiveDataModelsSensitiveColumnsFilterArrayInput `pulumi:"filters"`
+	// A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+	IsCaseInSensitive pulumi.BoolPtrInput `pulumi:"isCaseInSensitive"`
 	// A filter to return only items related to a specific object type.
 	ObjectTypes pulumi.StringArrayInput `pulumi:"objectTypes"`
 	// A filter to return only items related to a specific object name.
@@ -226,6 +232,10 @@ func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) Filters() GetSensiti
 // The provider-assigned unique ID for this managed resource.
 func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) IsCaseInSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) *bool { return v.IsCaseInSensitive }).(pulumi.BoolPtrOutput)
 }
 
 // The type of the database object that contains the sensitive column.

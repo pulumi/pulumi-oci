@@ -14,9 +14,13 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetBackendSetsBackendsetHealthCheckerResult
     {
         /// <summary>
-        /// The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
+        /// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
         /// </summary>
         public readonly int IntervalMs;
+        /// <summary>
+        /// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+        /// </summary>
+        public readonly bool IsForcePlainText;
         /// <summary>
         /// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
         /// </summary>
@@ -50,6 +54,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         private GetBackendSetsBackendsetHealthCheckerResult(
             int intervalMs,
 
+            bool isForcePlainText,
+
             int port,
 
             string protocol,
@@ -65,6 +71,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             string urlPath)
         {
             IntervalMs = intervalMs;
+            IsForcePlainText = isForcePlainText;
             Port = port;
             Protocol = protocol;
             ResponseBodyRegex = responseBodyRegex;

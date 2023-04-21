@@ -65,7 +65,7 @@ func GetListing(ctx *pulumi.Context, args *GetListingArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getListing.
 type GetListingArgs struct {
-	// The unique identifier for the compartment.
+	// The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The unique identifier for the listing.
 	ListingId string `pulumi:"listingId"`
@@ -152,7 +152,7 @@ func GetListingOutput(ctx *pulumi.Context, args GetListingOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getListing.
 type GetListingOutputArgs struct {
-	// The unique identifier for the compartment.
+	// The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The unique identifier for the listing.
 	ListingId pulumi.StringInput `pulumi:"listingId"`

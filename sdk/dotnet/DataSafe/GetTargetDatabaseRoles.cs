@@ -23,6 +23,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -204,7 +206,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly bool? IsOracleMaintained;
         public readonly string? RoleNameContains;
         /// <summary>
-        /// Name of the role.
+        /// The name of the role.
         /// </summary>
         public readonly ImmutableArray<string> RoleNames;
         /// <summary>

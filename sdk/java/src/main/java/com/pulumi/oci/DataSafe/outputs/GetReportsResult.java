@@ -44,12 +44,12 @@ public final class GetReportsResult {
      */
     private @Nullable String reportDefinitionId;
     /**
-     * @return The current state of the report.
+     * @return The current state of the audit report.
      * 
      */
     private @Nullable String state;
     /**
-     * @return The type of the report.
+     * @return The type of the audit report.
      * 
      */
     private @Nullable String type;
@@ -100,14 +100,14 @@ public final class GetReportsResult {
         return Optional.ofNullable(this.reportDefinitionId);
     }
     /**
-     * @return The current state of the report.
+     * @return The current state of the audit report.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The type of the report.
+     * @return The type of the audit report.
      * 
      */
     public Optional<String> type() {

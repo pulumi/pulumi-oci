@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetTargetDatabaseDatabaseDetailResult
     {
         /// <summary>
-        /// The OCID of the autonomous database registered as a target database in Data Safe.
+        /// The OCID of the Autonomous Database registered as a target database in Data Safe.
         /// </summary>
         public readonly string AutonomousDatabaseId;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
-        /// The OCID of the cloud database system registered as a target database in Data Safe.
+        /// The OCID of the cloud database registered as a target database in Data Safe.
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>

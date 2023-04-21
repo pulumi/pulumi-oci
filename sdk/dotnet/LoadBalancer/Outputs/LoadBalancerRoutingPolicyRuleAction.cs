@@ -16,7 +16,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
         /// </summary>
-        public readonly string? BackendSetName;
+        public readonly string BackendSetName;
         /// <summary>
         /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
         [OutputConstructor]
         private LoadBalancerRoutingPolicyRuleAction(
-            string? backendSetName,
+            string backendSetName,
 
             string name)
         {

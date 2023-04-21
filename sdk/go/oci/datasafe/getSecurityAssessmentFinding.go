@@ -25,6 +25,7 @@ type GetSecurityAssessmentFindingArgs struct {
 	CompartmentIdInSubtree *bool                                `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetSecurityAssessmentFindingFilter `pulumi:"filters"`
 	FindingKey             *string                              `pulumi:"findingKey"`
+	References             *string                              `pulumi:"references"`
 	SecurityAssessmentId   string                               `pulumi:"securityAssessmentId"`
 	Severity               *string                              `pulumi:"severity"`
 }
@@ -38,6 +39,7 @@ type GetSecurityAssessmentFindingResult struct {
 	Findings               []GetSecurityAssessmentFindingFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                   string  `pulumi:"id"`
+	References           *string `pulumi:"references"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	Severity             *string `pulumi:"severity"`
 }
@@ -61,6 +63,7 @@ type GetSecurityAssessmentFindingOutputArgs struct {
 	CompartmentIdInSubtree pulumi.BoolPtrInput                          `pulumi:"compartmentIdInSubtree"`
 	Filters                GetSecurityAssessmentFindingFilterArrayInput `pulumi:"filters"`
 	FindingKey             pulumi.StringPtrInput                        `pulumi:"findingKey"`
+	References             pulumi.StringPtrInput                        `pulumi:"references"`
 	SecurityAssessmentId   pulumi.StringInput                           `pulumi:"securityAssessmentId"`
 	Severity               pulumi.StringPtrInput                        `pulumi:"severity"`
 }
@@ -107,6 +110,10 @@ func (o GetSecurityAssessmentFindingResultOutput) Findings() GetSecurityAssessme
 // The provider-assigned unique ID for this managed resource.
 func (o GetSecurityAssessmentFindingResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingResultOutput) References() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.References }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentFindingResultOutput) SecurityAssessmentId() pulumi.StringOutput {

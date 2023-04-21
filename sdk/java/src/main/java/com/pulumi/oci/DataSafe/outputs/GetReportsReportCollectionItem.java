@@ -62,7 +62,7 @@ public final class GetReportsReportCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Specifies the time at which the report was generated.
+     * @return Specifies the date and time the report was generated.
      * 
      */
     private String timeGenerated;
@@ -144,7 +144,7 @@ public final class GetReportsReportCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return Specifies the time at which the report was generated.
+     * @return Specifies the date and time the report was generated.
      * 
      */
     public String timeGenerated() {

@@ -77,14 +77,14 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
         return this.auditTrailId;
     }
     /**
-     * The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+     * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+     * @return The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -259,14 +259,14 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeLastCollected", type=String.class, parameters={})
     private Output<String> timeLastCollected;
 
     /**
-     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * @return The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
     public Output<String> timeLastCollected() {

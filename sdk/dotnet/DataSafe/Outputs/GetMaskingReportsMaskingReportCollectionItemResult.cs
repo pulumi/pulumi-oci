@@ -22,6 +22,18 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates if the temporary tables created during the masking operation were dropped after masking.
+        /// </summary>
+        public readonly bool IsDropTempTablesEnabled;
+        /// <summary>
+        /// Indicates if redo logging was enabled during the masking operation.
+        /// </summary>
+        public readonly bool IsRedoLoggingEnabled;
+        /// <summary>
+        /// Indicates if statistics gathering was enabled during the masking operation.
+        /// </summary>
+        public readonly bool IsRefreshStatsEnabled;
+        /// <summary>
         /// A filter to return only the resources that match the specified masking policy OCID.
         /// </summary>
         public readonly string MaskingPolicyId;
@@ -29,6 +41,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The OCID of the masking work request that resulted in this masking report.
         /// </summary>
         public readonly string MaskingWorkRequestId;
+        /// <summary>
+        /// Indicates if parallel execution was enabled during the masking operation.
+        /// </summary>
+        public readonly string ParallelDegree;
+        /// <summary>
+        /// Indicates how invalid objects were recompiled post the masking operation.
+        /// </summary>
+        public readonly string Recompile;
         /// <summary>
         /// The current state of the masking report.
         /// </summary>
@@ -76,9 +96,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string id,
 
+            bool isDropTempTablesEnabled,
+
+            bool isRedoLoggingEnabled,
+
+            bool isRefreshStatsEnabled,
+
             string maskingPolicyId,
 
             string maskingWorkRequestId,
+
+            string parallelDegree,
+
+            string recompile,
 
             string state,
 
@@ -102,8 +132,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
         {
             CompartmentId = compartmentId;
             Id = id;
+            IsDropTempTablesEnabled = isDropTempTablesEnabled;
+            IsRedoLoggingEnabled = isRedoLoggingEnabled;
+            IsRefreshStatsEnabled = isRefreshStatsEnabled;
             MaskingPolicyId = maskingPolicyId;
             MaskingWorkRequestId = maskingWorkRequestId;
+            ParallelDegree = parallelDegree;
+            Recompile = recompile;
             State = state;
             TargetId = targetId;
             TimeCreated = timeCreated;

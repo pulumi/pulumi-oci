@@ -120,7 +120,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="columnFilters")
     def column_filters(self) -> Sequence['outputs.GetReportDefinitionColumnFilterResult']:
         """
-        An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         """
         return pulumi.get(self, "column_filters")
 
@@ -152,7 +152,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="complianceStandards")
     def compliance_standards(self) -> Sequence[str]:
         """
-        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         """
         return pulumi.get(self, "compliance_standards")
 
@@ -232,7 +232,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="recordTimeSpan")
     def record_time_span(self) -> str:
         """
-        The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         """
         return pulumi.get(self, "record_time_span")
 
@@ -245,7 +245,7 @@ class GetReportDefinitionResult:
     @pulumi.getter
     def schedule(self) -> str:
         """
-        Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
         """
         return pulumi.get(self, "schedule")
 
@@ -253,7 +253,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="scheduledReportCompartmentId")
     def scheduled_report_compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource should be created.
         """
         return pulumi.get(self, "scheduled_report_compartment_id")
 
@@ -261,7 +261,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> str:
         """
-        Specifies the format of report to be excel or pdf
+        Specifies the format of the report ( either XLS or PDF )
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -277,7 +277,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="scheduledReportRowLimit")
     def scheduled_report_row_limit(self) -> int:
         """
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
         """
         return pulumi.get(self, "scheduled_report_row_limit")
 
@@ -317,7 +317,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Specifies the time at which the report definition was created.
+        Specifies the data and time the report definition was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -325,7 +325,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time of the report definition update in Data Safe.
+        The date and time the report definition was update.
         """
         return pulumi.get(self, "time_updated")
 

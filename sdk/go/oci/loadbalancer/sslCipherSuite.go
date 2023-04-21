@@ -73,6 +73,9 @@ func NewSslCipherSuite(ctx *pulumi.Context,
 	if args.Ciphers == nil {
 		return nil, errors.New("invalid value for required argument 'Ciphers'")
 	}
+	if args.LoadBalancerId == nil {
+		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
+	}
 	var resource SslCipherSuite
 	err := ctx.RegisterResource("oci:LoadBalancer/sslCipherSuite:SslCipherSuite", name, args, &resource, opts...)
 	if err != nil {
@@ -122,7 +125,7 @@ type sslCipherSuiteArgs struct {
 	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers []string `pulumi:"ciphers"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
-	LoadBalancerId *string `pulumi:"loadBalancerId"`
+	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
 	Name *string `pulumi:"name"`
 }
@@ -132,7 +135,7 @@ type SslCipherSuiteArgs struct {
 	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
-	LoadBalancerId pulumi.StringPtrInput
+	LoadBalancerId pulumi.StringInput
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
 	Name pulumi.StringPtrInput
 }

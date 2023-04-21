@@ -18,6 +18,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -84,7 +85,7 @@ namespace Pulumi.Oci.DataSafe
     public partial class TargetDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        /// The OCIDs of associated resources like database, Data Safe private endpoint etc.
         /// </summary>
         [Output("associatedResourceIds")]
         public Output<ImmutableArray<string>> AssociatedResourceIds { get; private set; } = null!;
@@ -108,7 +109,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<Outputs.TargetDatabaseCredentials> Credentials { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         [Output("databaseDetails")]
         public Output<Outputs.TargetDatabaseDatabaseDetails> DatabaseDetails { get; private set; } = null!;
@@ -238,7 +239,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<Inputs.TargetDatabaseCredentialsArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         [Input("databaseDetails", required: true)]
         public Input<Inputs.TargetDatabaseDatabaseDetailsArgs> DatabaseDetails { get; set; } = null!;
@@ -297,7 +298,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _associatedResourceIds;
 
         /// <summary>
-        /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        /// The OCIDs of associated resources like database, Data Safe private endpoint etc.
         /// </summary>
         public InputList<string> AssociatedResourceIds
         {
@@ -324,7 +325,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<Inputs.TargetDatabaseCredentialsGetArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         [Input("databaseDetails")]
         public Input<Inputs.TargetDatabaseDatabaseDetailsGetArgs>? DatabaseDetails { get; set; }

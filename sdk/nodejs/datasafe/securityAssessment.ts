@@ -155,6 +155,10 @@ export class SecurityAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    public /*out*/ readonly timeLastAssessed!: pulumi.Output<string>;
+    /**
      * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -201,6 +205,7 @@ export class SecurityAssessment extends pulumi.CustomResource {
             resourceInputs["targetIds"] = state ? state.targetIds : undefined;
             resourceInputs["targetVersion"] = state ? state.targetVersion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeLastAssessed"] = state ? state.timeLastAssessed : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["triggeredBy"] = state ? state.triggeredBy : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -233,6 +238,7 @@ export class SecurityAssessment extends pulumi.CustomResource {
             resourceInputs["targetIds"] = undefined /*out*/;
             resourceInputs["targetVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeLastAssessed"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["triggeredBy"] = undefined /*out*/;
             resourceInputs["type"] = undefined /*out*/;
@@ -330,6 +336,10 @@ export interface SecurityAssessmentState {
      * The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    timeLastAssessed?: pulumi.Input<string>;
     /**
      * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */

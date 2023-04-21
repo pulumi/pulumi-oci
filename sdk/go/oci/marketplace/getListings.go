@@ -76,7 +76,7 @@ func GetListings(ctx *pulumi.Context, args *GetListingsArgs, opts ...pulumi.Invo
 type GetListingsArgs struct {
 	// Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
 	Categories []string `pulumi:"categories"`
-	// The unique identifier for the compartment.
+	// The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
 	CompartmentId *string             `pulumi:"compartmentId"`
 	Filters       []GetListingsFilter `pulumi:"filters"`
 	// The image identifier of the listing.
@@ -139,7 +139,7 @@ func GetListingsOutput(ctx *pulumi.Context, args GetListingsOutputArgs, opts ...
 type GetListingsOutputArgs struct {
 	// Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
 	Categories pulumi.StringArrayInput `pulumi:"categories"`
-	// The unique identifier for the compartment.
+	// The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
 	CompartmentId pulumi.StringPtrInput       `pulumi:"compartmentId"`
 	Filters       GetListingsFilterArrayInput `pulumi:"filters"`
 	// The image identifier of the listing.

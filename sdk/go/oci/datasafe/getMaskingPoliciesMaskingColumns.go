@@ -71,7 +71,7 @@ type GetMaskingPoliciesMaskingColumnsArgs struct {
 	Filters   []GetMaskingPoliciesMaskingColumnsFilter `pulumi:"filters"`
 	// A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
 	IsMaskingEnabled *bool `pulumi:"isMaskingEnabled"`
-	// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+	// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
 	IsSeedRequired *bool `pulumi:"isSeedRequired"`
 	// A filter to return only the resources that match the specified masking column group.
 	MaskingColumnGroups []string `pulumi:"maskingColumnGroups"`
@@ -152,7 +152,7 @@ type GetMaskingPoliciesMaskingColumnsOutputArgs struct {
 	Filters   GetMaskingPoliciesMaskingColumnsFilterArrayInput `pulumi:"filters"`
 	// A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
 	IsMaskingEnabled pulumi.BoolPtrInput `pulumi:"isMaskingEnabled"`
-	// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+	// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
 	IsSeedRequired pulumi.BoolPtrInput `pulumi:"isSeedRequired"`
 	// A filter to return only the resources that match the specified masking column group.
 	MaskingColumnGroups pulumi.StringArrayInput `pulumi:"maskingColumnGroups"`

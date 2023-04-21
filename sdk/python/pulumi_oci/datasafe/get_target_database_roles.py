@@ -87,7 +87,7 @@ class GetTargetDatabaseRolesResult:
     @pulumi.getter(name="roleNames")
     def role_names(self) -> Optional[Sequence[str]]:
         """
-        Name of the role.
+        The name of the role.
         """
         return pulumi.get(self, "role_names")
 

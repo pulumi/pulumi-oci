@@ -41,6 +41,8 @@ __all__ = [
     'NodePoolNodeConfigDetails',
     'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails',
     'NodePoolNodeConfigDetailsPlacementConfig',
+    'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig',
+    'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction',
     'NodePoolNodeError',
     'NodePoolNodeEvictionNodePoolSettings',
     'NodePoolNodeShapeConfig',
@@ -82,6 +84,8 @@ __all__ = [
     'GetNodePoolNodeConfigDetailResult',
     'GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult',
     'GetNodePoolNodeConfigDetailPlacementConfigResult',
+    'GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult',
+    'GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult',
     'GetNodePoolNodeErrorResult',
     'GetNodePoolNodeEvictionNodePoolSettingResult',
     'GetNodePoolNodeShapeConfigResult',
@@ -95,6 +99,8 @@ __all__ = [
     'GetNodePoolsNodePoolNodeConfigDetailResult',
     'GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult',
     'GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult',
+    'GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult',
+    'GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult',
     'GetNodePoolsNodePoolNodeErrorResult',
     'GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult',
     'GetNodePoolsNodePoolNodeShapeConfigResult',
@@ -2627,6 +2633,8 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
             suggest = "capacity_reservation_id"
         elif key == "faultDomains":
             suggest = "fault_domains"
+        elif key == "preemptibleNodeConfig":
+            suggest = "preemptible_node_config"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NodePoolNodeConfigDetailsPlacementConfig. Access the value via the '{suggest}' property getter instead.")
@@ -2643,12 +2651,14 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
                  availability_domain: str,
                  subnet_id: str,
                  capacity_reservation_id: Optional[str] = None,
-                 fault_domains: Optional[Sequence[str]] = None):
+                 fault_domains: Optional[Sequence[str]] = None,
+                 preemptible_node_config: Optional['outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig'] = None):
         """
         :param str availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param str subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         :param str capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[str] fault_domains: (Updatable) A list of fault domains in which to place nodes.
+        :param 'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs' preemptible_node_config: (Updatable) Configuration options for preemptible nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -2656,6 +2666,8 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
+        if preemptible_node_config is not None:
+            pulumi.set(__self__, "preemptible_node_config", preemptible_node_config)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2688,6 +2700,96 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
         (Updatable) A list of fault domains in which to place nodes.
         """
         return pulumi.get(self, "fault_domains")
+
+    @property
+    @pulumi.getter(name="preemptibleNodeConfig")
+    def preemptible_node_config(self) -> Optional['outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig']:
+        """
+        (Updatable) Configuration options for preemptible nodes.
+        """
+        return pulumi.get(self, "preemptible_node_config")
+
+
+@pulumi.output_type
+class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "preemptionAction":
+            suggest = "preemption_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 preemption_action: 'outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction'):
+        """
+        :param 'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs' preemption_action: (Updatable) The action to run when the preemptible node is interrupted for eviction.
+        """
+        pulumi.set(__self__, "preemption_action", preemption_action)
+
+    @property
+    @pulumi.getter(name="preemptionAction")
+    def preemption_action(self) -> 'outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction':
+        """
+        (Updatable) The action to run when the preemptible node is interrupted for eviction.
+        """
+        return pulumi.get(self, "preemption_action")
+
+
+@pulumi.output_type
+class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isPreserveBootVolume":
+            suggest = "is_preserve_boot_volume"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 is_preserve_boot_volume: Optional[bool] = None):
+        """
+        :param str type: (Updatable) The type of action to run when the instance is interrupted for eviction.
+        :param bool is_preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        pulumi.set(__self__, "type", type)
+        if is_preserve_boot_volume is not None:
+            pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="isPreserveBootVolume")
+    def is_preserve_boot_volume(self) -> Optional[bool]:
+        """
+        (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        return pulumi.get(self, "is_preserve_boot_volume")
 
 
 @pulumi.output_type
@@ -4861,16 +4963,19 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
                  availability_domain: str,
                  capacity_reservation_id: str,
                  fault_domains: Sequence[str],
+                 preemptible_node_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
                  subnet_id: str):
         """
         :param str availability_domain: The name of the availability domain in which this node is placed.
         :param str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[str] fault_domains: A list of fault domains in which to place nodes.
+        :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
+        pulumi.set(__self__, "preemptible_node_configs", preemptible_node_configs)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
@@ -4898,12 +5003,67 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
         return pulumi.get(self, "fault_domains")
 
     @property
+    @pulumi.getter(name="preemptibleNodeConfigs")
+    def preemptible_node_configs(self) -> Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult']:
+        """
+        Configuration options for preemptible nodes.
+        """
+        return pulumi.get(self, "preemptible_node_configs")
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
         The OCID of the subnet in which this node is placed.
         """
         return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult(dict):
+    def __init__(__self__, *,
+                 preemption_actions: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult']):
+        """
+        :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs'] preemption_actions: The action to run when the preemptible node is interrupted for eviction.
+        """
+        pulumi.set(__self__, "preemption_actions", preemption_actions)
+
+    @property
+    @pulumi.getter(name="preemptionActions")
+    def preemption_actions(self) -> Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult']:
+        """
+        The action to run when the preemptible node is interrupted for eviction.
+        """
+        return pulumi.get(self, "preemption_actions")
+
+
+@pulumi.output_type
+class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult(dict):
+    def __init__(__self__, *,
+                 is_preserve_boot_volume: bool,
+                 type: str):
+        """
+        :param bool is_preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param str type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="isPreserveBootVolume")
+    def is_preserve_boot_volume(self) -> bool:
+        """
+        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        return pulumi.get(self, "is_preserve_boot_volume")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -5770,16 +5930,19 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
                  availability_domain: str,
                  capacity_reservation_id: str,
                  fault_domains: Sequence[str],
+                 preemptible_node_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
                  subnet_id: str):
         """
         :param str availability_domain: The name of the availability domain in which this node is placed.
         :param str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[str] fault_domains: A list of fault domains in which to place nodes.
+        :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
+        pulumi.set(__self__, "preemptible_node_configs", preemptible_node_configs)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
@@ -5807,12 +5970,67 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
         return pulumi.get(self, "fault_domains")
 
     @property
+    @pulumi.getter(name="preemptibleNodeConfigs")
+    def preemptible_node_configs(self) -> Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult']:
+        """
+        Configuration options for preemptible nodes.
+        """
+        return pulumi.get(self, "preemptible_node_configs")
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
         The OCID of the subnet in which this node is placed.
         """
         return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult(dict):
+    def __init__(__self__, *,
+                 preemption_actions: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult']):
+        """
+        :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs'] preemption_actions: The action to run when the preemptible node is interrupted for eviction.
+        """
+        pulumi.set(__self__, "preemption_actions", preemption_actions)
+
+    @property
+    @pulumi.getter(name="preemptionActions")
+    def preemption_actions(self) -> Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult']:
+        """
+        The action to run when the preemptible node is interrupted for eviction.
+        """
+        return pulumi.get(self, "preemption_actions")
+
+
+@pulumi.output_type
+class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult(dict):
+    def __init__(__self__, *,
+                 is_preserve_boot_volume: bool,
+                 type: str):
+        """
+        :param bool is_preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param str type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="isPreserveBootVolume")
+    def is_preserve_boot_volume(self) -> bool:
+        """
+        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        return pulumi.get(self, "is_preserve_boot_volume")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

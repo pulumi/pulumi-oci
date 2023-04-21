@@ -51,7 +51,7 @@ export function getListing(args: GetListingArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetListingArgs {
     /**
-     * The unique identifier for the compartment.
+     * The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      */
     compartmentId?: string;
     /**
@@ -227,7 +227,7 @@ export function getListingOutput(args: GetListingOutputArgs, opts?: pulumi.Invok
  */
 export interface GetListingOutputArgs {
     /**
-     * The unique identifier for the compartment.
+     * The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      */
     compartmentId?: pulumi.Input<string>;
     /**

@@ -37,6 +37,7 @@ import (
 //				HealthChecker: &loadbalancer.BackendSetHealthCheckerArgs{
 //					Protocol:          pulumi.Any(_var.Backend_set_health_checker_protocol),
 //					IntervalMs:        pulumi.Any(_var.Backend_set_health_checker_interval_ms),
+//					IsForcePlainText:  pulumi.Any(_var.Backend_set_health_checker_is_force_plain_text),
 //					Port:              pulumi.Any(_var.Backend_set_health_checker_port),
 //					ResponseBodyRegex: pulumi.Any(_var.Backend_set_health_checker_response_body_regex),
 //					Retries:           pulumi.Any(_var.Backend_set_health_checker_retries),

@@ -23,6 +23,7 @@ namespace Pulumi.Oci.Opensearch
         /// ##### {Compartment-Name} - Name of  your compartment
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
@@ -39,6 +40,7 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -69,6 +71,7 @@ namespace Pulumi.Oci.Opensearch
         /// ##### {Compartment-Name} - Name of  your compartment
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
@@ -85,6 +88,7 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 

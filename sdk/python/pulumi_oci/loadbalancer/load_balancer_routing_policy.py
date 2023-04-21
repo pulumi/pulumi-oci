@@ -193,8 +193,8 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    name=var["load_balancer_routing_policy_rules_actions_name"],
                     backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
+                    name=var["load_balancer_routing_policy_rules_actions_name"],
                 )],
                 condition=var["load_balancer_routing_policy_rules_condition"],
                 name=var["load_balancer_routing_policy_rules_name"],
@@ -239,8 +239,8 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    name=var["load_balancer_routing_policy_rules_actions_name"],
                     backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
+                    name=var["load_balancer_routing_policy_rules_actions_name"],
                 )],
                 condition=var["load_balancer_routing_policy_rules_condition"],
                 name=var["load_balancer_routing_policy_rules_name"],

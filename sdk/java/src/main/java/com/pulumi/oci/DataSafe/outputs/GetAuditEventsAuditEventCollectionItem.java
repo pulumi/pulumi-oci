@@ -18,7 +18,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String actionTaken;
     /**
-     * @return Time of audit event occurrence in the target database.
+     * @return The time of the audit event occurrence in the target database.
      * 
      */
     private String auditEventTime;
@@ -38,12 +38,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String auditTrailId;
     /**
-     * @return Type of auditing.
+     * @return The type of the auditing.
      * 
      */
     private String auditType;
     /**
-     * @return Name of the host machine from which the session was spawned.
+     * @return The name of the host machine from which the session was spawned.
      * 
      */
     private String clientHostname;
@@ -53,7 +53,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String clientId;
     /**
-     * @return IP address of the host from which the session was spawned.
+     * @return The IP address of the host machine from which the session was spawned.
      * 
      */
     private String clientIp;
@@ -86,7 +86,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String databaseType;
     /**
-     * @return Name of the database user whose actions were audited.
+     * @return The name of the database user whose actions were audited.
      * 
      */
     private String dbUserName;
@@ -101,12 +101,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String errorCode;
     /**
-     * @return Detailed message on why the Error occurred.
+     * @return The detailed message on why the Error occurred.
      * 
      */
     private String errorMessage;
     /**
-     * @return Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * @return The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      * 
      */
     private String eventName;
@@ -131,22 +131,22 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private Boolean isAlerted;
     /**
-     * @return Name of the object affected by the action.
+     * @return The name of the object affected by the action.
      * 
      */
     private String object;
     /**
-     * @return Schema name of object affected but the action.
+     * @return The schema name of the object affected by the action.
      * 
      */
     private String objectOwner;
     /**
-     * @return Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+     * @return The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      * 
      */
     private String objectType;
     /**
-     * @return Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * @return The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
      * 
      */
     private String operation;
@@ -161,12 +161,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String osTerminal;
     /**
-     * @return Name of the operating system user for the database session.
+     * @return The name of the operating system user for the database session.
      * 
      */
     private String osUserName;
     /**
-     * @return Class of the target that was audited.
+     * @return The class of the target that was audited.
      * 
      */
     private String targetClass;
@@ -181,7 +181,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String targetName;
     /**
-     * @return Timestamp when this audit event was collected from the target database by Data Safe.
+     * @return The timestamp when this audit event was collected from the target database by Data Safe.
      * 
      */
     private String timeCollected;
@@ -195,7 +195,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.actionTaken;
     }
     /**
-     * @return Time of audit event occurrence in the target database.
+     * @return The time of the audit event occurrence in the target database.
      * 
      */
     public String auditEventTime() {
@@ -223,14 +223,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.auditTrailId;
     }
     /**
-     * @return Type of auditing.
+     * @return The type of the auditing.
      * 
      */
     public String auditType() {
         return this.auditType;
     }
     /**
-     * @return Name of the host machine from which the session was spawned.
+     * @return The name of the host machine from which the session was spawned.
      * 
      */
     public String clientHostname() {
@@ -244,7 +244,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.clientId;
     }
     /**
-     * @return IP address of the host from which the session was spawned.
+     * @return The IP address of the host machine from which the session was spawned.
      * 
      */
     public String clientIp() {
@@ -289,7 +289,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.databaseType;
     }
     /**
-     * @return Name of the database user whose actions were audited.
+     * @return The name of the database user whose actions were audited.
      * 
      */
     public String dbUserName() {
@@ -310,14 +310,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.errorCode;
     }
     /**
-     * @return Detailed message on why the Error occurred.
+     * @return The detailed message on why the Error occurred.
      * 
      */
     public String errorMessage() {
         return this.errorMessage;
     }
     /**
-     * @return Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * @return The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      * 
      */
     public String eventName() {
@@ -352,28 +352,28 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.isAlerted;
     }
     /**
-     * @return Name of the object affected by the action.
+     * @return The name of the object affected by the action.
      * 
      */
     public String object() {
         return this.object;
     }
     /**
-     * @return Schema name of object affected but the action.
+     * @return The schema name of the object affected by the action.
      * 
      */
     public String objectOwner() {
         return this.objectOwner;
     }
     /**
-     * @return Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+     * @return The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      * 
      */
     public String objectType() {
         return this.objectType;
     }
     /**
-     * @return Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * @return The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
      * 
      */
     public String operation() {
@@ -394,14 +394,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.osTerminal;
     }
     /**
-     * @return Name of the operating system user for the database session.
+     * @return The name of the operating system user for the database session.
      * 
      */
     public String osUserName() {
         return this.osUserName;
     }
     /**
-     * @return Class of the target that was audited.
+     * @return The class of the target that was audited.
      * 
      */
     public String targetClass() {
@@ -422,7 +422,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.targetName;
     }
     /**
-     * @return Timestamp when this audit event was collected from the target database by Data Safe.
+     * @return The timestamp when this audit event was collected from the target database by Data Safe.
      * 
      */
     public String timeCollected() {

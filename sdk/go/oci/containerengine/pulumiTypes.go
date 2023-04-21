@@ -4665,6 +4665,8 @@ type NodePoolNodeConfigDetailsPlacementConfig struct {
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
+	// (Updatable) Configuration options for preemptible nodes.
+	PreemptibleNodeConfig *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfig"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -4687,6 +4689,8 @@ type NodePoolNodeConfigDetailsPlacementConfigArgs struct {
 	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// (Updatable) A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// (Updatable) Configuration options for preemptible nodes.
+	PreemptibleNodeConfig NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrInput `pulumi:"preemptibleNodeConfig"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -4757,6 +4761,13 @@ func (o NodePoolNodeConfigDetailsPlacementConfigOutput) FaultDomains() pulumi.St
 	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) Configuration options for preemptible nodes.
+func (o NodePoolNodeConfigDetailsPlacementConfigOutput) PreemptibleNodeConfig() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfig) *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig {
+		return v.PreemptibleNodeConfig
+	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput)
+}
+
 // (Updatable) The OCID of the subnet in which to place nodes.
 func (o NodePoolNodeConfigDetailsPlacementConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -4780,6 +4791,305 @@ func (o NodePoolNodeConfigDetailsPlacementConfigArrayOutput) Index(i pulumi.IntI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolNodeConfigDetailsPlacementConfig {
 		return vs[0].([]NodePoolNodeConfigDetailsPlacementConfig)[vs[1].(int)]
 	}).(NodePoolNodeConfigDetailsPlacementConfigOutput)
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig struct {
+	// (Updatable) The action to run when the preemptible node is interrupted for eviction.
+	PreemptionAction NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction `pulumi:"preemptionAction"`
+}
+
+// NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigInput is an input type that accepts NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs and NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput values.
+// You can construct a concrete instance of `NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigInput` via:
+//
+//	NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs{...}
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs struct {
+	// (Updatable) The action to run when the preemptible node is interrupted for eviction.
+	PreemptionAction NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionInput `pulumi:"preemptionAction"`
+}
+
+func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
+	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput)
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput).ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx)
+}
+
+// NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrInput is an input type that accepts NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs, NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtr and NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput values.
+// You can construct a concrete instance of `NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrInput` via:
+//
+//	        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput
+}
+
+type nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs
+
+func NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtr(v *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrInput {
+	return (*nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType)(v)
+}
+
+func (*nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput)
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return o.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig) *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig {
+		return &v
+	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput)
+}
+
+// (Updatable) The action to run when the preemptible node is interrupted for eviction.
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) PreemptionAction() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		return v.PreemptionAction
+	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) Elem() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig
+		return ret
+	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput)
+}
+
+// (Updatable) The action to run when the preemptible node is interrupted for eviction.
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) PreemptionAction() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig) *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		if v == nil {
+			return nil
+		}
+		return &v.PreemptionAction
+	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput)
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction struct {
+	// (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	IsPreserveBootVolume *bool `pulumi:"isPreserveBootVolume"`
+	// (Updatable) The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionInput is an input type that accepts NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs and NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput values.
+// You can construct a concrete instance of `NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionInput` via:
+//
+//	NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{...}
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs struct {
+	// (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	IsPreserveBootVolume pulumi.BoolPtrInput `pulumi:"isPreserveBootVolume"`
+	// (Updatable) The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput).ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx)
+}
+
+// NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrInput is an input type that accepts NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs, NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtr and NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput values.
+// You can construct a concrete instance of `NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrInput` via:
+//
+//	        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput
+	ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput
+}
+
+type nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrType NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs
+
+func NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtr(v *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrInput {
+	return (*nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrType)(v)
+}
+
+func (*nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrType) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(context.Background())
+}
+
+func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrType) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput)
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return o.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(context.Background())
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		return &v
+	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput)
+}
+
+// (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) IsPreserveBootVolume() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) *bool {
+		return v.IsPreserveBootVolume
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The type of action to run when the instance is interrupted for eviction.
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) Elem() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		if v != nil {
+			return *v
+		}
+		var ret NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction
+		return ret
+	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
+}
+
+// (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) IsPreserveBootVolume() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsPreserveBootVolume
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The type of action to run when the instance is interrupted for eviction.
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
 }
 
 type NodePoolNodeError struct {
@@ -10015,6 +10325,8 @@ type GetNodePoolNodeConfigDetailPlacementConfig struct {
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
+	// Configuration options for preemptible nodes.
+	PreemptibleNodeConfigs []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -10037,6 +10349,8 @@ type GetNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// Configuration options for preemptible nodes.
+	PreemptibleNodeConfigs GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -10107,6 +10421,13 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) FaultDomains() pulumi.
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
+// Configuration options for preemptible nodes.
+func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) PreemptibleNodeConfigs() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig {
+		return v.PreemptibleNodeConfigs
+	}).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which this node is placed.
 func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -10130,6 +10451,215 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailPlacementConfig {
 		return vs[0].([]GetNodePoolNodeConfigDetailPlacementConfig)[vs[1].(int)]
 	}).(GetNodePoolNodeConfigDetailPlacementConfigOutput)
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig struct {
+	// The action to run when the preemptible node is interrupted for eviction.
+	PreemptionActions []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction `pulumi:"preemptionActions"`
+}
+
+// GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput` via:
+//
+//	GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs{...}
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs struct {
+	// The action to run when the preemptible node is interrupted for eviction.
+	PreemptionActions GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
+}
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
+}
+
+// GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput` via:
+//
+//	GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray{ GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs{...} }
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return o
+}
+
+// The action to run when the preemptible node is interrupted for eviction.
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) PreemptionActions() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig) []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		return v.PreemptionActions
+	}).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig {
+		return vs[0].([]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)[vs[1].(int)]
+	}).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	IsPreserveBootVolume bool `pulumi:"isPreserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput` via:
+//
+//	GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{...}
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	IsPreserveBootVolume pulumi.BoolInput `pulumi:"isPreserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
+}
+
+// GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput` via:
+//
+//	GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray{ GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{...} }
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput
+	ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o
+}
+
+// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) IsPreserveBootVolume() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) bool {
+		return v.IsPreserveBootVolume
+	}).(pulumi.BoolOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput() GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		return vs[0].([]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)[vs[1].(int)]
+	}).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
 }
 
 type GetNodePoolNodeError struct {
@@ -11852,6 +12382,8 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfig struct {
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
+	// Configuration options for preemptible nodes.
+	PreemptibleNodeConfigs []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -11874,6 +12406,8 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// Configuration options for preemptible nodes.
+	PreemptibleNodeConfigs GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -11944,6 +12478,13 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) FaultDomains(
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
+// Configuration options for preemptible nodes.
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) PreemptibleNodeConfigs() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig {
+		return v.PreemptibleNodeConfigs
+	}).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which this node is placed.
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -11967,6 +12508,215 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailPlacementConfig {
 		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig)[vs[1].(int)]
 	}).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig struct {
+	// The action to run when the preemptible node is interrupted for eviction.
+	PreemptionActions []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction `pulumi:"preemptionActions"`
+}
+
+// GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput` via:
+//
+//	GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs{...}
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs struct {
+	// The action to run when the preemptible node is interrupted for eviction.
+	PreemptionActions GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
+}
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
+}
+
+// GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput` via:
+//
+//	GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray{ GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs{...} }
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return o
+}
+
+// The action to run when the preemptible node is interrupted for eviction.
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) PreemptionActions() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig) []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		return v.PreemptionActions
+	}).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig {
+		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	IsPreserveBootVolume bool `pulumi:"isPreserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput` via:
+//
+//	GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{...}
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	IsPreserveBootVolume pulumi.BoolInput `pulumi:"isPreserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
+}
+
+// GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput` via:
+//
+//	GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray{ GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{...} }
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput
+	ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return o
+}
+
+// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) IsPreserveBootVolume() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) bool {
+		return v.IsPreserveBootVolume
+	}).(pulumi.BoolOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput() GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction {
+		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
 }
 
 type GetNodePoolsNodePoolNodeError struct {
@@ -15504,6 +16254,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrInput)(nil)).Elem(), NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigArrayInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeErrorInput)(nil)).Elem(), NodePoolNodeErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeErrorArrayInput)(nil)).Elem(), NodePoolNodeErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeEvictionNodePoolSettingsInput)(nil)).Elem(), NodePoolNodeEvictionNodePoolSettingsArgs{})
@@ -15586,6 +16340,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput)(nil)).Elem(), GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigArrayInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeErrorInput)(nil)).Elem(), GetNodePoolNodeErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeErrorArrayInput)(nil)).Elem(), GetNodePoolNodeErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeEvictionNodePoolSettingInput)(nil)).Elem(), GetNodePoolNodeEvictionNodePoolSettingArgs{})
@@ -15612,6 +16370,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeErrorInput)(nil)).Elem(), GetNodePoolsNodePoolNodeErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeErrorArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput)(nil)).Elem(), GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs{})
@@ -15730,6 +16492,10 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigArrayOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeErrorOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeErrorArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeEvictionNodePoolSettingsOutput{})
@@ -15812,6 +16578,10 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeErrorOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeErrorArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeEvictionNodePoolSettingOutput{})
@@ -15838,6 +16608,10 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeErrorOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeErrorArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput{})

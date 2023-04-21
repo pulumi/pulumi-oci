@@ -7,8 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class LoadBalancerRoutingPolicyRuleActionArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,15 +17,15 @@ public final class LoadBalancerRoutingPolicyRuleActionArgs extends com.pulumi.re
      * (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
      */
-    @Import(name="backendSetName")
-    private @Nullable Output<String> backendSetName;
+    @Import(name="backendSetName", required=true)
+    private Output<String> backendSetName;
 
     /**
      * @return (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
      */
-    public Optional<Output<String>> backendSetName() {
-        return Optional.ofNullable(this.backendSetName);
+    public Output<String> backendSetName() {
+        return this.backendSetName;
     }
 
     /**
@@ -76,7 +74,7 @@ public final class LoadBalancerRoutingPolicyRuleActionArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder backendSetName(@Nullable Output<String> backendSetName) {
+        public Builder backendSetName(Output<String> backendSetName) {
             $.backendSetName = backendSetName;
             return this;
         }
@@ -113,6 +111,7 @@ public final class LoadBalancerRoutingPolicyRuleActionArgs extends com.pulumi.re
         }
 
         public LoadBalancerRoutingPolicyRuleActionArgs build() {
+            $.backendSetName = Objects.requireNonNull($.backendSetName, "expected parameter 'backendSetName' to be non-null");
             $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }

@@ -22,6 +22,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -29,8 +30,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testSslCipherSuite = Oci.LoadBalancer.GetSslCipherSuite.Invoke(new()
         ///     {
-        ///         Name = @var.Ssl_cipher_suite_name,
         ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///         Name = @var.Ssl_cipher_suite_name,
         ///     });
         /// 
         /// });
@@ -52,6 +53,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -59,8 +61,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testSslCipherSuite = Oci.LoadBalancer.GetSslCipherSuite.Invoke(new()
         ///     {
-        ///         Name = @var.Ssl_cipher_suite_name,
         ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///         Name = @var.Ssl_cipher_suite_name,
         ///     });
         /// 
         /// });

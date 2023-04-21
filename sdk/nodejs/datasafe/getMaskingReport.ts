@@ -51,6 +51,18 @@ export interface GetMaskingReportResult {
      */
     readonly id: string;
     /**
+     * Indicates if the temporary tables created during the masking operation were dropped after masking.
+     */
+    readonly isDropTempTablesEnabled: boolean;
+    /**
+     * Indicates if redo logging was enabled during the masking operation.
+     */
+    readonly isRedoLoggingEnabled: boolean;
+    /**
+     * Indicates if statistics gathering was enabled during the masking operation.
+     */
+    readonly isRefreshStatsEnabled: boolean;
+    /**
      * The OCID of the masking policy used.
      */
     readonly maskingPolicyId: string;
@@ -59,6 +71,14 @@ export interface GetMaskingReportResult {
      * The OCID of the masking work request that resulted in this masking report.
      */
     readonly maskingWorkRequestId: string;
+    /**
+     * Indicates if parallel execution was enabled during the masking operation.
+     */
+    readonly parallelDegree: string;
+    /**
+     * Indicates how invalid objects were recompiled post the masking operation.
+     */
+    readonly recompile: string;
     /**
      * The current state of the masking report.
      */

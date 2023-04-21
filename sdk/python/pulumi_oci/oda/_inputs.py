@@ -11,7 +11,11 @@ from .. import _utilities
 
 __all__ = [
     'OdaInstanceRestrictedOperationArgs',
+    'OdaPrivateEndpointScanProxyScanListenerInfoArgs',
     'GetOdaInstancesFilterArgs',
+    'GetOdaPrivateEndpointAttachmentsFilterArgs',
+    'GetOdaPrivateEndpointScanProxiesFilterArgs',
+    'GetOdaPrivateEndpointsFilterArgs',
 ]
 
 @pulumi.input_type
@@ -54,7 +58,179 @@ class OdaInstanceRestrictedOperationArgs:
 
 
 @pulumi.input_type
+class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
+    def __init__(__self__, *,
+                 scan_listener_fqdn: Optional[pulumi.Input[str]] = None,
+                 scan_listener_ip: Optional[pulumi.Input[str]] = None,
+                 scan_listener_port: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] scan_listener_fqdn: FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
+        :param pulumi.Input[str] scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
+        :param pulumi.Input[int] scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
+        """
+        if scan_listener_fqdn is not None:
+            pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
+        if scan_listener_ip is not None:
+            pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
+        if scan_listener_port is not None:
+            pulumi.set(__self__, "scan_listener_port", scan_listener_port)
+
+    @property
+    @pulumi.getter(name="scanListenerFqdn")
+    def scan_listener_fqdn(self) -> Optional[pulumi.Input[str]]:
+        """
+        FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
+        """
+        return pulumi.get(self, "scan_listener_fqdn")
+
+    @scan_listener_fqdn.setter
+    def scan_listener_fqdn(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scan_listener_fqdn", value)
+
+    @property
+    @pulumi.getter(name="scanListenerIp")
+    def scan_listener_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        A SCAN listener's IP of the customer's Real Application Cluster (RAC).
+        """
+        return pulumi.get(self, "scan_listener_ip")
+
+    @scan_listener_ip.setter
+    def scan_listener_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scan_listener_ip", value)
+
+    @property
+    @pulumi.getter(name="scanListenerPort")
+    def scan_listener_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
+        """
+        return pulumi.get(self, "scan_listener_port")
+
+    @scan_listener_port.setter
+    def scan_listener_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scan_listener_port", value)
+
+
+@pulumi.input_type
 class GetOdaInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOdaPrivateEndpointAttachmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOdaPrivateEndpointScanProxiesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOdaPrivateEndpointsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

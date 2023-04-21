@@ -22,6 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -51,6 +52,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -137,7 +139,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly string ReportDefinitionId;
         public readonly string ReportId;
         /// <summary>
-        /// The current state of the report.
+        /// The current state of the audit report.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -145,11 +147,11 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Specifies the time at which the report was generated.
+        /// Specifies the date and time the report was generated.
         /// </summary>
         public readonly string TimeGenerated;
         /// <summary>
-        /// The type of the report.
+        /// The type of the audit report.
         /// </summary>
         public readonly string Type;
 

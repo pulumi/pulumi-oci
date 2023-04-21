@@ -44,19 +44,19 @@ class ClusterArgs:
         """
         The set of arguments for constructing a Cluster resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: The number of data nodes to configure for the cluster.
-        :param pulumi.Input[int] data_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: The number of OCPUs to configure for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
+        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[int] master_node_count: The number of master nodes to configure for the cluster.
-        :param pulumi.Input[int] master_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: The number of OCPUs to configure for the cluser's master nodes.
+        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
+        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
+        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
-        :param pulumi.Input[int] opendashboard_node_count: The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
+        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
@@ -123,7 +123,7 @@ class ClusterArgs:
     @pulumi.getter(name="dataNodeCount")
     def data_node_count(self) -> pulumi.Input[int]:
         """
-        The number of data nodes to configure for the cluster.
+        (Updatable) The number of data nodes to configure for the cluster.
         """
         return pulumi.get(self, "data_node_count")
 
@@ -135,7 +135,7 @@ class ClusterArgs:
     @pulumi.getter(name="dataNodeHostMemoryGb")
     def data_node_host_memory_gb(self) -> pulumi.Input[int]:
         """
-        The amount of memory in GB, to configure per node for the cluster's data nodes.
+        (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_memory_gb")
 
@@ -147,7 +147,7 @@ class ClusterArgs:
     @pulumi.getter(name="dataNodeHostOcpuCount")
     def data_node_host_ocpu_count(self) -> pulumi.Input[int]:
         """
-        The number of OCPUs to configure for the cluster's data nodes.
+        (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_ocpu_count")
 
@@ -171,7 +171,7 @@ class ClusterArgs:
     @pulumi.getter(name="dataNodeStorageGb")
     def data_node_storage_gb(self) -> pulumi.Input[int]:
         """
-        The amount of storage in GB, to configure per node for the cluster's data nodes.
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_storage_gb")
 
@@ -195,7 +195,7 @@ class ClusterArgs:
     @pulumi.getter(name="masterNodeCount")
     def master_node_count(self) -> pulumi.Input[int]:
         """
-        The number of master nodes to configure for the cluster.
+        (Updatable) The number of master nodes to configure for the cluster.
         """
         return pulumi.get(self, "master_node_count")
 
@@ -207,7 +207,7 @@ class ClusterArgs:
     @pulumi.getter(name="masterNodeHostMemoryGb")
     def master_node_host_memory_gb(self) -> pulumi.Input[int]:
         """
-        The amount of memory in GB, to configure per node for the cluster's master nodes.
+        (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         """
         return pulumi.get(self, "master_node_host_memory_gb")
 
@@ -219,7 +219,7 @@ class ClusterArgs:
     @pulumi.getter(name="masterNodeHostOcpuCount")
     def master_node_host_ocpu_count(self) -> pulumi.Input[int]:
         """
-        The number of OCPUs to configure for the cluser's master nodes.
+        (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         """
         return pulumi.get(self, "master_node_host_ocpu_count")
 
@@ -243,7 +243,7 @@ class ClusterArgs:
     @pulumi.getter(name="opendashboardNodeCount")
     def opendashboard_node_count(self) -> pulumi.Input[int]:
         """
-        The number of OpenSearch Dashboard nodes to configure for the cluster.
+        (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         """
         return pulumi.get(self, "opendashboard_node_count")
 
@@ -255,7 +255,7 @@ class ClusterArgs:
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
     def opendashboard_node_host_memory_gb(self) -> pulumi.Input[int]:
         """
-        The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
@@ -267,7 +267,7 @@ class ClusterArgs:
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
     def opendashboard_node_host_ocpu_count(self) -> pulumi.Input[int]:
         """
-        The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 
@@ -478,26 +478,26 @@ class _ClusterState:
         Input properties used for looking up and filtering Cluster resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: The number of data nodes to configure for the cluster.
+        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: The number of OCPUs to configure for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
-        :param pulumi.Input[int] master_node_count: The number of master nodes to configure for the cluster.
+        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: The number of OCPUs to configure for the cluser's master nodes.
+        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
+        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
         :param pulumi.Input[str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        :param pulumi.Input[int] opendashboard_node_count: The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
+        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
@@ -623,7 +623,7 @@ class _ClusterState:
     @pulumi.getter(name="dataNodeCount")
     def data_node_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of data nodes to configure for the cluster.
+        (Updatable) The number of data nodes to configure for the cluster.
         """
         return pulumi.get(self, "data_node_count")
 
@@ -647,7 +647,7 @@ class _ClusterState:
     @pulumi.getter(name="dataNodeHostMemoryGb")
     def data_node_host_memory_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory in GB, to configure per node for the cluster's data nodes.
+        (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_memory_gb")
 
@@ -659,7 +659,7 @@ class _ClusterState:
     @pulumi.getter(name="dataNodeHostOcpuCount")
     def data_node_host_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OCPUs to configure for the cluster's data nodes.
+        (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_ocpu_count")
 
@@ -683,7 +683,7 @@ class _ClusterState:
     @pulumi.getter(name="dataNodeStorageGb")
     def data_node_storage_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of storage in GB, to configure per node for the cluster's data nodes.
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_storage_gb")
 
@@ -755,7 +755,7 @@ class _ClusterState:
     @pulumi.getter(name="masterNodeCount")
     def master_node_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of master nodes to configure for the cluster.
+        (Updatable) The number of master nodes to configure for the cluster.
         """
         return pulumi.get(self, "master_node_count")
 
@@ -779,7 +779,7 @@ class _ClusterState:
     @pulumi.getter(name="masterNodeHostMemoryGb")
     def master_node_host_memory_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory in GB, to configure per node for the cluster's master nodes.
+        (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         """
         return pulumi.get(self, "master_node_host_memory_gb")
 
@@ -791,7 +791,7 @@ class _ClusterState:
     @pulumi.getter(name="masterNodeHostOcpuCount")
     def master_node_host_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OCPUs to configure for the cluser's master nodes.
+        (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         """
         return pulumi.get(self, "master_node_host_ocpu_count")
 
@@ -827,7 +827,7 @@ class _ClusterState:
     @pulumi.getter(name="opendashboardNodeCount")
     def opendashboard_node_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OpenSearch Dashboard nodes to configure for the cluster.
+        (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         """
         return pulumi.get(self, "opendashboard_node_count")
 
@@ -839,7 +839,7 @@ class _ClusterState:
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
     def opendashboard_node_host_memory_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
@@ -851,7 +851,7 @@ class _ClusterState:
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
     def opendashboard_node_host_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 
@@ -1165,23 +1165,23 @@ class Cluster(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: The number of data nodes to configure for the cluster.
+        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: The number of OCPUs to configure for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] master_node_count: The number of master nodes to configure for the cluster.
+        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: The number of OCPUs to configure for the cluser's master nodes.
+        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
+        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
-        :param pulumi.Input[int] opendashboard_node_count: The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
+        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
@@ -1451,26 +1451,26 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
-        :param pulumi.Input[int] data_node_count: The number of data nodes to configure for the cluster.
+        :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_host_ocpu_count: The number of OCPUs to configure for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
-        :param pulumi.Input[int] data_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's data nodes.
+        :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
-        :param pulumi.Input[int] master_node_count: The number of master nodes to configure for the cluster.
+        :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_memory_gb: The amount of memory in GB, to configure per node for the cluster's master nodes.
-        :param pulumi.Input[int] master_node_host_ocpu_count: The number of OCPUs to configure for the cluser's master nodes.
+        :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
+        :param pulumi.Input[int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[str] master_node_host_type: The instance type for the cluster's master nodes.
         :param pulumi.Input[str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        :param pulumi.Input[int] opendashboard_node_count: The number of OpenSearch Dashboard nodes to configure for the cluster.
-        :param pulumi.Input[int] opendashboard_node_host_memory_gb: The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
+        :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
@@ -1554,7 +1554,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="dataNodeCount")
     def data_node_count(self) -> pulumi.Output[int]:
         """
-        The number of data nodes to configure for the cluster.
+        (Updatable) The number of data nodes to configure for the cluster.
         """
         return pulumi.get(self, "data_node_count")
 
@@ -1570,7 +1570,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="dataNodeHostMemoryGb")
     def data_node_host_memory_gb(self) -> pulumi.Output[int]:
         """
-        The amount of memory in GB, to configure per node for the cluster's data nodes.
+        (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_memory_gb")
 
@@ -1578,7 +1578,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="dataNodeHostOcpuCount")
     def data_node_host_ocpu_count(self) -> pulumi.Output[int]:
         """
-        The number of OCPUs to configure for the cluster's data nodes.
+        (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_ocpu_count")
 
@@ -1594,7 +1594,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="dataNodeStorageGb")
     def data_node_storage_gb(self) -> pulumi.Output[int]:
         """
-        The amount of storage in GB, to configure per node for the cluster's data nodes.
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_storage_gb")
 
@@ -1642,7 +1642,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="masterNodeCount")
     def master_node_count(self) -> pulumi.Output[int]:
         """
-        The number of master nodes to configure for the cluster.
+        (Updatable) The number of master nodes to configure for the cluster.
         """
         return pulumi.get(self, "master_node_count")
 
@@ -1658,7 +1658,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="masterNodeHostMemoryGb")
     def master_node_host_memory_gb(self) -> pulumi.Output[int]:
         """
-        The amount of memory in GB, to configure per node for the cluster's master nodes.
+        (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         """
         return pulumi.get(self, "master_node_host_memory_gb")
 
@@ -1666,7 +1666,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="masterNodeHostOcpuCount")
     def master_node_host_ocpu_count(self) -> pulumi.Output[int]:
         """
-        The number of OCPUs to configure for the cluser's master nodes.
+        (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         """
         return pulumi.get(self, "master_node_host_ocpu_count")
 
@@ -1690,7 +1690,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="opendashboardNodeCount")
     def opendashboard_node_count(self) -> pulumi.Output[int]:
         """
-        The number of OpenSearch Dashboard nodes to configure for the cluster.
+        (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         """
         return pulumi.get(self, "opendashboard_node_count")
 
@@ -1698,7 +1698,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
     def opendashboard_node_host_memory_gb(self) -> pulumi.Output[int]:
         """
-        The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+        (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
@@ -1706,7 +1706,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
     def opendashboard_node_host_ocpu_count(self) -> pulumi.Output[int]:
         """
-        The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 

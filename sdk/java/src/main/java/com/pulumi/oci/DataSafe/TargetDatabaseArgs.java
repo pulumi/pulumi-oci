@@ -67,14 +67,14 @@ public final class TargetDatabaseArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     @Import(name="databaseDetails", required=true)
     private Output<TargetDatabaseDatabaseDetailsArgs> databaseDetails;
 
     /**
-     * @return (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     public Output<TargetDatabaseDatabaseDetailsArgs> databaseDetails() {
@@ -252,7 +252,7 @@ public final class TargetDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class TargetDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 

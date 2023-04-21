@@ -53,7 +53,7 @@ public final class GetReportResult {
     private String reportDefinitionId;
     private String reportId;
     /**
-     * @return The current state of the report.
+     * @return The current state of the audit report.
      * 
      */
     private String state;
@@ -63,12 +63,12 @@ public final class GetReportResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Specifies the time at which the report was generated.
+     * @return Specifies the date and time the report was generated.
      * 
      */
     private String timeGenerated;
     /**
-     * @return The type of the report.
+     * @return The type of the audit report.
      * 
      */
     private String type;
@@ -134,7 +134,7 @@ public final class GetReportResult {
         return this.reportId;
     }
     /**
-     * @return The current state of the report.
+     * @return The current state of the audit report.
      * 
      */
     public String state() {
@@ -148,14 +148,14 @@ public final class GetReportResult {
         return this.systemTags;
     }
     /**
-     * @return Specifies the time at which the report was generated.
+     * @return Specifies the date and time the report was generated.
      * 
      */
     public String timeGenerated() {
         return this.timeGenerated;
     }
     /**
-     * @return The type of the report.
+     * @return The type of the audit report.
      * 
      */
     public String type() {

@@ -70,6 +70,21 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
     }
 
     /**
+     * An optional filter to return only findings containing the specified reference.
+     * 
+     */
+    @Import(name="references")
+    private @Nullable String references;
+
+    /**
+     * @return An optional filter to return only findings containing the specified reference.
+     * 
+     */
+    public Optional<String> references() {
+        return Optional.ofNullable(this.references);
+    }
+
+    /**
      * The OCID of the security assessment.
      * 
      */
@@ -106,6 +121,7 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
+        this.references = $.references;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
     }
@@ -167,6 +183,17 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
          */
         public Builder findingKey(@Nullable String findingKey) {
             $.findingKey = findingKey;
+            return this;
+        }
+
+        /**
+         * @param references An optional filter to return only findings containing the specified reference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder references(@Nullable String references) {
+            $.references = references;
             return this;
         }
 

@@ -34,14 +34,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of data nodes to configure for the cluster.
+     * (Updatable) The number of data nodes to configure for the cluster.
      * 
      */
     @Import(name="dataNodeCount", required=true)
     private Output<Integer> dataNodeCount;
 
     /**
-     * @return The number of data nodes to configure for the cluster.
+     * @return (Updatable) The number of data nodes to configure for the cluster.
      * 
      */
     public Output<Integer> dataNodeCount() {
@@ -64,14 +64,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     @Import(name="dataNodeHostMemoryGb", required=true)
     private Output<Integer> dataNodeHostMemoryGb;
 
     /**
-     * @return The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
+     * @return (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     public Output<Integer> dataNodeHostMemoryGb() {
@@ -79,14 +79,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of OCPUs to configure for the cluster&#39;s data nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster&#39;s data nodes.
      * 
      */
     @Import(name="dataNodeHostOcpuCount", required=true)
     private Output<Integer> dataNodeHostOcpuCount;
 
     /**
-     * @return The number of OCPUs to configure for the cluster&#39;s data nodes.
+     * @return (Updatable) The number of OCPUs to configure for the cluster&#39;s data nodes.
      * 
      */
     public Output<Integer> dataNodeHostOcpuCount() {
@@ -109,14 +109,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     @Import(name="dataNodeStorageGb", required=true)
     private Output<Integer> dataNodeStorageGb;
 
     /**
-     * @return The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
+     * @return (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
     public Output<Integer> dataNodeStorageGb() {
@@ -169,14 +169,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of master nodes to configure for the cluster.
+     * (Updatable) The number of master nodes to configure for the cluster.
      * 
      */
     @Import(name="masterNodeCount", required=true)
     private Output<Integer> masterNodeCount;
 
     /**
-     * @return The number of master nodes to configure for the cluster.
+     * @return (Updatable) The number of master nodes to configure for the cluster.
      * 
      */
     public Output<Integer> masterNodeCount() {
@@ -199,14 +199,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
      * 
      */
     @Import(name="masterNodeHostMemoryGb", required=true)
     private Output<Integer> masterNodeHostMemoryGb;
 
     /**
-     * @return The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
+     * @return (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
      * 
      */
     public Output<Integer> masterNodeHostMemoryGb() {
@@ -214,14 +214,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of OCPUs to configure for the cluser&#39;s master nodes.
+     * (Updatable) The number of OCPUs to configure for the cluser&#39;s master nodes.
      * 
      */
     @Import(name="masterNodeHostOcpuCount", required=true)
     private Output<Integer> masterNodeHostOcpuCount;
 
     /**
-     * @return The number of OCPUs to configure for the cluser&#39;s master nodes.
+     * @return (Updatable) The number of OCPUs to configure for the cluser&#39;s master nodes.
      * 
      */
     public Output<Integer> masterNodeHostOcpuCount() {
@@ -244,14 +244,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of OpenSearch Dashboard nodes to configure for the cluster.
+     * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      * 
      */
     @Import(name="opendashboardNodeCount", required=true)
     private Output<Integer> opendashboardNodeCount;
 
     /**
-     * @return The number of OpenSearch Dashboard nodes to configure for the cluster.
+     * @return (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      * 
      */
     public Output<Integer> opendashboardNodeCount() {
@@ -259,14 +259,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * (Updatable) The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     @Import(name="opendashboardNodeHostMemoryGb", required=true)
     private Output<Integer> opendashboardNodeHostMemoryGb;
 
     /**
-     * @return The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * @return (Updatable) The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     public Output<Integer> opendashboardNodeHostMemoryGb() {
@@ -274,14 +274,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     @Import(name="opendashboardNodeHostOcpuCount", required=true)
     private Output<Integer> opendashboardNodeHostOcpuCount;
 
     /**
-     * @return The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+     * @return (Updatable) The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
     public Output<Integer> opendashboardNodeHostOcpuCount() {
@@ -495,7 +495,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeCount The number of data nodes to configure for the cluster.
+         * @param dataNodeCount (Updatable) The number of data nodes to configure for the cluster.
          * 
          * @return builder
          * 
@@ -506,7 +506,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeCount The number of data nodes to configure for the cluster.
+         * @param dataNodeCount (Updatable) The number of data nodes to configure for the cluster.
          * 
          * @return builder
          * 
@@ -537,7 +537,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeHostMemoryGb The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
+         * @param dataNodeHostMemoryGb (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
          * 
          * @return builder
          * 
@@ -548,7 +548,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeHostMemoryGb The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
+         * @param dataNodeHostMemoryGb (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
          * 
          * @return builder
          * 
@@ -558,7 +558,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeHostOcpuCount The number of OCPUs to configure for the cluster&#39;s data nodes.
+         * @param dataNodeHostOcpuCount (Updatable) The number of OCPUs to configure for the cluster&#39;s data nodes.
          * 
          * @return builder
          * 
@@ -569,7 +569,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeHostOcpuCount The number of OCPUs to configure for the cluster&#39;s data nodes.
+         * @param dataNodeHostOcpuCount (Updatable) The number of OCPUs to configure for the cluster&#39;s data nodes.
          * 
          * @return builder
          * 
@@ -600,7 +600,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeStorageGb The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
+         * @param dataNodeStorageGb (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
          * 
          * @return builder
          * 
@@ -611,7 +611,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataNodeStorageGb The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
+         * @param dataNodeStorageGb (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
          * 
          * @return builder
          * 
@@ -684,7 +684,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeCount The number of master nodes to configure for the cluster.
+         * @param masterNodeCount (Updatable) The number of master nodes to configure for the cluster.
          * 
          * @return builder
          * 
@@ -695,7 +695,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeCount The number of master nodes to configure for the cluster.
+         * @param masterNodeCount (Updatable) The number of master nodes to configure for the cluster.
          * 
          * @return builder
          * 
@@ -726,7 +726,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeHostMemoryGb The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
+         * @param masterNodeHostMemoryGb (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
          * 
          * @return builder
          * 
@@ -737,7 +737,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeHostMemoryGb The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
+         * @param masterNodeHostMemoryGb (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeHostOcpuCount The number of OCPUs to configure for the cluser&#39;s master nodes.
+         * @param masterNodeHostOcpuCount (Updatable) The number of OCPUs to configure for the cluser&#39;s master nodes.
          * 
          * @return builder
          * 
@@ -758,7 +758,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeHostOcpuCount The number of OCPUs to configure for the cluser&#39;s master nodes.
+         * @param masterNodeHostOcpuCount (Updatable) The number of OCPUs to configure for the cluser&#39;s master nodes.
          * 
          * @return builder
          * 
@@ -789,7 +789,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opendashboardNodeCount The number of OpenSearch Dashboard nodes to configure for the cluster.
+         * @param opendashboardNodeCount (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
          * 
          * @return builder
          * 
@@ -800,7 +800,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opendashboardNodeCount The number of OpenSearch Dashboard nodes to configure for the cluster.
+         * @param opendashboardNodeCount (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
          * 
          * @return builder
          * 
@@ -810,7 +810,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opendashboardNodeHostMemoryGb The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+         * @param opendashboardNodeHostMemoryGb (Updatable) The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
          * 
          * @return builder
          * 
@@ -821,7 +821,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opendashboardNodeHostMemoryGb The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+         * @param opendashboardNodeHostMemoryGb (Updatable) The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
          * 
          * @return builder
          * 
@@ -831,7 +831,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opendashboardNodeHostOcpuCount The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+         * @param opendashboardNodeHostOcpuCount (Updatable) The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
          * 
          * @return builder
          * 
@@ -842,7 +842,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opendashboardNodeHostOcpuCount The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
+         * @param opendashboardNodeHostOcpuCount (Updatable) The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
          * 
          * @return builder
          * 

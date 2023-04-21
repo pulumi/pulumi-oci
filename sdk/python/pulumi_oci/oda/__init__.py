@@ -7,6 +7,15 @@ import typing
 # Export this package's modules as members:
 from .get_oda_instance import *
 from .get_oda_instances import *
+from .get_oda_private_endpoint import *
+from .get_oda_private_endpoint_attachment import *
+from .get_oda_private_endpoint_attachments import *
+from .get_oda_private_endpoint_scan_proxies import *
+from .get_oda_private_endpoint_scan_proxy import *
+from .get_oda_private_endpoints import *
 from .oda_instance import *
+from .oda_private_endpoint import *
+from .oda_private_endpoint_attachment import *
+from .oda_private_endpoint_scan_proxy import *
 from ._inputs import *
 from . import outputs

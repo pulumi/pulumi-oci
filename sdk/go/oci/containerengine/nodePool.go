@@ -53,6 +53,12 @@ import (
 //							SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //							CapacityReservationId: pulumi.Any(oci_containerengine_capacity_reservation.Test_capacity_reservation.Id),
 //							FaultDomains:          pulumi.Any(_var.Node_pool_node_config_details_placement_configs_fault_domains),
+//							PreemptibleNodeConfig: &containerengine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs{
+//								PreemptionAction: &containerengine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{
+//									Type:                 pulumi.Any(_var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type),
+//									IsPreserveBootVolume: pulumi.Any(_var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume),
+//								},
+//							},
 //						},
 //					},
 //					Size:                           pulumi.Any(_var.Node_pool_node_config_details_size),

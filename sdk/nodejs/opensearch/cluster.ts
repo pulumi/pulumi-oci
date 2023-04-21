@@ -107,7 +107,7 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The number of data nodes to configure for the cluster.
+     * (Updatable) The number of data nodes to configure for the cluster.
      */
     public readonly dataNodeCount!: pulumi.Output<number>;
     /**
@@ -115,11 +115,11 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly dataNodeHostBareMetalShape!: pulumi.Output<string>;
     /**
-     * The amount of memory in GB, to configure per node for the cluster's data nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
      */
     public readonly dataNodeHostMemoryGb!: pulumi.Output<number>;
     /**
-     * The number of OCPUs to configure for the cluster's data nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster's data nodes.
      */
     public readonly dataNodeHostOcpuCount!: pulumi.Output<number>;
     /**
@@ -127,7 +127,7 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly dataNodeHostType!: pulumi.Output<string>;
     /**
-     * The amount of storage in GB, to configure per node for the cluster's data nodes.
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
      */
     public readonly dataNodeStorageGb!: pulumi.Output<number>;
     /**
@@ -151,7 +151,7 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The number of master nodes to configure for the cluster.
+     * (Updatable) The number of master nodes to configure for the cluster.
      */
     public readonly masterNodeCount!: pulumi.Output<number>;
     /**
@@ -159,11 +159,11 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly masterNodeHostBareMetalShape!: pulumi.Output<string>;
     /**
-     * The amount of memory in GB, to configure per node for the cluster's master nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
      */
     public readonly masterNodeHostMemoryGb!: pulumi.Output<number>;
     /**
-     * The number of OCPUs to configure for the cluser's master nodes.
+     * (Updatable) The number of OCPUs to configure for the cluser's master nodes.
      */
     public readonly masterNodeHostOcpuCount!: pulumi.Output<number>;
     /**
@@ -175,15 +175,15 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly opendashboardFqdn!: pulumi.Output<string>;
     /**
-     * The number of OpenSearch Dashboard nodes to configure for the cluster.
+     * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
     public readonly opendashboardNodeCount!: pulumi.Output<number>;
     /**
-     * The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+     * (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
      */
     public readonly opendashboardNodeHostMemoryGb!: pulumi.Output<number>;
     /**
-     * The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
     public readonly opendashboardNodeHostOcpuCount!: pulumi.Output<number>;
     /**
@@ -426,7 +426,7 @@ export interface ClusterState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The number of data nodes to configure for the cluster.
+     * (Updatable) The number of data nodes to configure for the cluster.
      */
     dataNodeCount?: pulumi.Input<number>;
     /**
@@ -434,11 +434,11 @@ export interface ClusterState {
      */
     dataNodeHostBareMetalShape?: pulumi.Input<string>;
     /**
-     * The amount of memory in GB, to configure per node for the cluster's data nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
      */
     dataNodeHostMemoryGb?: pulumi.Input<number>;
     /**
-     * The number of OCPUs to configure for the cluster's data nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster's data nodes.
      */
     dataNodeHostOcpuCount?: pulumi.Input<number>;
     /**
@@ -446,7 +446,7 @@ export interface ClusterState {
      */
     dataNodeHostType?: pulumi.Input<string>;
     /**
-     * The amount of storage in GB, to configure per node for the cluster's data nodes.
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
      */
     dataNodeStorageGb?: pulumi.Input<number>;
     /**
@@ -470,7 +470,7 @@ export interface ClusterState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The number of master nodes to configure for the cluster.
+     * (Updatable) The number of master nodes to configure for the cluster.
      */
     masterNodeCount?: pulumi.Input<number>;
     /**
@@ -478,11 +478,11 @@ export interface ClusterState {
      */
     masterNodeHostBareMetalShape?: pulumi.Input<string>;
     /**
-     * The amount of memory in GB, to configure per node for the cluster's master nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
      */
     masterNodeHostMemoryGb?: pulumi.Input<number>;
     /**
-     * The number of OCPUs to configure for the cluser's master nodes.
+     * (Updatable) The number of OCPUs to configure for the cluser's master nodes.
      */
     masterNodeHostOcpuCount?: pulumi.Input<number>;
     /**
@@ -494,15 +494,15 @@ export interface ClusterState {
      */
     opendashboardFqdn?: pulumi.Input<string>;
     /**
-     * The number of OpenSearch Dashboard nodes to configure for the cluster.
+     * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
     opendashboardNodeCount?: pulumi.Input<number>;
     /**
-     * The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+     * (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
      */
     opendashboardNodeHostMemoryGb?: pulumi.Input<number>;
     /**
-     * The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
     opendashboardNodeHostOcpuCount?: pulumi.Input<number>;
     /**
@@ -584,7 +584,7 @@ export interface ClusterArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The number of data nodes to configure for the cluster.
+     * (Updatable) The number of data nodes to configure for the cluster.
      */
     dataNodeCount: pulumi.Input<number>;
     /**
@@ -592,11 +592,11 @@ export interface ClusterArgs {
      */
     dataNodeHostBareMetalShape?: pulumi.Input<string>;
     /**
-     * The amount of memory in GB, to configure per node for the cluster's data nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
      */
     dataNodeHostMemoryGb: pulumi.Input<number>;
     /**
-     * The number of OCPUs to configure for the cluster's data nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster's data nodes.
      */
     dataNodeHostOcpuCount: pulumi.Input<number>;
     /**
@@ -604,7 +604,7 @@ export interface ClusterArgs {
      */
     dataNodeHostType: pulumi.Input<string>;
     /**
-     * The amount of storage in GB, to configure per node for the cluster's data nodes.
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
      */
     dataNodeStorageGb: pulumi.Input<number>;
     /**
@@ -620,7 +620,7 @@ export interface ClusterArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The number of master nodes to configure for the cluster.
+     * (Updatable) The number of master nodes to configure for the cluster.
      */
     masterNodeCount: pulumi.Input<number>;
     /**
@@ -628,11 +628,11 @@ export interface ClusterArgs {
      */
     masterNodeHostBareMetalShape?: pulumi.Input<string>;
     /**
-     * The amount of memory in GB, to configure per node for the cluster's master nodes.
+     * (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
      */
     masterNodeHostMemoryGb: pulumi.Input<number>;
     /**
-     * The number of OCPUs to configure for the cluser's master nodes.
+     * (Updatable) The number of OCPUs to configure for the cluser's master nodes.
      */
     masterNodeHostOcpuCount: pulumi.Input<number>;
     /**
@@ -640,15 +640,15 @@ export interface ClusterArgs {
      */
     masterNodeHostType: pulumi.Input<string>;
     /**
-     * The number of OpenSearch Dashboard nodes to configure for the cluster.
+     * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
     opendashboardNodeCount: pulumi.Input<number>;
     /**
-     * The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
+     * (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
      */
     opendashboardNodeHostMemoryGb: pulumi.Input<number>;
     /**
-     * The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+     * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
     opendashboardNodeHostOcpuCount: pulumi.Input<number>;
     /**

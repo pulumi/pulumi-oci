@@ -27,7 +27,7 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     private String key;
     /**
-     * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+     * @return An optional filter to return only findings containing the specified reference.
      * 
      */
     private List<GetSecurityAssessmentFindingsFindingReference> references;
@@ -80,7 +80,7 @@ public final class GetSecurityAssessmentFindingsFinding {
         return this.key;
     }
     /**
-     * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+     * @return An optional filter to return only findings containing the specified reference.
      * 
      */
     public List<GetSecurityAssessmentFindingsFindingReference> references() {

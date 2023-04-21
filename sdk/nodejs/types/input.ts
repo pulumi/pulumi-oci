@@ -9136,9 +9136,31 @@ export namespace ContainerEngine {
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
         /**
+         * (Updatable) Configuration options for preemptible nodes.
+         */
+        preemptibleNodeConfig?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig>;
+        /**
          * (Updatable) The OCID of the subnet in which to place nodes.
          */
         subnetId: pulumi.Input<string>;
+    }
+
+    export interface NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig {
+        /**
+         * (Updatable) The action to run when the preemptible node is interrupted for eviction.
+         */
+        preemptionAction: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction>;
+    }
+
+    export interface NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
+        /**
+         * (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+         */
+        isPreserveBootVolume?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface NodePoolNodeError {
@@ -9687,7 +9709,7 @@ export namespace Core {
         /**
          * The secret version of the `connectivityAssociationKey` secret in Vault.
          */
-        connectivityAssociationKeySecretVersion: pulumi.Input<string>;
+        connectivityAssociationKeySecretVersion?: pulumi.Input<string>;
         /**
          * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
          */
@@ -9695,7 +9717,7 @@ export namespace Core {
         /**
          * The secret version of the connectivity association name secret in Vault.
          */
-        connectivityAssociationNameSecretVersion: pulumi.Input<string>;
+        connectivityAssociationNameSecretVersion?: pulumi.Input<string>;
     }
 
     export interface CrossConnectMacsecProperties {
@@ -12717,1688 +12739,6 @@ export namespace DataCatalog {
 
 }
 
-export namespace DataConnectivity {
-    export interface GetRegistriesFilter {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetRegistriesFilterArgs {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetRegistryConnectionsFilter {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetRegistryConnectionsFilterArgs {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetRegistryDataAssetsFilter {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetRegistryDataAssetsFilterArgs {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetRegistryFoldersFilter {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetRegistryFoldersFilterArgs {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetRegistryTypesFilter {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetRegistryTypesFilterArgs {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface RegistryConnectionConnectionProperty {
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The value for the connection name property.
-         */
-        value?: pulumi.Input<string>;
-    }
-
-    export interface RegistryConnectionMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryConnectionMetadataAggregator {
-        /**
-         * (Updatable) The description of the aggregator.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifier of the aggregator.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific Connection Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryConnectionPrimarySchema {
-        /**
-         * (Updatable) The default connection key.
-         */
-        defaultConnection?: pulumi.Input<string>;
-        /**
-         * (Updatable) The description of the aggregator.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The external key of the object.
-         */
-        externalKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifier of the aggregator.
-         */
-        identifier: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the schema has containers.
-         */
-        isHasContainers?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key: pulumi.Input<string>;
-        /**
-         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
-         */
-        metadata?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchemaMetadata>;
-        /**
-         * (Updatable) The object type.
-         */
-        modelType: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of the object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchemaParentRef>;
-        /**
-         * (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
-         */
-        resourceName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryConnectionPrimarySchemaMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchemaMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryConnectionPrimarySchemaMetadataAggregator {
-        /**
-         * (Updatable) The description of the aggregator.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifier of the aggregator.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific Connection Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryConnectionPrimarySchemaParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryConnectionRegistryMetadata {
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who created the object.
-         */
-        createdByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who created the object.
-         */
-        createdByUserName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who updated the object.
-         */
-        updatedByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who updated the object.
-         */
-        updatedByUserName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnection {
-        /**
-         * (Updatable) The properties of the connection.
-         */
-        connectionProperties?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionConnectionProperty>[]>;
-        /**
-         * (Updatable) A user-defined description for the object.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier: pulumi.Input<string>;
-        /**
-         * (Updatable) The default property of the connection.
-         */
-        isDefault?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
-         */
-        metadata?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionMetadata>;
-        /**
-         * (Updatable) The property which differentiates the subtypes.
-         */
-        modelType: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The schema object.
-         */
-        primarySchema?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchema>;
-        /**
-         * (Updatable) All the properties for the data asset in a key-value map format.
-         */
-        properties: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Information about the object and its parent.
-         */
-        registryMetadata?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionRegistryMetadata>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionConnectionProperty {
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The value for the connection name property.
-         */
-        value?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionMetadataAggregator {
-        /**
-         * (Updatable) A user-defined description for the object.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionPrimarySchema {
-        /**
-         * (Updatable) The default connection key.
-         */
-        defaultConnection?: pulumi.Input<string>;
-        /**
-         * (Updatable) A user-defined description for the object.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The external key of the object.
-         */
-        externalKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the schema has containers.
-         */
-        isHasContainers?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key: pulumi.Input<string>;
-        /**
-         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
-         */
-        metadata?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaMetadata>;
-        /**
-         * (Updatable) The property which differentiates the subtypes.
-         */
-        modelType: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaParentRef>;
-        /**
-         * (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
-         */
-        resourceName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionPrimarySchemaMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
-        /**
-         * (Updatable) A user-defined description for the object.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionPrimarySchemaParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetDefaultConnectionRegistryMetadata {
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who created the object.
-         */
-        createdByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who created the object.
-         */
-        createdByUserName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who updated the object.
-         */
-        updatedByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who updated the object.
-         */
-        updatedByUserName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetMetadataAggregator {
-        /**
-         * (Updatable) A user-defined description for the object.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetNativeTypeSystem {
-        /**
-         * (Updatable) A user-defined description for the object.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) The property which differentiates the subtypes.
-         */
-        modelType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemParentRef>;
-        /**
-         * (Updatable) The type system to map from.
-         */
-        typeMappingFrom?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) The type system to map to.
-         */
-        typeMappingTo?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) An array of types.
-         */
-        types?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemType>[]>;
-    }
-
-    export interface RegistryDataAssetNativeTypeSystemParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetNativeTypeSystemType {
-        /**
-         * (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
-         */
-        configDefinition?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeConfigDefinition>;
-        /**
-         * (Updatable) A user-defined description for the object.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The data type.
-         */
-        dtType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) The property which differentiates the subtypes.
-         */
-        modelType: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeParentRef>;
-        /**
-         * (Updatable) The data type system name.
-         */
-        typeSystemName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetNativeTypeSystemTypeConfigDefinition {
-        /**
-         * (Updatable) The parameter configuration details.
-         */
-        configParameterDefinitions?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the configuration is contained.
-         */
-        isContained?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) The property which differentiates the subtypes.
-         */
-        modelType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef>;
-    }
-
-    export interface RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetNativeTypeSystemTypeParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryDataAssetRegistryMetadata {
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who created the object.
-         */
-        createdByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who created the object.
-         */
-        createdByUserName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The identifying key for the object.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who updated the object.
-         */
-        updatedByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who updated the object.
-         */
-        updatedByUserName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAsset {
-        /**
-         * (Updatable) Additional properties for the data asset.
-         */
-        assetProperties?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) The default connection key.
-         */
-        defaultConnection?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnection>;
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The external key of the object.
-         */
-        externalKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier: pulumi.Input<string>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key: pulumi.Input<string>;
-        /**
-         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
-         */
-        metadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetMetadata>;
-        /**
-         * (Updatable) The type of the folder.
-         */
-        modelType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The type system maps from and to a type.
-         */
-        nativeTypeSystem?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystem>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) All the properties for the data asset in a key-value map format.
-         */
-        properties?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Information about the object and its parent.
-         */
-        registryMetadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetRegistryMetadata>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnection {
-        /**
-         * (Updatable) The properties of the connection.
-         */
-        connectionProperties?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionConnectionProperty>[]>;
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier: pulumi.Input<string>;
-        /**
-         * (Updatable) The default property of the connection.
-         */
-        isDefault?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key: pulumi.Input<string>;
-        /**
-         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
-         */
-        metadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionMetadata>;
-        /**
-         * (Updatable) The type of the folder.
-         */
-        modelType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The schema object.
-         */
-        primarySchema?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchema>;
-        /**
-         * (Updatable) All the properties for the data asset in a key-value map format.
-         */
-        properties?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Information about the object and its parent.
-         */
-        registryMetadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionRegistryMetadata>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionConnectionProperty {
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The value for the connection name property.
-         */
-        value?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionMetadataAggregator {
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionPrimarySchema {
-        /**
-         * (Updatable) The default connection key.
-         */
-        defaultConnection?: pulumi.Input<string>;
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The external key of the object.
-         */
-        externalKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the schema has containers.
-         */
-        isHasContainers?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key: pulumi.Input<string>;
-        /**
-         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
-         */
-        metadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata>;
-        /**
-         * (Updatable) The type of the folder.
-         */
-        modelType: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef>;
-        /**
-         * (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
-         */
-        resourceName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetDefaultConnectionRegistryMetadata {
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who created the object.
-         */
-        createdByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who created the object.
-         */
-        createdByUserName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who updated the object.
-         */
-        updatedByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who updated the object.
-         */
-        updatedByUserName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetMetadata {
-        /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
-         */
-        aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetMetadataAggregator>;
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that created the object.
-         */
-        createdByName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The full path to identify the object.
-         */
-        identifierPath?: pulumi.Input<string>;
-        /**
-         * (Updatable) Information property fields.
-         */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedBy?: pulumi.Input<string>;
-        /**
-         * (Updatable) The user that updated the object.
-         */
-        updatedByName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetMetadataAggregator {
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specific DataAsset Type
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetNativeTypeSystem {
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-         */
-        identifier?: pulumi.Input<string>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) The type of the folder.
-         */
-        modelType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) The version of the object that is used to track changes in the object instance.
-         */
-        objectVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemParentRef>;
-        /**
-         * (Updatable) The type system to map from.
-         */
-        typeMappingFrom?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) The type system to map to.
-         */
-        typeMappingTo?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) An array of types.
-         */
-        types?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemType>[]>;
-    }
-
-    export interface RegistryFolderDataAssetNativeTypeSystemParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetNativeTypeSystemType {
-        /**
-         * (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
-         */
-        configDefinition?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition>;
-        /**
-         * (Updatable) User-defined description of the folder.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The data type.
-         */
-        dtType?: pulumi.Input<string>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) The type of the folder.
-         */
-        modelType: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeParentRef>;
-        /**
-         * (Updatable) The data type system name.
-         */
-        typeSystemName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
-        /**
-         * (Updatable) The parameter configuration details.
-         */
-        configParameterDefinitions?: pulumi.Input<{[key: string]: any}>;
-        /**
-         * (Updatable) Specifies whether the configuration is contained.
-         */
-        isContained?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) The type of the folder.
-         */
-        modelType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The model version of an object.
-         */
-        modelVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         */
-        objectStatus?: pulumi.Input<number>;
-        /**
-         * (Updatable) A reference to the parent object.
-         */
-        parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef>;
-    }
-
-    export interface RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetNativeTypeSystemTypeParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderDataAssetRegistryMetadata {
-        /**
-         * (Updatable) The owning object's key for this object.
-         */
-        aggregatorKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who created the object.
-         */
-        createdByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who created the object.
-         */
-        createdByUserName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies whether the object is a favorite.
-         */
-        isFavorite?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
-         */
-        key?: pulumi.Input<string>;
-        /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         */
-        labels?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The registry version.
-         */
-        registryVersion?: pulumi.Input<number>;
-        /**
-         * (Updatable) The date and time that the object was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The date and time that the object was updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of the user who updated the object.
-         */
-        updatedByUserId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the user who updated the object.
-         */
-        updatedByUserName?: pulumi.Input<string>;
-    }
-
-    export interface RegistryFolderParentRef {
-        /**
-         * (Updatable) Key of the parent object.
-         */
-        parent?: pulumi.Input<string>;
-    }
-}
-
 export namespace DataFlow {
     export interface ApplicationApplicationLogConfig {
         /**
@@ -15190,7 +13530,7 @@ export namespace DataSafe {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+         * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
          */
         timeLastCollected?: pulumi.Input<string>;
         /**
@@ -15449,6 +13789,30 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMaskingPolicyMaskingObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaskingPolicyMaskingObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMaskingPolicyMaskingSchemasFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaskingPolicyMaskingSchemasFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMaskingReportMaskedColumnsFilter {
         name: string;
         regex?: boolean;
@@ -15515,6 +13879,30 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSdmMaskingPolicyDifferencesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSdmMaskingPolicyDifferencesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSecurityAssessmentFindingFilter {
         name: string;
         regex?: boolean;
@@ -15546,6 +13934,30 @@ export namespace DataSafe {
     }
 
     export interface GetSecurityAssessmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSensitiveDataModelSensitiveObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveDataModelSensitiveObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSensitiveDataModelSensitiveSchemasFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveDataModelSensitiveSchemasFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -15666,6 +14078,30 @@ export namespace DataSafe {
     }
 
     export interface GetTargetDatabasesTablesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUserAssessmentProfileAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUserAssessmentProfileAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUserAssessmentProfilesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUserAssessmentProfilesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -15937,7 +14373,7 @@ export namespace DataSafe {
          */
         fieldName: pulumi.Input<string>;
         /**
-         * (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+         * (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
          */
         isEnabled: pulumi.Input<boolean>;
         /**
@@ -16286,7 +14722,7 @@ export namespace DataSafe {
 
     export interface TargetDatabaseDatabaseDetails {
         /**
-         * (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+         * (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
          */
         autonomousDatabaseId?: pulumi.Input<string>;
         /**
@@ -16294,7 +14730,7 @@ export namespace DataSafe {
          */
         databaseType: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+         * (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
          */
         dbSystemId?: pulumi.Input<string>;
         /**
@@ -19413,6 +17849,18 @@ export namespace Database {
          * The status of Stack Monitoring.
          */
         stackMonitoringStatus?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationVipsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetApplicationVipsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAutonomousCharacterSetsFilter {
@@ -31338,6 +29786,10 @@ export namespace LoadBalancer {
          */
         intervalMs?: pulumi.Input<number>;
         /**
+         * (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+         */
+        isForcePlainText?: pulumi.Input<boolean>;
+        /**
          * (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
          */
         port?: pulumi.Input<number>;
@@ -31766,7 +30218,7 @@ export namespace LoadBalancer {
         /**
          * (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
          */
-        backendSetName?: pulumi.Input<string>;
+        backendSetName: pulumi.Input<string>;
         /**
          * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
          */
@@ -35789,6 +34241,42 @@ export namespace Oda {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetOdaPrivateEndpointAttachmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOdaPrivateEndpointAttachmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOdaPrivateEndpointScanProxiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOdaPrivateEndpointScanProxiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOdaPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOdaPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface OdaInstanceRestrictedOperation {
         /**
          * Name of the restricted operation.
@@ -35798,6 +34286,21 @@ export namespace Oda {
          * Name of the service restricting the operation.
          */
         restrictingService?: pulumi.Input<string>;
+    }
+
+    export interface OdaPrivateEndpointScanProxyScanListenerInfo {
+        /**
+         * FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
+         */
+        scanListenerFqdn?: pulumi.Input<string>;
+        /**
+         * A SCAN listener's IP of the customer's Real Application Cluster (RAC).
+         */
+        scanListenerIp?: pulumi.Input<string>;
+        /**
+         * The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
+         */
+        scanListenerPort?: pulumi.Input<number>;
     }
 }
 

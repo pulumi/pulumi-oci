@@ -250,6 +250,61 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
         return Optional.ofNullable(this.userName);
     }
 
+    /**
+     * A filter to return only items that match the specified user profile.
+     * 
+     */
+    @Import(name="userProfile")
+    private @Nullable Output<String> userProfile;
+
+    /**
+     * @return A filter to return only items that match the specified user profile.
+     * 
+     */
+    public Optional<Output<String>> userProfile() {
+        return Optional.ofNullable(this.userProfile);
+    }
+
+    /**
+     * A filter to return only items that match the specified user role.
+     * 
+     */
+    @Import(name="userRole")
+    private @Nullable Output<String> userRole;
+
+    /**
+     * @return A filter to return only items that match the specified user role.
+     * 
+     */
+    public Optional<Output<String>> userRole() {
+        return Optional.ofNullable(this.userRole);
+    }
+
+    /**
+     * A filter to return only items that match the specified user type. The possible values can be
+     * * ADMIN_PRIVILEGED
+     * * APPLICATION
+     * * PRIVILEGED
+     * * SCHEMA
+     * * NON_PRIVILEGED as specified by &#39;#/definitions/userTypes&#39;.
+     * 
+     */
+    @Import(name="userType")
+    private @Nullable Output<String> userType;
+
+    /**
+     * @return A filter to return only items that match the specified user type. The possible values can be
+     * * ADMIN_PRIVILEGED
+     * * APPLICATION
+     * * PRIVILEGED
+     * * SCHEMA
+     * * NON_PRIVILEGED as specified by &#39;#/definitions/userTypes&#39;.
+     * 
+     */
+    public Optional<Output<String>> userType() {
+        return Optional.ofNullable(this.userType);
+    }
+
     private GetUserAssessmentUsersArgs() {}
 
     private GetUserAssessmentUsersArgs(GetUserAssessmentUsersArgs $) {
@@ -269,6 +324,9 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
         this.userCategory = $.userCategory;
         this.userKey = $.userKey;
         this.userName = $.userName;
+        this.userProfile = $.userProfile;
+        this.userRole = $.userRole;
+        this.userType = $.userType;
     }
 
     public static Builder builder() {
@@ -615,6 +673,79 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
          */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
+        }
+
+        /**
+         * @param userProfile A filter to return only items that match the specified user profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userProfile(@Nullable Output<String> userProfile) {
+            $.userProfile = userProfile;
+            return this;
+        }
+
+        /**
+         * @param userProfile A filter to return only items that match the specified user profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userProfile(String userProfile) {
+            return userProfile(Output.of(userProfile));
+        }
+
+        /**
+         * @param userRole A filter to return only items that match the specified user role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userRole(@Nullable Output<String> userRole) {
+            $.userRole = userRole;
+            return this;
+        }
+
+        /**
+         * @param userRole A filter to return only items that match the specified user role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userRole(String userRole) {
+            return userRole(Output.of(userRole));
+        }
+
+        /**
+         * @param userType A filter to return only items that match the specified user type. The possible values can be
+         * * ADMIN_PRIVILEGED
+         * * APPLICATION
+         * * PRIVILEGED
+         * * SCHEMA
+         * * NON_PRIVILEGED as specified by &#39;#/definitions/userTypes&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userType(@Nullable Output<String> userType) {
+            $.userType = userType;
+            return this;
+        }
+
+        /**
+         * @param userType A filter to return only items that match the specified user type. The possible values can be
+         * * ADMIN_PRIVILEGED
+         * * APPLICATION
+         * * PRIVILEGED
+         * * SCHEMA
+         * * NON_PRIVILEGED as specified by &#39;#/definitions/userTypes&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userType(String userType) {
+            return userType(Output.of(userType));
         }
 
         public GetUserAssessmentUsersArgs build() {

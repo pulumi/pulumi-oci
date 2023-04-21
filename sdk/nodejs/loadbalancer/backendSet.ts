@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     healthChecker: {
  *         protocol: _var.backend_set_health_checker_protocol,
  *         intervalMs: _var.backend_set_health_checker_interval_ms,
+ *         isForcePlainText: _var.backend_set_health_checker_is_force_plain_text,
  *         port: _var.backend_set_health_checker_port,
  *         responseBodyRegex: _var.backend_set_health_checker_response_body_regex,
  *         retries: _var.backend_set_health_checker_retries,

@@ -23,6 +23,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -116,7 +118,7 @@ namespace Pulumi.Oci.DataSafe
         public bool? CompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// A filter to return target databases that match the database type of the target database.
+        /// A filter to return only target databases that match the specified database type.
         /// </summary>
         [Input("databaseType")]
         public string? DatabaseType { get; set; }
@@ -136,13 +138,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// A filter to return target databases that match the infrastructure type of the target database.
+        /// A filter to return only target databases that match the specified infrastructure type.
         /// </summary>
         [Input("infrastructureType")]
         public string? InfrastructureType { get; set; }
 
         /// <summary>
-        /// A filter to return the target databases that matches the current state of the target database.
+        /// A filter to return only target databases that match the specified lifecycle state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -186,7 +188,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// A filter to return target databases that match the database type of the target database.
+        /// A filter to return only target databases that match the specified database type.
         /// </summary>
         [Input("databaseType")]
         public Input<string>? DatabaseType { get; set; }
@@ -206,13 +208,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// A filter to return target databases that match the infrastructure type of the target database.
+        /// A filter to return only target databases that match the specified infrastructure type.
         /// </summary>
         [Input("infrastructureType")]
         public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
-        /// A filter to return the target databases that matches the current state of the target database.
+        /// A filter to return only target databases that match the specified lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

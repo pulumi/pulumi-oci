@@ -114,7 +114,7 @@ class GetReportsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the report.
+        The current state of the audit report.
         """
         return pulumi.get(self, "state")
 
@@ -122,7 +122,7 @@ class GetReportsResult:
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        The type of the report.
+        The type of the audit report.
         """
         return pulumi.get(self, "type")
 

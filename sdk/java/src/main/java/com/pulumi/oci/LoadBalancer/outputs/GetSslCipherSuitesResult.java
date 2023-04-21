@@ -9,7 +9,6 @@ import com.pulumi.oci.LoadBalancer.outputs.GetSslCipherSuitesSslCipherSuite;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -20,7 +19,7 @@ public final class GetSslCipherSuitesResult {
      * 
      */
     private String id;
-    private @Nullable String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return The list of ssl_cipher_suites.
      * 
@@ -38,8 +37,8 @@ public final class GetSslCipherSuitesResult {
     public String id() {
         return this.id;
     }
-    public Optional<String> loadBalancerId() {
-        return Optional.ofNullable(this.loadBalancerId);
+    public String loadBalancerId() {
+        return this.loadBalancerId;
     }
     /**
      * @return The list of ssl_cipher_suites.
@@ -60,7 +59,7 @@ public final class GetSslCipherSuitesResult {
     public static final class Builder {
         private @Nullable List<GetSslCipherSuitesFilter> filters;
         private String id;
-        private @Nullable String loadBalancerId;
+        private String loadBalancerId;
         private List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
         public Builder() {}
         public Builder(GetSslCipherSuitesResult defaults) {
@@ -85,8 +84,8 @@ public final class GetSslCipherSuitesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerId(@Nullable String loadBalancerId) {
-            this.loadBalancerId = loadBalancerId;
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
         @CustomType.Setter

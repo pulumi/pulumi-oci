@@ -73,13 +73,13 @@ type GetReportResult struct {
 	// The OCID of the report definition.
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
 	ReportId           string `pulumi:"reportId"`
-	// The current state of the report.
+	// The current state of the audit report.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Specifies the time at which the report was generated.
+	// Specifies the date and time the report was generated.
 	TimeGenerated string `pulumi:"timeGenerated"`
-	// The type of the report.
+	// The type of the audit report.
 	Type string `pulumi:"type"`
 }
 
@@ -165,7 +165,7 @@ func (o GetReportResultOutput) ReportId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportResult) string { return v.ReportId }).(pulumi.StringOutput)
 }
 
-// The current state of the report.
+// The current state of the audit report.
 func (o GetReportResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -175,12 +175,12 @@ func (o GetReportResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetReportResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Specifies the time at which the report was generated.
+// Specifies the date and time the report was generated.
 func (o GetReportResultOutput) TimeGenerated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportResult) string { return v.TimeGenerated }).(pulumi.StringOutput)
 }
 
-// The type of the report.
+// The type of the audit report.
 func (o GetReportResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportResult) string { return v.Type }).(pulumi.StringOutput)
 }

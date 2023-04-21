@@ -306,6 +306,21 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    @Import(name="timeLastAssessed")
+    private @Nullable Output<String> timeLastAssessed;
+
+    /**
+     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public Optional<Output<String>> timeLastAssessed() {
+        return Optional.ofNullable(this.timeLastAssessed);
+    }
+
+    /**
      * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -336,14 +351,14 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Type of user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Type of user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     public Optional<Output<String>> type() {
@@ -372,6 +387,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         this.targetId = $.targetId;
         this.targetIds = $.targetIds;
         this.timeCreated = $.timeCreated;
+        this.timeLastAssessed = $.timeLastAssessed;
         this.timeUpdated = $.timeUpdated;
         this.triggeredBy = $.triggeredBy;
         this.type = $.type;
@@ -825,6 +841,27 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param timeLastAssessed The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastAssessed(@Nullable Output<String> timeLastAssessed) {
+            $.timeLastAssessed = timeLastAssessed;
+            return this;
+        }
+
+        /**
+         * @param timeLastAssessed The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastAssessed(String timeLastAssessed) {
+            return timeLastAssessed(Output.of(timeLastAssessed));
+        }
+
+        /**
          * @param timeUpdated The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
@@ -867,7 +904,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type Type of user assessment. The possible types are:
+         * @param type Type of user assessment. Type can be:
          * 
          * @return builder
          * 
@@ -878,7 +915,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type Type of user assessment. The possible types are:
+         * @param type Type of user assessment. Type can be:
          * 
          * @return builder
          * 

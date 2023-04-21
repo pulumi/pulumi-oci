@@ -12,22 +12,22 @@ import java.util.Objects;
 @CustomType
 public final class GetTargetDatabasesTargetDatabaseDatabaseDetail {
     /**
-     * @return The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     private String autonomousDatabaseId;
     /**
-     * @return A filter to return target databases that match the database type of the target database.
+     * @return A filter to return only target databases that match the specified database type.
      * 
      */
     private String databaseType;
     /**
-     * @return The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     private String dbSystemId;
     /**
-     * @return A filter to return target databases that match the infrastructure type of the target database.
+     * @return A filter to return only target databases that match the specified infrastructure type.
      * 
      */
     private String infrastructureType;
@@ -59,28 +59,28 @@ public final class GetTargetDatabasesTargetDatabaseDatabaseDetail {
 
     private GetTargetDatabasesTargetDatabaseDatabaseDetail() {}
     /**
-     * @return The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
     /**
-     * @return A filter to return target databases that match the database type of the target database.
+     * @return A filter to return only target databases that match the specified database type.
      * 
      */
     public String databaseType() {
         return this.databaseType;
     }
     /**
-     * @return The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     public String dbSystemId() {
         return this.dbSystemId;
     }
     /**
-     * @return A filter to return target databases that match the infrastructure type of the target database.
+     * @return A filter to return only target databases that match the specified infrastructure type.
      * 
      */
     public String infrastructureType() {

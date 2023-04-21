@@ -85,7 +85,7 @@ export interface GetTargetDatabaseRolesResult {
     readonly isOracleMaintained?: boolean;
     readonly roleNameContains?: string;
     /**
-     * Name of the role.
+     * The name of the role.
      */
     readonly roleNames?: string[];
     /**

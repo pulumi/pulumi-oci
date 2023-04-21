@@ -1920,10 +1920,10 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
         suggest = None
         if key == "connectivityAssociationKeySecretId":
             suggest = "connectivity_association_key_secret_id"
-        elif key == "connectivityAssociationKeySecretVersion":
-            suggest = "connectivity_association_key_secret_version"
         elif key == "connectivityAssociationNameSecretId":
             suggest = "connectivity_association_name_secret_id"
+        elif key == "connectivityAssociationKeySecretVersion":
+            suggest = "connectivity_association_key_secret_version"
         elif key == "connectivityAssociationNameSecretVersion":
             suggest = "connectivity_association_name_secret_version"
 
@@ -1940,19 +1940,21 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
 
     def __init__(__self__, *,
                  connectivity_association_key_secret_id: str,
-                 connectivity_association_key_secret_version: str,
                  connectivity_association_name_secret_id: str,
-                 connectivity_association_name_secret_version: str):
+                 connectivity_association_key_secret_version: Optional[str] = None,
+                 connectivity_association_name_secret_version: Optional[str] = None):
         """
         :param str connectivity_association_key_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-        :param str connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param str connectivity_association_name_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        :param str connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param str connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
         pulumi.set(__self__, "connectivity_association_key_secret_id", connectivity_association_key_secret_id)
-        pulumi.set(__self__, "connectivity_association_key_secret_version", connectivity_association_key_secret_version)
         pulumi.set(__self__, "connectivity_association_name_secret_id", connectivity_association_name_secret_id)
-        pulumi.set(__self__, "connectivity_association_name_secret_version", connectivity_association_name_secret_version)
+        if connectivity_association_key_secret_version is not None:
+            pulumi.set(__self__, "connectivity_association_key_secret_version", connectivity_association_key_secret_version)
+        if connectivity_association_name_secret_version is not None:
+            pulumi.set(__self__, "connectivity_association_name_secret_version", connectivity_association_name_secret_version)
 
     @property
     @pulumi.getter(name="connectivityAssociationKeySecretId")
@@ -1963,14 +1965,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
     @property
-    @pulumi.getter(name="connectivityAssociationKeySecretVersion")
-    def connectivity_association_key_secret_version(self) -> str:
-        """
-        The secret version of the `connectivityAssociationKey` secret in Vault.
-        """
-        return pulumi.get(self, "connectivity_association_key_secret_version")
-
-    @property
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> str:
         """
@@ -1979,8 +1973,16 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
     @property
+    @pulumi.getter(name="connectivityAssociationKeySecretVersion")
+    def connectivity_association_key_secret_version(self) -> Optional[str]:
+        """
+        The secret version of the `connectivityAssociationKey` secret in Vault.
+        """
+        return pulumi.get(self, "connectivity_association_key_secret_version")
+
+    @property
     @pulumi.getter(name="connectivityAssociationNameSecretVersion")
-    def connectivity_association_name_secret_version(self) -> str:
+    def connectivity_association_name_secret_version(self) -> Optional[str]:
         """
         The secret version of the connectivity association name secret in Vault.
         """

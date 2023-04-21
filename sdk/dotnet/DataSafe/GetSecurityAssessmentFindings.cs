@@ -15,32 +15,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// List all the findings from all the targets in the specified assessment.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testSecurityAssessmentFindings = Oci.DataSafe.GetSecurityAssessmentFindings.Invoke(new()
-        ///     {
-        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///         AccessLevel = @var.Security_assessment_finding_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_finding_compartment_id_in_subtree,
-        ///         FindingKey = @var.Security_assessment_finding_finding_key,
-        ///         Severity = @var.Security_assessment_finding_severity,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecurityAssessmentFindingsResult> InvokeAsync(GetSecurityAssessmentFindingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsArgs(), options.WithDefaults());
@@ -49,32 +23,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// List all the findings from all the targets in the specified assessment.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testSecurityAssessmentFindings = Oci.DataSafe.GetSecurityAssessmentFindings.Invoke(new()
-        ///     {
-        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///         AccessLevel = @var.Security_assessment_finding_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_finding_compartment_id_in_subtree,
-        ///         FindingKey = @var.Security_assessment_finding_finding_key,
-        ///         Severity = @var.Security_assessment_finding_severity,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecurityAssessmentFindingsResult> Invoke(GetSecurityAssessmentFindingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsInvokeArgs(), options.WithDefaults());
@@ -108,6 +56,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("findingKey")]
         public string? FindingKey { get; set; }
+
+        /// <summary>
+        /// An optional filter to return only findings containing the specified reference.
+        /// </summary>
+        [Input("references")]
+        public string? References { get; set; }
 
         /// <summary>
         /// The OCID of the security assessment.
@@ -156,6 +110,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? FindingKey { get; set; }
 
         /// <summary>
+        /// An optional filter to return only findings containing the specified reference.
+        /// </summary>
+        [Input("references")]
+        public Input<string>? References { get; set; }
+
+        /// <summary>
         /// The OCID of the security assessment.
         /// </summary>
         [Input("securityAssessmentId", required: true)]
@@ -189,6 +149,10 @@ namespace Pulumi.Oci.DataSafe
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+        /// </summary>
+        public readonly string? References;
         public readonly string SecurityAssessmentId;
         /// <summary>
         /// The severity of the finding.
@@ -209,6 +173,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            string? references,
+
             string securityAssessmentId,
 
             string? severity)
@@ -219,6 +185,7 @@ namespace Pulumi.Oci.DataSafe
             FindingKey = findingKey;
             Findings = findings;
             Id = id;
+            References = references;
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
         }

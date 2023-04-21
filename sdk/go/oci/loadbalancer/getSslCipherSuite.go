@@ -29,8 +29,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetSslCipherSuite(ctx, &loadbalancer.GetSslCipherSuiteArgs{
-//				Name:           _var.Ssl_cipher_suite_name,
 //				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
+//				Name:           _var.Ssl_cipher_suite_name,
 //			}, nil)
 //			if err != nil {
 //				return err

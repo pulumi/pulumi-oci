@@ -336,6 +336,21 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    @Import(name="timeLastAssessed")
+    private @Nullable Output<String> timeLastAssessed;
+
+    /**
+     * @return The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public Optional<Output<String>> timeLastAssessed() {
+        return Optional.ofNullable(this.timeLastAssessed);
+    }
+
+    /**
      * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -404,6 +419,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         this.targetIds = $.targetIds;
         this.targetVersion = $.targetVersion;
         this.timeCreated = $.timeCreated;
+        this.timeLastAssessed = $.timeLastAssessed;
         this.timeUpdated = $.timeUpdated;
         this.triggeredBy = $.triggeredBy;
         this.type = $.type;
@@ -906,6 +922,27 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeLastAssessed The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastAssessed(@Nullable Output<String> timeLastAssessed) {
+            $.timeLastAssessed = timeLastAssessed;
+            return this;
+        }
+
+        /**
+         * @param timeLastAssessed The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastAssessed(String timeLastAssessed) {
+            return timeLastAssessed(Output.of(timeLastAssessed));
         }
 
         /**

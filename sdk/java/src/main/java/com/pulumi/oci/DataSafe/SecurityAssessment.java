@@ -367,6 +367,20 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
+     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    @Export(name="timeLastAssessed", type=String.class, parameters={})
+    private Output<String> timeLastAssessed;
+
+    /**
+     * @return The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public Output<String> timeLastAssessed() {
+        return this.timeLastAssessed;
+    }
+    /**
      * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */

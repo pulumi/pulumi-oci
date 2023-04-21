@@ -49,6 +49,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &LibraryMasingFormat{}
 	case "oci:DataSafe/maskData:MaskData":
 		r = &MaskData{}
+	case "oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns":
+		r = &MaskingPoliciesApplyDifferenceToMaskingColumns{}
 	case "oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn":
 		r = &MaskingPoliciesMaskingColumn{}
 	case "oci:DataSafe/maskingPolicy:MaskingPolicy":
@@ -57,6 +59,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OnPremConnector{}
 	case "oci:DataSafe/reportDefinition:ReportDefinition":
 		r = &ReportDefinition{}
+	case "oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference":
+		r = &SdmMaskingPolicyDifference{}
 	case "oci:DataSafe/securityAssessment:SecurityAssessment":
 		r = &SecurityAssessment{}
 	case "oci:DataSafe/sensitiveDataModel:SensitiveDataModel":
@@ -166,6 +170,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/maskingPoliciesMaskingColumn",
 		&module{version},
 	)
@@ -182,6 +191,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/reportDefinition",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/sdmMaskingPolicyDifference",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

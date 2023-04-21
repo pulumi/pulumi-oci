@@ -169,7 +169,7 @@ export interface GetUserAssessmentsResult {
      */
     readonly triggeredBy?: string;
     /**
-     * Type of user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      */
     readonly type?: string;
     /**

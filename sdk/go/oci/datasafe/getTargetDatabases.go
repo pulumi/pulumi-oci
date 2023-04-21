@@ -66,14 +66,14 @@ type GetTargetDatabasesArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
-	// A filter to return target databases that match the database type of the target database.
+	// A filter to return only target databases that match the specified database type.
 	DatabaseType *string `pulumi:"databaseType"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetTargetDatabasesFilter `pulumi:"filters"`
-	// A filter to return target databases that match the infrastructure type of the target database.
+	// A filter to return only target databases that match the specified infrastructure type.
 	InfrastructureType *string `pulumi:"infrastructureType"`
-	// A filter to return the target databases that matches the current state of the target database.
+	// A filter to return only target databases that match the specified lifecycle state.
 	State *string `pulumi:"state"`
 	// A filter to return the target database that matches the specified OCID.
 	TargetDatabaseId *string `pulumi:"targetDatabaseId"`
@@ -125,14 +125,14 @@ type GetTargetDatabasesOutputArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
-	// A filter to return target databases that match the database type of the target database.
+	// A filter to return only target databases that match the specified database type.
 	DatabaseType pulumi.StringPtrInput `pulumi:"databaseType"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput              `pulumi:"displayName"`
 	Filters     GetTargetDatabasesFilterArrayInput `pulumi:"filters"`
-	// A filter to return target databases that match the infrastructure type of the target database.
+	// A filter to return only target databases that match the specified infrastructure type.
 	InfrastructureType pulumi.StringPtrInput `pulumi:"infrastructureType"`
-	// A filter to return the target databases that matches the current state of the target database.
+	// A filter to return only target databases that match the specified lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter to return the target database that matches the specified OCID.
 	TargetDatabaseId pulumi.StringPtrInput `pulumi:"targetDatabaseId"`

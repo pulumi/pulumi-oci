@@ -25,6 +25,7 @@ public final class GetSecurityAssessmentFindingResult {
      * 
      */
     private String id;
+    private @Nullable String references;
     private String securityAssessmentId;
     private @Nullable String severity;
 
@@ -51,6 +52,9 @@ public final class GetSecurityAssessmentFindingResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> references() {
+        return Optional.ofNullable(this.references);
+    }
     public String securityAssessmentId() {
         return this.securityAssessmentId;
     }
@@ -73,6 +77,7 @@ public final class GetSecurityAssessmentFindingResult {
         private @Nullable String findingKey;
         private List<GetSecurityAssessmentFindingFinding> findings;
         private String id;
+        private @Nullable String references;
         private String securityAssessmentId;
         private @Nullable String severity;
         public Builder() {}
@@ -84,6 +89,7 @@ public final class GetSecurityAssessmentFindingResult {
     	      this.findingKey = defaults.findingKey;
     	      this.findings = defaults.findings;
     	      this.id = defaults.id;
+    	      this.references = defaults.references;
     	      this.securityAssessmentId = defaults.securityAssessmentId;
     	      this.severity = defaults.severity;
         }
@@ -125,6 +131,11 @@ public final class GetSecurityAssessmentFindingResult {
             return this;
         }
         @CustomType.Setter
+        public Builder references(@Nullable String references) {
+            this.references = references;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAssessmentId(String securityAssessmentId) {
             this.securityAssessmentId = Objects.requireNonNull(securityAssessmentId);
             return this;
@@ -142,6 +153,7 @@ public final class GetSecurityAssessmentFindingResult {
             o.findingKey = findingKey;
             o.findings = findings;
             o.id = id;
+            o.references = references;
             o.securityAssessmentId = securityAssessmentId;
             o.severity = severity;
             return o;

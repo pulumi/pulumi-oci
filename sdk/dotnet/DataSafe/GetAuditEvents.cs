@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -80,6 +81,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -193,7 +195,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAuditEventsAuditEventCollectionResult> AuditEventCollections;
         /// <summary>
-        /// The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+        /// The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;

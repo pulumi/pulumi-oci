@@ -22,6 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -51,6 +52,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -108,7 +110,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Category;
         /// <summary>
-        /// An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        /// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetReportDefinitionColumnFilterResult> ColumnFilters;
         /// <summary>
@@ -124,7 +126,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        /// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         /// </summary>
         public readonly ImmutableArray<string> ComplianceStandards;
         /// <summary>
@@ -164,20 +166,20 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string ParentId;
         /// <summary>
-        /// The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        /// The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         /// </summary>
         public readonly string RecordTimeSpan;
         public readonly string ReportDefinitionId;
         /// <summary>
-        /// Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
         public readonly string Schedule;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        /// The OCID of the compartment in which the scheduled resource should be created.
         /// </summary>
         public readonly string ScheduledReportCompartmentId;
         /// <summary>
-        /// Specifies the format of report to be excel or pdf
+        /// Specifies the format of the report ( either XLS or PDF )
         /// </summary>
         public readonly string ScheduledReportMimeType;
         /// <summary>
@@ -185,7 +187,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string ScheduledReportName;
         /// <summary>
-        /// Specifies the limit on number of rows in report.
+        /// Specifies the limit on the number of rows in the report.
         /// </summary>
         public readonly int ScheduledReportRowLimit;
         /// <summary>
@@ -205,11 +207,11 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Specifies the time at which the report definition was created.
+        /// Specifies the data and time the report definition was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time of the report definition update in Data Safe.
+        /// The date and time the report definition was update.
         /// </summary>
         public readonly string TimeUpdated;
 

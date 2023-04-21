@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string> FieldName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        /// (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;

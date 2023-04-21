@@ -40,6 +40,7 @@ namespace Pulumi.Oci.Core
     /// ### Create image from instance in tenancy
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.Core
     /// ### Create image from exported image via direct access to object store
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -93,6 +95,7 @@ namespace Pulumi.Oci.Core
     /// ### Create image from exported image at publicly accessible uri
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 

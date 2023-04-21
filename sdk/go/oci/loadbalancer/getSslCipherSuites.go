@@ -29,7 +29,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetSslCipherSuites(ctx, &loadbalancer.GetSslCipherSuitesArgs{
-//				LoadBalancerId: pulumi.StringRef(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -52,15 +52,15 @@ func GetSslCipherSuites(ctx *pulumi.Context, args *GetSslCipherSuitesArgs, opts 
 type GetSslCipherSuitesArgs struct {
 	Filters []GetSslCipherSuitesFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
-	LoadBalancerId *string `pulumi:"loadBalancerId"`
+	LoadBalancerId string `pulumi:"loadBalancerId"`
 }
 
 // A collection of values returned by getSslCipherSuites.
 type GetSslCipherSuitesResult struct {
 	Filters []GetSslCipherSuitesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string  `pulumi:"id"`
-	LoadBalancerId *string `pulumi:"loadBalancerId"`
+	Id             string `pulumi:"id"`
+	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The list of ssl_cipher_suites.
 	SslCipherSuites []GetSslCipherSuitesSslCipherSuite `pulumi:"sslCipherSuites"`
 }
@@ -82,7 +82,7 @@ func GetSslCipherSuitesOutput(ctx *pulumi.Context, args GetSslCipherSuitesOutput
 type GetSslCipherSuitesOutputArgs struct {
 	Filters GetSslCipherSuitesFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
-	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
+	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 }
 
 func (GetSslCipherSuitesOutputArgs) ElementType() reflect.Type {
@@ -113,8 +113,8 @@ func (o GetSslCipherSuitesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSslCipherSuitesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetSslCipherSuitesResultOutput) LoadBalancerId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSslCipherSuitesResult) *string { return v.LoadBalancerId }).(pulumi.StringPtrOutput)
+func (o GetSslCipherSuitesResultOutput) LoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSslCipherSuitesResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
 // The list of ssl_cipher_suites.

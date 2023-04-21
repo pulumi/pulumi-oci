@@ -15,8 +15,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// <summary>
         /// (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
         /// </summary>
-        [Input("backendSetName")]
-        public Input<string>? BackendSetName { get; set; }
+        [Input("backendSetName", required: true)]
+        public Input<string> BackendSetName { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.

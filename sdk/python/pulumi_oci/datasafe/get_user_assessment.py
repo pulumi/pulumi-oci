@@ -22,7 +22,7 @@ class GetUserAssessmentResult:
     """
     A collection of values returned by getUserAssessment.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, schedule=None, schedule_assessment_id=None, state=None, statistics=None, system_tags=None, target_id=None, target_ids=None, time_created=None, time_updated=None, triggered_by=None, type=None, user_assessment_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, schedule=None, schedule_assessment_id=None, state=None, statistics=None, system_tags=None, target_id=None, target_ids=None, time_created=None, time_last_assessed=None, time_updated=None, triggered_by=None, type=None, user_assessment_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -83,6 +83,9 @@ class GetUserAssessmentResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_last_assessed and not isinstance(time_last_assessed, str):
+            raise TypeError("Expected argument 'time_last_assessed' to be a str")
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -254,6 +257,14 @@ class GetUserAssessmentResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> str:
+        """
+        The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -273,7 +284,7 @@ class GetUserAssessmentResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        Type of user assessment. The possible types are:
+        Type of user assessment. Type can be:
         """
         return pulumi.get(self, "type")
 
@@ -309,6 +320,7 @@ class AwaitableGetUserAssessmentResult(GetUserAssessmentResult):
             target_id=self.target_id,
             target_ids=self.target_ids,
             time_created=self.time_created,
+            time_last_assessed=self.time_last_assessed,
             time_updated=self.time_updated,
             triggered_by=self.triggered_by,
             type=self.type,
@@ -360,6 +372,7 @@ def get_user_assessment(user_assessment_id: Optional[str] = None,
         target_id=__ret__.target_id,
         target_ids=__ret__.target_ids,
         time_created=__ret__.time_created,
+        time_last_assessed=__ret__.time_last_assessed,
         time_updated=__ret__.time_updated,
         triggered_by=__ret__.triggered_by,
         type=__ret__.type,

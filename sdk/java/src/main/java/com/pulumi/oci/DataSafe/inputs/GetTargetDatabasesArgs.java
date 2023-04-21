@@ -79,14 +79,14 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return target databases that match the database type of the target database.
+     * A filter to return only target databases that match the specified database type.
      * 
      */
     @Import(name="databaseType")
     private @Nullable Output<String> databaseType;
 
     /**
-     * @return A filter to return target databases that match the database type of the target database.
+     * @return A filter to return only target databases that match the specified database type.
      * 
      */
     public Optional<Output<String>> databaseType() {
@@ -116,14 +116,14 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return target databases that match the infrastructure type of the target database.
+     * A filter to return only target databases that match the specified infrastructure type.
      * 
      */
     @Import(name="infrastructureType")
     private @Nullable Output<String> infrastructureType;
 
     /**
-     * @return A filter to return target databases that match the infrastructure type of the target database.
+     * @return A filter to return only target databases that match the specified infrastructure type.
      * 
      */
     public Optional<Output<String>> infrastructureType() {
@@ -131,14 +131,14 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return the target databases that matches the current state of the target database.
+     * A filter to return only target databases that match the specified lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return the target databases that matches the current state of the target database.
+     * @return A filter to return only target databases that match the specified lifecycle state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -278,7 +278,7 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param databaseType A filter to return target databases that match the database type of the target database.
+         * @param databaseType A filter to return only target databases that match the specified database type.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param databaseType A filter to return target databases that match the database type of the target database.
+         * @param databaseType A filter to return only target databases that match the specified database type.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param infrastructureType A filter to return target databases that match the infrastructure type of the target database.
+         * @param infrastructureType A filter to return only target databases that match the specified infrastructure type.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param infrastructureType A filter to return target databases that match the infrastructure type of the target database.
+         * @param infrastructureType A filter to return only target databases that match the specified infrastructure type.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state A filter to return the target databases that matches the current state of the target database.
+         * @param state A filter to return only target databases that match the specified lifecycle state.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state A filter to return the target databases that matches the current state of the target database.
+         * @param state A filter to return only target databases that match the specified lifecycle state.
          * 
          * @return builder
          * 

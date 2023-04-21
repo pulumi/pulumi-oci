@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Updates alert status of the specified alert.
+ * Updates the status of the specified alert.
  *
  * ## Import
  *

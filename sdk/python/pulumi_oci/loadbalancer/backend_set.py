@@ -306,6 +306,7 @@ class BackendSet(pulumi.CustomResource):
             health_checker=oci.load_balancer.BackendSetHealthCheckerArgs(
                 protocol=var["backend_set_health_checker_protocol"],
                 interval_ms=var["backend_set_health_checker_interval_ms"],
+                is_force_plain_text=var["backend_set_health_checker_is_force_plain_text"],
                 port=var["backend_set_health_checker_port"],
                 response_body_regex=var["backend_set_health_checker_response_body_regex"],
                 retries=var["backend_set_health_checker_retries"],
@@ -387,6 +388,7 @@ class BackendSet(pulumi.CustomResource):
             health_checker=oci.load_balancer.BackendSetHealthCheckerArgs(
                 protocol=var["backend_set_health_checker_protocol"],
                 interval_ms=var["backend_set_health_checker_interval_ms"],
+                is_force_plain_text=var["backend_set_health_checker_is_force_plain_text"],
                 port=var["backend_set_health_checker_port"],
                 response_body_regex=var["backend_set_health_checker_response_body_regex"],
                 retries=var["backend_set_health_checker_retries"],

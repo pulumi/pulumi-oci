@@ -20,6 +20,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -181,6 +182,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        [Output("timeLastAssessed")]
+        public Output<string> TimeLastAssessed { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -475,6 +482,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        [Input("timeLastAssessed")]
+        public Input<string>? TimeLastAssessed { get; set; }
 
         /// <summary>
         /// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

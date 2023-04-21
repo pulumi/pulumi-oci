@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetTargetDatabaseResult {
     /**
-     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * @return The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     private List<String> associatedResourceIds;
@@ -37,7 +37,7 @@ public final class GetTargetDatabaseResult {
      */
     private List<GetTargetDatabaseCredential> credentials;
     /**
-     * @return Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * @return Details of the database for the registration in Data Safe.
      * 
      */
     private List<GetTargetDatabaseDatabaseDetail> databaseDetails;
@@ -100,7 +100,7 @@ public final class GetTargetDatabaseResult {
 
     private GetTargetDatabaseResult() {}
     /**
-     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * @return The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     public List<String> associatedResourceIds() {
@@ -128,7 +128,7 @@ public final class GetTargetDatabaseResult {
         return this.credentials;
     }
     /**
-     * @return Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * @return Details of the database for the registration in Data Safe.
      * 
      */
     public List<GetTargetDatabaseDatabaseDetail> databaseDetails() {

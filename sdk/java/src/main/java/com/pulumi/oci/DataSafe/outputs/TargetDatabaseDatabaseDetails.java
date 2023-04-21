@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetDatabaseDatabaseDetails {
     /**
-     * @return (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     private @Nullable String autonomousDatabaseId;
@@ -24,7 +24,7 @@ public final class TargetDatabaseDatabaseDetails {
      */
     private String databaseType;
     /**
-     * @return (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     private @Nullable String dbSystemId;
@@ -61,7 +61,7 @@ public final class TargetDatabaseDatabaseDetails {
 
     private TargetDatabaseDatabaseDetails() {}
     /**
-     * @return (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     public Optional<String> autonomousDatabaseId() {
@@ -75,7 +75,7 @@ public final class TargetDatabaseDatabaseDetails {
         return this.databaseType;
     }
     /**
-     * @return (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     public Optional<String> dbSystemId() {

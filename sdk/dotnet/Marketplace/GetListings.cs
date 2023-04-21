@@ -37,6 +37,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -91,6 +92,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -136,7 +138,7 @@ namespace Pulumi.Oci.Marketplace
         }
 
         /// <summary>
-        /// The unique identifier for the compartment.
+        /// The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -248,7 +250,7 @@ namespace Pulumi.Oci.Marketplace
         }
 
         /// <summary>
-        /// The unique identifier for the compartment.
+        /// The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

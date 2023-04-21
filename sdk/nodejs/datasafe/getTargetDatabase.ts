@@ -45,7 +45,7 @@ export interface GetTargetDatabaseArgs {
  */
 export interface GetTargetDatabaseResult {
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      */
     readonly associatedResourceIds: string[];
     /**
@@ -61,7 +61,7 @@ export interface GetTargetDatabaseResult {
      */
     readonly credentials: outputs.DataSafe.GetTargetDatabaseCredential[];
     /**
-     * Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * Details of the database for the registration in Data Safe.
      */
     readonly databaseDetails: outputs.DataSafe.GetTargetDatabaseDatabaseDetail[];
     /**

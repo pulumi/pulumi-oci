@@ -310,7 +310,7 @@ def get_alert(alert_id: Optional[str] = None,
     """
     This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Gets the details of alert by its ID.
+    Gets the details of the specified alerts.
 
     ## Example Usage
 
@@ -361,7 +361,7 @@ def get_alert_output(alert_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Gets the details of alert by its ID.
+    Gets the details of the specified alerts.
 
     ## Example Usage
 

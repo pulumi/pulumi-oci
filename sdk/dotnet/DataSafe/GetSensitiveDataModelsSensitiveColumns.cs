@@ -23,6 +23,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -34,6 +35,7 @@ namespace Pulumi.Oci.DataSafe
         ///         ColumnGroup = @var.Sensitive_data_models_sensitive_column_column_group,
         ///         ColumnNames = @var.Sensitive_data_models_sensitive_column_column_name,
         ///         DataTypes = @var.Sensitive_data_models_sensitive_column_data_type,
+        ///         IsCaseInSensitive = @var.Sensitive_data_models_sensitive_column_is_case_in_sensitive,
         ///         Objects = @var.Sensitive_data_models_sensitive_column_object,
         ///         ObjectTypes = @var.Sensitive_data_models_sensitive_column_object_type,
         ///         ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_key,
@@ -68,6 +70,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -79,6 +82,7 @@ namespace Pulumi.Oci.DataSafe
         ///         ColumnGroup = @var.Sensitive_data_models_sensitive_column_column_group,
         ///         ColumnNames = @var.Sensitive_data_models_sensitive_column_column_name,
         ///         DataTypes = @var.Sensitive_data_models_sensitive_column_data_type,
+        ///         IsCaseInSensitive = @var.Sensitive_data_models_sensitive_column_is_case_in_sensitive,
         ///         Objects = @var.Sensitive_data_models_sensitive_column_object,
         ///         ObjectTypes = @var.Sensitive_data_models_sensitive_column_object_type,
         ///         ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_key,
@@ -142,6 +146,12 @@ namespace Pulumi.Oci.DataSafe
             get => _filters ?? (_filters = new List<Inputs.GetSensitiveDataModelsSensitiveColumnsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+        /// </summary>
+        [Input("isCaseInSensitive")]
+        public bool? IsCaseInSensitive { get; set; }
 
         [Input("objectTypes")]
         private List<string>? _objectTypes;
@@ -309,6 +319,12 @@ namespace Pulumi.Oci.DataSafe
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+        /// </summary>
+        [Input("isCaseInSensitive")]
+        public Input<bool>? IsCaseInSensitive { get; set; }
+
         [Input("objectTypes")]
         private InputList<string>? _objectTypes;
 
@@ -453,6 +469,7 @@ namespace Pulumi.Oci.DataSafe
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsCaseInSensitive;
         /// <summary>
         /// The type of the database object that contains the sensitive column.
         /// </summary>
@@ -504,6 +521,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool? isCaseInSensitive,
+
             ImmutableArray<string> objectTypes,
 
             ImmutableArray<string> objects,
@@ -537,6 +556,7 @@ namespace Pulumi.Oci.DataSafe
             DataTypes = dataTypes;
             Filters = filters;
             Id = id;
+            IsCaseInSensitive = isCaseInSensitive;
             ObjectTypes = objectTypes;
             Objects = objects;
             ParentColumnKeys = parentColumnKeys;

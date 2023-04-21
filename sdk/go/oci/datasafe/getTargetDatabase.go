@@ -56,7 +56,7 @@ type LookupTargetDatabaseArgs struct {
 
 // A collection of values returned by getTargetDatabase.
 type LookupTargetDatabaseResult struct {
-	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 	AssociatedResourceIds []string `pulumi:"associatedResourceIds"`
 	// The OCID of the compartment which contains the Data Safe target database.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -64,7 +64,7 @@ type LookupTargetDatabaseResult struct {
 	ConnectionOptions []GetTargetDatabaseConnectionOption `pulumi:"connectionOptions"`
 	// The database credentials required for Data Safe to connect to the database.
 	Credentials []GetTargetDatabaseCredential `pulumi:"credentials"`
-	// Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// Details of the database for the registration in Data Safe.
 	DatabaseDetails []GetTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -129,7 +129,7 @@ func (o LookupTargetDatabaseResultOutput) ToLookupTargetDatabaseResultOutputWith
 	return o
 }
 
-// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 func (o LookupTargetDatabaseResultOutput) AssociatedResourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) []string { return v.AssociatedResourceIds }).(pulumi.StringArrayOutput)
 }
@@ -149,7 +149,7 @@ func (o LookupTargetDatabaseResultOutput) Credentials() GetTargetDatabaseCredent
 	return o.ApplyT(func(v LookupTargetDatabaseResult) []GetTargetDatabaseCredential { return v.Credentials }).(GetTargetDatabaseCredentialArrayOutput)
 }
 
-// Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+// Details of the database for the registration in Data Safe.
 func (o LookupTargetDatabaseResultOutput) DatabaseDetails() GetTargetDatabaseDatabaseDetailArrayOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) []GetTargetDatabaseDatabaseDetail { return v.DatabaseDetails }).(GetTargetDatabaseDatabaseDetailArrayOutput)
 }

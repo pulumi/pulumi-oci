@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.pulumi.resources.ResourceArgs {
@@ -32,15 +34,15 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
      * The secret version of the `connectivityAssociationKey` secret in Vault.
      * 
      */
-    @Import(name="connectivityAssociationKeySecretVersion", required=true)
-    private Output<String> connectivityAssociationKeySecretVersion;
+    @Import(name="connectivityAssociationKeySecretVersion")
+    private @Nullable Output<String> connectivityAssociationKeySecretVersion;
 
     /**
      * @return The secret version of the `connectivityAssociationKey` secret in Vault.
      * 
      */
-    public Output<String> connectivityAssociationKeySecretVersion() {
-        return this.connectivityAssociationKeySecretVersion;
+    public Optional<Output<String>> connectivityAssociationKeySecretVersion() {
+        return Optional.ofNullable(this.connectivityAssociationKeySecretVersion);
     }
 
     /**
@@ -62,15 +64,15 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
      * The secret version of the connectivity association name secret in Vault.
      * 
      */
-    @Import(name="connectivityAssociationNameSecretVersion", required=true)
-    private Output<String> connectivityAssociationNameSecretVersion;
+    @Import(name="connectivityAssociationNameSecretVersion")
+    private @Nullable Output<String> connectivityAssociationNameSecretVersion;
 
     /**
      * @return The secret version of the connectivity association name secret in Vault.
      * 
      */
-    public Output<String> connectivityAssociationNameSecretVersion() {
-        return this.connectivityAssociationNameSecretVersion;
+    public Optional<Output<String>> connectivityAssociationNameSecretVersion() {
+        return Optional.ofNullable(this.connectivityAssociationNameSecretVersion);
     }
 
     private CrossConnectGroupMacsecPropertiesPrimaryKeyArgs() {}
@@ -127,7 +129,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
          * @return builder
          * 
          */
-        public Builder connectivityAssociationKeySecretVersion(Output<String> connectivityAssociationKeySecretVersion) {
+        public Builder connectivityAssociationKeySecretVersion(@Nullable Output<String> connectivityAssociationKeySecretVersion) {
             $.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
             return this;
         }
@@ -169,7 +171,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
          * @return builder
          * 
          */
-        public Builder connectivityAssociationNameSecretVersion(Output<String> connectivityAssociationNameSecretVersion) {
+        public Builder connectivityAssociationNameSecretVersion(@Nullable Output<String> connectivityAssociationNameSecretVersion) {
             $.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
             return this;
         }
@@ -186,9 +188,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
 
         public CrossConnectGroupMacsecPropertiesPrimaryKeyArgs build() {
             $.connectivityAssociationKeySecretId = Objects.requireNonNull($.connectivityAssociationKeySecretId, "expected parameter 'connectivityAssociationKeySecretId' to be non-null");
-            $.connectivityAssociationKeySecretVersion = Objects.requireNonNull($.connectivityAssociationKeySecretVersion, "expected parameter 'connectivityAssociationKeySecretVersion' to be non-null");
             $.connectivityAssociationNameSecretId = Objects.requireNonNull($.connectivityAssociationNameSecretId, "expected parameter 'connectivityAssociationNameSecretId' to be non-null");
-            $.connectivityAssociationNameSecretVersion = Objects.requireNonNull($.connectivityAssociationNameSecretVersion, "expected parameter 'connectivityAssociationNameSecretVersion' to be non-null");
             return $;
         }
     }

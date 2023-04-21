@@ -47,6 +47,9 @@ import (
 //				UserCategory:                                pulumi.StringRef(_var.User_assessment_user_user_category),
 //				UserKey:                                     pulumi.StringRef(_var.User_assessment_user_user_key),
 //				UserName:                                    pulumi.StringRef(oci_identity_user.Test_user.Name),
+//				UserProfile:                                 pulumi.StringRef(_var.User_assessment_user_user_profile),
+//				UserRole:                                    pulumi.StringRef(_var.User_assessment_user_user_role),
+//				UserType:                                    pulumi.StringRef(_var.User_assessment_user_user_type),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -98,6 +101,17 @@ type GetUserAssessmentUsersArgs struct {
 	UserKey *string `pulumi:"userKey"`
 	// A filter to return only items that match the specified user name.
 	UserName *string `pulumi:"userName"`
+	// A filter to return only items that match the specified user profile.
+	UserProfile *string `pulumi:"userProfile"`
+	// A filter to return only items that match the specified user role.
+	UserRole *string `pulumi:"userRole"`
+	// A filter to return only items that match the specified user type. The possible values can be
+	// * ADMIN_PRIVILEGED
+	// * APPLICATION
+	// * PRIVILEGED
+	// * SCHEMA
+	// * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+	UserType *string `pulumi:"userType"`
 }
 
 // A collection of values returned by getUserAssessmentUsers.
@@ -125,6 +139,10 @@ type GetUserAssessmentUsersResult struct {
 	UserKey      *string `pulumi:"userKey"`
 	// The database user name.
 	UserName *string `pulumi:"userName"`
+	// The user profile name.
+	UserProfile *string `pulumi:"userProfile"`
+	UserRole    *string `pulumi:"userRole"`
+	UserType    *string `pulumi:"userType"`
 	// The list of users.
 	Users []GetUserAssessmentUsersUser `pulumi:"users"`
 }
@@ -175,6 +193,17 @@ type GetUserAssessmentUsersOutputArgs struct {
 	UserKey pulumi.StringPtrInput `pulumi:"userKey"`
 	// A filter to return only items that match the specified user name.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
+	// A filter to return only items that match the specified user profile.
+	UserProfile pulumi.StringPtrInput `pulumi:"userProfile"`
+	// A filter to return only items that match the specified user role.
+	UserRole pulumi.StringPtrInput `pulumi:"userRole"`
+	// A filter to return only items that match the specified user type. The possible values can be
+	// * ADMIN_PRIVILEGED
+	// * APPLICATION
+	// * PRIVILEGED
+	// * SCHEMA
+	// * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+	UserType pulumi.StringPtrInput `pulumi:"userType"`
 }
 
 func (GetUserAssessmentUsersOutputArgs) ElementType() reflect.Type {
@@ -268,6 +297,19 @@ func (o GetUserAssessmentUsersResultOutput) UserKey() pulumi.StringPtrOutput {
 // The database user name.
 func (o GetUserAssessmentUsersResultOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.UserName }).(pulumi.StringPtrOutput)
+}
+
+// The user profile name.
+func (o GetUserAssessmentUsersResultOutput) UserProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.UserProfile }).(pulumi.StringPtrOutput)
+}
+
+func (o GetUserAssessmentUsersResultOutput) UserRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.UserRole }).(pulumi.StringPtrOutput)
+}
+
+func (o GetUserAssessmentUsersResultOutput) UserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.UserType }).(pulumi.StringPtrOutput)
 }
 
 // The list of users.

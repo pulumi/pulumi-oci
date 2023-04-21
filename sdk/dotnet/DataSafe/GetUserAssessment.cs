@@ -22,6 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -51,6 +52,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -181,6 +183,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeLastAssessed;
+        /// <summary>
         /// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
@@ -189,7 +195,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string TriggeredBy;
         /// <summary>
-        /// Type of user assessment. The possible types are:
+        /// Type of user assessment. Type can be:
         /// </summary>
         public readonly string Type;
         public readonly string UserAssessmentId;
@@ -236,6 +242,8 @@ namespace Pulumi.Oci.DataSafe
 
             string timeCreated,
 
+            string timeLastAssessed,
+
             string timeUpdated,
 
             string triggeredBy,
@@ -264,6 +272,7 @@ namespace Pulumi.Oci.DataSafe
             TargetId = targetId;
             TargetIds = targetIds;
             TimeCreated = timeCreated;
+            TimeLastAssessed = timeLastAssessed;
             TimeUpdated = timeUpdated;
             TriggeredBy = triggeredBy;
             Type = type;

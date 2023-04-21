@@ -23,6 +23,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -142,7 +144,7 @@ namespace Pulumi.Oci.DataSafe
         public bool? IsMaskingEnabled { get; set; }
 
         /// <summary>
-        /// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+        /// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
         /// </summary>
         [Input("isSeedRequired")]
         public bool? IsSeedRequired { get; set; }
@@ -284,7 +286,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? IsMaskingEnabled { get; set; }
 
         /// <summary>
-        /// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+        /// A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
         /// </summary>
         [Input("isSeedRequired")]
         public Input<bool>? IsSeedRequired { get; set; }

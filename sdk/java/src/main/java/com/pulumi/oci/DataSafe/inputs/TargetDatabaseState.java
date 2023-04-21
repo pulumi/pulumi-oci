@@ -23,14 +23,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     public static final TargetDatabaseState Empty = new TargetDatabaseState();
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     @Import(name="associatedResourceIds")
     private @Nullable Output<List<String>> associatedResourceIds;
 
     /**
-     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * @return The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
     public Optional<Output<List<String>>> associatedResourceIds() {
@@ -83,14 +83,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     @Import(name="databaseDetails")
     private @Nullable Output<TargetDatabaseDatabaseDetailsArgs> databaseDetails;
 
     /**
-     * @return (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     public Optional<Output<TargetDatabaseDatabaseDetailsArgs>> databaseDetails() {
@@ -286,7 +286,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param associatedResourceIds The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * @param associatedResourceIds The OCIDs of associated resources like database, Data Safe private endpoint etc.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param associatedResourceIds The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * @param associatedResourceIds The OCIDs of associated resources like database, Data Safe private endpoint etc.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param associatedResourceIds The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * @param associatedResourceIds The OCIDs of associated resources like database, Data Safe private endpoint etc.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 

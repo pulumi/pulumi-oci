@@ -36,6 +36,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -86,6 +87,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -252,7 +254,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly ImmutableArray<Outputs.GetAuditTrailsAuditTrailCollectionResult> AuditTrailCollections;
         public readonly string? AuditTrailId;
         /// <summary>
-        /// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+        /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;

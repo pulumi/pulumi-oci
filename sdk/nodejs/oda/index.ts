@@ -15,10 +15,55 @@ export const getOdaInstances: typeof import("./getOdaInstances").getOdaInstances
 export const getOdaInstancesOutput: typeof import("./getOdaInstances").getOdaInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getOdaInstances","getOdaInstancesOutput"], () => require("./getOdaInstances"));
 
+export { GetOdaPrivateEndpointArgs, GetOdaPrivateEndpointResult, GetOdaPrivateEndpointOutputArgs } from "./getOdaPrivateEndpoint";
+export const getOdaPrivateEndpoint: typeof import("./getOdaPrivateEndpoint").getOdaPrivateEndpoint = null as any;
+export const getOdaPrivateEndpointOutput: typeof import("./getOdaPrivateEndpoint").getOdaPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaPrivateEndpoint","getOdaPrivateEndpointOutput"], () => require("./getOdaPrivateEndpoint"));
+
+export { GetOdaPrivateEndpointAttachmentArgs, GetOdaPrivateEndpointAttachmentResult, GetOdaPrivateEndpointAttachmentOutputArgs } from "./getOdaPrivateEndpointAttachment";
+export const getOdaPrivateEndpointAttachment: typeof import("./getOdaPrivateEndpointAttachment").getOdaPrivateEndpointAttachment = null as any;
+export const getOdaPrivateEndpointAttachmentOutput: typeof import("./getOdaPrivateEndpointAttachment").getOdaPrivateEndpointAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaPrivateEndpointAttachment","getOdaPrivateEndpointAttachmentOutput"], () => require("./getOdaPrivateEndpointAttachment"));
+
+export { GetOdaPrivateEndpointAttachmentsArgs, GetOdaPrivateEndpointAttachmentsResult, GetOdaPrivateEndpointAttachmentsOutputArgs } from "./getOdaPrivateEndpointAttachments";
+export const getOdaPrivateEndpointAttachments: typeof import("./getOdaPrivateEndpointAttachments").getOdaPrivateEndpointAttachments = null as any;
+export const getOdaPrivateEndpointAttachmentsOutput: typeof import("./getOdaPrivateEndpointAttachments").getOdaPrivateEndpointAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaPrivateEndpointAttachments","getOdaPrivateEndpointAttachmentsOutput"], () => require("./getOdaPrivateEndpointAttachments"));
+
+export { GetOdaPrivateEndpointScanProxiesArgs, GetOdaPrivateEndpointScanProxiesResult, GetOdaPrivateEndpointScanProxiesOutputArgs } from "./getOdaPrivateEndpointScanProxies";
+export const getOdaPrivateEndpointScanProxies: typeof import("./getOdaPrivateEndpointScanProxies").getOdaPrivateEndpointScanProxies = null as any;
+export const getOdaPrivateEndpointScanProxiesOutput: typeof import("./getOdaPrivateEndpointScanProxies").getOdaPrivateEndpointScanProxiesOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaPrivateEndpointScanProxies","getOdaPrivateEndpointScanProxiesOutput"], () => require("./getOdaPrivateEndpointScanProxies"));
+
+export { GetOdaPrivateEndpointScanProxyArgs, GetOdaPrivateEndpointScanProxyResult, GetOdaPrivateEndpointScanProxyOutputArgs } from "./getOdaPrivateEndpointScanProxy";
+export const getOdaPrivateEndpointScanProxy: typeof import("./getOdaPrivateEndpointScanProxy").getOdaPrivateEndpointScanProxy = null as any;
+export const getOdaPrivateEndpointScanProxyOutput: typeof import("./getOdaPrivateEndpointScanProxy").getOdaPrivateEndpointScanProxyOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaPrivateEndpointScanProxy","getOdaPrivateEndpointScanProxyOutput"], () => require("./getOdaPrivateEndpointScanProxy"));
+
+export { GetOdaPrivateEndpointsArgs, GetOdaPrivateEndpointsResult, GetOdaPrivateEndpointsOutputArgs } from "./getOdaPrivateEndpoints";
+export const getOdaPrivateEndpoints: typeof import("./getOdaPrivateEndpoints").getOdaPrivateEndpoints = null as any;
+export const getOdaPrivateEndpointsOutput: typeof import("./getOdaPrivateEndpoints").getOdaPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getOdaPrivateEndpoints","getOdaPrivateEndpointsOutput"], () => require("./getOdaPrivateEndpoints"));
+
 export { OdaInstanceArgs, OdaInstanceState } from "./odaInstance";
 export type OdaInstance = import("./odaInstance").OdaInstance;
 export const OdaInstance: typeof import("./odaInstance").OdaInstance = null as any;
 utilities.lazyLoad(exports, ["OdaInstance"], () => require("./odaInstance"));
+
+export { OdaPrivateEndpointArgs, OdaPrivateEndpointState } from "./odaPrivateEndpoint";
+export type OdaPrivateEndpoint = import("./odaPrivateEndpoint").OdaPrivateEndpoint;
+export const OdaPrivateEndpoint: typeof import("./odaPrivateEndpoint").OdaPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["OdaPrivateEndpoint"], () => require("./odaPrivateEndpoint"));
+
+export { OdaPrivateEndpointAttachmentArgs, OdaPrivateEndpointAttachmentState } from "./odaPrivateEndpointAttachment";
+export type OdaPrivateEndpointAttachment = import("./odaPrivateEndpointAttachment").OdaPrivateEndpointAttachment;
+export const OdaPrivateEndpointAttachment: typeof import("./odaPrivateEndpointAttachment").OdaPrivateEndpointAttachment = null as any;
+utilities.lazyLoad(exports, ["OdaPrivateEndpointAttachment"], () => require("./odaPrivateEndpointAttachment"));
+
+export { OdaPrivateEndpointScanProxyArgs, OdaPrivateEndpointScanProxyState } from "./odaPrivateEndpointScanProxy";
+export type OdaPrivateEndpointScanProxy = import("./odaPrivateEndpointScanProxy").OdaPrivateEndpointScanProxy;
+export const OdaPrivateEndpointScanProxy: typeof import("./odaPrivateEndpointScanProxy").OdaPrivateEndpointScanProxy = null as any;
+utilities.lazyLoad(exports, ["OdaPrivateEndpointScanProxy"], () => require("./odaPrivateEndpointScanProxy"));
 
 
 const _module = {
@@ -27,9 +72,18 @@ const _module = {
         switch (type) {
             case "oci:Oda/odaInstance:OdaInstance":
                 return new OdaInstance(name, <any>undefined, { urn })
+            case "oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint":
+                return new OdaPrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment":
+                return new OdaPrivateEndpointAttachment(name, <any>undefined, { urn })
+            case "oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy":
+                return new OdaPrivateEndpointScanProxy(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Oda/odaInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "Oda/odaPrivateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "Oda/odaPrivateEndpointAttachment", _module)
+pulumi.runtime.registerResourceModule("oci", "Oda/odaPrivateEndpointScanProxy", _module)

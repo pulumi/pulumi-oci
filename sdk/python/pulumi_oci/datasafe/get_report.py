@@ -135,7 +135,7 @@ class GetReportResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the report.
+        The current state of the audit report.
         """
         return pulumi.get(self, "state")
 
@@ -151,7 +151,7 @@ class GetReportResult:
     @pulumi.getter(name="timeGenerated")
     def time_generated(self) -> str:
         """
-        Specifies the time at which the report was generated.
+        Specifies the date and time the report was generated.
         """
         return pulumi.get(self, "time_generated")
 
@@ -159,7 +159,7 @@ class GetReportResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of the report.
+        The type of the audit report.
         """
         return pulumi.get(self, "type")
 

@@ -100,6 +100,8 @@ type LookupSecurityAssessmentResult struct {
 	TargetVersion string `pulumi:"targetVersion"`
 	// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastAssessed string `pulumi:"timeLastAssessed"`
 	// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Indicates whether the security assessment was created by system or by a user.
@@ -257,6 +259,11 @@ func (o LookupSecurityAssessmentResultOutput) TargetVersion() pulumi.StringOutpu
 // The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o LookupSecurityAssessmentResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o LookupSecurityAssessmentResultOutput) TimeLastAssessed() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
 // The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

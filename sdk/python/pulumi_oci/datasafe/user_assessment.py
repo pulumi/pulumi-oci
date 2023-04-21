@@ -153,6 +153,7 @@ class _UserAssessmentState:
                  target_id: Optional[pulumi.Input[str]] = None,
                  target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_last_assessed: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  triggered_by: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
@@ -177,9 +178,10 @@ class _UserAssessmentState:
         :param pulumi.Input[str] target_id: The OCID of the target database on which the user assessment is to be run.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[str] time_created: The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_last_assessed: The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] triggered_by: Indicates whether the user assessment was created by system or user.
-        :param pulumi.Input[str] type: Type of user assessment. The possible types are:
+        :param pulumi.Input[str] type: Type of user assessment. Type can be:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -219,6 +221,8 @@ class _UserAssessmentState:
             pulumi.set(__self__, "target_ids", target_ids)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_last_assessed is not None:
+            pulumi.set(__self__, "time_last_assessed", time_last_assessed)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if triggered_by is not None:
@@ -455,6 +459,18 @@ class _UserAssessmentState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @time_last_assessed.setter
+    def time_last_assessed(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_assessed", value)
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
@@ -482,7 +498,7 @@ class _UserAssessmentState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of user assessment. The possible types are:
+        Type of user assessment. Type can be:
         """
         return pulumi.get(self, "type")
 
@@ -644,6 +660,7 @@ class UserAssessment(pulumi.CustomResource):
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["target_ids"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_last_assessed"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["triggered_by"] = None
             __props__.__dict__["type"] = None
@@ -676,6 +693,7 @@ class UserAssessment(pulumi.CustomResource):
             target_id: Optional[pulumi.Input[str]] = None,
             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_last_assessed: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             triggered_by: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None) -> 'UserAssessment':
@@ -705,9 +723,10 @@ class UserAssessment(pulumi.CustomResource):
         :param pulumi.Input[str] target_id: The OCID of the target database on which the user assessment is to be run.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[str] time_created: The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_last_assessed: The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] triggered_by: Indicates whether the user assessment was created by system or user.
-        :param pulumi.Input[str] type: Type of user assessment. The possible types are:
+        :param pulumi.Input[str] type: Type of user assessment. Type can be:
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -732,6 +751,7 @@ class UserAssessment(pulumi.CustomResource):
         __props__.__dict__["target_id"] = target_id
         __props__.__dict__["target_ids"] = target_ids
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_last_assessed"] = time_last_assessed
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["triggered_by"] = triggered_by
         __props__.__dict__["type"] = type
@@ -890,6 +910,14 @@ class UserAssessment(pulumi.CustomResource):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> pulumi.Output[str]:
+        """
+        The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
@@ -909,7 +937,7 @@ class UserAssessment(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        Type of user assessment. The possible types are:
+        Type of user assessment. Type can be:
         """
         return pulumi.get(self, "type")
 

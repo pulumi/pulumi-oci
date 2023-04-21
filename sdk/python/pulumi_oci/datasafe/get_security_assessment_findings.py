@@ -23,7 +23,7 @@ class GetSecurityAssessmentFindingsResult:
     """
     A collection of values returned by getSecurityAssessmentFindings.
     """
-    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, security_assessment_id=None, severity=None):
+    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, references=None, security_assessment_id=None, severity=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -42,6 +42,9 @@ class GetSecurityAssessmentFindingsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if references and not isinstance(references, str):
+            raise TypeError("Expected argument 'references' to be a str")
+        pulumi.set(__self__, "references", references)
         if security_assessment_id and not isinstance(security_assessment_id, str):
             raise TypeError("Expected argument 'security_assessment_id' to be a str")
         pulumi.set(__self__, "security_assessment_id", security_assessment_id)
@@ -86,6 +89,14 @@ class GetSecurityAssessmentFindingsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def references(self) -> Optional[str]:
+        """
+        Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+        """
+        return pulumi.get(self, "references")
+
+    @property
     @pulumi.getter(name="securityAssessmentId")
     def security_assessment_id(self) -> str:
         return pulumi.get(self, "security_assessment_id")
@@ -111,6 +122,7 @@ class AwaitableGetSecurityAssessmentFindingsResult(GetSecurityAssessmentFindings
             finding_key=self.finding_key,
             findings=self.findings,
             id=self.id,
+            references=self.references,
             security_assessment_id=self.security_assessment_id,
             severity=self.severity)
 
@@ -119,6 +131,7 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
                                      compartment_id_in_subtree: Optional[bool] = None,
                                      filters: Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsFilterArgs']]] = None,
                                      finding_key: Optional[str] = None,
+                                     references: Optional[str] = None,
                                      security_assessment_id: Optional[str] = None,
                                      severity: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentFindingsResult:
@@ -127,23 +140,11 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
 
     List all the findings from all the targets in the specified assessment.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessment_findings = oci.DataSafe.get_security_assessment_findings(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        access_level=var["security_assessment_finding_access_level"],
-        compartment_id_in_subtree=var["security_assessment_finding_compartment_id_in_subtree"],
-        finding_key=var["security_assessment_finding_finding_key"],
-        severity=var["security_assessment_finding_severity"])
-    ```
-
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str finding_key: Each finding has a key. This key is same for the finding across targets
+    :param str references: An optional filter to return only findings containing the specified reference.
     :param str security_assessment_id: The OCID of the security assessment.
     :param str severity: A filter to return only findings of a particular risk level.
     """
@@ -152,6 +153,7 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['findingKey'] = finding_key
+    __args__['references'] = references
     __args__['securityAssessmentId'] = security_assessment_id
     __args__['severity'] = severity
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -164,6 +166,7 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
         finding_key=__ret__.finding_key,
         findings=__ret__.findings,
         id=__ret__.id,
+        references=__ret__.references,
         security_assessment_id=__ret__.security_assessment_id,
         severity=__ret__.severity)
 
@@ -173,6 +176,7 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsFilterArgs']]]]] = None,
                                             finding_key: Optional[pulumi.Input[Optional[str]]] = None,
+                                            references: Optional[pulumi.Input[Optional[str]]] = None,
                                             security_assessment_id: Optional[pulumi.Input[str]] = None,
                                             severity: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingsResult]:
@@ -181,23 +185,11 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
 
     List all the findings from all the targets in the specified assessment.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessment_findings = oci.DataSafe.get_security_assessment_findings(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        access_level=var["security_assessment_finding_access_level"],
-        compartment_id_in_subtree=var["security_assessment_finding_compartment_id_in_subtree"],
-        finding_key=var["security_assessment_finding_finding_key"],
-        severity=var["security_assessment_finding_severity"])
-    ```
-
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str finding_key: Each finding has a key. This key is same for the finding across targets
+    :param str references: An optional filter to return only findings containing the specified reference.
     :param str security_assessment_id: The OCID of the security assessment.
     :param str severity: A filter to return only findings of a particular risk level.
     """

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string FieldName;
         /// <summary>
-        /// (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        /// (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

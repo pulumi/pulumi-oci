@@ -22,8 +22,7 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getSslCipherSuites(args?: GetSslCipherSuitesArgs, opts?: pulumi.InvokeOptions): Promise<GetSslCipherSuitesResult> {
-    args = args || {};
+export function getSslCipherSuites(args: GetSslCipherSuitesArgs, opts?: pulumi.InvokeOptions): Promise<GetSslCipherSuitesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", {
@@ -40,7 +39,7 @@ export interface GetSslCipherSuitesArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      */
-    loadBalancerId?: string;
+    loadBalancerId: string;
 }
 
 /**
@@ -52,7 +51,7 @@ export interface GetSslCipherSuitesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly loadBalancerId?: string;
+    readonly loadBalancerId: string;
     /**
      * The list of ssl_cipher_suites.
      */
@@ -74,7 +73,7 @@ export interface GetSslCipherSuitesResult {
  * });
  * ```
  */
-export function getSslCipherSuitesOutput(args?: GetSslCipherSuitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSslCipherSuitesResult> {
+export function getSslCipherSuitesOutput(args: GetSslCipherSuitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSslCipherSuitesResult> {
     return pulumi.output(args).apply((a: any) => getSslCipherSuites(a, opts))
 }
 
@@ -86,5 +85,5 @@ export interface GetSslCipherSuitesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId: pulumi.Input<string>;
 }

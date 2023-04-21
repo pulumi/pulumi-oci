@@ -24,7 +24,7 @@ public final class GetReportDefinitionResult {
      */
     private String category;
     /**
-     * @return An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+     * @return An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      * 
      */
     private List<GetReportDefinitionColumnFilter> columnFilters;
@@ -44,7 +44,7 @@ public final class GetReportDefinitionResult {
      */
     private String compartmentId;
     /**
-     * @return The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * @return The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
     private List<String> complianceStandards;
@@ -94,23 +94,23 @@ public final class GetReportDefinitionResult {
      */
     private String parentId;
     /**
-     * @return The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * @return The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
     private String recordTimeSpan;
     private String reportDefinitionId;
     /**
-     * @return Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * @return The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
     private String schedule;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * @return The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
     private String scheduledReportCompartmentId;
     /**
-     * @return Specifies the format of report to be excel or pdf
+     * @return Specifies the format of the report ( either XLS or PDF )
      * 
      */
     private String scheduledReportMimeType;
@@ -120,7 +120,7 @@ public final class GetReportDefinitionResult {
      */
     private String scheduledReportName;
     /**
-     * @return Specifies the limit on number of rows in report.
+     * @return Specifies the limit on the number of rows in the report.
      * 
      */
     private Integer scheduledReportRowLimit;
@@ -145,12 +145,12 @@ public final class GetReportDefinitionResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Specifies the time at which the report definition was created.
+     * @return Specifies the data and time the report definition was created.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time of the report definition update in Data Safe.
+     * @return The date and time the report definition was update.
      * 
      */
     private String timeUpdated;
@@ -164,7 +164,7 @@ public final class GetReportDefinitionResult {
         return this.category;
     }
     /**
-     * @return An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+     * @return An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      * 
      */
     public List<GetReportDefinitionColumnFilter> columnFilters() {
@@ -192,7 +192,7 @@ public final class GetReportDefinitionResult {
         return this.compartmentId;
     }
     /**
-     * @return The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * @return The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
     public List<String> complianceStandards() {
@@ -262,7 +262,7 @@ public final class GetReportDefinitionResult {
         return this.parentId;
     }
     /**
-     * @return The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+     * @return The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
     public String recordTimeSpan() {
@@ -272,21 +272,21 @@ public final class GetReportDefinitionResult {
         return this.reportDefinitionId;
     }
     /**
-     * @return Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * @return The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
     public String schedule() {
         return this.schedule;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+     * @return The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
     public String scheduledReportCompartmentId() {
         return this.scheduledReportCompartmentId;
     }
     /**
-     * @return Specifies the format of report to be excel or pdf
+     * @return Specifies the format of the report ( either XLS or PDF )
      * 
      */
     public String scheduledReportMimeType() {
@@ -300,7 +300,7 @@ public final class GetReportDefinitionResult {
         return this.scheduledReportName;
     }
     /**
-     * @return Specifies the limit on number of rows in report.
+     * @return Specifies the limit on the number of rows in the report.
      * 
      */
     public Integer scheduledReportRowLimit() {
@@ -335,14 +335,14 @@ public final class GetReportDefinitionResult {
         return this.systemTags;
     }
     /**
-     * @return Specifies the time at which the report definition was created.
+     * @return Specifies the data and time the report definition was created.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time of the report definition update in Data Safe.
+     * @return The date and time the report definition was update.
      * 
      */
     public String timeUpdated() {

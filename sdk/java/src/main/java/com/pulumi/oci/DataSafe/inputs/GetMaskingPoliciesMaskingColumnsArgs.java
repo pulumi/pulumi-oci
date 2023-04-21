@@ -71,14 +71,14 @@ public final class GetMaskingPoliciesMaskingColumnsArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+     * A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
      * 
      */
     @Import(name="isSeedRequired")
     private @Nullable Output<Boolean> isSeedRequired;
 
     /**
-     * @return A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+     * @return A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
      * 
      */
     public Optional<Output<Boolean>> isSeedRequired() {
@@ -386,7 +386,7 @@ public final class GetMaskingPoliciesMaskingColumnsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param isSeedRequired A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+         * @param isSeedRequired A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class GetMaskingPoliciesMaskingColumnsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param isSeedRequired A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using  Deterministic Encryption or Deterministic Substitution masking format.
+         * @param isSeedRequired A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
          * 
          * @return builder
          * 

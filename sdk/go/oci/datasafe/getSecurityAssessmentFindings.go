@@ -13,36 +13,6 @@ import (
 // This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
 //
 // List all the findings from all the targets in the specified assessment.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.GetSecurityAssessmentFindings(ctx, &datasafe.GetSecurityAssessmentFindingsArgs{
-//				SecurityAssessmentId:   oci_data_safe_security_assessment.Test_security_assessment.Id,
-//				AccessLevel:            pulumi.StringRef(_var.Security_assessment_finding_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Security_assessment_finding_compartment_id_in_subtree),
-//				FindingKey:             pulumi.StringRef(_var.Security_assessment_finding_finding_key),
-//				Severity:               pulumi.StringRef(_var.Security_assessment_finding_severity),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetSecurityAssessmentFindings(ctx *pulumi.Context, args *GetSecurityAssessmentFindingsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingsResult, error) {
 	var rv GetSecurityAssessmentFindingsResult
 	err := ctx.Invoke("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args, &rv, opts...)
@@ -61,6 +31,8 @@ type GetSecurityAssessmentFindingsArgs struct {
 	Filters                []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
 	// Each finding has a key. This key is same for the finding across targets
 	FindingKey *string `pulumi:"findingKey"`
+	// An optional filter to return only findings containing the specified reference.
+	References *string `pulumi:"references"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
 	// A filter to return only findings of a particular risk level.
@@ -76,8 +48,10 @@ type GetSecurityAssessmentFindingsResult struct {
 	// The list of findings.
 	Findings []GetSecurityAssessmentFindingsFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string `pulumi:"id"`
-	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
+	Id string `pulumi:"id"`
+	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+	References           *string `pulumi:"references"`
+	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	// The severity of the finding.
 	Severity *string `pulumi:"severity"`
 }
@@ -104,6 +78,8 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	Filters                GetSecurityAssessmentFindingsFilterArrayInput `pulumi:"filters"`
 	// Each finding has a key. This key is same for the finding across targets
 	FindingKey pulumi.StringPtrInput `pulumi:"findingKey"`
+	// An optional filter to return only findings containing the specified reference.
+	References pulumi.StringPtrInput `pulumi:"references"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId pulumi.StringInput `pulumi:"securityAssessmentId"`
 	// A filter to return only findings of a particular risk level.
@@ -153,6 +129,11 @@ func (o GetSecurityAssessmentFindingsResultOutput) Findings() GetSecurityAssessm
 // The provider-assigned unique ID for this managed resource.
 func (o GetSecurityAssessmentFindingsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+func (o GetSecurityAssessmentFindingsResultOutput) References() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.References }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentFindingsResultOutput) SecurityAssessmentId() pulumi.StringOutput {

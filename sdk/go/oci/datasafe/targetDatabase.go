@@ -88,7 +88,7 @@ import (
 type TargetDatabase struct {
 	pulumi.CustomResourceState
 
-	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 	AssociatedResourceIds pulumi.StringArrayOutput `pulumi:"associatedResourceIds"`
 	// (Updatable) The OCID of the compartment in which to create the Data Safe target database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -96,7 +96,7 @@ type TargetDatabase struct {
 	ConnectionOption TargetDatabaseConnectionOptionOutput `pulumi:"connectionOption"`
 	// (Updatable) The database credentials required for Data Safe to connect to the database.
 	Credentials TargetDatabaseCredentialsOutput `pulumi:"credentials"`
-	// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsOutput `pulumi:"databaseDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -155,7 +155,7 @@ func GetTargetDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering TargetDatabase resources.
 type targetDatabaseState struct {
-	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 	AssociatedResourceIds []string `pulumi:"associatedResourceIds"`
 	// (Updatable) The OCID of the compartment in which to create the Data Safe target database.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -163,7 +163,7 @@ type targetDatabaseState struct {
 	ConnectionOption *TargetDatabaseConnectionOption `pulumi:"connectionOption"`
 	// (Updatable) The database credentials required for Data Safe to connect to the database.
 	Credentials *TargetDatabaseCredentials `pulumi:"credentials"`
-	// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails *TargetDatabaseDatabaseDetails `pulumi:"databaseDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -188,7 +188,7 @@ type targetDatabaseState struct {
 }
 
 type TargetDatabaseState struct {
-	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 	AssociatedResourceIds pulumi.StringArrayInput
 	// (Updatable) The OCID of the compartment in which to create the Data Safe target database.
 	CompartmentId pulumi.StringPtrInput
@@ -196,7 +196,7 @@ type TargetDatabaseState struct {
 	ConnectionOption TargetDatabaseConnectionOptionPtrInput
 	// (Updatable) The database credentials required for Data Safe to connect to the database.
 	Credentials TargetDatabaseCredentialsPtrInput
-	// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -231,7 +231,7 @@ type targetDatabaseArgs struct {
 	ConnectionOption *TargetDatabaseConnectionOption `pulumi:"connectionOption"`
 	// (Updatable) The database credentials required for Data Safe to connect to the database.
 	Credentials *TargetDatabaseCredentials `pulumi:"credentials"`
-	// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetails `pulumi:"databaseDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -253,7 +253,7 @@ type TargetDatabaseArgs struct {
 	ConnectionOption TargetDatabaseConnectionOptionPtrInput
 	// (Updatable) The database credentials required for Data Safe to connect to the database.
 	Credentials TargetDatabaseCredentialsPtrInput
-	// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -354,7 +354,7 @@ func (o TargetDatabaseOutput) ToTargetDatabaseOutputWithContext(ctx context.Cont
 	return o
 }
 
-// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+// The OCIDs of associated resources like database, Data Safe private endpoint etc.
 func (o TargetDatabaseOutput) AssociatedResourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TargetDatabase) pulumi.StringArrayOutput { return v.AssociatedResourceIds }).(pulumi.StringArrayOutput)
 }
@@ -374,7 +374,7 @@ func (o TargetDatabaseOutput) Credentials() TargetDatabaseCredentialsOutput {
 	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseCredentialsOutput { return v.Credentials }).(TargetDatabaseCredentialsOutput)
 }
 
-// (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+// (Updatable) Details of the database for the registration in Data Safe.
 func (o TargetDatabaseOutput) DatabaseDetails() TargetDatabaseDatabaseDetailsOutput {
 	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseDatabaseDetailsOutput { return v.DatabaseDetails }).(TargetDatabaseDatabaseDetailsOutput)
 }

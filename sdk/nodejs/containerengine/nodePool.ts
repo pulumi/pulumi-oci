@@ -38,6 +38,12 @@ import * as utilities from "../utilities";
  *             subnetId: oci_core_subnet.test_subnet.id,
  *             capacityReservationId: oci_containerengine_capacity_reservation.test_capacity_reservation.id,
  *             faultDomains: _var.node_pool_node_config_details_placement_configs_fault_domains,
+ *             preemptibleNodeConfig: {
+ *                 preemptionAction: {
+ *                     type: _var.node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
+ *                     isPreserveBootVolume: _var.node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+ *                 },
+ *             },
  *         }],
  *         size: _var.node_pool_node_config_details_size,
  *         isPvEncryptionInTransitEnabled: _var.node_pool_node_config_details_is_pv_encryption_in_transit_enabled,

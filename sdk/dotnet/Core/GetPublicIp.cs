@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Core
         /// ### Get a public ip by public ip id
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -50,6 +51,7 @@ namespace Pulumi.Oci.Core
         /// ### Get a public ip by private ip id
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -67,6 +69,7 @@ namespace Pulumi.Oci.Core
         /// ### Get a public ip by public ip address
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -107,6 +110,7 @@ namespace Pulumi.Oci.Core
         /// ### Get a public ip by public ip id
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -124,6 +128,7 @@ namespace Pulumi.Oci.Core
         /// ### Get a public ip by private ip id
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -141,6 +146,7 @@ namespace Pulumi.Oci.Core
         /// ### Get a public ip by public ip address
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 

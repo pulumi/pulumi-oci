@@ -108,7 +108,7 @@ export interface GetAuditTrailsResult {
     readonly auditTrailCollections: outputs.DataSafe.GetAuditTrailsAuditTrailCollection[];
     readonly auditTrailId?: string;
     /**
-     * The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+     * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;

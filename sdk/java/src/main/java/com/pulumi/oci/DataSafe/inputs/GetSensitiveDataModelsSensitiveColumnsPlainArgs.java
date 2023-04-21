@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -66,6 +67,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
 
     public Optional<List<GetSensitiveDataModelsSensitiveColumnsFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     * 
+     */
+    @Import(name="isCaseInSensitive")
+    private @Nullable Boolean isCaseInSensitive;
+
+    /**
+     * @return A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     * 
+     */
+    public Optional<Boolean> isCaseInSensitive() {
+        return Optional.ofNullable(this.isCaseInSensitive);
     }
 
     /**
@@ -270,6 +286,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
         this.columnNames = $.columnNames;
         this.dataTypes = $.dataTypes;
         this.filters = $.filters;
+        this.isCaseInSensitive = $.isCaseInSensitive;
         this.objectTypes = $.objectTypes;
         this.objects = $.objects;
         this.parentColumnKeys = $.parentColumnKeys;
@@ -363,6 +380,17 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
 
         public Builder filters(GetSensitiveDataModelsSensitiveColumnsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isCaseInSensitive A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCaseInSensitive(@Nullable Boolean isCaseInSensitive) {
+            $.isCaseInSensitive = isCaseInSensitive;
+            return this;
         }
 
         /**

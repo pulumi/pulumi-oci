@@ -22,6 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -51,6 +52,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
@@ -113,7 +115,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly string AuditProfileId;
         public readonly string AuditTrailId;
         /// <summary>
-        /// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+        /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -166,7 +168,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeLastCollected;
         /// <summary>

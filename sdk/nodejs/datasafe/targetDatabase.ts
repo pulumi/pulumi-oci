@@ -94,7 +94,7 @@ export class TargetDatabase extends pulumi.CustomResource {
     }
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      */
     public /*out*/ readonly associatedResourceIds!: pulumi.Output<string[]>;
     /**
@@ -110,7 +110,7 @@ export class TargetDatabase extends pulumi.CustomResource {
      */
     public readonly credentials!: pulumi.Output<outputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * (Updatable) Details of the database for the registration in Data Safe.
      */
     public readonly databaseDetails!: pulumi.Output<outputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -216,7 +216,7 @@ export class TargetDatabase extends pulumi.CustomResource {
  */
 export interface TargetDatabaseState {
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      */
     associatedResourceIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -232,7 +232,7 @@ export interface TargetDatabaseState {
      */
     credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * (Updatable) Details of the database for the registration in Data Safe.
      */
     databaseDetails?: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -294,7 +294,7 @@ export interface TargetDatabaseArgs {
      */
     credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * (Updatable) Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
+     * (Updatable) Details of the database for the registration in Data Safe.
      */
     databaseDetails: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**

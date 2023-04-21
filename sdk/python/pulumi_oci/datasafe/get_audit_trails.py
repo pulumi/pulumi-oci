@@ -80,7 +80,7 @@ class GetAuditTrailsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+        The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         """
         return pulumi.get(self, "compartment_id")
 

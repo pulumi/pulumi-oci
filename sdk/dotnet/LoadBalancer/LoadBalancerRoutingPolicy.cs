@@ -19,6 +19,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -36,8 +37,8 @@ namespace Pulumi.Oci.LoadBalancer
     ///                 {
     ///                     new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleActionArgs
     ///                     {
-    ///                         Name = @var.Load_balancer_routing_policy_rules_actions_name,
     ///                         BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+    ///                         Name = @var.Load_balancer_routing_policy_rules_actions_name,
     ///                     },
     ///                 },
     ///                 Condition = @var.Load_balancer_routing_policy_rules_condition,

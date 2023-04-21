@@ -165,6 +165,7 @@ class BackendSetHealthCheckerArgs:
     def __init__(__self__, *,
                  protocol: pulumi.Input[str],
                  interval_ms: Optional[pulumi.Input[int]] = None,
+                 is_force_plain_text: Optional[pulumi.Input[bool]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  response_body_regex: Optional[pulumi.Input[str]] = None,
                  retries: Optional[pulumi.Input[int]] = None,
@@ -174,6 +175,7 @@ class BackendSetHealthCheckerArgs:
         """
         :param pulumi.Input[str] protocol: (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
         :param pulumi.Input[int] interval_ms: (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
+        :param pulumi.Input[bool] is_force_plain_text: (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
         :param pulumi.Input[int] port: (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
         :param pulumi.Input[str] response_body_regex: (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
         :param pulumi.Input[int] retries: (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state.  Example: `3`
@@ -184,6 +186,8 @@ class BackendSetHealthCheckerArgs:
         pulumi.set(__self__, "protocol", protocol)
         if interval_ms is not None:
             pulumi.set(__self__, "interval_ms", interval_ms)
+        if is_force_plain_text is not None:
+            pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if response_body_regex is not None:
@@ -220,6 +224,18 @@ class BackendSetHealthCheckerArgs:
     @interval_ms.setter
     def interval_ms(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "interval_ms", value)
+
+    @property
+    @pulumi.getter(name="isForcePlainText")
+    def is_force_plain_text(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+        """
+        return pulumi.get(self, "is_force_plain_text")
+
+    @is_force_plain_text.setter
+    def is_force_plain_text(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_plain_text", value)
 
     @property
     @pulumi.getter
@@ -915,15 +931,26 @@ class LoadBalancerRoutingPolicyRuleArgs:
 @pulumi.input_type
 class LoadBalancerRoutingPolicyRuleActionArgs:
     def __init__(__self__, *,
-                 name: pulumi.Input[str],
-                 backend_set_name: Optional[pulumi.Input[str]] = None):
+                 backend_set_name: pulumi.Input[str],
+                 name: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         :param pulumi.Input[str] backend_set_name: (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
+        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         """
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
         pulumi.set(__self__, "name", name)
-        if backend_set_name is not None:
-            pulumi.set(__self__, "backend_set_name", backend_set_name)
+
+    @property
+    @pulumi.getter(name="backendSetName")
+    def backend_set_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
+        """
+        return pulumi.get(self, "backend_set_name")
+
+    @backend_set_name.setter
+    def backend_set_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "backend_set_name", value)
 
     @property
     @pulumi.getter
@@ -936,18 +963,6 @@ class LoadBalancerRoutingPolicyRuleActionArgs:
     @name.setter
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter(name="backendSetName")
-    def backend_set_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-        """
-        return pulumi.get(self, "backend_set_name")
-
-    @backend_set_name.setter
-    def backend_set_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "backend_set_name", value)
 
 
 @pulumi.input_type

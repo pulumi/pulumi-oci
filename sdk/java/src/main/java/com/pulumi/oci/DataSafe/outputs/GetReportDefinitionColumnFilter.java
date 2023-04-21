@@ -22,7 +22,7 @@ public final class GetReportDefinitionColumnFilter {
      */
     private String fieldName;
     /**
-     * @return Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     private Boolean isEnabled;
@@ -53,7 +53,7 @@ public final class GetReportDefinitionColumnFilter {
         return this.fieldName;
     }
     /**
-     * @return Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     public Boolean isEnabled() {

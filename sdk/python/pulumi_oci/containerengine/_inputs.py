@@ -40,6 +40,8 @@ __all__ = [
     'NodePoolNodeConfigDetailsArgs',
     'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs',
     'NodePoolNodeConfigDetailsPlacementConfigArgs',
+    'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs',
+    'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs',
     'NodePoolNodeErrorArgs',
     'NodePoolNodeEvictionNodePoolSettingsArgs',
     'NodePoolNodeShapeConfigArgs',
@@ -2555,12 +2557,14 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
                  availability_domain: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 preemptible_node_config: Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']] = None):
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) A list of fault domains in which to place nodes.
+        :param pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_config: (Updatable) Configuration options for preemptible nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -2568,6 +2572,8 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
+        if preemptible_node_config is not None:
+            pulumi.set(__self__, "preemptible_node_config", preemptible_node_config)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2616,6 +2622,78 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     @fault_domains.setter
     def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "fault_domains", value)
+
+    @property
+    @pulumi.getter(name="preemptibleNodeConfig")
+    def preemptible_node_config(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]:
+        """
+        (Updatable) Configuration options for preemptible nodes.
+        """
+        return pulumi.get(self, "preemptible_node_config")
+
+    @preemptible_node_config.setter
+    def preemptible_node_config(self, value: Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]):
+        pulumi.set(self, "preemptible_node_config", value)
+
+
+@pulumi.input_type
+class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs:
+    def __init__(__self__, *,
+                 preemption_action: pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs']):
+        """
+        :param pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs'] preemption_action: (Updatable) The action to run when the preemptible node is interrupted for eviction.
+        """
+        pulumi.set(__self__, "preemption_action", preemption_action)
+
+    @property
+    @pulumi.getter(name="preemptionAction")
+    def preemption_action(self) -> pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs']:
+        """
+        (Updatable) The action to run when the preemptible node is interrupted for eviction.
+        """
+        return pulumi.get(self, "preemption_action")
+
+    @preemption_action.setter
+    def preemption_action(self, value: pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs']):
+        pulumi.set(self, "preemption_action", value)
+
+
+@pulumi.input_type
+class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 is_preserve_boot_volume: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[bool] is_preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        pulumi.set(__self__, "type", type)
+        if is_preserve_boot_volume is not None:
+            pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="isPreserveBootVolume")
+    def is_preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        return pulumi.get(self, "is_preserve_boot_volume")
+
+    @is_preserve_boot_volume.setter
+    def is_preserve_boot_volume(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_preserve_boot_volume", value)
 
 
 @pulumi.input_type

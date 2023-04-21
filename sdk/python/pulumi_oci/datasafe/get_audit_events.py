@@ -63,7 +63,7 @@ class GetAuditEventsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+        The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
         """
         return pulumi.get(self, "compartment_id")
 

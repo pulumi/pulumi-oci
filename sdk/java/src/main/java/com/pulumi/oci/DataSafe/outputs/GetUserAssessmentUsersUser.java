@@ -61,7 +61,7 @@ public final class GetUserAssessmentUsersUser {
      */
     private String userName;
     /**
-     * @return The user profile name.
+     * @return A filter to return only items that match the specified user profile.
      * 
      */
     private String userProfile;
@@ -143,7 +143,7 @@ public final class GetUserAssessmentUsersUser {
         return this.userName;
     }
     /**
-     * @return The user profile name.
+     * @return A filter to return only items that match the specified user profile.
      * 
      */
     public String userProfile() {

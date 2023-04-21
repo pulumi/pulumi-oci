@@ -95,7 +95,7 @@ type GetAuditTrailsResult struct {
 	// The list of audit_trail_collection.
 	AuditTrailCollections []GetAuditTrailsAuditTrailCollection `pulumi:"auditTrailCollections"`
 	AuditTrailId          *string                              `pulumi:"auditTrailId"`
-	// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+	// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
 	// The display name of the audit trail.
@@ -177,7 +177,7 @@ func (o GetAuditTrailsResultOutput) AuditTrailId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditTrailsResult) *string { return v.AuditTrailId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
+// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 func (o GetAuditTrailsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditTrailsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

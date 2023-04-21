@@ -121,7 +121,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         /// </summary>
         [Input("timeLastCollected")]
         public Input<string>? TimeLastCollected { get; set; }

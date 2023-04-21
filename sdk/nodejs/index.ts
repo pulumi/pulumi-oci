@@ -44,7 +44,6 @@ import * as databasemanagement from "./databasemanagement";
 import * as databasemigration from "./databasemigration";
 import * as databasetools from "./databasetools";
 import * as datacatalog from "./datacatalog";
-import * as dataconnectivity from "./dataconnectivity";
 import * as dataflow from "./dataflow";
 import * as dataintegration from "./dataintegration";
 import * as datalabellingservice from "./datalabellingservice";
@@ -153,7 +152,6 @@ export {
     databasemigration,
     databasetools,
     datacatalog,
-    dataconnectivity,
     dataflow,
     dataintegration,
     datalabellingservice,

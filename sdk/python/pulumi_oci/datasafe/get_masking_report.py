@@ -21,13 +21,22 @@ class GetMaskingReportResult:
     """
     A collection of values returned by getMaskingReport.
     """
-    def __init__(__self__, compartment_id=None, id=None, masking_policy_id=None, masking_report_id=None, masking_work_request_id=None, state=None, target_id=None, time_created=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None):
+    def __init__(__self__, compartment_id=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, masking_report_id=None, masking_work_request_id=None, parallel_degree=None, recompile=None, state=None, target_id=None, time_created=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_drop_temp_tables_enabled and not isinstance(is_drop_temp_tables_enabled, bool):
+            raise TypeError("Expected argument 'is_drop_temp_tables_enabled' to be a bool")
+        pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+        if is_redo_logging_enabled and not isinstance(is_redo_logging_enabled, bool):
+            raise TypeError("Expected argument 'is_redo_logging_enabled' to be a bool")
+        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+        if is_refresh_stats_enabled and not isinstance(is_refresh_stats_enabled, bool):
+            raise TypeError("Expected argument 'is_refresh_stats_enabled' to be a bool")
+        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
         if masking_policy_id and not isinstance(masking_policy_id, str):
             raise TypeError("Expected argument 'masking_policy_id' to be a str")
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
@@ -37,6 +46,12 @@ class GetMaskingReportResult:
         if masking_work_request_id and not isinstance(masking_work_request_id, str):
             raise TypeError("Expected argument 'masking_work_request_id' to be a str")
         pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
+        if parallel_degree and not isinstance(parallel_degree, str):
+            raise TypeError("Expected argument 'parallel_degree' to be a str")
+        pulumi.set(__self__, "parallel_degree", parallel_degree)
+        if recompile and not isinstance(recompile, str):
+            raise TypeError("Expected argument 'recompile' to be a str")
+        pulumi.set(__self__, "recompile", recompile)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -85,6 +100,30 @@ class GetMaskingReportResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isDropTempTablesEnabled")
+    def is_drop_temp_tables_enabled(self) -> bool:
+        """
+        Indicates if the temporary tables created during the masking operation were dropped after masking.
+        """
+        return pulumi.get(self, "is_drop_temp_tables_enabled")
+
+    @property
+    @pulumi.getter(name="isRedoLoggingEnabled")
+    def is_redo_logging_enabled(self) -> bool:
+        """
+        Indicates if redo logging was enabled during the masking operation.
+        """
+        return pulumi.get(self, "is_redo_logging_enabled")
+
+    @property
+    @pulumi.getter(name="isRefreshStatsEnabled")
+    def is_refresh_stats_enabled(self) -> bool:
+        """
+        Indicates if statistics gathering was enabled during the masking operation.
+        """
+        return pulumi.get(self, "is_refresh_stats_enabled")
+
+    @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> str:
         """
@@ -104,6 +143,22 @@ class GetMaskingReportResult:
         The OCID of the masking work request that resulted in this masking report.
         """
         return pulumi.get(self, "masking_work_request_id")
+
+    @property
+    @pulumi.getter(name="parallelDegree")
+    def parallel_degree(self) -> str:
+        """
+        Indicates if parallel execution was enabled during the masking operation.
+        """
+        return pulumi.get(self, "parallel_degree")
+
+    @property
+    @pulumi.getter
+    def recompile(self) -> str:
+        """
+        Indicates how invalid objects were recompiled post the masking operation.
+        """
+        return pulumi.get(self, "recompile")
 
     @property
     @pulumi.getter
@@ -194,9 +249,14 @@ class AwaitableGetMaskingReportResult(GetMaskingReportResult):
         return GetMaskingReportResult(
             compartment_id=self.compartment_id,
             id=self.id,
+            is_drop_temp_tables_enabled=self.is_drop_temp_tables_enabled,
+            is_redo_logging_enabled=self.is_redo_logging_enabled,
+            is_refresh_stats_enabled=self.is_refresh_stats_enabled,
             masking_policy_id=self.masking_policy_id,
             masking_report_id=self.masking_report_id,
             masking_work_request_id=self.masking_work_request_id,
+            parallel_degree=self.parallel_degree,
+            recompile=self.recompile,
             state=self.state,
             target_id=self.target_id,
             time_created=self.time_created,
@@ -236,9 +296,14 @@ def get_masking_report(masking_report_id: Optional[str] = None,
     return AwaitableGetMaskingReportResult(
         compartment_id=__ret__.compartment_id,
         id=__ret__.id,
+        is_drop_temp_tables_enabled=__ret__.is_drop_temp_tables_enabled,
+        is_redo_logging_enabled=__ret__.is_redo_logging_enabled,
+        is_refresh_stats_enabled=__ret__.is_refresh_stats_enabled,
         masking_policy_id=__ret__.masking_policy_id,
         masking_report_id=__ret__.masking_report_id,
         masking_work_request_id=__ret__.masking_work_request_id,
+        parallel_degree=__ret__.parallel_degree,
+        recompile=__ret__.recompile,
         state=__ret__.state,
         target_id=__ret__.target_id,
         time_created=__ret__.time_created,

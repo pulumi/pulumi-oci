@@ -734,6 +734,12 @@ class NodePool(pulumi.CustomResource):
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
                     fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
+                    preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
+                        preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
+                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
+                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
+                        ),
+                    ),
                 )],
                 size=var["node_pool_node_config_details_size"],
                 is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
@@ -839,6 +845,12 @@ class NodePool(pulumi.CustomResource):
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
                     fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
+                    preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
+                        preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
+                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
+                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
+                        ),
+                    ),
                 )],
                 size=var["node_pool_node_config_details_size"],
                 is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],

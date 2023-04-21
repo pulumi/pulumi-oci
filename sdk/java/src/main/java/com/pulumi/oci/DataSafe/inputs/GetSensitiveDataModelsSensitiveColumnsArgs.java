@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -67,6 +68,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsArgs extends com.pulumi
 
     public Optional<Output<List<GetSensitiveDataModelsSensitiveColumnsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     * 
+     */
+    @Import(name="isCaseInSensitive")
+    private @Nullable Output<Boolean> isCaseInSensitive;
+
+    /**
+     * @return A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     * 
+     */
+    public Optional<Output<Boolean>> isCaseInSensitive() {
+        return Optional.ofNullable(this.isCaseInSensitive);
     }
 
     /**
@@ -271,6 +287,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsArgs extends com.pulumi
         this.columnNames = $.columnNames;
         this.dataTypes = $.dataTypes;
         this.filters = $.filters;
+        this.isCaseInSensitive = $.isCaseInSensitive;
         this.objectTypes = $.objectTypes;
         this.objects = $.objects;
         this.parentColumnKeys = $.parentColumnKeys;
@@ -398,6 +415,27 @@ public final class GetSensitiveDataModelsSensitiveColumnsArgs extends com.pulumi
 
         public Builder filters(GetSensitiveDataModelsSensitiveColumnsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isCaseInSensitive A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCaseInSensitive(@Nullable Output<Boolean> isCaseInSensitive) {
+            $.isCaseInSensitive = isCaseInSensitive;
+            return this;
+        }
+
+        /**
+         * @param isCaseInSensitive A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCaseInSensitive(Boolean isCaseInSensitive) {
+            return isCaseInSensitive(Output.of(isCaseInSensitive));
         }
 
         /**

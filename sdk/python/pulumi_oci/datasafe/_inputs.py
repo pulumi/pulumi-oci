@@ -54,14 +54,20 @@ __all__ = [
     'GetMaskingAnalyticsFilterArgs',
     'GetMaskingPoliciesFilterArgs',
     'GetMaskingPoliciesMaskingColumnsFilterArgs',
+    'GetMaskingPolicyMaskingObjectsFilterArgs',
+    'GetMaskingPolicyMaskingSchemasFilterArgs',
     'GetMaskingReportMaskedColumnsFilterArgs',
     'GetMaskingReportsFilterArgs',
     'GetOnpremConnectorsFilterArgs',
     'GetReportDefinitionsFilterArgs',
     'GetReportsFilterArgs',
+    'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs',
+    'GetSdmMaskingPolicyDifferencesFilterArgs',
     'GetSecurityAssessmentFindingFilterArgs',
     'GetSecurityAssessmentFindingsFilterArgs',
     'GetSecurityAssessmentsFilterArgs',
+    'GetSensitiveDataModelSensitiveObjectsFilterArgs',
+    'GetSensitiveDataModelSensitiveSchemasFilterArgs',
     'GetSensitiveDataModelsFilterArgs',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgs',
     'GetSensitiveTypesFilterArgs',
@@ -72,6 +78,8 @@ __all__ = [
     'GetTargetDatabasesFilterArgs',
     'GetTargetDatabasesSchemasFilterArgs',
     'GetTargetDatabasesTablesFilterArgs',
+    'GetUserAssessmentProfileAnalyticsFilterArgs',
+    'GetUserAssessmentProfilesFilterArgs',
     'GetUserAssessmentUserAnalyticsFilterArgs',
     'GetUserAssessmentUsersFilterArgs',
     'GetUserAssessmentsFilterArgs',
@@ -440,7 +448,7 @@ class AuditProfileAuditTrailArgs:
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the Data Safe target for which the audit profile is created.
         :param pulumi.Input[str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_last_collected: The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        :param pulumi.Input[str] time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param pulumi.Input[str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param pulumi.Input[str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
@@ -668,7 +676,7 @@ class AuditProfileAuditTrailArgs:
     @pulumi.getter(name="timeLastCollected")
     def time_last_collected(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
@@ -1674,7 +1682,7 @@ class ReportDefinitionColumnFilterArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] expressions: (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
         :param pulumi.Input[str] field_name: (Updatable) Name of the column that must be sorted.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         :param pulumi.Input[bool] is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param pulumi.Input[str] operator: (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
         """
@@ -1712,7 +1720,7 @@ class ReportDefinitionColumnFilterArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
         """
-        (Updatable) Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -3020,8 +3028,8 @@ class TargetDatabaseDatabaseDetailsArgs:
         """
         :param pulumi.Input[str] database_type: (Updatable) The database type.
         :param pulumi.Input[str] infrastructure_type: (Updatable) The infrastructure type the database is running on.
-        :param pulumi.Input[str] autonomous_database_id: (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
-        :param pulumi.Input[str] db_system_id: (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+        :param pulumi.Input[str] autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param pulumi.Input[str] db_system_id: (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         :param pulumi.Input[str] instance_id: (Updatable) The OCID of the compute instance on which the database is running.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         :param pulumi.Input[int] listener_port: (Updatable) The port number of the database listener.
@@ -3073,7 +3081,7 @@ class TargetDatabaseDatabaseDetailsArgs:
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
+        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
@@ -3085,7 +3093,7 @@ class TargetDatabaseDatabaseDetailsArgs:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
+        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -3990,6 +3998,84 @@ class GetMaskingPoliciesMaskingColumnsFilterArgs:
 
 
 @pulumi.input_type
+class GetMaskingPolicyMaskingObjectsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetMaskingPolicyMaskingSchemasFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetMaskingReportMaskedColumnsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -4191,6 +4277,84 @@ class GetReportsFilterArgs:
 
 
 @pulumi.input_type
+class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSdmMaskingPolicyDifferencesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetSecurityAssessmentFindingFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -4270,6 +4434,84 @@ class GetSecurityAssessmentFindingsFilterArgs:
 
 @pulumi.input_type
 class GetSecurityAssessmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSensitiveDataModelSensitiveObjectsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSensitiveDataModelSensitiveSchemasFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -4660,6 +4902,84 @@ class GetTargetDatabasesSchemasFilterArgs:
 
 @pulumi.input_type
 class GetTargetDatabasesTablesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetUserAssessmentProfileAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetUserAssessmentProfilesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

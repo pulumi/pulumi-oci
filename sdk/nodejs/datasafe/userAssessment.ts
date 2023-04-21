@@ -147,6 +147,10 @@ export class UserAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    public /*out*/ readonly timeLastAssessed!: pulumi.Output<string>;
+    /**
      * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -155,7 +159,7 @@ export class UserAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly triggeredBy!: pulumi.Output<string>;
     /**
-     * Type of user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      */
     public /*out*/ readonly type!: pulumi.Output<string>;
 
@@ -191,6 +195,7 @@ export class UserAssessment extends pulumi.CustomResource {
             resourceInputs["targetId"] = state ? state.targetId : undefined;
             resourceInputs["targetIds"] = state ? state.targetIds : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeLastAssessed"] = state ? state.timeLastAssessed : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["triggeredBy"] = state ? state.triggeredBy : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -221,6 +226,7 @@ export class UserAssessment extends pulumi.CustomResource {
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["targetIds"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeLastAssessed"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["triggeredBy"] = undefined /*out*/;
             resourceInputs["type"] = undefined /*out*/;
@@ -311,6 +317,10 @@ export interface UserAssessmentState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    timeLastAssessed?: pulumi.Input<string>;
+    /**
      * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeUpdated?: pulumi.Input<string>;
@@ -319,7 +329,7 @@ export interface UserAssessmentState {
      */
     triggeredBy?: pulumi.Input<string>;
     /**
-     * Type of user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      */
     type?: pulumi.Input<string>;
 }

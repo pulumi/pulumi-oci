@@ -68,7 +68,7 @@ export interface GetTargetDatabasesArgs {
      */
     compartmentIdInSubtree?: boolean;
     /**
-     * A filter to return target databases that match the database type of the target database.
+     * A filter to return only target databases that match the specified database type.
      */
     databaseType?: string;
     /**
@@ -77,11 +77,11 @@ export interface GetTargetDatabasesArgs {
     displayName?: string;
     filters?: inputs.DataSafe.GetTargetDatabasesFilter[];
     /**
-     * A filter to return target databases that match the infrastructure type of the target database.
+     * A filter to return only target databases that match the specified infrastructure type.
      */
     infrastructureType?: string;
     /**
-     * A filter to return the target databases that matches the current state of the target database.
+     * A filter to return only target databases that match the specified lifecycle state.
      */
     state?: string;
     /**
@@ -177,7 +177,7 @@ export interface GetTargetDatabasesOutputArgs {
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     /**
-     * A filter to return target databases that match the database type of the target database.
+     * A filter to return only target databases that match the specified database type.
      */
     databaseType?: pulumi.Input<string>;
     /**
@@ -186,11 +186,11 @@ export interface GetTargetDatabasesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesFilterArgs>[]>;
     /**
-     * A filter to return target databases that match the infrastructure type of the target database.
+     * A filter to return only target databases that match the specified infrastructure type.
      */
     infrastructureType?: pulumi.Input<string>;
     /**
-     * A filter to return the target databases that matches the current state of the target database.
+     * A filter to return only target databases that match the specified lifecycle state.
      */
     state?: pulumi.Input<string>;
     /**

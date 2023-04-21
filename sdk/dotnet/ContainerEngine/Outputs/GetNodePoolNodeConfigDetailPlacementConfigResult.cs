@@ -26,6 +26,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<string> FaultDomains;
         /// <summary>
+        /// Configuration options for preemptible nodes.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult> PreemptibleNodeConfigs;
+        /// <summary>
         /// The OCID of the subnet in which this node is placed.
         /// </summary>
         public readonly string SubnetId;
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<string> faultDomains,
 
+            ImmutableArray<Outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult> preemptibleNodeConfigs,
+
             string subnetId)
         {
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
             FaultDomains = faultDomains;
+            PreemptibleNodeConfigs = preemptibleNodeConfigs;
             SubnetId = subnetId;
         }
     }

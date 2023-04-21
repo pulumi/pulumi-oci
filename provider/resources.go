@@ -16,6 +16,8 @@ package oci
 
 import (
 	"fmt"
+	// embed is used to store bridge-metadata.json in the compiled binary
+	_ "embed"
 	"path/filepath"
 	"strings"
 
@@ -60,7 +62,6 @@ const (
 	containerEngineMod              = "ContainerEngine"              // Container Engine
 	containerInstancesMod           = "ContainerInstances"           // Container Instances
 	coreMod                         = "Core"                         // Core
-	dataConnectivityMod             = "DataConnectivity"             // Data Connectivity
 	dataLabellingServiceMod         = "DataLabellingService"         // Data Labelling Service
 	dataSafeMod                     = "DataSafe"                     // Data Safe
 	databaseMod                     = "Database"                     // Database
@@ -170,7 +171,6 @@ var mappedMods = map[string]string{
 	"containerengine":                containerEngineMod,
 	"container_instances":            containerInstancesMod,
 	"core":                           coreMod,
-	"data_connectivity":              dataConnectivityMod,
 	"data_labelling_service":         dataLabellingServiceMod,
 	"data_safe":                      dataSafeMod,
 	"database":                       databaseMod,
@@ -492,11 +492,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_core_capture_filter":                  {Tok: tfbridge.MakeResource(mainPkg, coreMod, "CaptureFilter")},
 			"oci_core_vtap":                            {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Vtap")},
 
-			"oci_data_connectivity_registry":            {Tok: tfbridge.MakeResource(mainPkg, dataConnectivityMod, "Registry")},
-			"oci_data_connectivity_registry_connection": {Tok: tfbridge.MakeResource(mainPkg, dataConnectivityMod, "RegistryConnection")},
-			"oci_data_connectivity_registry_data_asset": {Tok: tfbridge.MakeResource(mainPkg, dataConnectivityMod, "RegistryDataAsset")},
-			"oci_data_connectivity_registry_folder":     {Tok: tfbridge.MakeResource(mainPkg, dataConnectivityMod, "RegistryFolder")},
-
 			"oci_data_labeling_service_dataset": {Tok: tfbridge.MakeResource(mainPkg, dataLabellingServiceMod, "Dataset")},
 
 			"oci_data_safe_add_sdm_columns": {
@@ -529,6 +524,13 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_data_safe_report_definition":               {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "ReportDefinition")},
 			"oci_data_safe_security_assessment":             {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SecurityAssessment")},
 			"oci_data_safe_sensitive_data_model":            {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SensitiveDataModel")},
+			"oci_data_safe_masking_policies_apply_difference_to_masking_columns": {
+				Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "MaskingPoliciesApplyDifferenceToMaskingColumns"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "),
+				},
+			},
+
 			"oci_data_safe_sensitive_data_models_apply_discovery_job_results": {
 				Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SensitiveDataModelsApplyDiscoveryJobResults"),
 				Docs: &tfbridge.DocInfo{
@@ -1364,17 +1366,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_core_vtap":                             {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getVtap")},
 			"oci_core_vtaps":                            {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getVtaps")},
 			"oci_core_instance_maintenance_reboot":      {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getInstanceMaintenanceReboot")},
-
-			"oci_data_connectivity_registries":           {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistries")},
-			"oci_data_connectivity_registry":             {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistry")},
-			"oci_data_connectivity_registry_connection":  {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryConnection")},
-			"oci_data_connectivity_registry_connections": {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryConnections")},
-			"oci_data_connectivity_registry_data_asset":  {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryDataAsset")},
-			"oci_data_connectivity_registry_data_assets": {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryDataAssets")},
-			"oci_data_connectivity_registry_folder":      {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryFolder")},
-			"oci_data_connectivity_registry_folders":     {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryFolders")},
-			"oci_data_connectivity_registry_type":        {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryType")},
-			"oci_data_connectivity_registry_types":       {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistryTypes")},
 
 			"oci_data_labeling_service_annotation_format":  {Tok: tfbridge.MakeDataSource(mainPkg, dataLabellingServiceMod, "getAnnotationFormat")},
 			"oci_data_labeling_service_annotation_formats": {Tok: tfbridge.MakeDataSource(mainPkg, dataLabellingServiceMod, "getAnnotationFormats")},
@@ -2401,7 +2392,7 @@ func Provider() tfbridge.ProviderInfo {
 			PackageReferences: map[string]string{
 				"Pulumi": "3.*",
 			},
-		},
+		}, MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
 	mappedModKeys := make([]string, 0, len(mappedMods))
@@ -2436,8 +2427,13 @@ func Provider() tfbridge.ProviderInfo {
 		contract.Assertf(ok, "Expected resource %s", r)
 		prov.Resources[r].Docs = &tfbridge.DocInfo{Markdown: []byte{' '}}
 	}
+	err = x.AutoAliasing(&prov, prov.GetMetadata())
+	contract.AssertNoErrorf(err, "auto aliasing apply failed")
 
 	prov.SetAutonaming(255, "-")
 
 	return prov
 }
+
+//go:embed cmd/pulumi-resource-oci/bridge-metadata.json
+var metadata []byte

@@ -49,6 +49,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .connectionPassword(var_.operations_insights_warehouse_user_connection_password())
  *             .isAwrDataAccess(var_.operations_insights_warehouse_user_is_awr_data_access())
+ *             .name(var_.operations_insights_warehouse_user_name())
  *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))

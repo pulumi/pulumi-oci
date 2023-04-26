@@ -16,29 +16,30 @@ class ResolverEndpointInitArgs:
     def __init__(__self__, *,
                  is_forwarding: pulumi.Input[bool],
                  is_listening: pulumi.Input[bool],
+                 name: pulumi.Input[str],
                  resolver_id: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
                  endpoint_type: Optional[pulumi.Input[str]] = None,
                  forwarding_address: Optional[pulumi.Input[str]] = None,
                  listening_address: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ResolverEndpoint resource.
         :param pulumi.Input[bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         :param pulumi.Input[bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
+        :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
         :param pulumi.Input[str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
         :param pulumi.Input[str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         :param pulumi.Input[str] listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
         :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
         """
         pulumi.set(__self__, "is_forwarding", is_forwarding)
         pulumi.set(__self__, "is_listening", is_listening)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "resolver_id", resolver_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if endpoint_type is not None:
@@ -47,8 +48,6 @@ class ResolverEndpointInitArgs:
             pulumi.set(__self__, "forwarding_address", forwarding_address)
         if listening_address is not None:
             pulumi.set(__self__, "listening_address", listening_address)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if scope is not None:
@@ -77,6 +76,18 @@ class ResolverEndpointInitArgs:
     @is_listening.setter
     def is_listening(self, value: pulumi.Input[bool]):
         pulumi.set(self, "is_listening", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="resolverId")
@@ -137,18 +148,6 @@ class ResolverEndpointInitArgs:
     @listening_address.setter
     def listening_address(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "listening_address", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -453,6 +452,7 @@ class ResolverEndpoint(pulumi.CustomResource):
         test_resolver_endpoint = oci.dns.ResolverEndpoint("testResolverEndpoint",
             is_forwarding=var["resolver_endpoint_is_forwarding"],
             is_listening=var["resolver_endpoint_is_listening"],
+            name=var["resolver_endpoint_name"],
             resolver_id=oci_dns_resolver["test_resolver"]["id"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             scope="PRIVATE",
@@ -509,6 +509,7 @@ class ResolverEndpoint(pulumi.CustomResource):
         test_resolver_endpoint = oci.dns.ResolverEndpoint("testResolverEndpoint",
             is_forwarding=var["resolver_endpoint_is_forwarding"],
             is_listening=var["resolver_endpoint_is_listening"],
+            name=var["resolver_endpoint_name"],
             resolver_id=oci_dns_resolver["test_resolver"]["id"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             scope="PRIVATE",
@@ -575,6 +576,8 @@ class ResolverEndpoint(pulumi.CustomResource):
                 raise TypeError("Missing required property 'is_listening'")
             __props__.__dict__["is_listening"] = is_listening
             __props__.__dict__["listening_address"] = listening_address
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["nsg_ids"] = nsg_ids
             if resolver_id is None and not opts.urn:

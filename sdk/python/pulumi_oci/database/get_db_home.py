@@ -22,7 +22,7 @@ class GetDbHomeResult:
     """
     A collection of values returned by getDbHome.
     """
-    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_desupported_version=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, time_created=None, vm_cluster_id=None):
+    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, id=None, is_desupported_version=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, time_created=None, vm_cluster_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +50,9 @@ class GetDbHomeResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if enable_database_delete and not isinstance(enable_database_delete, bool):
+            raise TypeError("Expected argument 'enable_database_delete' to be a bool")
+        pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -151,6 +154,11 @@ class GetDbHomeResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="enableDatabaseDelete")
+    def enable_database_delete(self) -> bool:
+        return pulumi.get(self, "enable_database_delete")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -245,6 +253,7 @@ class AwaitableGetDbHomeResult(GetDbHomeResult):
             db_version=self.db_version,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            enable_database_delete=self.enable_database_delete,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_desupported_version=self.is_desupported_version,
@@ -292,6 +301,7 @@ def get_db_home(db_home_id: Optional[str] = None,
         db_version=__ret__.db_version,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
+        enable_database_delete=__ret__.enable_database_delete,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_desupported_version=__ret__.is_desupported_version,

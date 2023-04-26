@@ -17,26 +17,25 @@ __all__ = ['IndexArgs', 'Index']
 class IndexArgs:
     def __init__(__self__, *,
                  keys: pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]],
+                 name: pulumi.Input[str],
                  table_name_or_id: pulumi.Input[str],
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 is_if_not_exists: Optional[pulumi.Input[bool]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 is_if_not_exists: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Index resource.
         :param pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]] keys: A set of keys for a secondary index.
+        :param pulumi.Input[str] name: Index name.
         :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
         :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[str] name: Index name.
         """
         pulumi.set(__self__, "keys", keys)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "table_name_or_id", table_name_or_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if is_if_not_exists is not None:
             pulumi.set(__self__, "is_if_not_exists", is_if_not_exists)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -49,6 +48,18 @@ class IndexArgs:
     @keys.setter
     def keys(self, value: pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]):
         pulumi.set(self, "keys", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        Index name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="tableNameOrId")
@@ -85,18 +96,6 @@ class IndexArgs:
     @is_if_not_exists.setter
     def is_if_not_exists(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_if_not_exists", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Index name.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -279,6 +278,7 @@ class Index(pulumi.CustomResource):
                 json_field_type=var["index_keys_json_field_type"],
                 json_path=var["index_keys_json_path"],
             )],
+            name=var["index_name"],
             table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
             compartment_id=var["compartment_id"],
             is_if_not_exists=var["index_is_if_not_exists"])
@@ -323,6 +323,7 @@ class Index(pulumi.CustomResource):
                 json_field_type=var["index_keys_json_field_type"],
                 json_path=var["index_keys_json_path"],
             )],
+            name=var["index_name"],
             table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
             compartment_id=var["compartment_id"],
             is_if_not_exists=var["index_is_if_not_exists"])
@@ -370,6 +371,8 @@ class Index(pulumi.CustomResource):
             if keys is None and not opts.urn:
                 raise TypeError("Missing required property 'keys'")
             __props__.__dict__["keys"] = keys
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if table_name_or_id is None and not opts.urn:
                 raise TypeError("Missing required property 'table_name_or_id'")

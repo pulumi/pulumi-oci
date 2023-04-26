@@ -32,6 +32,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.NewWorkspaceFolder(ctx, "testWorkspaceFolder", &DataIntegration.WorkspaceFolderArgs{
 //				Identifier: pulumi.Any(_var.Workspace_folder_identifier),
+//				Name:       pulumi.Any(_var.Workspace_folder_name),
 //				RegistryMetadata: &dataintegration.WorkspaceFolderRegistryMetadataArgs{
 //					AggregatorKey:   pulumi.Any(_var.Workspace_folder_registry_metadata_aggregator_key),
 //					IsFavorite:      pulumi.Any(_var.Workspace_folder_registry_metadata_is_favorite),
@@ -107,6 +108,9 @@ func NewWorkspaceFolder(ctx *pulumi.Context,
 
 	if args.Identifier == nil {
 		return nil, errors.New("invalid value for required argument 'Identifier'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.RegistryMetadata == nil {
 		return nil, errors.New("invalid value for required argument 'RegistryMetadata'")
@@ -216,7 +220,7 @@ type workspaceFolderArgs struct {
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) Information about the object and its parent.
@@ -239,7 +243,7 @@ type WorkspaceFolderArgs struct {
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput
 	// (Updatable) Information about the object and its parent.

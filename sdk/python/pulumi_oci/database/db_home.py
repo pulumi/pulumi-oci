@@ -22,6 +22,7 @@ class DbHomeArgs:
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -36,6 +37,7 @@ class DbHomeArgs:
         :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
+        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -55,6 +57,8 @@ class DbHomeArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if enable_database_delete is not None:
+            pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_desupported_version is not None:
@@ -141,6 +145,18 @@ class DbHomeArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="enableDatabaseDelete")
+    def enable_database_delete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+        """
+        return pulumi.get(self, "enable_database_delete")
+
+    @enable_database_delete.setter
+    def enable_database_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_database_delete", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -224,6 +240,7 @@ class _DbHomeState:
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -244,6 +261,7 @@ class _DbHomeState:
         :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
+        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -271,6 +289,8 @@ class _DbHomeState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if enable_database_delete is not None:
+            pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_desupported_version is not None:
@@ -387,6 +407,18 @@ class _DbHomeState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="enableDatabaseDelete")
+    def enable_database_delete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+        """
+        return pulumi.get(self, "enable_database_delete")
+
+    @enable_database_delete.setter
+    def enable_database_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_database_delete", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -520,6 +552,7 @@ class DbHome(pulumi.CustomResource):
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -528,10 +561,6 @@ class DbHome(pulumi.CustomResource):
                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
-
         ## Import
 
         DbHomes can be imported using the `id`, e.g.
@@ -556,6 +585,7 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
+        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -570,10 +600,6 @@ class DbHome(pulumi.CustomResource):
                  args: Optional[DbHomeArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
-
         ## Import
 
         DbHomes can be imported using the `id`, e.g.
@@ -611,6 +637,7 @@ class DbHome(pulumi.CustomResource):
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -632,6 +659,7 @@ class DbHome(pulumi.CustomResource):
             __props__.__dict__["db_version"] = db_version
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["enable_database_delete"] = enable_database_delete
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_desupported_version"] = is_desupported_version
             __props__.__dict__["kms_key_id"] = kms_key_id
@@ -662,6 +690,7 @@ class DbHome(pulumi.CustomResource):
             db_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            enable_database_delete: Optional[pulumi.Input[bool]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_desupported_version: Optional[pulumi.Input[bool]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -687,6 +716,7 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
+        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -710,6 +740,7 @@ class DbHome(pulumi.CustomResource):
         __props__.__dict__["db_version"] = db_version
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["enable_database_delete"] = enable_database_delete
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_desupported_version"] = is_desupported_version
         __props__.__dict__["kms_key_id"] = kms_key_id
@@ -732,7 +763,7 @@ class DbHome(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def database(self) -> pulumi.Output[Optional['outputs.DbHomeDatabase']]:
+    def database(self) -> pulumi.Output['outputs.DbHomeDatabase']:
         """
         (Updatable) Details for creating a database.
         """
@@ -785,6 +816,14 @@ class DbHome(pulumi.CustomResource):
         The user-provided name of the Database Home.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="enableDatabaseDelete")
+    def enable_database_delete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+        """
+        return pulumi.get(self, "enable_database_delete")
 
     @property
     @pulumi.getter(name="freeformTags")

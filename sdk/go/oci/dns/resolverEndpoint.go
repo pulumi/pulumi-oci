@@ -32,6 +32,7 @@ import (
 //			_, err := Dns.NewResolverEndpoint(ctx, "testResolverEndpoint", &Dns.ResolverEndpointArgs{
 //				IsForwarding:      pulumi.Any(_var.Resolver_endpoint_is_forwarding),
 //				IsListening:       pulumi.Any(_var.Resolver_endpoint_is_listening),
+//				Name:              pulumi.Any(_var.Resolver_endpoint_name),
 //				ResolverId:        pulumi.Any(oci_dns_resolver.Test_resolver.Id),
 //				SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				Scope:             pulumi.String("PRIVATE"),
@@ -113,6 +114,9 @@ func NewResolverEndpoint(ctx *pulumi.Context,
 	}
 	if args.IsListening == nil {
 		return nil, errors.New("invalid value for required argument 'IsListening'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.ResolverId == nil {
 		return nil, errors.New("invalid value for required argument 'ResolverId'")
@@ -223,7 +227,7 @@ type resolverEndpointArgs struct {
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
 	ListeningAddress *string `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The OCID of the target resolver.
@@ -247,7 +251,7 @@ type ResolverEndpointArgs struct {
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
 	ListeningAddress pulumi.StringPtrInput
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
 	NsgIds pulumi.StringArrayInput
 	// The OCID of the target resolver.

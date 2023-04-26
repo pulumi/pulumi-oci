@@ -43,6 +43,7 @@ import javax.annotation.Nullable;
  *         var testCompartment = new Compartment(&#34;testCompartment&#34;, CompartmentArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .description(var_.compartment_description())
+ *             .name(var_.compartment_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

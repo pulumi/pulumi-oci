@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Optimizer
     ///                 },
     ///             },
     ///         },
+    ///         Name = @var.Profile_name,
     ///         AggregationIntervalInDays = @var.Profile_aggregation_interval_in_days,
     ///         DefinedTags = 
     ///         {
@@ -250,8 +251,8 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// (Updatable) The name assigned to the profile. Avoid entering confidential information.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional. The compartments specified in the profile override for a recommendation.

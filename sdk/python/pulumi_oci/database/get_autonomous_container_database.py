@@ -241,6 +241,9 @@ class GetAutonomousContainerDatabaseResult:
     @property
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        """
         return pulumi.get(self, "compute_model")
 
     @property

@@ -1164,6 +1164,7 @@ class _AutonomousDatabaseState:
                  timestamp: Optional[pulumi.Input[str]] = None,
                  total_backup_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
                  use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
+                 used_data_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
@@ -1292,6 +1293,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
         :param pulumi.Input[float] total_backup_storage_size_in_gbs: The backup storage to the database.
         :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
+        :param pulumi.Input[int] used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -1520,6 +1522,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         if use_latest_available_backup_time_stamp is not None:
             pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
+        if used_data_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
         if used_data_storage_size_in_tbs is not None:
             pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         if vault_id is not None:
@@ -2883,6 +2887,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "use_latest_available_backup_time_stamp", value)
 
     @property
+    @pulumi.getter(name="usedDataStorageSizeInGbs")
+    def used_data_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The storage space consumed by Autonomous Database in GBs.
+        """
+        return pulumi.get(self, "used_data_storage_size_in_gbs")
+
+    @used_data_storage_size_in_gbs.setter
+    def used_data_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "used_data_storage_size_in_gbs", value)
+
+    @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> Optional[pulumi.Input[int]]:
         """
@@ -3302,6 +3318,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_reclamation_of_free_autonomous_database"] = None
             __props__.__dict__["time_until_reconnect_clone_enabled"] = None
             __props__.__dict__["total_backup_storage_size_in_gbs"] = None
+            __props__.__dict__["used_data_storage_size_in_gbs"] = None
             __props__.__dict__["used_data_storage_size_in_tbs"] = None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["adminPassword"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
@@ -3427,6 +3444,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             timestamp: Optional[pulumi.Input[str]] = None,
             total_backup_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
             use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
+            used_data_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
             vault_id: Optional[pulumi.Input[str]] = None,
             whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'AutonomousDatabase':
@@ -3560,6 +3578,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
         :param pulumi.Input[float] total_backup_storage_size_in_gbs: The backup storage to the database.
         :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
+        :param pulumi.Input[int] used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -3680,6 +3699,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["timestamp"] = timestamp
         __props__.__dict__["total_backup_storage_size_in_gbs"] = total_backup_storage_size_in_gbs
         __props__.__dict__["use_latest_available_backup_time_stamp"] = use_latest_available_backup_time_stamp
+        __props__.__dict__["used_data_storage_size_in_gbs"] = used_data_storage_size_in_gbs
         __props__.__dict__["used_data_storage_size_in_tbs"] = used_data_storage_size_in_tbs
         __props__.__dict__["vault_id"] = vault_id
         __props__.__dict__["whitelisted_ips"] = whitelisted_ips
@@ -4591,6 +4611,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         Clone from latest available backup timestamp.
         """
         return pulumi.get(self, "use_latest_available_backup_time_stamp")
+
+    @property
+    @pulumi.getter(name="usedDataStorageSizeInGbs")
+    def used_data_storage_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The storage space consumed by Autonomous Database in GBs.
+        """
+        return pulumi.get(self, "used_data_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")

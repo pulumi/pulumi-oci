@@ -10,10 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
-//
 // ## Import
 //
 // DbHomes can be imported using the `id`, e.g.
@@ -37,7 +33,7 @@ type DbHome struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Details for creating a database.
-	Database DbHomeDatabasePtrOutput `pulumi:"database"`
+	Database DbHomeDatabaseOutput `pulumi:"database"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
 	// The location of the Oracle Database Home.
@@ -50,6 +46,8 @@ type DbHome struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-provided name of the Database Home.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+	EnableDatabaseDelete pulumi.BoolPtrOutput `pulumi:"enableDatabaseDelete"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
@@ -117,6 +115,8 @@ type dbHomeState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-provided name of the Database Home.
 	DisplayName *string `pulumi:"displayName"`
+	// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+	EnableDatabaseDelete *bool `pulumi:"enableDatabaseDelete"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
@@ -156,6 +156,8 @@ type DbHomeState struct {
 	DefinedTags pulumi.MapInput
 	// The user-provided name of the Database Home.
 	DisplayName pulumi.StringPtrInput
+	// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+	EnableDatabaseDelete pulumi.BoolPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
@@ -195,6 +197,8 @@ type dbHomeArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-provided name of the Database Home.
 	DisplayName *string `pulumi:"displayName"`
+	// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+	EnableDatabaseDelete *bool `pulumi:"enableDatabaseDelete"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
@@ -223,6 +227,8 @@ type DbHomeArgs struct {
 	DefinedTags pulumi.MapInput
 	// The user-provided name of the Database Home.
 	DisplayName pulumi.StringPtrInput
+	// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+	EnableDatabaseDelete pulumi.BoolPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
@@ -330,8 +336,8 @@ func (o DbHomeOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Details for creating a database.
-func (o DbHomeOutput) Database() DbHomeDatabasePtrOutput {
-	return o.ApplyT(func(v *DbHome) DbHomeDatabasePtrOutput { return v.Database }).(DbHomeDatabasePtrOutput)
+func (o DbHomeOutput) Database() DbHomeDatabaseOutput {
+	return o.ApplyT(func(v *DbHome) DbHomeDatabaseOutput { return v.Database }).(DbHomeDatabaseOutput)
 }
 
 // The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -362,6 +368,11 @@ func (o DbHomeOutput) DefinedTags() pulumi.MapOutput {
 // The user-provided name of the Database Home.
 func (o DbHomeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+func (o DbHomeOutput) EnableDatabaseDelete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.BoolPtrOutput { return v.EnableDatabaseDelete }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

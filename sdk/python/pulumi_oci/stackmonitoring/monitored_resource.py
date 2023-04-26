@@ -17,6 +17,7 @@ __all__ = ['MonitoredResourceArgs', 'MonitoredResource']
 class MonitoredResourceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  type: pulumi.Input[str],
                  aliases: Optional[pulumi.Input['MonitoredResourceAliasesArgs']] = None,
                  credentials: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']] = None,
@@ -26,12 +27,12 @@ class MonitoredResourceArgs:
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MonitoredResource resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[str] name: (Updatable) property name
         :param pulumi.Input[str] type: Monitored resource type
         :param pulumi.Input['MonitoredResourceAliasesArgs'] aliases: (Updatable) Monitored Resource Alias Credential Details
         :param pulumi.Input['MonitoredResourceCredentialsArgs'] credentials: (Updatable) Monitored Resource Credential Details
@@ -41,11 +42,11 @@ class MonitoredResourceArgs:
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) property name
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
         if aliases is not None:
             pulumi.set(__self__, "aliases", aliases)
@@ -63,8 +64,6 @@ class MonitoredResourceArgs:
             pulumi.set(__self__, "host_name", host_name)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
         if resource_time_zone is not None:
@@ -81,6 +80,18 @@ class MonitoredResourceArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) property name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -189,18 +200,6 @@ class MonitoredResourceArgs:
     @management_agent_id.setter
     def management_agent_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "management_agent_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) property name
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -587,6 +586,7 @@ class MonitoredResource(pulumi.CustomResource):
 
         test_monitored_resource = oci.stack_monitoring.MonitoredResource("testMonitoredResource",
             compartment_id=var["compartment_id"],
+            name=var["monitored_resource_name"],
             type=var["monitored_resource_type"],
             aliases=oci.stack_monitoring.MonitoredResourceAliasesArgs(
                 credential=oci.stack_monitoring.MonitoredResourceAliasesCredentialArgs(
@@ -673,6 +673,7 @@ class MonitoredResource(pulumi.CustomResource):
 
         test_monitored_resource = oci.stack_monitoring.MonitoredResource("testMonitoredResource",
             compartment_id=var["compartment_id"],
+            name=var["monitored_resource_name"],
             type=var["monitored_resource_type"],
             aliases=oci.stack_monitoring.MonitoredResourceAliasesArgs(
                 credential=oci.stack_monitoring.MonitoredResourceAliasesCredentialArgs(
@@ -772,6 +773,8 @@ class MonitoredResource(pulumi.CustomResource):
             __props__.__dict__["external_resource_id"] = external_resource_id
             __props__.__dict__["host_name"] = host_name
             __props__.__dict__["management_agent_id"] = management_agent_id
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["properties"] = properties
             __props__.__dict__["resource_time_zone"] = resource_time_zone

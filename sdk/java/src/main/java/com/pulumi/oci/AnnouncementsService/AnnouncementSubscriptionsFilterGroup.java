@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  *                 .type(var_.announcement_subscriptions_filter_group_filters_type())
  *                 .value(var_.announcement_subscriptions_filter_group_filters_value())
  *                 .build())
+ *             .name(var_.announcement_subscriptions_filter_group_name())
  *             .build());
  * 
  *     }

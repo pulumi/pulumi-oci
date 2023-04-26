@@ -60,6 +60,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.tenancy_ocid())
  *             .description(var_.dynamic_group_description())
  *             .matchingRule(var_.dynamic_group_matching_rule())
+ *             .name(var_.dynamic_group_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

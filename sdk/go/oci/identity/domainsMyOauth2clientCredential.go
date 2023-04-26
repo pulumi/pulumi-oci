@@ -83,6 +83,9 @@ func NewDomainsMyOauth2clientCredential(ctx *pulumi.Context,
 	if args.IdcsEndpoint == nil {
 		return nil, errors.New("invalid value for required argument 'IdcsEndpoint'")
 	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
+	}
 	if args.Schemas == nil {
 		return nil, errors.New("invalid value for required argument 'Schemas'")
 	}
@@ -220,7 +223,7 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// Specifies if secret need to be reset
 	IsResetSecret *bool `pulumi:"isResetSecret"`
 	// (Updatable) User name
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// User's ocid
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -250,7 +253,7 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// Specifies if secret need to be reset
 	IsResetSecret pulumi.BoolPtrInput
 	// (Updatable) User name
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// User's ocid
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.

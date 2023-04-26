@@ -33,6 +33,7 @@ import (
 //				CompartmentId:  pulumi.Any(_var.Compartment_id),
 //				LogGroupId:     pulumi.Any(oci_logging_log_group.Test_log_group.Id),
 //				LogSourceName:  pulumi.Any(_var.Log_analytics_object_collection_rule_log_source_name),
+//				Name:           pulumi.Any(_var.Log_analytics_object_collection_rule_name),
 //				Namespace:      pulumi.Any(_var.Log_analytics_object_collection_rule_namespace),
 //				OsBucketName:   pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
 //				OsNamespace:    pulumi.Any(_var.Log_analytics_object_collection_rule_os_namespace),
@@ -146,6 +147,9 @@ func NewLogAnalyticsObjectCollectionRule(ctx *pulumi.Context,
 	}
 	if args.LogSourceName == nil {
 		return nil, errors.New("invalid value for required argument 'LogSourceName'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Namespace == nil {
 		return nil, errors.New("invalid value for required argument 'Namespace'")
@@ -319,7 +323,7 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName string `pulumi:"logSourceName"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
@@ -367,7 +371,7 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringInput
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput
 	// (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).

@@ -37,6 +37,7 @@ namespace Pulumi.Oci.AnnouncementsService
     ///                 Value = @var.Announcement_subscriptions_filter_group_filters_value,
     ///             },
     ///         },
+    ///         Name = @var.Announcement_subscriptions_filter_group_name,
     ///     });
     /// 
     /// });
@@ -138,8 +139,8 @@ namespace Pulumi.Oci.AnnouncementsService
         /// <summary>
         /// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public AnnouncementSubscriptionsFilterGroupArgs()
         {

@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testListener = new oci.networkloadbalancer.Listener("testListener", {
  *     defaultBackendSetName: oci_network_load_balancer_backend_set.test_backend_set.name,
+ *     name: _var.listener_name,
  *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
  *     port: _var.listener_port,
  *     protocol: _var.listener_protocol,
@@ -109,6 +110,9 @@ export class Listener extends pulumi.CustomResource {
             if ((!args || args.defaultBackendSetName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'defaultBackendSetName'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.networkLoadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'networkLoadBalancerId'");
             }
@@ -175,7 +179,7 @@ export interface ListenerArgs {
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */

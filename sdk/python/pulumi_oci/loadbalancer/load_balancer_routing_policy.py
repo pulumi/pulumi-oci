@@ -18,20 +18,19 @@ class LoadBalancerRoutingPolicyArgs:
     def __init__(__self__, *,
                  condition_language_version: pulumi.Input[str],
                  load_balancer_id: pulumi.Input[str],
-                 rules: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]],
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: pulumi.Input[str],
+                 rules: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]):
         """
         The set of arguments for constructing a LoadBalancerRoutingPolicy resource.
         :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]] rules: (Updatable) The list of routing rules.
         :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]] rules: (Updatable) The list of routing rules.
         """
         pulumi.set(__self__, "condition_language_version", condition_language_version)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "rules", rules)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="conditionLanguageVersion")
@@ -59,6 +58,18 @@ class LoadBalancerRoutingPolicyArgs:
 
     @property
     @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
     def rules(self) -> pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]:
         """
         (Updatable) The list of routing rules.
@@ -68,18 +79,6 @@ class LoadBalancerRoutingPolicyArgs:
     @rules.setter
     def rules(self, value: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]):
         pulumi.set(self, "rules", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -191,6 +190,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy",
             condition_language_version=var["load_balancer_routing_policy_condition_language_version"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+            name=var["load_balancer_routing_policy_name"],
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
                     backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
@@ -237,6 +237,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy",
             condition_language_version=var["load_balancer_routing_policy_condition_language_version"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+            name=var["load_balancer_routing_policy_name"],
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
                     backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
@@ -289,6 +290,8 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if rules is None and not opts.urn:
                 raise TypeError("Missing required property 'rules'")

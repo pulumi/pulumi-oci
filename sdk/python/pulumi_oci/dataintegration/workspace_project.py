@@ -17,26 +17,27 @@ __all__ = ['WorkspaceProjectArgs', 'WorkspaceProject']
 class WorkspaceProjectArgs:
     def __init__(__self__, *,
                  identifier: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  workspace_id: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None,
                  project_key: Optional[pulumi.Input[str]] = None,
                  registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None):
         """
         The set of arguments for constructing a WorkspaceProject resource.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] workspace_id: The workspace ID.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input['WorkspaceProjectRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         """
         pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "workspace_id", workspace_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -44,8 +45,6 @@ class WorkspaceProjectArgs:
             pulumi.set(__self__, "key", key)
         if model_version is not None:
             pulumi.set(__self__, "model_version", model_version)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if object_status is not None:
             pulumi.set(__self__, "object_status", object_status)
         if project_key is not None:
@@ -64,6 +63,18 @@ class WorkspaceProjectArgs:
     @identifier.setter
     def identifier(self, value: pulumi.Input[str]):
         pulumi.set(self, "identifier", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="workspaceId")
@@ -112,18 +123,6 @@ class WorkspaceProjectArgs:
     @model_version.setter
     def model_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "model_version", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="objectStatus")
@@ -415,6 +414,7 @@ class WorkspaceProject(pulumi.CustomResource):
 
         test_workspace_project = oci.data_integration.WorkspaceProject("testWorkspaceProject",
             identifier=var["workspace_project_identifier"],
+            name=var["workspace_project_name"],
             workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
             description=var["workspace_project_description"],
             key=var["workspace_project_key"],
@@ -467,6 +467,7 @@ class WorkspaceProject(pulumi.CustomResource):
 
         test_workspace_project = oci.data_integration.WorkspaceProject("testWorkspaceProject",
             identifier=var["workspace_project_identifier"],
+            name=var["workspace_project_name"],
             workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
             description=var["workspace_project_description"],
             key=var["workspace_project_key"],
@@ -528,6 +529,8 @@ class WorkspaceProject(pulumi.CustomResource):
             __props__.__dict__["identifier"] = identifier
             __props__.__dict__["key"] = key
             __props__.__dict__["model_version"] = model_version
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["object_status"] = object_status
             __props__.__dict__["project_key"] = project_key

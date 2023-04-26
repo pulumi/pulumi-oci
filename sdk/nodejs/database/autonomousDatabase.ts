@@ -507,6 +507,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly useLatestAvailableBackupTimeStamp!: pulumi.Output<boolean>;
     /**
+     * The storage space consumed by Autonomous Database in GBs.
+     */
+    public /*out*/ readonly usedDataStorageSizeInGbs!: pulumi.Output<number>;
+    /**
      * The amount of storage that has been used, in terabytes.
      */
     public /*out*/ readonly usedDataStorageSizeInTbs!: pulumi.Output<number>;
@@ -644,6 +648,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timestamp"] = state ? state.timestamp : undefined;
             resourceInputs["totalBackupStorageSizeInGbs"] = state ? state.totalBackupStorageSizeInGbs : undefined;
             resourceInputs["useLatestAvailableBackupTimeStamp"] = state ? state.useLatestAvailableBackupTimeStamp : undefined;
+            resourceInputs["usedDataStorageSizeInGbs"] = state ? state.usedDataStorageSizeInGbs : undefined;
             resourceInputs["usedDataStorageSizeInTbs"] = state ? state.usedDataStorageSizeInTbs : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
             resourceInputs["whitelistedIps"] = state ? state.whitelistedIps : undefined;
@@ -769,6 +774,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = undefined /*out*/;
             resourceInputs["timeUntilReconnectCloneEnabled"] = undefined /*out*/;
             resourceInputs["totalBackupStorageSizeInGbs"] = undefined /*out*/;
+            resourceInputs["usedDataStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["usedDataStorageSizeInTbs"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -1241,6 +1247,10 @@ export interface AutonomousDatabaseState {
      * Clone from latest available backup timestamp.
      */
     useLatestAvailableBackupTimeStamp?: pulumi.Input<boolean>;
+    /**
+     * The storage space consumed by Autonomous Database in GBs.
+     */
+    usedDataStorageSizeInGbs?: pulumi.Input<number>;
     /**
      * The amount of storage that has been used, in terabytes.
      */

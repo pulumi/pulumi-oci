@@ -45,6 +45,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testEmailDomain = new EmailDomain(&#34;testEmailDomain&#34;, EmailDomainArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.email_domain_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.email_domain_description())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))

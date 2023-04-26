@@ -46,6 +46,7 @@ import (
 //					UrlPath:           pulumi.Any(_var.Backend_set_health_checker_url_path),
 //				},
 //				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Name:           pulumi.Any(_var.Backend_set_name),
 //				Policy:         pulumi.Any(_var.Backend_set_policy),
 //				LbCookieSessionPersistenceConfiguration: &loadbalancer.BackendSetLbCookieSessionPersistenceConfigurationArgs{
 //					CookieName:      pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_cookie_name),
@@ -129,6 +130,9 @@ func NewBackendSet(ctx *pulumi.Context,
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
 	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
+	}
 	if args.Policy == nil {
 		return nil, errors.New("invalid value for required argument 'Policy'")
 	}
@@ -203,7 +207,7 @@ type backendSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
 	Policy string `pulumi:"policy"`
 	// (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
@@ -221,7 +225,7 @@ type BackendSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
 	LoadBalancerId pulumi.StringInput
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
 	Policy pulumi.StringInput
 	// (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).

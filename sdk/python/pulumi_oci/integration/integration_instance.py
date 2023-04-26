@@ -25,28 +25,32 @@ class IntegrationInstanceArgs:
                  consumption_model: Optional[pulumi.Input[str]] = None,
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IntegrationInstance resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type
+        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -62,6 +66,8 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "custom_endpoint", custom_endpoint)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if enable_process_automation_trigger is not None:
+            pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_at is not None:
@@ -72,6 +78,8 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
         if network_endpoint_details is not None:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -103,7 +111,7 @@ class IntegrationInstanceArgs:
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Standard or Enterprise type
+        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -184,6 +192,18 @@ class IntegrationInstanceArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="enableProcessAutomationTrigger")
+    def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        """
+        return pulumi.get(self, "enable_process_automation_trigger")
+
+    @enable_process_automation_trigger.setter
+    def enable_process_automation_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "enable_process_automation_trigger", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -245,6 +265,18 @@ class IntegrationInstanceArgs:
 
     @property
     @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        Shape
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
@@ -266,6 +298,7 @@ class _IntegrationInstanceState:
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]] = None,
@@ -276,6 +309,7 @@ class _IntegrationInstanceState:
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  state_message: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -289,16 +323,18 @@ class _IntegrationInstanceState:
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] instance_url: The Integration Instance URL.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type
+        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
@@ -318,6 +354,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if enable_process_automation_trigger is not None:
+            pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_at is not None:
@@ -338,6 +376,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "message_packs", message_packs)
         if network_endpoint_details is not None:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if state_message is not None:
@@ -432,6 +472,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="enableProcessAutomationTrigger")
+    def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        """
+        return pulumi.get(self, "enable_process_automation_trigger")
+
+    @enable_process_automation_trigger.setter
+    def enable_process_automation_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "enable_process_automation_trigger", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -483,7 +535,7 @@ class _IntegrationInstanceState:
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Standard or Enterprise type
+        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -553,6 +605,18 @@ class _IntegrationInstanceState:
 
     @property
     @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        Shape
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
@@ -611,6 +675,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
@@ -619,6 +684,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
                  network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -665,6 +731,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 )],
                 is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
             ),
+            shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])
         ```
 
@@ -684,14 +751,16 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type
+        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
         """
         ...
@@ -744,6 +813,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 )],
                 is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
             ),
+            shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])
         ```
 
@@ -776,6 +846,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
@@ -784,6 +855,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
                  network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -804,6 +876,7 @@ class IntegrationInstance(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["idcs_at"] = None if idcs_at is None else pulumi.Output.secret(idcs_at)
             if integration_instance_type is None and not opts.urn:
@@ -818,6 +891,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'message_packs'")
             __props__.__dict__["message_packs"] = message_packs
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
+            __props__.__dict__["shape"] = shape
             __props__.__dict__["state"] = state
             __props__.__dict__["attachments"] = None
             __props__.__dict__["idcs_infos"] = None
@@ -844,6 +918,7 @@ class IntegrationInstance(pulumi.CustomResource):
             custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             idcs_at: Optional[pulumi.Input[str]] = None,
             idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]]] = None,
@@ -854,6 +929,7 @@ class IntegrationInstance(pulumi.CustomResource):
             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
             message_packs: Optional[pulumi.Input[int]] = None,
             network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']]] = None,
+            shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             state_message: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -872,16 +948,18 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
+        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] instance_url: The Integration Instance URL.
-        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type
+        :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
@@ -898,6 +976,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["custom_endpoint"] = custom_endpoint
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["idcs_at"] = idcs_at
         __props__.__dict__["idcs_infos"] = idcs_infos
@@ -908,6 +987,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
         __props__.__dict__["message_packs"] = message_packs
         __props__.__dict__["network_endpoint_details"] = network_endpoint_details
+        __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["state_message"] = state_message
         __props__.__dict__["time_created"] = time_created
@@ -971,6 +1051,14 @@ class IntegrationInstance(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="enableProcessAutomationTrigger")
+    def enable_process_automation_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        """
+        return pulumi.get(self, "enable_process_automation_trigger")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
@@ -1006,7 +1094,7 @@ class IntegrationInstance(pulumi.CustomResource):
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Standard or Enterprise type
+        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -1049,6 +1137,14 @@ class IntegrationInstance(pulumi.CustomResource):
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> pulumi.Output[str]:
+        """
+        Shape
+        """
+        return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter

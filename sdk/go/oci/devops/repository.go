@@ -30,6 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.NewRepository(ctx, "testRepository", &DevOps.RepositoryArgs{
+//				Name:           pulumi.Any(_var.Repository_name),
 //				ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
 //				RepositoryType: pulumi.Any(_var.Repository_repository_type),
 //				DefaultBranch:  pulumi.Any(_var.Repository_default_branch),
@@ -123,6 +124,9 @@ func NewRepository(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
+	}
 	if args.ProjectId == nil {
 		return nil, errors.New("invalid value for required argument 'ProjectId'")
 	}
@@ -260,7 +264,7 @@ type repositoryArgs struct {
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig *RepositoryMirrorRepositoryConfig `pulumi:"mirrorRepositoryConfig"`
 	// (Updatable) Unique name of a repository.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId string `pulumi:"projectId"`
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
@@ -280,7 +284,7 @@ type RepositoryArgs struct {
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig RepositoryMirrorRepositoryConfigPtrInput
 	// (Updatable) Unique name of a repository.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The OCID of the DevOps project containing the repository.
 	ProjectId pulumi.StringInput
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`

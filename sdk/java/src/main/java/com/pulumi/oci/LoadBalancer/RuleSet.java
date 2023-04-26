@@ -72,6 +72,7 @@ import javax.annotation.Nullable;
  *                 .value(var_.rule_set_items_value())
  *                 .build())
  *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .name(var_.rule_set_name())
  *             .build());
  * 
  *     }

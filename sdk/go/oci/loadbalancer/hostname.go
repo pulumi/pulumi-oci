@@ -28,6 +28,7 @@ import (
 //			_, err := LoadBalancer.NewHostname(ctx, "testHostname", &LoadBalancer.HostnameArgs{
 //				Hostname:       pulumi.Any(_var.Hostname_hostname),
 //				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Name:           pulumi.Any(_var.Hostname_name),
 //			})
 //			if err != nil {
 //				return err
@@ -71,6 +72,9 @@ func NewHostname(ctx *pulumi.Context,
 	}
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource Hostname
 	err := ctx.RegisterResource("oci:LoadBalancer/hostname:Hostname", name, args, &resource, opts...)
@@ -123,7 +127,7 @@ type hostnameArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a Hostname resource.
@@ -133,7 +137,7 @@ type HostnameArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
 	LoadBalancerId pulumi.StringInput
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (HostnameArgs) ElementType() reflect.Type {

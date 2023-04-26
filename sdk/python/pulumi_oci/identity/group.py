@@ -15,27 +15,26 @@ __all__ = ['GroupArgs', 'Group']
 class GroupArgs:
     def __init__(__self__, *,
                  description: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Group resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the group during creation. Does not have to be unique, and it's changeable.
+        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         """
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -48,6 +47,18 @@ class GroupArgs:
     @description.setter
     def description(self, value: pulumi.Input[str]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -84,18 +95,6 @@ class GroupArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -275,6 +274,7 @@ class Group(pulumi.CustomResource):
         test_group = oci.identity.Group("testGroup",
             compartment_id=var["tenancy_ocid"],
             description=var["group_description"],
+            name=var["group_name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -335,6 +335,7 @@ class Group(pulumi.CustomResource):
         test_group = oci.identity.Group("testGroup",
             compartment_id=var["tenancy_ocid"],
             description=var["group_description"],
+            name=var["group_name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -386,6 +387,8 @@ class Group(pulumi.CustomResource):
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["inactive_state"] = None
             __props__.__dict__["state"] = None

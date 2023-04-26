@@ -78,6 +78,7 @@ import javax.annotation.Nullable;
  *         var testUser = new User(&#34;testUser&#34;, UserArgs.builder()        
  *             .compartmentId(var_.tenancy_ocid())
  *             .description(var_.user_description())
+ *             .name(var_.user_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .email(var_.user_email())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))

@@ -17,6 +17,7 @@ __all__ = ['WorkspaceFolderArgs', 'WorkspaceFolder']
 class WorkspaceFolderArgs:
     def __init__(__self__, *,
                  identifier: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  registry_metadata: pulumi.Input['WorkspaceFolderRegistryMetadataArgs'],
                  workspace_id: pulumi.Input[str],
                  category_name: Optional[pulumi.Input[str]] = None,
@@ -24,21 +25,21 @@ class WorkspaceFolderArgs:
                  folder_key: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a WorkspaceFolder resource.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input['WorkspaceFolderRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
         :param pulumi.Input[str] category_name: (Updatable) The category name.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "registry_metadata", registry_metadata)
         pulumi.set(__self__, "workspace_id", workspace_id)
         if category_name is not None:
@@ -51,8 +52,6 @@ class WorkspaceFolderArgs:
             pulumi.set(__self__, "key", key)
         if model_version is not None:
             pulumi.set(__self__, "model_version", model_version)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if object_status is not None:
             pulumi.set(__self__, "object_status", object_status)
 
@@ -67,6 +66,18 @@ class WorkspaceFolderArgs:
     @identifier.setter
     def identifier(self, value: pulumi.Input[str]):
         pulumi.set(self, "identifier", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="registryMetadata")
@@ -148,18 +159,6 @@ class WorkspaceFolderArgs:
     @model_version.setter
     def model_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "model_version", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="objectStatus")
@@ -448,6 +447,7 @@ class WorkspaceFolder(pulumi.CustomResource):
 
         test_workspace_folder = oci.data_integration.WorkspaceFolder("testWorkspaceFolder",
             identifier=var["workspace_folder_identifier"],
+            name=var["workspace_folder_name"],
             registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
                 aggregator_key=var["workspace_folder_registry_metadata_aggregator_key"],
                 is_favorite=var["workspace_folder_registry_metadata_is_favorite"],
@@ -503,6 +503,7 @@ class WorkspaceFolder(pulumi.CustomResource):
 
         test_workspace_folder = oci.data_integration.WorkspaceFolder("testWorkspaceFolder",
             identifier=var["workspace_folder_identifier"],
+            name=var["workspace_folder_name"],
             registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
                 aggregator_key=var["workspace_folder_registry_metadata_aggregator_key"],
                 is_favorite=var["workspace_folder_registry_metadata_is_favorite"],
@@ -568,6 +569,8 @@ class WorkspaceFolder(pulumi.CustomResource):
             __props__.__dict__["identifier"] = identifier
             __props__.__dict__["key"] = key
             __props__.__dict__["model_version"] = model_version
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["object_status"] = object_status
             if registry_metadata is None and not opts.urn:

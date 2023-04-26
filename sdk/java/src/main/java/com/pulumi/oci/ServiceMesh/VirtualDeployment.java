@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testVirtualDeployment = new VirtualDeployment(&#34;testVirtualDeployment&#34;, VirtualDeploymentArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.virtual_deployment_name())
  *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
  *             .accessLogging(VirtualDeploymentAccessLoggingArgs.builder()
  *                 .isEnabled(var_.virtual_deployment_access_logging_is_enabled())

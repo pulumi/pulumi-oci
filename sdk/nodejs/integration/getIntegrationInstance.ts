@@ -72,6 +72,7 @@ export interface GetIntegrationInstanceResult {
      * Integration Instance Identifier, can be renamed.
      */
     readonly displayName: string;
+    readonly enableProcessAutomationTrigger: number;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -91,7 +92,7 @@ export interface GetIntegrationInstanceResult {
     readonly instanceUrl: string;
     readonly integrationInstanceId: string;
     /**
-     * Standard or Enterprise type
+     * Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     readonly integrationInstanceType: string;
     /**
@@ -114,6 +115,10 @@ export interface GetIntegrationInstanceResult {
      * Base representation of a network endpoint.
      */
     readonly networkEndpointDetails: outputs.Integration.GetIntegrationInstanceNetworkEndpointDetail[];
+    /**
+     * Shape
+     */
+    readonly shape: string;
     /**
      * The current state of the integration instance.
      */

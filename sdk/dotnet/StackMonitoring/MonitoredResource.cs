@@ -27,6 +27,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///     var testMonitoredResource = new Oci.StackMonitoring.MonitoredResource("testMonitoredResource", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Monitored_resource_name,
     ///         Type = @var.Monitored_resource_type,
     ///         Aliases = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesArgs
     ///         {
@@ -319,8 +320,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// (Updatable) property name
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         [Input("properties")]
         private InputList<Inputs.MonitoredResourcePropertyArgs>? _properties;

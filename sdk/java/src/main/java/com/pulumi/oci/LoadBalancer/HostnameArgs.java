@@ -7,8 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class HostnameArgs extends com.pulumi.resources.ResourceArgs {
@@ -49,15 +47,15 @@ public final class HostnameArgs extends com.pulumi.resources.ResourceArgs {
      * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     private HostnameArgs() {}
@@ -134,7 +132,7 @@ public final class HostnameArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -152,6 +150,7 @@ public final class HostnameArgs extends com.pulumi.resources.ResourceArgs {
         public HostnameArgs build() {
             $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
             $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

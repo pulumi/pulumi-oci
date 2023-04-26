@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *             .isBackup(var_.backend_is_backup())
  *             .isDrain(var_.backend_is_drain())
  *             .isOffline(var_.backend_is_offline())
+ *             .name(var_.backend_name())
  *             .targetId(oci_cloud_guard_target.test_target().id())
  *             .weight(var_.backend_weight())
  *             .build());

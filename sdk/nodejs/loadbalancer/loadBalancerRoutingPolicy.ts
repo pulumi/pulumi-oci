@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * const testLoadBalancerRoutingPolicy = new oci.loadbalancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", {
  *     conditionLanguageVersion: _var.load_balancer_routing_policy_condition_language_version,
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     name: _var.load_balancer_routing_policy_name,
  *     rules: [{
  *         actions: [{
  *             backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
@@ -112,6 +113,9 @@ export class LoadBalancerRoutingPolicy extends pulumi.CustomResource {
             if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.rules === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'rules'");
             }
@@ -164,7 +168,7 @@ export interface LoadBalancerRoutingPolicyArgs {
     /**
      * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) The list of routing rules.
      */

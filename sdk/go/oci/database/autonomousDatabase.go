@@ -262,6 +262,8 @@ type AutonomousDatabase struct {
 	TotalBackupStorageSizeInGbs pulumi.Float64Output `pulumi:"totalBackupStorageSizeInGbs"`
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp pulumi.BoolOutput `pulumi:"useLatestAvailableBackupTimeStamp"`
+	// The storage space consumed by Autonomous Database in GBs.
+	UsedDataStorageSizeInGbs pulumi.IntOutput `pulumi:"usedDataStorageSizeInGbs"`
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs pulumi.IntOutput `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -547,6 +549,8 @@ type autonomousDatabaseState struct {
 	TotalBackupStorageSizeInGbs *float64 `pulumi:"totalBackupStorageSizeInGbs"`
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp *bool `pulumi:"useLatestAvailableBackupTimeStamp"`
+	// The storage space consumed by Autonomous Database in GBs.
+	UsedDataStorageSizeInGbs *int `pulumi:"usedDataStorageSizeInGbs"`
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs *int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -791,6 +795,8 @@ type AutonomousDatabaseState struct {
 	TotalBackupStorageSizeInGbs pulumi.Float64PtrInput
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
+	// The storage space consumed by Autonomous Database in GBs.
+	UsedDataStorageSizeInGbs pulumi.IntPtrInput
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -1746,6 +1752,11 @@ func (o AutonomousDatabaseOutput) TotalBackupStorageSizeInGbs() pulumi.Float64Ou
 // Clone from latest available backup timestamp.
 func (o AutonomousDatabaseOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolOutput { return v.UseLatestAvailableBackupTimeStamp }).(pulumi.BoolOutput)
+}
+
+// The storage space consumed by Autonomous Database in GBs.
+func (o AutonomousDatabaseOutput) UsedDataStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.UsedDataStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The amount of storage that has been used, in terabytes.

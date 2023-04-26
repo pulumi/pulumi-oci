@@ -103,15 +103,15 @@ public final class WorkspaceFolderArgs extends com.pulumi.resources.ResourceArgs
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -312,7 +312,7 @@ public final class WorkspaceFolderArgs extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -392,6 +392,7 @@ public final class WorkspaceFolderArgs extends com.pulumi.resources.ResourceArgs
 
         public WorkspaceFolderArgs build() {
             $.identifier = Objects.requireNonNull($.identifier, "expected parameter 'identifier' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.registryMetadata = Objects.requireNonNull($.registryMetadata, "expected parameter 'registryMetadata' to be non-null");
             $.workspaceId = Objects.requireNonNull($.workspaceId, "expected parameter 'workspaceId' to be non-null");
             return $;

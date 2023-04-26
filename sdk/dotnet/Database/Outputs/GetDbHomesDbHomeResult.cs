@@ -43,6 +43,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
         public readonly string DisplayName;
+        public readonly bool EnableDatabaseDelete;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -99,6 +100,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string displayName,
 
+            bool enableDatabaseDelete,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -130,6 +133,7 @@ namespace Pulumi.Oci.Database.Outputs
             DbVersion = dbVersion;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            EnableDatabaseDelete = enableDatabaseDelete;
             FreeformTags = freeformTags;
             Id = id;
             IsDesupportedVersion = isDesupportedVersion;

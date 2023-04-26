@@ -41,7 +41,8 @@ type AutonomousContainerDatabase struct {
 	CloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	ComputeModel  pulumi.StringOutput `pulumi:"computeModel"`
+	// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
 	DbName       pulumi.StringOutput `pulumi:"dbName"`
 	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
@@ -172,7 +173,8 @@ type autonomousContainerDatabaseState struct {
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
-	ComputeModel  *string `pulumi:"computeModel"`
+	// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
 	DbName       *string `pulumi:"dbName"`
 	DbUniqueName *string `pulumi:"dbUniqueName"`
@@ -269,7 +271,8 @@ type AutonomousContainerDatabaseState struct {
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
-	ComputeModel  pulumi.StringPtrInput
+	// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+	ComputeModel pulumi.StringPtrInput
 	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
 	DbName       pulumi.StringPtrInput
 	DbUniqueName pulumi.StringPtrInput
@@ -600,6 +603,7 @@ func (o AutonomousContainerDatabaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o AutonomousContainerDatabaseOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }

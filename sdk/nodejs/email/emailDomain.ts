@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testEmailDomain = new oci.email.EmailDomain("testEmailDomain", {
  *     compartmentId: _var.compartment_id,
+ *     name: _var.email_domain_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -132,6 +133,9 @@ export class EmailDomain extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -217,5 +221,5 @@ export interface EmailDomainArgs {
     /**
      * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

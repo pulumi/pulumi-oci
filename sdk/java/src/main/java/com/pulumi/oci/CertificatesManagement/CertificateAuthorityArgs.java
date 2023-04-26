@@ -145,15 +145,15 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     private CertificateAuthorityArgs() {}
@@ -372,7 +372,7 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -391,6 +391,7 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
             $.certificateAuthorityConfig = Objects.requireNonNull($.certificateAuthorityConfig, "expected parameter 'certificateAuthorityConfig' to be non-null");
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.kmsKeyId = Objects.requireNonNull($.kmsKeyId, "expected parameter 'kmsKeyId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

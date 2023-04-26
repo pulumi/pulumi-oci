@@ -28,6 +28,7 @@ namespace Pulumi.Oci.ObjectStorage
     ///     {
     ///         AccessType = @var.Preauthenticated_request_access_type,
     ///         Bucket = @var.Preauthenticated_request_bucket,
+    ///         Name = @var.Preauthenticated_request_name,
     ///         Namespace = @var.Preauthenticated_request_namespace,
     ///         TimeExpires = @var.Preauthenticated_request_time_expires,
     ///         BucketListingAction = @var.Preauthenticated_request_bucket_listing_action,
@@ -181,8 +182,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// The Object Storage namespace used for the request.

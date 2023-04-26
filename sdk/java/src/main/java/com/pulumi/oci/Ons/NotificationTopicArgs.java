@@ -81,15 +81,15 @@ public final class NotificationTopicArgs extends com.pulumi.resources.ResourceAr
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     private NotificationTopicArgs() {}
@@ -210,7 +210,7 @@ public final class NotificationTopicArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -227,6 +227,7 @@ public final class NotificationTopicArgs extends com.pulumi.resources.ResourceAr
 
         public NotificationTopicArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

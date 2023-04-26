@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkLoadBalancer.NewListener(ctx, "testListener", &NetworkLoadBalancer.ListenerArgs{
 //				DefaultBackendSetName: pulumi.Any(oci_network_load_balancer_backend_set.Test_backend_set.Name),
+//				Name:                  pulumi.Any(_var.Listener_name),
 //				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
 //				Port:                  pulumi.Any(_var.Listener_port),
 //				Protocol:              pulumi.Any(_var.Listener_protocol),
@@ -80,6 +81,9 @@ func NewListener(ctx *pulumi.Context,
 
 	if args.DefaultBackendSetName == nil {
 		return nil, errors.New("invalid value for required argument 'DefaultBackendSetName'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.NetworkLoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'NetworkLoadBalancerId'")
@@ -151,7 +155,7 @@ type listenerArgs struct {
 	// (Updatable) IP version associated with the listener.
 	IpVersion *string `pulumi:"ipVersion"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
 	// (Updatable) The communication port for the listener.  Example: `80`
@@ -167,7 +171,7 @@ type ListenerArgs struct {
 	// (Updatable) IP version associated with the listener.
 	IpVersion pulumi.StringPtrInput
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId pulumi.StringInput
 	// (Updatable) The communication port for the listener.  Example: `80`

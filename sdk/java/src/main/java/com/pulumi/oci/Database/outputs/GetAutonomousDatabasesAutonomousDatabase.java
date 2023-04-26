@@ -533,6 +533,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private Double totalBackupStorageSizeInGbs;
     private Boolean useLatestAvailableBackupTimeStamp;
     /**
+     * @return The storage space consumed by Autonomous Database in GBs.
+     * 
+     */
+    private Integer usedDataStorageSizeInGbs;
+    /**
      * @return The amount of storage that has been used, in terabytes.
      * 
      */
@@ -1282,6 +1287,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.useLatestAvailableBackupTimeStamp;
     }
     /**
+     * @return The storage space consumed by Autonomous Database in GBs.
+     * 
+     */
+    public Integer usedDataStorageSizeInGbs() {
+        return this.usedDataStorageSizeInGbs;
+    }
+    /**
      * @return The amount of storage that has been used, in terabytes.
      * 
      */
@@ -1425,6 +1437,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String timestamp;
         private Double totalBackupStorageSizeInGbs;
         private Boolean useLatestAvailableBackupTimeStamp;
+        private Integer usedDataStorageSizeInGbs;
         private Integer usedDataStorageSizeInTbs;
         private String vaultId;
         private List<String> whitelistedIps;
@@ -1544,6 +1557,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.timestamp = defaults.timestamp;
     	      this.totalBackupStorageSizeInGbs = defaults.totalBackupStorageSizeInGbs;
     	      this.useLatestAvailableBackupTimeStamp = defaults.useLatestAvailableBackupTimeStamp;
+    	      this.usedDataStorageSizeInGbs = defaults.usedDataStorageSizeInGbs;
     	      this.usedDataStorageSizeInTbs = defaults.usedDataStorageSizeInTbs;
     	      this.vaultId = defaults.vaultId;
     	      this.whitelistedIps = defaults.whitelistedIps;
@@ -2166,6 +2180,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder usedDataStorageSizeInGbs(Integer usedDataStorageSizeInGbs) {
+            this.usedDataStorageSizeInGbs = Objects.requireNonNull(usedDataStorageSizeInGbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder usedDataStorageSizeInTbs(Integer usedDataStorageSizeInTbs) {
             this.usedDataStorageSizeInTbs = Objects.requireNonNull(usedDataStorageSizeInTbs);
             return this;
@@ -2298,6 +2317,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             o.timestamp = timestamp;
             o.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             o.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
+            o.usedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             o.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             o.vaultId = vaultId;
             o.whitelistedIps = whitelistedIps;

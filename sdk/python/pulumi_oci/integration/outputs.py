@@ -834,6 +834,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult'],
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 enable_process_automation_trigger: int,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  idcs_at: str,
@@ -845,6 +846,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  is_visual_builder_enabled: bool,
                  message_packs: int,
                  network_endpoint_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult'],
+                 shape: str,
                  state: str,
                  state_message: str,
                  time_created: str,
@@ -861,12 +863,13 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence['GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs'] idcs_infos: Information for IDCS access
         :param str instance_url: The Integration Instance URL.
-        :param str integration_instance_type: Standard or Enterprise type
+        :param str integration_instance_type: Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param bool is_byol: Bring your own license.
         :param bool is_file_server_enabled: The file server is enabled or not.
         :param bool is_visual_builder_enabled: Visual Builder is enabled or not.
         :param int message_packs: The number of configured message packs (if any)
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
+        :param str shape: Shape
         :param str state: Life cycle state to query on.
         :param str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
@@ -879,6 +882,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "idcs_at", idcs_at)
@@ -890,6 +894,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
         pulumi.set(__self__, "message_packs", message_packs)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "state_message", state_message)
         pulumi.set(__self__, "time_created", time_created)
@@ -952,6 +957,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="enableProcessAutomationTrigger")
+    def enable_process_automation_trigger(self) -> int:
+        return pulumi.get(self, "enable_process_automation_trigger")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -992,7 +1002,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> str:
         """
-        Standard or Enterprise type
+        Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -1035,6 +1045,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape
+        """
+        return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter

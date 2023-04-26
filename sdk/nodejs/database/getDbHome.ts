@@ -74,6 +74,7 @@ export interface GetDbHomeResult {
      * The user-provided name for the Database Home. The name does not need to be unique.
      */
     readonly displayName: string;
+    readonly enableDatabaseDelete: boolean;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

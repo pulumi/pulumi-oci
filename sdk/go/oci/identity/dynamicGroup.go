@@ -47,6 +47,7 @@ import (
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.Dynamic_group_description),
 //				MatchingRule:  pulumi.Any(_var.Dynamic_group_matching_rule),
+//				Name:          pulumi.Any(_var.Dynamic_group_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -110,6 +111,9 @@ func NewDynamicGroup(ctx *pulumi.Context,
 	}
 	if args.MatchingRule == nil {
 		return nil, errors.New("invalid value for required argument 'MatchingRule'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource DynamicGroup
 	err := ctx.RegisterResource("oci:Identity/dynamicGroup:DynamicGroup", name, args, &resource, opts...)
@@ -190,7 +194,7 @@ type dynamicGroupArgs struct {
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule string `pulumi:"matchingRule"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a DynamicGroup resource.
@@ -206,7 +210,7 @@ type DynamicGroupArgs struct {
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule pulumi.StringInput
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (DynamicGroupArgs) ElementType() reflect.Type {

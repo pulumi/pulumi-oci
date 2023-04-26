@@ -45,6 +45,7 @@ import (
 //			_, err := Identity.NewTagNamespace(ctx, "testTagNamespace", &Identity.TagNamespaceArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				Description:   pulumi.Any(_var.Tag_namespace_description),
+//				Name:          pulumi.Any(_var.Tag_namespace_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -104,6 +105,9 @@ func NewTagNamespace(ctx *pulumi.Context,
 	}
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource TagNamespace
 	err := ctx.RegisterResource("oci:Identity/tagNamespace:TagNamespace", name, args, &resource, opts...)
@@ -180,7 +184,7 @@ type tagNamespaceArgs struct {
 	// (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 	IsRetired *bool `pulumi:"isRetired"`
 	// The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a TagNamespace resource.
@@ -196,7 +200,7 @@ type TagNamespaceArgs struct {
 	// (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 	IsRetired pulumi.BoolPtrInput
 	// The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (TagNamespaceArgs) ElementType() reflect.Type {

@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.NewVirtualServiceRouteTable(ctx, "testVirtualServiceRouteTable", &ServiceMesh.VirtualServiceRouteTableArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Virtual_service_route_table_name),
 //				RouteRules: servicemesh.VirtualServiceRouteTableRouteRuleArray{
 //					&servicemesh.VirtualServiceRouteTableRouteRuleArgs{
 //						Destinations: servicemesh.VirtualServiceRouteTableRouteRuleDestinationArray{
@@ -115,6 +116,9 @@ func NewVirtualServiceRouteTable(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.RouteRules == nil {
 		return nil, errors.New("invalid value for required argument 'RouteRules'")
@@ -215,7 +219,7 @@ type virtualServiceRouteTableArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority *int `pulumi:"priority"`
 	// (Updatable) The route rules for the virtual service.
@@ -235,7 +239,7 @@ type VirtualServiceRouteTableArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority pulumi.IntPtrInput
 	// (Updatable) The route rules for the virtual service.

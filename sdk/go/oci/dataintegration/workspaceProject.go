@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.NewWorkspaceProject(ctx, "testWorkspaceProject", &DataIntegration.WorkspaceProjectArgs{
 //				Identifier:   pulumi.Any(_var.Workspace_project_identifier),
+//				Name:         pulumi.Any(_var.Workspace_project_name),
 //				WorkspaceId:  pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
 //				Description:  pulumi.Any(_var.Workspace_project_description),
 //				Key:          pulumi.Any(_var.Workspace_project_key),
@@ -103,6 +104,9 @@ func NewWorkspaceProject(ctx *pulumi.Context,
 
 	if args.Identifier == nil {
 		return nil, errors.New("invalid value for required argument 'Identifier'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.WorkspaceId == nil {
 		return nil, errors.New("invalid value for required argument 'WorkspaceId'")
@@ -202,7 +206,7 @@ type workspaceProjectArgs struct {
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int    `pulumi:"objectStatus"`
 	ProjectKey   *string `pulumi:"projectKey"`
@@ -223,7 +227,7 @@ type WorkspaceProjectArgs struct {
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput
 	ProjectKey   pulumi.StringPtrInput

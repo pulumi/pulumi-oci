@@ -76,6 +76,9 @@ func NewCluster(ctx *pulumi.Context,
 	if args.KubernetesVersion == nil {
 		return nil, errors.New("invalid value for required argument 'KubernetesVersion'")
 	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
+	}
 	if args.VcnId == nil {
 		return nil, errors.New("invalid value for required argument 'VcnId'")
 	}
@@ -196,7 +199,7 @@ type clusterArgs struct {
 	// (Updatable) The version of Kubernetes to install into the cluster masters.
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) Optional attributes for the cluster.
 	Options *ClusterOptions `pulumi:"options"`
 	// (Updatable) Type of cluster
@@ -224,7 +227,7 @@ type ClusterArgs struct {
 	// (Updatable) The version of Kubernetes to install into the cluster masters.
 	KubernetesVersion pulumi.StringInput
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) Optional attributes for the cluster.
 	Options ClusterOptionsPtrInput
 	// (Updatable) Type of cluster

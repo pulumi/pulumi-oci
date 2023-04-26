@@ -134,6 +134,9 @@ namespace Pulumi.Oci.Database
         /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// </summary>
         public readonly string ComputeModel;
         /// <summary>
         /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.

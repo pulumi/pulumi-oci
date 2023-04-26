@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testWorkspaceProject = new WorkspaceProject(&#34;testWorkspaceProject&#34;, WorkspaceProjectArgs.builder()        
  *             .identifier(var_.workspace_project_identifier())
+ *             .name(var_.workspace_project_name())
  *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
  *             .description(var_.workspace_project_description())
  *             .key(var_.workspace_project_key())

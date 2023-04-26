@@ -83,15 +83,15 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
      * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -318,7 +318,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -472,6 +472,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         public ListenerArgs build() {
             $.defaultBackendSetName = Objects.requireNonNull($.defaultBackendSetName, "expected parameter 'defaultBackendSetName' to be non-null");
             $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
             $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
             return $;

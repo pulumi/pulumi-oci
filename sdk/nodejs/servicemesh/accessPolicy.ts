@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testAccessPolicy = new oci.servicemesh.AccessPolicy("testAccessPolicy", {
  *     compartmentId: _var.compartment_id,
  *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ *     name: _var.access_policy_name,
  *     rules: [{
  *         action: _var.access_policy_rules_action,
  *         destination: {
@@ -169,6 +170,9 @@ export class AccessPolicy extends pulumi.CustomResource {
             if ((!args || args.meshId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'meshId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.rules === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'rules'");
             }
@@ -271,7 +275,7 @@ export interface AccessPolicyArgs {
     /**
      * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) List of applicable rules
      */

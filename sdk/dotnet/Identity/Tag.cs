@@ -48,6 +48,7 @@ namespace Pulumi.Oci.Identity
     ///     var testTag = new Oci.Identity.Tag("testTag", new()
     ///     {
     ///         Description = @var.Tag_description,
+    ///         Name = @var.Tag_name,
     ///         TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
     ///         DefinedTags = 
     ///         {
@@ -231,8 +232,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// The OCID of the tag namespace.

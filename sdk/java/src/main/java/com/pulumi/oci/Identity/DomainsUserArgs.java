@@ -243,15 +243,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) Name of the account assigned to the User.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<DomainsUserNameArgs> name;
+    @Import(name="name", required=true)
+    private Output<DomainsUserNameArgs> name;
 
     /**
      * @return (Updatable) Name of the account assigned to the User.
      * 
      */
-    public Optional<Output<DomainsUserNameArgs>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<DomainsUserNameArgs> name() {
+        return this.name;
     }
 
     /**
@@ -1148,7 +1148,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<DomainsUserNameArgs> name) {
+        public Builder name(Output<DomainsUserNameArgs> name) {
             $.name = name;
             return this;
         }
@@ -1918,6 +1918,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
 
         public DomainsUserArgs build() {
             $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
             $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
             return $;

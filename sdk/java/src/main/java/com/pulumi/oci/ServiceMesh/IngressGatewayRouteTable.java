@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable(&#34;testIngressGatewayRouteTable&#34;, IngressGatewayRouteTableArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+ *             .name(var_.ingress_gateway_route_table_name())
  *             .routeRules(IngressGatewayRouteTableRouteRuleArgs.builder()
  *                 .destinations(IngressGatewayRouteTableRouteRuleDestinationArgs.builder()
  *                     .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())

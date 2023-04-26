@@ -46,6 +46,7 @@ import javax.annotation.Nullable;
  *         var testResolverEndpoint = new ResolverEndpoint(&#34;testResolverEndpoint&#34;, ResolverEndpointArgs.builder()        
  *             .isForwarding(var_.resolver_endpoint_is_forwarding())
  *             .isListening(var_.resolver_endpoint_is_listening())
+ *             .name(var_.resolver_endpoint_name())
  *             .resolverId(oci_dns_resolver.test_resolver().id())
  *             .subnetId(oci_core_subnet.test_subnet().id())
  *             .scope(&#34;PRIVATE&#34;)

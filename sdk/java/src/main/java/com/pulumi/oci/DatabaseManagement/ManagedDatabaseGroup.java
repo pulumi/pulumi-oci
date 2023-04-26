@@ -46,6 +46,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testManagedDatabaseGroup = new ManagedDatabaseGroup(&#34;testManagedDatabaseGroup&#34;, ManagedDatabaseGroupArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.managed_database_group_name())
  *             .description(var_.managed_database_group_description())
  *             .managedDatabases(ManagedDatabaseGroupManagedDatabaseArgs.builder()
  *                 .id(var_.managed_database_id())

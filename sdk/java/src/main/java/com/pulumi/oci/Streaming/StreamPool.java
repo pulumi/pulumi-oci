@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testStreamPool = new StreamPool(&#34;testStreamPool&#34;, StreamPoolArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.stream_pool_name())
  *             .customEncryptionKey(StreamPoolCustomEncryptionKeyArgs.builder()
  *                 .kmsKeyId(oci_kms_key.test_key().id())
  *                 .build())

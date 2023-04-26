@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  * const testCaBundle = new oci.certificatesmanagement.CaBundle("testCaBundle", {
  *     caBundlePem: _var.ca_bundle_ca_bundle_pem,
  *     compartmentId: _var.compartment_id,
+ *     name: _var.ca_bundle_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -131,6 +132,9 @@ export class CaBundle extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["caBundlePem"] = args ? args.caBundlePem : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -215,5 +219,5 @@ export interface CaBundleArgs {
     /**
      * A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

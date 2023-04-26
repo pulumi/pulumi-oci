@@ -272,6 +272,8 @@ type LookupAutonomousDatabaseResult struct {
 	// The backup storage to the database.
 	TotalBackupStorageSizeInGbs       float64 `pulumi:"totalBackupStorageSizeInGbs"`
 	UseLatestAvailableBackupTimeStamp bool    `pulumi:"useLatestAvailableBackupTimeStamp"`
+	// The storage space consumed by Autonomous Database in GBs.
+	UsedDataStorageSizeInGbs int `pulumi:"usedDataStorageSizeInGbs"`
 	// The amount of storage that has been used, in terabytes.
 	UsedDataStorageSizeInTbs int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -883,6 +885,11 @@ func (o LookupAutonomousDatabaseResultOutput) TotalBackupStorageSizeInGbs() pulu
 
 func (o LookupAutonomousDatabaseResultOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.UseLatestAvailableBackupTimeStamp }).(pulumi.BoolOutput)
+}
+
+// The storage space consumed by Autonomous Database in GBs.
+func (o LookupAutonomousDatabaseResultOutput) UsedDataStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.UsedDataStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The amount of storage that has been used, in terabytes.

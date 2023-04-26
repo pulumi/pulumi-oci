@@ -1638,6 +1638,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.useLatestAvailableBackupTimeStamp;
     }
     /**
+     * The storage space consumed by Autonomous Database in GBs.
+     * 
+     */
+    @Export(name="usedDataStorageSizeInGbs", type=Integer.class, parameters={})
+    private Output<Integer> usedDataStorageSizeInGbs;
+
+    /**
+     * @return The storage space consumed by Autonomous Database in GBs.
+     * 
+     */
+    public Output<Integer> usedDataStorageSizeInGbs() {
+        return this.usedDataStorageSizeInGbs;
+    }
+    /**
      * The amount of storage that has been used, in terabytes.
      * 
      */

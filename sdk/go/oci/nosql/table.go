@@ -32,6 +32,7 @@ import (
 //			_, err := Nosql.NewTable(ctx, "testTable", &Nosql.TableArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DdlStatement:  pulumi.Any(_var.Table_ddl_statement),
+//				Name:          pulumi.Any(_var.Table_name),
 //				DefinedTags:   pulumi.Any(_var.Table_defined_tags),
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
@@ -107,6 +108,9 @@ func NewTable(ctx *pulumi.Context,
 	}
 	if args.DdlStatement == nil {
 		return nil, errors.New("invalid value for required argument 'DdlStatement'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource Table
 	err := ctx.RegisterResource("oci:Nosql/table:Table", name, args, &resource, opts...)
@@ -207,7 +211,7 @@ type tableArgs struct {
 	// True if table can be reclaimed after an idle period.
 	IsAutoReclaimable *bool `pulumi:"isAutoReclaimable"`
 	// Table name.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits *TableTableLimits `pulumi:"tableLimits"`
 }
@@ -225,7 +229,7 @@ type TableArgs struct {
 	// True if table can be reclaimed after an idle period.
 	IsAutoReclaimable pulumi.BoolPtrInput
 	// Table name.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits TableTableLimitsPtrInput
 }

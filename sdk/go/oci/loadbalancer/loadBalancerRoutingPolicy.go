@@ -33,6 +33,7 @@ import (
 //			_, err := LoadBalancer.NewLoadBalancerRoutingPolicy(ctx, "testLoadBalancerRoutingPolicy", &LoadBalancer.LoadBalancerRoutingPolicyArgs{
 //				ConditionLanguageVersion: pulumi.Any(_var.Load_balancer_routing_policy_condition_language_version),
 //				LoadBalancerId:           pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Name:                     pulumi.Any(_var.Load_balancer_routing_policy_name),
 //				Rules: loadbalancer.LoadBalancerRoutingPolicyRuleArray{
 //					&loadbalancer.LoadBalancerRoutingPolicyRuleArgs{
 //						Actions: loadbalancer.LoadBalancerRoutingPolicyRuleActionArray{
@@ -90,6 +91,9 @@ func NewLoadBalancerRoutingPolicy(ctx *pulumi.Context,
 	}
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Rules == nil {
 		return nil, errors.New("invalid value for required argument 'Rules'")
@@ -149,7 +153,7 @@ type loadBalancerRoutingPolicyArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) The list of routing rules.
 	Rules []LoadBalancerRoutingPolicyRule `pulumi:"rules"`
 }
@@ -161,7 +165,7 @@ type LoadBalancerRoutingPolicyArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
 	LoadBalancerId pulumi.StringInput
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) The list of routing rules.
 	Rules LoadBalancerRoutingPolicyRuleArrayInput
 }

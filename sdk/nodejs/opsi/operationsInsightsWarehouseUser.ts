@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     connectionPassword: _var.operations_insights_warehouse_user_connection_password,
  *     isAwrDataAccess: _var.operations_insights_warehouse_user_is_awr_data_access,
+ *     name: _var.operations_insights_warehouse_user_name,
  *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -163,6 +164,9 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
             if ((!args || args.isAwrDataAccess === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'isAwrDataAccess'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.operationsInsightsWarehouseId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'operationsInsightsWarehouseId'");
             }
@@ -285,7 +289,7 @@ export interface OperationsInsightsWarehouseUserArgs {
     /**
      * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * OPSI Warehouse OCID
      */

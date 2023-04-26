@@ -45,6 +45,7 @@ import * as utilities from "../utilities";
  *         value: _var.rule_set_items_value,
  *     }],
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     name: _var.rule_set_name,
  * });
  * ```
  *
@@ -123,6 +124,9 @@ export class RuleSet extends pulumi.CustomResource {
             if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["items"] = args ? args.items : undefined;
             resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -167,5 +171,5 @@ export interface RuleSetArgs {
     /**
      * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

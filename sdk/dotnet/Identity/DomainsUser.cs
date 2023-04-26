@@ -546,8 +546,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// (Updatable) Name of the account assigned to the User.
         /// </summary>
-        [Input("name")]
-        public Input<Inputs.DomainsUserNameArgs>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<Inputs.DomainsUserNameArgs> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Nick name

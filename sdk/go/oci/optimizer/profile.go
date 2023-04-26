@@ -40,6 +40,7 @@ import (
 //						},
 //					},
 //				},
+//				Name:                      pulumi.Any(_var.Profile_name),
 //				AggregationIntervalInDays: pulumi.Any(_var.Profile_aggregation_interval_in_days),
 //				DefinedTags: pulumi.AnyMap{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -123,6 +124,9 @@ func NewProfile(ctx *pulumi.Context,
 	}
 	if args.LevelsConfiguration == nil {
 		return nil, errors.New("invalid value for required argument 'LevelsConfiguration'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource Profile
 	err := ctx.RegisterResource("oci:Optimizer/profile:Profile", name, args, &resource, opts...)
@@ -217,7 +221,7 @@ type profileArgs struct {
 	// (Updatable) A list of configuration levels for each recommendation.
 	LevelsConfiguration ProfileLevelsConfiguration `pulumi:"levelsConfiguration"`
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments *ProfileTargetCompartments `pulumi:"targetCompartments"`
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
@@ -239,7 +243,7 @@ type ProfileArgs struct {
 	// (Updatable) A list of configuration levels for each recommendation.
 	LevelsConfiguration ProfileLevelsConfigurationInput
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments ProfileTargetCompartmentsPtrInput
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.

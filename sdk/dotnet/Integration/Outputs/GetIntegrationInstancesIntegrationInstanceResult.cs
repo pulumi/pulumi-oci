@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
         public readonly string DisplayName;
+        public readonly int EnableProcessAutomationTrigger;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -59,7 +60,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly string InstanceUrl;
         /// <summary>
-        /// Standard or Enterprise type
+        /// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         public readonly string IntegrationInstanceType;
         /// <summary>
@@ -82,6 +83,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// Base representation of a network endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult> NetworkEndpointDetails;
+        /// <summary>
+        /// Shape
+        /// </summary>
+        public readonly string Shape;
         /// <summary>
         /// Life cycle state to query on.
         /// </summary>
@@ -115,6 +120,8 @@ namespace Pulumi.Oci.Integration.Outputs
 
             string displayName,
 
+            int enableProcessAutomationTrigger,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -137,6 +144,8 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult> networkEndpointDetails,
 
+            string shape,
+
             string state,
 
             string stateMessage,
@@ -152,6 +161,7 @@ namespace Pulumi.Oci.Integration.Outputs
             CustomEndpoints = customEndpoints;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            EnableProcessAutomationTrigger = enableProcessAutomationTrigger;
             FreeformTags = freeformTags;
             Id = id;
             IdcsAt = idcsAt;
@@ -163,6 +173,7 @@ namespace Pulumi.Oci.Integration.Outputs
             IsVisualBuilderEnabled = isVisualBuilderEnabled;
             MessagePacks = messagePacks;
             NetworkEndpointDetails = networkEndpointDetails;
+            Shape = shape;
             State = state;
             StateMessage = stateMessage;
             TimeCreated = timeCreated;

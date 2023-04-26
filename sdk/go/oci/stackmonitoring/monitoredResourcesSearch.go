@@ -37,6 +37,7 @@ import (
 //				HostName:                        pulumi.Any(_var.Monitored_resources_search_host_name),
 //				HostNameContains:                pulumi.Any(_var.Monitored_resources_search_host_name_contains),
 //				ManagementAgentId:               pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				Name:                            pulumi.Any(_var.Monitored_resources_search_name),
 //				NameContains:                    pulumi.Any(_var.Monitored_resources_search_name_contains),
 //				PropertyEquals:                  pulumi.Any(_var.Monitored_resources_search_property_equals),
 //				ResourceTimeZone:                pulumi.Any(_var.Monitored_resources_search_resource_time_zone),
@@ -85,7 +86,7 @@ type MonitoredResourcesSearch struct {
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// A filter to return resources that match resource name pattern given. The match is not case sensitive.
 	NameContains pulumi.StringPtrOutput `pulumi:"nameContains"`
 	// Criteria based on resource property.
@@ -422,8 +423,8 @@ func (o MonitoredResourcesSearchOutput) ManagementAgentId() pulumi.StringPtrOutp
 }
 
 // A filter to return resources that match exact resource name
-func (o MonitoredResourcesSearchOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o MonitoredResourcesSearchOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match resource name pattern given. The match is not case sensitive.

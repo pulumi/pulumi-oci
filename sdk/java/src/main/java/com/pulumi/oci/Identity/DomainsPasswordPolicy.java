@@ -55,6 +55,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testPasswordPolicy = new DomainsPasswordPolicy(&#34;testPasswordPolicy&#34;, DomainsPasswordPolicyArgs.builder()        
  *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+ *             .name(var_.password_policy_name())
  *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy&#34;)
  *             .allowedChars(var_.password_policy_allowed_chars())
  *             .attributeSets()

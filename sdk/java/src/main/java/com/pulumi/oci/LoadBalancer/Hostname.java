@@ -39,6 +39,7 @@ import javax.annotation.Nullable;
  *         var testHostname = new Hostname(&#34;testHostname&#34;, HostnameArgs.builder()        
  *             .hostname(var_.hostname_hostname())
  *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .name(var_.hostname_name())
  *             .build());
  * 
  *     }

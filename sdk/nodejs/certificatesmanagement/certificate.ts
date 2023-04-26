@@ -164,6 +164,9 @@ export class Certificate extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["certificateConfig"] = args ? args.certificateConfig : undefined;
             resourceInputs["certificateRules"] = args ? args.certificateRules : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -302,5 +305,5 @@ export interface CertificateArgs {
     /**
      * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

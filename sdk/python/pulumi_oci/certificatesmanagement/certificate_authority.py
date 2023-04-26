@@ -19,27 +19,28 @@ class CertificateAuthorityArgs:
                  certificate_authority_config: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'],
                  compartment_id: pulumi.Input[str],
                  kms_key_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
                  certificate_revocation_list_details: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a CertificateAuthority resource.
         :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which you want to create the CA.
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
+        :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
         :param pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs'] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         """
         pulumi.set(__self__, "certificate_authority_config", certificate_authority_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "name", name)
         if certificate_authority_rules is not None:
             pulumi.set(__self__, "certificate_authority_rules", certificate_authority_rules)
         if certificate_revocation_list_details is not None:
@@ -50,8 +51,6 @@ class CertificateAuthorityArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="certificateAuthorityConfig")
@@ -88,6 +87,18 @@ class CertificateAuthorityArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="certificateAuthorityRules")
@@ -148,18 +159,6 @@ class CertificateAuthorityArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -564,6 +563,8 @@ class CertificateAuthority(pulumi.CustomResource):
             if kms_key_id is None and not opts.urn:
                 raise TypeError("Missing required property 'kms_key_id'")
             __props__.__dict__["kms_key_id"] = kms_key_id
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["config_type"] = None
             __props__.__dict__["current_versions"] = None

@@ -17,28 +17,27 @@ class ReplicationPolicyArgs:
                  bucket: pulumi.Input[str],
                  destination_bucket_name: pulumi.Input[str],
                  destination_region_name: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  namespace: pulumi.Input[str],
-                 delete_object_in_destination_bucket: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 delete_object_in_destination_bucket: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ReplicationPolicy resource.
         :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
+        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "destination_bucket_name", destination_bucket_name)
         pulumi.set(__self__, "destination_region_name", destination_region_name)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         if delete_object_in_destination_bucket is not None:
             warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
         if delete_object_in_destination_bucket is not None:
             pulumi.set(__self__, "delete_object_in_destination_bucket", delete_object_in_destination_bucket)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -78,6 +77,18 @@ class ReplicationPolicyArgs:
 
     @property
     @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name of the policy. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
         The Object Storage namespace used for the request.
@@ -96,18 +107,6 @@ class ReplicationPolicyArgs:
     @delete_object_in_destination_bucket.setter
     def delete_object_in_destination_bucket(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "delete_object_in_destination_bucket", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the policy. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -304,6 +303,7 @@ class ReplicationPolicy(pulumi.CustomResource):
             bucket=var["replication_policy_bucket"],
             destination_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
             destination_region_name=oci_identity_region["test_region"]["name"],
+            name=var["replication_policy_name"],
             namespace=var["replication_policy_namespace"])
         ```
 
@@ -344,6 +344,7 @@ class ReplicationPolicy(pulumi.CustomResource):
             bucket=var["replication_policy_bucket"],
             destination_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
             destination_region_name=oci_identity_region["test_region"]["name"],
+            name=var["replication_policy_name"],
             namespace=var["replication_policy_namespace"])
         ```
 
@@ -398,6 +399,8 @@ class ReplicationPolicy(pulumi.CustomResource):
             if destination_region_name is None and not opts.urn:
                 raise TypeError("Missing required property 'destination_region_name'")
             __props__.__dict__["destination_region_name"] = destination_region_name
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")

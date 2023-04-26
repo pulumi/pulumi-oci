@@ -630,6 +630,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             host_name=var["monitored_resources_search_host_name"],
             host_name_contains=var["monitored_resources_search_host_name_contains"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            name=var["monitored_resources_search_name"],
             name_contains=var["monitored_resources_search_name_contains"],
             property_equals=var["monitored_resources_search_property_equals"],
             resource_time_zone=var["monitored_resources_search_resource_time_zone"],
@@ -694,6 +695,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             host_name=var["monitored_resources_search_host_name"],
             host_name_contains=var["monitored_resources_search_host_name_contains"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            name=var["monitored_resources_search_name"],
             name_contains=var["monitored_resources_search_name_contains"],
             property_equals=var["monitored_resources_search_property_equals"],
             resource_time_zone=var["monitored_resources_search_resource_time_zone"],
@@ -918,7 +920,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
+    def name(self) -> pulumi.Output[Optional[str]]:
         """
         A filter to return resources that match exact resource name
         """

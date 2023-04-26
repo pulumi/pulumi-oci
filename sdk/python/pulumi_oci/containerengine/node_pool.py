@@ -18,12 +18,12 @@ class NodePoolArgs:
     def __init__(__self__, *,
                  cluster_id: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  node_shape: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
                  node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
@@ -38,12 +38,12 @@ class NodePoolArgs:
         The set of arguments for constructing a NodePool resource.
         :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
+        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -57,6 +57,7 @@ class NodePoolArgs:
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "node_shape", node_shape)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -66,8 +67,6 @@ class NodePoolArgs:
             pulumi.set(__self__, "initial_node_labels", initial_node_labels)
         if kubernetes_version is not None:
             pulumi.set(__self__, "kubernetes_version", kubernetes_version)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if node_config_details is not None:
             pulumi.set(__self__, "node_config_details", node_config_details)
         if node_eviction_node_pool_settings is not None:
@@ -118,6 +117,18 @@ class NodePoolArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of the node pool. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="nodeShape")
@@ -178,18 +189,6 @@ class NodePoolArgs:
     @kubernetes_version.setter
     def kubernetes_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kubernetes_version", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the node pool. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="nodeConfigDetails")
@@ -716,6 +715,7 @@ class NodePool(pulumi.CustomResource):
         test_node_pool = oci.container_engine.NodePool("testNodePool",
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compartment_id=var["compartment_id"],
+            name=var["node_pool_name"],
             node_shape=var["node_pool_node_shape"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -827,6 +827,7 @@ class NodePool(pulumi.CustomResource):
         test_node_pool = oci.container_engine.NodePool("testNodePool",
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compartment_id=var["compartment_id"],
+            name=var["node_pool_name"],
             node_shape=var["node_pool_node_shape"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -949,6 +950,8 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["initial_node_labels"] = initial_node_labels
             __props__.__dict__["kubernetes_version"] = kubernetes_version
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["node_config_details"] = node_config_details
             __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings

@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testConnectHarness = new oci.streaming.ConnectHarness("testConnectHarness", {
  *     compartmentId: _var.compartment_id,
+ *     name: _var.connect_harness_name,
  *     definedTags: _var.connect_harness_defined_tags,
  *     freeformTags: {
  *         Department: "Finance",
@@ -116,6 +117,9 @@ export class ConnectHarness extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
@@ -182,5 +186,5 @@ export interface ConnectHarnessArgs {
     /**
      * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

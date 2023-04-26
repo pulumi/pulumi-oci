@@ -44,6 +44,7 @@ namespace Pulumi.Oci.Identity
     ///     {
     ///         CompartmentId = @var.Tenancy_ocid,
     ///         Description = @var.Group_description,
+    ///         Name = @var.Group_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -201,8 +202,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public GroupArgs()
         {

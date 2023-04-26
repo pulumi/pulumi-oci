@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.NewMonitoredResource(ctx, "testMonitoredResource", &StackMonitoring.MonitoredResourceArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Monitored_resource_name),
 //				Type:          pulumi.Any(_var.Monitored_resource_type),
 //				Aliases: &stackmonitoring.MonitoredResourceAliasesArgs{
 //					Credential: &stackmonitoring.MonitoredResourceAliasesCredentialArgs{
@@ -149,6 +150,9 @@ func NewMonitoredResource(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
@@ -284,7 +288,7 @@ type monitoredResourceArgs struct {
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// (Updatable) property name
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) List of monitored resource properties
 	Properties []MonitoredResourceProperty `pulumi:"properties"`
 	// (Updatable) Time zone in the form of tz database canonical zone ID.
@@ -314,7 +318,7 @@ type MonitoredResourceArgs struct {
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrInput
 	// (Updatable) property name
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) List of monitored resource properties
 	Properties MonitoredResourcePropertyArrayInput
 	// (Updatable) Time zone in the form of tz database canonical zone ID.

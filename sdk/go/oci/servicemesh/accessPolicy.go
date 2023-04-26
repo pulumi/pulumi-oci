@@ -32,6 +32,7 @@ import (
 //			_, err := ServiceMesh.NewAccessPolicy(ctx, "testAccessPolicy", &ServiceMesh.AccessPolicyArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//				Name:          pulumi.Any(_var.Access_policy_name),
 //				Rules: servicemesh.AccessPolicyRuleArray{
 //					&servicemesh.AccessPolicyRuleArgs{
 //						Action: pulumi.Any(_var.Access_policy_rules_action),
@@ -122,6 +123,9 @@ func NewAccessPolicy(ctx *pulumi.Context,
 	}
 	if args.MeshId == nil {
 		return nil, errors.New("invalid value for required argument 'MeshId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Rules == nil {
 		return nil, errors.New("invalid value for required argument 'Rules'")
@@ -217,7 +221,7 @@ type accessPolicyArgs struct {
 	// The OCID of the service mesh in which this access policy is created.
 	MeshId string `pulumi:"meshId"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) List of applicable rules
 	Rules []AccessPolicyRule `pulumi:"rules"`
 }
@@ -235,7 +239,7 @@ type AccessPolicyArgs struct {
 	// The OCID of the service mesh in which this access policy is created.
 	MeshId pulumi.StringInput
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) List of applicable rules
 	Rules AccessPolicyRuleArrayInput
 }

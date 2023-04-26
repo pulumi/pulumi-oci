@@ -28,6 +28,7 @@ namespace Pulumi.Oci.Limits
     ///     {
     ///         CompartmentId = @var.Tenancy_ocid,
     ///         Description = @var.Quota_description,
+    ///         Name = @var.Quota_name,
     ///         Statements = @var.Quota_statements,
     ///         DefinedTags = 
     ///         {
@@ -219,8 +220,8 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         [Input("statements", required: true)]
         private InputList<string>? _statements;

@@ -18,29 +18,30 @@ class IdentityProviderArgs:
                  description: pulumi.Input[str],
                  metadata: pulumi.Input[str],
                  metadata_url: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  product_type: pulumi.Input[str],
                  protocol: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_attributes: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a IdentityProvider resource.
         :param pulumi.Input[str] compartment_id: The OCID of your tenancy.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[str] metadata: (Updatable) The XML that contains the information required for federating.
         :param pulumi.Input[str] metadata_url: (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
+        :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
         :param pulumi.Input[str] product_type: The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
         :param pulumi.Input[str] protocol: (Updatable) The protocol used for federation.  Example: `SAML2`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_attributes: (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "metadata", metadata)
         pulumi.set(__self__, "metadata_url", metadata_url)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "product_type", product_type)
         pulumi.set(__self__, "protocol", protocol)
         if defined_tags is not None:
@@ -49,8 +50,6 @@ class IdentityProviderArgs:
             pulumi.set(__self__, "freeform_attributes", freeform_attributes)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -99,6 +98,18 @@ class IdentityProviderArgs:
     @metadata_url.setter
     def metadata_url(self, value: pulumi.Input[str]):
         pulumi.set(self, "metadata_url", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="productType")
@@ -159,18 +170,6 @@ class IdentityProviderArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -468,6 +467,7 @@ class IdentityProvider(pulumi.CustomResource):
             description=var["identity_provider_description"],
             metadata=var["identity_provider_metadata"],
             metadata_url=var["identity_provider_metadata_url"],
+            name=var["identity_provider_name"],
             product_type=var["identity_provider_product_type"],
             protocol=var["identity_provider_protocol"],
             defined_tags={
@@ -537,6 +537,7 @@ class IdentityProvider(pulumi.CustomResource):
             description=var["identity_provider_description"],
             metadata=var["identity_provider_metadata"],
             metadata_url=var["identity_provider_metadata_url"],
+            name=var["identity_provider_name"],
             product_type=var["identity_provider_product_type"],
             protocol=var["identity_provider_protocol"],
             defined_tags={
@@ -605,6 +606,8 @@ class IdentityProvider(pulumi.CustomResource):
             if metadata_url is None and not opts.urn:
                 raise TypeError("Missing required property 'metadata_url'")
             __props__.__dict__["metadata_url"] = metadata_url
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if product_type is None and not opts.urn:
                 raise TypeError("Missing required property 'product_type'")

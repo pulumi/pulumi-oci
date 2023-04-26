@@ -28,6 +28,7 @@ namespace Pulumi.Oci.CertificatesManagement
     ///     {
     ///         CaBundlePem = @var.Ca_bundle_ca_bundle_pem,
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Ca_bundle_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -198,8 +199,8 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public CaBundleArgs()
         {

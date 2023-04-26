@@ -32,6 +32,7 @@ import (
 //			_, err := CertificatesManagement.NewCaBundle(ctx, "testCaBundle", &CertificatesManagement.CaBundleArgs{
 //				CaBundlePem:   pulumi.Any(_var.Ca_bundle_ca_bundle_pem),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Ca_bundle_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -93,6 +94,9 @@ func NewCaBundle(ctx *pulumi.Context,
 	}
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource CaBundle
 	err := ctx.RegisterResource("oci:CertificatesManagement/caBundle:CaBundle", name, args, &resource, opts...)
@@ -173,7 +177,7 @@ type caBundleArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a CaBundle resource.
@@ -189,7 +193,7 @@ type CaBundleArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (CaBundleArgs) ElementType() reflect.Type {

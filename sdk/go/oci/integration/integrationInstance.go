@@ -66,6 +66,7 @@ import (
 //					},
 //					IsIntegrationVcnAllowlisted: pulumi.Any(_var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted),
 //				},
+//				Shape: pulumi.Any(_var.Integration_instance_shape),
 //				State: pulumi.Any(_var.Integration_instance_target_state),
 //			})
 //			if err != nil {
@@ -103,6 +104,8 @@ type IntegrationInstance struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger pulumi.IntPtrOutput `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -111,7 +114,7 @@ type IntegrationInstance struct {
 	IdcsInfos IntegrationInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringOutput `pulumi:"instanceUrl"`
-	// (Updatable) Standard or Enterprise type
+	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringOutput `pulumi:"integrationInstanceType"`
 	// (Updatable) Bring your own license.
 	IsByol pulumi.BoolOutput `pulumi:"isByol"`
@@ -123,6 +126,8 @@ type IntegrationInstance struct {
 	MessagePacks pulumi.IntOutput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsOutput `pulumi:"networkEndpointDetails"`
+	// Shape
+	Shape pulumi.StringOutput `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	State pulumi.StringOutput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -198,6 +203,8 @@ type integrationInstanceState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -206,7 +213,7 @@ type integrationInstanceState struct {
 	IdcsInfos []IntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl *string `pulumi:"instanceUrl"`
-	// (Updatable) Standard or Enterprise type
+	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType *string `pulumi:"integrationInstanceType"`
 	// (Updatable) Bring your own license.
 	IsByol *bool `pulumi:"isByol"`
@@ -218,6 +225,8 @@ type integrationInstanceState struct {
 	MessagePacks *int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails *IntegrationInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
+	// Shape
+	Shape *string `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -243,6 +252,8 @@ type IntegrationInstanceState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -251,7 +262,7 @@ type IntegrationInstanceState struct {
 	IdcsInfos IntegrationInstanceIdcsInfoArrayInput
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringPtrInput
-	// (Updatable) Standard or Enterprise type
+	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringPtrInput
 	// (Updatable) Bring your own license.
 	IsByol pulumi.BoolPtrInput
@@ -263,6 +274,8 @@ type IntegrationInstanceState struct {
 	MessagePacks pulumi.IntPtrInput
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsPtrInput
+	// Shape
+	Shape pulumi.StringPtrInput
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	State pulumi.StringPtrInput
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -290,11 +303,13 @@ type integrationInstanceArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName string `pulumi:"displayName"`
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt *string `pulumi:"idcsAt"`
-	// (Updatable) Standard or Enterprise type
+	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// (Updatable) Bring your own license.
 	IsByol bool `pulumi:"isByol"`
@@ -306,6 +321,8 @@ type integrationInstanceArgs struct {
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails *IntegrationInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
+	// Shape
+	Shape *string `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	State *string `pulumi:"state"`
 }
@@ -324,11 +341,13 @@ type IntegrationInstanceArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringInput
+	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrInput
-	// (Updatable) Standard or Enterprise type
+	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringInput
 	// (Updatable) Bring your own license.
 	IsByol pulumi.BoolInput
@@ -340,6 +359,8 @@ type IntegrationInstanceArgs struct {
 	MessagePacks pulumi.IntInput
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsPtrInput
+	// Shape
+	Shape pulumi.StringPtrInput
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	State pulumi.StringPtrInput
 }
@@ -468,6 +489,11 @@ func (o IntegrationInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+func (o IntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.EnableProcessAutomationTrigger }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o IntegrationInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
@@ -488,7 +514,7 @@ func (o IntegrationInstanceOutput) InstanceUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.InstanceUrl }).(pulumi.StringOutput)
 }
 
-// (Updatable) Standard or Enterprise type
+// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 func (o IntegrationInstanceOutput) IntegrationInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.IntegrationInstanceType }).(pulumi.StringOutput)
 }
@@ -518,6 +544,11 @@ func (o IntegrationInstanceOutput) NetworkEndpointDetails() IntegrationInstanceN
 	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceNetworkEndpointDetailsOutput {
 		return v.NetworkEndpointDetails
 	}).(IntegrationInstanceNetworkEndpointDetailsOutput)
+}
+
+// Shape
+func (o IntegrationInstanceOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
 // (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE

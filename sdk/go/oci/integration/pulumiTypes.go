@@ -1770,7 +1770,8 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName                    string `pulumi:"displayName"`
+	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
@@ -1780,7 +1781,7 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	IdcsInfos []GetIntegrationInstancesIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl string `pulumi:"instanceUrl"`
-	// Standard or Enterprise type
+	// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol bool `pulumi:"isByol"`
@@ -1792,6 +1793,8 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
+	// Shape
+	Shape string `pulumi:"shape"`
 	// Life cycle state to query on.
 	State string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1827,7 +1830,8 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName                    pulumi.StringInput `pulumi:"displayName"`
+	EnableProcessAutomationTrigger pulumi.IntInput    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
@@ -1837,7 +1841,7 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	IdcsInfos GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
-	// Standard or Enterprise type
+	// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringInput `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol pulumi.BoolInput `pulumi:"isByol"`
@@ -1849,6 +1853,8 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	MessagePacks pulumi.IntInput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
+	// Shape
+	Shape pulumi.StringInput `pulumi:"shape"`
 	// Life cycle state to query on.
 	State pulumi.StringInput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1951,6 +1957,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) DisplayName() pulumi.S
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o GetIntegrationInstancesIntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.EnableProcessAutomationTrigger }).(pulumi.IntOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetIntegrationInstancesIntegrationInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -1977,7 +1987,7 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) InstanceUrl() pulumi.S
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.InstanceUrl }).(pulumi.StringOutput)
 }
 
-// Standard or Enterprise type
+// Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 func (o GetIntegrationInstancesIntegrationInstanceOutput) IntegrationInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.IntegrationInstanceType }).(pulumi.StringOutput)
 }
@@ -2007,6 +2017,11 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) NetworkEndpointDetails
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail {
 		return v.NetworkEndpointDetails
 	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput)
+}
+
+// Shape
+func (o GetIntegrationInstancesIntegrationInstanceOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 // Life cycle state to query on.

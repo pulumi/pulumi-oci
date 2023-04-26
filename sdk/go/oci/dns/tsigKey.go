@@ -33,6 +33,7 @@ import (
 //			_, err := Dns.NewTsigKey(ctx, "testTsigKey", &Dns.TsigKeyArgs{
 //				Algorithm:     pulumi.Any(_var.Tsig_key_algorithm),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Tsig_key_name),
 //				Secret:        pulumi.Any(_var.Tsig_key_secret),
 //				DefinedTags:   pulumi.Any(_var.Tsig_key_defined_tags),
 //				FreeformTags:  pulumi.Any(_var.Tsig_key_freeform_tags),
@@ -92,6 +93,9 @@ func NewTsigKey(ctx *pulumi.Context,
 	}
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Secret == nil {
 		return nil, errors.New("invalid value for required argument 'Secret'")
@@ -184,7 +188,7 @@ type tsigKeyArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A globally unique domain name identifying the key for a given pair of hosts.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// A base64 string encoding the binary shared secret.
 	Secret string `pulumi:"secret"`
 }
@@ -200,7 +204,7 @@ type TsigKeyArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput
 	// A globally unique domain name identifying the key for a given pair of hosts.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// A base64 string encoding the binary shared secret.
 	Secret pulumi.StringInput
 }

@@ -36,6 +36,7 @@ namespace Pulumi.Oci.Analytics
     ///         FeatureSet = @var.Analytics_instance_feature_set,
     ///         IdcsAccessToken = @var.Analytics_instance_idcs_access_token,
     ///         LicenseType = @var.Analytics_instance_license_type,
+    ///         Name = @var.Analytics_instance_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -311,8 +312,8 @@ namespace Pulumi.Oci.Analytics
         /// <summary>
         /// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// Base representation of a network endpoint.

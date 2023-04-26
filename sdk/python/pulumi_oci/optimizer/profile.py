@@ -19,10 +19,10 @@ class ProfileArgs:
                  compartment_id: pulumi.Input[str],
                  description: pulumi.Input[str],
                  levels_configuration: pulumi.Input['ProfileLevelsConfigurationArgs'],
+                 name: pulumi.Input[str],
                  aggregation_interval_in_days: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
                  target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None):
         """
@@ -30,24 +30,23 @@ class ProfileArgs:
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
         :param pulumi.Input[str] description: (Updatable) Text describing the profile. Avoid entering confidential information.
         :param pulumi.Input['ProfileLevelsConfigurationArgs'] levels_configuration: (Updatable) A list of configuration levels for each recommendation.
+        :param pulumi.Input[str] name: (Updatable) The name assigned to the profile. Avoid entering confidential information.
         :param pulumi.Input[int] aggregation_interval_in_days: (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: (Updatable) The name assigned to the profile. Avoid entering confidential information.
         :param pulumi.Input['ProfileTargetCompartmentsArgs'] target_compartments: (Updatable) Optional. The compartments specified in the profile override for a recommendation.
         :param pulumi.Input['ProfileTargetTagsArgs'] target_tags: (Updatable) Optional. The tags specified in the profile override for a recommendation.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "levels_configuration", levels_configuration)
+        pulumi.set(__self__, "name", name)
         if aggregation_interval_in_days is not None:
             pulumi.set(__self__, "aggregation_interval_in_days", aggregation_interval_in_days)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if target_compartments is not None:
             pulumi.set(__self__, "target_compartments", target_compartments)
         if target_tags is not None:
@@ -90,6 +89,18 @@ class ProfileArgs:
         pulumi.set(self, "levels_configuration", value)
 
     @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name assigned to the profile. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
     @pulumi.getter(name="aggregationIntervalInDays")
     def aggregation_interval_in_days(self) -> Optional[pulumi.Input[int]]:
         """
@@ -124,18 +135,6 @@ class ProfileArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name assigned to the profile. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="targetCompartments")
@@ -397,6 +396,7 @@ class Profile(pulumi.CustomResource):
                     recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
                 )],
             ),
+            name=var["profile_name"],
             aggregation_interval_in_days=var["profile_aggregation_interval_in_days"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -463,6 +463,7 @@ class Profile(pulumi.CustomResource):
                     recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
                 )],
             ),
+            name=var["profile_name"],
             aggregation_interval_in_days=var["profile_aggregation_interval_in_days"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -536,6 +537,8 @@ class Profile(pulumi.CustomResource):
             if levels_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'levels_configuration'")
             __props__.__dict__["levels_configuration"] = levels_configuration
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["target_compartments"] = target_compartments
             __props__.__dict__["target_tags"] = target_tags

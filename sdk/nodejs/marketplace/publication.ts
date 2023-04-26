@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     isAgreementAcknowledged: _var.publication_is_agreement_acknowledged,
  *     listingType: _var.publication_listing_type,
+ *     name: _var.publication_name,
  *     packageDetails: {
  *         eulas: [{
  *             eulaType: _var.publication_package_details_eula_eula_type,
@@ -186,6 +187,9 @@ export class Publication extends pulumi.CustomResource {
             if ((!args || args.listingType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'listingType'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.packageDetails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'packageDetails'");
             }
@@ -313,7 +317,7 @@ export interface PublicationArgs {
     /**
      * (Updatable) The name of the contact.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * A base object for creating a publication package.
      */

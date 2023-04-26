@@ -28,6 +28,7 @@ namespace Pulumi.Oci.LoadBalancer
     ///     {
     ///         Ciphers = @var.Ssl_cipher_suite_ciphers,
     ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Name = @var.Ssl_cipher_suite_name,
     ///     });
     /// 
     /// });
@@ -132,8 +133,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public SslCipherSuiteArgs()
         {

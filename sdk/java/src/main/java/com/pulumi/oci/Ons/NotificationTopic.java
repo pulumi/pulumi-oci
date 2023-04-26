@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNotificationTopic = new NotificationTopic(&#34;testNotificationTopic&#34;, NotificationTopicArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.notification_topic_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.notification_topic_description())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))

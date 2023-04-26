@@ -47,6 +47,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutonomousVmCluster{}
 	case "oci:Database/backup:Backup":
 		r = &Backup{}
+	case "oci:Database/backupCancelManagement:BackupCancelManagement":
+		r = &BackupCancelManagement{}
 	case "oci:Database/backupDestination:BackupDestination":
 		r = &BackupDestination{}
 	case "oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster":
@@ -203,6 +205,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/backup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/backupCancelManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

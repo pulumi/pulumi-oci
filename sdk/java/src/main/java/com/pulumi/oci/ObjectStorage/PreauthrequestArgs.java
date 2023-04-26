@@ -64,15 +64,15 @@ public final class PreauthrequestArgs extends com.pulumi.resources.ResourceArgs 
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -243,7 +243,7 @@ public final class PreauthrequestArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -353,6 +353,7 @@ public final class PreauthrequestArgs extends com.pulumi.resources.ResourceArgs 
         public PreauthrequestArgs build() {
             $.accessType = Objects.requireNonNull($.accessType, "expected parameter 'accessType' to be non-null");
             $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
             $.timeExpires = Objects.requireNonNull($.timeExpires, "expected parameter 'timeExpires' to be non-null");
             return $;

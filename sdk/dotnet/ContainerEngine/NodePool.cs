@@ -28,6 +28,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///     {
     ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Node_pool_name,
     ///         NodeShape = @var.Node_pool_node_shape,
     ///         DefinedTags = 
     ///         {
@@ -358,8 +359,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// (Updatable) The name of the node pool. Avoid entering confidential information.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.

@@ -131,9 +131,17 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     @Import(name="computeModel")
     private @Nullable Output<String> computeModel;
 
+    /**
+     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     public Optional<Output<String>> computeModel() {
         return Optional.ofNullable(this.computeModel);
     }
@@ -948,11 +956,23 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param computeModel The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder computeModel(@Nullable Output<String> computeModel) {
             $.computeModel = computeModel;
             return this;
         }
 
+        /**
+         * @param computeModel The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder computeModel(String computeModel) {
             return computeModel(Output.of(computeModel));
         }

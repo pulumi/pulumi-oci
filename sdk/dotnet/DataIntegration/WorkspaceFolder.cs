@@ -28,6 +28,7 @@ namespace Pulumi.Oci.DataIntegration
     ///     var testWorkspaceFolder = new Oci.DataIntegration.WorkspaceFolder("testWorkspaceFolder", new()
     ///     {
     ///         Identifier = @var.Workspace_folder_identifier,
+    ///         Name = @var.Workspace_folder_name,
     ///         RegistryMetadata = new Oci.DataIntegration.Inputs.WorkspaceFolderRegistryMetadataArgs
     ///         {
     ///             AggregatorKey = @var.Workspace_folder_registry_metadata_aggregator_key,
@@ -227,8 +228,8 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.

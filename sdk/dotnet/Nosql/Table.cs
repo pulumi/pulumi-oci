@@ -28,6 +28,7 @@ namespace Pulumi.Oci.Nosql
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         DdlStatement = @var.Table_ddl_statement,
+    ///         Name = @var.Table_name,
     ///         DefinedTags = @var.Table_defined_tags,
     ///         FreeformTags = 
     ///         {
@@ -232,8 +233,8 @@ namespace Pulumi.Oci.Nosql
         /// <summary>
         /// Table name.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.

@@ -50,6 +50,7 @@ import * as utilities from "../utilities";
  *         }],
  *         isIntegrationVcnAllowlisted: _var.integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
  *     },
+ *     shape: _var.integration_instance_shape,
  *     state: _var.integration_instance_target_state,
  * });
  * ```
@@ -119,6 +120,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     */
+    public readonly enableProcessAutomationTrigger!: pulumi.Output<number | undefined>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
@@ -135,7 +140,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public /*out*/ readonly instanceUrl!: pulumi.Output<string>;
     /**
-     * (Updatable) Standard or Enterprise type
+     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     public readonly integrationInstanceType!: pulumi.Output<string>;
     /**
@@ -158,6 +163,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * Base representation of a network endpoint.
      */
     public readonly networkEndpointDetails!: pulumi.Output<outputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    /**
+     * Shape
+     */
+    public readonly shape!: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      */
@@ -195,6 +204,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["enableProcessAutomationTrigger"] = state ? state.enableProcessAutomationTrigger : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["idcsAt"] = state ? state.idcsAt : undefined;
             resourceInputs["idcsInfos"] = state ? state.idcsInfos : undefined;
@@ -205,6 +215,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["isVisualBuilderEnabled"] = state ? state.isVisualBuilderEnabled : undefined;
             resourceInputs["messagePacks"] = state ? state.messagePacks : undefined;
             resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
+            resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -232,6 +243,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["customEndpoint"] = args ? args.customEndpoint : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["enableProcessAutomationTrigger"] = args ? args.enableProcessAutomationTrigger : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsAt"] = args?.idcsAt ? pulumi.secret(args.idcsAt) : undefined;
             resourceInputs["integrationInstanceType"] = args ? args.integrationInstanceType : undefined;
@@ -240,6 +252,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["isVisualBuilderEnabled"] = args ? args.isVisualBuilderEnabled : undefined;
             resourceInputs["messagePacks"] = args ? args.messagePacks : undefined;
             resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
+            resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["idcsInfos"] = undefined /*out*/;
@@ -288,6 +301,10 @@ export interface IntegrationInstanceState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     */
+    enableProcessAutomationTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
@@ -304,7 +321,7 @@ export interface IntegrationInstanceState {
      */
     instanceUrl?: pulumi.Input<string>;
     /**
-     * (Updatable) Standard or Enterprise type
+     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     integrationInstanceType?: pulumi.Input<string>;
     /**
@@ -327,6 +344,10 @@ export interface IntegrationInstanceState {
      * Base representation of a network endpoint.
      */
     networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    /**
+     * Shape
+     */
+    shape?: pulumi.Input<string>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      */
@@ -374,6 +395,10 @@ export interface IntegrationInstanceArgs {
      */
     displayName: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     */
+    enableProcessAutomationTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
@@ -382,7 +407,7 @@ export interface IntegrationInstanceArgs {
      */
     idcsAt?: pulumi.Input<string>;
     /**
-     * (Updatable) Standard or Enterprise type
+     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     integrationInstanceType: pulumi.Input<string>;
     /**
@@ -405,6 +430,10 @@ export interface IntegrationInstanceArgs {
      * Base representation of a network endpoint.
      */
     networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    /**
+     * Shape
+     */
+    shape?: pulumi.Input<string>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      */

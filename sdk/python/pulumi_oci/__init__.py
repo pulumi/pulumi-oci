@@ -2019,6 +2019,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/backupCancelManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/backupCancelManagement:BackupCancelManagement": "BackupCancelManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/backupDestination",
   "fqn": "pulumi_oci.database",
   "classes": {

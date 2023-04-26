@@ -17,6 +17,7 @@ class InstanceArgs:
                  admin_email: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
                  idcs_access_token: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  object_storage_namespace: pulumi.Input[str],
                  tenancy_id: pulumi.Input[str],
                  tenancy_name: pulumi.Input[str],
@@ -28,7 +29,6 @@ class InstanceArgs:
                  instance_access_type: Optional[pulumi.Input[str]] = None,
                  instance_license_type: Optional[pulumi.Input[str]] = None,
                  instance_usage_type: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  upgrade_schedule: Optional[pulumi.Input[str]] = None,
                  waf_primary_domain: Optional[pulumi.Input[str]] = None):
         """
@@ -36,6 +36,7 @@ class InstanceArgs:
         :param pulumi.Input[str] admin_email: Admin Email for Notification
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
+        :param pulumi.Input[str] name: OceInstance Name
         :param pulumi.Input[str] object_storage_namespace: Object Storage Namespace of Tenancy
         :param pulumi.Input[str] tenancy_id: Tenancy Identifier
         :param pulumi.Input[str] tenancy_name: Tenancy Name
@@ -47,13 +48,13 @@ class InstanceArgs:
         :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
         :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
         :param pulumi.Input[str] instance_usage_type: (Updatable) Instance type based on its usage
-        :param pulumi.Input[str] name: OceInstance Name
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
         """
         pulumi.set(__self__, "admin_email", admin_email)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
         pulumi.set(__self__, "tenancy_id", tenancy_id)
         pulumi.set(__self__, "tenancy_name", tenancy_name)
@@ -73,8 +74,6 @@ class InstanceArgs:
             pulumi.set(__self__, "instance_license_type", instance_license_type)
         if instance_usage_type is not None:
             pulumi.set(__self__, "instance_usage_type", instance_usage_type)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if upgrade_schedule is not None:
             pulumi.set(__self__, "upgrade_schedule", upgrade_schedule)
         if waf_primary_domain is not None:
@@ -115,6 +114,18 @@ class InstanceArgs:
     @idcs_access_token.setter
     def idcs_access_token(self, value: pulumi.Input[str]):
         pulumi.set(self, "idcs_access_token", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        OceInstance Name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="objectStorageNamespace")
@@ -247,18 +258,6 @@ class InstanceArgs:
     @instance_usage_type.setter
     def instance_usage_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "instance_usage_type", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        OceInstance Name
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="upgradeSchedule")
@@ -747,6 +746,7 @@ class Instance(pulumi.CustomResource):
             admin_email=var["oce_instance_admin_email"],
             compartment_id=var["compartment_id"],
             idcs_access_token=var["oce_instance_idcs_access_token"],
+            name=var["oce_instance_name"],
             object_storage_namespace=var["oce_instance_object_storage_namespace"],
             tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
             tenancy_name=oci_identity_tenancy["test_tenancy"]["name"],
@@ -815,6 +815,7 @@ class Instance(pulumi.CustomResource):
             admin_email=var["oce_instance_admin_email"],
             compartment_id=var["compartment_id"],
             idcs_access_token=var["oce_instance_idcs_access_token"],
+            name=var["oce_instance_name"],
             object_storage_namespace=var["oce_instance_object_storage_namespace"],
             tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
             tenancy_name=oci_identity_tenancy["test_tenancy"]["name"],
@@ -900,6 +901,8 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["instance_access_type"] = instance_access_type
             __props__.__dict__["instance_license_type"] = instance_license_type
             __props__.__dict__["instance_usage_type"] = instance_usage_type
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if object_storage_namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'object_storage_namespace'")

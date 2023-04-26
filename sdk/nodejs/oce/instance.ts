@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *     adminEmail: _var.oce_instance_admin_email,
  *     compartmentId: _var.compartment_id,
  *     idcsAccessToken: _var.oce_instance_idcs_access_token,
+ *     name: _var.oce_instance_name,
  *     objectStorageNamespace: _var.oce_instance_object_storage_namespace,
  *     tenancyId: oci_identity_tenancy.test_tenancy.id,
  *     tenancyName: oci_identity_tenancy.test_tenancy.name,
@@ -230,6 +231,9 @@ export class Instance extends pulumi.CustomResource {
             if ((!args || args.idcsAccessToken === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'idcsAccessToken'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.objectStorageNamespace === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'objectStorageNamespace'");
             }
@@ -434,7 +438,7 @@ export interface InstanceArgs {
     /**
      * OceInstance Name
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * Object Storage Namespace of Tenancy
      */

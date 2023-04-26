@@ -16,30 +16,29 @@ class PolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  description: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  statements: pulumi.Input[Sequence[pulumi.Input[str]]],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  version_date: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Policy resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
         :param pulumi.Input[str] description: (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
+        :param pulumi.Input[str] name: The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
         :param pulumi.Input[str] version_date: (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "statements", statements)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if version_date is not None:
             pulumi.set(__self__, "version_date", version_date)
 
@@ -66,6 +65,18 @@ class PolicyArgs:
     @description.setter
     def description(self, value: pulumi.Input[str]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -102,18 +113,6 @@ class PolicyArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="versionDate")
@@ -380,6 +379,7 @@ class Policy(pulumi.CustomResource):
         test_policy = oci.identity.Policy("testPolicy",
             compartment_id=var["tenancy_ocid"],
             description=var["policy_description"],
+            name=var["policy_name"],
             statements=var["policy_statements"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -440,6 +440,7 @@ class Policy(pulumi.CustomResource):
         test_policy = oci.identity.Policy("testPolicy",
             compartment_id=var["tenancy_ocid"],
             description=var["policy_description"],
+            name=var["policy_name"],
             statements=var["policy_statements"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -497,6 +498,8 @@ class Policy(pulumi.CustomResource):
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if statements is None and not opts.urn:
                 raise TypeError("Missing required property 'statements'")

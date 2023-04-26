@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *         type: _var.announcement_subscriptions_filter_group_filters_type,
  *         value: _var.announcement_subscriptions_filter_group_filters_value,
  *     }],
+ *     name: _var.announcement_subscriptions_filter_group_name,
  * });
  * ```
  *
@@ -101,6 +102,9 @@ export class AnnouncementSubscriptionsFilterGroup extends pulumi.CustomResource 
             if ((!args || args.filters === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'filters'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["announcementSubscriptionId"] = args ? args.announcementSubscriptionId : undefined;
             resourceInputs["filters"] = args ? args.filters : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -143,5 +147,5 @@ export interface AnnouncementSubscriptionsFilterGroupArgs {
     /**
      * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

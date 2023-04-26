@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Logging.NewLogSavedSearch(ctx, "testLogSavedSearch", &Logging.LogSavedSearchArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Log_saved_search_name),
 //				Query:         pulumi.Any(_var.Log_saved_search_query),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
@@ -90,6 +91,9 @@ func NewLogSavedSearch(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Query == nil {
 		return nil, errors.New("invalid value for required argument 'Query'")
@@ -171,7 +175,7 @@ type logSavedSearchArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) The search query that is saved.
 	Query string `pulumi:"query"`
 }
@@ -187,7 +191,7 @@ type LogSavedSearchArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) The search query that is saved.
 	Query pulumi.StringInput
 }

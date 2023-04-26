@@ -18,23 +18,24 @@ class AccessPolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  mesh_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  rules: pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AccessPolicy resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
+        :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]] rules: (Updatable) List of applicable rules
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "mesh_id", mesh_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "rules", rules)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -42,8 +43,6 @@ class AccessPolicyArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -68,6 +67,18 @@ class AccessPolicyArgs:
     @mesh_id.setter
     def mesh_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "mesh_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -116,18 +127,6 @@ class AccessPolicyArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -357,6 +356,7 @@ class AccessPolicy(pulumi.CustomResource):
         test_access_policy = oci.service_mesh.AccessPolicy("testAccessPolicy",
             compartment_id=var["compartment_id"],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+            name=var["access_policy_name"],
             rules=[oci.service_mesh.AccessPolicyRuleArgs(
                 action=var["access_policy_rules_action"],
                 destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
@@ -425,6 +425,7 @@ class AccessPolicy(pulumi.CustomResource):
         test_access_policy = oci.service_mesh.AccessPolicy("testAccessPolicy",
             compartment_id=var["compartment_id"],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+            name=var["access_policy_name"],
             rules=[oci.service_mesh.AccessPolicyRuleArgs(
                 action=var["access_policy_rules_action"],
                 destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
@@ -503,6 +504,8 @@ class AccessPolicy(pulumi.CustomResource):
             if mesh_id is None and not opts.urn:
                 raise TypeError("Missing required property 'mesh_id'")
             __props__.__dict__["mesh_id"] = mesh_id
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if rules is None and not opts.urn:
                 raise TypeError("Missing required property 'rules'")

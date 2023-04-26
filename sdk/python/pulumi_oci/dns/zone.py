@@ -17,26 +17,27 @@ __all__ = ['ZoneArgs', 'Zone']
 class ZoneArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  zone_type: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  view_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Zone resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
+        :param pulumi.Input[str] name: The name of the zone.
         :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] name: The name of the zone.
         :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
                This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "zone_type", zone_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -44,8 +45,6 @@ class ZoneArgs:
             pulumi.set(__self__, "external_masters", external_masters)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
         if view_id is not None:
@@ -62,6 +61,18 @@ class ZoneArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name of the zone.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="zoneType")
@@ -110,18 +121,6 @@ class ZoneArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the zone.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -427,6 +426,7 @@ class Zone(pulumi.CustomResource):
 
         test_zone = oci.dns.Zone("testZone",
             compartment_id=var["compartment_id"],
+            name=var["zone_name"],
             zone_type=var["zone_zone_type"],
             defined_tags=var["zone_defined_tags"],
             external_masters=[oci.dns.ZoneExternalMasterArgs(
@@ -479,6 +479,7 @@ class Zone(pulumi.CustomResource):
 
         test_zone = oci.dns.Zone("testZone",
             compartment_id=var["compartment_id"],
+            name=var["zone_name"],
             zone_type=var["zone_zone_type"],
             defined_tags=var["zone_defined_tags"],
             external_masters=[oci.dns.ZoneExternalMasterArgs(
@@ -537,6 +538,8 @@ class Zone(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["external_masters"] = external_masters
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["scope"] = scope
             __props__.__dict__["view_id"] = view_id

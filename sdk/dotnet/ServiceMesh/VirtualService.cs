@@ -28,6 +28,7 @@ namespace Pulumi.Oci.ServiceMesh
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+    ///         Name = @var.Virtual_service_name,
     ///         DefaultRoutingPolicy = new Oci.ServiceMesh.Inputs.VirtualServiceDefaultRoutingPolicyArgs
     ///         {
     ///             Type = @var.Virtual_service_default_routing_policy_type,
@@ -262,8 +263,8 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public VirtualServiceArgs()
         {

@@ -36,7 +36,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String availabilityDomain;
     /**
-     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private Double availableCpus;
@@ -55,6 +55,10 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     private String computeModel;
     /**
      * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
@@ -238,7 +242,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.availabilityDomain;
     }
     /**
-     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Double availableCpus() {
@@ -265,6 +269,10 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     public String computeModel() {
         return this.computeModel;
     }

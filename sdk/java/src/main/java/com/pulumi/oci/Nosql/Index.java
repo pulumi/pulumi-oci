@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *                 .jsonFieldType(var_.index_keys_json_field_type())
  *                 .jsonPath(var_.index_keys_json_path())
  *                 .build())
+ *             .name(var_.index_name())
  *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
  *             .compartmentId(var_.compartment_id())
  *             .isIfNotExists(var_.index_is_if_not_exists())

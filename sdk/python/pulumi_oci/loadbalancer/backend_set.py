@@ -18,28 +18,27 @@ class BackendSetArgs:
     def __init__(__self__, *,
                  health_checker: pulumi.Input['BackendSetHealthCheckerArgs'],
                  load_balancer_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  policy: pulumi.Input[str],
                  lb_cookie_session_persistence_configuration: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
                  ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None):
         """
         The set of arguments for constructing a BackendSet resource.
         :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy's configuration details.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
+        :param pulumi.Input[str] name: A friendly name for the backend set. It must be unique and it cannot be changed.
         :param pulumi.Input[str] policy: (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
         :param pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs'] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
-        :param pulumi.Input[str] name: A friendly name for the backend set. It must be unique and it cannot be changed.
         :param pulumi.Input['BackendSetSessionPersistenceConfigurationArgs'] session_persistence_configuration: (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
         :param pulumi.Input['BackendSetSslConfigurationArgs'] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
         """
         pulumi.set(__self__, "health_checker", health_checker)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "policy", policy)
         if lb_cookie_session_persistence_configuration is not None:
             pulumi.set(__self__, "lb_cookie_session_persistence_configuration", lb_cookie_session_persistence_configuration)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if session_persistence_configuration is not None:
             pulumi.set(__self__, "session_persistence_configuration", session_persistence_configuration)
         if ssl_configuration is not None:
@@ -71,6 +70,18 @@ class BackendSetArgs:
 
     @property
     @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        A friendly name for the backend set. It must be unique and it cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
     def policy(self) -> pulumi.Input[str]:
         """
         (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
@@ -92,18 +103,6 @@ class BackendSetArgs:
     @lb_cookie_session_persistence_configuration.setter
     def lb_cookie_session_persistence_configuration(self, value: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']]):
         pulumi.set(self, "lb_cookie_session_persistence_configuration", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A friendly name for the backend set. It must be unique and it cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="sessionPersistenceConfiguration")
@@ -315,6 +314,7 @@ class BackendSet(pulumi.CustomResource):
                 url_path=var["backend_set_health_checker_url_path"],
             ),
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+            name=var["backend_set_name"],
             policy=var["backend_set_policy"],
             lb_cookie_session_persistence_configuration=oci.load_balancer.BackendSetLbCookieSessionPersistenceConfigurationArgs(
                 cookie_name=var["backend_set_lb_cookie_session_persistence_configuration_cookie_name"],
@@ -397,6 +397,7 @@ class BackendSet(pulumi.CustomResource):
                 url_path=var["backend_set_health_checker_url_path"],
             ),
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+            name=var["backend_set_name"],
             policy=var["backend_set_policy"],
             lb_cookie_session_persistence_configuration=oci.load_balancer.BackendSetLbCookieSessionPersistenceConfigurationArgs(
                 cookie_name=var["backend_set_lb_cookie_session_persistence_configuration_cookie_name"],
@@ -473,6 +474,8 @@ class BackendSet(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if policy is None and not opts.urn:
                 raise TypeError("Missing required property 'policy'")

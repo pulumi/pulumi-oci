@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.NewSchedule(ctx, "testSchedule", &MeteringComputation.ScheduleArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Schedule_name),
 //				ResultLocation: &meteringcomputation.ScheduleResultLocationArgs{
 //					Bucket:       pulumi.Any(_var.Schedule_result_location_bucket),
 //					LocationType: pulumi.Any(_var.Schedule_result_location_location_type),
@@ -132,6 +133,9 @@ func NewSchedule(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.ResultLocation == nil {
 		return nil, errors.New("invalid value for required argument 'ResultLocation'")
@@ -243,7 +247,7 @@ type scheduleArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) Specifies supported output file format.
 	OutputFileFormat *string `pulumi:"outputFileFormat"`
 	// The query properties.
@@ -269,7 +273,7 @@ type ScheduleArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The unique name of the user-created schedule.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) Specifies supported output file format.
 	OutputFileFormat pulumi.StringPtrInput
 	// The query properties.

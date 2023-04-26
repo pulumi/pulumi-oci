@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *         var testVirtualService = new VirtualService(&#34;testVirtualService&#34;, VirtualServiceArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+ *             .name(var_.virtual_service_name())
  *             .defaultRoutingPolicy(VirtualServiceDefaultRoutingPolicyArgs.builder()
  *                 .type(var_.virtual_service_default_routing_policy_type())
  *                 .build())

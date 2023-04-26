@@ -131,6 +131,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
+    @Import(name="enableProcessAutomationTrigger")
+    private @Nullable Output<Integer> enableProcessAutomationTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> enableProcessAutomationTrigger() {
+        return Optional.ofNullable(this.enableProcessAutomationTrigger);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -191,14 +206,14 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Standard or Enterprise type
+     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     @Import(name="integrationInstanceType")
     private @Nullable Output<String> integrationInstanceType;
 
     /**
-     * @return (Updatable) Standard or Enterprise type
+     * @return (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     public Optional<Output<String>> integrationInstanceType() {
@@ -281,6 +296,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Shape
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
+
+    /**
+     * @return Shape
+     * 
+     */
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
+    }
+
+    /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      * 
      */
@@ -350,6 +380,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.customEndpoint = $.customEndpoint;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.enableProcessAutomationTrigger = $.enableProcessAutomationTrigger;
         this.freeformTags = $.freeformTags;
         this.idcsAt = $.idcsAt;
         this.idcsInfos = $.idcsInfos;
@@ -360,6 +391,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
         this.messagePacks = $.messagePacks;
         this.networkEndpointDetails = $.networkEndpointDetails;
+        this.shape = $.shape;
         this.state = $.state;
         this.stateMessage = $.stateMessage;
         this.timeCreated = $.timeCreated;
@@ -552,6 +584,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableProcessAutomationTrigger(@Nullable Output<Integer> enableProcessAutomationTrigger) {
+            $.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
+            return this;
+        }
+
+        /**
+         * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableProcessAutomationTrigger(Integer enableProcessAutomationTrigger) {
+            return enableProcessAutomationTrigger(Output.of(enableProcessAutomationTrigger));
+        }
+
+        /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -646,7 +699,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param integrationInstanceType (Updatable) Standard or Enterprise type
+         * @param integrationInstanceType (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
          * 
          * @return builder
          * 
@@ -657,7 +710,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param integrationInstanceType (Updatable) Standard or Enterprise type
+         * @param integrationInstanceType (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
          * 
          * @return builder
          * 
@@ -769,6 +822,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder networkEndpointDetails(IntegrationInstanceNetworkEndpointDetailsArgs networkEndpointDetails) {
             return networkEndpointDetails(Output.of(networkEndpointDetails));
+        }
+
+        /**
+         * @param shape Shape
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable Output<String> shape) {
+            $.shape = shape;
+            return this;
+        }
+
+        /**
+         * @param shape Shape
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(String shape) {
+            return shape(Output.of(shape));
         }
 
         /**

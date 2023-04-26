@@ -19,6 +19,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  compartment_id: pulumi.Input[str],
                  log_group_id: pulumi.Input[str],
                  log_source_name: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  os_bucket_name: pulumi.Input[str],
                  os_namespace: pulumi.Input[str],
@@ -32,7 +33,6 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
                  log_set_key: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
                  poll_since: Optional[pulumi.Input[str]] = None,
@@ -43,6 +43,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[str] os_namespace: Object Storage namespace.
@@ -56,7 +57,6 @@ class LogAnalyticsObjectCollectionRuleArgs:
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
@@ -66,6 +66,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_source_name", log_source_name)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "os_bucket_name", os_bucket_name)
         pulumi.set(__self__, "os_namespace", os_namespace)
@@ -89,8 +90,6 @@ class LogAnalyticsObjectCollectionRuleArgs:
             pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
         if log_set_key is not None:
             pulumi.set(__self__, "log_set_key", log_set_key)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if object_name_filters is not None:
             pulumi.set(__self__, "object_name_filters", object_name_filters)
         if overrides is not None:
@@ -137,6 +136,18 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @log_source_name.setter
     def log_source_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "log_source_name", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -293,18 +304,6 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @log_set_key.setter
     def log_set_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "log_set_key", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="objectNameFilters")
@@ -834,6 +833,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             log_group_id=oci_logging_log_group["test_log_group"]["id"],
             log_source_name=var["log_analytics_object_collection_rule_log_source_name"],
+            name=var["log_analytics_object_collection_rule_name"],
             namespace=var["log_analytics_object_collection_rule_namespace"],
             os_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
             os_namespace=var["log_analytics_object_collection_rule_os_namespace"],
@@ -912,6 +912,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             log_group_id=oci_logging_log_group["test_log_group"]["id"],
             log_source_name=var["log_analytics_object_collection_rule_log_source_name"],
+            name=var["log_analytics_object_collection_rule_name"],
             namespace=var["log_analytics_object_collection_rule_namespace"],
             os_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
             os_namespace=var["log_analytics_object_collection_rule_os_namespace"],
@@ -1009,6 +1010,8 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             if log_source_name is None and not opts.urn:
                 raise TypeError("Missing required property 'log_source_name'")
             __props__.__dict__["log_source_name"] = log_source_name
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")

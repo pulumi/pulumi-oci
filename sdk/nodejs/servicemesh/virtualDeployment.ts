@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testVirtualDeployment = new oci.servicemesh.VirtualDeployment("testVirtualDeployment", {
  *     compartmentId: _var.compartment_id,
+ *     name: _var.virtual_deployment_name,
  *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
  *     accessLogging: {
  *         isEnabled: _var.virtual_deployment_access_logging_is_enabled,
@@ -168,6 +169,9 @@ export class VirtualDeployment extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.virtualServiceId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'virtualServiceId'");
             }
@@ -284,7 +288,7 @@ export interface VirtualDeploymentArgs {
     /**
      * A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) Service Discovery configuration for virtual deployments.
      */

@@ -28,6 +28,7 @@ namespace Pulumi.Oci.FileStorage
     ///     var testSnapshot = new Oci.FileStorage.Snapshot("testSnapshot", new()
     ///     {
     ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+    ///         Name = @var.Snapshot_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -200,8 +201,8 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public SnapshotArgs()
         {

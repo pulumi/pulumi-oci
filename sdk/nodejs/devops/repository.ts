@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepository = new oci.devops.Repository("testRepository", {
+ *     name: _var.repository_name,
  *     projectId: oci_devops_project.test_project.id,
  *     repositoryType: _var.repository_repository_type,
  *     defaultBranch: _var.repository_default_branch,
@@ -201,6 +202,9 @@ export class Repository extends pulumi.CustomResource {
             resourceInputs["triggerBuildEvents"] = state ? state.triggerBuildEvents : undefined;
         } else {
             const args = argsOrState as RepositoryArgs | undefined;
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.projectId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
@@ -356,7 +360,7 @@ export interface RepositoryArgs {
     /**
      * (Updatable) Unique name of a repository.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * The OCID of the DevOps project containing the repository.
      */

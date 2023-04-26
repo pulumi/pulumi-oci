@@ -32,6 +32,7 @@ import (
 //			_, err := ServiceMesh.NewVirtualService(ctx, "testVirtualService", &ServiceMesh.VirtualServiceArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//				Name:          pulumi.Any(_var.Virtual_service_name),
 //				DefaultRoutingPolicy: &servicemesh.VirtualServiceDefaultRoutingPolicyArgs{
 //					Type: pulumi.Any(_var.Virtual_service_default_routing_policy_type),
 //				},
@@ -111,6 +112,9 @@ func NewVirtualService(ctx *pulumi.Context,
 	}
 	if args.MeshId == nil {
 		return nil, errors.New("invalid value for required argument 'MeshId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource VirtualService
 	err := ctx.RegisterResource("oci:ServiceMesh/virtualService:VirtualService", name, args, &resource, opts...)
@@ -217,7 +221,7 @@ type virtualServiceArgs struct {
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
 	Mtls *VirtualServiceMtls `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a VirtualService resource.
@@ -239,7 +243,7 @@ type VirtualServiceArgs struct {
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
 	Mtls VirtualServiceMtlsPtrInput
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (VirtualServiceArgs) ElementType() reflect.Type {

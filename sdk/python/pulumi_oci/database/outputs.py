@@ -11174,10 +11174,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-        :param float available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        :param float available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param str db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -11287,7 +11288,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -11318,6 +11319,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @property
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        """
         return pulumi.get(self, "compute_model")
 
     @property
@@ -13736,6 +13740,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  timestamp: str,
                  total_backup_storage_size_in_gbs: float,
                  use_latest_available_backup_time_stamp: bool,
+                 used_data_storage_size_in_gbs: int,
                  used_data_storage_size_in_tbs: int,
                  vault_id: str,
                  whitelisted_ips: Sequence[str]):
@@ -13839,6 +13844,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param float total_backup_storage_size_in_gbs: The backup storage to the database.
+        :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -13956,6 +13962,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "timestamp", timestamp)
         pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
+        pulumi.set(__self__, "used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
         pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
@@ -14821,6 +14828,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "use_latest_available_backup_time_stamp")
 
     @property
+    @pulumi.getter(name="usedDataStorageSizeInGbs")
+    def used_data_storage_size_in_gbs(self) -> int:
+        """
+        The storage space consumed by Autonomous Database in GBs.
+        """
+        return pulumi.get(self, "used_data_storage_size_in_gbs")
+
+    @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> int:
         """
@@ -15541,6 +15556,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  time_reclamation_of_free_autonomous_database: str,
                  time_until_reconnect_clone_enabled: str,
                  total_backup_storage_size_in_gbs: float,
+                 used_data_storage_size_in_gbs: int,
                  used_data_storage_size_in_tbs: int,
                  vault_id: str,
                  whitelisted_ips: Sequence[str]):
@@ -15646,6 +15662,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param float total_backup_storage_size_in_gbs: The backup storage to the database.
+        :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -15746,6 +15763,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
         pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
+        pulumi.set(__self__, "used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
         pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
@@ -16522,6 +16540,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The backup storage to the database.
         """
         return pulumi.get(self, "total_backup_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="usedDataStorageSizeInGbs")
+    def used_data_storage_size_in_gbs(self) -> int:
+        """
+        The storage space consumed by Autonomous Database in GBs.
+        """
+        return pulumi.get(self, "used_data_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")
@@ -26856,6 +26882,7 @@ class GetDbHomesDbHomeResult(dict):
                  db_version: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 enable_database_delete: bool,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_desupported_version: bool,
@@ -26893,6 +26920,7 @@ class GetDbHomesDbHomeResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_desupported_version", is_desupported_version)
@@ -26970,6 +26998,11 @@ class GetDbHomesDbHomeResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="enableDatabaseDelete")
+    def enable_database_delete(self) -> bool:
+        return pulumi.get(self, "enable_database_delete")
 
     @property
     @pulumi.getter(name="freeformTags")

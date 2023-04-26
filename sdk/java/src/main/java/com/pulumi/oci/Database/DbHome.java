@@ -19,10 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
- * 
  * ## Example Usage
  * 
  * ```java
@@ -85,6 +81,7 @@ import javax.annotation.Nullable;
  *             .dbVersion()
  *             .definedTags(var_.db_home_defined_tags())
  *             .displayName(var_.db_home_display_name())
+ *             .enableDatabaseDelete(false)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isDesupportedVersion(var_.db_home_is_desupported_version())
  *             .kmsKeyId(oci_kms_key.test_key().id())
@@ -135,14 +132,14 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="database", type=DbHomeDatabase.class, parameters={})
-    private Output</* @Nullable */ DbHomeDatabase> database;
+    private Output<DbHomeDatabase> database;
 
     /**
      * @return (Updatable) Details for creating a database.
      * 
      */
-    public Output<Optional<DbHomeDatabase>> database() {
-        return Codegen.optional(this.database);
+    public Output<DbHomeDatabase> database() {
+        return this.database;
     }
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -227,6 +224,20 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+     * 
+     */
+    @Export(name="enableDatabaseDelete", type=Boolean.class, parameters={})
+    private Output</* @Nullable */ Boolean> enableDatabaseDelete;
+
+    /**
+     * @return Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+     * 
+     */
+    public Output<Optional<Boolean>> enableDatabaseDelete() {
+        return Codegen.optional(this.enableDatabaseDelete);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

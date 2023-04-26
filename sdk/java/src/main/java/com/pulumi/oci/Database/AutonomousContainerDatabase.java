@@ -235,9 +235,17 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     @Export(name="computeModel", type=String.class, parameters={})
     private Output<String> computeModel;
 
+    /**
+     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     public Output<String> computeModel() {
         return this.computeModel;
     }

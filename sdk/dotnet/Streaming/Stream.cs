@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Streaming
     /// {
     ///     var testStream = new Oci.Streaming.Stream("testStream", new()
     ///     {
+    ///         Name = @var.Stream_name,
     ///         Partitions = @var.Stream_partitions,
     ///         CompartmentId = @var.Compartment_id,
     ///         DefinedTags = @var.Stream_defined_tags,
@@ -200,8 +201,8 @@ namespace Pulumi.Oci.Streaming
         /// <summary>
         /// The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// The number of partitions in the stream.

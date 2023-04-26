@@ -27,6 +27,7 @@ namespace Pulumi.Oci.DevOps
     ///     var testProject = new Oci.DevOps.Project("testProject", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Project_name,
     ///         NotificationConfig = new Oci.DevOps.Inputs.ProjectNotificationConfigArgs
     ///         {
     ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
@@ -213,8 +214,8 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Project name (case-sensitive).
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Notification configuration for the project.

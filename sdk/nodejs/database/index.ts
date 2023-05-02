@@ -70,6 +70,11 @@ export type Backup = import("./backup").Backup;
 export const Backup: typeof import("./backup").Backup = null as any;
 utilities.lazyLoad(exports, ["Backup"], () => require("./backup"));
 
+export { BackupCancelManagementArgs, BackupCancelManagementState } from "./backupCancelManagement";
+export type BackupCancelManagement = import("./backupCancelManagement").BackupCancelManagement;
+export const BackupCancelManagement: typeof import("./backupCancelManagement").BackupCancelManagement = null as any;
+utilities.lazyLoad(exports, ["BackupCancelManagement"], () => require("./backupCancelManagement"));
+
 export { BackupDestinationArgs, BackupDestinationState } from "./backupDestination";
 export type BackupDestination = import("./backupDestination").BackupDestination;
 export const BackupDestination: typeof import("./backupDestination").BackupDestination = null as any;
@@ -850,6 +855,8 @@ const _module = {
                 return new AutonomousVmCluster(name, <any>undefined, { urn })
             case "oci:Database/backup:Backup":
                 return new Backup(name, <any>undefined, { urn })
+            case "oci:Database/backupCancelManagement:BackupCancelManagement":
+                return new BackupCancelManagement(name, <any>undefined, { urn })
             case "oci:Database/backupDestination:BackupDestination":
                 return new BackupDestination(name, <any>undefined, { urn })
             case "oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster":
@@ -948,6 +955,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseWallet"
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backup", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/backupCancelManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backupDestination", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudAutonomousVmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudDatabaseManagement", _module)

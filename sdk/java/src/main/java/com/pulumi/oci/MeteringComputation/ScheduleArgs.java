@@ -83,15 +83,15 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
      * The unique name of the user-created schedule.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return The unique name of the user-created schedule.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -308,7 +308,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -451,6 +451,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
         public ScheduleArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.resultLocation = Objects.requireNonNull($.resultLocation, "expected parameter 'resultLocation' to be non-null");
             $.scheduleRecurrences = Objects.requireNonNull($.scheduleRecurrences, "expected parameter 'scheduleRecurrences' to be non-null");
             $.timeScheduled = Objects.requireNonNull($.timeScheduled, "expected parameter 'timeScheduled' to be non-null");

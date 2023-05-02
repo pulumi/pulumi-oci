@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.22.0
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20230419091157-11846c3aa842
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20230426121244-e25e5a5724c0
 )
 
 replace github.com/hashicorp/terraform-exec => github.com/hashicorp/terraform-exec v0.14.0
@@ -53,7 +53,7 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/oklog/run v1.1.0 // indirect
-	github.com/oracle/oci-go-sdk/v65 v65.36.0 // indirect
+	github.com/oracle/oci-go-sdk/v65 v65.36.1 // indirect
 	github.com/sony/gobreaker v0.5.0 // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect

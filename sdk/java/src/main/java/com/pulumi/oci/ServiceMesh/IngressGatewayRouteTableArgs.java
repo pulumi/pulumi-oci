@@ -99,15 +99,15 @@ public final class IngressGatewayRouteTableArgs extends com.pulumi.resources.Res
      * (Updatable) Name of the ingress gateway host that this route should apply to.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return (Updatable) Name of the ingress gateway host that this route should apply to.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -282,7 +282,7 @@ public final class IngressGatewayRouteTableArgs extends com.pulumi.resources.Res
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -352,6 +352,7 @@ public final class IngressGatewayRouteTableArgs extends com.pulumi.resources.Res
         public IngressGatewayRouteTableArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.ingressGatewayId = Objects.requireNonNull($.ingressGatewayId, "expected parameter 'ingressGatewayId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.routeRules = Objects.requireNonNull($.routeRules, "expected parameter 'routeRules' to be non-null");
             return $;
         }

@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testWorkspaceFolder = new WorkspaceFolder(&#34;testWorkspaceFolder&#34;, WorkspaceFolderArgs.builder()        
  *             .identifier(var_.workspace_folder_identifier())
+ *             .name(var_.workspace_folder_name())
  *             .registryMetadata(WorkspaceFolderRegistryMetadataArgs.builder()
  *                 .aggregatorKey(var_.workspace_folder_registry_metadata_aggregator_key())
  *                 .isFavorite(var_.workspace_folder_registry_metadata_is_favorite())

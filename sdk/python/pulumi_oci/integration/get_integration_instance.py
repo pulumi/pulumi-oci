@@ -22,7 +22,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, state=None, state_message=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, shape=None, state=None, state_message=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -44,6 +44,9 @@ class GetIntegrationInstanceResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if enable_process_automation_trigger and not isinstance(enable_process_automation_trigger, int):
+            raise TypeError("Expected argument 'enable_process_automation_trigger' to be a int")
+        pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -80,6 +83,9 @@ class GetIntegrationInstanceResult:
         if network_endpoint_details and not isinstance(network_endpoint_details, list):
             raise TypeError("Expected argument 'network_endpoint_details' to be a list")
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -150,6 +156,11 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="enableProcessAutomationTrigger")
+    def enable_process_automation_trigger(self) -> int:
+        return pulumi.get(self, "enable_process_automation_trigger")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -195,7 +206,7 @@ class GetIntegrationInstanceResult:
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> str:
         """
-        Standard or Enterprise type
+        Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -238,6 +249,14 @@ class GetIntegrationInstanceResult:
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape
+        """
+        return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
@@ -285,6 +304,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             custom_endpoints=self.custom_endpoints,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            enable_process_automation_trigger=self.enable_process_automation_trigger,
             freeform_tags=self.freeform_tags,
             id=self.id,
             idcs_at=self.idcs_at,
@@ -297,6 +317,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             is_visual_builder_enabled=self.is_visual_builder_enabled,
             message_packs=self.message_packs,
             network_endpoint_details=self.network_endpoint_details,
+            shape=self.shape,
             state=self.state,
             state_message=self.state_message,
             time_created=self.time_created,
@@ -335,6 +356,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         custom_endpoints=__ret__.custom_endpoints,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
+        enable_process_automation_trigger=__ret__.enable_process_automation_trigger,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         idcs_at=__ret__.idcs_at,
@@ -347,6 +369,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         is_visual_builder_enabled=__ret__.is_visual_builder_enabled,
         message_packs=__ret__.message_packs,
         network_endpoint_details=__ret__.network_endpoint_details,
+        shape=__ret__.shape,
         state=__ret__.state,
         state_message=__ret__.state_message,
         time_created=__ret__.time_created,

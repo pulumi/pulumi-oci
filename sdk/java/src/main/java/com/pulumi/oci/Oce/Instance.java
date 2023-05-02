@@ -47,6 +47,7 @@ import javax.annotation.Nullable;
  *             .adminEmail(var_.oce_instance_admin_email())
  *             .compartmentId(var_.compartment_id())
  *             .idcsAccessToken(var_.oce_instance_idcs_access_token())
+ *             .name(var_.oce_instance_name())
  *             .objectStorageNamespace(var_.oce_instance_object_storage_namespace())
  *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
  *             .tenancyName(oci_identity_tenancy.test_tenancy().name())

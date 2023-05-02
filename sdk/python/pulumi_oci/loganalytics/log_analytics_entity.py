@@ -16,13 +16,13 @@ class LogAnalyticsEntityArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  entity_type_name: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  cloud_resource_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None):
@@ -30,19 +30,20 @@ class LogAnalyticsEntityArgs:
         The set of arguments for constructing a LogAnalyticsEntity resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
+        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_type_name", entity_type_name)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         if cloud_resource_id is not None:
             pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
@@ -54,8 +55,6 @@ class LogAnalyticsEntityArgs:
             pulumi.set(__self__, "hostname", hostname)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
         if source_id is not None:
@@ -86,6 +85,18 @@ class LogAnalyticsEntityArgs:
     @entity_type_name.setter
     def entity_type_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "entity_type_name", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -158,18 +169,6 @@ class LogAnalyticsEntityArgs:
     @management_agent_id.setter
     def management_agent_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "management_agent_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Log analytics entity name.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -568,6 +567,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("testLogAnalyticsEntity",
             compartment_id=var["compartment_id"],
             entity_type_name=var["log_analytics_entity_entity_type_name"],
+            name=var["log_analytics_entity_name"],
             namespace=var["log_analytics_entity_namespace"],
             cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
             defined_tags={
@@ -626,6 +626,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("testLogAnalyticsEntity",
             compartment_id=var["compartment_id"],
             entity_type_name=var["log_analytics_entity_entity_type_name"],
+            name=var["log_analytics_entity_name"],
             namespace=var["log_analytics_entity_namespace"],
             cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
             defined_tags={
@@ -696,6 +697,8 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["management_agent_id"] = management_agent_id
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")

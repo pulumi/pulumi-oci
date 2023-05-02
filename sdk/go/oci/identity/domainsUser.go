@@ -159,6 +159,9 @@ func NewDomainsUser(ctx *pulumi.Context,
 	if args.IdcsEndpoint == nil {
 		return nil, errors.New("invalid value for required argument 'IdcsEndpoint'")
 	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
+	}
 	if args.Schemas == nil {
 		return nil, errors.New("invalid value for required argument 'Schemas'")
 	}
@@ -471,7 +474,7 @@ type domainsUserArgs struct {
 	// (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 	Locale *string `pulumi:"locale"`
 	// (Updatable) Name of the account assigned to the User.
-	Name *DomainsUserName `pulumi:"name"`
+	Name DomainsUserName `pulumi:"name"`
 	// (Updatable) Nick name
 	NickName *string `pulumi:"nickName"`
 	// (Updatable) Ocid of the User's Support Account.
@@ -569,7 +572,7 @@ type DomainsUserArgs struct {
 	// (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 	Locale pulumi.StringPtrInput
 	// (Updatable) Name of the account assigned to the User.
-	Name DomainsUserNamePtrInput
+	Name DomainsUserNameInput
 	// (Updatable) Nick name
 	NickName pulumi.StringPtrInput
 	// (Updatable) Ocid of the User's Support Account.

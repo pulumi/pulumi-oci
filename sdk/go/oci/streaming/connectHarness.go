@@ -33,6 +33,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.NewConnectHarness(ctx, "testConnectHarness", &Streaming.ConnectHarnessArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Connect_harness_name),
 //				DefinedTags:   pulumi.Any(_var.Connect_harness_defined_tags),
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
@@ -84,6 +85,9 @@ func NewConnectHarness(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource ConnectHarness
 	err := ctx.RegisterResource("oci:Streaming/connectHarness:ConnectHarness", name, args, &resource, opts...)
@@ -152,7 +156,7 @@ type connectHarnessArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a ConnectHarness resource.
@@ -164,7 +168,7 @@ type ConnectHarnessArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (ConnectHarnessArgs) ElementType() reflect.Type {

@@ -33,6 +33,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///         HostName = @var.Monitored_resources_search_host_name,
     ///         HostNameContains = @var.Monitored_resources_search_host_name_contains,
     ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         Name = @var.Monitored_resources_search_name,
     ///         NameContains = @var.Monitored_resources_search_name_contains,
     ///         PropertyEquals = @var.Monitored_resources_search_property_equals,
     ///         ResourceTimeZone = @var.Monitored_resources_search_resource_time_zone,
@@ -110,7 +111,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// A filter to return resources that match exact resource name
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// A filter to return resources that match resource name pattern given. The match is not case sensitive.

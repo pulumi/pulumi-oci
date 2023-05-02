@@ -33,6 +33,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///         IsBackup = @var.Backend_is_backup,
     ///         IsDrain = @var.Backend_is_drain,
     ///         IsOffline = @var.Backend_is_offline,
+    ///         Name = @var.Backend_name,
     ///         TargetId = oci_cloud_guard_target.Test_target.Id,
     ///         Weight = @var.Backend_weight,
     ///     });

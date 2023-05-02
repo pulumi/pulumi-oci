@@ -16,28 +16,27 @@ class TsigKeyArgs:
     def __init__(__self__, *,
                  algorithm: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  secret: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a TsigKey resource.
         :param pulumi.Input[str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
+        :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         """
         pulumi.set(__self__, "algorithm", algorithm)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "secret", secret)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -62,6 +61,18 @@ class TsigKeyArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        A globally unique domain name identifying the key for a given pair of hosts.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -98,18 +109,6 @@ class TsigKeyArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A globally unique domain name identifying the key for a given pair of hosts.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -307,6 +306,7 @@ class TsigKey(pulumi.CustomResource):
         test_tsig_key = oci.dns.TsigKey("testTsigKey",
             algorithm=var["tsig_key_algorithm"],
             compartment_id=var["compartment_id"],
+            name=var["tsig_key_name"],
             secret=var["tsig_key_secret"],
             defined_tags=var["tsig_key_defined_tags"],
             freeform_tags=var["tsig_key_freeform_tags"])
@@ -350,6 +350,7 @@ class TsigKey(pulumi.CustomResource):
         test_tsig_key = oci.dns.TsigKey("testTsigKey",
             algorithm=var["tsig_key_algorithm"],
             compartment_id=var["compartment_id"],
+            name=var["tsig_key_name"],
             secret=var["tsig_key_secret"],
             defined_tags=var["tsig_key_defined_tags"],
             freeform_tags=var["tsig_key_freeform_tags"])
@@ -401,6 +402,8 @@ class TsigKey(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if secret is None and not opts.urn:
                 raise TypeError("Missing required property 'secret'")

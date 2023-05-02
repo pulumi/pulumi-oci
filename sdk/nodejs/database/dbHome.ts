@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
- *
  * ## Import
  *
  * DbHomes can be imported using the `id`, e.g.
@@ -62,7 +58,7 @@ export class DbHome extends pulumi.CustomResource {
     /**
      * (Updatable) Details for creating a database.
      */
-    public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase | undefined>;
+    public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
@@ -87,6 +83,10 @@ export class DbHome extends pulumi.CustomResource {
      * The user-provided name of the Database Home.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+     */
+    public readonly enableDatabaseDelete!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -149,6 +149,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["enableDatabaseDelete"] = state ? state.enableDatabaseDelete : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isDesupportedVersion"] = state ? state.isDesupportedVersion : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
@@ -167,6 +168,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["enableDatabaseDelete"] = args ? args.enableDatabaseDelete : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isDesupportedVersion"] = args ? args.isDesupportedVersion : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
@@ -221,6 +223,10 @@ export interface DbHomeState {
      * The user-provided name of the Database Home.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+     */
+    enableDatabaseDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -291,6 +297,10 @@ export interface DbHomeArgs {
      * The user-provided name of the Database Home.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+     */
+    enableDatabaseDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

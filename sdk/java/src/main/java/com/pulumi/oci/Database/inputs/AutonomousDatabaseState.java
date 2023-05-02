@@ -1735,6 +1735,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The storage space consumed by Autonomous Database in GBs.
+     * 
+     */
+    @Import(name="usedDataStorageSizeInGbs")
+    private @Nullable Output<Integer> usedDataStorageSizeInGbs;
+
+    /**
+     * @return The storage space consumed by Autonomous Database in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> usedDataStorageSizeInGbs() {
+        return Optional.ofNullable(this.usedDataStorageSizeInGbs);
+    }
+
+    /**
      * The amount of storage that has been used, in terabytes.
      * 
      */
@@ -1894,6 +1909,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.timestamp = $.timestamp;
         this.totalBackupStorageSizeInGbs = $.totalBackupStorageSizeInGbs;
         this.useLatestAvailableBackupTimeStamp = $.useLatestAvailableBackupTimeStamp;
+        this.usedDataStorageSizeInGbs = $.usedDataStorageSizeInGbs;
         this.usedDataStorageSizeInTbs = $.usedDataStorageSizeInTbs;
         this.vaultId = $.vaultId;
         this.whitelistedIps = $.whitelistedIps;
@@ -4460,6 +4476,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
             return useLatestAvailableBackupTimeStamp(Output.of(useLatestAvailableBackupTimeStamp));
+        }
+
+        /**
+         * @param usedDataStorageSizeInGbs The storage space consumed by Autonomous Database in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder usedDataStorageSizeInGbs(@Nullable Output<Integer> usedDataStorageSizeInGbs) {
+            $.usedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param usedDataStorageSizeInGbs The storage space consumed by Autonomous Database in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder usedDataStorageSizeInGbs(Integer usedDataStorageSizeInGbs) {
+            return usedDataStorageSizeInGbs(Output.of(usedDataStorageSizeInGbs));
         }
 
         /**

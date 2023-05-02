@@ -520,6 +520,10 @@ namespace Pulumi.Oci.Database
         public readonly double TotalBackupStorageSizeInGbs;
         public readonly bool UseLatestAvailableBackupTimeStamp;
         /// <summary>
+        /// The storage space consumed by Autonomous Database in GBs.
+        /// </summary>
+        public readonly int UsedDataStorageSizeInGbs;
+        /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
         public readonly int UsedDataStorageSizeInTbs;
@@ -760,6 +764,8 @@ namespace Pulumi.Oci.Database
 
             bool useLatestAvailableBackupTimeStamp,
 
+            int usedDataStorageSizeInGbs,
+
             int usedDataStorageSizeInTbs,
 
             string vaultId,
@@ -879,6 +885,7 @@ namespace Pulumi.Oci.Database
             Timestamp = timestamp;
             TotalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             UseLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
+            UsedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             UsedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             VaultId = vaultId;
             WhitelistedIps = whitelistedIps;

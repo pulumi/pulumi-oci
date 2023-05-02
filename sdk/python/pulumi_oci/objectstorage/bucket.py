@@ -17,6 +17,7 @@ __all__ = ['BucketArgs', 'Bucket']
 class BucketArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  access_type: Optional[pulumi.Input[str]] = None,
                  auto_tiering: Optional[pulumi.Input[str]] = None,
@@ -24,7 +25,6 @@ class BucketArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  object_events_enabled: Optional[pulumi.Input[bool]] = None,
                  retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
                  storage_tier: Optional[pulumi.Input[str]] = None,
@@ -32,6 +32,7 @@ class BucketArgs:
         """
         The set of arguments for constructing a Bucket resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to create the bucket.
+        :param pulumi.Input[str] name: The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] access_type: (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
         :param pulumi.Input[str] auto_tiering: (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
@@ -39,13 +40,13 @@ class BucketArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
-        :param pulumi.Input[str] name: The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
         :param pulumi.Input[bool] object_events_enabled: (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
         :param pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]] retention_rules: (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
         :param pulumi.Input[str] storage_tier: The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
         :param pulumi.Input[str] versioning: (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         if access_type is not None:
             pulumi.set(__self__, "access_type", access_type)
@@ -59,8 +60,6 @@ class BucketArgs:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if object_events_enabled is not None:
             pulumi.set(__self__, "object_events_enabled", object_events_enabled)
         if retention_rules is not None:
@@ -81,6 +80,18 @@ class BucketArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -165,18 +176,6 @@ class BucketArgs:
     @metadata.setter
     def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "metadata", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="objectEventsEnabled")
@@ -620,6 +619,7 @@ class Bucket(pulumi.CustomResource):
 
         test_bucket = oci.object_storage.Bucket("testBucket",
             compartment_id=var["compartment_id"],
+            name=var["bucket_name"],
             namespace=var["bucket_namespace"],
             access_type=var["bucket_access_type"],
             auto_tiering=var["bucket_auto_tiering"],
@@ -688,6 +688,7 @@ class Bucket(pulumi.CustomResource):
 
         test_bucket = oci.object_storage.Bucket("testBucket",
             compartment_id=var["compartment_id"],
+            name=var["bucket_name"],
             namespace=var["bucket_namespace"],
             access_type=var["bucket_access_type"],
             auto_tiering=var["bucket_auto_tiering"],
@@ -766,6 +767,8 @@ class Bucket(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["metadata"] = metadata
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")

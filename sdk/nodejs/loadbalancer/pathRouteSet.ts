@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testPathRouteSet = new oci.loadbalancer.PathRouteSet("testPathRouteSet", {
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     name: _var.path_route_set_name,
  *     pathRoutes: [{
  *         backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
  *         path: _var.path_route_set_path_routes_path,
@@ -102,6 +103,9 @@ export class PathRouteSet extends pulumi.CustomResource {
             if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.pathRoutes === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'pathRoutes'");
             }
@@ -145,7 +149,7 @@ export interface PathRouteSetArgs {
     /**
      * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) The set of path route rules.
      */

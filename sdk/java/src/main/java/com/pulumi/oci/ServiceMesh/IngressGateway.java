@@ -76,6 +76,7 @@ import javax.annotation.Nullable;
  *                 .hostnames(var_.ingress_gateway_hosts_hostnames())
  *                 .build())
  *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+ *             .name(var_.ingress_gateway_name())
  *             .accessLogging(IngressGatewayAccessLoggingArgs.builder()
  *                 .isEnabled(var_.ingress_gateway_access_logging_is_enabled())
  *                 .build())

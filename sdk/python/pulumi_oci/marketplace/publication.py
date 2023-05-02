@@ -19,29 +19,30 @@ class PublicationArgs:
                  compartment_id: pulumi.Input[str],
                  is_agreement_acknowledged: pulumi.Input[bool],
                  listing_type: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  package_details: pulumi.Input['PublicationPackageDetailsArgs'],
                  short_description: pulumi.Input[str],
                  support_contacts: pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 long_description: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 long_description: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Publication resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
         :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
         :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
+        :param pulumi.Input[str] name: (Updatable) The name of the contact.
         :param pulumi.Input['PublicationPackageDetailsArgs'] package_details: A base object for creating a publication package.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
         :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
         pulumi.set(__self__, "listing_type", listing_type)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "package_details", package_details)
         pulumi.set(__self__, "short_description", short_description)
         pulumi.set(__self__, "support_contacts", support_contacts)
@@ -51,8 +52,6 @@ class PublicationArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if long_description is not None:
             pulumi.set(__self__, "long_description", long_description)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -89,6 +88,18 @@ class PublicationArgs:
     @listing_type.setter
     def listing_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "listing_type", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of the contact.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="packageDetails")
@@ -161,18 +172,6 @@ class PublicationArgs:
     @long_description.setter
     def long_description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "long_description", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the contact.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -454,6 +453,7 @@ class Publication(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             is_agreement_acknowledged=var["publication_is_agreement_acknowledged"],
             listing_type=var["publication_listing_type"],
+            name=var["publication_name"],
             package_details=oci.marketplace.PublicationPackageDetailsArgs(
                 eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
                     eula_type=var["publication_package_details_eula_eula_type"],
@@ -524,6 +524,7 @@ class Publication(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             is_agreement_acknowledged=var["publication_is_agreement_acknowledged"],
             listing_type=var["publication_listing_type"],
+            name=var["publication_name"],
             package_details=oci.marketplace.PublicationPackageDetailsArgs(
                 eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
                     eula_type=var["publication_package_details_eula_eula_type"],
@@ -606,6 +607,8 @@ class Publication(pulumi.CustomResource):
                 raise TypeError("Missing required property 'listing_type'")
             __props__.__dict__["listing_type"] = listing_type
             __props__.__dict__["long_description"] = long_description
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if package_details is None and not opts.urn:
                 raise TypeError("Missing required property 'package_details'")

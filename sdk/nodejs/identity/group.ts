@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  * const testGroup = new oci.identity.Group("testGroup", {
  *     compartmentId: _var.tenancy_ocid,
  *     description: _var.group_description,
+ *     name: _var.group_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -138,6 +139,9 @@ export class Group extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -213,5 +217,5 @@ export interface GroupArgs {
     /**
      * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

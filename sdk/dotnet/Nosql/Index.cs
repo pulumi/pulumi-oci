@@ -35,6 +35,7 @@ namespace Pulumi.Oci.Nosql
     ///                 JsonPath = @var.Index_keys_json_path,
     ///             },
     ///         },
+    ///         Name = @var.Index_name,
     ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
     ///         CompartmentId = @var.Compartment_id,
     ///         IsIfNotExists = @var.Index_is_if_not_exists,
@@ -181,8 +182,8 @@ namespace Pulumi.Oci.Nosql
         /// <summary>
         /// Index name.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// A table name within the compartment, or a table OCID.

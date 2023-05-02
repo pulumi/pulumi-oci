@@ -48,6 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testStream = new Stream(&#34;testStream&#34;, StreamArgs.builder()        
+ *             .name(var_.stream_name())
  *             .partitions(var_.stream_partitions())
  *             .compartmentId(var_.compartment_id())
  *             .definedTags(var_.stream_defined_tags())

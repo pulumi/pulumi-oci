@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testTable = new oci.nosql.Table("testTable", {
  *     compartmentId: _var.compartment_id,
  *     ddlStatement: _var.table_ddl_statement,
+ *     name: _var.table_name,
  *     definedTags: _var.table_defined_tags,
  *     freeformTags: {
  *         "bar-key": "value",
@@ -162,6 +163,9 @@ export class Table extends pulumi.CustomResource {
             if ((!args || args.ddlStatement === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ddlStatement'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["ddlStatement"] = args ? args.ddlStatement : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -271,7 +275,7 @@ export interface TableArgs {
     /**
      * Table name.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */

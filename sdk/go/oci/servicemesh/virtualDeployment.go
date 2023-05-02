@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.NewVirtualDeployment(ctx, "testVirtualDeployment", &ServiceMesh.VirtualDeploymentArgs{
 //				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				Name:             pulumi.Any(_var.Virtual_deployment_name),
 //				VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
 //				AccessLogging: &servicemesh.VirtualDeploymentAccessLoggingArgs{
 //					IsEnabled: pulumi.Any(_var.Virtual_deployment_access_logging_is_enabled),
@@ -115,6 +116,9 @@ func NewVirtualDeployment(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.VirtualServiceId == nil {
 		return nil, errors.New("invalid value for required argument 'VirtualServiceId'")
@@ -220,7 +224,7 @@ type virtualDeploymentArgs struct {
 	// (Updatable) The listeners for the virtual deployment.
 	Listeners []VirtualDeploymentListener `pulumi:"listeners"`
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) Service Discovery configuration for virtual deployments.
 	ServiceDiscovery *VirtualDeploymentServiceDiscovery `pulumi:"serviceDiscovery"`
 	// The OCID of the service mesh in which this access policy is created.
@@ -242,7 +246,7 @@ type VirtualDeploymentArgs struct {
 	// (Updatable) The listeners for the virtual deployment.
 	Listeners VirtualDeploymentListenerArrayInput
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) Service Discovery configuration for virtual deployments.
 	ServiceDiscovery VirtualDeploymentServiceDiscoveryPtrInput
 	// The OCID of the service mesh in which this access policy is created.

@@ -34,6 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.NewStream(ctx, "testStream", &Streaming.StreamArgs{
+//				Name:          pulumi.Any(_var.Stream_name),
 //				Partitions:    pulumi.Any(_var.Stream_partitions),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DefinedTags:   pulumi.Any(_var.Stream_defined_tags),
@@ -95,6 +96,9 @@ func NewStream(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
+	}
 	if args.Partitions == nil {
 		return nil, errors.New("invalid value for required argument 'Partitions'")
 	}
@@ -181,7 +185,7 @@ type streamArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The number of partitions in the stream.
 	Partitions int `pulumi:"partitions"`
 	// The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
@@ -199,7 +203,7 @@ type StreamArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The number of partitions in the stream.
 	Partitions pulumi.IntInput
 	// The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.

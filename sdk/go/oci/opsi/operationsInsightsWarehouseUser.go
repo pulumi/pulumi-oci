@@ -34,6 +34,7 @@ import (
 //				CompartmentId:                 pulumi.Any(_var.Compartment_id),
 //				ConnectionPassword:            pulumi.Any(_var.Operations_insights_warehouse_user_connection_password),
 //				IsAwrDataAccess:               pulumi.Any(_var.Operations_insights_warehouse_user_is_awr_data_access),
+//				Name:                          pulumi.Any(_var.Operations_insights_warehouse_user_name),
 //				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
 //				DefinedTags: pulumi.AnyMap{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -110,6 +111,9 @@ func NewOperationsInsightsWarehouseUser(ctx *pulumi.Context,
 	}
 	if args.IsAwrDataAccess == nil {
 		return nil, errors.New("invalid value for required argument 'IsAwrDataAccess'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.OperationsInsightsWarehouseId == nil {
 		return nil, errors.New("invalid value for required argument 'OperationsInsightsWarehouseId'")
@@ -224,7 +228,7 @@ type operationsInsightsWarehouseUserArgs struct {
 	// (Updatable) Indicate whether user has access to OPSI data.
 	IsOpsiDataAccess *bool `pulumi:"isOpsiDataAccess"`
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// OPSI Warehouse OCID
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 }
@@ -246,7 +250,7 @@ type OperationsInsightsWarehouseUserArgs struct {
 	// (Updatable) Indicate whether user has access to OPSI data.
 	IsOpsiDataAccess pulumi.BoolPtrInput
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// OPSI Warehouse OCID
 	OperationsInsightsWarehouseId pulumi.StringInput
 }

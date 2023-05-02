@@ -47,6 +47,7 @@ import javax.annotation.Nullable;
  *         var testTsigKey = new TsigKey(&#34;testTsigKey&#34;, TsigKeyArgs.builder()        
  *             .algorithm(var_.tsig_key_algorithm())
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.tsig_key_name())
  *             .secret(var_.tsig_key_secret())
  *             .definedTags(var_.tsig_key_defined_tags())
  *             .freeformTags(var_.tsig_key_freeform_tags())

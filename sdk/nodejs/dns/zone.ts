@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testZone = new oci.dns.Zone("testZone", {
  *     compartmentId: _var.compartment_id,
+ *     name: _var.zone_name,
  *     zoneType: _var.zone_zone_type,
  *     definedTags: _var.zone_defined_tags,
  *     externalMasters: [{
@@ -164,6 +165,9 @@ export class Zone extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.zoneType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'zoneType'");
             }
@@ -278,7 +282,7 @@ export interface ZoneArgs {
     /**
      * The name of the zone.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope. 
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.

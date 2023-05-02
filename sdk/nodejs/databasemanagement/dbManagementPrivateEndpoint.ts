@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testDbManagementPrivateEndpoint = new oci.databasemanagement.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", {
  *     compartmentId: _var.compartment_id,
+ *     name: _var.db_management_private_endpoint_name,
  *     subnetId: oci_core_subnet.test_subnet.id,
  *     description: _var.db_management_private_endpoint_description,
  *     isCluster: _var.db_management_private_endpoint_is_cluster,
@@ -129,6 +130,9 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
@@ -213,7 +217,7 @@ export interface DbManagementPrivateEndpointArgs {
     /**
      * (Updatable) The display name of the Database Management private endpoint.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      */

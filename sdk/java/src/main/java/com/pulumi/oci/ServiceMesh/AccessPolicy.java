@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *         var testAccessPolicy = new AccessPolicy(&#34;testAccessPolicy&#34;, AccessPolicyArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+ *             .name(var_.access_policy_name())
  *             .rules(AccessPolicyRuleArgs.builder()
  *                 .action(var_.access_policy_rules_action())
  *                 .destination(AccessPolicyRuleDestinationArgs.builder()

@@ -159,15 +159,15 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
      * (Updatable) property name
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return (Updatable) property name
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -446,7 +446,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -536,6 +536,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
 
         public MonitoredResourceArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
             return $;
         }

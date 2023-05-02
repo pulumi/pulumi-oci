@@ -33,6 +33,7 @@ import (
 //				Bucket:                pulumi.Any(_var.Replication_policy_bucket),
 //				DestinationBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
 //				DestinationRegionName: pulumi.Any(oci_identity_region.Test_region.Name),
+//				Name:                  pulumi.Any(_var.Replication_policy_name),
 //				Namespace:             pulumi.Any(_var.Replication_policy_namespace),
 //			})
 //			if err != nil {
@@ -93,6 +94,9 @@ func NewReplicationPolicy(ctx *pulumi.Context,
 	}
 	if args.DestinationRegionName == nil {
 		return nil, errors.New("invalid value for required argument 'DestinationRegionName'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Namespace == nil {
 		return nil, errors.New("invalid value for required argument 'Namespace'")
@@ -178,7 +182,7 @@ type replicationPolicyArgs struct {
 	// The destination region to replicate to, for example "us-ashburn-1".
 	DestinationRegionName string `pulumi:"destinationRegionName"`
 	// The name of the policy. Avoid entering confidential information.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 }
@@ -194,7 +198,7 @@ type ReplicationPolicyArgs struct {
 	// The destination region to replicate to, for example "us-ashburn-1".
 	DestinationRegionName pulumi.StringInput
 	// The name of the policy. Avoid entering confidential information.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringInput
 }

@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Marketplace
     ///         CompartmentId = @var.Compartment_id,
     ///         IsAgreementAcknowledged = @var.Publication_is_agreement_acknowledged,
     ///         ListingType = @var.Publication_listing_type,
+    ///         Name = @var.Publication_name,
     ///         PackageDetails = new Oci.Marketplace.Inputs.PublicationPackageDetailsArgs
     ///         {
     ///             Eulas = new[]
@@ -270,8 +271,8 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// (Updatable) The name of the contact.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// A base object for creating a publication package.

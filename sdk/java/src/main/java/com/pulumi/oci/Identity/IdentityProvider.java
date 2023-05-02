@@ -62,6 +62,7 @@ import javax.annotation.Nullable;
  *             .description(var_.identity_provider_description())
  *             .metadata(var_.identity_provider_metadata())
  *             .metadataUrl(var_.identity_provider_metadata_url())
+ *             .name(var_.identity_provider_name())
  *             .productType(var_.identity_provider_product_type())
  *             .protocol(var_.identity_provider_protocol())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))

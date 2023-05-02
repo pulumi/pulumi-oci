@@ -32,6 +32,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.NewManagedDatabaseGroup(ctx, "testManagedDatabaseGroup", &DatabaseManagement.ManagedDatabaseGroupArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Managed_database_group_name),
 //				Description:   pulumi.Any(_var.Managed_database_group_description),
 //				ManagedDatabases: databasemanagement.ManagedDatabaseGroupManagedDatabaseArray{
 //					&databasemanagement.ManagedDatabaseGroupManagedDatabaseArgs{
@@ -85,6 +86,9 @@ func NewManagedDatabaseGroup(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource ManagedDatabaseGroup
 	err := ctx.RegisterResource("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, args, &resource, opts...)
@@ -153,7 +157,7 @@ type managedDatabaseGroupArgs struct {
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases []ManagedDatabaseGroupManagedDatabase `pulumi:"managedDatabases"`
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a ManagedDatabaseGroup resource.
@@ -165,7 +169,7 @@ type ManagedDatabaseGroupArgs struct {
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases ManagedDatabaseGroupManagedDatabaseArrayInput
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (ManagedDatabaseGroupArgs) ElementType() reflect.Type {

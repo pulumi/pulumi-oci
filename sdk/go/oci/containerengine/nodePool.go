@@ -32,6 +32,7 @@ import (
 //			_, err := ContainerEngine.NewNodePool(ctx, "testNodePool", &ContainerEngine.NodePoolArgs{
 //				ClusterId:     pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Name:          pulumi.Any(_var.Node_pool_name),
 //				NodeShape:     pulumi.Any(_var.Node_pool_node_shape),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
@@ -181,6 +182,9 @@ func NewNodePool(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
+	}
 	if args.NodeShape == nil {
 		return nil, errors.New("invalid value for required argument 'NodeShape'")
 	}
@@ -325,7 +329,7 @@ type nodePoolArgs struct {
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
 	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails *NodePoolNodeConfigDetails `pulumi:"nodeConfigDetails"`
 	// (Updatable) Node Eviction Details configuration
@@ -369,7 +373,7 @@ type NodePoolArgs struct {
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
 	KubernetesVersion pulumi.StringPtrInput
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails NodePoolNodeConfigDetailsPtrInput
 	// (Updatable) Node Eviction Details configuration

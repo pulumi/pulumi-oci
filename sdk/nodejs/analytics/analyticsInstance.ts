@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     featureSet: _var.analytics_instance_feature_set,
  *     idcsAccessToken: _var.analytics_instance_idcs_access_token,
  *     licenseType: _var.analytics_instance_license_type,
+ *     name: _var.analytics_instance_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -198,6 +199,9 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             if ((!args || args.licenseType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'licenseType'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["capacity"] = args ? args.capacity : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -339,7 +343,7 @@ export interface AnalyticsInstanceArgs {
     /**
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * Base representation of a network endpoint.
      */

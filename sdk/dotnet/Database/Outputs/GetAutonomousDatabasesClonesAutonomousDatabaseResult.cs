@@ -403,6 +403,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double TotalBackupStorageSizeInGbs;
         /// <summary>
+        /// The storage space consumed by Autonomous Database in GBs.
+        /// </summary>
+        public readonly int UsedDataStorageSizeInGbs;
+        /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
         public readonly int UsedDataStorageSizeInTbs;
@@ -609,6 +613,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             double totalBackupStorageSizeInGbs,
 
+            int usedDataStorageSizeInGbs,
+
             int usedDataStorageSizeInTbs,
 
             string vaultId,
@@ -711,6 +717,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             TotalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
+            UsedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             UsedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             VaultId = vaultId;
             WhitelistedIps = whitelistedIps;

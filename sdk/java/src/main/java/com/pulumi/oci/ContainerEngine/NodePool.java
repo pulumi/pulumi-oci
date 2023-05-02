@@ -60,6 +60,7 @@ import javax.annotation.Nullable;
  *         var testNodePool = new NodePool(&#34;testNodePool&#34;, NodePoolArgs.builder()        
  *             .clusterId(oci_containerengine_cluster.test_cluster().id())
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.node_pool_name())
  *             .nodeShape(var_.node_pool_node_shape())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))

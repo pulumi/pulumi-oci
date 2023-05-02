@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     hostName: _var.monitored_resources_search_host_name,
  *     hostNameContains: _var.monitored_resources_search_host_name_contains,
  *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
+ *     name: _var.monitored_resources_search_name,
  *     nameContains: _var.monitored_resources_search_name_contains,
  *     propertyEquals: _var.monitored_resources_search_property_equals,
  *     resourceTimeZone: _var.monitored_resources_search_resource_time_zone,
@@ -108,7 +109,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
     /**
      * A filter to return resources that match exact resource name
      */
-    public readonly name!: pulumi.Output<string>;
+    public readonly name!: pulumi.Output<string | undefined>;
     /**
      * A filter to return resources that match resource name pattern given. The match is not case sensitive.
      */

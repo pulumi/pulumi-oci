@@ -110,6 +110,21 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+     * 
+     */
+    @Import(name="enableDatabaseDelete")
+    private @Nullable Output<Boolean> enableDatabaseDelete;
+
+    /**
+     * @return Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+     * 
+     */
+    public Optional<Output<Boolean>> enableDatabaseDelete() {
+        return Optional.ofNullable(this.enableDatabaseDelete);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -208,6 +223,7 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.enableDatabaseDelete = $.enableDatabaseDelete;
         this.freeformTags = $.freeformTags;
         this.isDesupportedVersion = $.isDesupportedVersion;
         this.kmsKeyId = $.kmsKeyId;
@@ -358,6 +374,27 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param enableDatabaseDelete Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDatabaseDelete(@Nullable Output<Boolean> enableDatabaseDelete) {
+            $.enableDatabaseDelete = enableDatabaseDelete;
+            return this;
+        }
+
+        /**
+         * @param enableDatabaseDelete Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDatabaseDelete(Boolean enableDatabaseDelete) {
+            return enableDatabaseDelete(Output.of(enableDatabaseDelete));
         }
 
         /**

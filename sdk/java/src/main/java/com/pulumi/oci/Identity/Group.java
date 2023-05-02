@@ -61,6 +61,7 @@ import javax.annotation.Nullable;
  *         var testGroup = new Group(&#34;testGroup&#34;, GroupArgs.builder()        
  *             .compartmentId(var_.tenancy_ocid())
  *             .description(var_.group_description())
+ *             .name(var_.group_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

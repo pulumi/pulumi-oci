@@ -44,6 +44,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testModelVersionSet = new ModelVersionSet(&#34;testModelVersionSet&#34;, ModelVersionSetArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.model_version_set_name())
  *             .projectId(oci_datascience_project.test_project().id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.model_version_set_description())

@@ -28,6 +28,7 @@ namespace Pulumi.Oci.DatabaseManagement
     ///     var testManagedDatabaseGroup = new Oci.DatabaseManagement.ManagedDatabaseGroup("testManagedDatabaseGroup", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Managed_database_group_name,
     ///         Description = @var.Managed_database_group_description,
     ///         ManagedDatabases = new[]
     ///         {
@@ -167,8 +168,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public ManagedDatabaseGroupArgs()
         {

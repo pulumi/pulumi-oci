@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .hostName(var_.monitored_resources_search_host_name())
  *             .hostNameContains(var_.monitored_resources_search_host_name_contains())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+ *             .name(var_.monitored_resources_search_name())
  *             .nameContains(var_.monitored_resources_search_name_contains())
  *             .propertyEquals(var_.monitored_resources_search_property_equals())
  *             .resourceTimeZone(var_.monitored_resources_search_resource_time_zone())
@@ -196,14 +197,14 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="name", type=String.class, parameters={})
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return A filter to return resources that match exact resource name
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * A filter to return resources that match resource name pattern given. The match is not case sensitive.

@@ -18,31 +18,30 @@ class TableArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  ddl_statement: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None):
         """
         The set of arguments for constructing a Table resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] ddl_statement: (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        :param pulumi.Input[str] name: Table name.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
-        :param pulumi.Input[str] name: Table name.
         :param pulumi.Input['TableTableLimitsArgs'] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "ddl_statement", ddl_statement)
+        pulumi.set(__self__, "name", name)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_reclaimable is not None:
             pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if table_limits is not None:
             pulumi.set(__self__, "table_limits", table_limits)
 
@@ -69,6 +68,18 @@ class TableArgs:
     @ddl_statement.setter
     def ddl_statement(self, value: pulumi.Input[str]):
         pulumi.set(self, "ddl_statement", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        Table name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -105,18 +116,6 @@ class TableArgs:
     @is_auto_reclaimable.setter
     def is_auto_reclaimable(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_auto_reclaimable", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Table name.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="tableLimits")
@@ -390,6 +389,7 @@ class Table(pulumi.CustomResource):
         test_table = oci.nosql.Table("testTable",
             compartment_id=var["compartment_id"],
             ddl_statement=var["table_ddl_statement"],
+            name=var["table_name"],
             defined_tags=var["table_defined_tags"],
             freeform_tags={
                 "bar-key": "value",
@@ -441,6 +441,7 @@ class Table(pulumi.CustomResource):
         test_table = oci.nosql.Table("testTable",
             compartment_id=var["compartment_id"],
             ddl_statement=var["table_ddl_statement"],
+            name=var["table_name"],
             defined_tags=var["table_defined_tags"],
             freeform_tags={
                 "bar-key": "value",
@@ -502,6 +503,8 @@ class Table(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_auto_reclaimable"] = is_auto_reclaimable
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["table_limits"] = table_limits
             __props__.__dict__["lifecycle_details"] = None

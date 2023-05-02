@@ -32,6 +32,7 @@ import (
 //			_, err := ObjectStorage.NewPreauthrequest(ctx, "testPreauthenticatedRequest", &ObjectStorage.PreauthrequestArgs{
 //				AccessType:          pulumi.Any(_var.Preauthenticated_request_access_type),
 //				Bucket:              pulumi.Any(_var.Preauthenticated_request_bucket),
+//				Name:                pulumi.Any(_var.Preauthenticated_request_name),
 //				Namespace:           pulumi.Any(_var.Preauthenticated_request_namespace),
 //				TimeExpires:         pulumi.Any(_var.Preauthenticated_request_time_expires),
 //				BucketListingAction: pulumi.Any(_var.Preauthenticated_request_bucket_listing_action),
@@ -96,6 +97,9 @@ func NewPreauthrequest(ctx *pulumi.Context,
 	}
 	if args.Bucket == nil {
 		return nil, errors.New("invalid value for required argument 'Bucket'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Namespace == nil {
 		return nil, errors.New("invalid value for required argument 'Namespace'")
@@ -190,7 +194,7 @@ type preauthrequestArgs struct {
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction *string `pulumi:"bucketListingAction"`
 	// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
@@ -212,7 +216,7 @@ type PreauthrequestArgs struct {
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction pulumi.StringPtrInput
 	// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringInput
 	// Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.

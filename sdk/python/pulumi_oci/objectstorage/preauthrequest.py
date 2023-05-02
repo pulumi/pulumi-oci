@@ -16,31 +16,30 @@ class PreauthrequestArgs:
     def __init__(__self__, *,
                  access_type: pulumi.Input[str],
                  bucket: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  time_expires: pulumi.Input[str],
                  bucket_listing_action: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  object_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Preauthrequest resource.
         :param pulumi.Input[str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
         :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
+        :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] time_expires: The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
         :param pulumi.Input[str] bucket_listing_action: Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
         :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         :param pulumi.Input[str] object_name: The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         """
         pulumi.set(__self__, "access_type", access_type)
         pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "time_expires", time_expires)
         if bucket_listing_action is not None:
             pulumi.set(__self__, "bucket_listing_action", bucket_listing_action)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if object is not None:
             warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
             pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
@@ -72,6 +71,18 @@ class PreauthrequestArgs:
     @bucket.setter
     def bucket(self, value: pulumi.Input[str]):
         pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -108,18 +119,6 @@ class PreauthrequestArgs:
     @bucket_listing_action.setter
     def bucket_listing_action(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "bucket_listing_action", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -361,6 +360,7 @@ class Preauthrequest(pulumi.CustomResource):
         test_preauthenticated_request = oci.object_storage.Preauthrequest("testPreauthenticatedRequest",
             access_type=var["preauthenticated_request_access_type"],
             bucket=var["preauthenticated_request_bucket"],
+            name=var["preauthenticated_request_name"],
             namespace=var["preauthenticated_request_namespace"],
             time_expires=var["preauthenticated_request_time_expires"],
             bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
@@ -406,6 +406,7 @@ class Preauthrequest(pulumi.CustomResource):
         test_preauthenticated_request = oci.object_storage.Preauthrequest("testPreauthenticatedRequest",
             access_type=var["preauthenticated_request_access_type"],
             bucket=var["preauthenticated_request_bucket"],
+            name=var["preauthenticated_request_name"],
             namespace=var["preauthenticated_request_namespace"],
             time_expires=var["preauthenticated_request_time_expires"],
             bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
@@ -459,6 +460,8 @@ class Preauthrequest(pulumi.CustomResource):
                 raise TypeError("Missing required property 'bucket'")
             __props__.__dict__["bucket"] = bucket
             __props__.__dict__["bucket_listing_action"] = bucket_listing_action
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")

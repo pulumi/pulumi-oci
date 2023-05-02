@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     name: _var.dkim_name,
  * });
  * ```
  *

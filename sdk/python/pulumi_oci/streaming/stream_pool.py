@@ -17,23 +17,24 @@ __all__ = ['StreamPoolArgs', 'StreamPool']
 class StreamPoolArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  custom_encryption_key: Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kafka_settings: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']] = None,
-                 name: Optional[pulumi.Input[str]] = None,
                  private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None):
         """
         The set of arguments for constructing a StreamPool resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the stream.
+        :param pulumi.Input[str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         :param pulumi.Input['StreamPoolCustomEncryptionKeyArgs'] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['StreamPoolKafkaSettingsArgs'] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
-        :param pulumi.Input[str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         :param pulumi.Input['StreamPoolPrivateEndpointSettingsArgs'] private_endpoint_settings: Optional parameters if a private stream pool is requested.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "name", name)
         if custom_encryption_key is not None:
             pulumi.set(__self__, "custom_encryption_key", custom_encryption_key)
         if defined_tags is not None:
@@ -42,8 +43,6 @@ class StreamPoolArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kafka_settings is not None:
             pulumi.set(__self__, "kafka_settings", kafka_settings)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
         if private_endpoint_settings is not None:
             pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
 
@@ -58,6 +57,18 @@ class StreamPoolArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="customEncryptionKey")
@@ -106,18 +117,6 @@ class StreamPoolArgs:
     @kafka_settings.setter
     def kafka_settings(self, value: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']]):
         pulumi.set(self, "kafka_settings", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="privateEndpointSettings")
@@ -360,6 +359,7 @@ class StreamPool(pulumi.CustomResource):
 
         test_stream_pool = oci.streaming.StreamPool("testStreamPool",
             compartment_id=var["compartment_id"],
+            name=var["stream_pool_name"],
             custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
                 kms_key_id=oci_kms_key["test_key"]["id"],
             ),
@@ -419,6 +419,7 @@ class StreamPool(pulumi.CustomResource):
 
         test_stream_pool = oci.streaming.StreamPool("testStreamPool",
             compartment_id=var["compartment_id"],
+            name=var["stream_pool_name"],
             custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
                 kms_key_id=oci_kms_key["test_key"]["id"],
             ),
@@ -485,6 +486,8 @@ class StreamPool(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["kafka_settings"] = kafka_settings
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["private_endpoint_settings"] = private_endpoint_settings
             __props__.__dict__["endpoint_fqdn"] = None

@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testVirtualServiceRouteTable = new oci.servicemesh.VirtualServiceRouteTable("testVirtualServiceRouteTable", {
  *     compartmentId: _var.compartment_id,
+ *     name: _var.virtual_service_route_table_name,
  *     routeRules: [{
  *         destinations: [{
  *             virtualDeploymentId: oci_service_mesh_virtual_deployment.test_virtual_deployment.id,
@@ -163,6 +164,9 @@ export class VirtualServiceRouteTable extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.routeRules === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'routeRules'");
             }
@@ -269,7 +273,7 @@ export interface VirtualServiceRouteTableArgs {
     /**
      * A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
      */

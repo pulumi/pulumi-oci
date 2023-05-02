@@ -61,6 +61,7 @@ import (
 //					},
 //				},
 //				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Name:           pulumi.Any(_var.Rule_set_name),
 //			})
 //			if err != nil {
 //				return err
@@ -104,6 +105,9 @@ func NewRuleSet(ctx *pulumi.Context,
 	}
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource RuleSet
 	err := ctx.RegisterResource("oci:LoadBalancer/ruleSet:RuleSet", name, args, &resource, opts...)
@@ -156,7 +160,7 @@ type ruleSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a RuleSet resource.
@@ -166,7 +170,7 @@ type RuleSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
 	LoadBalancerId pulumi.StringInput
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 }
 
 func (RuleSetArgs) ElementType() reflect.Type {

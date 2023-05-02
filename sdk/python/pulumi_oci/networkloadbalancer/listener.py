@@ -15,28 +15,27 @@ __all__ = ['ListenerArgs', 'Listener']
 class ListenerArgs:
     def __init__(__self__, *,
                  default_backend_set_name: pulumi.Input[str],
+                 name: pulumi.Input[str],
                  network_load_balancer_id: pulumi.Input[str],
                  port: pulumi.Input[int],
                  protocol: pulumi.Input[str],
-                 ip_version: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 ip_version: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Listener resource.
         :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
         :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
-        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         """
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -49,6 +48,18 @@ class ListenerArgs:
     @default_backend_set_name.setter
     def default_backend_set_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "default_backend_set_name", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="networkLoadBalancerId")
@@ -97,18 +108,6 @@ class ListenerArgs:
     @ip_version.setter
     def ip_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_version", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -240,6 +239,7 @@ class Listener(pulumi.CustomResource):
 
         test_listener = oci.network_load_balancer.Listener("testListener",
             default_backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
+            name=var["listener_name"],
             network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
             port=var["listener_port"],
             protocol=var["listener_protocol"],
@@ -282,6 +282,7 @@ class Listener(pulumi.CustomResource):
 
         test_listener = oci.network_load_balancer.Listener("testListener",
             default_backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
+            name=var["listener_name"],
             network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
             port=var["listener_port"],
             protocol=var["listener_protocol"],
@@ -330,6 +331,8 @@ class Listener(pulumi.CustomResource):
                 raise TypeError("Missing required property 'default_backend_set_name'")
             __props__.__dict__["default_backend_set_name"] = default_backend_set_name
             __props__.__dict__["ip_version"] = ip_version
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if network_load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_load_balancer_id'")

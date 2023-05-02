@@ -28,6 +28,7 @@ namespace Pulumi.Oci.Vbs
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         DisplayName = @var.Vbs_instance_display_name,
+    ///         Name = @var.Vbs_instance_name,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -236,8 +237,8 @@ namespace Pulumi.Oci.Vbs
         /// <summary>
         /// Service Instance Name
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Compartment where VBS may create additional resources for the service instance

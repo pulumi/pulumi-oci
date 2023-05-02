@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *         urlPath: _var.backend_set_health_checker_url_path,
  *     },
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     name: _var.backend_set_name,
  *     policy: _var.backend_set_policy,
  *     lbCookieSessionPersistenceConfiguration: {
  *         cookieName: _var.backend_set_lb_cookie_session_persistence_configuration_cookie_name,
@@ -162,6 +163,9 @@ export class BackendSet extends pulumi.CustomResource {
             if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.policy === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'policy'");
             }
@@ -235,7 +239,7 @@ export interface BackendSetArgs {
     /**
      * A friendly name for the backend set. It must be unique and it cannot be changed.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
      */

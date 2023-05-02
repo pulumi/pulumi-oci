@@ -127,15 +127,15 @@ public final class OperationsInsightsWarehouseUserArgs extends com.pulumi.resour
      * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -338,7 +338,7 @@ public final class OperationsInsightsWarehouseUserArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -378,6 +378,7 @@ public final class OperationsInsightsWarehouseUserArgs extends com.pulumi.resour
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.connectionPassword = Objects.requireNonNull($.connectionPassword, "expected parameter 'connectionPassword' to be non-null");
             $.isAwrDataAccess = Objects.requireNonNull($.isAwrDataAccess, "expected parameter 'isAwrDataAccess' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.operationsInsightsWarehouseId = Objects.requireNonNull($.operationsInsightsWarehouseId, "expected parameter 'operationsInsightsWarehouseId' to be non-null");
             return $;
         }

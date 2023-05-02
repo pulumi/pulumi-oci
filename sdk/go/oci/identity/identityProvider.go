@@ -49,6 +49,7 @@ import (
 //				Description:   pulumi.Any(_var.Identity_provider_description),
 //				Metadata:      pulumi.Any(_var.Identity_provider_metadata),
 //				MetadataUrl:   pulumi.Any(_var.Identity_provider_metadata_url),
+//				Name:          pulumi.Any(_var.Identity_provider_name),
 //				ProductType:   pulumi.Any(_var.Identity_provider_product_type),
 //				Protocol:      pulumi.Any(_var.Identity_provider_protocol),
 //				DefinedTags: pulumi.AnyMap{
@@ -130,6 +131,9 @@ func NewIdentityProvider(ctx *pulumi.Context,
 	}
 	if args.MetadataUrl == nil {
 		return nil, errors.New("invalid value for required argument 'MetadataUrl'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.ProductType == nil {
 		return nil, errors.New("invalid value for required argument 'ProductType'")
@@ -244,7 +248,7 @@ type identityProviderArgs struct {
 	// (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
 	MetadataUrl string `pulumi:"metadataUrl"`
 	// The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
 	ProductType string `pulumi:"productType"`
 	// (Updatable) The protocol used for federation.  Example: `SAML2`
@@ -268,7 +272,7 @@ type IdentityProviderArgs struct {
 	// (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
 	MetadataUrl pulumi.StringInput
 	// The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
 	ProductType pulumi.StringInput
 	// (Updatable) The protocol used for federation.  Example: `SAML2`

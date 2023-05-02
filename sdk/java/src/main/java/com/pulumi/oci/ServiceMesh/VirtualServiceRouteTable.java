@@ -48,6 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testVirtualServiceRouteTable = new VirtualServiceRouteTable(&#34;testVirtualServiceRouteTable&#34;, VirtualServiceRouteTableArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .name(var_.virtual_service_route_table_name())
  *             .routeRules(VirtualServiceRouteTableRouteRuleArgs.builder()
  *                 .destinations(VirtualServiceRouteTableRouteRuleDestinationArgs.builder()
  *                     .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())

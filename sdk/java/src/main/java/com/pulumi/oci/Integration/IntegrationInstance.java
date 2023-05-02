@@ -83,6 +83,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .isIntegrationVcnAllowlisted(var_.integration_instance_network_endpoint_details_is_integration_vcn_allowlisted())
  *                 .build())
+ *             .shape(var_.integration_instance_shape())
  *             .state(var_.integration_instance_target_state())
  *             .build());
  * 
@@ -200,6 +201,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
+    @Export(name="enableProcessAutomationTrigger", type=Integer.class, parameters={})
+    private Output</* @Nullable */ Integer> enableProcessAutomationTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> enableProcessAutomationTrigger() {
+        return Codegen.optional(this.enableProcessAutomationTrigger);
+    }
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -256,14 +271,14 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.instanceUrl;
     }
     /**
-     * (Updatable) Standard or Enterprise type
+     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     @Export(name="integrationInstanceType", type=String.class, parameters={})
     private Output<String> integrationInstanceType;
 
     /**
-     * @return (Updatable) Standard or Enterprise type
+     * @return (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     public Output<String> integrationInstanceType() {
@@ -338,6 +353,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<IntegrationInstanceNetworkEndpointDetails> networkEndpointDetails() {
         return this.networkEndpointDetails;
+    }
+    /**
+     * Shape
+     * 
+     */
+    @Export(name="shape", type=String.class, parameters={})
+    private Output<String> shape;
+
+    /**
+     * @return Shape
+     * 
+     */
+    public Output<String> shape() {
+        return this.shape;
     }
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE

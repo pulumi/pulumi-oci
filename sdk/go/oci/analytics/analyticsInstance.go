@@ -39,6 +39,7 @@ import (
 //				FeatureSet:      pulumi.Any(_var.Analytics_instance_feature_set),
 //				IdcsAccessToken: pulumi.Any(_var.Analytics_instance_idcs_access_token),
 //				LicenseType:     pulumi.Any(_var.Analytics_instance_license_type),
+//				Name:            pulumi.Any(_var.Analytics_instance_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -139,6 +140,9 @@ func NewAnalyticsInstance(ctx *pulumi.Context,
 	}
 	if args.LicenseType == nil {
 		return nil, errors.New("invalid value for required argument 'LicenseType'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.IdcsAccessToken != nil {
 		args.IdcsAccessToken = pulumi.ToSecret(args.IdcsAccessToken).(pulumi.StringInput)
@@ -264,7 +268,7 @@ type analyticsInstanceArgs struct {
 	// (Updatable) The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails *AnalyticsInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -294,7 +298,7 @@ type AnalyticsInstanceArgs struct {
 	// (Updatable) The license used for the service.
 	LicenseType pulumi.StringInput
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails AnalyticsInstanceNetworkEndpointDetailsPtrInput
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.

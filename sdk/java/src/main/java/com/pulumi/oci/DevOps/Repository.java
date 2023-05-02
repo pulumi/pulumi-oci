@@ -48,6 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRepository = new Repository(&#34;testRepository&#34;, RepositoryArgs.builder()        
+ *             .name(var_.repository_name())
  *             .projectId(oci_devops_project.test_project().id())
  *             .repositoryType(var_.repository_repository_type())
  *             .defaultBranch(var_.repository_default_branch())

@@ -18,7 +18,7 @@ class RuleSetArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]],
                  load_balancer_id: pulumi.Input[str],
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: pulumi.Input[str]):
         """
         The set of arguments for constructing a RuleSet resource.
         :param pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
@@ -27,8 +27,7 @@ class RuleSetArgs:
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -56,14 +55,14 @@ class RuleSetArgs:
 
     @property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
+    def name(self) -> pulumi.Input[str]:
         """
         The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
+    def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
 
 
@@ -182,7 +181,8 @@ class RuleSet(pulumi.CustomResource):
                 suffix=var["rule_set_items_suffix"],
                 value=var["rule_set_items_value"],
             )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+            name=var["rule_set_name"])
         ```
 
         ## Import
@@ -243,7 +243,8 @@ class RuleSet(pulumi.CustomResource):
                 suffix=var["rule_set_items_suffix"],
                 value=var["rule_set_items_value"],
             )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+            name=var["rule_set_name"])
         ```
 
         ## Import
@@ -287,6 +288,8 @@ class RuleSet(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
+            if name is None and not opts.urn:
+                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["state"] = None
         super(RuleSet, __self__).__init__(

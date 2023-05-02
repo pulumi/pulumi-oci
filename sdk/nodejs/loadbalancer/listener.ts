@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testListener = new oci.loadbalancer.Listener("testListener", {
  *     defaultBackendSetName: oci_load_balancer_backend_set.test_backend_set.name,
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     name: _var.listener_name,
  *     port: _var.listener_port,
  *     protocol: _var.listener_protocol,
  *     connectionConfiguration: {
@@ -158,6 +159,9 @@ export class Listener extends pulumi.CustomResource {
             if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.port === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
@@ -256,7 +260,7 @@ export interface ListenerArgs {
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
      */

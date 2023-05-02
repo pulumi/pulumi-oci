@@ -9,8 +9,6 @@ import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerRoutingPolicyRuleArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.ResourceArgs {
@@ -51,15 +49,15 @@ public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.Re
      * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -152,7 +150,7 @@ public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -201,6 +199,7 @@ public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.Re
         public LoadBalancerRoutingPolicyArgs build() {
             $.conditionLanguageVersion = Objects.requireNonNull($.conditionLanguageVersion, "expected parameter 'conditionLanguageVersion' to be non-null");
             $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.rules = Objects.requireNonNull($.rules, "expected parameter 'rules' to be non-null");
             return $;
         }

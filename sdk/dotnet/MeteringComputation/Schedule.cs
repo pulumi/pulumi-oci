@@ -27,6 +27,7 @@ namespace Pulumi.Oci.MeteringComputation
     ///     var testSchedule = new Oci.MeteringComputation.Schedule("testSchedule", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Schedule_name,
     ///         ResultLocation = new Oci.MeteringComputation.Inputs.ScheduleResultLocationArgs
     ///         {
     ///             Bucket = @var.Schedule_result_location_bucket,
@@ -263,8 +264,8 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The unique name of the user-created schedule.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies supported output file format.

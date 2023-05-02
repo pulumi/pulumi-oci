@@ -28,6 +28,7 @@ namespace Pulumi.Oci.LoadBalancer
     ///     var testPathRouteSet = new Oci.LoadBalancer.PathRouteSet("testPathRouteSet", new()
     ///     {
     ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Name = @var.Path_route_set_name,
     ///         PathRoutes = new[]
     ///         {
     ///             new Oci.LoadBalancer.Inputs.PathRouteSetPathRouteArgs
@@ -132,8 +133,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         [Input("pathRoutes", required: true)]
         private InputList<Inputs.PathRouteSetPathRouteArgs>? _pathRoutes;

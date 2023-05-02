@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  * const testCompartment = new oci.identity.Compartment("testCompartment", {
  *     compartmentId: _var.compartment_id,
  *     description: _var.compartment_description,
+ *     name: _var.compartment_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -128,6 +129,9 @@ export class Compartment extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -217,5 +221,5 @@ export interface CompartmentArgs {
     /**
      * (Updatable) The name you assign to the compartment during creation. The name must be unique across all compartments in the parent compartment. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

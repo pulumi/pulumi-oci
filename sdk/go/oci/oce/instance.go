@@ -33,6 +33,7 @@ import (
 //				AdminEmail:             pulumi.Any(_var.Oce_instance_admin_email),
 //				CompartmentId:          pulumi.Any(_var.Compartment_id),
 //				IdcsAccessToken:        pulumi.Any(_var.Oce_instance_idcs_access_token),
+//				Name:                   pulumi.Any(_var.Oce_instance_name),
 //				ObjectStorageNamespace: pulumi.Any(_var.Oce_instance_object_storage_namespace),
 //				TenancyId:              pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
 //				TenancyName:            pulumi.Any(oci_identity_tenancy.Test_tenancy.Name),
@@ -141,6 +142,9 @@ func NewInstance(ctx *pulumi.Context,
 	}
 	if args.IdcsAccessToken == nil {
 		return nil, errors.New("invalid value for required argument 'IdcsAccessToken'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.ObjectStorageNamespace == nil {
 		return nil, errors.New("invalid value for required argument 'ObjectStorageNamespace'")
@@ -317,7 +321,7 @@ type instanceArgs struct {
 	// (Updatable) Instance type based on its usage
 	InstanceUsageType *string `pulumi:"instanceUsageType"`
 	// OceInstance Name
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// Object Storage Namespace of Tenancy
 	ObjectStorageNamespace string `pulumi:"objectStorageNamespace"`
 	// Tenancy Identifier
@@ -355,7 +359,7 @@ type InstanceArgs struct {
 	// (Updatable) Instance type based on its usage
 	InstanceUsageType pulumi.StringPtrInput
 	// OceInstance Name
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// Object Storage Namespace of Tenancy
 	ObjectStorageNamespace pulumi.StringInput
 	// Tenancy Identifier

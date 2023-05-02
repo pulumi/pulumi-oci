@@ -33,6 +33,7 @@ import (
 //				CompartmentId:           pulumi.Any(_var.Compartment_id),
 //				IsAgreementAcknowledged: pulumi.Any(_var.Publication_is_agreement_acknowledged),
 //				ListingType:             pulumi.Any(_var.Publication_listing_type),
+//				Name:                    pulumi.Any(_var.Publication_name),
 //				PackageDetails: &marketplace.PublicationPackageDetailsArgs{
 //					Eulas: marketplace.PublicationPackageDetailsEulaArray{
 //						&marketplace.PublicationPackageDetailsEulaArgs{
@@ -132,6 +133,9 @@ func NewPublication(ctx *pulumi.Context,
 	}
 	if args.ListingType == nil {
 		return nil, errors.New("invalid value for required argument 'ListingType'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.PackageDetails == nil {
 		return nil, errors.New("invalid value for required argument 'PackageDetails'")
@@ -247,7 +251,7 @@ type publicationArgs struct {
 	// (Updatable) A long description of the publication to use in the listing.
 	LongDescription *string `pulumi:"longDescription"`
 	// (Updatable) The name of the contact.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// A base object for creating a publication package.
 	PackageDetails PublicationPackageDetails `pulumi:"packageDetails"`
 	// (Updatable) A short description of the publication to use in the listing.
@@ -271,7 +275,7 @@ type PublicationArgs struct {
 	// (Updatable) A long description of the publication to use in the listing.
 	LongDescription pulumi.StringPtrInput
 	// (Updatable) The name of the contact.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// A base object for creating a publication package.
 	PackageDetails PublicationPackageDetailsInput
 	// (Updatable) A short description of the publication to use in the listing.

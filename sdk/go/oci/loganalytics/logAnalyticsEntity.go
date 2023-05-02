@@ -32,6 +32,7 @@ import (
 //			_, err := LogAnalytics.NewLogAnalyticsEntity(ctx, "testLogAnalyticsEntity", &LogAnalytics.LogAnalyticsEntityArgs{
 //				CompartmentId:   pulumi.Any(_var.Compartment_id),
 //				EntityTypeName:  pulumi.Any(_var.Log_analytics_entity_entity_type_name),
+//				Name:            pulumi.Any(_var.Log_analytics_entity_name),
 //				Namespace:       pulumi.Any(_var.Log_analytics_entity_namespace),
 //				CloudResourceId: pulumi.Any(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
 //				DefinedTags: pulumi.AnyMap{
@@ -121,6 +122,9 @@ func NewLogAnalyticsEntity(ctx *pulumi.Context,
 	}
 	if args.EntityTypeName == nil {
 		return nil, errors.New("invalid value for required argument 'EntityTypeName'")
+	}
+	if args.Name == nil {
+		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Namespace == nil {
 		return nil, errors.New("invalid value for required argument 'Namespace'")
@@ -252,7 +256,7 @@ type logAnalyticsEntityArgs struct {
 	// (Updatable) The OCID of the Management Agent.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// (Updatable) Log analytics entity name.
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
@@ -280,7 +284,7 @@ type LogAnalyticsEntityArgs struct {
 	// (Updatable) The OCID of the Management Agent.
 	ManagementAgentId pulumi.StringPtrInput
 	// (Updatable) Log analytics entity name.
-	Name pulumi.StringPtrInput
+	Name pulumi.StringInput
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.

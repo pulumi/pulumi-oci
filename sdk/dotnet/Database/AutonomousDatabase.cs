@@ -709,6 +709,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> UseLatestAvailableBackupTimeStamp { get; private set; } = null!;
 
         /// <summary>
+        /// The storage space consumed by Autonomous Database in GBs.
+        /// </summary>
+        [Output("usedDataStorageSizeInGbs")]
+        public Output<int> UsedDataStorageSizeInGbs { get; private set; } = null!;
+
+        /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
         [Output("usedDataStorageSizeInTbs")]
@@ -2037,6 +2043,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("useLatestAvailableBackupTimeStamp")]
         public Input<bool>? UseLatestAvailableBackupTimeStamp { get; set; }
+
+        /// <summary>
+        /// The storage space consumed by Autonomous Database in GBs.
+        /// </summary>
+        [Input("usedDataStorageSizeInGbs")]
+        public Input<int>? UsedDataStorageSizeInGbs { get; set; }
 
         /// <summary>
         /// The amount of storage that has been used, in terabytes.

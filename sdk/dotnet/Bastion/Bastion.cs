@@ -40,6 +40,7 @@ namespace Pulumi.Oci.Bastion
     ///             { "bar-key", "value" },
     ///         },
     ///         MaxSessionTtlInSeconds = @var.Bastion_max_session_ttl_in_seconds,
+    ///         Name = @var.Bastion_name,
     ///         PhoneBookEntry = @var.Bastion_phone_book_entry,
     ///         StaticJumpHostIpAddresses = @var.Bastion_static_jump_host_ip_addresses,
     ///     });

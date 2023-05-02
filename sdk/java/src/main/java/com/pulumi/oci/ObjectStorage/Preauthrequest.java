@@ -43,6 +43,7 @@ import javax.annotation.Nullable;
  *         var testPreauthenticatedRequest = new Preauthrequest(&#34;testPreauthenticatedRequest&#34;, PreauthrequestArgs.builder()        
  *             .accessType(var_.preauthenticated_request_access_type())
  *             .bucket(var_.preauthenticated_request_bucket())
+ *             .name(var_.preauthenticated_request_name())
  *             .namespace(var_.preauthenticated_request_namespace())
  *             .timeExpires(var_.preauthenticated_request_time_expires())
  *             .bucketListingAction(var_.preauthenticated_request_bucket_listing_action())

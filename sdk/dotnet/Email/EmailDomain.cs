@@ -27,6 +27,7 @@ namespace Pulumi.Oci.Email
     ///     var testEmailDomain = new Oci.Email.EmailDomain("testEmailDomain", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Email_domain_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -197,8 +198,8 @@ namespace Pulumi.Oci.Email
         /// <summary>
         /// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public EmailDomainArgs()
         {

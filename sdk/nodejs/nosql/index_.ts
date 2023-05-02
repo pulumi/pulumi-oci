@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *         jsonFieldType: _var.index_keys_json_field_type,
  *         jsonPath: _var.index_keys_json_path,
  *     }],
+ *     name: _var.index_name,
  *     tableNameOrId: oci_nosql_table_name_or.test_table_name_or.id,
  *     compartmentId: _var.compartment_id,
  *     isIfNotExists: _var.index_is_if_not_exists,
@@ -129,6 +130,9 @@ export class Index extends pulumi.CustomResource {
             if ((!args || args.keys === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'keys'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.tableNameOrId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tableNameOrId'");
             }
@@ -208,7 +212,7 @@ export interface IndexArgs {
     /**
      * Index name.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * A table name within the compartment, or a table OCID.
      */

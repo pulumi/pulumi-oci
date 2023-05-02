@@ -29,6 +29,7 @@ namespace Pulumi.Oci.ObjectStorage
     ///         Bucket = @var.Replication_policy_bucket,
     ///         DestinationBucketName = oci_objectstorage_bucket.Test_bucket.Name,
     ///         DestinationRegionName = oci_identity_region.Test_region.Name,
+    ///         Name = @var.Replication_policy_name,
     ///         Namespace = @var.Replication_policy_namespace,
     ///     });
     /// 
@@ -173,8 +174,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The name of the policy. Avoid entering confidential information.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// The Object Storage namespace used for the request.

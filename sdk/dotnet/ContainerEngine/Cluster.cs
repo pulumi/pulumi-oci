@@ -242,8 +242,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// (Updatable) The name of the cluster. Avoid entering confidential information.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional attributes for the cluster.

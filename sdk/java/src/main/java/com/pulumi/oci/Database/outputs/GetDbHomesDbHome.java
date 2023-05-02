@@ -51,6 +51,7 @@ public final class GetDbHomesDbHome {
      * 
      */
     private String displayName;
+    private Boolean enableDatabaseDelete;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -151,6 +152,9 @@ public final class GetDbHomesDbHome {
     public String displayName() {
         return this.displayName;
     }
+    public Boolean enableDatabaseDelete() {
+        return this.enableDatabaseDelete;
+    }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -235,6 +239,7 @@ public final class GetDbHomesDbHome {
         private String dbVersion;
         private Map<String,Object> definedTags;
         private String displayName;
+        private Boolean enableDatabaseDelete;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isDesupportedVersion;
@@ -258,6 +263,7 @@ public final class GetDbHomesDbHome {
     	      this.dbVersion = defaults.dbVersion;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.enableDatabaseDelete = defaults.enableDatabaseDelete;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isDesupportedVersion = defaults.isDesupportedVersion;
@@ -317,6 +323,11 @@ public final class GetDbHomesDbHome {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder enableDatabaseDelete(Boolean enableDatabaseDelete) {
+            this.enableDatabaseDelete = Objects.requireNonNull(enableDatabaseDelete);
             return this;
         }
         @CustomType.Setter
@@ -385,6 +396,7 @@ public final class GetDbHomesDbHome {
             o.dbVersion = dbVersion;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.enableDatabaseDelete = enableDatabaseDelete;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isDesupportedVersion = isDesupportedVersion;

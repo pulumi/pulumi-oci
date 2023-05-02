@@ -331,6 +331,9 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
             if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
+            if ((!args || args.name === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'name'");
+            }
             if ((!args || args.schemas === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
@@ -740,7 +743,7 @@ export interface DomainsPasswordPolicyArgs {
     /**
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      */
-    name?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     /**
      * (Updatable) The number of passwords that will be kept in history that may not be used as a password
      */

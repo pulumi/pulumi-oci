@@ -54,6 +54,7 @@ public final class GetIntegrationInstanceResult {
      * 
      */
     private String displayName;
+    private Integer enableProcessAutomationTrigger;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -77,7 +78,7 @@ public final class GetIntegrationInstanceResult {
     private String instanceUrl;
     private String integrationInstanceId;
     /**
-     * @return Standard or Enterprise type
+     * @return Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     private String integrationInstanceType;
@@ -106,6 +107,11 @@ public final class GetIntegrationInstanceResult {
      * 
      */
     private List<GetIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
+    /**
+     * @return Shape
+     * 
+     */
+    private String shape;
     /**
      * @return The current state of the integration instance.
      * 
@@ -177,6 +183,9 @@ public final class GetIntegrationInstanceResult {
     public String displayName() {
         return this.displayName;
     }
+    public Integer enableProcessAutomationTrigger() {
+        return this.enableProcessAutomationTrigger;
+    }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -212,7 +221,7 @@ public final class GetIntegrationInstanceResult {
         return this.integrationInstanceId;
     }
     /**
-     * @return Standard or Enterprise type
+     * @return Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     public String integrationInstanceType() {
@@ -252,6 +261,13 @@ public final class GetIntegrationInstanceResult {
      */
     public List<GetIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails() {
         return this.networkEndpointDetails;
+    }
+    /**
+     * @return Shape
+     * 
+     */
+    public String shape() {
+        return this.shape;
     }
     /**
      * @return The current state of the integration instance.
@@ -298,6 +314,7 @@ public final class GetIntegrationInstanceResult {
         private List<GetIntegrationInstanceCustomEndpoint> customEndpoints;
         private Map<String,Object> definedTags;
         private String displayName;
+        private Integer enableProcessAutomationTrigger;
         private Map<String,Object> freeformTags;
         private String id;
         private String idcsAt;
@@ -310,6 +327,7 @@ public final class GetIntegrationInstanceResult {
         private Boolean isVisualBuilderEnabled;
         private Integer messagePacks;
         private List<GetIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
+        private String shape;
         private String state;
         private String stateMessage;
         private String timeCreated;
@@ -324,6 +342,7 @@ public final class GetIntegrationInstanceResult {
     	      this.customEndpoints = defaults.customEndpoints;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.enableProcessAutomationTrigger = defaults.enableProcessAutomationTrigger;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.idcsAt = defaults.idcsAt;
@@ -336,6 +355,7 @@ public final class GetIntegrationInstanceResult {
     	      this.isVisualBuilderEnabled = defaults.isVisualBuilderEnabled;
     	      this.messagePacks = defaults.messagePacks;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
+    	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
     	      this.timeCreated = defaults.timeCreated;
@@ -384,6 +404,11 @@ public final class GetIntegrationInstanceResult {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder enableProcessAutomationTrigger(Integer enableProcessAutomationTrigger) {
+            this.enableProcessAutomationTrigger = Objects.requireNonNull(enableProcessAutomationTrigger);
             return this;
         }
         @CustomType.Setter
@@ -453,6 +478,11 @@ public final class GetIntegrationInstanceResult {
             return networkEndpointDetails(List.of(networkEndpointDetails));
         }
         @CustomType.Setter
+        public Builder shape(String shape) {
+            this.shape = Objects.requireNonNull(shape);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -481,6 +511,7 @@ public final class GetIntegrationInstanceResult {
             o.customEndpoints = customEndpoints;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
             o.freeformTags = freeformTags;
             o.id = id;
             o.idcsAt = idcsAt;
@@ -493,6 +524,7 @@ public final class GetIntegrationInstanceResult {
             o.isVisualBuilderEnabled = isVisualBuilderEnabled;
             o.messagePacks = messagePacks;
             o.networkEndpointDetails = networkEndpointDetails;
+            o.shape = shape;
             o.state = state;
             o.stateMessage = stateMessage;
             o.timeCreated = timeCreated;

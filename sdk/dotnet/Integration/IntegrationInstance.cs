@@ -70,6 +70,7 @@ namespace Pulumi.Oci.Integration
     ///             },
     ///             IsIntegrationVcnAllowlisted = @var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
     ///         },
+    ///         Shape = @var.Integration_instance_shape,
     ///         State = @var.Integration_instance_target_state,
     ///     });
     /// 
@@ -130,6 +131,12 @@ namespace Pulumi.Oci.Integration
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// </summary>
+        [Output("enableProcessAutomationTrigger")]
+        public Output<int?> EnableProcessAutomationTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
@@ -154,7 +161,7 @@ namespace Pulumi.Oci.Integration
         public Output<string> InstanceUrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Standard or Enterprise type
+        /// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         [Output("integrationInstanceType")]
         public Output<string> IntegrationInstanceType { get; private set; } = null!;
@@ -188,6 +195,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Output("networkEndpointDetails")]
         public Output<Outputs.IntegrationInstanceNetworkEndpointDetails> NetworkEndpointDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Shape
+        /// </summary>
+        [Output("shape")]
+        public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
@@ -311,6 +324,12 @@ namespace Pulumi.Oci.Integration
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// </summary>
+        [Input("enableProcessAutomationTrigger")]
+        public Input<int>? EnableProcessAutomationTrigger { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -340,7 +359,7 @@ namespace Pulumi.Oci.Integration
         }
 
         /// <summary>
-        /// (Updatable) Standard or Enterprise type
+        /// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         [Input("integrationInstanceType", required: true)]
         public Input<string> IntegrationInstanceType { get; set; } = null!;
@@ -374,6 +393,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("networkEndpointDetails")]
         public Input<Inputs.IntegrationInstanceNetworkEndpointDetailsArgs>? NetworkEndpointDetails { get; set; }
+
+        /// <summary>
+        /// Shape
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
@@ -449,6 +474,12 @@ namespace Pulumi.Oci.Integration
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// </summary>
+        [Input("enableProcessAutomationTrigger")]
+        public Input<int>? EnableProcessAutomationTrigger { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -496,7 +527,7 @@ namespace Pulumi.Oci.Integration
         public Input<string>? InstanceUrl { get; set; }
 
         /// <summary>
-        /// (Updatable) Standard or Enterprise type
+        /// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         [Input("integrationInstanceType")]
         public Input<string>? IntegrationInstanceType { get; set; }
@@ -530,6 +561,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("networkEndpointDetails")]
         public Input<Inputs.IntegrationInstanceNetworkEndpointDetailsGetArgs>? NetworkEndpointDetails { get; set; }
+
+        /// <summary>
+        /// Shape
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE

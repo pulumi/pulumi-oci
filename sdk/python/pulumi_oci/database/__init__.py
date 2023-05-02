@@ -18,6 +18,7 @@ from .autonomous_database_wallet import *
 from .autonomous_exadata_infrastructure import *
 from .autonomous_vm_cluster import *
 from .backup import *
+from .backup_cancel_management import *
 from .backup_destination import *
 from .cloud_autonomous_vm_cluster import *
 from .cloud_database_management import *

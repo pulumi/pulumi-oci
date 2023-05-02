@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Oce
     ///         AdminEmail = @var.Oce_instance_admin_email,
     ///         CompartmentId = @var.Compartment_id,
     ///         IdcsAccessToken = @var.Oce_instance_idcs_access_token,
+    ///         Name = @var.Oce_instance_name,
     ///         ObjectStorageNamespace = @var.Oce_instance_object_storage_namespace,
     ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
     ///         TenancyName = oci_identity_tenancy.Test_tenancy.Name,
@@ -367,8 +368,8 @@ namespace Pulumi.Oci.Oce
         /// <summary>
         /// OceInstance Name
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// Object Storage Namespace of Tenancy

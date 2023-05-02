@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
-    /// 
     /// ## Import
     /// 
     /// DbHomes can be imported using the `id`, e.g.
@@ -43,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Details for creating a database.
         /// </summary>
         [Output("database")]
-        public Output<Outputs.DbHomeDatabase?> Database { get; private set; } = null!;
+        public Output<Outputs.DbHomeDatabase> Database { get; private set; } = null!;
 
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -80,6 +76,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+        /// </summary>
+        [Output("enableDatabaseDelete")]
+        public Output<bool?> EnableDatabaseDelete { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -229,6 +231,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+        /// </summary>
+        [Input("enableDatabaseDelete")]
+        public Input<bool>? EnableDatabaseDelete { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -332,6 +340,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
+        /// </summary>
+        [Input("enableDatabaseDelete")]
+        public Input<bool>? EnableDatabaseDelete { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

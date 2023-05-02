@@ -27,6 +27,7 @@ namespace Pulumi.Oci.ServiceMesh
     ///     var testVirtualDeployment = new Oci.ServiceMesh.VirtualDeployment("testVirtualDeployment", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         Name = @var.Virtual_deployment_name,
     ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
     ///         AccessLogging = new Oci.ServiceMesh.Inputs.VirtualDeploymentAccessLoggingArgs
     ///         {
@@ -259,8 +260,8 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Service Discovery configuration for virtual deployments.

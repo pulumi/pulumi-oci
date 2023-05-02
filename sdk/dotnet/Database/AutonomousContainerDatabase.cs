@@ -67,6 +67,9 @@ namespace Pulumi.Oci.Database
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        /// <summary>
+        /// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// </summary>
         [Output("computeModel")]
         public Output<string> ComputeModel { get; private set; } = null!;
 
@@ -586,6 +589,9 @@ namespace Pulumi.Oci.Database
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// </summary>
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
 

@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .dnsProxyStatus(var_.bastion_dns_proxy_status())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .maxSessionTtlInSeconds(var_.bastion_max_session_ttl_in_seconds())
+ *             .name(var_.bastion_name())
  *             .phoneBookEntry(var_.bastion_phone_book_entry())
  *             .staticJumpHostIpAddresses(var_.bastion_static_jump_host_ip_addresses())
  *             .build());

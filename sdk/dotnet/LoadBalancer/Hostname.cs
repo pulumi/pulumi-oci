@@ -24,6 +24,7 @@ namespace Pulumi.Oci.LoadBalancer
     ///     {
     ///         VirtualHostname = @var.Hostname_hostname,
     ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Name = @var.Hostname_name,
     ///     });
     /// 
     /// });
@@ -122,8 +123,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public HostnameArgs()
         {

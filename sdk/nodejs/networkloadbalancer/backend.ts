@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     isBackup: _var.backend_is_backup,
  *     isDrain: _var.backend_is_drain,
  *     isOffline: _var.backend_is_offline,
+ *     name: _var.backend_name,
  *     targetId: oci_cloud_guard_target.test_target.id,
  *     weight: _var.backend_weight,
  * });

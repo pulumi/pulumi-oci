@@ -68,15 +68,15 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
      * A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -223,7 +223,7 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -304,6 +304,7 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
         public BackendSetArgs build() {
             $.healthChecker = Objects.requireNonNull($.healthChecker, "expected parameter 'healthChecker' to be non-null");
             $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.policy = Objects.requireNonNull($.policy, "expected parameter 'policy' to be non-null");
             return $;
         }

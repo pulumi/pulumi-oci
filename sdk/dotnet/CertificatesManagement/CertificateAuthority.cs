@@ -248,8 +248,8 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         public CertificateAuthorityArgs()
         {

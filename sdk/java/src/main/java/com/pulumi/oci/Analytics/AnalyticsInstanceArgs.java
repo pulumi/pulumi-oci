@@ -173,15 +173,15 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
      */
-    @Import(name="name")
-    private @Nullable Output<String> name;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
     /**
      * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    public Output<String> name() {
+        return this.name;
     }
 
     /**
@@ -466,7 +466,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder name(@Nullable Output<String> name) {
+        public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
@@ -529,6 +529,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
             $.featureSet = Objects.requireNonNull($.featureSet, "expected parameter 'featureSet' to be non-null");
             $.idcsAccessToken = Objects.requireNonNull($.idcsAccessToken, "expected parameter 'idcsAccessToken' to be non-null");
             $.licenseType = Objects.requireNonNull($.licenseType, "expected parameter 'licenseType' to be non-null");
+            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

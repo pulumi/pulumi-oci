@@ -524,6 +524,7 @@
         "database/autonomousExadataInfrastructure.ts",
         "database/autonomousVmCluster.ts",
         "database/backup.ts",
+        "database/backupCancelManagement.ts",
         "database/backupDestination.ts",
         "database/cloudAutonomousVmCluster.ts",
         "database/cloudDatabaseManagement.ts",

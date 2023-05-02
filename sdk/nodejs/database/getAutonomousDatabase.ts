@@ -457,6 +457,10 @@ export interface GetAutonomousDatabaseResult {
     readonly totalBackupStorageSizeInGbs: number;
     readonly useLatestAvailableBackupTimeStamp: boolean;
     /**
+     * The storage space consumed by Autonomous Database in GBs.
+     */
+    readonly usedDataStorageSizeInGbs: number;
+    /**
      * The amount of storage that has been used, in terabytes.
      */
     readonly usedDataStorageSizeInTbs: number;

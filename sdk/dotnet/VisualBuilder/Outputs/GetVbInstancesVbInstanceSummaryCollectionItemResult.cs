@@ -18,6 +18,10 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult> AlternateCustomEndpoints;
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult> Attachments;
+        /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -45,6 +49,10 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Information for IDCS access
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult> IdcsInfos;
         public readonly string IdcsOpenId;
         /// <summary>
         /// The Vb Instance URL.
@@ -55,9 +63,25 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// </summary>
         public readonly bool IsVisualBuilderEnabled;
         /// <summary>
+        /// The NAT gateway IP address for the VB management VCN
+        /// </summary>
+        public readonly string ManagementNatGatewayIp;
+        /// <summary>
+        /// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        /// </summary>
+        public readonly string ManagementVcnId;
+        /// <summary>
         /// The number of Nodes
         /// </summary>
         public readonly int NodeCount;
+        /// <summary>
+        /// The NAT gateway IP address for the VB service VCN
+        /// </summary>
+        public readonly string ServiceNatGatewayIp;
+        /// <summary>
+        /// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+        /// </summary>
+        public readonly string ServiceVcnId;
         /// <summary>
         /// Life cycle state to query on.
         /// </summary>
@@ -83,6 +107,8 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         private GetVbInstancesVbInstanceSummaryCollectionItemResult(
             ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult> alternateCustomEndpoints,
 
+            ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult> attachments,
+
             string compartmentId,
 
             string consumptionModel,
@@ -97,13 +123,23 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
 
             string id,
 
+            ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult> idcsInfos,
+
             string idcsOpenId,
 
             string instanceUrl,
 
             bool isVisualBuilderEnabled,
 
+            string managementNatGatewayIp,
+
+            string managementVcnId,
+
             int nodeCount,
+
+            string serviceNatGatewayIp,
+
+            string serviceVcnId,
 
             string state,
 
@@ -116,6 +152,7 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
             string timeUpdated)
         {
             AlternateCustomEndpoints = alternateCustomEndpoints;
+            Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
             CustomEndpoints = customEndpoints;
@@ -123,10 +160,15 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IdcsInfos = idcsInfos;
             IdcsOpenId = idcsOpenId;
             InstanceUrl = instanceUrl;
             IsVisualBuilderEnabled = isVisualBuilderEnabled;
+            ManagementNatGatewayIp = managementNatGatewayIp;
+            ManagementVcnId = managementVcnId;
             NodeCount = nodeCount;
+            ServiceNatGatewayIp = serviceNatGatewayIp;
+            ServiceVcnId = serviceVcnId;
             State = state;
             StateMessage = stateMessage;
             SystemTags = systemTags;

@@ -15,74 +15,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourcesSearchAssociationItem {
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type filter to search associated resources.
      * 
      */
     private @Nullable String associationType;
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     private @Nullable List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails;
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String destinationResourceId;
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     private @Nullable List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails;
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String sourceResourceId;
     /**
-     * @return The time the the association was created. An RFC3339 formatted datetime string
+     * @return The association creation time. An RFC3339 formatted datetime string.
      * 
      */
     private @Nullable String timeCreated;
 
     private MonitoredResourcesSearchAssociationItem() {}
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type filter to search associated resources.
      * 
      */
     public Optional<String> associationType() {
         return Optional.ofNullable(this.associationType);
     }
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails() {
         return this.destinationResourceDetails == null ? List.of() : this.destinationResourceDetails;
     }
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> destinationResourceId() {
         return Optional.ofNullable(this.destinationResourceId);
     }
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails() {
         return this.sourceResourceDetails == null ? List.of() : this.sourceResourceDetails;
     }
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> sourceResourceId() {
         return Optional.ofNullable(this.sourceResourceId);
     }
     /**
-     * @return The time the the association was created. An RFC3339 formatted datetime string
+     * @return The association creation time. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<String> timeCreated() {

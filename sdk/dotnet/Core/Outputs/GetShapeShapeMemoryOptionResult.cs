@@ -15,6 +15,7 @@ namespace Pulumi.Oci.Core.Outputs
     {
         public readonly double DefaultPerOcpuInGbs;
         public readonly double MaxInGbs;
+        public readonly double MaxPerNumaNodeInGbs;
         public readonly double MaxPerOcpuInGbs;
         public readonly double MinInGbs;
         public readonly double MinPerOcpuInGbs;
@@ -25,6 +26,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             double maxInGbs,
 
+            double maxPerNumaNodeInGbs,
+
             double maxPerOcpuInGbs,
 
             double minInGbs,
@@ -33,6 +36,7 @@ namespace Pulumi.Oci.Core.Outputs
         {
             DefaultPerOcpuInGbs = defaultPerOcpuInGbs;
             MaxInGbs = maxInGbs;
+            MaxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
             MaxPerOcpuInGbs = maxPerOcpuInGbs;
             MinInGbs = minInGbs;
             MinPerOcpuInGbs = minPerOcpuInGbs;

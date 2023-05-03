@@ -19,14 +19,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     public static final MonitoredResourcesAssociateMonitoredResourceState Empty = new MonitoredResourcesAssociateMonitoredResourceState();
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type to be created between source and destination resources.
      * 
      */
     @Import(name="associationType")
     private @Nullable Output<String> associationType;
 
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type to be created between source and destination resources.
      * 
      */
     public Optional<Output<String>> associationType() {
@@ -34,14 +34,35 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Association category. Possible values are:
+     * * System created (SYSTEM),
+     * * User created using API (USER_API)
+     * * User created using tags (USER_TAG_ASSOC).
+     * 
+     */
+    @Import(name="category")
+    private @Nullable Output<String> category;
+
+    /**
+     * @return Association category. Possible values are:
+     * * System created (SYSTEM),
+     * * User created using API (USER_API)
+     * * User created using tags (USER_TAG_ASSOC).
+     * 
+     */
+    public Optional<Output<String>> category() {
+        return Optional.ofNullable(this.category);
+    }
+
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -49,14 +70,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     }
 
     /**
-     * Association Resource Details
+     * Association Resource Details.
      * 
      */
     @Import(name="destinationResourceDetails")
     private @Nullable Output<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs>> destinationResourceDetails;
 
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public Optional<Output<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs>>> destinationResourceDetails() {
@@ -64,14 +85,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="destinationResourceId")
     private @Nullable Output<String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> destinationResourceId() {
@@ -79,14 +100,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     }
 
     /**
-     * Association Resource Details
+     * Association Resource Details.
      * 
      */
     @Import(name="sourceResourceDetails")
     private @Nullable Output<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs>> sourceResourceDetails;
 
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public Optional<Output<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs>>> sourceResourceDetails() {
@@ -94,14 +115,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="sourceResourceId")
     private @Nullable Output<String> sourceResourceId;
 
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> sourceResourceId() {
@@ -109,14 +130,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     }
 
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="tenantId")
     private @Nullable Output<String> tenantId;
 
     /**
-     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> tenantId() {
@@ -124,14 +145,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
     }
 
     /**
-     * The time when the association was created. An RFC3339 formatted datetime string
+     * The time when the association was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time when the association was created. An RFC3339 formatted datetime string
+     * @return The time when the association was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -142,6 +163,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
 
     private MonitoredResourcesAssociateMonitoredResourceState(MonitoredResourcesAssociateMonitoredResourceState $) {
         this.associationType = $.associationType;
+        this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.destinationResourceDetails = $.destinationResourceDetails;
         this.destinationResourceId = $.destinationResourceId;
@@ -170,7 +192,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type to be created between source and destination resources.
          * 
          * @return builder
          * 
@@ -181,7 +203,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type to be created between source and destination resources.
          * 
          * @return builder
          * 
@@ -191,7 +213,34 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param category Association category. Possible values are:
+         * * System created (SYSTEM),
+         * * User created using API (USER_API)
+         * * User created using tags (USER_TAG_ASSOC).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(@Nullable Output<String> category) {
+            $.category = category;
+            return this;
+        }
+
+        /**
+         * @param category Association category. Possible values are:
+         * * System created (SYSTEM),
+         * * User created using API (USER_API)
+         * * User created using tags (USER_TAG_ASSOC).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(String category) {
+            return category(Output.of(category));
+        }
+
+        /**
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -202,7 +251,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -212,7 +261,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param destinationResourceDetails Association Resource Details
+         * @param destinationResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -223,7 +272,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param destinationResourceDetails Association Resource Details
+         * @param destinationResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -233,7 +282,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param destinationResourceDetails Association Resource Details
+         * @param destinationResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -243,7 +292,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -254,7 +303,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -264,7 +313,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param sourceResourceDetails Association Resource Details
+         * @param sourceResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -275,7 +324,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param sourceResourceDetails Association Resource Details
+         * @param sourceResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -285,7 +334,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param sourceResourceDetails Association Resource Details
+         * @param sourceResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -295,7 +344,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -306,7 +355,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -316,7 +365,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param tenantId Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param tenantId Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -327,7 +376,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param tenantId Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param tenantId Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -337,7 +386,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param timeCreated The time when the association was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time when the association was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -348,7 +397,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceState extends com
         }
 
         /**
-         * @param timeCreated The time when the association was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time when the association was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

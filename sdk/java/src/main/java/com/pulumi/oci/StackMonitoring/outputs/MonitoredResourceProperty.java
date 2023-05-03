@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourceProperty {
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) property value
+     * @return (Updatable) Property Value.
      * 
      */
     private @Nullable String value;
 
     private MonitoredResourceProperty() {}
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) property value
+     * @return (Updatable) Property Value.
      * 
      */
     public Optional<String> value() {

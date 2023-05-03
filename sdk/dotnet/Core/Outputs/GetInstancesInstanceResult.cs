@@ -85,6 +85,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IpxeScript;
         /// <summary>
+        /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+        /// </summary>
+        public readonly bool IsCrossNumaNode;
+        /// <summary>
         /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         /// </summary>
         public readonly bool IsPvEncryptionInTransitEnabled;
@@ -188,6 +192,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string ipxeScript,
 
+            bool isCrossNumaNode,
+
             bool isPvEncryptionInTransitEnabled,
 
             string launchMode,
@@ -246,6 +252,7 @@ namespace Pulumi.Oci.Core.Outputs
             Image = image;
             InstanceOptions = instanceOptions;
             IpxeScript = ipxeScript;
+            IsCrossNumaNode = isCrossNumaNode;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             LaunchMode = launchMode;
             LaunchOptions = launchOptions;

@@ -17,14 +17,14 @@ public final class MonitoredResourcesListMemberArgs extends com.pulumi.resources
     public static final MonitoredResourcesListMemberArgs Empty = new MonitoredResourcesListMemberArgs();
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="destinationResourceId")
     private @Nullable Output<String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> destinationResourceId() {
@@ -32,14 +32,14 @@ public final class MonitoredResourcesListMemberArgs extends com.pulumi.resources
     }
 
     /**
-     * The field which determines the depth of hierarchy while searching for members
+     * The field which determines the depth of hierarchy while searching for members.
      * 
      */
     @Import(name="limitLevel")
     private @Nullable Output<Integer> limitLevel;
 
     /**
-     * @return The field which determines the depth of hierarchy while searching for members
+     * @return The field which determines the depth of hierarchy while searching for members.
      * 
      */
     public Optional<Output<Integer>> limitLevel() {
@@ -88,7 +88,7 @@ public final class MonitoredResourcesListMemberArgs extends com.pulumi.resources
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class MonitoredResourcesListMemberArgs extends com.pulumi.resources
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class MonitoredResourcesListMemberArgs extends com.pulumi.resources
         }
 
         /**
-         * @param limitLevel The field which determines the depth of hierarchy while searching for members
+         * @param limitLevel The field which determines the depth of hierarchy while searching for members.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class MonitoredResourcesListMemberArgs extends com.pulumi.resources
         }
 
         /**
-         * @param limitLevel The field which determines the depth of hierarchy while searching for members
+         * @param limitLevel The field which determines the depth of hierarchy while searching for members.
          * 
          * @return builder
          * 

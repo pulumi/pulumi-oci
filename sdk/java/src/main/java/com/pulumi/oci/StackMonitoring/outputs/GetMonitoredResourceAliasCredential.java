@@ -10,38 +10,38 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitoredResourceAliasCredential {
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     private String name;
     /**
-     * @return The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+     * @return The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
      * 
      */
     private String service;
     /**
-     * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     private String source;
 
     private GetMonitoredResourceAliasCredential() {}
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+     * @return The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
      * 
      */
     public String service() {
         return this.service;
     }
     /**
-     * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public String source() {

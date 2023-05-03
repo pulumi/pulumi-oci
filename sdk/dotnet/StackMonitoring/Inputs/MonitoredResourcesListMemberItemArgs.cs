@@ -12,6 +12,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
 
     public sealed class MonitoredResourcesListMemberItemArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -25,7 +31,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
-        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
@@ -43,13 +49,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
-        /// Monitored Resource Host
+        /// Monitored Resource Host Name.
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// Parent monitored resource identifier
+        /// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("parentId")]
         public Input<string>? ParentId { get; set; }
@@ -61,19 +67,19 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? ResourceDisplayName { get; set; }
 
         /// <summary>
-        /// Monitored resource identifier
+        /// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("resourceId")]
         public Input<string>? ResourceId { get; set; }
 
         /// <summary>
-        /// Monitored resource name
+        /// Monitored Resource Name.
         /// </summary>
         [Input("resourceName")]
         public Input<string>? ResourceName { get; set; }
 
         /// <summary>
-        /// Monitored resource type
+        /// Monitored Resource Type.
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }

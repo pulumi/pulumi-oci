@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterState;
 import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindowDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -62,6 +63,7 @@ import javax.annotation.Nullable;
  *             .definedTags(var_.cloud_autonomous_vm_cluster_defined_tags())
  *             .description(var_.cloud_autonomous_vm_cluster_description())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isMtlsEnabledVmCluster(var_.cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster())
  *             .licenseModel(var_.cloud_autonomous_vm_cluster_license_model())
  *             .maintenanceWindowDetails(CloudAutonomousVmClusterMaintenanceWindowDetailsArgs.builder()
  *                 .customActionTimeoutInMins(var_.cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins())
@@ -81,6 +83,8 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .memoryPerOracleComputeUnitInGbs(var_.cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs())
  *             .nsgIds(var_.cloud_autonomous_vm_cluster_nsg_ids())
+ *             .scanListenerPortNonTls(var_.cloud_autonomous_vm_cluster_scan_listener_port_non_tls())
+ *             .scanListenerPortTls(var_.cloud_autonomous_vm_cluster_scan_listener_port_tls())
  *             .totalContainerDatabases(var_.cloud_autonomous_vm_cluster_total_container_databases())
  *             .build());
  * 
@@ -240,14 +244,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.cpuCoreCount;
     }
     /**
-     * The number of OCPU cores to be enabled per VM cluster node.
+     * The number of CPU cores to be enabled per VM cluster node.
      * 
      */
     @Export(name="cpuCoreCountPerNode", type=Integer.class, parameters={})
     private Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of OCPU cores to be enabled per VM cluster node.
+     * @return The number of CPU cores to be enabled per VM cluster node.
      * 
      */
     public Output<Integer> cpuCoreCountPerNode() {
@@ -394,6 +398,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.hostname;
     }
     /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * 
+     */
+    @Export(name="isMtlsEnabledVmCluster", type=Boolean.class, parameters={})
+    private Output<Boolean> isMtlsEnabledVmCluster;
+
+    /**
+     * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * 
+     */
+    public Output<Boolean> isMtlsEnabledVmCluster() {
+        return this.isMtlsEnabledVmCluster;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -478,14 +496,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.maintenanceWindows;
     }
     /**
-     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) to be enabled per each OCPU core.
+     * @return The amount of memory (in GBs) to be enabled per each CPU core.
      * 
      */
     public Output<Integer> memoryPerOracleComputeUnitInGbs() {
@@ -564,18 +582,50 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.ocpuCount;
     }
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     @Export(name="reclaimableCpus", type=Double.class, parameters={})
     private Output<Double> reclaimableCpus;
 
     /**
-     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Output<Double> reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     * 
+     */
+    @Export(name="scanListenerPortNonTls", type=Integer.class, parameters={})
+    private Output<Integer> scanListenerPortNonTls;
+
+    /**
+     * @return The SCAN Listener Non TLS port. Default is 1521.
+     * 
+     */
+    public Output<Integer> scanListenerPortNonTls() {
+        return this.scanListenerPortNonTls;
+    }
+    /**
+     * The SCAN Listener TLS port. Default is 2484.
+     * 
+     */
+    @Export(name="scanListenerPortTls", type=Integer.class, parameters={})
+    private Output<Integer> scanListenerPortTls;
+
+    /**
+     * @return The SCAN Listener TLS port. Default is 2484.
+     * 
+     */
+    public Output<Integer> scanListenerPortTls() {
+        return this.scanListenerPortTls;
     }
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.

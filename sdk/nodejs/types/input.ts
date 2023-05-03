@@ -9189,6 +9189,21 @@ export namespace ContainerEngine {
         isForceDeleteAfterGraceDuration?: pulumi.Input<boolean>;
     }
 
+    export interface NodePoolNodePoolCyclingDetails {
+        /**
+         * (Updatable) If nodes in the nodepool will be cycled to have new changes.
+         */
+        isNodeCyclingEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+         */
+        maximumSurge?: pulumi.Input<string>;
+        /**
+         * (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+         */
+        maximumUnavailable?: pulumi.Input<string>;
+    }
+
     export interface NodePoolNodeShapeConfig {
         /**
          * (Updatable) The total amount of memory available to each node, in gigabytes.
@@ -16696,7 +16711,7 @@ export namespace Database {
          */
         dbUniqueName?: pulumi.Input<string>;
         /**
-         * The database workload type.
+         * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
          */
         dbWorkload?: pulumi.Input<string>;
         /**
@@ -16948,7 +16963,7 @@ export namespace Database {
         dbName?: pulumi.Input<string>;
         dbUniqueName?: pulumi.Input<string>;
         /**
-         * The database workload type.
+         * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
          */
         dbWorkload?: pulumi.Input<string>;
         /**
@@ -17161,7 +17176,7 @@ export namespace Database {
         dbName?: pulumi.Input<string>;
         dbUniqueName?: pulumi.Input<string>;
         /**
-         * The database workload type.
+         * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
          */
         dbWorkload?: pulumi.Input<string>;
         /**
@@ -34527,6 +34542,29 @@ export namespace Opa {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface OpaInstanceAttachment {
+        /**
+         * * If role == `PARENT`, the attached instance was created by this service instance
+         * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+         */
+        isImplicit?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+         */
+        targetId?: pulumi.Input<string>;
+        /**
+         * The dataplane instance URL of the attached instance
+         */
+        targetInstanceUrl?: pulumi.Input<string>;
+        /**
+         * The role of the target attachment.
+         */
+        targetRole?: pulumi.Input<string>;
+        /**
+         * The type of the target instance, such as "FUSION".
+         */
+        targetServiceType?: pulumi.Input<string>;
+    }
 }
 
 export namespace Opensearch {
@@ -36929,39 +36967,42 @@ export namespace StackMonitoring {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface MonitoredResourceAliases {
+    export interface MonitoredResourceAdditionalAlias {
         /**
-         * (Updatable) Monitored Resource Alias Reference Source Credential
+         * (Updatable) Monitored Resource Alias Reference Source Credential.
          */
-        credential: pulumi.Input<inputs.StackMonitoring.MonitoredResourceAliasesCredential>;
+        credential: pulumi.Input<inputs.StackMonitoring.MonitoredResourceAdditionalAliasCredential>;
         /**
-         * (Updatable) property name
+         * (Updatable) Property Name.
          */
         name: pulumi.Input<string>;
         /**
-         * (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
          */
         source: pulumi.Input<string>;
     }
 
-    export interface MonitoredResourceAliasesCredential {
+    export interface MonitoredResourceAdditionalAliasCredential {
         /**
-         * (Updatable) property name
+         * (Updatable) Property Name.
          */
         name: pulumi.Input<string>;
         /**
-         * (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+         * (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
          */
         service: pulumi.Input<string>;
         /**
-         * (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
          */
         source: pulumi.Input<string>;
     }
 
-    export interface MonitoredResourceCredentials {
+    export interface MonitoredResourceAdditionalCredential {
         /**
-         * (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+         * (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+         * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+         * * PLAINTEXT - The credential properties will have credentials in plain text format.
+         * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
          */
         credentialType?: pulumi.Input<string>;
         /**
@@ -36969,45 +37010,120 @@ export namespace StackMonitoring {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         * (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
          */
         keyId?: pulumi.Input<string>;
         /**
-         * (Updatable) property name
+         * (Updatable) Property Name.
          */
         name?: pulumi.Input<string>;
         /**
-         * (Updatable) List of monitored resource properties
+         * (Updatable) List of monitored resource properties.
          */
-        properties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceCredentialsProperty>[]>;
+        properties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceAdditionalCredentialProperty>[]>;
         /**
-         * (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
          */
         source?: pulumi.Input<string>;
         /**
-         * Monitored resource type
+         * Monitored Resource Type.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceAdditionalCredentialProperty {
+        /**
+         * (Updatable) Property Name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Property Value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceAliases {
+        /**
+         * (Updatable) Monitored Resource Alias Reference Source Credential.
+         */
+        credential: pulumi.Input<inputs.StackMonitoring.MonitoredResourceAliasesCredential>;
+        /**
+         * (Updatable) Property Name.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         */
+        source: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceAliasesCredential {
+        /**
+         * (Updatable) Property Name.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+         */
+        service: pulumi.Input<string>;
+        /**
+         * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         */
+        source: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceCredentials {
+        /**
+         * (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+         * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+         * * PLAINTEXT - The credential properties will have credentials in plain text format.
+         * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user-specified textual description of the credential.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+         */
+        keyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Property Name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) List of monitored resource properties.
+         */
+        properties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceCredentialsProperty>[]>;
+        /**
+         * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         */
+        source?: pulumi.Input<string>;
+        /**
+         * Monitored Resource Type.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourceCredentialsProperty {
         /**
-         * (Updatable) property name
+         * (Updatable) Property Name.
          */
         name?: pulumi.Input<string>;
         /**
-         * (Updatable) property value
+         * (Updatable) Property Value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourceDatabaseConnectionDetails {
         /**
-         * (Updatable) Database connector Identifier
+         * (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         connectorId?: pulumi.Input<string>;
         /**
-         * (Updatable) dbId of the database
+         * (Updatable) dbId of the database.
          */
         dbId?: pulumi.Input<string>;
         /**
@@ -37027,51 +37143,63 @@ export namespace StackMonitoring {
          */
         serviceName: pulumi.Input<string>;
         /**
-         * (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         sslSecretId?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourceProperty {
         /**
-         * (Updatable) property name
+         * (Updatable) Property Name.
          */
         name?: pulumi.Input<string>;
         /**
-         * (Updatable) property value
+         * (Updatable) Property Value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail {
         /**
-         * Monitored Resource Name
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Monitored Resource Name.
          */
         name?: pulumi.Input<string>;
         /**
-         * Monitored Resource Type
+         * Monitored Resource Type.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail {
         /**
-         * Monitored Resource Name
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Monitored Resource Name.
          */
         name?: pulumi.Input<string>;
         /**
-         * Monitored Resource Type
+         * Monitored Resource Type.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourcesListMemberItem {
         /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          */
         externalId?: pulumi.Input<string>;
         /**
@@ -37079,11 +37207,11 @@ export namespace StackMonitoring {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * Monitored Resource Host
+         * Monitored Resource Host Name.
          */
         hostName?: pulumi.Input<string>;
         /**
-         * Parent monitored resource identifier
+         * Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         parentId?: pulumi.Input<string>;
         /**
@@ -37091,15 +37219,15 @@ export namespace StackMonitoring {
          */
         resourceDisplayName?: pulumi.Input<string>;
         /**
-         * Monitored resource identifier
+         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         resourceId?: pulumi.Input<string>;
         /**
-         * Monitored resource name
+         * Monitored Resource Name.
          */
         resourceName?: pulumi.Input<string>;
         /**
-         * Monitored resource type
+         * Monitored Resource Type.
          */
         resourceType?: pulumi.Input<string>;
         /**
@@ -37114,49 +37242,57 @@ export namespace StackMonitoring {
 
     export interface MonitoredResourcesSearchAssociationItem {
         /**
-         * Association type to be created between source and destination resources
+         * Association type filter to search associated resources.
          */
         associationType?: pulumi.Input<string>;
         /**
-         * Association Resource Details
+         * Association Resource Details.
          */
         destinationResourceDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchAssociationItemDestinationResourceDetail>[]>;
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         destinationResourceId?: pulumi.Input<string>;
         /**
-         * Association Resource Details
+         * Association Resource Details.
          */
         sourceResourceDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchAssociationItemSourceResourceDetail>[]>;
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         sourceResourceId?: pulumi.Input<string>;
         /**
-         * The time the the association was created. An RFC3339 formatted datetime string
+         * The association creation time. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourcesSearchAssociationItemDestinationResourceDetail {
         /**
-         * Monitored Resource Name
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Monitored Resource Name.
          */
         name?: pulumi.Input<string>;
         /**
-         * Monitored Resource Type
+         * Monitored Resource Type.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourcesSearchAssociationItemSourceResourceDetail {
         /**
-         * Monitored Resource Name
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Monitored Resource Name.
          */
         name?: pulumi.Input<string>;
         /**
-         * Monitored Resource Type
+         * Monitored Resource Type.
          */
         type?: pulumi.Input<string>;
     }
@@ -37171,7 +37307,7 @@ export namespace StackMonitoring {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          */
         externalId?: pulumi.Input<string>;
         /**
@@ -37179,11 +37315,11 @@ export namespace StackMonitoring {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * A filter to return resources with host name match
+         * A filter to return resources with host name match.
          */
         hostName?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         id?: pulumi.Input<string>;
         /**
@@ -37191,11 +37327,11 @@ export namespace StackMonitoring {
          */
         managementAgentId?: pulumi.Input<string>;
         /**
-         * A filter to return resources that match exact resource name
+         * A filter to return resources that match exact resource name.
          */
         name?: pulumi.Input<string>;
         /**
-         * List of monitored resource properties
+         * List of monitored resource properties.
          */
         properties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchItemProperty>[]>;
         /**
@@ -37207,26 +37343,26 @@ export namespace StackMonitoring {
          */
         systemTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * Monitored resource creation time. An RFC3339 formatted datetime string
+         * Monitored resource creation time. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * Monitored resource updation time. An RFC3339 formatted datetime string
+         * Monitored resource update time. An RFC3339 formatted datetime string.
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * A filter to return resources that match resource type
+         * A filter to return resources that match resource type.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourcesSearchItemProperty {
         /**
-         * A filter to return resources that match exact resource name
+         * A filter to return resources that match exact resource name.
          */
         name?: pulumi.Input<string>;
         /**
-         * property value
+         * Property Value.
          */
         value?: pulumi.Input<string>;
     }
@@ -37509,6 +37645,30 @@ export namespace VisualBuilder {
         hostname: pulumi.Input<string>;
     }
 
+    export interface VbInstanceAttachment {
+        /**
+         * * If role == `PARENT`, the attached instance was created by this service instance
+         * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+         */
+        isImplicit?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+         */
+        targetId?: pulumi.Input<string>;
+        /**
+         * The dataplane instance URL of the attached instance
+         */
+        targetInstanceUrl?: pulumi.Input<string>;
+        /**
+         * The role of the target attachment.
+         */
+        targetRole?: pulumi.Input<string>;
+        /**
+         * The type of the target instance, such as "FUSION".
+         */
+        targetServiceType?: pulumi.Input<string>;
+    }
+
     export interface VbInstanceCustomEndpoint {
         /**
          * (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
@@ -37522,6 +37682,29 @@ export namespace VisualBuilder {
          * (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
          */
         hostname: pulumi.Input<string>;
+    }
+
+    export interface VbInstanceIdcsInfo {
+        /**
+         * The IDCS application display name associated with the instance
+         */
+        idcsAppDisplayName?: pulumi.Input<string>;
+        /**
+         * The IDCS application ID associated with the instance
+         */
+        idcsAppId?: pulumi.Input<string>;
+        /**
+         * URL for the location of the IDCS Application (used by IDCS APIs)
+         */
+        idcsAppLocationUrl?: pulumi.Input<string>;
+        /**
+         * The IDCS application name associated with the instance
+         */
+        idcsAppName?: pulumi.Input<string>;
+        /**
+         * The URL used as the primary audience for visual builder flows in this instance type: string
+         */
+        instancePrimaryAudienceUrl?: pulumi.Input<string>;
     }
 }
 

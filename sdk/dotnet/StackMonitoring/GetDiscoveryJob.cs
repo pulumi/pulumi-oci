@@ -136,6 +136,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// The OCID of Discovery job
         /// </summary>
         public readonly string Id;
+        public readonly bool ShouldPropagateTagsToDiscoveredResources;
         /// <summary>
         /// The current state of the DiscoveryJob Resource.
         /// </summary>
@@ -183,6 +184,8 @@ namespace Pulumi.Oci.StackMonitoring
 
             string id,
 
+            bool shouldPropagateTagsToDiscoveredResources,
+
             string state,
 
             string status,
@@ -205,6 +208,7 @@ namespace Pulumi.Oci.StackMonitoring
             DiscoveryType = discoveryType;
             FreeformTags = freeformTags;
             Id = id;
+            ShouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
             State = state;
             Status = status;
             StatusMessage = statusMessage;

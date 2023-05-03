@@ -14,11 +14,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class GetMonitoredResourceDatabaseConnectionDetailResult
     {
         /// <summary>
-        /// Database connector Identifier
+        /// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string ConnectorId;
         /// <summary>
-        /// dbId of the database
+        /// dbId of the database.
         /// </summary>
         public readonly string DbId;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string ServiceName;
         /// <summary>
-        /// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string SslSecretId;
 

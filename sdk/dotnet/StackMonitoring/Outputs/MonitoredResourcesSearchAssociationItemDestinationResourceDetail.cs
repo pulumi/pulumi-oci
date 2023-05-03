@@ -14,20 +14,27 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourcesSearchAssociationItemDestinationResourceDetail
     {
         /// <summary>
-        /// Monitored Resource Name
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string? CompartmentId;
+        /// <summary>
+        /// Monitored Resource Name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// Monitored Resource Type
+        /// Monitored Resource Type.
         /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]
         private MonitoredResourcesSearchAssociationItemDestinationResourceDetail(
+            string? compartmentId,
+
             string? name,
 
             string? type)
         {
+            CompartmentId = compartmentId;
             Name = name;
             Type = type;
         }

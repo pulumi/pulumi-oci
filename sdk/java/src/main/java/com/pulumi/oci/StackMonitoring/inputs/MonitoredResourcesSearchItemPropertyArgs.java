@@ -16,14 +16,14 @@ public final class MonitoredResourcesSearchItemPropertyArgs extends com.pulumi.r
     public static final MonitoredResourcesSearchItemPropertyArgs Empty = new MonitoredResourcesSearchItemPropertyArgs();
 
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class MonitoredResourcesSearchItemPropertyArgs extends com.pulumi.r
     }
 
     /**
-     * property value
+     * Property Value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return property value
+     * @return Property Value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class MonitoredResourcesSearchItemPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param name A filter to return resources that match exact resource name
+         * @param name A filter to return resources that match exact resource name.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class MonitoredResourcesSearchItemPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param name A filter to return resources that match exact resource name
+         * @param name A filter to return resources that match exact resource name.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class MonitoredResourcesSearchItemPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param value property value
+         * @param value Property Value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class MonitoredResourcesSearchItemPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param value property value
+         * @param value Property Value.
          * 
          * @return builder
          * 

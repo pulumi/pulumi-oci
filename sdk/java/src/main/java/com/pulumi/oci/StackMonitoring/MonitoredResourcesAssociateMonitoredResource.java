@@ -19,7 +19,9 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
  * 
- * Create an association between two monitored resources.
+ * Create an association between two monitored resources. Associations can be created
+ * between resources from different compartments as long they are in same tenancy.
+ * User should have required access in both the compartments.
  * 
  * ## Example Usage
  * ```java
@@ -66,112 +68,132 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource")
 public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.resources.CustomResource {
     /**
-     * Association type to be created between source and destination resources
+     * Association type to be created between source and destination resources.
      * 
      */
     @Export(name="associationType", type=String.class, parameters={})
     private Output<String> associationType;
 
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type to be created between source and destination resources.
      * 
      */
     public Output<String> associationType() {
         return this.associationType;
     }
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Association category. Possible values are:
+     * * System created (SYSTEM),
+     * * User created using API (USER_API)
+     * * User created using tags (USER_TAG_ASSOC).
+     * 
+     */
+    @Export(name="category", type=String.class, parameters={})
+    private Output<String> category;
+
+    /**
+     * @return Association category. Possible values are:
+     * * System created (SYSTEM),
+     * * User created using API (USER_API)
+     * * User created using tags (USER_TAG_ASSOC).
+     * 
+     */
+    public Output<String> category() {
+        return this.category;
+    }
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Association Resource Details
+     * Association Resource Details.
      * 
      */
     @Export(name="destinationResourceDetails", type=List.class, parameters={MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail.class})
     private Output<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>> destinationResourceDetails;
 
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public Output<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>> destinationResourceDetails() {
         return this.destinationResourceDetails;
     }
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="destinationResourceId", type=String.class, parameters={})
     private Output<String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> destinationResourceId() {
         return this.destinationResourceId;
     }
     /**
-     * Association Resource Details
+     * Association Resource Details.
      * 
      */
     @Export(name="sourceResourceDetails", type=List.class, parameters={MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail.class})
     private Output<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>> sourceResourceDetails;
 
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public Output<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>> sourceResourceDetails() {
         return this.sourceResourceDetails;
     }
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="sourceResourceId", type=String.class, parameters={})
     private Output<String> sourceResourceId;
 
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> sourceResourceId() {
         return this.sourceResourceId;
     }
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="tenantId", type=String.class, parameters={})
     private Output<String> tenantId;
 
     /**
-     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> tenantId() {
         return this.tenantId;
     }
     /**
-     * The time when the association was created. An RFC3339 formatted datetime string
+     * The time when the association was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The time when the association was created. An RFC3339 formatted datetime string
+     * @return The time when the association was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

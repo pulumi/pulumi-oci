@@ -11,6 +11,7 @@ import java.util.Objects;
 public final class GetShapeShapeMemoryOption {
     private Double defaultPerOcpuInGbs;
     private Double maxInGbs;
+    private Double maxPerNumaNodeInGbs;
     private Double maxPerOcpuInGbs;
     private Double minInGbs;
     private Double minPerOcpuInGbs;
@@ -21,6 +22,9 @@ public final class GetShapeShapeMemoryOption {
     }
     public Double maxInGbs() {
         return this.maxInGbs;
+    }
+    public Double maxPerNumaNodeInGbs() {
+        return this.maxPerNumaNodeInGbs;
     }
     public Double maxPerOcpuInGbs() {
         return this.maxPerOcpuInGbs;
@@ -43,6 +47,7 @@ public final class GetShapeShapeMemoryOption {
     public static final class Builder {
         private Double defaultPerOcpuInGbs;
         private Double maxInGbs;
+        private Double maxPerNumaNodeInGbs;
         private Double maxPerOcpuInGbs;
         private Double minInGbs;
         private Double minPerOcpuInGbs;
@@ -51,6 +56,7 @@ public final class GetShapeShapeMemoryOption {
     	      Objects.requireNonNull(defaults);
     	      this.defaultPerOcpuInGbs = defaults.defaultPerOcpuInGbs;
     	      this.maxInGbs = defaults.maxInGbs;
+    	      this.maxPerNumaNodeInGbs = defaults.maxPerNumaNodeInGbs;
     	      this.maxPerOcpuInGbs = defaults.maxPerOcpuInGbs;
     	      this.minInGbs = defaults.minInGbs;
     	      this.minPerOcpuInGbs = defaults.minPerOcpuInGbs;
@@ -64,6 +70,11 @@ public final class GetShapeShapeMemoryOption {
         @CustomType.Setter
         public Builder maxInGbs(Double maxInGbs) {
             this.maxInGbs = Objects.requireNonNull(maxInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxPerNumaNodeInGbs(Double maxPerNumaNodeInGbs) {
+            this.maxPerNumaNodeInGbs = Objects.requireNonNull(maxPerNumaNodeInGbs);
             return this;
         }
         @CustomType.Setter
@@ -85,6 +96,7 @@ public final class GetShapeShapeMemoryOption {
             final var o = new GetShapeShapeMemoryOption();
             o.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
             o.maxInGbs = maxInGbs;
+            o.maxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
             o.maxPerOcpuInGbs = maxPerOcpuInGbs;
             o.minInGbs = minInGbs;
             o.minPerOcpuInGbs = minPerOcpuInGbs;

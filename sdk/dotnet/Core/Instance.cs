@@ -306,6 +306,12 @@ namespace Pulumi.Oci.Core
         public Output<string> IpxeScript { get; private set; } = null!;
 
         /// <summary>
+        /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+        /// </summary>
+        [Output("isCrossNumaNode")]
+        public Output<bool> IsCrossNumaNode { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         /// </summary>
         [Output("isPvEncryptionInTransitEnabled")]
@@ -796,6 +802,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("ipxeScript")]
         public Input<string>? IpxeScript { get; set; }
+
+        /// <summary>
+        /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+        /// </summary>
+        [Input("isCrossNumaNode")]
+        public Input<bool>? IsCrossNumaNode { get; set; }
 
         /// <summary>
         /// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).

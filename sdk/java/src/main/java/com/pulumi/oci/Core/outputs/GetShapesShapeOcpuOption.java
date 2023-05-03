@@ -15,6 +15,11 @@ public final class GetShapesShapeOcpuOption {
      */
     private Double max;
     /**
+     * @return The maximum number of cores available per NUMA node.
+     * 
+     */
+    private Double maxPerNumaNode;
+    /**
      * @return The minimum allowed percentage of cores enabled.
      * 
      */
@@ -27,6 +32,13 @@ public final class GetShapesShapeOcpuOption {
      */
     public Double max() {
         return this.max;
+    }
+    /**
+     * @return The maximum number of cores available per NUMA node.
+     * 
+     */
+    public Double maxPerNumaNode() {
+        return this.maxPerNumaNode;
     }
     /**
      * @return The minimum allowed percentage of cores enabled.
@@ -46,17 +58,24 @@ public final class GetShapesShapeOcpuOption {
     @CustomType.Builder
     public static final class Builder {
         private Double max;
+        private Double maxPerNumaNode;
         private Double min;
         public Builder() {}
         public Builder(GetShapesShapeOcpuOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
+    	      this.maxPerNumaNode = defaults.maxPerNumaNode;
     	      this.min = defaults.min;
         }
 
         @CustomType.Setter
         public Builder max(Double max) {
             this.max = Objects.requireNonNull(max);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxPerNumaNode(Double maxPerNumaNode) {
+            this.maxPerNumaNode = Objects.requireNonNull(maxPerNumaNode);
             return this;
         }
         @CustomType.Setter
@@ -67,6 +86,7 @@ public final class GetShapesShapeOcpuOption {
         public GetShapesShapeOcpuOption build() {
             final var o = new GetShapesShapeOcpuOption();
             o.max = max;
+            o.maxPerNumaNode = maxPerNumaNode;
             o.min = min;
             return o;
         }

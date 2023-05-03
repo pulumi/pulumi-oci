@@ -76,6 +76,8 @@ type VbInstance struct {
 
 	// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints VbInstanceAlternateCustomEndpointArrayOutput `pulumi:"alternateCustomEndpoints"`
+	// A list of associated attachments to other services
+	Attachments VbInstanceAttachmentArrayOutput `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -88,14 +90,24 @@ type VbInstance struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Information for IDCS access
+	IdcsInfos VbInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId pulumi.StringPtrOutput `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
 	InstanceUrl pulumi.StringOutput `pulumi:"instanceUrl"`
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolOutput `pulumi:"isVisualBuilderEnabled"`
+	// The NAT gateway IP address for the VB management VCN
+	ManagementNatGatewayIp pulumi.StringOutput `pulumi:"managementNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+	ManagementVcnId pulumi.StringOutput `pulumi:"managementVcnId"`
 	// (Updatable) The number of Nodes
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
+	// The NAT gateway IP address for the VB service VCN
+	ServiceNatGatewayIp pulumi.StringOutput `pulumi:"serviceNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+	ServiceVcnId pulumi.StringOutput `pulumi:"serviceVcnId"`
 	// The current state of the vb instance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -155,6 +167,8 @@ func GetVbInstance(ctx *pulumi.Context,
 type vbInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints []VbInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	// A list of associated attachments to other services
+	Attachments []VbInstanceAttachment `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -167,14 +181,24 @@ type vbInstanceState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Information for IDCS access
+	IdcsInfos []VbInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId *string `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
 	InstanceUrl *string `pulumi:"instanceUrl"`
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
+	// The NAT gateway IP address for the VB management VCN
+	ManagementNatGatewayIp *string `pulumi:"managementNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+	ManagementVcnId *string `pulumi:"managementVcnId"`
 	// (Updatable) The number of Nodes
 	NodeCount *int `pulumi:"nodeCount"`
+	// The NAT gateway IP address for the VB service VCN
+	ServiceNatGatewayIp *string `pulumi:"serviceNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+	ServiceVcnId *string `pulumi:"serviceVcnId"`
 	// The current state of the vb instance.
 	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -190,6 +214,8 @@ type vbInstanceState struct {
 type VbInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints VbInstanceAlternateCustomEndpointArrayInput
+	// A list of associated attachments to other services
+	Attachments VbInstanceAttachmentArrayInput
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringPtrInput
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -202,14 +228,24 @@ type VbInstanceState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Information for IDCS access
+	IdcsInfos VbInstanceIdcsInfoArrayInput
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId pulumi.StringPtrInput
 	// The Vb Instance URL.
 	InstanceUrl pulumi.StringPtrInput
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolPtrInput
+	// The NAT gateway IP address for the VB management VCN
+	ManagementNatGatewayIp pulumi.StringPtrInput
+	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+	ManagementVcnId pulumi.StringPtrInput
 	// (Updatable) The number of Nodes
 	NodeCount pulumi.IntPtrInput
+	// The NAT gateway IP address for the VB service VCN
+	ServiceNatGatewayIp pulumi.StringPtrInput
+	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+	ServiceVcnId pulumi.StringPtrInput
 	// The current state of the vb instance.
 	State pulumi.StringPtrInput
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -365,6 +401,11 @@ func (o VbInstanceOutput) AlternateCustomEndpoints() VbInstanceAlternateCustomEn
 	return o.ApplyT(func(v *VbInstance) VbInstanceAlternateCustomEndpointArrayOutput { return v.AlternateCustomEndpoints }).(VbInstanceAlternateCustomEndpointArrayOutput)
 }
 
+// A list of associated attachments to other services
+func (o VbInstanceOutput) Attachments() VbInstanceAttachmentArrayOutput {
+	return o.ApplyT(func(v *VbInstance) VbInstanceAttachmentArrayOutput { return v.Attachments }).(VbInstanceAttachmentArrayOutput)
+}
+
 // (Updatable) Compartment Identifier.
 func (o VbInstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -395,6 +436,11 @@ func (o VbInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// Information for IDCS access
+func (o VbInstanceOutput) IdcsInfos() VbInstanceIdcsInfoArrayOutput {
+	return o.ApplyT(func(v *VbInstance) VbInstanceIdcsInfoArrayOutput { return v.IdcsInfos }).(VbInstanceIdcsInfoArrayOutput)
+}
+
 // (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 func (o VbInstanceOutput) IdcsOpenId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.StringPtrOutput { return v.IdcsOpenId }).(pulumi.StringPtrOutput)
@@ -410,9 +456,29 @@ func (o VbInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.BoolOutput { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
 }
 
+// The NAT gateway IP address for the VB management VCN
+func (o VbInstanceOutput) ManagementNatGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v *VbInstance) pulumi.StringOutput { return v.ManagementNatGatewayIp }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+func (o VbInstanceOutput) ManagementVcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VbInstance) pulumi.StringOutput { return v.ManagementVcnId }).(pulumi.StringOutput)
+}
+
 // (Updatable) The number of Nodes
 func (o VbInstanceOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// The NAT gateway IP address for the VB service VCN
+func (o VbInstanceOutput) ServiceNatGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v *VbInstance) pulumi.StringOutput { return v.ServiceNatGatewayIp }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+func (o VbInstanceOutput) ServiceVcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VbInstance) pulumi.StringOutput { return v.ServiceVcnId }).(pulumi.StringOutput)
 }
 
 // The current state of the vb instance.

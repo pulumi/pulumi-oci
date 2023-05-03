@@ -14,7 +14,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
         /// 
-        /// Gets a monitored resource by identifier
+        /// Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +45,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
         /// 
-        /// Gets a monitored resource by identifier
+        /// Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -105,20 +107,22 @@ namespace Pulumi.Oci.StackMonitoring
     [OutputType]
     public sealed class GetMonitoredResourceResult
     {
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceAdditionalAliasResult> AdditionalAliases;
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceAdditionalCredentialResult> AdditionalCredentials;
         /// <summary>
         /// Monitored Resource Alias Credential Details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitoredResourceAliasResult> Aliases;
         /// <summary>
-        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Monitored Resource Credential Details
+        /// Monitored Resource Credential Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitoredResourceCredentialResult> Credentials;
         /// <summary>
-        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
+        /// Connection details for the database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitoredResourceDatabaseConnectionDetailResult> DatabaseConnectionDetails;
         /// <summary>
@@ -130,7 +134,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         /// </summary>
         public readonly string ExternalId;
         public readonly string ExternalResourceId;
@@ -143,7 +147,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly string HostName;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        /// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -152,11 +156,11 @@ namespace Pulumi.Oci.StackMonitoring
         public readonly string ManagementAgentId;
         public readonly string MonitoredResourceId;
         /// <summary>
-        /// property name
+        /// Property Name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// List of monitored resource properties
+        /// List of monitored resource properties.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitoredResourcePropertyResult> Properties;
         /// <summary>
@@ -172,24 +176,28 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string TenantId;
         /// <summary>
-        /// The time the the resource was created. An RFC3339 formatted datetime string
+        /// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the the resource was updated. An RFC3339 formatted datetime string
+        /// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Monitored resource type
+        /// Monitored Resource Type.
         /// </summary>
         public readonly string Type;
 
         [OutputConstructor]
         private GetMonitoredResourceResult(
+            ImmutableArray<Outputs.GetMonitoredResourceAdditionalAliasResult> additionalAliases,
+
+            ImmutableArray<Outputs.GetMonitoredResourceAdditionalCredentialResult> additionalCredentials,
+
             ImmutableArray<Outputs.GetMonitoredResourceAliasResult> aliases,
 
             string compartmentId,
@@ -234,6 +242,8 @@ namespace Pulumi.Oci.StackMonitoring
 
             string type)
         {
+            AdditionalAliases = additionalAliases;
+            AdditionalCredentials = additionalCredentials;
             Aliases = aliases;
             CompartmentId = compartmentId;
             Credentials = credentials;

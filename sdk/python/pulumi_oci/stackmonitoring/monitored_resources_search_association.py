@@ -26,14 +26,14 @@ class MonitoredResourcesSearchAssociationArgs:
                  source_resource_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesSearchAssociation resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] association_type: Association type to be created between source and destination resources
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
+        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
+        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if association_type is not None:
@@ -55,7 +55,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -67,7 +67,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="associationType")
     def association_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Association type to be created between source and destination resources
+        Association type filter to search associated resources.
         """
         return pulumi.get(self, "association_type")
 
@@ -79,7 +79,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "destination_resource_id")
 
@@ -91,7 +91,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="destinationResourceName")
     def destination_resource_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
         """
         return pulumi.get(self, "destination_resource_name")
 
@@ -103,7 +103,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="destinationResourceType")
     def destination_resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
         """
         return pulumi.get(self, "destination_resource_type")
 
@@ -115,7 +115,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "source_resource_id")
 
@@ -127,7 +127,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="sourceResourceName")
     def source_resource_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
         """
         return pulumi.get(self, "source_resource_name")
 
@@ -139,7 +139,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
         """
         return pulumi.get(self, "source_resource_type")
 
@@ -162,15 +162,15 @@ class _MonitoredResourcesSearchAssociationState:
                  source_resource_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesSearchAssociation resources.
-        :param pulumi.Input[str] association_type: Association type to be created between source and destination resources
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type
+        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemArgs']]] items: List of Monitored Resource Associations.
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type
+        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type.
         """
         if association_type is not None:
             pulumi.set(__self__, "association_type", association_type)
@@ -195,7 +195,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="associationType")
     def association_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Association type to be created between source and destination resources
+        Association type filter to search associated resources.
         """
         return pulumi.get(self, "association_type")
 
@@ -207,7 +207,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -219,7 +219,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "destination_resource_id")
 
@@ -231,7 +231,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="destinationResourceName")
     def destination_resource_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
         """
         return pulumi.get(self, "destination_resource_name")
 
@@ -243,7 +243,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="destinationResourceType")
     def destination_resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
         """
         return pulumi.get(self, "destination_resource_type")
 
@@ -267,7 +267,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "source_resource_id")
 
@@ -279,7 +279,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="sourceResourceName")
     def source_resource_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
         """
         return pulumi.get(self, "source_resource_name")
 
@@ -291,7 +291,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
         """
         return pulumi.get(self, "source_resource_type")
 
@@ -317,7 +317,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         """
         This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
-        Returns a list of monitored resource associations.
+        Search associations in the given compartment based on the search criteria.
 
         ## Example Usage
 
@@ -346,14 +346,14 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] association_type: Association type to be created between source and destination resources
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type
+        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
+        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type.
         """
         ...
     @overload
@@ -364,7 +364,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         """
         This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
-        Returns a list of monitored resource associations.
+        Search associations in the given compartment based on the search criteria.
 
         ## Example Usage
 
@@ -460,15 +460,15 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] association_type: Association type to be created between source and destination resources
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type
+        :param pulumi.Input[str] association_type: Association type filter to search associated resources.
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchAssociationItemArgs']]]] items: List of Monitored Resource Associations.
-        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name
-        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type
+        :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
+        :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -489,7 +489,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="associationType")
     def association_type(self) -> pulumi.Output[Optional[str]]:
         """
-        Association type to be created between source and destination resources
+        Association type filter to search associated resources.
         """
         return pulumi.get(self, "association_type")
 
@@ -497,7 +497,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -505,7 +505,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> pulumi.Output[Optional[str]]:
         """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "destination_resource_id")
 
@@ -513,7 +513,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="destinationResourceName")
     def destination_resource_name(self) -> pulumi.Output[Optional[str]]:
         """
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
         """
         return pulumi.get(self, "destination_resource_name")
 
@@ -521,7 +521,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="destinationResourceType")
     def destination_resource_type(self) -> pulumi.Output[Optional[str]]:
         """
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
         """
         return pulumi.get(self, "destination_resource_type")
 
@@ -537,7 +537,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> pulumi.Output[Optional[str]]:
         """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "source_resource_id")
 
@@ -545,7 +545,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="sourceResourceName")
     def source_resource_name(self) -> pulumi.Output[Optional[str]]:
         """
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
         """
         return pulumi.get(self, "source_resource_name")
 
@@ -553,7 +553,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> pulumi.Output[Optional[str]]:
         """
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
         """
         return pulumi.get(self, "source_resource_type")
 

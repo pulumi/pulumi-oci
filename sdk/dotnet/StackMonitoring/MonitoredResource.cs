@@ -12,7 +12,9 @@ namespace Pulumi.Oci.StackMonitoring
     /// <summary>
     /// This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
     /// 
-    /// Creates a new monitored resource for the given resource type
+    /// Creates a new monitored resource for the given resource type with the details and submits
+    /// a work request for promoting the resource to agent. Once the resource is successfully
+    /// added to agent, resource state will be marked active.
     /// 
     /// ## Example Usage
     /// 
@@ -29,6 +31,40 @@ namespace Pulumi.Oci.StackMonitoring
     ///         CompartmentId = @var.Compartment_id,
     ///         Name = @var.Monitored_resource_name,
     ///         Type = @var.Monitored_resource_type,
+    ///         AdditionalAliases = new[]
+    ///         {
+    ///             new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalAliasArgs
+    ///             {
+    ///                 Credential = new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalAliasCredentialArgs
+    ///                 {
+    ///                     Name = @var.Monitored_resource_additional_aliases_credential_name,
+    ///                     Service = @var.Monitored_resource_additional_aliases_credential_service,
+    ///                     Source = @var.Monitored_resource_additional_aliases_credential_source,
+    ///                 },
+    ///                 Name = @var.Monitored_resource_additional_aliases_name,
+    ///                 Source = @var.Monitored_resource_additional_aliases_source,
+    ///             },
+    ///         },
+    ///         AdditionalCredentials = new[]
+    ///         {
+    ///             new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalCredentialArgs
+    ///             {
+    ///                 CredentialType = @var.Monitored_resource_additional_credentials_credential_type,
+    ///                 Description = @var.Monitored_resource_additional_credentials_description,
+    ///                 KeyId = oci_kms_key.Test_key.Id,
+    ///                 Name = @var.Monitored_resource_additional_credentials_name,
+    ///                 Properties = new[]
+    ///                 {
+    ///                     new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalCredentialPropertyArgs
+    ///                     {
+    ///                         Name = @var.Monitored_resource_additional_credentials_properties_name,
+    ///                         Value = @var.Monitored_resource_additional_credentials_properties_value,
+    ///                     },
+    ///                 },
+    ///                 Source = @var.Monitored_resource_additional_credentials_source,
+    ///                 Type = @var.Monitored_resource_additional_credentials_type,
+    ///             },
+    ///         },
     ///         Aliases = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesArgs
     ///         {
     ///             Credential = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesCredentialArgs
@@ -67,9 +103,17 @@ namespace Pulumi.Oci.StackMonitoring
     ///             DbUniqueName = @var.Monitored_resource_database_connection_details_db_unique_name,
     ///             SslSecretId = oci_vault_secret.Test_secret.Id,
     ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
     ///         DisplayName = @var.Monitored_resource_display_name,
     ///         ExternalResourceId = @var.Monitored_resource_external_resource_id,
     ///         ExternalId = oci_stack_monitoring_external.Test_external.Id,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
     ///         HostName = @var.Monitored_resource_host_name,
     ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
     ///         Properties = new[]
@@ -98,31 +142,43 @@ namespace Pulumi.Oci.StackMonitoring
     public partial class MonitoredResource : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+        /// </summary>
+        [Output("additionalAliases")]
+        public Output<ImmutableArray<Outputs.MonitoredResourceAdditionalAlias>> AdditionalAliases { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+        /// </summary>
+        [Output("additionalCredentials")]
+        public Output<ImmutableArray<Outputs.MonitoredResourceAdditionalCredential>> AdditionalCredentials { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Monitored Resource Alias Credential Details
         /// </summary>
         [Output("aliases")]
         public Output<Outputs.MonitoredResourceAliases?> Aliases { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Monitored Resource Credential Details
+        /// (Updatable) Monitored Resource Credential Details.
         /// </summary>
         [Output("credentials")]
         public Output<Outputs.MonitoredResourceCredentials?> Credentials { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+        /// (Updatable) Connection details for the database.
         /// </summary>
         [Output("databaseConnectionDetails")]
         public Output<Outputs.MonitoredResourceDatabaseConnectionDetails?> DatabaseConnectionDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -146,13 +202,13 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string?> ExternalResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Host name of the monitored resource
+        /// (Updatable) Host name of the monitored resource.
         /// </summary>
         [Output("hostName")]
         public Output<string?> HostName { get; private set; } = null!;
@@ -164,19 +220,19 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string?> ManagementAgentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of monitored resource properties
+        /// (Updatable) List of monitored resource properties.
         /// </summary>
         [Output("properties")]
         public Output<ImmutableArray<Outputs.MonitoredResourceProperty>> Properties { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Time zone in the form of tz database canonical zone ID.
+        /// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         /// </summary>
         [Output("resourceTimeZone")]
         public Output<string?> ResourceTimeZone { get; private set; } = null!;
@@ -194,25 +250,25 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("tenantId")]
         public Output<string> TenantId { get; private set; } = null!;
 
         /// <summary>
-        /// The time the the resource was created. An RFC3339 formatted datetime string
+        /// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the the resource was updated. An RFC3339 formatted datetime string
+        /// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Monitored resource type
+        /// Monitored Resource Type.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -263,6 +319,30 @@ namespace Pulumi.Oci.StackMonitoring
 
     public sealed class MonitoredResourceArgs : global::Pulumi.ResourceArgs
     {
+        [Input("additionalAliases")]
+        private InputList<Inputs.MonitoredResourceAdditionalAliasArgs>? _additionalAliases;
+
+        /// <summary>
+        /// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourceAdditionalAliasArgs> AdditionalAliases
+        {
+            get => _additionalAliases ?? (_additionalAliases = new InputList<Inputs.MonitoredResourceAdditionalAliasArgs>());
+            set => _additionalAliases = value;
+        }
+
+        [Input("additionalCredentials")]
+        private InputList<Inputs.MonitoredResourceAdditionalCredentialArgs>? _additionalCredentials;
+
+        /// <summary>
+        /// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourceAdditionalCredentialArgs> AdditionalCredentials
+        {
+            get => _additionalCredentials ?? (_additionalCredentials = new InputList<Inputs.MonitoredResourceAdditionalCredentialArgs>());
+            set => _additionalCredentials = value;
+        }
+
         /// <summary>
         /// (Updatable) Monitored Resource Alias Credential Details
         /// </summary>
@@ -270,120 +350,28 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<Inputs.MonitoredResourceAliasesArgs>? Aliases { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Monitored Resource Credential Details
+        /// (Updatable) Monitored Resource Credential Details.
         /// </summary>
         [Input("credentials")]
         public Input<Inputs.MonitoredResourceCredentialsArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+        /// (Updatable) Connection details for the database.
         /// </summary>
         [Input("databaseConnectionDetails")]
         public Input<Inputs.MonitoredResourceDatabaseConnectionDetailsArgs>? DatabaseConnectionDetails { get; set; }
-
-        /// <summary>
-        /// (Updatable) Monitored resource display name.
-        /// </summary>
-        [Input("displayName")]
-        public Input<string>? DisplayName { get; set; }
-
-        /// <summary>
-        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
-        /// </summary>
-        [Input("externalId")]
-        public Input<string>? ExternalId { get; set; }
-
-        /// <summary>
-        /// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
-        /// </summary>
-        [Input("externalResourceId")]
-        public Input<string>? ExternalResourceId { get; set; }
-
-        /// <summary>
-        /// (Updatable) Host name of the monitored resource
-        /// </summary>
-        [Input("hostName")]
-        public Input<string>? HostName { get; set; }
-
-        /// <summary>
-        /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// </summary>
-        [Input("managementAgentId")]
-        public Input<string>? ManagementAgentId { get; set; }
-
-        /// <summary>
-        /// (Updatable) property name
-        /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
-
-        [Input("properties")]
-        private InputList<Inputs.MonitoredResourcePropertyArgs>? _properties;
-
-        /// <summary>
-        /// (Updatable) List of monitored resource properties
-        /// </summary>
-        public InputList<Inputs.MonitoredResourcePropertyArgs> Properties
-        {
-            get => _properties ?? (_properties = new InputList<Inputs.MonitoredResourcePropertyArgs>());
-            set => _properties = value;
-        }
-
-        /// <summary>
-        /// (Updatable) Time zone in the form of tz database canonical zone ID.
-        /// </summary>
-        [Input("resourceTimeZone")]
-        public Input<string>? ResourceTimeZone { get; set; }
-
-        /// <summary>
-        /// Monitored resource type
-        /// </summary>
-        [Input("type", required: true)]
-        public Input<string> Type { get; set; } = null!;
-
-        public MonitoredResourceArgs()
-        {
-        }
-        public static new MonitoredResourceArgs Empty => new MonitoredResourceArgs();
-    }
-
-    public sealed class MonitoredResourceState : global::Pulumi.ResourceArgs
-    {
-        /// <summary>
-        /// (Updatable) Monitored Resource Alias Credential Details
-        /// </summary>
-        [Input("aliases")]
-        public Input<Inputs.MonitoredResourceAliasesGetArgs>? Aliases { get; set; }
-
-        /// <summary>
-        /// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        /// </summary>
-        [Input("compartmentId")]
-        public Input<string>? CompartmentId { get; set; }
-
-        /// <summary>
-        /// (Updatable) Monitored Resource Credential Details
-        /// </summary>
-        [Input("credentials")]
-        public Input<Inputs.MonitoredResourceCredentialsGetArgs>? Credentials { get; set; }
-
-        /// <summary>
-        /// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
-        /// </summary>
-        [Input("databaseConnectionDetails")]
-        public Input<Inputs.MonitoredResourceDatabaseConnectionDetailsGetArgs>? DatabaseConnectionDetails { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -413,7 +401,7 @@ namespace Pulumi.Oci.StackMonitoring
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -422,7 +410,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// (Updatable) Host name of the monitored resource
+        /// (Updatable) Host name of the monitored resource.
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
@@ -434,7 +422,147 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? ManagementAgentId { get; set; }
 
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
+        /// </summary>
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
+
+        [Input("properties")]
+        private InputList<Inputs.MonitoredResourcePropertyArgs>? _properties;
+
+        /// <summary>
+        /// (Updatable) List of monitored resource properties.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourcePropertyArgs> Properties
+        {
+            get => _properties ?? (_properties = new InputList<Inputs.MonitoredResourcePropertyArgs>());
+            set => _properties = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+        /// </summary>
+        [Input("resourceTimeZone")]
+        public Input<string>? ResourceTimeZone { get; set; }
+
+        /// <summary>
+        /// Monitored Resource Type.
+        /// </summary>
+        [Input("type", required: true)]
+        public Input<string> Type { get; set; } = null!;
+
+        public MonitoredResourceArgs()
+        {
+        }
+        public static new MonitoredResourceArgs Empty => new MonitoredResourceArgs();
+    }
+
+    public sealed class MonitoredResourceState : global::Pulumi.ResourceArgs
+    {
+        [Input("additionalAliases")]
+        private InputList<Inputs.MonitoredResourceAdditionalAliasGetArgs>? _additionalAliases;
+
+        /// <summary>
+        /// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourceAdditionalAliasGetArgs> AdditionalAliases
+        {
+            get => _additionalAliases ?? (_additionalAliases = new InputList<Inputs.MonitoredResourceAdditionalAliasGetArgs>());
+            set => _additionalAliases = value;
+        }
+
+        [Input("additionalCredentials")]
+        private InputList<Inputs.MonitoredResourceAdditionalCredentialGetArgs>? _additionalCredentials;
+
+        /// <summary>
+        /// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourceAdditionalCredentialGetArgs> AdditionalCredentials
+        {
+            get => _additionalCredentials ?? (_additionalCredentials = new InputList<Inputs.MonitoredResourceAdditionalCredentialGetArgs>());
+            set => _additionalCredentials = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Monitored Resource Alias Credential Details
+        /// </summary>
+        [Input("aliases")]
+        public Input<Inputs.MonitoredResourceAliasesGetArgs>? Aliases { get; set; }
+
+        /// <summary>
+        /// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Monitored Resource Credential Details.
+        /// </summary>
+        [Input("credentials")]
+        public Input<Inputs.MonitoredResourceCredentialsGetArgs>? Credentials { get; set; }
+
+        /// <summary>
+        /// (Updatable) Connection details for the database.
+        /// </summary>
+        [Input("databaseConnectionDetails")]
+        public Input<Inputs.MonitoredResourceDatabaseConnectionDetailsGetArgs>? DatabaseConnectionDetails { get; set; }
+
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Monitored resource display name.
+        /// </summary>
+        [Input("displayName")]
+        public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        [Input("externalId")]
+        public Input<string>? ExternalId { get; set; }
+
+        /// <summary>
+        /// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
+        /// </summary>
+        [Input("externalResourceId")]
+        public Input<string>? ExternalResourceId { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Host name of the monitored resource.
+        /// </summary>
+        [Input("hostName")]
+        public Input<string>? HostName { get; set; }
+
+        /// <summary>
+        /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("managementAgentId")]
+        public Input<string>? ManagementAgentId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Property Name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -443,7 +571,7 @@ namespace Pulumi.Oci.StackMonitoring
         private InputList<Inputs.MonitoredResourcePropertyGetArgs>? _properties;
 
         /// <summary>
-        /// (Updatable) List of monitored resource properties
+        /// (Updatable) List of monitored resource properties.
         /// </summary>
         public InputList<Inputs.MonitoredResourcePropertyGetArgs> Properties
         {
@@ -452,7 +580,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// (Updatable) Time zone in the form of tz database canonical zone ID.
+        /// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         /// </summary>
         [Input("resourceTimeZone")]
         public Input<string>? ResourceTimeZone { get; set; }
@@ -476,25 +604,25 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }
 
         /// <summary>
-        /// The time the the resource was created. An RFC3339 formatted datetime string
+        /// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the the resource was updated. An RFC3339 formatted datetime string
+        /// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Monitored resource type
+        /// Monitored Resource Type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

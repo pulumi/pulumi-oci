@@ -79,7 +79,7 @@ type LookupDatabaseResult struct {
 	// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	DbVersion    string `pulumi:"dbVersion"`
-	// The database workload type.
+	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
 	DbWorkload string `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -222,7 +222,7 @@ func (o LookupDatabaseResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbVersion }).(pulumi.StringOutput)
 }
 
-// The database workload type.
+// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
 func (o LookupDatabaseResultOutput) DbWorkload() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DbWorkload }).(pulumi.StringOutput)
 }

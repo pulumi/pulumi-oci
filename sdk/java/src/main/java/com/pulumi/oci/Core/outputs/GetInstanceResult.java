@@ -120,6 +120,11 @@ public final class GetInstanceResult {
      */
     private String ipxeScript;
     /**
+     * @return Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     * 
+     */
+    private Boolean isCrossNumaNode;
+    /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
      * 
      */
@@ -350,6 +355,13 @@ public final class GetInstanceResult {
         return this.ipxeScript;
     }
     /**
+     * @return Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     * 
+     */
+    public Boolean isCrossNumaNode() {
+        return this.isCrossNumaNode;
+    }
+    /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
      * 
      */
@@ -507,6 +519,7 @@ public final class GetInstanceResult {
         private String instanceId;
         private List<GetInstanceInstanceOption> instanceOptions;
         private String ipxeScript;
+        private Boolean isCrossNumaNode;
         private Boolean isPvEncryptionInTransitEnabled;
         private String launchMode;
         private List<GetInstanceLaunchOption> launchOptions;
@@ -550,6 +563,7 @@ public final class GetInstanceResult {
     	      this.instanceId = defaults.instanceId;
     	      this.instanceOptions = defaults.instanceOptions;
     	      this.ipxeScript = defaults.ipxeScript;
+    	      this.isCrossNumaNode = defaults.isCrossNumaNode;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
@@ -689,6 +703,11 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isCrossNumaNode(Boolean isCrossNumaNode) {
+            this.isCrossNumaNode = Objects.requireNonNull(isCrossNumaNode);
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
             return this;
@@ -821,6 +840,7 @@ public final class GetInstanceResult {
             o.instanceId = instanceId;
             o.instanceOptions = instanceOptions;
             o.ipxeScript = ipxeScript;
+            o.isCrossNumaNode = isCrossNumaNode;
             o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             o.launchMode = launchMode;
             o.launchOptions = launchOptions;

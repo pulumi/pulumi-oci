@@ -22,7 +22,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         /// </summary>
         public readonly string? ExternalId;
         /// <summary>
@@ -30,11 +30,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
-        /// A filter to return resources with host name match
+        /// A filter to return resources with host name match.
         /// </summary>
         public readonly string? HostName;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        /// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -42,11 +42,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? ManagementAgentId;
         /// <summary>
-        /// A filter to return resources that match exact resource name
+        /// A filter to return resources that match exact resource name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// List of monitored resource properties
+        /// List of monitored resource properties.
         /// </summary>
         public readonly ImmutableArray<Outputs.MonitoredResourcesSearchItemProperty> Properties;
         /// <summary>
@@ -58,15 +58,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
-        /// Monitored resource creation time. An RFC3339 formatted datetime string
+        /// Monitored resource creation time. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// Monitored resource updation time. An RFC3339 formatted datetime string
+        /// Monitored resource update time. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string? TimeUpdated;
         /// <summary>
-        /// A filter to return resources that match resource type
+        /// A filter to return resources that match resource type.
         /// </summary>
         public readonly string? Type;
 

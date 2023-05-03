@@ -13,7 +13,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourcesSearchAssociationItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Association type to be created between source and destination resources
+        /// Association type filter to search associated resources.
         /// </summary>
         [Input("associationType")]
         public Input<string>? AssociationType { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         private InputList<Inputs.MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs>? _destinationResourceDetails;
 
         /// <summary>
-        /// Association Resource Details
+        /// Association Resource Details.
         /// </summary>
         public InputList<Inputs.MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs> DestinationResourceDetails
         {
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("destinationResourceId")]
         public Input<string>? DestinationResourceId { get; set; }
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         private InputList<Inputs.MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs>? _sourceResourceDetails;
 
         /// <summary>
-        /// Association Resource Details
+        /// Association Resource Details.
         /// </summary>
         public InputList<Inputs.MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs> SourceResourceDetails
         {
@@ -49,13 +49,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("sourceResourceId")]
         public Input<string>? SourceResourceId { get; set; }
 
         /// <summary>
-        /// The time the the association was created. An RFC3339 formatted datetime string
+        /// The association creation time. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

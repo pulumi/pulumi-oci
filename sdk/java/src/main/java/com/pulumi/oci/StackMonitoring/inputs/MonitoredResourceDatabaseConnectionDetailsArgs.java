@@ -17,14 +17,14 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
     public static final MonitoredResourceDatabaseConnectionDetailsArgs Empty = new MonitoredResourceDatabaseConnectionDetailsArgs();
 
     /**
-     * (Updatable) Database connector Identifier
+     * (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="connectorId")
     private @Nullable Output<String> connectorId;
 
     /**
-     * @return (Updatable) Database connector Identifier
+     * @return (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> connectorId() {
@@ -32,14 +32,14 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
     }
 
     /**
-     * (Updatable) dbId of the database
+     * (Updatable) dbId of the database.
      * 
      */
     @Import(name="dbId")
     private @Nullable Output<String> dbId;
 
     /**
-     * @return (Updatable) dbId of the database
+     * @return (Updatable) dbId of the database.
      * 
      */
     public Optional<Output<String>> dbId() {
@@ -107,14 +107,14 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
     }
 
     /**
-     * (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="sslSecretId")
     private @Nullable Output<String> sslSecretId;
 
     /**
-     * @return (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> sslSecretId() {
@@ -152,7 +152,7 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         }
 
         /**
-         * @param connectorId (Updatable) Database connector Identifier
+         * @param connectorId (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         }
 
         /**
-         * @param connectorId (Updatable) Database connector Identifier
+         * @param connectorId (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         }
 
         /**
-         * @param dbId (Updatable) dbId of the database
+         * @param dbId (Updatable) dbId of the database.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         }
 
         /**
-         * @param dbId (Updatable) dbId of the database
+         * @param dbId (Updatable) dbId of the database.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         }
 
         /**
-         * @param sslSecretId (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sslSecretId (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         }
 
         /**
-         * @param sslSecretId (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sslSecretId (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 

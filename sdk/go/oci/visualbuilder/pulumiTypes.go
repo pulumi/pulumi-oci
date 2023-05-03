@@ -125,6 +125,142 @@ func (o VbInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) V
 	}).(VbInstanceAlternateCustomEndpointOutput)
 }
 
+type VbInstanceAttachment struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit *bool `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId *string `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole *string `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType *string `pulumi:"targetServiceType"`
+}
+
+// VbInstanceAttachmentInput is an input type that accepts VbInstanceAttachmentArgs and VbInstanceAttachmentOutput values.
+// You can construct a concrete instance of `VbInstanceAttachmentInput` via:
+//
+//	VbInstanceAttachmentArgs{...}
+type VbInstanceAttachmentInput interface {
+	pulumi.Input
+
+	ToVbInstanceAttachmentOutput() VbInstanceAttachmentOutput
+	ToVbInstanceAttachmentOutputWithContext(context.Context) VbInstanceAttachmentOutput
+}
+
+type VbInstanceAttachmentArgs struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
+}
+
+func (VbInstanceAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceAttachment)(nil)).Elem()
+}
+
+func (i VbInstanceAttachmentArgs) ToVbInstanceAttachmentOutput() VbInstanceAttachmentOutput {
+	return i.ToVbInstanceAttachmentOutputWithContext(context.Background())
+}
+
+func (i VbInstanceAttachmentArgs) ToVbInstanceAttachmentOutputWithContext(ctx context.Context) VbInstanceAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentOutput)
+}
+
+// VbInstanceAttachmentArrayInput is an input type that accepts VbInstanceAttachmentArray and VbInstanceAttachmentArrayOutput values.
+// You can construct a concrete instance of `VbInstanceAttachmentArrayInput` via:
+//
+//	VbInstanceAttachmentArray{ VbInstanceAttachmentArgs{...} }
+type VbInstanceAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToVbInstanceAttachmentArrayOutput() VbInstanceAttachmentArrayOutput
+	ToVbInstanceAttachmentArrayOutputWithContext(context.Context) VbInstanceAttachmentArrayOutput
+}
+
+type VbInstanceAttachmentArray []VbInstanceAttachmentInput
+
+func (VbInstanceAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VbInstanceAttachment)(nil)).Elem()
+}
+
+func (i VbInstanceAttachmentArray) ToVbInstanceAttachmentArrayOutput() VbInstanceAttachmentArrayOutput {
+	return i.ToVbInstanceAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i VbInstanceAttachmentArray) ToVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) VbInstanceAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentArrayOutput)
+}
+
+type VbInstanceAttachmentOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceAttachment)(nil)).Elem()
+}
+
+func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutput() VbInstanceAttachmentOutput {
+	return o
+}
+
+func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutputWithContext(ctx context.Context) VbInstanceAttachmentOutput {
+	return o
+}
+
+// * If role == `PARENT`, the attached instance was created by this service instance
+// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+func (o VbInstanceAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VbInstanceAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
+}
+
+// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+func (o VbInstanceAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// The dataplane instance URL of the attached instance
+func (o VbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
+}
+
+// The role of the target attachment.
+func (o VbInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
+}
+
+// The type of the target instance, such as "FUSION".
+func (o VbInstanceAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
+}
+
+type VbInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VbInstanceAttachment)(nil)).Elem()
+}
+
+func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutput() VbInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) VbInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o VbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) VbInstanceAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VbInstanceAttachment {
+		return vs[0].([]VbInstanceAttachment)[vs[1].(int)]
+	}).(VbInstanceAttachmentOutput)
+}
+
 type VbInstanceCustomEndpoint struct {
 	// (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
 	CertificateSecretId *string `pulumi:"certificateSecretId"`
@@ -298,6 +434,139 @@ func (o VbInstanceCustomEndpointPtrOutput) Hostname() pulumi.StringPtrOutput {
 		}
 		return &v.Hostname
 	}).(pulumi.StringPtrOutput)
+}
+
+type VbInstanceIdcsInfo struct {
+	// The IDCS application display name associated with the instance
+	IdcsAppDisplayName *string `pulumi:"idcsAppDisplayName"`
+	// The IDCS application ID associated with the instance
+	IdcsAppId *string `pulumi:"idcsAppId"`
+	// URL for the location of the IDCS Application (used by IDCS APIs)
+	IdcsAppLocationUrl *string `pulumi:"idcsAppLocationUrl"`
+	// The IDCS application name associated with the instance
+	IdcsAppName *string `pulumi:"idcsAppName"`
+	// The URL used as the primary audience for visual builder flows in this instance type: string
+	InstancePrimaryAudienceUrl *string `pulumi:"instancePrimaryAudienceUrl"`
+}
+
+// VbInstanceIdcsInfoInput is an input type that accepts VbInstanceIdcsInfoArgs and VbInstanceIdcsInfoOutput values.
+// You can construct a concrete instance of `VbInstanceIdcsInfoInput` via:
+//
+//	VbInstanceIdcsInfoArgs{...}
+type VbInstanceIdcsInfoInput interface {
+	pulumi.Input
+
+	ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInfoOutput
+	ToVbInstanceIdcsInfoOutputWithContext(context.Context) VbInstanceIdcsInfoOutput
+}
+
+type VbInstanceIdcsInfoArgs struct {
+	// The IDCS application display name associated with the instance
+	IdcsAppDisplayName pulumi.StringPtrInput `pulumi:"idcsAppDisplayName"`
+	// The IDCS application ID associated with the instance
+	IdcsAppId pulumi.StringPtrInput `pulumi:"idcsAppId"`
+	// URL for the location of the IDCS Application (used by IDCS APIs)
+	IdcsAppLocationUrl pulumi.StringPtrInput `pulumi:"idcsAppLocationUrl"`
+	// The IDCS application name associated with the instance
+	IdcsAppName pulumi.StringPtrInput `pulumi:"idcsAppName"`
+	// The URL used as the primary audience for visual builder flows in this instance type: string
+	InstancePrimaryAudienceUrl pulumi.StringPtrInput `pulumi:"instancePrimaryAudienceUrl"`
+}
+
+func (VbInstanceIdcsInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (i VbInstanceIdcsInfoArgs) ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInfoOutput {
+	return i.ToVbInstanceIdcsInfoOutputWithContext(context.Background())
+}
+
+func (i VbInstanceIdcsInfoArgs) ToVbInstanceIdcsInfoOutputWithContext(ctx context.Context) VbInstanceIdcsInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoOutput)
+}
+
+// VbInstanceIdcsInfoArrayInput is an input type that accepts VbInstanceIdcsInfoArray and VbInstanceIdcsInfoArrayOutput values.
+// You can construct a concrete instance of `VbInstanceIdcsInfoArrayInput` via:
+//
+//	VbInstanceIdcsInfoArray{ VbInstanceIdcsInfoArgs{...} }
+type VbInstanceIdcsInfoArrayInput interface {
+	pulumi.Input
+
+	ToVbInstanceIdcsInfoArrayOutput() VbInstanceIdcsInfoArrayOutput
+	ToVbInstanceIdcsInfoArrayOutputWithContext(context.Context) VbInstanceIdcsInfoArrayOutput
+}
+
+type VbInstanceIdcsInfoArray []VbInstanceIdcsInfoInput
+
+func (VbInstanceIdcsInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (i VbInstanceIdcsInfoArray) ToVbInstanceIdcsInfoArrayOutput() VbInstanceIdcsInfoArrayOutput {
+	return i.ToVbInstanceIdcsInfoArrayOutputWithContext(context.Background())
+}
+
+func (i VbInstanceIdcsInfoArray) ToVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) VbInstanceIdcsInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoArrayOutput)
+}
+
+type VbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceIdcsInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInfoOutput {
+	return o
+}
+
+func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutputWithContext(ctx context.Context) VbInstanceIdcsInfoOutput {
+	return o
+}
+
+// The IDCS application display name associated with the instance
+func (o VbInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppDisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The IDCS application ID associated with the instance
+func (o VbInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppId }).(pulumi.StringPtrOutput)
+}
+
+// URL for the location of the IDCS Application (used by IDCS APIs)
+func (o VbInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppLocationUrl }).(pulumi.StringPtrOutput)
+}
+
+// The IDCS application name associated with the instance
+func (o VbInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppName }).(pulumi.StringPtrOutput)
+}
+
+// The URL used as the primary audience for visual builder flows in this instance type: string
+func (o VbInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringPtrOutput)
+}
+
+type VbInstanceIdcsInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceIdcsInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (o VbInstanceIdcsInfoArrayOutput) ToVbInstanceIdcsInfoArrayOutput() VbInstanceIdcsInfoArrayOutput {
+	return o
+}
+
+func (o VbInstanceIdcsInfoArrayOutput) ToVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) VbInstanceIdcsInfoArrayOutput {
+	return o
+}
+
+func (o VbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) VbInstanceIdcsInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VbInstanceIdcsInfo {
+		return vs[0].([]VbInstanceIdcsInfo)[vs[1].(int)]
+	}).(VbInstanceIdcsInfoOutput)
 }
 
 type GetVbInstanceAlternateCustomEndpoint struct {
@@ -635,6 +904,142 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) In
 	}).(GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput)
 }
 
+type GetVbInstanceAttachment struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit bool `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId string `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole string `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType string `pulumi:"targetServiceType"`
+}
+
+// GetVbInstanceAttachmentInput is an input type that accepts GetVbInstanceAttachmentArgs and GetVbInstanceAttachmentOutput values.
+// You can construct a concrete instance of `GetVbInstanceAttachmentInput` via:
+//
+//	GetVbInstanceAttachmentArgs{...}
+type GetVbInstanceAttachmentInput interface {
+	pulumi.Input
+
+	ToGetVbInstanceAttachmentOutput() GetVbInstanceAttachmentOutput
+	ToGetVbInstanceAttachmentOutputWithContext(context.Context) GetVbInstanceAttachmentOutput
+}
+
+type GetVbInstanceAttachmentArgs struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+}
+
+func (GetVbInstanceAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceAttachment)(nil)).Elem()
+}
+
+func (i GetVbInstanceAttachmentArgs) ToGetVbInstanceAttachmentOutput() GetVbInstanceAttachmentOutput {
+	return i.ToGetVbInstanceAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetVbInstanceAttachmentArgs) ToGetVbInstanceAttachmentOutputWithContext(ctx context.Context) GetVbInstanceAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentOutput)
+}
+
+// GetVbInstanceAttachmentArrayInput is an input type that accepts GetVbInstanceAttachmentArray and GetVbInstanceAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetVbInstanceAttachmentArrayInput` via:
+//
+//	GetVbInstanceAttachmentArray{ GetVbInstanceAttachmentArgs{...} }
+type GetVbInstanceAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetVbInstanceAttachmentArrayOutput() GetVbInstanceAttachmentArrayOutput
+	ToGetVbInstanceAttachmentArrayOutputWithContext(context.Context) GetVbInstanceAttachmentArrayOutput
+}
+
+type GetVbInstanceAttachmentArray []GetVbInstanceAttachmentInput
+
+func (GetVbInstanceAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceAttachment)(nil)).Elem()
+}
+
+func (i GetVbInstanceAttachmentArray) ToGetVbInstanceAttachmentArrayOutput() GetVbInstanceAttachmentArrayOutput {
+	return i.ToGetVbInstanceAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetVbInstanceAttachmentArray) ToGetVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstanceAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentArrayOutput)
+}
+
+type GetVbInstanceAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstanceAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceAttachment)(nil)).Elem()
+}
+
+func (o GetVbInstanceAttachmentOutput) ToGetVbInstanceAttachmentOutput() GetVbInstanceAttachmentOutput {
+	return o
+}
+
+func (o GetVbInstanceAttachmentOutput) ToGetVbInstanceAttachmentOutputWithContext(ctx context.Context) GetVbInstanceAttachmentOutput {
+	return o
+}
+
+// * If role == `PARENT`, the attached instance was created by this service instance
+// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+func (o GetVbInstanceAttachmentOutput) IsImplicit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+}
+
+// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+func (o GetVbInstanceAttachmentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The dataplane instance URL of the attached instance
+func (o GetVbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+}
+
+// The role of the target attachment.
+func (o GetVbInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+}
+
+// The type of the target instance, such as "FUSION".
+func (o GetVbInstanceAttachmentOutput) TargetServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+}
+
+type GetVbInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstanceAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceAttachment)(nil)).Elem()
+}
+
+func (o GetVbInstanceAttachmentArrayOutput) ToGetVbInstanceAttachmentArrayOutput() GetVbInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVbInstanceAttachmentArrayOutput) ToGetVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstanceAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceAttachment {
+		return vs[0].([]GetVbInstanceAttachment)[vs[1].(int)]
+	}).(GetVbInstanceAttachmentOutput)
+}
+
 type GetVbInstanceCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
@@ -748,6 +1153,139 @@ func (o GetVbInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceCustomEndpoint {
 		return vs[0].([]GetVbInstanceCustomEndpoint)[vs[1].(int)]
 	}).(GetVbInstanceCustomEndpointOutput)
+}
+
+type GetVbInstanceIdcsInfo struct {
+	// The IDCS application display name associated with the instance
+	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
+	// The IDCS application ID associated with the instance
+	IdcsAppId string `pulumi:"idcsAppId"`
+	// URL for the location of the IDCS Application (used by IDCS APIs)
+	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
+	// The IDCS application name associated with the instance
+	IdcsAppName string `pulumi:"idcsAppName"`
+	// The URL used as the primary audience for visual builder flows in this instance type: string
+	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+}
+
+// GetVbInstanceIdcsInfoInput is an input type that accepts GetVbInstanceIdcsInfoArgs and GetVbInstanceIdcsInfoOutput values.
+// You can construct a concrete instance of `GetVbInstanceIdcsInfoInput` via:
+//
+//	GetVbInstanceIdcsInfoArgs{...}
+type GetVbInstanceIdcsInfoInput interface {
+	pulumi.Input
+
+	ToGetVbInstanceIdcsInfoOutput() GetVbInstanceIdcsInfoOutput
+	ToGetVbInstanceIdcsInfoOutputWithContext(context.Context) GetVbInstanceIdcsInfoOutput
+}
+
+type GetVbInstanceIdcsInfoArgs struct {
+	// The IDCS application display name associated with the instance
+	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
+	// The IDCS application ID associated with the instance
+	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
+	// URL for the location of the IDCS Application (used by IDCS APIs)
+	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
+	// The IDCS application name associated with the instance
+	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
+	// The URL used as the primary audience for visual builder flows in this instance type: string
+	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+}
+
+func (GetVbInstanceIdcsInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (i GetVbInstanceIdcsInfoArgs) ToGetVbInstanceIdcsInfoOutput() GetVbInstanceIdcsInfoOutput {
+	return i.ToGetVbInstanceIdcsInfoOutputWithContext(context.Background())
+}
+
+func (i GetVbInstanceIdcsInfoArgs) ToGetVbInstanceIdcsInfoOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoOutput)
+}
+
+// GetVbInstanceIdcsInfoArrayInput is an input type that accepts GetVbInstanceIdcsInfoArray and GetVbInstanceIdcsInfoArrayOutput values.
+// You can construct a concrete instance of `GetVbInstanceIdcsInfoArrayInput` via:
+//
+//	GetVbInstanceIdcsInfoArray{ GetVbInstanceIdcsInfoArgs{...} }
+type GetVbInstanceIdcsInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetVbInstanceIdcsInfoArrayOutput() GetVbInstanceIdcsInfoArrayOutput
+	ToGetVbInstanceIdcsInfoArrayOutputWithContext(context.Context) GetVbInstanceIdcsInfoArrayOutput
+}
+
+type GetVbInstanceIdcsInfoArray []GetVbInstanceIdcsInfoInput
+
+func (GetVbInstanceIdcsInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (i GetVbInstanceIdcsInfoArray) ToGetVbInstanceIdcsInfoArrayOutput() GetVbInstanceIdcsInfoArrayOutput {
+	return i.ToGetVbInstanceIdcsInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetVbInstanceIdcsInfoArray) ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoArrayOutput)
+}
+
+type GetVbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstanceIdcsInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (o GetVbInstanceIdcsInfoOutput) ToGetVbInstanceIdcsInfoOutput() GetVbInstanceIdcsInfoOutput {
+	return o
+}
+
+func (o GetVbInstanceIdcsInfoOutput) ToGetVbInstanceIdcsInfoOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoOutput {
+	return o
+}
+
+// The IDCS application display name associated with the instance
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
+}
+
+// The IDCS application ID associated with the instance
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
+}
+
+// URL for the location of the IDCS Application (used by IDCS APIs)
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
+}
+
+// The IDCS application name associated with the instance
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
+}
+
+// The URL used as the primary audience for visual builder flows in this instance type: string
+func (o GetVbInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringOutput)
+}
+
+type GetVbInstanceIdcsInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstanceIdcsInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceIdcsInfo)(nil)).Elem()
+}
+
+func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutput() GetVbInstanceIdcsInfoArrayOutput {
+	return o
+}
+
+func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoArrayOutput {
+	return o
+}
+
+func (o GetVbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstanceIdcsInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceIdcsInfo {
+		return vs[0].([]GetVbInstanceIdcsInfo)[vs[1].(int)]
+	}).(GetVbInstanceIdcsInfoOutput)
 }
 
 type GetVbInstancesFilter struct {
@@ -955,6 +1493,8 @@ func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) Index(i pulumi.Int
 type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 	// A list of alternate custom endpoints used for the vb instance URL.
 	AlternateCustomEndpoints []GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	// A list of associated attachments to other services
+	Attachments []GetVbInstancesVbInstanceSummaryCollectionItemAttachment `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
@@ -968,14 +1508,24 @@ type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id         string `pulumi:"id"`
-	IdcsOpenId string `pulumi:"idcsOpenId"`
+	Id string `pulumi:"id"`
+	// Information for IDCS access
+	IdcsInfos  []GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo `pulumi:"idcsInfos"`
+	IdcsOpenId string                                                  `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
 	InstanceUrl string `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
 	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
+	// The NAT gateway IP address for the VB management VCN
+	ManagementNatGatewayIp string `pulumi:"managementNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+	ManagementVcnId string `pulumi:"managementVcnId"`
 	// The number of Nodes
 	NodeCount int `pulumi:"nodeCount"`
+	// The NAT gateway IP address for the VB service VCN
+	ServiceNatGatewayIp string `pulumi:"serviceNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+	ServiceVcnId string `pulumi:"serviceVcnId"`
 	// Life cycle state to query on.
 	State string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1002,6 +1552,8 @@ type GetVbInstancesVbInstanceSummaryCollectionItemInput interface {
 type GetVbInstancesVbInstanceSummaryCollectionItemArgs struct {
 	// A list of alternate custom endpoints used for the vb instance URL.
 	AlternateCustomEndpoints GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput `pulumi:"alternateCustomEndpoints"`
+	// A list of associated attachments to other services
+	Attachments GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
@@ -1015,14 +1567,24 @@ type GetVbInstancesVbInstanceSummaryCollectionItemArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id         pulumi.StringInput `pulumi:"id"`
-	IdcsOpenId pulumi.StringInput `pulumi:"idcsOpenId"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// Information for IDCS access
+	IdcsInfos  GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput `pulumi:"idcsInfos"`
+	IdcsOpenId pulumi.StringInput                                              `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
 	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolInput `pulumi:"isVisualBuilderEnabled"`
+	// The NAT gateway IP address for the VB management VCN
+	ManagementNatGatewayIp pulumi.StringInput `pulumi:"managementNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+	ManagementVcnId pulumi.StringInput `pulumi:"managementVcnId"`
 	// The number of Nodes
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// The NAT gateway IP address for the VB service VCN
+	ServiceNatGatewayIp pulumi.StringInput `pulumi:"serviceNatGatewayIp"`
+	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+	ServiceVcnId pulumi.StringInput `pulumi:"serviceVcnId"`
 	// Life cycle state to query on.
 	State pulumi.StringInput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1093,6 +1655,13 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) AlternateCustomEndp
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput)
 }
 
+// A list of associated attachments to other services
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Attachments() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) []GetVbInstancesVbInstanceSummaryCollectionItemAttachment {
+		return v.Attachments
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput)
+}
+
 // The ID of the compartment in which to list resources.
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -1130,6 +1699,13 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Id() pulumi.StringO
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Information for IDCS access
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IdcsInfos() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) []GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
+		return v.IdcsInfos
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput)
+}
+
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IdcsOpenId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.IdcsOpenId }).(pulumi.StringOutput)
 }
@@ -1144,9 +1720,29 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IsVisualBuilderEnab
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
 }
 
+// The NAT gateway IP address for the VB management VCN
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementNatGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ManagementNatGatewayIp }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementVcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ManagementVcnId }).(pulumi.StringOutput)
+}
+
 // The number of Nodes
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// The NAT gateway IP address for the VB service VCN
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ServiceNatGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ServiceNatGatewayIp }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ServiceVcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ServiceVcnId }).(pulumi.StringOutput)
 }
 
 // Life cycle state to query on.
@@ -1313,6 +1909,142 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArra
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput)
 }
 
+type GetVbInstancesVbInstanceSummaryCollectionItemAttachment struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit bool `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId string `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole string `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType string `pulumi:"targetServiceType"`
+}
+
+// GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs and GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput` via:
+//
+//	GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs{...}
+type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput interface {
+	pulumi.Input
+
+	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+}
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput)
+}
+
+// GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray and GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput` via:
+//
+//	GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray{ GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs{...} }
+type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray []GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput)
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
+	return o
+}
+
+// * If role == `PARENT`, the attached instance was created by this service instance
+// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) IsImplicit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+}
+
+// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The dataplane instance URL of the attached instance
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+}
+
+// The role of the target attachment.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+}
+
+// The type of the target instance, such as "FUSION".
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemAttachment {
+		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemAttachment)[vs[1].(int)]
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput)
+}
+
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
@@ -1432,19 +2164,162 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) 
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput)
 }
 
+type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo struct {
+	// The IDCS application display name associated with the instance
+	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
+	// The IDCS application ID associated with the instance
+	IdcsAppId string `pulumi:"idcsAppId"`
+	// URL for the location of the IDCS Application (used by IDCS APIs)
+	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
+	// The IDCS application name associated with the instance
+	IdcsAppName string `pulumi:"idcsAppName"`
+	// The URL used as the primary audience for visual builder flows in this instance type: string
+	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+}
+
+// GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs and GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput` via:
+//
+//	GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs{...}
+type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput interface {
+	pulumi.Input
+
+	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs struct {
+	// The IDCS application display name associated with the instance
+	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
+	// The IDCS application ID associated with the instance
+	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
+	// URL for the location of the IDCS Application (used by IDCS APIs)
+	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
+	// The IDCS application name associated with the instance
+	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
+	// The URL used as the primary audience for visual builder flows in this instance type: string
+	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+}
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(context.Background())
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput)
+}
+
+// GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray and GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput` via:
+//
+//	GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray{ GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs{...} }
+type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray []GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput)
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
+	return o
+}
+
+// The IDCS application display name associated with the instance
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
+}
+
+// The IDCS application ID associated with the instance
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
+}
+
+// URL for the location of the IDCS Application (used by IDCS APIs)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
+}
+
+// The IDCS application name associated with the instance
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
+}
+
+// The URL used as the primary audience for visual builder flows in this instance type: string
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string {
+		return v.InstancePrimaryAudienceUrl
+	}).(pulumi.StringOutput)
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
+		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)[vs[1].(int)]
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAlternateCustomEndpointInput)(nil)).Elem(), VbInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), VbInstanceAlternateCustomEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAttachmentInput)(nil)).Elem(), VbInstanceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAttachmentArrayInput)(nil)).Elem(), VbInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceCustomEndpointInput)(nil)).Elem(), VbInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceCustomEndpointPtrInput)(nil)).Elem(), VbInstanceCustomEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceIdcsInfoInput)(nil)).Elem(), VbInstanceIdcsInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceIdcsInfoArrayInput)(nil)).Elem(), VbInstanceIdcsInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAlternateCustomEndpointInput)(nil)).Elem(), GetVbInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), GetVbInstanceAlternateCustomEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionItemInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAttachmentInput)(nil)).Elem(), GetVbInstanceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAttachmentArrayInput)(nil)).Elem(), GetVbInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceCustomEndpointInput)(nil)).Elem(), GetVbInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceCustomEndpointArrayInput)(nil)).Elem(), GetVbInstanceCustomEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceIdcsInfoInput)(nil)).Elem(), GetVbInstanceIdcsInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceIdcsInfoArrayInput)(nil)).Elem(), GetVbInstanceIdcsInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesFilterInput)(nil)).Elem(), GetVbInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesFilterArrayInput)(nil)).Elem(), GetVbInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionArgs{})
@@ -1453,20 +2328,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray{})
 	pulumi.RegisterOutputType(VbInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(VbInstanceAlternateCustomEndpointArrayOutput{})
+	pulumi.RegisterOutputType(VbInstanceAttachmentOutput{})
+	pulumi.RegisterOutputType(VbInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(VbInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(VbInstanceCustomEndpointPtrOutput{})
+	pulumi.RegisterOutputType(VbInstanceIdcsInfoOutput{})
+	pulumi.RegisterOutputType(VbInstanceIdcsInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceAlternateCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceAttachmentOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceCustomEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceIdcsInfoOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceIdcsInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionOutput{})
@@ -1475,6 +2362,10 @@ func init() {
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput{})
 }

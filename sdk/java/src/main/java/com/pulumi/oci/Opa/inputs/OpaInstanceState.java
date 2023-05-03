@@ -5,9 +5,11 @@ package com.pulumi.oci.Opa.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opa.inputs.OpaInstanceAttachmentArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,6 +19,21 @@ import javax.annotation.Nullable;
 public final class OpaInstanceState extends com.pulumi.resources.ResourceArgs {
 
     public static final OpaInstanceState Empty = new OpaInstanceState();
+
+    /**
+     * A list of associated attachments to other services
+     * 
+     */
+    @Import(name="attachments")
+    private @Nullable Output<List<OpaInstanceAttachmentArgs>> attachments;
+
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public Optional<Output<List<OpaInstanceAttachmentArgs>>> attachments() {
+        return Optional.ofNullable(this.attachments);
+    }
 
     /**
      * (Updatable) Compartment Identifier
@@ -306,6 +323,7 @@ public final class OpaInstanceState extends com.pulumi.resources.ResourceArgs {
     private OpaInstanceState() {}
 
     private OpaInstanceState(OpaInstanceState $) {
+        this.attachments = $.attachments;
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
         this.definedTags = $.definedTags;
@@ -343,6 +361,37 @@ public final class OpaInstanceState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(OpaInstanceState defaults) {
             $ = new OpaInstanceState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(@Nullable Output<List<OpaInstanceAttachmentArgs>> attachments) {
+            $.attachments = attachments;
+            return this;
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(List<OpaInstanceAttachmentArgs> attachments) {
+            return attachments(Output.of(attachments));
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(OpaInstanceAttachmentArgs... attachments) {
+            return attachments(List.of(attachments));
         }
 
         /**

@@ -16,14 +16,14 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
     public static final MonitoredResourceCredentialsPropertyArgs Empty = new MonitoredResourceCredentialsPropertyArgs();
 
     /**
-     * (Updatable) property name
+     * (Updatable) Property Name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) property value
+     * (Updatable) Property Value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) property value
+     * @return (Updatable) Property Value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param value (Updatable) property value
+         * @param value (Updatable) Property Value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param value (Updatable) property value
+         * @param value (Updatable) Property Value.
          * 
          * @return builder
          * 

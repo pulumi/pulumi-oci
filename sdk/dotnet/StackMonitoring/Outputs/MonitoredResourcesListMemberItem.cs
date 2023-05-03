@@ -14,11 +14,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourcesListMemberItem
     {
         /// <summary>
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string? CompartmentId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
-        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         /// </summary>
         public readonly string? ExternalId;
         /// <summary>
@@ -26,11 +30,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
-        /// Monitored Resource Host
+        /// Monitored Resource Host Name.
         /// </summary>
         public readonly string? HostName;
         /// <summary>
-        /// Parent monitored resource identifier
+        /// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? ParentId;
         /// <summary>
@@ -38,15 +42,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? ResourceDisplayName;
         /// <summary>
-        /// Monitored resource identifier
+        /// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? ResourceId;
         /// <summary>
-        /// Monitored resource name
+        /// Monitored Resource Name.
         /// </summary>
         public readonly string? ResourceName;
         /// <summary>
-        /// Monitored resource type
+        /// Monitored Resource Type.
         /// </summary>
         public readonly string? ResourceType;
         /// <summary>
@@ -60,6 +64,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
         [OutputConstructor]
         private MonitoredResourcesListMemberItem(
+            string? compartmentId,
+
             ImmutableDictionary<string, object>? definedTags,
 
             string? externalId,
@@ -82,6 +88,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableDictionary<string, object>? systemTags)
         {
+            CompartmentId = compartmentId;
             DefinedTags = definedTags;
             ExternalId = externalId;
             FreeformTags = freeformTags;

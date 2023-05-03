@@ -31,7 +31,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
@@ -49,13 +49,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
-        /// A filter to return resources with host name match
+        /// A filter to return resources with host name match.
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        /// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? ManagementAgentId { get; set; }
 
         /// <summary>
-        /// A filter to return resources that match exact resource name
+        /// A filter to return resources that match exact resource name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         private InputList<Inputs.MonitoredResourcesSearchItemPropertyGetArgs>? _properties;
 
         /// <summary>
-        /// List of monitored resource properties
+        /// List of monitored resource properties.
         /// </summary>
         public InputList<Inputs.MonitoredResourcesSearchItemPropertyGetArgs> Properties
         {
@@ -103,19 +103,19 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
-        /// Monitored resource creation time. An RFC3339 formatted datetime string
+        /// Monitored resource creation time. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// Monitored resource updation time. An RFC3339 formatted datetime string
+        /// Monitored resource update time. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// A filter to return resources that match resource type
+        /// A filter to return resources that match resource type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

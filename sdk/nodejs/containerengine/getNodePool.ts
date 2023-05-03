@@ -105,6 +105,10 @@ export interface GetNodePoolResult {
      */
     readonly nodeMetadata: {[key: string]: any};
     /**
+     * Node Pool Cycling Details
+     */
+    readonly nodePoolCyclingDetails: outputs.ContainerEngine.GetNodePoolNodePoolCyclingDetail[];
+    /**
      * The OCID of the node pool to which this node belongs.
      */
     readonly nodePoolId: string;

@@ -16,14 +16,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     public static final MonitoredResourcesSearchAssociationArgs Empty = new MonitoredResourcesSearchAssociationArgs();
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
      * 
      */
     @Import(name="associationType")
     private @Nullable Output<String> associationType;
 
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type filter to search associated resources.
      * 
      */
     public Optional<Output<String>> associationType() {
@@ -31,14 +31,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
@@ -46,14 +46,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="destinationResourceId")
     private @Nullable Output<String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> destinationResourceId() {
@@ -61,14 +61,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     }
 
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      * 
      */
     @Import(name="destinationResourceName")
     private @Nullable Output<String> destinationResourceName;
 
     /**
-     * @return Source Monitored Resource Name
+     * @return Source Monitored Resource Name.
      * 
      */
     public Optional<Output<String>> destinationResourceName() {
@@ -76,14 +76,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     }
 
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      * 
      */
     @Import(name="destinationResourceType")
     private @Nullable Output<String> destinationResourceType;
 
     /**
-     * @return Source Monitored Resource Type
+     * @return Source Monitored Resource Type.
      * 
      */
     public Optional<Output<String>> destinationResourceType() {
@@ -91,14 +91,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="sourceResourceId")
     private @Nullable Output<String> sourceResourceId;
 
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> sourceResourceId() {
@@ -106,14 +106,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     }
 
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      * 
      */
     @Import(name="sourceResourceName")
     private @Nullable Output<String> sourceResourceName;
 
     /**
-     * @return Source Monitored Resource Name
+     * @return Source Monitored Resource Name.
      * 
      */
     public Optional<Output<String>> sourceResourceName() {
@@ -121,14 +121,14 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     }
 
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      * 
      */
     @Import(name="sourceResourceType")
     private @Nullable Output<String> sourceResourceType;
 
     /**
-     * @return Source Monitored Resource Type
+     * @return Source Monitored Resource Type.
      * 
      */
     public Optional<Output<String>> sourceResourceType() {
@@ -167,7 +167,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type filter to search associated resources.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type filter to search associated resources.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param destinationResourceName Source Monitored Resource Name
+         * @param destinationResourceName Source Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param destinationResourceName Source Monitored Resource Name
+         * @param destinationResourceName Source Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param destinationResourceType Source Monitored Resource Type
+         * @param destinationResourceType Source Monitored Resource Type.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param destinationResourceType Source Monitored Resource Type
+         * @param destinationResourceType Source Monitored Resource Type.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param sourceResourceName Source Monitored Resource Name
+         * @param sourceResourceName Source Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param sourceResourceName Source Monitored Resource Name
+         * @param sourceResourceName Source Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param sourceResourceType Source Monitored Resource Type
+         * @param sourceResourceType Source Monitored Resource Type.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         }
 
         /**
-         * @param sourceResourceType Source Monitored Resource Type
+         * @param sourceResourceType Source Monitored Resource Type.
          * 
          * @return builder
          * 

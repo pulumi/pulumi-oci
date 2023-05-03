@@ -22,7 +22,13 @@ class GetMonitoredResourceResult:
     """
     A collection of values returned by getMonitoredResource.
     """
-    def __init__(__self__, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_id=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_time_zone=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, additional_aliases=None, additional_credentials=None, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_id=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_time_zone=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
+        if additional_aliases and not isinstance(additional_aliases, list):
+            raise TypeError("Expected argument 'additional_aliases' to be a list")
+        pulumi.set(__self__, "additional_aliases", additional_aliases)
+        if additional_credentials and not isinstance(additional_credentials, list):
+            raise TypeError("Expected argument 'additional_credentials' to be a list")
+        pulumi.set(__self__, "additional_credentials", additional_credentials)
         if aliases and not isinstance(aliases, list):
             raise TypeError("Expected argument 'aliases' to be a list")
         pulumi.set(__self__, "aliases", aliases)
@@ -91,6 +97,16 @@ class GetMonitoredResourceResult:
         pulumi.set(__self__, "type", type)
 
     @property
+    @pulumi.getter(name="additionalAliases")
+    def additional_aliases(self) -> Sequence['outputs.GetMonitoredResourceAdditionalAliasResult']:
+        return pulumi.get(self, "additional_aliases")
+
+    @property
+    @pulumi.getter(name="additionalCredentials")
+    def additional_credentials(self) -> Sequence['outputs.GetMonitoredResourceAdditionalCredentialResult']:
+        return pulumi.get(self, "additional_credentials")
+
+    @property
     @pulumi.getter
     def aliases(self) -> Sequence['outputs.GetMonitoredResourceAliasResult']:
         """
@@ -102,7 +118,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -110,7 +126,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter
     def credentials(self) -> Sequence['outputs.GetMonitoredResourceCredentialResult']:
         """
-        Monitored Resource Credential Details
+        Monitored Resource Credential Details.
         """
         return pulumi.get(self, "credentials")
 
@@ -118,7 +134,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter(name="databaseConnectionDetails")
     def database_connection_details(self) -> Sequence['outputs.GetMonitoredResourceDatabaseConnectionDetailResult']:
         """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
+        Connection details for the database.
         """
         return pulumi.get(self, "database_connection_details")
 
@@ -142,7 +158,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter(name="externalId")
     def external_id(self) -> str:
         """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
@@ -171,7 +187,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "id")
 
@@ -192,7 +208,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        property name
+        Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -200,7 +216,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter
     def properties(self) -> Sequence['outputs.GetMonitoredResourcePropertyResult']:
         """
-        List of monitored resource properties
+        List of monitored resource properties.
         """
         return pulumi.get(self, "properties")
 
@@ -232,7 +248,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> str:
         """
-        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "tenant_id")
 
@@ -240,7 +256,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the resource was created. An RFC3339 formatted datetime string
+        The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_created")
 
@@ -248,7 +264,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the the resource was updated. An RFC3339 formatted datetime string
+        The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_updated")
 
@@ -256,7 +272,7 @@ class GetMonitoredResourceResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        Monitored resource type
+        Monitored Resource Type.
         """
         return pulumi.get(self, "type")
 
@@ -267,6 +283,8 @@ class AwaitableGetMonitoredResourceResult(GetMonitoredResourceResult):
         if False:
             yield self
         return GetMonitoredResourceResult(
+            additional_aliases=self.additional_aliases,
+            additional_credentials=self.additional_credentials,
             aliases=self.aliases,
             compartment_id=self.compartment_id,
             credentials=self.credentials,
@@ -296,7 +314,7 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
     """
     This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
-    Gets a monitored resource by identifier
+    Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -316,6 +334,8 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:StackMonitoring/getMonitoredResource:getMonitoredResource', __args__, opts=opts, typ=GetMonitoredResourceResult).value
 
     return AwaitableGetMonitoredResourceResult(
+        additional_aliases=__ret__.additional_aliases,
+        additional_credentials=__ret__.additional_credentials,
         aliases=__ret__.aliases,
         compartment_id=__ret__.compartment_id,
         credentials=__ret__.credentials,
@@ -346,7 +366,7 @@ def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
-    Gets a monitored resource by identifier
+    Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 

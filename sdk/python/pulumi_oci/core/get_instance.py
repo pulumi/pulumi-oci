@@ -22,7 +22,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_id=None, instance_options=None, ipxe_script=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -94,6 +94,9 @@ class GetInstanceResult:
         if ipxe_script and not isinstance(ipxe_script, str):
             raise TypeError("Expected argument 'ipxe_script' to be a str")
         pulumi.set(__self__, "ipxe_script", ipxe_script)
+        if is_cross_numa_node and not isinstance(is_cross_numa_node, bool):
+            raise TypeError("Expected argument 'is_cross_numa_node' to be a bool")
+        pulumi.set(__self__, "is_cross_numa_node", is_cross_numa_node)
         if is_pv_encryption_in_transit_enabled and not isinstance(is_pv_encryption_in_transit_enabled, bool):
             raise TypeError("Expected argument 'is_pv_encryption_in_transit_enabled' to be a bool")
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
@@ -313,6 +316,14 @@ class GetInstanceResult:
         return pulumi.get(self, "ipxe_script")
 
     @property
+    @pulumi.getter(name="isCrossNumaNode")
+    def is_cross_numa_node(self) -> bool:
+        """
+        Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+        """
+        return pulumi.get(self, "is_cross_numa_node")
+
+    @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> bool:
         """
@@ -483,6 +494,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             instance_id=self.instance_id,
             instance_options=self.instance_options,
             ipxe_script=self.ipxe_script,
+            is_cross_numa_node=self.is_cross_numa_node,
             is_pv_encryption_in_transit_enabled=self.is_pv_encryption_in_transit_enabled,
             launch_mode=self.launch_mode,
             launch_options=self.launch_options,
@@ -553,6 +565,7 @@ def get_instance(instance_id: Optional[str] = None,
         instance_id=__ret__.instance_id,
         instance_options=__ret__.instance_options,
         ipxe_script=__ret__.ipxe_script,
+        is_cross_numa_node=__ret__.is_cross_numa_node,
         is_pv_encryption_in_transit_enabled=__ret__.is_pv_encryption_in_transit_enabled,
         launch_mode=__ret__.launch_mode,
         launch_options=__ret__.launch_options,

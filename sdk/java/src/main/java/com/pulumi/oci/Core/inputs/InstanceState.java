@@ -321,6 +321,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     * 
+     */
+    @Import(name="isCrossNumaNode")
+    private @Nullable Output<Boolean> isCrossNumaNode;
+
+    /**
+     * @return Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     * 
+     */
+    public Optional<Output<Boolean>> isCrossNumaNode() {
+        return Optional.ofNullable(this.isCrossNumaNode);
+    }
+
+    /**
      * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
      * 
      */
@@ -627,6 +642,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.image = $.image;
         this.instanceOptions = $.instanceOptions;
         this.ipxeScript = $.ipxeScript;
+        this.isCrossNumaNode = $.isCrossNumaNode;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchMode = $.launchMode;
         this.launchOptions = $.launchOptions;
@@ -1067,6 +1083,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipxeScript(String ipxeScript) {
             return ipxeScript(Output.of(ipxeScript));
+        }
+
+        /**
+         * @param isCrossNumaNode Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCrossNumaNode(@Nullable Output<Boolean> isCrossNumaNode) {
+            $.isCrossNumaNode = isCrossNumaNode;
+            return this;
+        }
+
+        /**
+         * @param isCrossNumaNode Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCrossNumaNode(Boolean isCrossNumaNode) {
+            return isCrossNumaNode(Output.of(isCrossNumaNode));
         }
 
         /**

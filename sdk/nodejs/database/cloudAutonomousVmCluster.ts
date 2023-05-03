@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isMtlsEnabledVmCluster: _var.cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster,
  *     licenseModel: _var.cloud_autonomous_vm_cluster_license_model,
  *     maintenanceWindowDetails: {
  *         customActionTimeoutInMins: _var.cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins,
@@ -51,6 +52,8 @@ import * as utilities from "../utilities";
  *     },
  *     memoryPerOracleComputeUnitInGbs: _var.cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
  *     nsgIds: _var.cloud_autonomous_vm_cluster_nsg_ids,
+ *     scanListenerPortNonTls: _var.cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
+ *     scanListenerPortTls: _var.cloud_autonomous_vm_cluster_scan_listener_port_tls,
  *     totalContainerDatabases: _var.cloud_autonomous_vm_cluster_total_container_databases,
  * });
  * ```
@@ -132,7 +135,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
     /**
-     * The number of OCPU cores to be enabled per VM cluster node.
+     * The number of CPU cores to be enabled per VM cluster node.
      */
     public readonly cpuCoreCountPerNode!: pulumi.Output<number>;
     /**
@@ -176,6 +179,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly hostname!: pulumi.Output<string>;
     /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     */
+    public readonly isMtlsEnabledVmCluster!: pulumi.Output<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
     public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
@@ -200,7 +207,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.CloudAutonomousVmClusterMaintenanceWindow[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      */
     public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
@@ -225,9 +232,19 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly ocpuCount!: pulumi.Output<number>;
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     */
+    public readonly scanListenerPortNonTls!: pulumi.Output<number>;
+    /**
+     * The SCAN Listener TLS port. Default is 2484.
+     */
+    public readonly scanListenerPortTls!: pulumi.Output<number>;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
@@ -287,6 +304,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["domain"] = state ? state.domain : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostname"] = state ? state.hostname : undefined;
+            resourceInputs["isMtlsEnabledVmCluster"] = state ? state.isMtlsEnabledVmCluster : undefined;
             resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
             resourceInputs["lastUpdateHistoryEntryId"] = state ? state.lastUpdateHistoryEntryId : undefined;
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
@@ -300,6 +318,8 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
+            resourceInputs["scanListenerPortNonTls"] = state ? state.scanListenerPortNonTls : undefined;
+            resourceInputs["scanListenerPortTls"] = state ? state.scanListenerPortTls : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -331,10 +351,13 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isMtlsEnabledVmCluster"] = args ? args.isMtlsEnabledVmCluster : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
             resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = args ? args.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["scanListenerPortNonTls"] = args ? args.scanListenerPortNonTls : undefined;
+            resourceInputs["scanListenerPortTls"] = args ? args.scanListenerPortTls : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["timeUpdated"] = args ? args.timeUpdated : undefined;
             resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
@@ -411,7 +434,7 @@ export interface CloudAutonomousVmClusterState {
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
-     * The number of OCPU cores to be enabled per VM cluster node.
+     * The number of CPU cores to be enabled per VM cluster node.
      */
     cpuCoreCountPerNode?: pulumi.Input<number>;
     /**
@@ -455,6 +478,10 @@ export interface CloudAutonomousVmClusterState {
      */
     hostname?: pulumi.Input<string>;
     /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     */
+    isMtlsEnabledVmCluster?: pulumi.Input<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
     lastMaintenanceRunId?: pulumi.Input<string>;
@@ -479,7 +506,7 @@ export interface CloudAutonomousVmClusterState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindow>[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -504,9 +531,19 @@ export interface CloudAutonomousVmClusterState {
      */
     ocpuCount?: pulumi.Input<number>;
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     reclaimableCpus?: pulumi.Input<number>;
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     */
+    scanListenerPortNonTls?: pulumi.Input<number>;
+    /**
+     * The SCAN Listener TLS port. Default is 2484.
+     */
+    scanListenerPortTls?: pulumi.Input<number>;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
@@ -558,7 +595,7 @@ export interface CloudAutonomousVmClusterArgs {
      */
     computeModel?: pulumi.Input<string>;
     /**
-     * The number of OCPU cores to be enabled per VM cluster node.
+     * The number of CPU cores to be enabled per VM cluster node.
      */
     cpuCoreCountPerNode?: pulumi.Input<number>;
     /**
@@ -582,6 +619,10 @@ export interface CloudAutonomousVmClusterArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     */
+    isMtlsEnabledVmCluster?: pulumi.Input<boolean>;
+    /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      */
     licenseModel?: pulumi.Input<string>;
@@ -590,7 +631,7 @@ export interface CloudAutonomousVmClusterArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetails>;
     /**
-     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -598,6 +639,14 @@ export interface CloudAutonomousVmClusterArgs {
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     */
+    scanListenerPortNonTls?: pulumi.Input<number>;
+    /**
+     * The SCAN Listener TLS port. Default is 2484.
+     */
+    scanListenerPortTls?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */

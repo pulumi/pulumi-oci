@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// # List resources which are members of the given monitored resource
+// List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //
 // ## Example Usage
 //
@@ -55,11 +55,11 @@ import (
 type MonitoredResourcesListMember struct {
 	pulumi.CustomResourceState
 
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrOutput `pulumi:"destinationResourceId"`
-	// List of Members.
+	// List of member resources.
 	Items MonitoredResourcesListMemberItemArrayOutput `pulumi:"items"`
-	// The field which determines the depth of hierarchy while searching for members
+	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel pulumi.IntPtrOutput `pulumi:"limitLevel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
 	MonitoredResourceId pulumi.StringOutput `pulumi:"monitoredResourceId"`
@@ -97,22 +97,22 @@ func GetMonitoredResourcesListMember(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MonitoredResourcesListMember resources.
 type monitoredResourcesListMemberState struct {
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId *string `pulumi:"destinationResourceId"`
-	// List of Members.
+	// List of member resources.
 	Items []MonitoredResourcesListMemberItem `pulumi:"items"`
-	// The field which determines the depth of hierarchy while searching for members
+	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel *int `pulumi:"limitLevel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
 	MonitoredResourceId *string `pulumi:"monitoredResourceId"`
 }
 
 type MonitoredResourcesListMemberState struct {
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrInput
-	// List of Members.
+	// List of member resources.
 	Items MonitoredResourcesListMemberItemArrayInput
-	// The field which determines the depth of hierarchy while searching for members
+	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
 	MonitoredResourceId pulumi.StringPtrInput
@@ -123,9 +123,9 @@ func (MonitoredResourcesListMemberState) ElementType() reflect.Type {
 }
 
 type monitoredResourcesListMemberArgs struct {
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId *string `pulumi:"destinationResourceId"`
-	// The field which determines the depth of hierarchy while searching for members
+	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel *int `pulumi:"limitLevel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
 	MonitoredResourceId string `pulumi:"monitoredResourceId"`
@@ -133,9 +133,9 @@ type monitoredResourcesListMemberArgs struct {
 
 // The set of arguments for constructing a MonitoredResourcesListMember resource.
 type MonitoredResourcesListMemberArgs struct {
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrInput
-	// The field which determines the depth of hierarchy while searching for members
+	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
 	MonitoredResourceId pulumi.StringInput
@@ -228,17 +228,17 @@ func (o MonitoredResourcesListMemberOutput) ToMonitoredResourcesListMemberOutput
 	return o
 }
 
-// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesListMemberOutput) DestinationResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesListMember) pulumi.StringPtrOutput { return v.DestinationResourceId }).(pulumi.StringPtrOutput)
 }
 
-// List of Members.
+// List of member resources.
 func (o MonitoredResourcesListMemberOutput) Items() MonitoredResourcesListMemberItemArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourcesListMember) MonitoredResourcesListMemberItemArrayOutput { return v.Items }).(MonitoredResourcesListMemberItemArrayOutput)
 }
 
-// The field which determines the depth of hierarchy while searching for members
+// The field which determines the depth of hierarchy while searching for members.
 func (o MonitoredResourcesListMemberOutput) LimitLevel() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesListMember) pulumi.IntPtrOutput { return v.LimitLevel }).(pulumi.IntPtrOutput)
 }

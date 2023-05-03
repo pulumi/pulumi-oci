@@ -42,7 +42,7 @@ class AutonomousVmClusterArgs:
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param pulumi.Input[float] autonomous_data_storage_size_in_tbs: The data disk group size to be allocated for Autonomous Databases, in TBs.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to enable per VM cluster node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -51,7 +51,7 @@ class AutonomousVmClusterArgs:
         :param pulumi.Input[bool] is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailArgs']]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -156,7 +156,7 @@ class AutonomousVmClusterArgs:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[str]]:
         """
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -264,7 +264,7 @@ class AutonomousVmClusterArgs:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -369,7 +369,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[int] available_cpus: The numnber of CPU cores available.
         :param pulumi.Input[float] available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to enable per VM cluster node.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[float] data_storage_size_in_tbs: The total data storage allocated in TBs
@@ -386,12 +386,14 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailArgs']]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of nodes in the Autonomous VM Cluster.
         :param pulumi.Input[float] ocpus_enabled: The number of enabled OCPU cores.
-        :param pulumi.Input[int] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param pulumi.Input[int] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[str] state: The current state of the Autonomous VM cluster.
@@ -551,7 +553,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[str]]:
         """
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -764,7 +766,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -824,7 +826,9 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> Optional[pulumi.Input[int]]:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -1001,7 +1005,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[float] autonomous_data_storage_size_in_tbs: The data disk group size to be allocated for Autonomous Databases, in TBs.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to enable per VM cluster node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -1012,7 +1016,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[bool] is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowDetailArgs']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -1228,7 +1232,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] available_cpus: The numnber of CPU cores available.
         :param pulumi.Input[float] available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to enable per VM cluster node.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[float] data_storage_size_in_tbs: The total data storage allocated in TBs
@@ -1245,12 +1249,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowDetailArgs']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of nodes in the Autonomous VM Cluster.
         :param pulumi.Input[float] ocpus_enabled: The number of enabled OCPU cores.
-        :param pulumi.Input[int] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param pulumi.Input[int] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[str] state: The current state of the Autonomous VM cluster.
@@ -1354,7 +1360,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> pulumi.Output[str]:
         """
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -1495,7 +1501,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[int]:
         """
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -1535,7 +1541,9 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> pulumi.Output[int]:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "reclaimable_cpus")
 

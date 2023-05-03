@@ -20,14 +20,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     public static final MonitoredResourcesSearchState Empty = new MonitoredResourcesSearchState();
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -50,14 +50,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -80,14 +80,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return A filter to return resources with host name match
+     * @return A filter to return resources with host name match.
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -95,14 +95,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
-     * A filter to return resources with host name pattern
+     * A filter to return resources with host name pattern.
      * 
      */
     @Import(name="hostNameContains")
     private @Nullable Output<String> hostNameContains;
 
     /**
-     * @return A filter to return resources with host name pattern
+     * @return A filter to return resources with host name pattern.
      * 
      */
     public Optional<Output<String>> hostNameContains() {
@@ -140,14 +140,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -185,14 +185,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
-     * Time zone in the form of tz database canonical zone ID.
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     @Import(name="resourceTimeZone")
     private @Nullable Output<String> resourceTimeZone;
 
     /**
-     * @return Time zone in the form of tz database canonical zone ID.
+     * @return Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     public Optional<Output<String>> resourceTimeZone() {
@@ -275,14 +275,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return A filter to return resources that match resource type
+     * @return A filter to return resources that match resource type.
      * 
      */
     public Optional<Output<String>> type() {
@@ -331,7 +331,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hostName A filter to return resources with host name match
+         * @param hostName A filter to return resources with host name match.
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hostName A filter to return resources with host name match
+         * @param hostName A filter to return resources with host name match.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hostNameContains A filter to return resources with host name pattern
+         * @param hostNameContains A filter to return resources with host name pattern.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hostNameContains A filter to return resources with host name pattern
+         * @param hostNameContains A filter to return resources with host name pattern.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name A filter to return resources that match exact resource name
+         * @param name A filter to return resources that match exact resource name.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name A filter to return resources that match exact resource name
+         * @param name A filter to return resources that match exact resource name.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param resourceTimeZone Time zone in the form of tz database canonical zone ID.
+         * @param resourceTimeZone Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param resourceTimeZone Time zone in the form of tz database canonical zone ID.
+         * @param resourceTimeZone Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
          * 
          * @return builder
          * 
@@ -718,7 +718,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type A filter to return resources that match resource type
+         * @param type A filter to return resources that match resource type.
          * 
          * @return builder
          * 
@@ -729,7 +729,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type A filter to return resources that match resource type
+         * @param type A filter to return resources that match resource type.
          * 
          * @return builder
          * 

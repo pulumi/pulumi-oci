@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
  *
- * Returns a list of monitored resources.
+ * Gets a list of all monitored resources in a compartment for the given search criteria.
  *
  * ## Example Usage
  *
@@ -75,7 +75,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -83,7 +83,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public readonly excludeFields!: pulumi.Output<string[] | undefined>;
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
     public readonly externalId!: pulumi.Output<string | undefined>;
     /**
@@ -91,11 +91,11 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public readonly fields!: pulumi.Output<string[] | undefined>;
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
      */
     public readonly hostName!: pulumi.Output<string | undefined>;
     /**
-     * A filter to return resources with host name pattern
+     * A filter to return resources with host name pattern.
      */
     public readonly hostNameContains!: pulumi.Output<string | undefined>;
     /**
@@ -107,7 +107,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public readonly managementAgentId!: pulumi.Output<string | undefined>;
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
      */
     public readonly name!: pulumi.Output<string | undefined>;
     /**
@@ -119,7 +119,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public readonly propertyEquals!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
-     * Time zone in the form of tz database canonical zone ID.
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     public readonly resourceTimeZone!: pulumi.Output<string | undefined>;
     /**
@@ -143,7 +143,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public readonly timeUpdatedLessThan!: pulumi.Output<string | undefined>;
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
      */
     public readonly type!: pulumi.Output<string | undefined>;
 
@@ -212,7 +212,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
  */
 export interface MonitoredResourcesSearchState {
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -220,7 +220,7 @@ export interface MonitoredResourcesSearchState {
      */
     excludeFields?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
     externalId?: pulumi.Input<string>;
     /**
@@ -228,11 +228,11 @@ export interface MonitoredResourcesSearchState {
      */
     fields?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
      */
     hostName?: pulumi.Input<string>;
     /**
-     * A filter to return resources with host name pattern
+     * A filter to return resources with host name pattern.
      */
     hostNameContains?: pulumi.Input<string>;
     /**
@@ -244,7 +244,7 @@ export interface MonitoredResourcesSearchState {
      */
     managementAgentId?: pulumi.Input<string>;
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -256,7 +256,7 @@ export interface MonitoredResourcesSearchState {
      */
     propertyEquals?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Time zone in the form of tz database canonical zone ID.
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     resourceTimeZone?: pulumi.Input<string>;
     /**
@@ -280,7 +280,7 @@ export interface MonitoredResourcesSearchState {
      */
     timeUpdatedLessThan?: pulumi.Input<string>;
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
      */
     type?: pulumi.Input<string>;
 }
@@ -290,7 +290,7 @@ export interface MonitoredResourcesSearchState {
  */
 export interface MonitoredResourcesSearchArgs {
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -298,7 +298,7 @@ export interface MonitoredResourcesSearchArgs {
      */
     excludeFields?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
     externalId?: pulumi.Input<string>;
     /**
@@ -306,11 +306,11 @@ export interface MonitoredResourcesSearchArgs {
      */
     fields?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
      */
     hostName?: pulumi.Input<string>;
     /**
-     * A filter to return resources with host name pattern
+     * A filter to return resources with host name pattern.
      */
     hostNameContains?: pulumi.Input<string>;
     /**
@@ -318,7 +318,7 @@ export interface MonitoredResourcesSearchArgs {
      */
     managementAgentId?: pulumi.Input<string>;
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -330,7 +330,7 @@ export interface MonitoredResourcesSearchArgs {
      */
     propertyEquals?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Time zone in the form of tz database canonical zone ID.
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     resourceTimeZone?: pulumi.Input<string>;
     /**
@@ -354,7 +354,7 @@ export interface MonitoredResourcesSearchArgs {
      */
     timeUpdatedLessThan?: pulumi.Input<string>;
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
      */
     type?: pulumi.Input<string>;
 }

@@ -15,14 +15,14 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
     public static final MonitoredResourceAliasesArgs Empty = new MonitoredResourceAliasesArgs();
 
     /**
-     * (Updatable) Monitored Resource Alias Reference Source Credential
+     * (Updatable) Monitored Resource Alias Reference Source Credential.
      * 
      */
     @Import(name="credential", required=true)
     private Output<MonitoredResourceAliasesCredentialArgs> credential;
 
     /**
-     * @return (Updatable) Monitored Resource Alias Reference Source Credential
+     * @return (Updatable) Monitored Resource Alias Reference Source Credential.
      * 
      */
     public Output<MonitoredResourceAliasesCredentialArgs> credential() {
@@ -30,14 +30,14 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) property name
+     * (Updatable) Property Name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Output<String> name() {
@@ -45,14 +45,14 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
-     * @return (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public Output<String> source() {
@@ -86,7 +86,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param credential (Updatable) Monitored Resource Alias Reference Source Credential
+         * @param credential (Updatable) Monitored Resource Alias Reference Source Credential.
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param credential (Updatable) Monitored Resource Alias Reference Source Credential
+         * @param credential (Updatable) Monitored Resource Alias Reference Source Credential.
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 

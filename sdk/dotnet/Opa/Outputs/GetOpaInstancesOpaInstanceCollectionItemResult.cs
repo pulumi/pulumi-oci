@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Opa.Outputs
     public sealed class GetOpaInstancesOpaInstanceCollectionItemResult
     {
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult> Attachments;
+        /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -93,6 +97,8 @@ namespace Pulumi.Oci.Opa.Outputs
 
         [OutputConstructor]
         private GetOpaInstancesOpaInstanceCollectionItemResult(
+            ImmutableArray<Outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult> attachments,
+
             string compartmentId,
 
             string consumptionModel,
@@ -133,6 +139,7 @@ namespace Pulumi.Oci.Opa.Outputs
 
             string timeUpdated)
         {
+            Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
             DefinedTags = definedTags;

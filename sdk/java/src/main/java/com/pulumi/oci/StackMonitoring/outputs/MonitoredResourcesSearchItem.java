@@ -26,7 +26,7 @@ public final class MonitoredResourcesSearchItem {
      */
     private @Nullable String displayName;
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     private @Nullable String externalId;
@@ -36,12 +36,12 @@ public final class MonitoredResourcesSearchItem {
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return A filter to return resources with host name match
+     * @return A filter to return resources with host name match.
      * 
      */
     private @Nullable String hostName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String id;
@@ -51,12 +51,12 @@ public final class MonitoredResourcesSearchItem {
      */
     private @Nullable String managementAgentId;
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return List of monitored resource properties
+     * @return List of monitored resource properties.
      * 
      */
     private @Nullable List<MonitoredResourcesSearchItemProperty> properties;
@@ -71,17 +71,17 @@ public final class MonitoredResourcesSearchItem {
      */
     private @Nullable Map<String,Object> systemTags;
     /**
-     * @return Monitored resource creation time. An RFC3339 formatted datetime string
+     * @return Monitored resource creation time. An RFC3339 formatted datetime string.
      * 
      */
     private @Nullable String timeCreated;
     /**
-     * @return Monitored resource updation time. An RFC3339 formatted datetime string
+     * @return Monitored resource update time. An RFC3339 formatted datetime string.
      * 
      */
     private @Nullable String timeUpdated;
     /**
-     * @return A filter to return resources that match resource type
+     * @return A filter to return resources that match resource type.
      * 
      */
     private @Nullable String type;
@@ -102,7 +102,7 @@ public final class MonitoredResourcesSearchItem {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     public Optional<String> externalId() {
@@ -116,14 +116,14 @@ public final class MonitoredResourcesSearchItem {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return A filter to return resources with host name match
+     * @return A filter to return resources with host name match.
      * 
      */
     public Optional<String> hostName() {
         return Optional.ofNullable(this.hostName);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> id() {
@@ -137,14 +137,14 @@ public final class MonitoredResourcesSearchItem {
         return Optional.ofNullable(this.managementAgentId);
     }
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return List of monitored resource properties
+     * @return List of monitored resource properties.
      * 
      */
     public List<MonitoredResourcesSearchItemProperty> properties() {
@@ -165,21 +165,21 @@ public final class MonitoredResourcesSearchItem {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
-     * @return Monitored resource creation time. An RFC3339 formatted datetime string
+     * @return Monitored resource creation time. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<String> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return Monitored resource updation time. An RFC3339 formatted datetime string
+     * @return Monitored resource update time. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<String> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
     /**
-     * @return A filter to return resources that match resource type
+     * @return A filter to return resources that match resource type.
      * 
      */
     public Optional<String> type() {

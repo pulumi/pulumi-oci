@@ -70,7 +70,8 @@ type LookupDiscoveryJobResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of Discovery job
-	Id string `pulumi:"id"`
+	Id                                       string `pulumi:"id"`
+	ShouldPropagateTagsToDiscoveredResources bool   `pulumi:"shouldPropagateTagsToDiscoveredResources"`
 	// The current state of the DiscoveryJob Resource.
 	State string `pulumi:"state"`
 	// Specifies the status of the discovery job
@@ -162,6 +163,10 @@ func (o LookupDiscoveryJobResultOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of Discovery job
 func (o LookupDiscoveryJobResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDiscoveryJobResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupDiscoveryJobResultOutput) ShouldPropagateTagsToDiscoveredResources() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobResult) bool { return v.ShouldPropagateTagsToDiscoveredResources }).(pulumi.BoolOutput)
 }
 
 // The current state of the DiscoveryJob Resource.

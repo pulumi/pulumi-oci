@@ -14,11 +14,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class GetMonitoredResourceCredentialPropertyResult
     {
         /// <summary>
-        /// property name
+        /// Property Name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// property value
+        /// Property Value.
         /// </summary>
         public readonly string Value;
 

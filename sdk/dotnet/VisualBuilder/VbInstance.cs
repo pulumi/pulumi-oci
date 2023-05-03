@@ -76,6 +76,12 @@ namespace Pulumi.Oci.VisualBuilder
         public Output<ImmutableArray<Outputs.VbInstanceAlternateCustomEndpoint>> AlternateCustomEndpoints { get; private set; } = null!;
 
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        [Output("attachments")]
+        public Output<ImmutableArray<Outputs.VbInstanceAttachment>> Attachments { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Compartment Identifier.
         /// </summary>
         [Output("compartmentId")]
@@ -112,6 +118,12 @@ namespace Pulumi.Oci.VisualBuilder
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Information for IDCS access
+        /// </summary>
+        [Output("idcsInfos")]
+        public Output<ImmutableArray<Outputs.VbInstanceIdcsInfo>> IdcsInfos { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         /// </summary>
         [Output("idcsOpenId")]
@@ -130,10 +142,34 @@ namespace Pulumi.Oci.VisualBuilder
         public Output<bool> IsVisualBuilderEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// The NAT gateway IP address for the VB management VCN
+        /// </summary>
+        [Output("managementNatGatewayIp")]
+        public Output<string> ManagementNatGatewayIp { get; private set; } = null!;
+
+        /// <summary>
+        /// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        /// </summary>
+        [Output("managementVcnId")]
+        public Output<string> ManagementVcnId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The number of Nodes
         /// </summary>
         [Output("nodeCount")]
         public Output<int> NodeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The NAT gateway IP address for the VB service VCN
+        /// </summary>
+        [Output("serviceNatGatewayIp")]
+        public Output<string> ServiceNatGatewayIp { get; private set; } = null!;
+
+        /// <summary>
+        /// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+        /// </summary>
+        [Output("serviceVcnId")]
+        public Output<string> ServiceVcnId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the vb instance.
@@ -323,6 +359,18 @@ namespace Pulumi.Oci.VisualBuilder
             set => _alternateCustomEndpoints = value;
         }
 
+        [Input("attachments")]
+        private InputList<Inputs.VbInstanceAttachmentGetArgs>? _attachments;
+
+        /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public InputList<Inputs.VbInstanceAttachmentGetArgs> Attachments
+        {
+            get => _attachments ?? (_attachments = new InputList<Inputs.VbInstanceAttachmentGetArgs>());
+            set => _attachments = value;
+        }
+
         /// <summary>
         /// (Updatable) Compartment Identifier.
         /// </summary>
@@ -371,6 +419,18 @@ namespace Pulumi.Oci.VisualBuilder
             set => _freeformTags = value;
         }
 
+        [Input("idcsInfos")]
+        private InputList<Inputs.VbInstanceIdcsInfoGetArgs>? _idcsInfos;
+
+        /// <summary>
+        /// Information for IDCS access
+        /// </summary>
+        public InputList<Inputs.VbInstanceIdcsInfoGetArgs> IdcsInfos
+        {
+            get => _idcsInfos ?? (_idcsInfos = new InputList<Inputs.VbInstanceIdcsInfoGetArgs>());
+            set => _idcsInfos = value;
+        }
+
         [Input("idcsOpenId")]
         private Input<string>? _idcsOpenId;
 
@@ -400,10 +460,34 @@ namespace Pulumi.Oci.VisualBuilder
         public Input<bool>? IsVisualBuilderEnabled { get; set; }
 
         /// <summary>
+        /// The NAT gateway IP address for the VB management VCN
+        /// </summary>
+        [Input("managementNatGatewayIp")]
+        public Input<string>? ManagementNatGatewayIp { get; set; }
+
+        /// <summary>
+        /// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        /// </summary>
+        [Input("managementVcnId")]
+        public Input<string>? ManagementVcnId { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of Nodes
         /// </summary>
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }
+
+        /// <summary>
+        /// The NAT gateway IP address for the VB service VCN
+        /// </summary>
+        [Input("serviceNatGatewayIp")]
+        public Input<string>? ServiceNatGatewayIp { get; set; }
+
+        /// <summary>
+        /// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+        /// </summary>
+        [Input("serviceVcnId")]
+        public Input<string>? ServiceVcnId { get; set; }
 
         /// <summary>
         /// The current state of the vb instance.

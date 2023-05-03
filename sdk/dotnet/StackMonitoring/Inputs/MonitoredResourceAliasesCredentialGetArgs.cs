@@ -13,19 +13,19 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourceAliasesCredentialGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+        /// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;

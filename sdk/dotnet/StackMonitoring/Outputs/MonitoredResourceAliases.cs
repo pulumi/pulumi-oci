@@ -14,15 +14,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourceAliases
     {
         /// <summary>
-        /// (Updatable) Monitored Resource Alias Reference Source Credential
+        /// (Updatable) Monitored Resource Alias Reference Source Credential.
         /// </summary>
         public readonly Outputs.MonitoredResourceAliasesCredential Credential;
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         public readonly string Source;
 

@@ -85,6 +85,11 @@ import (
 //				},
 //				NodeImageName: pulumi.Any(oci_core_image.Test_image.Name),
 //				NodeMetadata:  pulumi.Any(_var.Node_pool_node_metadata),
+//				NodePoolCyclingDetails: &containerengine.NodePoolNodePoolCyclingDetailsArgs{
+//					IsNodeCyclingEnabled: pulumi.Any(_var.Node_pool_node_pool_cycling_details_is_node_cycling_enabled),
+//					MaximumSurge:         pulumi.Any(_var.Node_pool_node_pool_cycling_details_maximum_surge),
+//					MaximumUnavailable:   pulumi.Any(_var.Node_pool_node_pool_cycling_details_maximum_unavailable),
+//				},
 //				NodeShapeConfig: &containerengine.NodePoolNodeShapeConfigArgs{
 //					MemoryInGbs: pulumi.Any(_var.Node_pool_node_shape_config_memory_in_gbs),
 //					Ocpus:       pulumi.Any(_var.Node_pool_node_shape_config_ocpus),
@@ -149,6 +154,8 @@ type NodePool struct {
 	NodeImageName pulumi.StringOutput `pulumi:"nodeImageName"`
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata pulumi.MapOutput `pulumi:"nodeMetadata"`
+	// (Updatable) Node Pool Cycling Details
+	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsOutput `pulumi:"nodePoolCyclingDetails"`
 	// (Updatable) The name of the node shape of the nodes in the node pool.
 	NodeShape pulumi.StringOutput `pulumi:"nodeShape"`
 	// (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -240,6 +247,8 @@ type nodePoolState struct {
 	NodeImageName *string `pulumi:"nodeImageName"`
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	// (Updatable) Node Pool Cycling Details
+	NodePoolCyclingDetails *NodePoolNodePoolCyclingDetails `pulumi:"nodePoolCyclingDetails"`
 	// (Updatable) The name of the node shape of the nodes in the node pool.
 	NodeShape *string `pulumi:"nodeShape"`
 	// (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -291,6 +300,8 @@ type NodePoolState struct {
 	NodeImageName pulumi.StringPtrInput
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata pulumi.MapInput
+	// (Updatable) Node Pool Cycling Details
+	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsPtrInput
 	// (Updatable) The name of the node shape of the nodes in the node pool.
 	NodeShape pulumi.StringPtrInput
 	// (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -344,6 +355,8 @@ type nodePoolArgs struct {
 	NodeImageName *string `pulumi:"nodeImageName"`
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	// (Updatable) Node Pool Cycling Details
+	NodePoolCyclingDetails *NodePoolNodePoolCyclingDetails `pulumi:"nodePoolCyclingDetails"`
 	// (Updatable) The name of the node shape of the nodes in the node pool.
 	NodeShape string `pulumi:"nodeShape"`
 	// (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -388,6 +401,8 @@ type NodePoolArgs struct {
 	NodeImageName pulumi.StringPtrInput
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata pulumi.MapInput
+	// (Updatable) Node Pool Cycling Details
+	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsPtrInput
 	// (Updatable) The name of the node shape of the nodes in the node pool.
 	NodeShape pulumi.StringInput
 	// (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -556,6 +571,11 @@ func (o NodePoolOutput) NodeImageName() pulumi.StringOutput {
 // (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 func (o NodePoolOutput) NodeMetadata() pulumi.MapOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.MapOutput { return v.NodeMetadata }).(pulumi.MapOutput)
+}
+
+// (Updatable) Node Pool Cycling Details
+func (o NodePoolOutput) NodePoolCyclingDetails() NodePoolNodePoolCyclingDetailsOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolNodePoolCyclingDetailsOutput { return v.NodePoolCyclingDetails }).(NodePoolNodePoolCyclingDetailsOutput)
 }
 
 // (Updatable) The name of the node shape of the nodes in the node pool.

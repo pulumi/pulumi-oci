@@ -21,7 +21,8 @@ class DiscoveryJobArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_client: Optional[pulumi.Input[str]] = None,
                  discovery_type: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a DiscoveryJob resource.
         :param pulumi.Input[str] compartment_id: The OCID of Compartment
@@ -30,6 +31,7 @@ class DiscoveryJobArgs:
         :param pulumi.Input[str] discovery_client: Client who submits discovery job.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "discovery_details", discovery_details)
@@ -41,6 +43,8 @@ class DiscoveryJobArgs:
             pulumi.set(__self__, "discovery_type", discovery_type)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if should_propagate_tags_to_discovered_resources is not None:
+            pulumi.set(__self__, "should_propagate_tags_to_discovered_resources", should_propagate_tags_to_discovered_resources)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -114,6 +118,18 @@ class DiscoveryJobArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
+    def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        """
+        return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
+
+    @should_propagate_tags_to_discovered_resources.setter
+    def should_propagate_tags_to_discovered_resources(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_propagate_tags_to_discovered_resources", value)
+
 
 @pulumi.input_type
 class _DiscoveryJobState:
@@ -124,6 +140,7 @@ class _DiscoveryJobState:
                  discovery_details: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']] = None,
                  discovery_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  status_message: Optional[pulumi.Input[str]] = None,
@@ -139,6 +156,7 @@ class _DiscoveryJobState:
         :param pulumi.Input['DiscoveryJobDiscoveryDetailsArgs'] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
         :param pulumi.Input[str] state: The current state of the DiscoveryJob Resource.
         :param pulumi.Input[str] status: Specifies the status of the discovery job
         :param pulumi.Input[str] status_message: The short summary of the status of the discovery job
@@ -159,6 +177,8 @@ class _DiscoveryJobState:
             pulumi.set(__self__, "discovery_type", discovery_type)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if should_propagate_tags_to_discovered_resources is not None:
+            pulumi.set(__self__, "should_propagate_tags_to_discovered_resources", should_propagate_tags_to_discovered_resources)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if status is not None:
@@ -245,6 +265,18 @@ class _DiscoveryJobState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
+    def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        """
+        return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
+
+    @should_propagate_tags_to_discovered_resources.setter
+    def should_propagate_tags_to_discovered_resources(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_propagate_tags_to_discovered_resources", value)
 
     @property
     @pulumi.getter
@@ -342,6 +374,7 @@ class DiscoveryJob(pulumi.CustomResource):
                  discovery_details: Optional[pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']]] = None,
                  discovery_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -383,7 +416,8 @@ class DiscoveryJob(pulumi.CustomResource):
             discovery_type=var["discovery_job_discovery_type"],
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
         ```
 
         ## Import
@@ -402,6 +436,7 @@ class DiscoveryJob(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
         """
         ...
     @overload
@@ -449,7 +484,8 @@ class DiscoveryJob(pulumi.CustomResource):
             discovery_type=var["discovery_job_discovery_type"],
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
         ```
 
         ## Import
@@ -481,6 +517,7 @@ class DiscoveryJob(pulumi.CustomResource):
                  discovery_details: Optional[pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']]] = None,
                  discovery_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -500,6 +537,7 @@ class DiscoveryJob(pulumi.CustomResource):
             __props__.__dict__["discovery_details"] = discovery_details
             __props__.__dict__["discovery_type"] = discovery_type
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["should_propagate_tags_to_discovered_resources"] = should_propagate_tags_to_discovered_resources
             __props__.__dict__["state"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["status_message"] = None
@@ -523,6 +561,7 @@ class DiscoveryJob(pulumi.CustomResource):
             discovery_details: Optional[pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']]] = None,
             discovery_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             status_message: Optional[pulumi.Input[str]] = None,
@@ -543,6 +582,7 @@ class DiscoveryJob(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
         :param pulumi.Input[str] state: The current state of the DiscoveryJob Resource.
         :param pulumi.Input[str] status: Specifies the status of the discovery job
         :param pulumi.Input[str] status_message: The short summary of the status of the discovery job
@@ -561,6 +601,7 @@ class DiscoveryJob(pulumi.CustomResource):
         __props__.__dict__["discovery_details"] = discovery_details
         __props__.__dict__["discovery_type"] = discovery_type
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["should_propagate_tags_to_discovered_resources"] = should_propagate_tags_to_discovered_resources
         __props__.__dict__["state"] = state
         __props__.__dict__["status"] = status
         __props__.__dict__["status_message"] = status_message
@@ -617,6 +658,14 @@ class DiscoveryJob(pulumi.CustomResource):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
+    def should_propagate_tags_to_discovered_resources(self) -> pulumi.Output[bool]:
+        """
+        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        """
+        return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
     @property
     @pulumi.getter

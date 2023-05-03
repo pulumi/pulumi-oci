@@ -13,7 +13,10 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourceCredentialsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        /// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        /// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        /// * PLAINTEXT - The credential properties will have credentials in plain text format.
+        /// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         /// </summary>
         [Input("credentialType")]
         public Input<string>? CredentialType { get; set; }
@@ -25,13 +28,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+        /// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
         /// </summary>
         [Input("keyId")]
         public Input<string>? KeyId { get; set; }
 
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -40,7 +43,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         private InputList<Inputs.MonitoredResourceCredentialsPropertyArgs>? _properties;
 
         /// <summary>
-        /// (Updatable) List of monitored resource properties
+        /// (Updatable) List of monitored resource properties.
         /// </summary>
         public InputList<Inputs.MonitoredResourceCredentialsPropertyArgs> Properties
         {
@@ -49,13 +52,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Monitored resource type
+        /// Monitored Resource Type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

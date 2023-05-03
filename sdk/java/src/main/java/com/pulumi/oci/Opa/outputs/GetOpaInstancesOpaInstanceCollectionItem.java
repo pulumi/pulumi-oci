@@ -4,14 +4,21 @@
 package com.pulumi.oci.Opa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Opa.outputs.GetOpaInstancesOpaInstanceCollectionItemAttachment;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetOpaInstancesOpaInstanceCollectionItem {
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    private List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -110,6 +117,13 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
     private String timeUpdated;
 
     private GetOpaInstancesOpaInstanceCollectionItem() {}
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments() {
+        return this.attachments;
+    }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -256,6 +270,7 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments;
         private String compartmentId;
         private String consumptionModel;
         private Map<String,Object> definedTags;
@@ -279,6 +294,7 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
         public Builder() {}
         public Builder(GetOpaInstancesOpaInstanceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.attachments = defaults.attachments;
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
     	      this.definedTags = defaults.definedTags;
@@ -301,6 +317,14 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder attachments(List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments) {
+            this.attachments = Objects.requireNonNull(attachments);
+            return this;
+        }
+        public Builder attachments(GetOpaInstancesOpaInstanceCollectionItemAttachment... attachments) {
+            return attachments(List.of(attachments));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -403,6 +427,7 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
         }
         public GetOpaInstancesOpaInstanceCollectionItem build() {
             final var o = new GetOpaInstancesOpaInstanceCollectionItem();
+            o.attachments = attachments;
             o.compartmentId = compartmentId;
             o.consumptionModel = consumptionModel;
             o.definedTags = definedTags;

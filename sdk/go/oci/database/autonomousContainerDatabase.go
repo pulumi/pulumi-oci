@@ -76,7 +76,7 @@ type AutonomousContainerDatabase struct {
 	MaintenanceWindowDetails AutonomousContainerDatabaseMaintenanceWindowDetailsPtrOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousContainerDatabaseMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
@@ -98,9 +98,11 @@ type AutonomousContainerDatabase struct {
 	PeerDbUniqueName               pulumi.StringOutput `pulumi:"peerDbUniqueName"`
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
-	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ProvisionableCpuses pulumi.Float64ArrayOutput `pulumi:"provisionableCpuses"`
-	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	// For Autonomous Databases on Dedicated Exadata Infrastructure:
+	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ReclaimableCpus pulumi.Float64Output `pulumi:"reclaimableCpus"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringOutput `pulumi:"role"`
@@ -116,7 +118,7 @@ type AutonomousContainerDatabase struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert pulumi.StringOutput `pulumi:"timeSnapshotStandbyRevert"`
-	// The number of CPU cores allocated to the Autonomous VM cluster.
+	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	TotalCpus pulumi.IntOutput `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
@@ -208,7 +210,7 @@ type autonomousContainerDatabaseState struct {
 	MaintenanceWindowDetails *AutonomousContainerDatabaseMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []AutonomousContainerDatabaseMaintenanceWindow `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
@@ -230,9 +232,11 @@ type autonomousContainerDatabaseState struct {
 	PeerDbUniqueName               *string `pulumi:"peerDbUniqueName"`
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode *string `pulumi:"protectionMode"`
-	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
-	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	// For Autonomous Databases on Dedicated Exadata Infrastructure:
+	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role *string `pulumi:"role"`
@@ -248,7 +252,7 @@ type autonomousContainerDatabaseState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert *string `pulumi:"timeSnapshotStandbyRevert"`
-	// The number of CPU cores allocated to the Autonomous VM cluster.
+	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	TotalCpus *int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId *string `pulumi:"vaultId"`
@@ -306,7 +310,7 @@ type AutonomousContainerDatabaseState struct {
 	MaintenanceWindowDetails AutonomousContainerDatabaseMaintenanceWindowDetailsPtrInput
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousContainerDatabaseMaintenanceWindowArrayInput
-	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
@@ -328,9 +332,11 @@ type AutonomousContainerDatabaseState struct {
 	PeerDbUniqueName               pulumi.StringPtrInput
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringPtrInput
-	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ProvisionableCpuses pulumi.Float64ArrayInput
-	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	// For Autonomous Databases on Dedicated Exadata Infrastructure:
+	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ReclaimableCpus pulumi.Float64PtrInput
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringPtrInput
@@ -346,7 +352,7 @@ type AutonomousContainerDatabaseState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert pulumi.StringPtrInput
-	// The number of CPU cores allocated to the Autonomous VM cluster.
+	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	TotalCpus pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringPtrInput
@@ -698,7 +704,7 @@ func (o AutonomousContainerDatabaseOutput) MaintenanceWindows() AutonomousContai
 	}).(AutonomousContainerDatabaseMaintenanceWindowArrayOutput)
 }
 
-// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o AutonomousContainerDatabaseOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -764,12 +770,14 @@ func (o AutonomousContainerDatabaseOutput) ProtectionMode() pulumi.StringOutput 
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ProtectionMode }).(pulumi.StringOutput)
 }
 
-// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+// An array of CPU values that can be used to successfully provision a single Autonomous Database.\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o AutonomousContainerDatabaseOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64ArrayOutput { return v.ProvisionableCpuses }).(pulumi.Float64ArrayOutput)
 }
 
-// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+// For Autonomous Databases on Dedicated Exadata Infrastructure:
+// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o AutonomousContainerDatabaseOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
@@ -809,7 +817,7 @@ func (o AutonomousContainerDatabaseOutput) TimeSnapshotStandbyRevert() pulumi.St
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.TimeSnapshotStandbyRevert }).(pulumi.StringOutput)
 }
 
-// The number of CPU cores allocated to the Autonomous VM cluster.
+// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o AutonomousContainerDatabaseOutput) TotalCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.TotalCpus }).(pulumi.IntOutput)
 }

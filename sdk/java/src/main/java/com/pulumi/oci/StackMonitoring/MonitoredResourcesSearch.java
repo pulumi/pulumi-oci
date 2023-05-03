@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
  * 
- * Returns a list of monitored resources.
+ * Gets a list of all monitored resources in a compartment for the given search criteria.
  * 
  * ## Example Usage
  * ```java
@@ -81,14 +81,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch")
 public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResource {
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
@@ -109,14 +109,14 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.excludeFields);
     }
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     @Export(name="externalId", type=String.class, parameters={})
     private Output</* @Nullable */ String> externalId;
 
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     public Output<Optional<String>> externalId() {
@@ -137,28 +137,28 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.fields);
     }
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
      * 
      */
     @Export(name="hostName", type=String.class, parameters={})
     private Output</* @Nullable */ String> hostName;
 
     /**
-     * @return A filter to return resources with host name match
+     * @return A filter to return resources with host name match.
      * 
      */
     public Output<Optional<String>> hostName() {
         return Codegen.optional(this.hostName);
     }
     /**
-     * A filter to return resources with host name pattern
+     * A filter to return resources with host name pattern.
      * 
      */
     @Export(name="hostNameContains", type=String.class, parameters={})
     private Output</* @Nullable */ String> hostNameContains;
 
     /**
-     * @return A filter to return resources with host name pattern
+     * @return A filter to return resources with host name pattern.
      * 
      */
     public Output<Optional<String>> hostNameContains() {
@@ -193,14 +193,14 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.managementAgentId);
     }
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output</* @Nullable */ String> name;
 
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     public Output<Optional<String>> name() {
@@ -235,14 +235,14 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.propertyEquals);
     }
     /**
-     * Time zone in the form of tz database canonical zone ID.
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     @Export(name="resourceTimeZone", type=String.class, parameters={})
     private Output</* @Nullable */ String> resourceTimeZone;
 
     /**
-     * @return Time zone in the form of tz database canonical zone ID.
+     * @return Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     public Output<Optional<String>> resourceTimeZone() {
@@ -319,14 +319,14 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.timeUpdatedLessThan);
     }
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
      * 
      */
     @Export(name="type", type=String.class, parameters={})
     private Output</* @Nullable */ String> type;
 
     /**
-     * @return A filter to return resources that match resource type
+     * @return A filter to return resources that match resource type.
      * 
      */
     public Output<Optional<String>> type() {

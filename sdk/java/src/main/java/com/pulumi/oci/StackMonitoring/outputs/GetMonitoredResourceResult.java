@@ -4,6 +4,8 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceAdditionalAlias;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceAdditionalCredential;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceAlias;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceCredential;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceDatabaseConnectionDetail;
@@ -16,23 +18,25 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMonitoredResourceResult {
+    private List<GetMonitoredResourceAdditionalAlias> additionalAliases;
+    private List<GetMonitoredResourceAdditionalCredential> additionalCredentials;
     /**
      * @return Monitored Resource Alias Credential Details
      * 
      */
     private List<GetMonitoredResourceAlias> aliases;
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String compartmentId;
     /**
-     * @return Monitored Resource Credential Details
+     * @return Monitored Resource Credential Details.
      * 
      */
     private List<GetMonitoredResourceCredential> credentials;
     /**
-     * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * @return Connection details for the database.
      * 
      */
     private List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails;
@@ -47,7 +51,7 @@ public final class GetMonitoredResourceResult {
      */
     private String displayName;
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     private String externalId;
@@ -63,7 +67,7 @@ public final class GetMonitoredResourceResult {
      */
     private String hostName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String id;
@@ -74,12 +78,12 @@ public final class GetMonitoredResourceResult {
     private String managementAgentId;
     private String monitoredResourceId;
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     private String name;
     /**
-     * @return List of monitored resource properties
+     * @return List of monitored resource properties.
      * 
      */
     private List<GetMonitoredResourceProperty> properties;
@@ -99,27 +103,33 @@ public final class GetMonitoredResourceResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String tenantId;
     /**
-     * @return The time the the resource was created. An RFC3339 formatted datetime string
+     * @return The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the the resource was updated. An RFC3339 formatted datetime string
+     * @return The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     private String timeUpdated;
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     private String type;
 
     private GetMonitoredResourceResult() {}
+    public List<GetMonitoredResourceAdditionalAlias> additionalAliases() {
+        return this.additionalAliases;
+    }
+    public List<GetMonitoredResourceAdditionalCredential> additionalCredentials() {
+        return this.additionalCredentials;
+    }
     /**
      * @return Monitored Resource Alias Credential Details
      * 
@@ -128,21 +138,21 @@ public final class GetMonitoredResourceResult {
         return this.aliases;
     }
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Monitored Resource Credential Details
+     * @return Monitored Resource Credential Details.
      * 
      */
     public List<GetMonitoredResourceCredential> credentials() {
         return this.credentials;
     }
     /**
-     * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * @return Connection details for the database.
      * 
      */
     public List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails() {
@@ -163,7 +173,7 @@ public final class GetMonitoredResourceResult {
         return this.displayName;
     }
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     public String externalId() {
@@ -187,7 +197,7 @@ public final class GetMonitoredResourceResult {
         return this.hostName;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String id() {
@@ -204,14 +214,14 @@ public final class GetMonitoredResourceResult {
         return this.monitoredResourceId;
     }
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return List of monitored resource properties
+     * @return List of monitored resource properties.
      * 
      */
     public List<GetMonitoredResourceProperty> properties() {
@@ -239,28 +249,28 @@ public final class GetMonitoredResourceResult {
         return this.systemTags;
     }
     /**
-     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String tenantId() {
         return this.tenantId;
     }
     /**
-     * @return The time the the resource was created. An RFC3339 formatted datetime string
+     * @return The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the the resource was updated. An RFC3339 formatted datetime string
+     * @return The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public String type() {
@@ -276,6 +286,8 @@ public final class GetMonitoredResourceResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMonitoredResourceAdditionalAlias> additionalAliases;
+        private List<GetMonitoredResourceAdditionalCredential> additionalCredentials;
         private List<GetMonitoredResourceAlias> aliases;
         private String compartmentId;
         private List<GetMonitoredResourceCredential> credentials;
@@ -301,6 +313,8 @@ public final class GetMonitoredResourceResult {
         public Builder() {}
         public Builder(GetMonitoredResourceResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalAliases = defaults.additionalAliases;
+    	      this.additionalCredentials = defaults.additionalCredentials;
     	      this.aliases = defaults.aliases;
     	      this.compartmentId = defaults.compartmentId;
     	      this.credentials = defaults.credentials;
@@ -325,6 +339,22 @@ public final class GetMonitoredResourceResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder additionalAliases(List<GetMonitoredResourceAdditionalAlias> additionalAliases) {
+            this.additionalAliases = Objects.requireNonNull(additionalAliases);
+            return this;
+        }
+        public Builder additionalAliases(GetMonitoredResourceAdditionalAlias... additionalAliases) {
+            return additionalAliases(List.of(additionalAliases));
+        }
+        @CustomType.Setter
+        public Builder additionalCredentials(List<GetMonitoredResourceAdditionalCredential> additionalCredentials) {
+            this.additionalCredentials = Objects.requireNonNull(additionalCredentials);
+            return this;
+        }
+        public Builder additionalCredentials(GetMonitoredResourceAdditionalCredential... additionalCredentials) {
+            return additionalCredentials(List.of(additionalCredentials));
+        }
         @CustomType.Setter
         public Builder aliases(List<GetMonitoredResourceAlias> aliases) {
             this.aliases = Objects.requireNonNull(aliases);
@@ -449,6 +479,8 @@ public final class GetMonitoredResourceResult {
         }
         public GetMonitoredResourceResult build() {
             final var o = new GetMonitoredResourceResult();
+            o.additionalAliases = additionalAliases;
+            o.additionalCredentials = additionalCredentials;
             o.aliases = aliases;
             o.compartmentId = compartmentId;
             o.credentials = credentials;

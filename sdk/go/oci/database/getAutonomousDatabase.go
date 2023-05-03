@@ -82,7 +82,7 @@ type LookupAutonomousDatabaseResult struct {
 	CloneType    string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+	// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
 	ComputeCount float64 `pulumi:"computeCount"`
 	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
 	ComputeModel string `pulumi:"computeModel"`
@@ -144,7 +144,7 @@ type LookupAutonomousDatabaseResult struct {
 	IsFreeTier bool `pulumi:"isFreeTier"`
 	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsLocalDataGuardEnabled bool `pulumi:"isLocalDataGuardEnabled"`
-	// Indicates whether the Autonomous Database requires mTLS connections.
+	// Specifies if the Autonomous Database requires mTLS connections.
 	IsMtlsConnectionRequired bool `pulumi:"isMtlsConnectionRequired"`
 	// Indicates if the Autonomous Database version is a preview version.
 	IsPreview                                bool `pulumi:"isPreview"`
@@ -180,7 +180,7 @@ type LookupAutonomousDatabaseResult struct {
 	LongTermBackupSchedules []GetAutonomousDatabaseLongTermBackupSchedule `pulumi:"longTermBackupSchedules"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount int `pulumi:"maxCpuCoreCount"`
-	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet string `pulumi:"ncharacterSet"`
@@ -391,7 +391,7 @@ func (o LookupAutonomousDatabaseResultOutput) CompartmentId() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
 func (o LookupAutonomousDatabaseResultOutput) ComputeCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.ComputeCount }).(pulumi.Float64Output)
 }
@@ -544,7 +544,7 @@ func (o LookupAutonomousDatabaseResultOutput) IsLocalDataGuardEnabled() pulumi.B
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsLocalDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
-// Indicates whether the Autonomous Database requires mTLS connections.
+// Specifies if the Autonomous Database requires mTLS connections.
 func (o LookupAutonomousDatabaseResultOutput) IsMtlsConnectionRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsMtlsConnectionRequired }).(pulumi.BoolOutput)
 }
@@ -641,7 +641,7 @@ func (o LookupAutonomousDatabaseResultOutput) MaxCpuCoreCount() pulumi.IntOutput
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
 }
 
-// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
 func (o LookupAutonomousDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }

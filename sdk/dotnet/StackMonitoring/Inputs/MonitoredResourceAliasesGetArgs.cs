@@ -13,19 +13,19 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourceAliasesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Monitored Resource Alias Reference Source Credential
+        /// (Updatable) Monitored Resource Alias Reference Source Credential.
         /// </summary>
         [Input("credential", required: true)]
         public Input<Inputs.MonitoredResourceAliasesCredentialGetArgs> Credential { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;

@@ -59,6 +59,12 @@ namespace Pulumi.Oci.Opa
     public partial class OpaInstance : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        [Output("attachments")]
+        public Output<ImmutableArray<Outputs.OpaInstanceAttachment>> Attachments { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Compartment Identifier
         /// </summary>
         [Output("compartmentId")]
@@ -298,6 +304,18 @@ namespace Pulumi.Oci.Opa
 
     public sealed class OpaInstanceState : global::Pulumi.ResourceArgs
     {
+        [Input("attachments")]
+        private InputList<Inputs.OpaInstanceAttachmentGetArgs>? _attachments;
+
+        /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public InputList<Inputs.OpaInstanceAttachmentGetArgs> Attachments
+        {
+            get => _attachments ?? (_attachments = new InputList<Inputs.OpaInstanceAttachmentGetArgs>());
+            set => _attachments = value;
+        }
+
         /// <summary>
         /// (Updatable) Compartment Identifier
         /// </summary>

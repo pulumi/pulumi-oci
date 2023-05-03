@@ -73,6 +73,7 @@ export interface GetDiscoveryJobResult {
      * The OCID of Discovery job
      */
     readonly id: string;
+    readonly shouldPropagateTagsToDiscoveredResources: boolean;
     /**
      * The current state of the DiscoveryJob Resource.
      */

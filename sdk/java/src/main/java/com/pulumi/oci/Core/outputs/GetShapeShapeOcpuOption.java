@@ -10,11 +10,15 @@ import java.util.Objects;
 @CustomType
 public final class GetShapeShapeOcpuOption {
     private Double max;
+    private Double maxPerNumaNode;
     private Double min;
 
     private GetShapeShapeOcpuOption() {}
     public Double max() {
         return this.max;
+    }
+    public Double maxPerNumaNode() {
+        return this.maxPerNumaNode;
     }
     public Double min() {
         return this.min;
@@ -30,17 +34,24 @@ public final class GetShapeShapeOcpuOption {
     @CustomType.Builder
     public static final class Builder {
         private Double max;
+        private Double maxPerNumaNode;
         private Double min;
         public Builder() {}
         public Builder(GetShapeShapeOcpuOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
+    	      this.maxPerNumaNode = defaults.maxPerNumaNode;
     	      this.min = defaults.min;
         }
 
         @CustomType.Setter
         public Builder max(Double max) {
             this.max = Objects.requireNonNull(max);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxPerNumaNode(Double maxPerNumaNode) {
+            this.maxPerNumaNode = Objects.requireNonNull(maxPerNumaNode);
             return this;
         }
         @CustomType.Setter
@@ -51,6 +62,7 @@ public final class GetShapeShapeOcpuOption {
         public GetShapeShapeOcpuOption build() {
             final var o = new GetShapeShapeOcpuOption();
             o.max = max;
+            o.maxPerNumaNode = maxPerNumaNode;
             o.min = min;
             return o;
         }

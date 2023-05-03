@@ -11,10 +11,171 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'OpaInstanceAttachment',
+    'GetOpaInstanceAttachmentResult',
     'GetOpaInstancesFilterResult',
     'GetOpaInstancesOpaInstanceCollectionResult',
     'GetOpaInstancesOpaInstanceCollectionItemResult',
+    'GetOpaInstancesOpaInstanceCollectionItemAttachmentResult',
 ]
+
+@pulumi.output_type
+class OpaInstanceAttachment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isImplicit":
+            suggest = "is_implicit"
+        elif key == "targetId":
+            suggest = "target_id"
+        elif key == "targetInstanceUrl":
+            suggest = "target_instance_url"
+        elif key == "targetRole":
+            suggest = "target_role"
+        elif key == "targetServiceType":
+            suggest = "target_service_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpaInstanceAttachment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpaInstanceAttachment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpaInstanceAttachment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_implicit: Optional[bool] = None,
+                 target_id: Optional[str] = None,
+                 target_instance_url: Optional[str] = None,
+                 target_role: Optional[str] = None,
+                 target_service_type: Optional[str] = None):
+        """
+        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
+               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        :param str target_instance_url: The dataplane instance URL of the attached instance
+        :param str target_role: The role of the target attachment.
+        :param str target_service_type: The type of the target instance, such as "FUSION".
+        """
+        if is_implicit is not None:
+            pulumi.set(__self__, "is_implicit", is_implicit)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if target_instance_url is not None:
+            pulumi.set(__self__, "target_instance_url", target_instance_url)
+        if target_role is not None:
+            pulumi.set(__self__, "target_role", target_role)
+        if target_service_type is not None:
+            pulumi.set(__self__, "target_service_type", target_service_type)
+
+    @property
+    @pulumi.getter(name="isImplicit")
+    def is_implicit(self) -> Optional[bool]:
+        """
+        * If role == `PARENT`, the attached instance was created by this service instance
+        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        """
+        return pulumi.get(self, "is_implicit")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[str]:
+        """
+        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="targetInstanceUrl")
+    def target_instance_url(self) -> Optional[str]:
+        """
+        The dataplane instance URL of the attached instance
+        """
+        return pulumi.get(self, "target_instance_url")
+
+    @property
+    @pulumi.getter(name="targetRole")
+    def target_role(self) -> Optional[str]:
+        """
+        The role of the target attachment.
+        """
+        return pulumi.get(self, "target_role")
+
+    @property
+    @pulumi.getter(name="targetServiceType")
+    def target_service_type(self) -> Optional[str]:
+        """
+        The type of the target instance, such as "FUSION".
+        """
+        return pulumi.get(self, "target_service_type")
+
+
+@pulumi.output_type
+class GetOpaInstanceAttachmentResult(dict):
+    def __init__(__self__, *,
+                 is_implicit: bool,
+                 target_id: str,
+                 target_instance_url: str,
+                 target_role: str,
+                 target_service_type: str):
+        """
+        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
+               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        :param str target_instance_url: The dataplane instance URL of the attached instance
+        :param str target_role: The role of the target attachment.
+        :param str target_service_type: The type of the target instance, such as "FUSION".
+        """
+        pulumi.set(__self__, "is_implicit", is_implicit)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_instance_url", target_instance_url)
+        pulumi.set(__self__, "target_role", target_role)
+        pulumi.set(__self__, "target_service_type", target_service_type)
+
+    @property
+    @pulumi.getter(name="isImplicit")
+    def is_implicit(self) -> bool:
+        """
+        * If role == `PARENT`, the attached instance was created by this service instance
+        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        """
+        return pulumi.get(self, "is_implicit")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="targetInstanceUrl")
+    def target_instance_url(self) -> str:
+        """
+        The dataplane instance URL of the attached instance
+        """
+        return pulumi.get(self, "target_instance_url")
+
+    @property
+    @pulumi.getter(name="targetRole")
+    def target_role(self) -> str:
+        """
+        The role of the target attachment.
+        """
+        return pulumi.get(self, "target_role")
+
+    @property
+    @pulumi.getter(name="targetServiceType")
+    def target_service_type(self) -> str:
+        """
+        The type of the target instance, such as "FUSION".
+        """
+        return pulumi.get(self, "target_service_type")
+
 
 @pulumi.output_type
 class GetOpaInstancesFilterResult(dict):
@@ -58,6 +219,7 @@ class GetOpaInstancesOpaInstanceCollectionResult(dict):
 @pulumi.output_type
 class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
     def __init__(__self__, *,
+                 attachments: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult'],
                  compartment_id: str,
                  consumption_model: str,
                  defined_tags: Mapping[str, Any],
@@ -79,6 +241,7 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
+        :param Sequence['GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs'] attachments: A list of associated attachments to other services
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str consumption_model: The entitlement used for billing purposes
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -99,6 +262,7 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
         :param str time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
+        pulumi.set(__self__, "attachments", attachments)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "consumption_model", consumption_model)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -119,6 +283,14 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult']:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -276,5 +448,69 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
         The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetOpaInstancesOpaInstanceCollectionItemAttachmentResult(dict):
+    def __init__(__self__, *,
+                 is_implicit: bool,
+                 target_id: str,
+                 target_instance_url: str,
+                 target_role: str,
+                 target_service_type: str):
+        """
+        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
+               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        :param str target_instance_url: The dataplane instance URL of the attached instance
+        :param str target_role: The role of the target attachment.
+        :param str target_service_type: The type of the target instance, such as "FUSION".
+        """
+        pulumi.set(__self__, "is_implicit", is_implicit)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_instance_url", target_instance_url)
+        pulumi.set(__self__, "target_role", target_role)
+        pulumi.set(__self__, "target_service_type", target_service_type)
+
+    @property
+    @pulumi.getter(name="isImplicit")
+    def is_implicit(self) -> bool:
+        """
+        * If role == `PARENT`, the attached instance was created by this service instance
+        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        """
+        return pulumi.get(self, "is_implicit")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="targetInstanceUrl")
+    def target_instance_url(self) -> str:
+        """
+        The dataplane instance URL of the attached instance
+        """
+        return pulumi.get(self, "target_instance_url")
+
+    @property
+    @pulumi.getter(name="targetRole")
+    def target_role(self) -> str:
+        """
+        The role of the target attachment.
+        """
+        return pulumi.get(self, "target_role")
+
+    @property
+    @pulumi.getter(name="targetServiceType")
+    def target_service_type(self) -> str:
+        """
+        The type of the target instance, such as "FUSION".
+        """
+        return pulumi.get(self, "target_service_type")
 
 

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -173,14 +174,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The number of OCPU cores to be enabled per VM cluster node.
+     * The number of CPU cores to be enabled per VM cluster node.
      * 
      */
     @Import(name="cpuCoreCountPerNode")
     private @Nullable Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of OCPU cores to be enabled per VM cluster node.
+     * @return The number of CPU cores to be enabled per VM cluster node.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCountPerNode() {
@@ -338,6 +339,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * 
+     */
+    @Import(name="isMtlsEnabledVmCluster")
+    private @Nullable Output<Boolean> isMtlsEnabledVmCluster;
+
+    /**
+     * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * 
+     */
+    public Optional<Output<Boolean>> isMtlsEnabledVmCluster() {
+        return Optional.ofNullable(this.isMtlsEnabledVmCluster);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -428,14 +444,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      * 
      */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) to be enabled per each OCPU core.
+     * @return The amount of memory (in GBs) to be enabled per each CPU core.
      * 
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
@@ -520,18 +536,52 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     @Import(name="reclaimableCpus")
     private @Nullable Output<Double> reclaimableCpus;
 
     /**
-     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Optional<Output<Double>> reclaimableCpus() {
         return Optional.ofNullable(this.reclaimableCpus);
+    }
+
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     * 
+     */
+    @Import(name="scanListenerPortNonTls")
+    private @Nullable Output<Integer> scanListenerPortNonTls;
+
+    /**
+     * @return The SCAN Listener Non TLS port. Default is 1521.
+     * 
+     */
+    public Optional<Output<Integer>> scanListenerPortNonTls() {
+        return Optional.ofNullable(this.scanListenerPortNonTls);
+    }
+
+    /**
+     * The SCAN Listener TLS port. Default is 2484.
+     * 
+     */
+    @Import(name="scanListenerPortTls")
+    private @Nullable Output<Integer> scanListenerPortTls;
+
+    /**
+     * @return The SCAN Listener TLS port. Default is 2484.
+     * 
+     */
+    public Optional<Output<Integer>> scanListenerPortTls() {
+        return Optional.ofNullable(this.scanListenerPortTls);
     }
 
     /**
@@ -648,6 +698,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.domain = $.domain;
         this.freeformTags = $.freeformTags;
         this.hostname = $.hostname;
+        this.isMtlsEnabledVmCluster = $.isMtlsEnabledVmCluster;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.lastUpdateHistoryEntryId = $.lastUpdateHistoryEntryId;
         this.licenseModel = $.licenseModel;
@@ -661,6 +712,8 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.reclaimableCpus = $.reclaimableCpus;
+        this.scanListenerPortNonTls = $.scanListenerPortNonTls;
+        this.scanListenerPortTls = $.scanListenerPortTls;
         this.shape = $.shape;
         this.state = $.state;
         this.subnetId = $.subnetId;
@@ -898,7 +951,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of OCPU cores to be enabled per VM cluster node.
+         * @param cpuCoreCountPerNode The number of CPU cores to be enabled per VM cluster node.
          * 
          * @return builder
          * 
@@ -909,7 +962,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of OCPU cores to be enabled per VM cluster node.
+         * @param cpuCoreCountPerNode The number of CPU cores to be enabled per VM cluster node.
          * 
          * @return builder
          * 
@@ -1139,6 +1192,27 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param isMtlsEnabledVmCluster Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMtlsEnabledVmCluster(@Nullable Output<Boolean> isMtlsEnabledVmCluster) {
+            $.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+            return this;
+        }
+
+        /**
+         * @param isMtlsEnabledVmCluster Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
+            return isMtlsEnabledVmCluster(Output.of(isMtlsEnabledVmCluster));
+        }
+
+        /**
          * @param lastMaintenanceRunId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
          * 
          * @return builder
@@ -1275,7 +1349,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each OCPU core.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each CPU core.
          * 
          * @return builder
          * 
@@ -1286,7 +1360,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each OCPU core.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each CPU core.
          * 
          * @return builder
          * 
@@ -1414,7 +1488,9 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param reclaimableCpus CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
+         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          * 
          * @return builder
          * 
@@ -1425,13 +1501,57 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param reclaimableCpus CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
+         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          * 
          * @return builder
          * 
          */
         public Builder reclaimableCpus(Double reclaimableCpus) {
             return reclaimableCpus(Output.of(reclaimableCpus));
+        }
+
+        /**
+         * @param scanListenerPortNonTls The SCAN Listener Non TLS port. Default is 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortNonTls(@Nullable Output<Integer> scanListenerPortNonTls) {
+            $.scanListenerPortNonTls = scanListenerPortNonTls;
+            return this;
+        }
+
+        /**
+         * @param scanListenerPortNonTls The SCAN Listener Non TLS port. Default is 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            return scanListenerPortNonTls(Output.of(scanListenerPortNonTls));
+        }
+
+        /**
+         * @param scanListenerPortTls The SCAN Listener TLS port. Default is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortTls(@Nullable Output<Integer> scanListenerPortTls) {
+            $.scanListenerPortTls = scanListenerPortTls;
+            return this;
+        }
+
+        /**
+         * @param scanListenerPortTls The SCAN Listener TLS port. Default is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            return scanListenerPortTls(Output.of(scanListenerPortTls));
         }
 
         /**

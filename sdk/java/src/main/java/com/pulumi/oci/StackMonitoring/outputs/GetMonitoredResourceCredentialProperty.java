@@ -10,26 +10,26 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitoredResourceCredentialProperty {
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     private String name;
     /**
-     * @return property value
+     * @return Property Value.
      * 
      */
     private String value;
 
     private GetMonitoredResourceCredentialProperty() {}
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return property value
+     * @return Property Value.
      * 
      */
     public String value() {

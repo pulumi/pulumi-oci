@@ -826,12 +826,467 @@ func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) PropertiesMap() pulumi.MapOut
 	}).(pulumi.MapOutput)
 }
 
-type MonitoredResourceAliases struct {
-	// (Updatable) Monitored Resource Alias Reference Source Credential
-	Credential MonitoredResourceAliasesCredential `pulumi:"credential"`
-	// (Updatable) property name
+type MonitoredResourceAdditionalAlias struct {
+	// (Updatable) Monitored Resource Alias Reference Source Credential.
+	Credential MonitoredResourceAdditionalAliasCredential `pulumi:"credential"`
+	// (Updatable) Property Name.
 	Name string `pulumi:"name"`
-	// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// MonitoredResourceAdditionalAliasInput is an input type that accepts MonitoredResourceAdditionalAliasArgs and MonitoredResourceAdditionalAliasOutput values.
+// You can construct a concrete instance of `MonitoredResourceAdditionalAliasInput` via:
+//
+//	MonitoredResourceAdditionalAliasArgs{...}
+type MonitoredResourceAdditionalAliasInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceAdditionalAliasOutput() MonitoredResourceAdditionalAliasOutput
+	ToMonitoredResourceAdditionalAliasOutputWithContext(context.Context) MonitoredResourceAdditionalAliasOutput
+}
+
+type MonitoredResourceAdditionalAliasArgs struct {
+	// (Updatable) Monitored Resource Alias Reference Source Credential.
+	Credential MonitoredResourceAdditionalAliasCredentialInput `pulumi:"credential"`
+	// (Updatable) Property Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (MonitoredResourceAdditionalAliasArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (i MonitoredResourceAdditionalAliasArgs) ToMonitoredResourceAdditionalAliasOutput() MonitoredResourceAdditionalAliasOutput {
+	return i.ToMonitoredResourceAdditionalAliasOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceAdditionalAliasArgs) ToMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasOutput)
+}
+
+// MonitoredResourceAdditionalAliasArrayInput is an input type that accepts MonitoredResourceAdditionalAliasArray and MonitoredResourceAdditionalAliasArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceAdditionalAliasArrayInput` via:
+//
+//	MonitoredResourceAdditionalAliasArray{ MonitoredResourceAdditionalAliasArgs{...} }
+type MonitoredResourceAdditionalAliasArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceAdditionalAliasArrayOutput() MonitoredResourceAdditionalAliasArrayOutput
+	ToMonitoredResourceAdditionalAliasArrayOutputWithContext(context.Context) MonitoredResourceAdditionalAliasArrayOutput
+}
+
+type MonitoredResourceAdditionalAliasArray []MonitoredResourceAdditionalAliasInput
+
+func (MonitoredResourceAdditionalAliasArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (i MonitoredResourceAdditionalAliasArray) ToMonitoredResourceAdditionalAliasArrayOutput() MonitoredResourceAdditionalAliasArrayOutput {
+	return i.ToMonitoredResourceAdditionalAliasArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceAdditionalAliasArray) ToMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasArrayOutput)
+}
+
+type MonitoredResourceAdditionalAliasOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceAdditionalAliasOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (o MonitoredResourceAdditionalAliasOutput) ToMonitoredResourceAdditionalAliasOutput() MonitoredResourceAdditionalAliasOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalAliasOutput) ToMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasOutput {
+	return o
+}
+
+// (Updatable) Monitored Resource Alias Reference Source Credential.
+func (o MonitoredResourceAdditionalAliasOutput) Credential() MonitoredResourceAdditionalAliasCredentialOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalAlias) MonitoredResourceAdditionalAliasCredential {
+		return v.Credential
+	}).(MonitoredResourceAdditionalAliasCredentialOutput)
+}
+
+// (Updatable) Property Name.
+func (o MonitoredResourceAdditionalAliasOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalAlias) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o MonitoredResourceAdditionalAliasOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalAlias) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type MonitoredResourceAdditionalAliasArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceAdditionalAliasArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (o MonitoredResourceAdditionalAliasArrayOutput) ToMonitoredResourceAdditionalAliasArrayOutput() MonitoredResourceAdditionalAliasArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalAliasArrayOutput) ToMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalAliasArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalAliasOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceAdditionalAlias {
+		return vs[0].([]MonitoredResourceAdditionalAlias)[vs[1].(int)]
+	}).(MonitoredResourceAdditionalAliasOutput)
+}
+
+type MonitoredResourceAdditionalAliasCredential struct {
+	// (Updatable) Property Name.
+	Name string `pulumi:"name"`
+	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service string `pulumi:"service"`
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// MonitoredResourceAdditionalAliasCredentialInput is an input type that accepts MonitoredResourceAdditionalAliasCredentialArgs and MonitoredResourceAdditionalAliasCredentialOutput values.
+// You can construct a concrete instance of `MonitoredResourceAdditionalAliasCredentialInput` via:
+//
+//	MonitoredResourceAdditionalAliasCredentialArgs{...}
+type MonitoredResourceAdditionalAliasCredentialInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceAdditionalAliasCredentialOutput() MonitoredResourceAdditionalAliasCredentialOutput
+	ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(context.Context) MonitoredResourceAdditionalAliasCredentialOutput
+}
+
+type MonitoredResourceAdditionalAliasCredentialArgs struct {
+	// (Updatable) Property Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service pulumi.StringInput `pulumi:"service"`
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (MonitoredResourceAdditionalAliasCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (i MonitoredResourceAdditionalAliasCredentialArgs) ToMonitoredResourceAdditionalAliasCredentialOutput() MonitoredResourceAdditionalAliasCredentialOutput {
+	return i.ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceAdditionalAliasCredentialArgs) ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasCredentialOutput)
+}
+
+type MonitoredResourceAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceAdditionalAliasCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (o MonitoredResourceAdditionalAliasCredentialOutput) ToMonitoredResourceAdditionalAliasCredentialOutput() MonitoredResourceAdditionalAliasCredentialOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalAliasCredentialOutput) ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasCredentialOutput {
+	return o
+}
+
+// (Updatable) Property Name.
+func (o MonitoredResourceAdditionalAliasCredentialOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalAliasCredential) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+func (o MonitoredResourceAdditionalAliasCredentialOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalAliasCredential) string { return v.Service }).(pulumi.StringOutput)
+}
+
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o MonitoredResourceAdditionalAliasCredentialOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalAliasCredential) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type MonitoredResourceAdditionalCredential struct {
+	// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType *string `pulumi:"credentialType"`
+	// (Updatable) The user-specified textual description of the credential.
+	Description *string `pulumi:"description"`
+	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId *string `pulumi:"keyId"`
+	// (Updatable) Property Name.
+	Name *string `pulumi:"name"`
+	// (Updatable) List of monitored resource properties.
+	Properties []MonitoredResourceAdditionalCredentialProperty `pulumi:"properties"`
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source *string `pulumi:"source"`
+	// Monitored Resource Type.
+	Type *string `pulumi:"type"`
+}
+
+// MonitoredResourceAdditionalCredentialInput is an input type that accepts MonitoredResourceAdditionalCredentialArgs and MonitoredResourceAdditionalCredentialOutput values.
+// You can construct a concrete instance of `MonitoredResourceAdditionalCredentialInput` via:
+//
+//	MonitoredResourceAdditionalCredentialArgs{...}
+type MonitoredResourceAdditionalCredentialInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceAdditionalCredentialOutput() MonitoredResourceAdditionalCredentialOutput
+	ToMonitoredResourceAdditionalCredentialOutputWithContext(context.Context) MonitoredResourceAdditionalCredentialOutput
+}
+
+type MonitoredResourceAdditionalCredentialArgs struct {
+	// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
+	// (Updatable) The user-specified textual description of the credential.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
+	// (Updatable) Property Name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) List of monitored resource properties.
+	Properties MonitoredResourceAdditionalCredentialPropertyArrayInput `pulumi:"properties"`
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringPtrInput `pulumi:"source"`
+	// Monitored Resource Type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (MonitoredResourceAdditionalCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (i MonitoredResourceAdditionalCredentialArgs) ToMonitoredResourceAdditionalCredentialOutput() MonitoredResourceAdditionalCredentialOutput {
+	return i.ToMonitoredResourceAdditionalCredentialOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceAdditionalCredentialArgs) ToMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialOutput)
+}
+
+// MonitoredResourceAdditionalCredentialArrayInput is an input type that accepts MonitoredResourceAdditionalCredentialArray and MonitoredResourceAdditionalCredentialArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceAdditionalCredentialArrayInput` via:
+//
+//	MonitoredResourceAdditionalCredentialArray{ MonitoredResourceAdditionalCredentialArgs{...} }
+type MonitoredResourceAdditionalCredentialArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceAdditionalCredentialArrayOutput() MonitoredResourceAdditionalCredentialArrayOutput
+	ToMonitoredResourceAdditionalCredentialArrayOutputWithContext(context.Context) MonitoredResourceAdditionalCredentialArrayOutput
+}
+
+type MonitoredResourceAdditionalCredentialArray []MonitoredResourceAdditionalCredentialInput
+
+func (MonitoredResourceAdditionalCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (i MonitoredResourceAdditionalCredentialArray) ToMonitoredResourceAdditionalCredentialArrayOutput() MonitoredResourceAdditionalCredentialArrayOutput {
+	return i.ToMonitoredResourceAdditionalCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceAdditionalCredentialArray) ToMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialArrayOutput)
+}
+
+type MonitoredResourceAdditionalCredentialOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceAdditionalCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (o MonitoredResourceAdditionalCredentialOutput) ToMonitoredResourceAdditionalCredentialOutput() MonitoredResourceAdditionalCredentialOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialOutput) ToMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialOutput {
+	return o
+}
+
+// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+// * PLAINTEXT - The credential properties will have credentials in plain text format.
+// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+func (o MonitoredResourceAdditionalCredentialOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.CredentialType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user-specified textual description of the credential.
+func (o MonitoredResourceAdditionalCredentialOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+func (o MonitoredResourceAdditionalCredentialOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.KeyId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Property Name.
+func (o MonitoredResourceAdditionalCredentialOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of monitored resource properties.
+func (o MonitoredResourceAdditionalCredentialOutput) Properties() MonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) []MonitoredResourceAdditionalCredentialProperty {
+		return v.Properties
+	}).(MonitoredResourceAdditionalCredentialPropertyArrayOutput)
+}
+
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o MonitoredResourceAdditionalCredentialOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// Monitored Resource Type.
+func (o MonitoredResourceAdditionalCredentialOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceAdditionalCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceAdditionalCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (o MonitoredResourceAdditionalCredentialArrayOutput) ToMonitoredResourceAdditionalCredentialArrayOutput() MonitoredResourceAdditionalCredentialArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialArrayOutput) ToMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceAdditionalCredential {
+		return vs[0].([]MonitoredResourceAdditionalCredential)[vs[1].(int)]
+	}).(MonitoredResourceAdditionalCredentialOutput)
+}
+
+type MonitoredResourceAdditionalCredentialProperty struct {
+	// (Updatable) Property Name.
+	Name *string `pulumi:"name"`
+	// (Updatable) Property Value.
+	Value *string `pulumi:"value"`
+}
+
+// MonitoredResourceAdditionalCredentialPropertyInput is an input type that accepts MonitoredResourceAdditionalCredentialPropertyArgs and MonitoredResourceAdditionalCredentialPropertyOutput values.
+// You can construct a concrete instance of `MonitoredResourceAdditionalCredentialPropertyInput` via:
+//
+//	MonitoredResourceAdditionalCredentialPropertyArgs{...}
+type MonitoredResourceAdditionalCredentialPropertyInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceAdditionalCredentialPropertyOutput() MonitoredResourceAdditionalCredentialPropertyOutput
+	ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(context.Context) MonitoredResourceAdditionalCredentialPropertyOutput
+}
+
+type MonitoredResourceAdditionalCredentialPropertyArgs struct {
+	// (Updatable) Property Name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Property Value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MonitoredResourceAdditionalCredentialPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourceAdditionalCredentialPropertyArgs) ToMonitoredResourceAdditionalCredentialPropertyOutput() MonitoredResourceAdditionalCredentialPropertyOutput {
+	return i.ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceAdditionalCredentialPropertyArgs) ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialPropertyOutput)
+}
+
+// MonitoredResourceAdditionalCredentialPropertyArrayInput is an input type that accepts MonitoredResourceAdditionalCredentialPropertyArray and MonitoredResourceAdditionalCredentialPropertyArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceAdditionalCredentialPropertyArrayInput` via:
+//
+//	MonitoredResourceAdditionalCredentialPropertyArray{ MonitoredResourceAdditionalCredentialPropertyArgs{...} }
+type MonitoredResourceAdditionalCredentialPropertyArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceAdditionalCredentialPropertyArrayOutput() MonitoredResourceAdditionalCredentialPropertyArrayOutput
+	ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(context.Context) MonitoredResourceAdditionalCredentialPropertyArrayOutput
+}
+
+type MonitoredResourceAdditionalCredentialPropertyArray []MonitoredResourceAdditionalCredentialPropertyInput
+
+func (MonitoredResourceAdditionalCredentialPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourceAdditionalCredentialPropertyArray) ToMonitoredResourceAdditionalCredentialPropertyArrayOutput() MonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return i.ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceAdditionalCredentialPropertyArray) ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialPropertyArrayOutput)
+}
+
+type MonitoredResourceAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToMonitoredResourceAdditionalCredentialPropertyOutput() MonitoredResourceAdditionalCredentialPropertyOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyOutput {
+	return o
+}
+
+// (Updatable) Property Name.
+func (o MonitoredResourceAdditionalCredentialPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredentialProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Property Value.
+func (o MonitoredResourceAdditionalCredentialPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceAdditionalCredentialProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceAdditionalCredentialPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceAdditionalCredentialPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToMonitoredResourceAdditionalCredentialPropertyArrayOutput() MonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalCredentialPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceAdditionalCredentialProperty {
+		return vs[0].([]MonitoredResourceAdditionalCredentialProperty)[vs[1].(int)]
+	}).(MonitoredResourceAdditionalCredentialPropertyOutput)
+}
+
+type MonitoredResourceAliases struct {
+	// (Updatable) Monitored Resource Alias Reference Source Credential.
+	Credential MonitoredResourceAliasesCredential `pulumi:"credential"`
+	// (Updatable) Property Name.
+	Name string `pulumi:"name"`
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -847,11 +1302,11 @@ type MonitoredResourceAliasesInput interface {
 }
 
 type MonitoredResourceAliasesArgs struct {
-	// (Updatable) Monitored Resource Alias Reference Source Credential
+	// (Updatable) Monitored Resource Alias Reference Source Credential.
 	Credential MonitoredResourceAliasesCredentialInput `pulumi:"credential"`
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -932,17 +1387,17 @@ func (o MonitoredResourceAliasesOutput) ToMonitoredResourceAliasesPtrOutputWithC
 	}).(MonitoredResourceAliasesPtrOutput)
 }
 
-// (Updatable) Monitored Resource Alias Reference Source Credential
+// (Updatable) Monitored Resource Alias Reference Source Credential.
 func (o MonitoredResourceAliasesOutput) Credential() MonitoredResourceAliasesCredentialOutput {
 	return o.ApplyT(func(v MonitoredResourceAliases) MonitoredResourceAliasesCredential { return v.Credential }).(MonitoredResourceAliasesCredentialOutput)
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceAliasesOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliases) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliases) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -971,7 +1426,7 @@ func (o MonitoredResourceAliasesPtrOutput) Elem() MonitoredResourceAliasesOutput
 	}).(MonitoredResourceAliasesOutput)
 }
 
-// (Updatable) Monitored Resource Alias Reference Source Credential
+// (Updatable) Monitored Resource Alias Reference Source Credential.
 func (o MonitoredResourceAliasesPtrOutput) Credential() MonitoredResourceAliasesCredentialPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliases) *MonitoredResourceAliasesCredential {
 		if v == nil {
@@ -981,7 +1436,7 @@ func (o MonitoredResourceAliasesPtrOutput) Credential() MonitoredResourceAliases
 	}).(MonitoredResourceAliasesCredentialPtrOutput)
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceAliasesPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliases) *string {
 		if v == nil {
@@ -991,7 +1446,7 @@ func (o MonitoredResourceAliasesPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesPtrOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliases) *string {
 		if v == nil {
@@ -1002,11 +1457,11 @@ func (o MonitoredResourceAliasesPtrOutput) Source() pulumi.StringPtrOutput {
 }
 
 type MonitoredResourceAliasesCredential struct {
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name string `pulumi:"name"`
-	// (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service string `pulumi:"service"`
-	// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -1022,11 +1477,11 @@ type MonitoredResourceAliasesCredentialInput interface {
 }
 
 type MonitoredResourceAliasesCredentialArgs struct {
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service pulumi.StringInput `pulumi:"service"`
-	// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -1107,17 +1562,17 @@ func (o MonitoredResourceAliasesCredentialOutput) ToMonitoredResourceAliasesCred
 	}).(MonitoredResourceAliasesCredentialPtrOutput)
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceAliasesCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliasesCredential) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 func (o MonitoredResourceAliasesCredentialOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliasesCredential) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesCredentialOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliasesCredential) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -1146,7 +1601,7 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) Elem() MonitoredResourceAli
 	}).(MonitoredResourceAliasesCredentialOutput)
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceAliasesCredentialPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliasesCredential) *string {
 		if v == nil {
@@ -1156,7 +1611,7 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) Name() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 func (o MonitoredResourceAliasesCredentialPtrOutput) Service() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliasesCredential) *string {
 		if v == nil {
@@ -1166,7 +1621,7 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) Service() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesCredentialPtrOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliasesCredential) *string {
 		if v == nil {
@@ -1177,19 +1632,22 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) Source() pulumi.StringPtrOu
 }
 
 type MonitoredResourceCredentials struct {
-	// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
 	CredentialType *string `pulumi:"credentialType"`
 	// (Updatable) The user-specified textual description of the credential.
 	Description *string `pulumi:"description"`
-	// (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId *string `pulumi:"keyId"`
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name *string `pulumi:"name"`
-	// (Updatable) List of monitored resource properties
+	// (Updatable) List of monitored resource properties.
 	Properties []MonitoredResourceCredentialsProperty `pulumi:"properties"`
-	// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source *string `pulumi:"source"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type *string `pulumi:"type"`
 }
 
@@ -1205,19 +1663,22 @@ type MonitoredResourceCredentialsInput interface {
 }
 
 type MonitoredResourceCredentialsArgs struct {
-	// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
 	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
 	// (Updatable) The user-specified textual description of the credential.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) List of monitored resource properties
+	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourceCredentialsPropertyArrayInput `pulumi:"properties"`
-	// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringPtrInput `pulumi:"source"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -1298,7 +1759,10 @@ func (o MonitoredResourceCredentialsOutput) ToMonitoredResourceCredentialsPtrOut
 	}).(MonitoredResourceCredentialsPtrOutput)
 }
 
-// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+// * PLAINTEXT - The credential properties will have credentials in plain text format.
+// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
 func (o MonitoredResourceCredentialsOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.CredentialType }).(pulumi.StringPtrOutput)
 }
@@ -1308,27 +1772,27 @@ func (o MonitoredResourceCredentialsOutput) Description() pulumi.StringPtrOutput
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 func (o MonitoredResourceCredentialsOutput) KeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.KeyId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceCredentialsOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) List of monitored resource properties
+// (Updatable) List of monitored resource properties.
 func (o MonitoredResourceCredentialsOutput) Properties() MonitoredResourceCredentialsPropertyArrayOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) []MonitoredResourceCredentialsProperty { return v.Properties }).(MonitoredResourceCredentialsPropertyArrayOutput)
 }
 
-// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceCredentialsOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
-// Monitored resource type
+// Monitored Resource Type.
 func (o MonitoredResourceCredentialsOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1357,7 +1821,10 @@ func (o MonitoredResourceCredentialsPtrOutput) Elem() MonitoredResourceCredentia
 	}).(MonitoredResourceCredentialsOutput)
 }
 
-// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+// * PLAINTEXT - The credential properties will have credentials in plain text format.
+// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
 func (o MonitoredResourceCredentialsPtrOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -1377,7 +1844,7 @@ func (o MonitoredResourceCredentialsPtrOutput) Description() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 func (o MonitoredResourceCredentialsPtrOutput) KeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -1387,7 +1854,7 @@ func (o MonitoredResourceCredentialsPtrOutput) KeyId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceCredentialsPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -1397,7 +1864,7 @@ func (o MonitoredResourceCredentialsPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) List of monitored resource properties
+// (Updatable) List of monitored resource properties.
 func (o MonitoredResourceCredentialsPtrOutput) Properties() MonitoredResourceCredentialsPropertyArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) []MonitoredResourceCredentialsProperty {
 		if v == nil {
@@ -1407,7 +1874,7 @@ func (o MonitoredResourceCredentialsPtrOutput) Properties() MonitoredResourceCre
 	}).(MonitoredResourceCredentialsPropertyArrayOutput)
 }
 
-// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceCredentialsPtrOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -1417,7 +1884,7 @@ func (o MonitoredResourceCredentialsPtrOutput) Source() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Monitored resource type
+// Monitored Resource Type.
 func (o MonitoredResourceCredentialsPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -1428,9 +1895,9 @@ func (o MonitoredResourceCredentialsPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type MonitoredResourceCredentialsProperty struct {
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name *string `pulumi:"name"`
-	// (Updatable) property value
+	// (Updatable) Property Value.
 	Value *string `pulumi:"value"`
 }
 
@@ -1446,9 +1913,9 @@ type MonitoredResourceCredentialsPropertyInput interface {
 }
 
 type MonitoredResourceCredentialsPropertyArgs struct {
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) property value
+	// (Updatable) Property Value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1503,12 +1970,12 @@ func (o MonitoredResourceCredentialsPropertyOutput) ToMonitoredResourceCredentia
 	return o
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceCredentialsPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentialsProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) property value
+// (Updatable) Property Value.
 func (o MonitoredResourceCredentialsPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentialsProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1534,9 +2001,9 @@ func (o MonitoredResourceCredentialsPropertyArrayOutput) Index(i pulumi.IntInput
 }
 
 type MonitoredResourceDatabaseConnectionDetails struct {
-	// (Updatable) Database connector Identifier
+	// (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ConnectorId *string `pulumi:"connectorId"`
-	// (Updatable) dbId of the database
+	// (Updatable) dbId of the database.
 	DbId *string `pulumi:"dbId"`
 	// (Updatable) UniqueName used for database connection requests.
 	DbUniqueName *string `pulumi:"dbUniqueName"`
@@ -1546,7 +2013,7 @@ type MonitoredResourceDatabaseConnectionDetails struct {
 	Protocol string `pulumi:"protocol"`
 	// (Updatable) Service name used for connection requests.
 	ServiceName string `pulumi:"serviceName"`
-	// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SslSecretId *string `pulumi:"sslSecretId"`
 }
 
@@ -1562,9 +2029,9 @@ type MonitoredResourceDatabaseConnectionDetailsInput interface {
 }
 
 type MonitoredResourceDatabaseConnectionDetailsArgs struct {
-	// (Updatable) Database connector Identifier
+	// (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ConnectorId pulumi.StringPtrInput `pulumi:"connectorId"`
-	// (Updatable) dbId of the database
+	// (Updatable) dbId of the database.
 	DbId pulumi.StringPtrInput `pulumi:"dbId"`
 	// (Updatable) UniqueName used for database connection requests.
 	DbUniqueName pulumi.StringPtrInput `pulumi:"dbUniqueName"`
@@ -1574,7 +2041,7 @@ type MonitoredResourceDatabaseConnectionDetailsArgs struct {
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 	// (Updatable) Service name used for connection requests.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
-	// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
 }
 
@@ -1655,12 +2122,12 @@ func (o MonitoredResourceDatabaseConnectionDetailsOutput) ToMonitoredResourceDat
 	}).(MonitoredResourceDatabaseConnectionDetailsPtrOutput)
 }
 
-// (Updatable) Database connector Identifier
+// (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourceDatabaseConnectionDetailsOutput) ConnectorId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceDatabaseConnectionDetails) *string { return v.ConnectorId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) dbId of the database
+// (Updatable) dbId of the database.
 func (o MonitoredResourceDatabaseConnectionDetailsOutput) DbId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceDatabaseConnectionDetails) *string { return v.DbId }).(pulumi.StringPtrOutput)
 }
@@ -1685,7 +2152,7 @@ func (o MonitoredResourceDatabaseConnectionDetailsOutput) ServiceName() pulumi.S
 	return o.ApplyT(func(v MonitoredResourceDatabaseConnectionDetails) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
-// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourceDatabaseConnectionDetailsOutput) SslSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceDatabaseConnectionDetails) *string { return v.SslSecretId }).(pulumi.StringPtrOutput)
 }
@@ -1714,7 +2181,7 @@ func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) Elem() MonitoredRes
 	}).(MonitoredResourceDatabaseConnectionDetailsOutput)
 }
 
-// (Updatable) Database connector Identifier
+// (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ConnectorId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceDatabaseConnectionDetails) *string {
 		if v == nil {
@@ -1724,7 +2191,7 @@ func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ConnectorId() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) dbId of the database
+// (Updatable) dbId of the database.
 func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) DbId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceDatabaseConnectionDetails) *string {
 		if v == nil {
@@ -1774,7 +2241,7 @@ func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ServiceName() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) SslSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceDatabaseConnectionDetails) *string {
 		if v == nil {
@@ -1785,9 +2252,9 @@ func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) SslSecretId() pulum
 }
 
 type MonitoredResourceProperty struct {
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name *string `pulumi:"name"`
-	// (Updatable) property value
+	// (Updatable) Property Value.
 	Value *string `pulumi:"value"`
 }
 
@@ -1803,9 +2270,9 @@ type MonitoredResourcePropertyInput interface {
 }
 
 type MonitoredResourcePropertyArgs struct {
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) property value
+	// (Updatable) Property Value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1860,12 +2327,12 @@ func (o MonitoredResourcePropertyOutput) ToMonitoredResourcePropertyOutputWithCo
 	return o
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourcePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) property value
+// (Updatable) Property Value.
 func (o MonitoredResourcePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1891,9 +2358,11 @@ func (o MonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) Monitored
 }
 
 type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId *string `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name *string `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type *string `pulumi:"type"`
 }
 
@@ -1909,9 +2378,11 @@ type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailInput 
 }
 
 type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -1966,12 +2437,19 @@ func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOut
 	return o
 }
 
-// Monitored Resource Name
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail) *string {
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Monitored Resource Name.
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Monitored Resource Type
+// Monitored Resource Type.
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1997,9 +2475,11 @@ func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArr
 }
 
 type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId *string `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name *string `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type *string `pulumi:"type"`
 }
 
@@ -2015,9 +2495,11 @@ type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailInput inter
 }
 
 type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2072,12 +2554,19 @@ func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) 
 	return o
 }
 
-// Monitored Resource Name
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail) *string {
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Monitored Resource Name.
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Monitored Resource Type
+// Monitored Resource Type.
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2103,23 +2592,25 @@ func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOut
 }
 
 type MonitoredResourcesListMemberItem struct {
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId *string `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Monitored Resource Host
+	// Monitored Resource Host Name.
 	HostName *string `pulumi:"hostName"`
-	// Parent monitored resource identifier
+	// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ParentId *string `pulumi:"parentId"`
 	// Monitored resource display name.
 	ResourceDisplayName *string `pulumi:"resourceDisplayName"`
-	// Monitored resource identifier
+	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourceId *string `pulumi:"resourceId"`
-	// Monitored resource name
+	// Monitored Resource Name.
 	ResourceName *string `pulumi:"resourceName"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	ResourceType *string `pulumi:"resourceType"`
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
@@ -2139,23 +2630,25 @@ type MonitoredResourcesListMemberItemInput interface {
 }
 
 type MonitoredResourcesListMemberItemArgs struct {
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId pulumi.StringPtrInput `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Monitored Resource Host
+	// Monitored Resource Host Name.
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
-	// Parent monitored resource identifier
+	// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ParentId pulumi.StringPtrInput `pulumi:"parentId"`
 	// Monitored resource display name.
 	ResourceDisplayName pulumi.StringPtrInput `pulumi:"resourceDisplayName"`
-	// Monitored resource identifier
+	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
-	// Monitored resource name
+	// Monitored Resource Name.
 	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The current state of the Resource.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -2214,12 +2707,17 @@ func (o MonitoredResourcesListMemberItemOutput) ToMonitoredResourcesListMemberIt
 	return o
 }
 
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourcesListMemberItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o MonitoredResourcesListMemberItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 func (o MonitoredResourcesListMemberItemOutput) ExternalId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
@@ -2229,12 +2727,12 @@ func (o MonitoredResourcesListMemberItemOutput) FreeformTags() pulumi.MapOutput 
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Monitored Resource Host
+// Monitored Resource Host Name.
 func (o MonitoredResourcesListMemberItemOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
-// Parent monitored resource identifier
+// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesListMemberItemOutput) ParentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ParentId }).(pulumi.StringPtrOutput)
 }
@@ -2244,17 +2742,17 @@ func (o MonitoredResourcesListMemberItemOutput) ResourceDisplayName() pulumi.Str
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ResourceDisplayName }).(pulumi.StringPtrOutput)
 }
 
-// Monitored resource identifier
+// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesListMemberItemOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
-// Monitored resource name
+// Monitored Resource Name.
 func (o MonitoredResourcesListMemberItemOutput) ResourceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
-// Monitored resource type
+// Monitored Resource Type.
 func (o MonitoredResourcesListMemberItemOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
@@ -2290,17 +2788,17 @@ func (o MonitoredResourcesListMemberItemArrayOutput) Index(i pulumi.IntInput) Mo
 }
 
 type MonitoredResourcesSearchAssociationItem struct {
-	// Association type to be created between source and destination resources
+	// Association type filter to search associated resources.
 	AssociationType *string `pulumi:"associationType"`
-	// Association Resource Details
+	// Association Resource Details.
 	DestinationResourceDetails []MonitoredResourcesSearchAssociationItemDestinationResourceDetail `pulumi:"destinationResourceDetails"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId *string `pulumi:"destinationResourceId"`
-	// Association Resource Details
+	// Association Resource Details.
 	SourceResourceDetails []MonitoredResourcesSearchAssociationItemSourceResourceDetail `pulumi:"sourceResourceDetails"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId *string `pulumi:"sourceResourceId"`
-	// The time the the association was created. An RFC3339 formatted datetime string
+	// The association creation time. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 }
 
@@ -2316,17 +2814,17 @@ type MonitoredResourcesSearchAssociationItemInput interface {
 }
 
 type MonitoredResourcesSearchAssociationItemArgs struct {
-	// Association type to be created between source and destination resources
+	// Association type filter to search associated resources.
 	AssociationType pulumi.StringPtrInput `pulumi:"associationType"`
-	// Association Resource Details
+	// Association Resource Details.
 	DestinationResourceDetails MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput `pulumi:"destinationResourceDetails"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrInput `pulumi:"destinationResourceId"`
-	// Association Resource Details
+	// Association Resource Details.
 	SourceResourceDetails MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput `pulumi:"sourceResourceDetails"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId pulumi.StringPtrInput `pulumi:"sourceResourceId"`
-	// The time the the association was created. An RFC3339 formatted datetime string
+	// The association creation time. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
@@ -2381,36 +2879,36 @@ func (o MonitoredResourcesSearchAssociationItemOutput) ToMonitoredResourcesSearc
 	return o
 }
 
-// Association type to be created between source and destination resources
+// Association type filter to search associated resources.
 func (o MonitoredResourcesSearchAssociationItemOutput) AssociationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItem) *string { return v.AssociationType }).(pulumi.StringPtrOutput)
 }
 
-// Association Resource Details
+// Association Resource Details.
 func (o MonitoredResourcesSearchAssociationItemOutput) DestinationResourceDetails() MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItem) []MonitoredResourcesSearchAssociationItemDestinationResourceDetail {
 		return v.DestinationResourceDetails
 	}).(MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput)
 }
 
-// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesSearchAssociationItemOutput) DestinationResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItem) *string { return v.DestinationResourceId }).(pulumi.StringPtrOutput)
 }
 
-// Association Resource Details
+// Association Resource Details.
 func (o MonitoredResourcesSearchAssociationItemOutput) SourceResourceDetails() MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItem) []MonitoredResourcesSearchAssociationItemSourceResourceDetail {
 		return v.SourceResourceDetails
 	}).(MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput)
 }
 
-// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesSearchAssociationItemOutput) SourceResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItem) *string { return v.SourceResourceId }).(pulumi.StringPtrOutput)
 }
 
-// The time the the association was created. An RFC3339 formatted datetime string
+// The association creation time. An RFC3339 formatted datetime string.
 func (o MonitoredResourcesSearchAssociationItemOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
@@ -2436,9 +2934,11 @@ func (o MonitoredResourcesSearchAssociationItemArrayOutput) Index(i pulumi.IntIn
 }
 
 type MonitoredResourcesSearchAssociationItemDestinationResourceDetail struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId *string `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name *string `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type *string `pulumi:"type"`
 }
 
@@ -2454,9 +2954,11 @@ type MonitoredResourcesSearchAssociationItemDestinationResourceDetailInput inter
 }
 
 type MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2511,12 +3013,19 @@ func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) 
 	return o
 }
 
-// Monitored Resource Name
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItemDestinationResourceDetail) *string {
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Monitored Resource Name.
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItemDestinationResourceDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Monitored Resource Type
+// Monitored Resource Type.
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItemDestinationResourceDetail) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2542,9 +3051,11 @@ func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOut
 }
 
 type MonitoredResourcesSearchAssociationItemSourceResourceDetail struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId *string `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name *string `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type *string `pulumi:"type"`
 }
 
@@ -2560,9 +3071,11 @@ type MonitoredResourcesSearchAssociationItemSourceResourceDetailInput interface 
 }
 
 type MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs struct {
-	// Monitored Resource Name
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// Monitored Resource Name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Monitored Resource Type
+	// Monitored Resource Type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2617,12 +3130,17 @@ func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ToMon
 	return o
 }
 
-// Monitored Resource Name
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItemSourceResourceDetail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// Monitored Resource Name.
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItemSourceResourceDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Monitored Resource Type
+// Monitored Resource Type.
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchAssociationItemSourceResourceDetail) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2652,29 +3170,29 @@ type MonitoredResourcesSearchItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName *string `pulumi:"displayName"`
-	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId *string `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A filter to return resources with host name match
+	// A filter to return resources with host name match.
 	HostName *string `pulumi:"hostName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id *string `pulumi:"id"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
-	// A filter to return resources that match exact resource name
+	// A filter to return resources that match exact resource name.
 	Name *string `pulumi:"name"`
-	// List of monitored resource properties
+	// List of monitored resource properties.
 	Properties []MonitoredResourcesSearchItemProperty `pulumi:"properties"`
 	// A filter to return resources with matching lifecycle state.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Monitored resource creation time. An RFC3339 formatted datetime string
+	// Monitored resource creation time. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// Monitored resource updation time. An RFC3339 formatted datetime string
+	// Monitored resource update time. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// A filter to return resources that match resource type
+	// A filter to return resources that match resource type.
 	Type *string `pulumi:"type"`
 }
 
@@ -2694,29 +3212,29 @@ type MonitoredResourcesSearchItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId pulumi.StringPtrInput `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// A filter to return resources with host name match
+	// A filter to return resources with host name match.
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
-	// A filter to return resources that match exact resource name
+	// A filter to return resources that match exact resource name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// List of monitored resource properties
+	// List of monitored resource properties.
 	Properties MonitoredResourcesSearchItemPropertyArrayInput `pulumi:"properties"`
 	// A filter to return resources with matching lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// Monitored resource creation time. An RFC3339 formatted datetime string
+	// Monitored resource creation time. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// Monitored resource updation time. An RFC3339 formatted datetime string
+	// Monitored resource update time. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// A filter to return resources that match resource type
+	// A filter to return resources that match resource type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2781,7 +3299,7 @@ func (o MonitoredResourcesSearchItemOutput) DisplayName() pulumi.StringPtrOutput
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 func (o MonitoredResourcesSearchItemOutput) ExternalId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
@@ -2791,12 +3309,12 @@ func (o MonitoredResourcesSearchItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A filter to return resources with host name match
+// A filter to return resources with host name match.
 func (o MonitoredResourcesSearchItemOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesSearchItemOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -2806,12 +3324,12 @@ func (o MonitoredResourcesSearchItemOutput) ManagementAgentId() pulumi.StringPtr
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
-// A filter to return resources that match exact resource name
+// A filter to return resources that match exact resource name.
 func (o MonitoredResourcesSearchItemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// List of monitored resource properties
+// List of monitored resource properties.
 func (o MonitoredResourcesSearchItemOutput) Properties() MonitoredResourcesSearchItemPropertyArrayOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) []MonitoredResourcesSearchItemProperty { return v.Properties }).(MonitoredResourcesSearchItemPropertyArrayOutput)
 }
@@ -2826,17 +3344,17 @@ func (o MonitoredResourcesSearchItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Monitored resource creation time. An RFC3339 formatted datetime string
+// Monitored resource creation time. An RFC3339 formatted datetime string.
 func (o MonitoredResourcesSearchItemOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// Monitored resource updation time. An RFC3339 formatted datetime string
+// Monitored resource update time. An RFC3339 formatted datetime string.
 func (o MonitoredResourcesSearchItemOutput) TimeUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// A filter to return resources that match resource type
+// A filter to return resources that match resource type.
 func (o MonitoredResourcesSearchItemOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2862,9 +3380,9 @@ func (o MonitoredResourcesSearchItemArrayOutput) Index(i pulumi.IntInput) Monito
 }
 
 type MonitoredResourcesSearchItemProperty struct {
-	// A filter to return resources that match exact resource name
+	// A filter to return resources that match exact resource name.
 	Name *string `pulumi:"name"`
-	// property value
+	// Property Value.
 	Value *string `pulumi:"value"`
 }
 
@@ -2880,9 +3398,9 @@ type MonitoredResourcesSearchItemPropertyInput interface {
 }
 
 type MonitoredResourcesSearchItemPropertyArgs struct {
-	// A filter to return resources that match exact resource name
+	// A filter to return resources that match exact resource name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// property value
+	// Property Value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2937,12 +3455,12 @@ func (o MonitoredResourcesSearchItemPropertyOutput) ToMonitoredResourcesSearchIt
 	return o
 }
 
-// A filter to return resources that match exact resource name
+// A filter to return resources that match exact resource name.
 func (o MonitoredResourcesSearchItemPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItemProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// property value
+// Property Value.
 func (o MonitoredResourcesSearchItemPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItemProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4371,12 +4889,512 @@ func (o GetDiscoveryJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscovery
 	}).(GetDiscoveryJobsFilterOutput)
 }
 
-type GetMonitoredResourceAlias struct {
-	// Monitored Resource Alias Reference Source Credential
-	Credentials []GetMonitoredResourceAliasCredential `pulumi:"credentials"`
-	// property name
+type GetMonitoredResourceAdditionalAlias struct {
+	// Monitored Resource Alias Reference Source Credential.
+	Credentials []GetMonitoredResourceAdditionalAliasCredential `pulumi:"credentials"`
+	// Property Name.
 	Name string `pulumi:"name"`
-	// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// GetMonitoredResourceAdditionalAliasInput is an input type that accepts GetMonitoredResourceAdditionalAliasArgs and GetMonitoredResourceAdditionalAliasOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasInput` via:
+//
+//	GetMonitoredResourceAdditionalAliasArgs{...}
+type GetMonitoredResourceAdditionalAliasInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalAliasOutput() GetMonitoredResourceAdditionalAliasOutput
+	ToGetMonitoredResourceAdditionalAliasOutputWithContext(context.Context) GetMonitoredResourceAdditionalAliasOutput
+}
+
+type GetMonitoredResourceAdditionalAliasArgs struct {
+	// Monitored Resource Alias Reference Source Credential.
+	Credentials GetMonitoredResourceAdditionalAliasCredentialArrayInput `pulumi:"credentials"`
+	// Property Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetMonitoredResourceAdditionalAliasArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalAliasArgs) ToGetMonitoredResourceAdditionalAliasOutput() GetMonitoredResourceAdditionalAliasOutput {
+	return i.ToGetMonitoredResourceAdditionalAliasOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalAliasArgs) ToGetMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasOutput)
+}
+
+// GetMonitoredResourceAdditionalAliasArrayInput is an input type that accepts GetMonitoredResourceAdditionalAliasArray and GetMonitoredResourceAdditionalAliasArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasArrayInput` via:
+//
+//	GetMonitoredResourceAdditionalAliasArray{ GetMonitoredResourceAdditionalAliasArgs{...} }
+type GetMonitoredResourceAdditionalAliasArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalAliasArrayOutput() GetMonitoredResourceAdditionalAliasArrayOutput
+	ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(context.Context) GetMonitoredResourceAdditionalAliasArrayOutput
+}
+
+type GetMonitoredResourceAdditionalAliasArray []GetMonitoredResourceAdditionalAliasInput
+
+func (GetMonitoredResourceAdditionalAliasArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalAliasArray) ToGetMonitoredResourceAdditionalAliasArrayOutput() GetMonitoredResourceAdditionalAliasArrayOutput {
+	return i.ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalAliasArray) ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasArrayOutput)
+}
+
+type GetMonitoredResourceAdditionalAliasOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalAliasOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalAliasOutput) ToGetMonitoredResourceAdditionalAliasOutput() GetMonitoredResourceAdditionalAliasOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasOutput) ToGetMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasOutput {
+	return o
+}
+
+// Monitored Resource Alias Reference Source Credential.
+func (o GetMonitoredResourceAdditionalAliasOutput) Credentials() GetMonitoredResourceAdditionalAliasCredentialArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalAlias) []GetMonitoredResourceAdditionalAliasCredential {
+		return v.Credentials
+	}).(GetMonitoredResourceAdditionalAliasCredentialArrayOutput)
+}
+
+// Property Name.
+func (o GetMonitoredResourceAdditionalAliasOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalAlias) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourceAdditionalAliasOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalAlias) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceAdditionalAliasArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalAliasArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalAlias)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToGetMonitoredResourceAdditionalAliasArrayOutput() GetMonitoredResourceAdditionalAliasArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalAliasOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceAdditionalAlias {
+		return vs[0].([]GetMonitoredResourceAdditionalAlias)[vs[1].(int)]
+	}).(GetMonitoredResourceAdditionalAliasOutput)
+}
+
+type GetMonitoredResourceAdditionalAliasCredential struct {
+	// Property Name.
+	Name string `pulumi:"name"`
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service string `pulumi:"service"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// GetMonitoredResourceAdditionalAliasCredentialInput is an input type that accepts GetMonitoredResourceAdditionalAliasCredentialArgs and GetMonitoredResourceAdditionalAliasCredentialOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasCredentialInput` via:
+//
+//	GetMonitoredResourceAdditionalAliasCredentialArgs{...}
+type GetMonitoredResourceAdditionalAliasCredentialInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalAliasCredentialOutput() GetMonitoredResourceAdditionalAliasCredentialOutput
+	ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(context.Context) GetMonitoredResourceAdditionalAliasCredentialOutput
+}
+
+type GetMonitoredResourceAdditionalAliasCredentialArgs struct {
+	// Property Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service pulumi.StringInput `pulumi:"service"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetMonitoredResourceAdditionalAliasCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalAliasCredentialArgs) ToGetMonitoredResourceAdditionalAliasCredentialOutput() GetMonitoredResourceAdditionalAliasCredentialOutput {
+	return i.ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalAliasCredentialArgs) ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasCredentialOutput)
+}
+
+// GetMonitoredResourceAdditionalAliasCredentialArrayInput is an input type that accepts GetMonitoredResourceAdditionalAliasCredentialArray and GetMonitoredResourceAdditionalAliasCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasCredentialArrayInput` via:
+//
+//	GetMonitoredResourceAdditionalAliasCredentialArray{ GetMonitoredResourceAdditionalAliasCredentialArgs{...} }
+type GetMonitoredResourceAdditionalAliasCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalAliasCredentialArrayOutput() GetMonitoredResourceAdditionalAliasCredentialArrayOutput
+	ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(context.Context) GetMonitoredResourceAdditionalAliasCredentialArrayOutput
+}
+
+type GetMonitoredResourceAdditionalAliasCredentialArray []GetMonitoredResourceAdditionalAliasCredentialInput
+
+func (GetMonitoredResourceAdditionalAliasCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalAliasCredentialArray) ToGetMonitoredResourceAdditionalAliasCredentialArrayOutput() GetMonitoredResourceAdditionalAliasCredentialArrayOutput {
+	return i.ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalAliasCredentialArray) ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasCredentialArrayOutput)
+}
+
+type GetMonitoredResourceAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalAliasCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToGetMonitoredResourceAdditionalAliasCredentialOutput() GetMonitoredResourceAdditionalAliasCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialOutput {
+	return o
+}
+
+// Property Name.
+func (o GetMonitoredResourceAdditionalAliasCredentialOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalAliasCredential) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+func (o GetMonitoredResourceAdditionalAliasCredentialOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalAliasCredential) string { return v.Service }).(pulumi.StringOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourceAdditionalAliasCredentialOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalAliasCredential) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceAdditionalAliasCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToGetMonitoredResourceAdditionalAliasCredentialArrayOutput() GetMonitoredResourceAdditionalAliasCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalAliasCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceAdditionalAliasCredential {
+		return vs[0].([]GetMonitoredResourceAdditionalAliasCredential)[vs[1].(int)]
+	}).(GetMonitoredResourceAdditionalAliasCredentialOutput)
+}
+
+type GetMonitoredResourceAdditionalCredential struct {
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType string `pulumi:"credentialType"`
+	// The user-specified textual description of the credential.
+	Description string `pulumi:"description"`
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId string `pulumi:"keyId"`
+	// Property Name.
+	Name string `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties []GetMonitoredResourceAdditionalCredentialProperty `pulumi:"properties"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+	// Monitored Resource Type.
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoredResourceAdditionalCredentialInput is an input type that accepts GetMonitoredResourceAdditionalCredentialArgs and GetMonitoredResourceAdditionalCredentialOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialInput` via:
+//
+//	GetMonitoredResourceAdditionalCredentialArgs{...}
+type GetMonitoredResourceAdditionalCredentialInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalCredentialOutput() GetMonitoredResourceAdditionalCredentialOutput
+	ToGetMonitoredResourceAdditionalCredentialOutputWithContext(context.Context) GetMonitoredResourceAdditionalCredentialOutput
+}
+
+type GetMonitoredResourceAdditionalCredentialArgs struct {
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The user-specified textual description of the credential.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// Property Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties GetMonitoredResourceAdditionalCredentialPropertyArrayInput `pulumi:"properties"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Monitored Resource Type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoredResourceAdditionalCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalCredentialArgs) ToGetMonitoredResourceAdditionalCredentialOutput() GetMonitoredResourceAdditionalCredentialOutput {
+	return i.ToGetMonitoredResourceAdditionalCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalCredentialArgs) ToGetMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialOutput)
+}
+
+// GetMonitoredResourceAdditionalCredentialArrayInput is an input type that accepts GetMonitoredResourceAdditionalCredentialArray and GetMonitoredResourceAdditionalCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialArrayInput` via:
+//
+//	GetMonitoredResourceAdditionalCredentialArray{ GetMonitoredResourceAdditionalCredentialArgs{...} }
+type GetMonitoredResourceAdditionalCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalCredentialArrayOutput() GetMonitoredResourceAdditionalCredentialArrayOutput
+	ToGetMonitoredResourceAdditionalCredentialArrayOutputWithContext(context.Context) GetMonitoredResourceAdditionalCredentialArrayOutput
+}
+
+type GetMonitoredResourceAdditionalCredentialArray []GetMonitoredResourceAdditionalCredentialInput
+
+func (GetMonitoredResourceAdditionalCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalCredentialArray) ToGetMonitoredResourceAdditionalCredentialArrayOutput() GetMonitoredResourceAdditionalCredentialArrayOutput {
+	return i.ToGetMonitoredResourceAdditionalCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalCredentialArray) ToGetMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialArrayOutput)
+}
+
+type GetMonitoredResourceAdditionalCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalCredentialOutput) ToGetMonitoredResourceAdditionalCredentialOutput() GetMonitoredResourceAdditionalCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialOutput) ToGetMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialOutput {
+	return o
+}
+
+// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+// * PLAINTEXT - The credential properties will have credentials in plain text format.
+// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+func (o GetMonitoredResourceAdditionalCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredential) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The user-specified textual description of the credential.
+func (o GetMonitoredResourceAdditionalCredentialOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredential) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+func (o GetMonitoredResourceAdditionalCredentialOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredential) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// Property Name.
+func (o GetMonitoredResourceAdditionalCredentialOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredential) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of monitored resource properties.
+func (o GetMonitoredResourceAdditionalCredentialOutput) Properties() GetMonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredential) []GetMonitoredResourceAdditionalCredentialProperty {
+		return v.Properties
+	}).(GetMonitoredResourceAdditionalCredentialPropertyArrayOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourceAdditionalCredentialOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredential) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// Monitored Resource Type.
+func (o GetMonitoredResourceAdditionalCredentialOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredential) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceAdditionalCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalCredentialArrayOutput) ToGetMonitoredResourceAdditionalCredentialArrayOutput() GetMonitoredResourceAdditionalCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialArrayOutput) ToGetMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceAdditionalCredential {
+		return vs[0].([]GetMonitoredResourceAdditionalCredential)[vs[1].(int)]
+	}).(GetMonitoredResourceAdditionalCredentialOutput)
+}
+
+type GetMonitoredResourceAdditionalCredentialProperty struct {
+	// Property Name.
+	Name string `pulumi:"name"`
+	// Property Value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourceAdditionalCredentialPropertyInput is an input type that accepts GetMonitoredResourceAdditionalCredentialPropertyArgs and GetMonitoredResourceAdditionalCredentialPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialPropertyInput` via:
+//
+//	GetMonitoredResourceAdditionalCredentialPropertyArgs{...}
+type GetMonitoredResourceAdditionalCredentialPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalCredentialPropertyOutput() GetMonitoredResourceAdditionalCredentialPropertyOutput
+	ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(context.Context) GetMonitoredResourceAdditionalCredentialPropertyOutput
+}
+
+type GetMonitoredResourceAdditionalCredentialPropertyArgs struct {
+	// Property Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property Value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourceAdditionalCredentialPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalCredentialPropertyArgs) ToGetMonitoredResourceAdditionalCredentialPropertyOutput() GetMonitoredResourceAdditionalCredentialPropertyOutput {
+	return i.ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalCredentialPropertyArgs) ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialPropertyOutput)
+}
+
+// GetMonitoredResourceAdditionalCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourceAdditionalCredentialPropertyArray and GetMonitoredResourceAdditionalCredentialPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialPropertyArrayInput` via:
+//
+//	GetMonitoredResourceAdditionalCredentialPropertyArray{ GetMonitoredResourceAdditionalCredentialPropertyArgs{...} }
+type GetMonitoredResourceAdditionalCredentialPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutput() GetMonitoredResourceAdditionalCredentialPropertyArrayOutput
+	ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(context.Context) GetMonitoredResourceAdditionalCredentialPropertyArrayOutput
+}
+
+type GetMonitoredResourceAdditionalCredentialPropertyArray []GetMonitoredResourceAdditionalCredentialPropertyInput
+
+func (GetMonitoredResourceAdditionalCredentialPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceAdditionalCredentialPropertyArray) ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutput() GetMonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return i.ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceAdditionalCredentialPropertyArray) ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialPropertyArrayOutput)
+}
+
+type GetMonitoredResourceAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToGetMonitoredResourceAdditionalCredentialPropertyOutput() GetMonitoredResourceAdditionalCredentialPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyOutput {
+	return o
+}
+
+// Property Name.
+func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredentialProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Property Value.
+func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceAdditionalCredentialProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceAdditionalCredentialPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutput() GetMonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalCredentialPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceAdditionalCredentialProperty {
+		return vs[0].([]GetMonitoredResourceAdditionalCredentialProperty)[vs[1].(int)]
+	}).(GetMonitoredResourceAdditionalCredentialPropertyOutput)
+}
+
+type GetMonitoredResourceAlias struct {
+	// Monitored Resource Alias Reference Source Credential.
+	Credentials []GetMonitoredResourceAliasCredential `pulumi:"credentials"`
+	// Property Name.
+	Name string `pulumi:"name"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -4392,11 +5410,11 @@ type GetMonitoredResourceAliasInput interface {
 }
 
 type GetMonitoredResourceAliasArgs struct {
-	// Monitored Resource Alias Reference Source Credential
+	// Monitored Resource Alias Reference Source Credential.
 	Credentials GetMonitoredResourceAliasCredentialArrayInput `pulumi:"credentials"`
-	// property name
+	// Property Name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -4451,17 +5469,17 @@ func (o GetMonitoredResourceAliasOutput) ToGetMonitoredResourceAliasOutputWithCo
 	return o
 }
 
-// Monitored Resource Alias Reference Source Credential
+// Monitored Resource Alias Reference Source Credential.
 func (o GetMonitoredResourceAliasOutput) Credentials() GetMonitoredResourceAliasCredentialArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceAlias) []GetMonitoredResourceAliasCredential { return v.Credentials }).(GetMonitoredResourceAliasCredentialArrayOutput)
 }
 
-// property name
+// Property Name.
 func (o GetMonitoredResourceAliasOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceAlias) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o GetMonitoredResourceAliasOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceAlias) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -4487,11 +5505,11 @@ func (o GetMonitoredResourceAliasArrayOutput) Index(i pulumi.IntInput) GetMonito
 }
 
 type GetMonitoredResourceAliasCredential struct {
-	// property name
+	// Property Name.
 	Name string `pulumi:"name"`
-	// The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service string `pulumi:"service"`
-	// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -4507,11 +5525,11 @@ type GetMonitoredResourceAliasCredentialInput interface {
 }
 
 type GetMonitoredResourceAliasCredentialArgs struct {
-	// property name
+	// Property Name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service pulumi.StringInput `pulumi:"service"`
-	// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -4566,17 +5584,17 @@ func (o GetMonitoredResourceAliasCredentialOutput) ToGetMonitoredResourceAliasCr
 	return o
 }
 
-// property name
+// Property Name.
 func (o GetMonitoredResourceAliasCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceAliasCredential) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 func (o GetMonitoredResourceAliasCredentialOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceAliasCredential) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o GetMonitoredResourceAliasCredentialOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceAliasCredential) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -4602,19 +5620,22 @@ func (o GetMonitoredResourceAliasCredentialArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetMonitoredResourceCredential struct {
-	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
 	CredentialType string `pulumi:"credentialType"`
 	// The user-specified textual description of the credential.
 	Description string `pulumi:"description"`
-	// The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId string `pulumi:"keyId"`
-	// property name
+	// Property Name.
 	Name string `pulumi:"name"`
-	// List of monitored resource properties
+	// List of monitored resource properties.
 	Properties []GetMonitoredResourceCredentialProperty `pulumi:"properties"`
-	// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type string `pulumi:"type"`
 }
 
@@ -4630,19 +5651,22 @@ type GetMonitoredResourceCredentialInput interface {
 }
 
 type GetMonitoredResourceCredentialArgs struct {
-	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
 	// The user-specified textual description of the credential.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId pulumi.StringInput `pulumi:"keyId"`
-	// property name
+	// Property Name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// List of monitored resource properties
+	// List of monitored resource properties.
 	Properties GetMonitoredResourceCredentialPropertyArrayInput `pulumi:"properties"`
-	// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -4697,7 +5721,10 @@ func (o GetMonitoredResourceCredentialOutput) ToGetMonitoredResourceCredentialOu
 	return o
 }
 
-// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+// * PLAINTEXT - The credential properties will have credentials in plain text format.
+// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
 func (o GetMonitoredResourceCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredential) string { return v.CredentialType }).(pulumi.StringOutput)
 }
@@ -4707,27 +5734,27 @@ func (o GetMonitoredResourceCredentialOutput) Description() pulumi.StringOutput 
 	return o.ApplyT(func(v GetMonitoredResourceCredential) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 func (o GetMonitoredResourceCredentialOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredential) string { return v.KeyId }).(pulumi.StringOutput)
 }
 
-// property name
+// Property Name.
 func (o GetMonitoredResourceCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredential) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// List of monitored resource properties
+// List of monitored resource properties.
 func (o GetMonitoredResourceCredentialOutput) Properties() GetMonitoredResourceCredentialPropertyArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredential) []GetMonitoredResourceCredentialProperty { return v.Properties }).(GetMonitoredResourceCredentialPropertyArrayOutput)
 }
 
-// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 func (o GetMonitoredResourceCredentialOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredential) string { return v.Source }).(pulumi.StringOutput)
 }
 
-// Monitored resource type
+// Monitored Resource Type.
 func (o GetMonitoredResourceCredentialOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredential) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -4753,9 +5780,9 @@ func (o GetMonitoredResourceCredentialArrayOutput) Index(i pulumi.IntInput) GetM
 }
 
 type GetMonitoredResourceCredentialProperty struct {
-	// property name
+	// Property Name.
 	Name string `pulumi:"name"`
-	// property value
+	// Property Value.
 	Value string `pulumi:"value"`
 }
 
@@ -4771,9 +5798,9 @@ type GetMonitoredResourceCredentialPropertyInput interface {
 }
 
 type GetMonitoredResourceCredentialPropertyArgs struct {
-	// property name
+	// Property Name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// property value
+	// Property Value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -4828,12 +5855,12 @@ func (o GetMonitoredResourceCredentialPropertyOutput) ToGetMonitoredResourceCred
 	return o
 }
 
-// property name
+// Property Name.
 func (o GetMonitoredResourceCredentialPropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredentialProperty) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// property value
+// Property Value.
 func (o GetMonitoredResourceCredentialPropertyOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceCredentialProperty) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -4859,9 +5886,9 @@ func (o GetMonitoredResourceCredentialPropertyArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetMonitoredResourceDatabaseConnectionDetail struct {
-	// Database connector Identifier
+	// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ConnectorId string `pulumi:"connectorId"`
-	// dbId of the database
+	// dbId of the database.
 	DbId string `pulumi:"dbId"`
 	// UniqueName used for database connection requests.
 	DbUniqueName string `pulumi:"dbUniqueName"`
@@ -4871,7 +5898,7 @@ type GetMonitoredResourceDatabaseConnectionDetail struct {
 	Protocol string `pulumi:"protocol"`
 	// Service name used for connection requests.
 	ServiceName string `pulumi:"serviceName"`
-	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SslSecretId string `pulumi:"sslSecretId"`
 }
 
@@ -4887,9 +5914,9 @@ type GetMonitoredResourceDatabaseConnectionDetailInput interface {
 }
 
 type GetMonitoredResourceDatabaseConnectionDetailArgs struct {
-	// Database connector Identifier
+	// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
-	// dbId of the database
+	// dbId of the database.
 	DbId pulumi.StringInput `pulumi:"dbId"`
 	// UniqueName used for database connection requests.
 	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
@@ -4899,7 +5926,7 @@ type GetMonitoredResourceDatabaseConnectionDetailArgs struct {
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 	// Service name used for connection requests.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
-	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
 }
 
@@ -4954,12 +5981,12 @@ func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ToGetMonitoredResour
 	return o
 }
 
-// Database connector Identifier
+// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceDatabaseConnectionDetail) string { return v.ConnectorId }).(pulumi.StringOutput)
 }
 
-// dbId of the database
+// dbId of the database.
 func (o GetMonitoredResourceDatabaseConnectionDetailOutput) DbId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceDatabaseConnectionDetail) string { return v.DbId }).(pulumi.StringOutput)
 }
@@ -4984,7 +6011,7 @@ func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ServiceName() pulumi
 	return o.ApplyT(func(v GetMonitoredResourceDatabaseConnectionDetail) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
-// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetMonitoredResourceDatabaseConnectionDetailOutput) SslSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceDatabaseConnectionDetail) string { return v.SslSecretId }).(pulumi.StringOutput)
 }
@@ -5010,9 +6037,9 @@ func (o GetMonitoredResourceDatabaseConnectionDetailArrayOutput) Index(i pulumi.
 }
 
 type GetMonitoredResourceProperty struct {
-	// property name
+	// Property Name.
 	Name string `pulumi:"name"`
-	// property value
+	// Property Value.
 	Value string `pulumi:"value"`
 }
 
@@ -5028,9 +6055,9 @@ type GetMonitoredResourcePropertyInput interface {
 }
 
 type GetMonitoredResourcePropertyArgs struct {
-	// property name
+	// Property Name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// property value
+	// Property Value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5085,12 +6112,12 @@ func (o GetMonitoredResourcePropertyOutput) ToGetMonitoredResourcePropertyOutput
 	return o
 }
 
-// property name
+// Property Name.
 func (o GetMonitoredResourcePropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceProperty) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// property value
+// Property Value.
 func (o GetMonitoredResourcePropertyOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceProperty) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5127,6 +6154,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsPropertiesPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsTagsInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsTagsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsTagsPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalAliasInput)(nil)).Elem(), MonitoredResourceAdditionalAliasArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalAliasArrayInput)(nil)).Elem(), MonitoredResourceAdditionalAliasArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalAliasCredentialInput)(nil)).Elem(), MonitoredResourceAdditionalAliasCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalCredentialInput)(nil)).Elem(), MonitoredResourceAdditionalCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalCredentialArrayInput)(nil)).Elem(), MonitoredResourceAdditionalCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalCredentialPropertyInput)(nil)).Elem(), MonitoredResourceAdditionalCredentialPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalCredentialPropertyArrayInput)(nil)).Elem(), MonitoredResourceAdditionalCredentialPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAliasesInput)(nil)).Elem(), MonitoredResourceAliasesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAliasesPtrInput)(nil)).Elem(), MonitoredResourceAliasesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAliasesCredentialInput)(nil)).Elem(), MonitoredResourceAliasesCredentialArgs{})
@@ -5179,6 +6213,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput)(nil)).Elem(), GetDiscoveryJobsDiscoveryJobCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsFilterInput)(nil)).Elem(), GetDiscoveryJobsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsFilterArrayInput)(nil)).Elem(), GetDiscoveryJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalAliasInput)(nil)).Elem(), GetMonitoredResourceAdditionalAliasArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalAliasArrayInput)(nil)).Elem(), GetMonitoredResourceAdditionalAliasArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalAliasCredentialInput)(nil)).Elem(), GetMonitoredResourceAdditionalAliasCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalAliasCredentialArrayInput)(nil)).Elem(), GetMonitoredResourceAdditionalAliasCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalCredentialInput)(nil)).Elem(), GetMonitoredResourceAdditionalCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalCredentialArrayInput)(nil)).Elem(), GetMonitoredResourceAdditionalCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalCredentialPropertyInput)(nil)).Elem(), GetMonitoredResourceAdditionalCredentialPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalCredentialPropertyArrayInput)(nil)).Elem(), GetMonitoredResourceAdditionalCredentialPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAliasInput)(nil)).Elem(), GetMonitoredResourceAliasArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAliasArrayInput)(nil)).Elem(), GetMonitoredResourceAliasArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAliasCredentialInput)(nil)).Elem(), GetMonitoredResourceAliasCredentialArgs{})
@@ -5202,6 +6244,13 @@ func init() {
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsTagsOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsTagsPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceAdditionalAliasOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceAdditionalAliasArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceAdditionalAliasCredentialOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceAdditionalCredentialOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceAdditionalCredentialArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceAdditionalCredentialPropertyOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceAdditionalCredentialPropertyArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceAliasesOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceAliasesPtrOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceAliasesCredentialOutput{})
@@ -5254,6 +6303,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobsFilterOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalAliasOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalAliasArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalAliasCredentialOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalAliasCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalCredentialOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalCredentialPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalCredentialPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceAliasOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceAliasArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceAliasCredentialOutput{})

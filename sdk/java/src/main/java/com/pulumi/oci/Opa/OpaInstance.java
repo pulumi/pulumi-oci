@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Opa.OpaInstanceArgs;
 import com.pulumi.oci.Opa.inputs.OpaInstanceState;
+import com.pulumi.oci.Opa.outputs.OpaInstanceAttachment;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -71,6 +73,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Opa/opaInstance:OpaInstance")
 public class OpaInstance extends com.pulumi.resources.CustomResource {
+    /**
+     * A list of associated attachments to other services
+     * 
+     */
+    @Export(name="attachments", type=List.class, parameters={OpaInstanceAttachment.class})
+    private Output<List<OpaInstanceAttachment>> attachments;
+
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public Output<List<OpaInstanceAttachment>> attachments() {
+        return this.attachments;
+    }
     /**
      * (Updatable) Compartment Identifier
      * 

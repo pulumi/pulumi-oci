@@ -210,7 +210,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -382,7 +382,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -454,7 +454,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -462,7 +462,9 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -523,7 +525,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> int:
         """
-        The number of CPU cores allocated to the Autonomous VM cluster.
+        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "total_cpus")
 

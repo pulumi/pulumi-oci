@@ -13,6 +13,7 @@ import com.pulumi.oci.ContainerEngine.outputs.NodePoolInitialNodeLabel;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNode;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetails;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeEvictionNodePoolSettings;
+import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodePoolCyclingDetails;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSourceDetails;
@@ -42,6 +43,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeEvictionNodePoolSettingsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodePoolCyclingDetailsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
  * import java.util.List;
@@ -101,6 +103,11 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .nodeImageName(oci_core_image.test_image().name())
  *             .nodeMetadata(var_.node_pool_node_metadata())
+ *             .nodePoolCyclingDetails(NodePoolNodePoolCyclingDetailsArgs.builder()
+ *                 .isNodeCyclingEnabled(var_.node_pool_node_pool_cycling_details_is_node_cycling_enabled())
+ *                 .maximumSurge(var_.node_pool_node_pool_cycling_details_maximum_surge())
+ *                 .maximumUnavailable(var_.node_pool_node_pool_cycling_details_maximum_unavailable())
+ *                 .build())
  *             .nodeShapeConfig(NodePoolNodeShapeConfigArgs.builder()
  *                 .memoryInGbs(var_.node_pool_node_shape_config_memory_in_gbs())
  *                 .ocpus(var_.node_pool_node_shape_config_ocpus())
@@ -319,6 +326,20 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> nodeMetadata() {
         return this.nodeMetadata;
+    }
+    /**
+     * (Updatable) Node Pool Cycling Details
+     * 
+     */
+    @Export(name="nodePoolCyclingDetails", type=NodePoolNodePoolCyclingDetails.class, parameters={})
+    private Output<NodePoolNodePoolCyclingDetails> nodePoolCyclingDetails;
+
+    /**
+     * @return (Updatable) Node Pool Cycling Details
+     * 
+     */
+    public Output<NodePoolNodePoolCyclingDetails> nodePoolCyclingDetails() {
+        return this.nodePoolCyclingDetails;
     }
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.

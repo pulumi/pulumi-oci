@@ -6,7 +6,9 @@ package com.pulumi.oci.VisualBuilder.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAlternateCustomEndpointArgs;
+import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAttachmentArgs;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceCustomEndpointArgs;
+import com.pulumi.oci.VisualBuilder.inputs.VbInstanceIdcsInfoArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -35,6 +37,21 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<VbInstanceAlternateCustomEndpointArgs>>> alternateCustomEndpoints() {
         return Optional.ofNullable(this.alternateCustomEndpoints);
+    }
+
+    /**
+     * A list of associated attachments to other services
+     * 
+     */
+    @Import(name="attachments")
+    private @Nullable Output<List<VbInstanceAttachmentArgs>> attachments;
+
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public Optional<Output<List<VbInstanceAttachmentArgs>>> attachments() {
+        return Optional.ofNullable(this.attachments);
     }
 
     /**
@@ -128,6 +145,21 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Information for IDCS access
+     * 
+     */
+    @Import(name="idcsInfos")
+    private @Nullable Output<List<VbInstanceIdcsInfoArgs>> idcsInfos;
+
+    /**
+     * @return Information for IDCS access
+     * 
+     */
+    public Optional<Output<List<VbInstanceIdcsInfoArgs>>> idcsInfos() {
+        return Optional.ofNullable(this.idcsInfos);
+    }
+
+    /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      * 
      */
@@ -173,6 +205,36 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The NAT gateway IP address for the VB management VCN
+     * 
+     */
+    @Import(name="managementNatGatewayIp")
+    private @Nullable Output<String> managementNatGatewayIp;
+
+    /**
+     * @return The NAT gateway IP address for the VB management VCN
+     * 
+     */
+    public Optional<Output<String>> managementNatGatewayIp() {
+        return Optional.ofNullable(this.managementNatGatewayIp);
+    }
+
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     * 
+     */
+    @Import(name="managementVcnId")
+    private @Nullable Output<String> managementVcnId;
+
+    /**
+     * @return The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     * 
+     */
+    public Optional<Output<String>> managementVcnId() {
+        return Optional.ofNullable(this.managementVcnId);
+    }
+
+    /**
      * (Updatable) The number of Nodes
      * 
      */
@@ -185,6 +247,36 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> nodeCount() {
         return Optional.ofNullable(this.nodeCount);
+    }
+
+    /**
+     * The NAT gateway IP address for the VB service VCN
+     * 
+     */
+    @Import(name="serviceNatGatewayIp")
+    private @Nullable Output<String> serviceNatGatewayIp;
+
+    /**
+     * @return The NAT gateway IP address for the VB service VCN
+     * 
+     */
+    public Optional<Output<String>> serviceNatGatewayIp() {
+        return Optional.ofNullable(this.serviceNatGatewayIp);
+    }
+
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     * 
+     */
+    @Import(name="serviceVcnId")
+    private @Nullable Output<String> serviceVcnId;
+
+    /**
+     * @return The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     * 
+     */
+    public Optional<Output<String>> serviceVcnId() {
+        return Optional.ofNullable(this.serviceVcnId);
     }
 
     /**
@@ -266,16 +358,22 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
 
     private VbInstanceState(VbInstanceState $) {
         this.alternateCustomEndpoints = $.alternateCustomEndpoints;
+        this.attachments = $.attachments;
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
         this.customEndpoint = $.customEndpoint;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.idcsInfos = $.idcsInfos;
         this.idcsOpenId = $.idcsOpenId;
         this.instanceUrl = $.instanceUrl;
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
+        this.managementNatGatewayIp = $.managementNatGatewayIp;
+        this.managementVcnId = $.managementVcnId;
         this.nodeCount = $.nodeCount;
+        this.serviceNatGatewayIp = $.serviceNatGatewayIp;
+        this.serviceVcnId = $.serviceVcnId;
         this.state = $.state;
         this.stateMessage = $.stateMessage;
         this.systemTags = $.systemTags;
@@ -330,6 +428,37 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder alternateCustomEndpoints(VbInstanceAlternateCustomEndpointArgs... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(@Nullable Output<List<VbInstanceAttachmentArgs>> attachments) {
+            $.attachments = attachments;
+            return this;
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(List<VbInstanceAttachmentArgs> attachments) {
+            return attachments(Output.of(attachments));
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(VbInstanceAttachmentArgs... attachments) {
+            return attachments(List.of(attachments));
         }
 
         /**
@@ -459,6 +588,37 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param idcsInfos Information for IDCS access
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idcsInfos(@Nullable Output<List<VbInstanceIdcsInfoArgs>> idcsInfos) {
+            $.idcsInfos = idcsInfos;
+            return this;
+        }
+
+        /**
+         * @param idcsInfos Information for IDCS access
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idcsInfos(List<VbInstanceIdcsInfoArgs> idcsInfos) {
+            return idcsInfos(Output.of(idcsInfos));
+        }
+
+        /**
+         * @param idcsInfos Information for IDCS access
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idcsInfos(VbInstanceIdcsInfoArgs... idcsInfos) {
+            return idcsInfos(List.of(idcsInfos));
+        }
+
+        /**
          * @param idcsOpenId (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
          * 
          * @return builder
@@ -522,6 +682,48 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param managementNatGatewayIp The NAT gateway IP address for the VB management VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementNatGatewayIp(@Nullable Output<String> managementNatGatewayIp) {
+            $.managementNatGatewayIp = managementNatGatewayIp;
+            return this;
+        }
+
+        /**
+         * @param managementNatGatewayIp The NAT gateway IP address for the VB management VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementNatGatewayIp(String managementNatGatewayIp) {
+            return managementNatGatewayIp(Output.of(managementNatGatewayIp));
+        }
+
+        /**
+         * @param managementVcnId The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementVcnId(@Nullable Output<String> managementVcnId) {
+            $.managementVcnId = managementVcnId;
+            return this;
+        }
+
+        /**
+         * @param managementVcnId The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementVcnId(String managementVcnId) {
+            return managementVcnId(Output.of(managementVcnId));
+        }
+
+        /**
          * @param nodeCount (Updatable) The number of Nodes
          * 
          * @return builder
@@ -540,6 +742,48 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodeCount(Integer nodeCount) {
             return nodeCount(Output.of(nodeCount));
+        }
+
+        /**
+         * @param serviceNatGatewayIp The NAT gateway IP address for the VB service VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceNatGatewayIp(@Nullable Output<String> serviceNatGatewayIp) {
+            $.serviceNatGatewayIp = serviceNatGatewayIp;
+            return this;
+        }
+
+        /**
+         * @param serviceNatGatewayIp The NAT gateway IP address for the VB service VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceNatGatewayIp(String serviceNatGatewayIp) {
+            return serviceNatGatewayIp(Output.of(serviceNatGatewayIp));
+        }
+
+        /**
+         * @param serviceVcnId The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceVcnId(@Nullable Output<String> serviceVcnId) {
+            $.serviceVcnId = serviceVcnId;
+            return this;
+        }
+
+        /**
+         * @param serviceVcnId The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceVcnId(String serviceVcnId) {
+            return serviceVcnId(Output.of(serviceVcnId));
         }
 
         /**

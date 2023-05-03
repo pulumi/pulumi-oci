@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitoredResourceDatabaseConnectionDetail {
     /**
-     * @return Database connector Identifier
+     * @return Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String connectorId;
     /**
-     * @return dbId of the database
+     * @return dbId of the database.
      * 
      */
     private String dbId;
@@ -41,21 +41,21 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
      */
     private String serviceName;
     /**
-     * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String sslSecretId;
 
     private GetMonitoredResourceDatabaseConnectionDetail() {}
     /**
-     * @return Database connector Identifier
+     * @return Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String connectorId() {
         return this.connectorId;
     }
     /**
-     * @return dbId of the database
+     * @return dbId of the database.
      * 
      */
     public String dbId() {
@@ -90,7 +90,7 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
         return this.serviceName;
     }
     /**
-     * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String sslSecretId() {

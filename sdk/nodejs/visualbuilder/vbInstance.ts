@@ -82,6 +82,10 @@ export class VbInstance extends pulumi.CustomResource {
      */
     public readonly alternateCustomEndpoints!: pulumi.Output<outputs.VisualBuilder.VbInstanceAlternateCustomEndpoint[]>;
     /**
+     * A list of associated attachments to other services
+     */
+    public /*out*/ readonly attachments!: pulumi.Output<outputs.VisualBuilder.VbInstanceAttachment[]>;
+    /**
      * (Updatable) Compartment Identifier.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -106,6 +110,10 @@ export class VbInstance extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Information for IDCS access
+     */
+    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.VisualBuilder.VbInstanceIdcsInfo[]>;
+    /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
     public readonly idcsOpenId!: pulumi.Output<string | undefined>;
@@ -118,9 +126,25 @@ export class VbInstance extends pulumi.CustomResource {
      */
     public readonly isVisualBuilderEnabled!: pulumi.Output<boolean>;
     /**
+     * The NAT gateway IP address for the VB management VCN
+     */
+    public /*out*/ readonly managementNatGatewayIp!: pulumi.Output<string>;
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     */
+    public /*out*/ readonly managementVcnId!: pulumi.Output<string>;
+    /**
      * (Updatable) The number of Nodes
      */
     public readonly nodeCount!: pulumi.Output<number>;
+    /**
+     * The NAT gateway IP address for the VB service VCN
+     */
+    public /*out*/ readonly serviceNatGatewayIp!: pulumi.Output<string>;
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     */
+    public /*out*/ readonly serviceVcnId!: pulumi.Output<string>;
     /**
      * The current state of the vb instance.
      */
@@ -156,16 +180,22 @@ export class VbInstance extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as VbInstanceState | undefined;
             resourceInputs["alternateCustomEndpoints"] = state ? state.alternateCustomEndpoints : undefined;
+            resourceInputs["attachments"] = state ? state.attachments : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
             resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["idcsInfos"] = state ? state.idcsInfos : undefined;
             resourceInputs["idcsOpenId"] = state ? state.idcsOpenId : undefined;
             resourceInputs["instanceUrl"] = state ? state.instanceUrl : undefined;
             resourceInputs["isVisualBuilderEnabled"] = state ? state.isVisualBuilderEnabled : undefined;
+            resourceInputs["managementNatGatewayIp"] = state ? state.managementNatGatewayIp : undefined;
+            resourceInputs["managementVcnId"] = state ? state.managementVcnId : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
+            resourceInputs["serviceNatGatewayIp"] = state ? state.serviceNatGatewayIp : undefined;
+            resourceInputs["serviceVcnId"] = state ? state.serviceVcnId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -192,7 +222,13 @@ export class VbInstance extends pulumi.CustomResource {
             resourceInputs["idcsOpenId"] = args?.idcsOpenId ? pulumi.secret(args.idcsOpenId) : undefined;
             resourceInputs["isVisualBuilderEnabled"] = args ? args.isVisualBuilderEnabled : undefined;
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
+            resourceInputs["attachments"] = undefined /*out*/;
+            resourceInputs["idcsInfos"] = undefined /*out*/;
             resourceInputs["instanceUrl"] = undefined /*out*/;
+            resourceInputs["managementNatGatewayIp"] = undefined /*out*/;
+            resourceInputs["managementVcnId"] = undefined /*out*/;
+            resourceInputs["serviceNatGatewayIp"] = undefined /*out*/;
+            resourceInputs["serviceVcnId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -214,6 +250,10 @@ export interface VbInstanceState {
      * (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
     alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAlternateCustomEndpoint>[]>;
+    /**
+     * A list of associated attachments to other services
+     */
+    attachments?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAttachment>[]>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -239,6 +279,10 @@ export interface VbInstanceState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * Information for IDCS access
+     */
+    idcsInfos?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceIdcsInfo>[]>;
+    /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
     idcsOpenId?: pulumi.Input<string>;
@@ -251,9 +295,25 @@ export interface VbInstanceState {
      */
     isVisualBuilderEnabled?: pulumi.Input<boolean>;
     /**
+     * The NAT gateway IP address for the VB management VCN
+     */
+    managementNatGatewayIp?: pulumi.Input<string>;
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     */
+    managementVcnId?: pulumi.Input<string>;
+    /**
      * (Updatable) The number of Nodes
      */
     nodeCount?: pulumi.Input<number>;
+    /**
+     * The NAT gateway IP address for the VB service VCN
+     */
+    serviceNatGatewayIp?: pulumi.Input<string>;
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     */
+    serviceVcnId?: pulumi.Input<string>;
     /**
      * The current state of the vb instance.
      */

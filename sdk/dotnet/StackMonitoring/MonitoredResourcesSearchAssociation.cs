@@ -12,7 +12,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// <summary>
     /// This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
     /// 
-    /// Returns a list of monitored resource associations.
+    /// Search associations in the given compartment based on the search criteria.
     /// 
     /// ## Example Usage
     /// 
@@ -51,31 +51,31 @@ namespace Pulumi.Oci.StackMonitoring
     public partial class MonitoredResourcesSearchAssociation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Association type to be created between source and destination resources
+        /// Association type filter to search associated resources.
         /// </summary>
         [Output("associationType")]
         public Output<string?> AssociationType { get; private set; } = null!;
 
         /// <summary>
-        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("destinationResourceId")]
         public Output<string?> DestinationResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Name
+        /// Source Monitored Resource Name.
         /// </summary>
         [Output("destinationResourceName")]
         public Output<string?> DestinationResourceName { get; private set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Type
+        /// Source Monitored Resource Type.
         /// </summary>
         [Output("destinationResourceType")]
         public Output<string?> DestinationResourceType { get; private set; } = null!;
@@ -87,19 +87,19 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableArray<Outputs.MonitoredResourcesSearchAssociationItem>> Items { get; private set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("sourceResourceId")]
         public Output<string?> SourceResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Name
+        /// Source Monitored Resource Name.
         /// </summary>
         [Output("sourceResourceName")]
         public Output<string?> SourceResourceName { get; private set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Type
+        /// Source Monitored Resource Type.
         /// </summary>
         [Output("sourceResourceType")]
         public Output<string?> SourceResourceType { get; private set; } = null!;
@@ -151,49 +151,49 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MonitoredResourcesSearchAssociationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Association type to be created between source and destination resources
+        /// Association type filter to search associated resources.
         /// </summary>
         [Input("associationType")]
         public Input<string>? AssociationType { get; set; }
 
         /// <summary>
-        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("destinationResourceId")]
         public Input<string>? DestinationResourceId { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Name
+        /// Source Monitored Resource Name.
         /// </summary>
         [Input("destinationResourceName")]
         public Input<string>? DestinationResourceName { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Type
+        /// Source Monitored Resource Type.
         /// </summary>
         [Input("destinationResourceType")]
         public Input<string>? DestinationResourceType { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("sourceResourceId")]
         public Input<string>? SourceResourceId { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Name
+        /// Source Monitored Resource Name.
         /// </summary>
         [Input("sourceResourceName")]
         public Input<string>? SourceResourceName { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Type
+        /// Source Monitored Resource Type.
         /// </summary>
         [Input("sourceResourceType")]
         public Input<string>? SourceResourceType { get; set; }
@@ -207,31 +207,31 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MonitoredResourcesSearchAssociationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Association type to be created between source and destination resources
+        /// Association type filter to search associated resources.
         /// </summary>
         [Input("associationType")]
         public Input<string>? AssociationType { get; set; }
 
         /// <summary>
-        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("destinationResourceId")]
         public Input<string>? DestinationResourceId { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Name
+        /// Source Monitored Resource Name.
         /// </summary>
         [Input("destinationResourceName")]
         public Input<string>? DestinationResourceName { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Type
+        /// Source Monitored Resource Type.
         /// </summary>
         [Input("destinationResourceType")]
         public Input<string>? DestinationResourceType { get; set; }
@@ -249,19 +249,19 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("sourceResourceId")]
         public Input<string>? SourceResourceId { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Name
+        /// Source Monitored Resource Name.
         /// </summary>
         [Input("sourceResourceName")]
         public Input<string>? SourceResourceName { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Type
+        /// Source Monitored Resource Type.
         /// </summary>
         [Input("sourceResourceType")]
         public Input<string>? SourceResourceType { get; set; }

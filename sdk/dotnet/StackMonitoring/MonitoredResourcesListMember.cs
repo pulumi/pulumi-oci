@@ -12,7 +12,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// <summary>
     /// This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
     /// 
-    /// List resources which are members of the given monitored resource
+    /// List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     /// 
     /// ## Example Usage
     /// 
@@ -46,19 +46,19 @@ namespace Pulumi.Oci.StackMonitoring
     public partial class MonitoredResourcesListMember : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("destinationResourceId")]
         public Output<string?> DestinationResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// List of Members.
+        /// List of member resources.
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.MonitoredResourcesListMemberItem>> Items { get; private set; } = null!;
 
         /// <summary>
-        /// The field which determines the depth of hierarchy while searching for members
+        /// The field which determines the depth of hierarchy while searching for members.
         /// </summary>
         [Output("limitLevel")]
         public Output<int?> LimitLevel { get; private set; } = null!;
@@ -116,13 +116,13 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MonitoredResourcesListMemberArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("destinationResourceId")]
         public Input<string>? DestinationResourceId { get; set; }
 
         /// <summary>
-        /// The field which determines the depth of hierarchy while searching for members
+        /// The field which determines the depth of hierarchy while searching for members.
         /// </summary>
         [Input("limitLevel")]
         public Input<int>? LimitLevel { get; set; }
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MonitoredResourcesListMemberState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("destinationResourceId")]
         public Input<string>? DestinationResourceId { get; set; }
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.StackMonitoring
         private InputList<Inputs.MonitoredResourcesListMemberItemGetArgs>? _items;
 
         /// <summary>
-        /// List of Members.
+        /// List of member resources.
         /// </summary>
         public InputList<Inputs.MonitoredResourcesListMemberItemGetArgs> Items
         {
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// The field which determines the depth of hierarchy while searching for members
+        /// The field which determines the depth of hierarchy while searching for members.
         /// </summary>
         [Input("limitLevel")]
         public Input<int>? LimitLevel { get; set; }

@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['OpaInstanceArgs', 'OpaInstance']
 
@@ -179,6 +181,7 @@ class OpaInstanceArgs:
 @pulumi.input_type
 class _OpaInstanceState:
     def __init__(__self__, *,
+                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  consumption_model: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -200,6 +203,7 @@ class _OpaInstanceState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OpaInstance resources.
+        :param pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] consumption_model: Parameter specifying which entitlement to use for billing purposes
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -220,6 +224,8 @@ class _OpaInstanceState:
         :param pulumi.Input[str] time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if consumption_model is not None:
@@ -258,6 +264,18 @@ class _OpaInstanceState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]]:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
+
+    @attachments.setter
+    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]]):
+        pulumi.set(self, "attachments", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -645,6 +663,7 @@ class OpaInstance(pulumi.CustomResource):
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
+            __props__.__dict__["attachments"] = None
             __props__.__dict__["identity_app_display_name"] = None
             __props__.__dict__["identity_app_guid"] = None
             __props__.__dict__["identity_app_opc_service_instance_guid"] = None
@@ -664,6 +683,7 @@ class OpaInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpaInstanceAttachmentArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             consumption_model: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -690,6 +710,7 @@ class OpaInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpaInstanceAttachmentArgs']]]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] consumption_model: Parameter specifying which entitlement to use for billing purposes
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -714,6 +735,7 @@ class OpaInstance(pulumi.CustomResource):
 
         __props__ = _OpaInstanceState.__new__(_OpaInstanceState)
 
+        __props__.__dict__["attachments"] = attachments
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["consumption_model"] = consumption_model
         __props__.__dict__["defined_tags"] = defined_tags
@@ -734,6 +756,14 @@ class OpaInstance(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return OpaInstance(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> pulumi.Output[Sequence['outputs.OpaInstanceAttachment']]:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")

@@ -6,6 +6,7 @@ package com.pulumi.oci.StackMonitoring;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -108,6 +109,21 @@ public final class DiscoveryJobArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    /**
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     * 
+     */
+    @Import(name="shouldPropagateTagsToDiscoveredResources")
+    private @Nullable Output<Boolean> shouldPropagateTagsToDiscoveredResources;
+
+    /**
+     * @return If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldPropagateTagsToDiscoveredResources() {
+        return Optional.ofNullable(this.shouldPropagateTagsToDiscoveredResources);
+    }
+
     private DiscoveryJobArgs() {}
 
     private DiscoveryJobArgs(DiscoveryJobArgs $) {
@@ -117,6 +133,7 @@ public final class DiscoveryJobArgs extends com.pulumi.resources.ResourceArgs {
         this.discoveryDetails = $.discoveryDetails;
         this.discoveryType = $.discoveryType;
         this.freeformTags = $.freeformTags;
+        this.shouldPropagateTagsToDiscoveredResources = $.shouldPropagateTagsToDiscoveredResources;
     }
 
     public static Builder builder() {
@@ -261,6 +278,27 @@ public final class DiscoveryJobArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param shouldPropagateTagsToDiscoveredResources If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldPropagateTagsToDiscoveredResources(@Nullable Output<Boolean> shouldPropagateTagsToDiscoveredResources) {
+            $.shouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
+            return this;
+        }
+
+        /**
+         * @param shouldPropagateTagsToDiscoveredResources If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldPropagateTagsToDiscoveredResources(Boolean shouldPropagateTagsToDiscoveredResources) {
+            return shouldPropagateTagsToDiscoveredResources(Output.of(shouldPropagateTagsToDiscoveredResources));
         }
 
         public DiscoveryJobArgs build() {

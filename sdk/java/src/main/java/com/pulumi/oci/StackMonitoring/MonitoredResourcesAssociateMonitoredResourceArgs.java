@@ -14,14 +14,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
     public static final MonitoredResourcesAssociateMonitoredResourceArgs Empty = new MonitoredResourcesAssociateMonitoredResourceArgs();
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type to be created between source and destination resources.
      * 
      */
     @Import(name="associationType", required=true)
     private Output<String> associationType;
 
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type to be created between source and destination resources.
      * 
      */
     public Output<String> associationType() {
@@ -29,14 +29,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
@@ -44,14 +44,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="destinationResourceId", required=true)
     private Output<String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> destinationResourceId() {
@@ -59,14 +59,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="sourceResourceId", required=true)
     private Output<String> sourceResourceId;
 
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> sourceResourceId() {
@@ -101,7 +101,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type to be created between source and destination resources.
          * 
          * @return builder
          * 
@@ -112,7 +112,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type to be created between source and destination resources.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 

@@ -14,12 +14,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourcesListMemberItem {
     /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private @Nullable String compartmentId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private @Nullable Map<String,Object> definedTags;
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     private @Nullable String externalId;
@@ -29,12 +34,12 @@ public final class MonitoredResourcesListMemberItem {
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return Monitored Resource Host
+     * @return Monitored Resource Host Name.
      * 
      */
     private @Nullable String hostName;
     /**
-     * @return Parent monitored resource identifier
+     * @return Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String parentId;
@@ -44,17 +49,17 @@ public final class MonitoredResourcesListMemberItem {
      */
     private @Nullable String resourceDisplayName;
     /**
-     * @return Monitored resource identifier
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String resourceId;
     /**
-     * @return Monitored resource name
+     * @return Monitored Resource Name.
      * 
      */
     private @Nullable String resourceName;
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     private @Nullable String resourceType;
@@ -71,6 +76,13 @@ public final class MonitoredResourcesListMemberItem {
 
     private MonitoredResourcesListMemberItem() {}
     /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -78,7 +90,7 @@ public final class MonitoredResourcesListMemberItem {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     public Optional<String> externalId() {
@@ -92,14 +104,14 @@ public final class MonitoredResourcesListMemberItem {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return Monitored Resource Host
+     * @return Monitored Resource Host Name.
      * 
      */
     public Optional<String> hostName() {
         return Optional.ofNullable(this.hostName);
     }
     /**
-     * @return Parent monitored resource identifier
+     * @return Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> parentId() {
@@ -113,21 +125,21 @@ public final class MonitoredResourcesListMemberItem {
         return Optional.ofNullable(this.resourceDisplayName);
     }
     /**
-     * @return Monitored resource identifier
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
     }
     /**
-     * @return Monitored resource name
+     * @return Monitored Resource Name.
      * 
      */
     public Optional<String> resourceName() {
         return Optional.ofNullable(this.resourceName);
     }
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public Optional<String> resourceType() {
@@ -157,6 +169,7 @@ public final class MonitoredResourcesListMemberItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String compartmentId;
         private @Nullable Map<String,Object> definedTags;
         private @Nullable String externalId;
         private @Nullable Map<String,Object> freeformTags;
@@ -171,6 +184,7 @@ public final class MonitoredResourcesListMemberItem {
         public Builder() {}
         public Builder(MonitoredResourcesListMemberItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.externalId = defaults.externalId;
     	      this.freeformTags = defaults.freeformTags;
@@ -184,6 +198,11 @@ public final class MonitoredResourcesListMemberItem {
     	      this.systemTags = defaults.systemTags;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
@@ -241,6 +260,7 @@ public final class MonitoredResourcesListMemberItem {
         }
         public MonitoredResourcesListMemberItem build() {
             final var o = new MonitoredResourcesListMemberItem();
+            o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.externalId = externalId;
             o.freeformTags = freeformTags;

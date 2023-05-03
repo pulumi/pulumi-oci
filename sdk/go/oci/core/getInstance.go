@@ -101,6 +101,8 @@ type LookupInstanceResult struct {
 	InstanceOptions []GetInstanceInstanceOption `pulumi:"instanceOptions"`
 	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
 	IpxeScript string `pulumi:"ipxeScript"`
+	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+	IsCrossNumaNode bool `pulumi:"isCrossNumaNode"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -280,6 +282,11 @@ func (o LookupInstanceResultOutput) InstanceOptions() GetInstanceInstanceOptionA
 // When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
 func (o LookupInstanceResultOutput) IpxeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.IpxeScript }).(pulumi.StringOutput)
+}
+
+// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+func (o LookupInstanceResultOutput) IsCrossNumaNode() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IsCrossNumaNode }).(pulumi.BoolOutput)
 }
 
 // Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).

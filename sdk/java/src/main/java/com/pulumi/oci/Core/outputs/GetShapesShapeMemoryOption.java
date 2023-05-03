@@ -20,6 +20,11 @@ public final class GetShapesShapeMemoryOption {
      */
     private Double maxInGbs;
     /**
+     * @return The maximum amount of memory per NUMA node, in gigabytes.
+     * 
+     */
+    private Double maxPerNumaNodeInGbs;
+    /**
      * @return The maximum amount of memory per OCPU available for this shape, in gigabytes.
      * 
      */
@@ -49,6 +54,13 @@ public final class GetShapesShapeMemoryOption {
      */
     public Double maxInGbs() {
         return this.maxInGbs;
+    }
+    /**
+     * @return The maximum amount of memory per NUMA node, in gigabytes.
+     * 
+     */
+    public Double maxPerNumaNodeInGbs() {
+        return this.maxPerNumaNodeInGbs;
     }
     /**
      * @return The maximum amount of memory per OCPU available for this shape, in gigabytes.
@@ -83,6 +95,7 @@ public final class GetShapesShapeMemoryOption {
     public static final class Builder {
         private Double defaultPerOcpuInGbs;
         private Double maxInGbs;
+        private Double maxPerNumaNodeInGbs;
         private Double maxPerOcpuInGbs;
         private Double minInGbs;
         private Double minPerOcpuInGbs;
@@ -91,6 +104,7 @@ public final class GetShapesShapeMemoryOption {
     	      Objects.requireNonNull(defaults);
     	      this.defaultPerOcpuInGbs = defaults.defaultPerOcpuInGbs;
     	      this.maxInGbs = defaults.maxInGbs;
+    	      this.maxPerNumaNodeInGbs = defaults.maxPerNumaNodeInGbs;
     	      this.maxPerOcpuInGbs = defaults.maxPerOcpuInGbs;
     	      this.minInGbs = defaults.minInGbs;
     	      this.minPerOcpuInGbs = defaults.minPerOcpuInGbs;
@@ -104,6 +118,11 @@ public final class GetShapesShapeMemoryOption {
         @CustomType.Setter
         public Builder maxInGbs(Double maxInGbs) {
             this.maxInGbs = Objects.requireNonNull(maxInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxPerNumaNodeInGbs(Double maxPerNumaNodeInGbs) {
+            this.maxPerNumaNodeInGbs = Objects.requireNonNull(maxPerNumaNodeInGbs);
             return this;
         }
         @CustomType.Setter
@@ -125,6 +144,7 @@ public final class GetShapesShapeMemoryOption {
             final var o = new GetShapesShapeMemoryOption();
             o.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
             o.maxInGbs = maxInGbs;
+            o.maxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
             o.maxPerOcpuInGbs = maxPerOcpuInGbs;
             o.minInGbs = minInGbs;
             o.minPerOcpuInGbs = minPerOcpuInGbs;

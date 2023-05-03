@@ -5363,6 +5363,181 @@ func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) IsForceDeleteAfterGraceDu
 	}).(pulumi.BoolPtrOutput)
 }
 
+type NodePoolNodePoolCyclingDetails struct {
+	// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+	IsNodeCyclingEnabled *bool `pulumi:"isNodeCyclingEnabled"`
+	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumSurge *string `pulumi:"maximumSurge"`
+	// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumUnavailable *string `pulumi:"maximumUnavailable"`
+}
+
+// NodePoolNodePoolCyclingDetailsInput is an input type that accepts NodePoolNodePoolCyclingDetailsArgs and NodePoolNodePoolCyclingDetailsOutput values.
+// You can construct a concrete instance of `NodePoolNodePoolCyclingDetailsInput` via:
+//
+//	NodePoolNodePoolCyclingDetailsArgs{...}
+type NodePoolNodePoolCyclingDetailsInput interface {
+	pulumi.Input
+
+	ToNodePoolNodePoolCyclingDetailsOutput() NodePoolNodePoolCyclingDetailsOutput
+	ToNodePoolNodePoolCyclingDetailsOutputWithContext(context.Context) NodePoolNodePoolCyclingDetailsOutput
+}
+
+type NodePoolNodePoolCyclingDetailsArgs struct {
+	// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+	IsNodeCyclingEnabled pulumi.BoolPtrInput `pulumi:"isNodeCyclingEnabled"`
+	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumSurge pulumi.StringPtrInput `pulumi:"maximumSurge"`
+	// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumUnavailable pulumi.StringPtrInput `pulumi:"maximumUnavailable"`
+}
+
+func (NodePoolNodePoolCyclingDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsOutput() NodePoolNodePoolCyclingDetailsOutput {
+	return i.ToNodePoolNodePoolCyclingDetailsOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodePoolCyclingDetailsOutput)
+}
+
+func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsPtrOutput() NodePoolNodePoolCyclingDetailsPtrOutput {
+	return i.ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodePoolCyclingDetailsOutput).ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx)
+}
+
+// NodePoolNodePoolCyclingDetailsPtrInput is an input type that accepts NodePoolNodePoolCyclingDetailsArgs, NodePoolNodePoolCyclingDetailsPtr and NodePoolNodePoolCyclingDetailsPtrOutput values.
+// You can construct a concrete instance of `NodePoolNodePoolCyclingDetailsPtrInput` via:
+//
+//	        NodePoolNodePoolCyclingDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodePoolNodePoolCyclingDetailsPtrInput interface {
+	pulumi.Input
+
+	ToNodePoolNodePoolCyclingDetailsPtrOutput() NodePoolNodePoolCyclingDetailsPtrOutput
+	ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(context.Context) NodePoolNodePoolCyclingDetailsPtrOutput
+}
+
+type nodePoolNodePoolCyclingDetailsPtrType NodePoolNodePoolCyclingDetailsArgs
+
+func NodePoolNodePoolCyclingDetailsPtr(v *NodePoolNodePoolCyclingDetailsArgs) NodePoolNodePoolCyclingDetailsPtrInput {
+	return (*nodePoolNodePoolCyclingDetailsPtrType)(v)
+}
+
+func (*nodePoolNodePoolCyclingDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (i *nodePoolNodePoolCyclingDetailsPtrType) ToNodePoolNodePoolCyclingDetailsPtrOutput() NodePoolNodePoolCyclingDetailsPtrOutput {
+	return i.ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *nodePoolNodePoolCyclingDetailsPtrType) ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodePoolCyclingDetailsPtrOutput)
+}
+
+type NodePoolNodePoolCyclingDetailsOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodePoolCyclingDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (o NodePoolNodePoolCyclingDetailsOutput) ToNodePoolNodePoolCyclingDetailsOutput() NodePoolNodePoolCyclingDetailsOutput {
+	return o
+}
+
+func (o NodePoolNodePoolCyclingDetailsOutput) ToNodePoolNodePoolCyclingDetailsOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsOutput {
+	return o
+}
+
+func (o NodePoolNodePoolCyclingDetailsOutput) ToNodePoolNodePoolCyclingDetailsPtrOutput() NodePoolNodePoolCyclingDetailsPtrOutput {
+	return o.ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o NodePoolNodePoolCyclingDetailsOutput) ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodePoolCyclingDetails) *NodePoolNodePoolCyclingDetails {
+		return &v
+	}).(NodePoolNodePoolCyclingDetailsPtrOutput)
+}
+
+// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+func (o NodePoolNodePoolCyclingDetailsOutput) IsNodeCyclingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) *bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+func (o NodePoolNodePoolCyclingDetailsOutput) MaximumSurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) *string { return v.MaximumSurge }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+func (o NodePoolNodePoolCyclingDetailsOutput) MaximumUnavailable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) *string { return v.MaximumUnavailable }).(pulumi.StringPtrOutput)
+}
+
+type NodePoolNodePoolCyclingDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodePoolCyclingDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToNodePoolNodePoolCyclingDetailsPtrOutput() NodePoolNodePoolCyclingDetailsPtrOutput {
+	return o
+}
+
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsPtrOutput {
+	return o
+}
+
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) Elem() NodePoolNodePoolCyclingDetailsOutput {
+	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) NodePoolNodePoolCyclingDetails {
+		if v != nil {
+			return *v
+		}
+		var ret NodePoolNodePoolCyclingDetails
+		return ret
+	}).(NodePoolNodePoolCyclingDetailsOutput)
+}
+
+// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) IsNodeCyclingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsNodeCyclingEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) MaximumSurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumSurge
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) MaximumUnavailable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumUnavailable
+	}).(pulumi.StringPtrOutput)
+}
+
 type NodePoolNodeShapeConfig struct {
 	// (Updatable) The total amount of memory available to each node, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
@@ -10883,6 +11058,121 @@ func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInp
 	}).(GetNodePoolNodeEvictionNodePoolSettingOutput)
 }
 
+type GetNodePoolNodePoolCyclingDetail struct {
+	// If nodes in the nodepool will be cycled to have new changes.
+	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumSurge string `pulumi:"maximumSurge"`
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumUnavailable string `pulumi:"maximumUnavailable"`
+}
+
+// GetNodePoolNodePoolCyclingDetailInput is an input type that accepts GetNodePoolNodePoolCyclingDetailArgs and GetNodePoolNodePoolCyclingDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolNodePoolCyclingDetailInput` via:
+//
+//	GetNodePoolNodePoolCyclingDetailArgs{...}
+type GetNodePoolNodePoolCyclingDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodePoolCyclingDetailOutput() GetNodePoolNodePoolCyclingDetailOutput
+	ToGetNodePoolNodePoolCyclingDetailOutputWithContext(context.Context) GetNodePoolNodePoolCyclingDetailOutput
+}
+
+type GetNodePoolNodePoolCyclingDetailArgs struct {
+	// If nodes in the nodepool will be cycled to have new changes.
+	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
+}
+
+func (GetNodePoolNodePoolCyclingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolNodePoolCyclingDetailOutput() GetNodePoolNodePoolCyclingDetailOutput {
+	return i.ToGetNodePoolNodePoolCyclingDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolNodePoolCyclingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodePoolCyclingDetailOutput)
+}
+
+// GetNodePoolNodePoolCyclingDetailArrayInput is an input type that accepts GetNodePoolNodePoolCyclingDetailArray and GetNodePoolNodePoolCyclingDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolNodePoolCyclingDetailArrayInput` via:
+//
+//	GetNodePoolNodePoolCyclingDetailArray{ GetNodePoolNodePoolCyclingDetailArgs{...} }
+type GetNodePoolNodePoolCyclingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodePoolCyclingDetailArrayOutput() GetNodePoolNodePoolCyclingDetailArrayOutput
+	ToGetNodePoolNodePoolCyclingDetailArrayOutputWithContext(context.Context) GetNodePoolNodePoolCyclingDetailArrayOutput
+}
+
+type GetNodePoolNodePoolCyclingDetailArray []GetNodePoolNodePoolCyclingDetailInput
+
+func (GetNodePoolNodePoolCyclingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolNodePoolCyclingDetailArray) ToGetNodePoolNodePoolCyclingDetailArrayOutput() GetNodePoolNodePoolCyclingDetailArrayOutput {
+	return i.ToGetNodePoolNodePoolCyclingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodePoolCyclingDetailArray) ToGetNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetNodePoolNodePoolCyclingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodePoolCyclingDetailArrayOutput)
+}
+
+type GetNodePoolNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodePoolCyclingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolNodePoolCyclingDetailOutput() GetNodePoolNodePoolCyclingDetailOutput {
+	return o
+}
+
+func (o GetNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolNodePoolCyclingDetailOutput {
+	return o
+}
+
+// If nodes in the nodepool will be cycled to have new changes.
+func (o GetNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
+}
+
+// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
+}
+
+// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) string { return v.MaximumUnavailable }).(pulumi.StringOutput)
+}
+
+type GetNodePoolNodePoolCyclingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodePoolCyclingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolNodePoolCyclingDetailArrayOutput() GetNodePoolNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetNodePoolNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodePoolCyclingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodePoolCyclingDetail {
+		return vs[0].([]GetNodePoolNodePoolCyclingDetail)[vs[1].(int)]
+	}).(GetNodePoolNodePoolCyclingDetailOutput)
+}
+
 type GetNodePoolNodeShapeConfig struct {
 	// The total amount of memory available to each node, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
@@ -11476,6 +11766,8 @@ type GetNodePoolsNodePool struct {
 	NodeImageName string `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	// Node Pool Cycling Details
+	NodePoolCyclingDetails []GetNodePoolsNodePoolNodePoolCyclingDetail `pulumi:"nodePoolCyclingDetails"`
 	// The OCID of the node pool to which this node belongs.
 	NodePoolId string `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
@@ -11542,6 +11834,8 @@ type GetNodePoolsNodePoolArgs struct {
 	NodeImageName pulumi.StringInput `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata pulumi.MapInput `pulumi:"nodeMetadata"`
+	// Node Pool Cycling Details
+	NodePoolCyclingDetails GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput `pulumi:"nodePoolCyclingDetails"`
 	// The OCID of the node pool to which this node belongs.
 	NodePoolId pulumi.StringInput `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
@@ -11689,6 +11983,13 @@ func (o GetNodePoolsNodePoolOutput) NodeImageName() pulumi.StringOutput {
 // A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 func (o GetNodePoolsNodePoolOutput) NodeMetadata() pulumi.MapOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]interface{} { return v.NodeMetadata }).(pulumi.MapOutput)
+}
+
+// Node Pool Cycling Details
+func (o GetNodePoolsNodePoolOutput) NodePoolCyclingDetails() GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolNodePoolCyclingDetail {
+		return v.NodePoolCyclingDetails
+	}).(GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
 // The OCID of the node pool to which this node belongs.
@@ -12938,6 +13239,121 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
 		return vs[0].([]GetNodePoolsNodePoolNodeEvictionNodePoolSetting)[vs[1].(int)]
 	}).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput)
+}
+
+type GetNodePoolsNodePoolNodePoolCyclingDetail struct {
+	// If nodes in the nodepool will be cycled to have new changes.
+	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumSurge string `pulumi:"maximumSurge"`
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumUnavailable string `pulumi:"maximumUnavailable"`
+}
+
+// GetNodePoolsNodePoolNodePoolCyclingDetailInput is an input type that accepts GetNodePoolsNodePoolNodePoolCyclingDetailArgs and GetNodePoolsNodePoolNodePoolCyclingDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodePoolCyclingDetailInput` via:
+//
+//	GetNodePoolsNodePoolNodePoolCyclingDetailArgs{...}
+type GetNodePoolsNodePoolNodePoolCyclingDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodePoolCyclingDetailOutput() GetNodePoolsNodePoolNodePoolCyclingDetailOutput
+	ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailOutput
+}
+
+type GetNodePoolsNodePoolNodePoolCyclingDetailArgs struct {
+	// If nodes in the nodepool will be cycled to have new changes.
+	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
+}
+
+func (GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolsNodePoolNodePoolCyclingDetailOutput() GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
+	return i.ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodePoolCyclingDetailOutput)
+}
+
+// GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodePoolCyclingDetailArray and GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput` via:
+//
+//	GetNodePoolsNodePoolNodePoolCyclingDetailArray{ GetNodePoolsNodePoolNodePoolCyclingDetailArgs{...} }
+type GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput() GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput
+	ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutputWithContext(context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput
+}
+
+type GetNodePoolsNodePoolNodePoolCyclingDetailArray []GetNodePoolsNodePoolNodePoolCyclingDetailInput
+
+func (GetNodePoolsNodePoolNodePoolCyclingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodePoolCyclingDetailArray) ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput() GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput {
+	return i.ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodePoolCyclingDetailArray) ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput)
+}
+
+type GetNodePoolsNodePoolNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolsNodePoolNodePoolCyclingDetailOutput() GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
+	return o
+}
+
+// If nodes in the nodepool will be cycled to have new changes.
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
+}
+
+// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
+}
+
+// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) string { return v.MaximumUnavailable }).(pulumi.StringOutput)
+}
+
+type GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput() GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodePoolCyclingDetail {
+		return vs[0].([]GetNodePoolsNodePoolNodePoolCyclingDetail)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolNodePoolCyclingDetailOutput)
 }
 
 type GetNodePoolsNodePoolNodeShapeConfig struct {
@@ -16262,6 +16678,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeErrorArrayInput)(nil)).Elem(), NodePoolNodeErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeEvictionNodePoolSettingsInput)(nil)).Elem(), NodePoolNodeEvictionNodePoolSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeEvictionNodePoolSettingsPtrInput)(nil)).Elem(), NodePoolNodeEvictionNodePoolSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodePoolCyclingDetailsInput)(nil)).Elem(), NodePoolNodePoolCyclingDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodePoolCyclingDetailsPtrInput)(nil)).Elem(), NodePoolNodePoolCyclingDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeShapeConfigInput)(nil)).Elem(), NodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeShapeConfigPtrInput)(nil)).Elem(), NodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceInput)(nil)).Elem(), NodePoolNodeSourceArgs{})
@@ -16348,6 +16766,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeErrorArrayInput)(nil)).Elem(), GetNodePoolNodeErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeEvictionNodePoolSettingInput)(nil)).Elem(), GetNodePoolNodeEvictionNodePoolSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeEvictionNodePoolSettingArrayInput)(nil)).Elem(), GetNodePoolNodeEvictionNodePoolSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodePoolCyclingDetailInput)(nil)).Elem(), GetNodePoolNodePoolCyclingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodePoolCyclingDetailArrayInput)(nil)).Elem(), GetNodePoolNodePoolCyclingDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeShapeConfigInput)(nil)).Elem(), GetNodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeShapeConfigArrayInput)(nil)).Elem(), GetNodePoolNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeSourceInput)(nil)).Elem(), GetNodePoolNodeSourceArgs{})
@@ -16378,6 +16798,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeErrorArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput)(nil)).Elem(), GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodePoolCyclingDetailInput)(nil)).Elem(), GetNodePoolsNodePoolNodePoolCyclingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodePoolCyclingDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeShapeConfigInput)(nil)).Elem(), GetNodePoolsNodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeShapeConfigArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceArgs{})
@@ -16500,6 +16922,8 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolNodeErrorArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeEvictionNodePoolSettingsOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeEvictionNodePoolSettingsPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolNodePoolCyclingDetailsOutput{})
+	pulumi.RegisterOutputType(NodePoolNodePoolCyclingDetailsPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceOutput{})
@@ -16586,6 +17010,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolNodeErrorArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeEvictionNodePoolSettingOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeEvictionNodePoolSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodePoolCyclingDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodePoolCyclingDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeSourceOutput{})
@@ -16616,6 +17042,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeErrorArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodePoolCyclingDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceOutput{})

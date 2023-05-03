@@ -35,23 +35,23 @@ class MonitoredResourcesSearchArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesSearch resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] host_name: A filter to return resources with host name match
-        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern
+        :param pulumi.Input[str] host_name: A filter to return resources with host name match.
+        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
-        :param pulumi.Input[str] name: A filter to return resources that match exact resource name
+        :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
-        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID.
+        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type
+        :param pulumi.Input[str] type: A filter to return resources that match resource type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if exclude_fields is not None:
@@ -91,7 +91,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -115,7 +115,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
@@ -139,7 +139,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources with host name match
+        A filter to return resources with host name match.
         """
         return pulumi.get(self, "host_name")
 
@@ -151,7 +151,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter(name="hostNameContains")
     def host_name_contains(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources with host name pattern
+        A filter to return resources with host name pattern.
         """
         return pulumi.get(self, "host_name_contains")
 
@@ -175,7 +175,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match exact resource name
+        A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 
@@ -211,7 +211,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> Optional[pulumi.Input[str]]:
         """
-        Time zone in the form of tz database canonical zone ID.
+        Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
 
@@ -283,7 +283,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match resource type
+        A filter to return resources that match resource type.
         """
         return pulumi.get(self, "type")
 
@@ -315,24 +315,24 @@ class _MonitoredResourcesSearchState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesSearch resources.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] host_name: A filter to return resources with host name match
-        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern
+        :param pulumi.Input[str] host_name: A filter to return resources with host name match.
+        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]] items: List of monitored resources.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
-        :param pulumi.Input[str] name: A filter to return resources that match exact resource name
+        :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
-        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID.
+        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type
+        :param pulumi.Input[str] type: A filter to return resources that match resource type.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -375,7 +375,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -399,7 +399,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
@@ -423,7 +423,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources with host name match
+        A filter to return resources with host name match.
         """
         return pulumi.get(self, "host_name")
 
@@ -435,7 +435,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter(name="hostNameContains")
     def host_name_contains(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources with host name pattern
+        A filter to return resources with host name pattern.
         """
         return pulumi.get(self, "host_name_contains")
 
@@ -471,7 +471,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match exact resource name
+        A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 
@@ -507,7 +507,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> Optional[pulumi.Input[str]]:
         """
-        Time zone in the form of tz database canonical zone ID.
+        Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
 
@@ -579,7 +579,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match resource type
+        A filter to return resources that match resource type.
         """
         return pulumi.get(self, "type")
 
@@ -614,7 +614,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         """
         This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
-        Returns a list of monitored resources.
+        Gets a list of all monitored resources in a compartment for the given search criteria.
 
         ## Example Usage
 
@@ -652,23 +652,23 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] host_name: A filter to return resources with host name match
-        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern
+        :param pulumi.Input[str] host_name: A filter to return resources with host name match.
+        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
-        :param pulumi.Input[str] name: A filter to return resources that match exact resource name
+        :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
-        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID.
+        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type
+        :param pulumi.Input[str] type: A filter to return resources that match resource type.
         """
         ...
     @overload
@@ -679,7 +679,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         """
         This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
-        Returns a list of monitored resources.
+        Gets a list of all monitored resources in a compartment for the given search criteria.
 
         ## Example Usage
 
@@ -811,24 +811,24 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
-        :param pulumi.Input[str] host_name: A filter to return resources with host name match
-        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern
+        :param pulumi.Input[str] host_name: A filter to return resources with host name match.
+        :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchItemArgs']]]] items: List of monitored resources.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
-        :param pulumi.Input[str] name: A filter to return resources that match exact resource name
+        :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
-        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID.
+        :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type
+        :param pulumi.Input[str] type: A filter to return resources that match resource type.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -858,7 +858,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -874,7 +874,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Output[Optional[str]]:
         """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
@@ -890,7 +890,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter(name="hostName")
     def host_name(self) -> pulumi.Output[Optional[str]]:
         """
-        A filter to return resources with host name match
+        A filter to return resources with host name match.
         """
         return pulumi.get(self, "host_name")
 
@@ -898,7 +898,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter(name="hostNameContains")
     def host_name_contains(self) -> pulumi.Output[Optional[str]]:
         """
-        A filter to return resources with host name pattern
+        A filter to return resources with host name pattern.
         """
         return pulumi.get(self, "host_name_contains")
 
@@ -922,7 +922,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[Optional[str]]:
         """
-        A filter to return resources that match exact resource name
+        A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 
@@ -946,7 +946,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> pulumi.Output[Optional[str]]:
         """
-        Time zone in the form of tz database canonical zone ID.
+        Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
 
@@ -994,7 +994,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[Optional[str]]:
         """
-        A filter to return resources that match resource type
+        A filter to return resources that match resource type.
         """
         return pulumi.get(self, "type")
 

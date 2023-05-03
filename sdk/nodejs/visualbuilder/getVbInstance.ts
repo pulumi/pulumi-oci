@@ -49,6 +49,10 @@ export interface GetVbInstanceResult {
      */
     readonly alternateCustomEndpoints: outputs.VisualBuilder.GetVbInstanceAlternateCustomEndpoint[];
     /**
+     * A list of associated attachments to other services
+     */
+    readonly attachments: outputs.VisualBuilder.GetVbInstanceAttachment[];
+    /**
      * Compartment Identifier.
      */
     readonly compartmentId: string;
@@ -76,6 +80,10 @@ export interface GetVbInstanceResult {
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
+    /**
+     * Information for IDCS access
+     */
+    readonly idcsInfos: outputs.VisualBuilder.GetVbInstanceIdcsInfo[];
     readonly idcsOpenId: string;
     /**
      * The Vb Instance URL.
@@ -86,9 +94,25 @@ export interface GetVbInstanceResult {
      */
     readonly isVisualBuilderEnabled: boolean;
     /**
+     * The NAT gateway IP address for the VB management VCN
+     */
+    readonly managementNatGatewayIp: string;
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     */
+    readonly managementVcnId: string;
+    /**
      * The number of Nodes
      */
     readonly nodeCount: number;
+    /**
+     * The NAT gateway IP address for the VB service VCN
+     */
+    readonly serviceNatGatewayIp: string;
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     */
+    readonly serviceVcnId: string;
     /**
      * The current state of the vb instance.
      */

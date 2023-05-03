@@ -14,11 +14,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourcesSearchItemProperty
     {
         /// <summary>
-        /// A filter to return resources that match exact resource name
+        /// A filter to return resources that match exact resource name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// property value
+        /// Property Value.
         /// </summary>
         public readonly string? Value;
 

@@ -268,6 +268,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly ipxeScript!: pulumi.Output<string>;
     /**
+     * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     */
+    public /*out*/ readonly isCrossNumaNode!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
      */
     public readonly isPvEncryptionInTransitEnabled!: pulumi.Output<boolean>;
@@ -375,6 +379,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["image"] = state ? state.image : undefined;
             resourceInputs["instanceOptions"] = state ? state.instanceOptions : undefined;
             resourceInputs["ipxeScript"] = state ? state.ipxeScript : undefined;
+            resourceInputs["isCrossNumaNode"] = state ? state.isCrossNumaNode : undefined;
             resourceInputs["isPvEncryptionInTransitEnabled"] = state ? state.isPvEncryptionInTransitEnabled : undefined;
             resourceInputs["launchMode"] = state ? state.launchMode : undefined;
             resourceInputs["launchOptions"] = state ? state.launchOptions : undefined;
@@ -436,6 +441,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["updateOperationConstraint"] = args ? args.updateOperationConstraint : undefined;
             resourceInputs["bootVolumeId"] = undefined /*out*/;
+            resourceInputs["isCrossNumaNode"] = undefined /*out*/;
             resourceInputs["launchMode"] = undefined /*out*/;
             resourceInputs["privateIp"] = undefined /*out*/;
             resourceInputs["publicIp"] = undefined /*out*/;
@@ -530,6 +536,10 @@ export interface InstanceState {
      * This is an advanced option.
      */
     ipxeScript?: pulumi.Input<string>;
+    /**
+     * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     */
+    isCrossNumaNode?: pulumi.Input<boolean>;
     /**
      * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
      */

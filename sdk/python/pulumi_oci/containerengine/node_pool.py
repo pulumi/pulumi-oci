@@ -29,6 +29,7 @@ class NodePoolArgs:
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_pool_cycling_details: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']] = None,
                  node_shape_config: Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']] = None,
                  node_source_details: Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']] = None,
                  quantity_per_subnet: Optional[pulumi.Input[int]] = None,
@@ -49,6 +50,7 @@ class NodePoolArgs:
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input['NodePoolNodePoolCyclingDetailsArgs'] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
         :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
@@ -83,6 +85,8 @@ class NodePoolArgs:
             pulumi.set(__self__, "node_image_name", node_image_name)
         if node_metadata is not None:
             pulumi.set(__self__, "node_metadata", node_metadata)
+        if node_pool_cycling_details is not None:
+            pulumi.set(__self__, "node_pool_cycling_details", node_pool_cycling_details)
         if node_shape_config is not None:
             pulumi.set(__self__, "node_shape_config", node_shape_config)
         if node_source_details is not None:
@@ -251,6 +255,18 @@ class NodePoolArgs:
         pulumi.set(self, "node_metadata", value)
 
     @property
+    @pulumi.getter(name="nodePoolCyclingDetails")
+    def node_pool_cycling_details(self) -> Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']]:
+        """
+        (Updatable) Node Pool Cycling Details
+        """
+        return pulumi.get(self, "node_pool_cycling_details")
+
+    @node_pool_cycling_details.setter
+    def node_pool_cycling_details(self, value: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']]):
+        pulumi.set(self, "node_pool_cycling_details", value)
+
+    @property
     @pulumi.getter(name="nodeShapeConfig")
     def node_shape_config(self) -> Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']]:
         """
@@ -327,6 +343,7 @@ class _NodePoolState:
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_pool_cycling_details: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
                  node_shape_config: Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']] = None,
                  node_source_details: Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']] = None,
@@ -351,6 +368,7 @@ class _NodePoolState:
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input['NodePoolNodePoolCyclingDetailsArgs'] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
@@ -393,6 +411,8 @@ class _NodePoolState:
             pulumi.set(__self__, "node_image_name", node_image_name)
         if node_metadata is not None:
             pulumi.set(__self__, "node_metadata", node_metadata)
+        if node_pool_cycling_details is not None:
+            pulumi.set(__self__, "node_pool_cycling_details", node_pool_cycling_details)
         if node_shape is not None:
             pulumi.set(__self__, "node_shape", node_shape)
         if node_shape_config is not None:
@@ -569,6 +589,18 @@ class _NodePoolState:
         pulumi.set(self, "node_metadata", value)
 
     @property
+    @pulumi.getter(name="nodePoolCyclingDetails")
+    def node_pool_cycling_details(self) -> Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']]:
+        """
+        (Updatable) Node Pool Cycling Details
+        """
+        return pulumi.get(self, "node_pool_cycling_details")
+
+    @node_pool_cycling_details.setter
+    def node_pool_cycling_details(self, value: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']]):
+        pulumi.set(self, "node_pool_cycling_details", value)
+
+    @property
     @pulumi.getter(name="nodeShape")
     def node_shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -694,6 +726,7 @@ class NodePool(pulumi.CustomResource):
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_pool_cycling_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']]] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
                  node_shape_config: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']]] = None,
                  node_source_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']]] = None,
@@ -764,6 +797,11 @@ class NodePool(pulumi.CustomResource):
             ),
             node_image_name=oci_core_image["test_image"]["name"],
             node_metadata=var["node_pool_node_metadata"],
+            node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
+                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
+                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
+                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
+            ),
             node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
                 memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
                 ocpus=var["node_pool_node_shape_config_ocpus"],
@@ -800,6 +838,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
@@ -876,6 +915,11 @@ class NodePool(pulumi.CustomResource):
             ),
             node_image_name=oci_core_image["test_image"]["name"],
             node_metadata=var["node_pool_node_metadata"],
+            node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
+                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
+                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
+                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
+            ),
             node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
                 memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
                 ocpus=var["node_pool_node_shape_config_ocpus"],
@@ -925,6 +969,7 @@ class NodePool(pulumi.CustomResource):
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_pool_cycling_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']]] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
                  node_shape_config: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']]] = None,
                  node_source_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']]] = None,
@@ -964,6 +1009,7 @@ class NodePool(pulumi.CustomResource):
                 pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
             __props__.__dict__["node_image_name"] = node_image_name
             __props__.__dict__["node_metadata"] = node_metadata
+            __props__.__dict__["node_pool_cycling_details"] = node_pool_cycling_details
             if node_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'node_shape'")
             __props__.__dict__["node_shape"] = node_shape
@@ -999,6 +1045,7 @@ class NodePool(pulumi.CustomResource):
             node_image_id: Optional[pulumi.Input[str]] = None,
             node_image_name: Optional[pulumi.Input[str]] = None,
             node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            node_pool_cycling_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']]] = None,
             node_shape: Optional[pulumi.Input[str]] = None,
             node_shape_config: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']]] = None,
             node_source_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']]] = None,
@@ -1028,6 +1075,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
@@ -1055,6 +1103,7 @@ class NodePool(pulumi.CustomResource):
         __props__.__dict__["node_image_id"] = node_image_id
         __props__.__dict__["node_image_name"] = node_image_name
         __props__.__dict__["node_metadata"] = node_metadata
+        __props__.__dict__["node_pool_cycling_details"] = node_pool_cycling_details
         __props__.__dict__["node_shape"] = node_shape
         __props__.__dict__["node_shape_config"] = node_shape_config
         __props__.__dict__["node_source_details"] = node_source_details
@@ -1169,6 +1218,14 @@ class NodePool(pulumi.CustomResource):
         (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         """
         return pulumi.get(self, "node_metadata")
+
+    @property
+    @pulumi.getter(name="nodePoolCyclingDetails")
+    def node_pool_cycling_details(self) -> pulumi.Output['outputs.NodePoolNodePoolCyclingDetails']:
+        """
+        (Updatable) Node Pool Cycling Details
+        """
+        return pulumi.get(self, "node_pool_cycling_details")
 
     @property
     @pulumi.getter(name="nodeShape")

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourceDatabaseConnectionDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Database connector Identifier
+        /// (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("connectorId")]
         public Input<string>? ConnectorId { get; set; }
 
         /// <summary>
-        /// (Updatable) dbId of the database
+        /// (Updatable) dbId of the database.
         /// </summary>
         [Input("dbId")]
         public Input<string>? DbId { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string> ServiceName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("sslSecretId")]
         public Input<string>? SslSecretId { get; set; }

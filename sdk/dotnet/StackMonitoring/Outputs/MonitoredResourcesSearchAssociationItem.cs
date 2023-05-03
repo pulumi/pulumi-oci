@@ -14,27 +14,27 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourcesSearchAssociationItem
     {
         /// <summary>
-        /// Association type to be created between source and destination resources
+        /// Association type filter to search associated resources.
         /// </summary>
         public readonly string? AssociationType;
         /// <summary>
-        /// Association Resource Details
+        /// Association Resource Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.MonitoredResourcesSearchAssociationItemDestinationResourceDetail> DestinationResourceDetails;
         /// <summary>
-        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? DestinationResourceId;
         /// <summary>
-        /// Association Resource Details
+        /// Association Resource Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.MonitoredResourcesSearchAssociationItemSourceResourceDetail> SourceResourceDetails;
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? SourceResourceId;
         /// <summary>
-        /// The time the the association was created. An RFC3339 formatted datetime string
+        /// The association creation time. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string? TimeCreated;
 

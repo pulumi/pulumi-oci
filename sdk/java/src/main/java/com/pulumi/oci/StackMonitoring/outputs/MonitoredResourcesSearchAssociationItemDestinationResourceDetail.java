@@ -12,26 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourcesSearchAssociationItemDestinationResourceDetail {
     /**
-     * @return Monitored Resource Name
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private @Nullable String compartmentId;
+    /**
+     * @return Monitored Resource Name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return Monitored Resource Type
+     * @return Monitored Resource Type.
      * 
      */
     private @Nullable String type;
 
     private MonitoredResourcesSearchAssociationItemDestinationResourceDetail() {}
     /**
-     * @return Monitored Resource Name
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return Monitored Resource Name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return Monitored Resource Type
+     * @return Monitored Resource Type.
      * 
      */
     public Optional<String> type() {
@@ -47,15 +59,22 @@ public final class MonitoredResourcesSearchAssociationItemDestinationResourceDet
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String compartmentId;
         private @Nullable String name;
         private @Nullable String type;
         public Builder() {}
         public Builder(MonitoredResourcesSearchAssociationItemDestinationResourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.name = defaults.name;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
@@ -68,6 +87,7 @@ public final class MonitoredResourcesSearchAssociationItemDestinationResourceDet
         }
         public MonitoredResourcesSearchAssociationItemDestinationResourceDetail build() {
             final var o = new MonitoredResourcesSearchAssociationItemDestinationResourceDetail();
+            o.compartmentId = compartmentId;
             o.name = name;
             o.type = type;
             return o;

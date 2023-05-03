@@ -17,6 +17,10 @@ __all__ = [
     'DiscoveryJobDiscoveryDetailsCredentialsItemProperties',
     'DiscoveryJobDiscoveryDetailsProperties',
     'DiscoveryJobDiscoveryDetailsTags',
+    'MonitoredResourceAdditionalAlias',
+    'MonitoredResourceAdditionalAliasCredential',
+    'MonitoredResourceAdditionalCredential',
+    'MonitoredResourceAdditionalCredentialProperty',
     'MonitoredResourceAliases',
     'MonitoredResourceAliasesCredential',
     'MonitoredResourceCredentials',
@@ -43,6 +47,10 @@ __all__ = [
     'GetDiscoveryJobsDiscoveryJobCollectionResult',
     'GetDiscoveryJobsDiscoveryJobCollectionItemResult',
     'GetDiscoveryJobsFilterResult',
+    'GetMonitoredResourceAdditionalAliasResult',
+    'GetMonitoredResourceAdditionalAliasCredentialResult',
+    'GetMonitoredResourceAdditionalCredentialResult',
+    'GetMonitoredResourceAdditionalCredentialPropertyResult',
     'GetMonitoredResourceAliasResult',
     'GetMonitoredResourceAliasCredentialResult',
     'GetMonitoredResourceCredentialResult',
@@ -333,15 +341,242 @@ class DiscoveryJobDiscoveryDetailsTags(dict):
 
 
 @pulumi.output_type
+class MonitoredResourceAdditionalAlias(dict):
+    def __init__(__self__, *,
+                 credential: 'outputs.MonitoredResourceAdditionalAliasCredential',
+                 name: str,
+                 source: str):
+        """
+        :param 'MonitoredResourceAdditionalAliasCredentialArgs' credential: (Updatable) Monitored Resource Alias Reference Source Credential.
+        :param str name: (Updatable) Property Name.
+        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        pulumi.set(__self__, "credential", credential)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter
+    def credential(self) -> 'outputs.MonitoredResourceAdditionalAliasCredential':
+        """
+        (Updatable) Monitored Resource Alias Reference Source Credential.
+        """
+        return pulumi.get(self, "credential")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class MonitoredResourceAdditionalAliasCredential(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 service: str,
+                 source: str):
+        """
+        :param str name: (Updatable) Property Name.
+        :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def service(self) -> str:
+        """
+        (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class MonitoredResourceAdditionalCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialType":
+            suggest = "credential_type"
+        elif key == "keyId":
+            suggest = "key_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MonitoredResourceAdditionalCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MonitoredResourceAdditionalCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MonitoredResourceAdditionalCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_type: Optional[str] = None,
+                 description: Optional[str] = None,
+                 key_id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 properties: Optional[Sequence['outputs.MonitoredResourceAdditionalCredentialProperty']] = None,
+                 source: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str credential_type: (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+               * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+               * PLAINTEXT - The credential properties will have credentials in plain text format.
+               * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        :param str description: (Updatable) The user-specified textual description of the credential.
+        :param str key_id: (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        :param str name: (Updatable) Property Name.
+        :param Sequence['MonitoredResourceAdditionalCredentialPropertyArgs'] properties: (Updatable) List of monitored resource properties.
+        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str type: Monitored Resource Type.
+        """
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[str]:
+        """
+        (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        * PLAINTEXT - The credential properties will have credentials in plain text format.
+        * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The user-specified textual description of the credential.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> Optional[str]:
+        """
+        (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        """
+        return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional[Sequence['outputs.MonitoredResourceAdditionalCredentialProperty']]:
+        """
+        (Updatable) List of monitored resource properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Monitored Resource Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class MonitoredResourceAdditionalCredentialProperty(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: (Updatable) Property Name.
+        :param str value: (Updatable) Property Value.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) Property Value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class MonitoredResourceAliases(dict):
     def __init__(__self__, *,
                  credential: 'outputs.MonitoredResourceAliasesCredential',
                  name: str,
                  source: str):
         """
-        :param 'MonitoredResourceAliasesCredentialArgs' credential: (Updatable) Monitored Resource Alias Reference Source Credential
-        :param str name: (Updatable) property name
-        :param str source: (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param 'MonitoredResourceAliasesCredentialArgs' credential: (Updatable) Monitored Resource Alias Reference Source Credential.
+        :param str name: (Updatable) Property Name.
+        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "credential", credential)
         pulumi.set(__self__, "name", name)
@@ -351,7 +586,7 @@ class MonitoredResourceAliases(dict):
     @pulumi.getter
     def credential(self) -> 'outputs.MonitoredResourceAliasesCredential':
         """
-        (Updatable) Monitored Resource Alias Reference Source Credential
+        (Updatable) Monitored Resource Alias Reference Source Credential.
         """
         return pulumi.get(self, "credential")
 
@@ -359,7 +594,7 @@ class MonitoredResourceAliases(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) property name
+        (Updatable) Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -367,7 +602,7 @@ class MonitoredResourceAliases(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -379,9 +614,9 @@ class MonitoredResourceAliasesCredential(dict):
                  service: str,
                  source: str):
         """
-        :param str name: (Updatable) property name
-        :param str service: (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
-        :param str source: (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str name: (Updatable) Property Name.
+        :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
@@ -391,7 +626,7 @@ class MonitoredResourceAliasesCredential(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) property name
+        (Updatable) Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -399,7 +634,7 @@ class MonitoredResourceAliasesCredential(dict):
     @pulumi.getter
     def service(self) -> str:
         """
-        (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+        (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         """
         return pulumi.get(self, "service")
 
@@ -407,7 +642,7 @@ class MonitoredResourceAliasesCredential(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -442,13 +677,16 @@ class MonitoredResourceCredentials(dict):
                  source: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str credential_type: (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        :param str credential_type: (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+               * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+               * PLAINTEXT - The credential properties will have credentials in plain text format.
+               * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         :param str description: (Updatable) The user-specified textual description of the credential.
-        :param str key_id: (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
-        :param str name: (Updatable) property name
-        :param Sequence['MonitoredResourceCredentialsPropertyArgs'] properties: (Updatable) List of monitored resource properties
-        :param str source: (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param str type: Monitored resource type
+        :param str key_id: (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        :param str name: (Updatable) Property Name.
+        :param Sequence['MonitoredResourceCredentialsPropertyArgs'] properties: (Updatable) List of monitored resource properties.
+        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str type: Monitored Resource Type.
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -469,7 +707,10 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[str]:
         """
-        (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        * PLAINTEXT - The credential properties will have credentials in plain text format.
+        * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         """
         return pulumi.get(self, "credential_type")
 
@@ -485,7 +726,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[str]:
         """
-        (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+        (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
         """
         return pulumi.get(self, "key_id")
 
@@ -493,7 +734,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) property name
+        (Updatable) Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -501,7 +742,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def properties(self) -> Optional[Sequence['outputs.MonitoredResourceCredentialsProperty']]:
         """
-        (Updatable) List of monitored resource properties
+        (Updatable) List of monitored resource properties.
         """
         return pulumi.get(self, "properties")
 
@@ -509,7 +750,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def source(self) -> Optional[str]:
         """
-        (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -517,7 +758,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored resource type
+        Monitored Resource Type.
         """
         return pulumi.get(self, "type")
 
@@ -528,8 +769,8 @@ class MonitoredResourceCredentialsProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) property name
-        :param str value: (Updatable) property value
+        :param str name: (Updatable) Property Name.
+        :param str value: (Updatable) Property Value.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -540,7 +781,7 @@ class MonitoredResourceCredentialsProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) property name
+        (Updatable) Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -548,7 +789,7 @@ class MonitoredResourceCredentialsProperty(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        (Updatable) property value
+        (Updatable) Property Value.
         """
         return pulumi.get(self, "value")
 
@@ -592,10 +833,10 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
         :param int port: (Updatable) Listener Port number used for connection requests.
         :param str protocol: (Updatable) Protocol used in DB connection string when connecting to external database service.
         :param str service_name: (Updatable) Service name used for connection requests.
-        :param str connector_id: (Updatable) Database connector Identifier
-        :param str db_id: (Updatable) dbId of the database
+        :param str connector_id: (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str db_id: (Updatable) dbId of the database.
         :param str db_unique_name: (Updatable) UniqueName used for database connection requests.
-        :param str ssl_secret_id: (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param str ssl_secret_id: (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
@@ -637,7 +878,7 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
     @pulumi.getter(name="connectorId")
     def connector_id(self) -> Optional[str]:
         """
-        (Updatable) Database connector Identifier
+        (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "connector_id")
 
@@ -645,7 +886,7 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
     @pulumi.getter(name="dbId")
     def db_id(self) -> Optional[str]:
         """
-        (Updatable) dbId of the database
+        (Updatable) dbId of the database.
         """
         return pulumi.get(self, "db_id")
 
@@ -661,7 +902,7 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[str]:
         """
-        (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "ssl_secret_id")
 
@@ -672,8 +913,8 @@ class MonitoredResourceProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) property name
-        :param str value: (Updatable) property value
+        :param str name: (Updatable) Property Name.
+        :param str value: (Updatable) Property Value.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -684,7 +925,7 @@ class MonitoredResourceProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) property name
+        (Updatable) Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -692,30 +933,59 @@ class MonitoredResourceProperty(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        (Updatable) property value
+        (Updatable) Property Value.
         """
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str name: Monitored Resource Name
-        :param str type: Monitored Resource Type
+        :param str compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str name: Monitored Resource Name.
+        :param str type: Monitored Resource Type.
         """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
     @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Monitored Resource Name
+        Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
@@ -723,30 +993,59 @@ class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail(dict
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type
+        Monitored Resource Type.
         """
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str name: Monitored Resource Name
-        :param str type: Monitored Resource Type
+        :param str compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str name: Monitored Resource Name.
+        :param str type: Monitored Resource Type.
         """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
     @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Monitored Resource Name
+        Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
@@ -754,7 +1053,7 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type
+        Monitored Resource Type.
         """
         return pulumi.get(self, "type")
 
@@ -764,7 +1063,9 @@ class MonitoredResourcesListMemberItem(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "definedTags":
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "definedTags":
             suggest = "defined_tags"
         elif key == "externalId":
             suggest = "external_id"
@@ -797,6 +1098,7 @@ class MonitoredResourcesListMemberItem(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
                  defined_tags: Optional[Mapping[str, Any]] = None,
                  external_id: Optional[str] = None,
                  freeform_tags: Optional[Mapping[str, Any]] = None,
@@ -809,18 +1111,21 @@ class MonitoredResourcesListMemberItem(dict):
                  state: Optional[str] = None,
                  system_tags: Optional[Mapping[str, Any]] = None):
         """
+        :param str compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str host_name: Monitored Resource Host
-        :param str parent_id: Parent monitored resource identifier
+        :param str host_name: Monitored Resource Host Name.
+        :param str parent_id: Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str resource_display_name: Monitored resource display name.
-        :param str resource_id: Monitored resource identifier
-        :param str resource_name: Monitored resource name
-        :param str resource_type: Monitored resource type
+        :param str resource_id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str resource_name: Monitored Resource Name.
+        :param str resource_type: Monitored Resource Type.
         :param str state: The current state of the Resource.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if external_id is not None:
@@ -845,6 +1150,14 @@ class MonitoredResourcesListMemberItem(dict):
             pulumi.set(__self__, "system_tags", system_tags)
 
     @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
@@ -856,7 +1169,7 @@ class MonitoredResourcesListMemberItem(dict):
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[str]:
         """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
@@ -872,7 +1185,7 @@ class MonitoredResourcesListMemberItem(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[str]:
         """
-        Monitored Resource Host
+        Monitored Resource Host Name.
         """
         return pulumi.get(self, "host_name")
 
@@ -880,7 +1193,7 @@ class MonitoredResourcesListMemberItem(dict):
     @pulumi.getter(name="parentId")
     def parent_id(self) -> Optional[str]:
         """
-        Parent monitored resource identifier
+        Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "parent_id")
 
@@ -896,7 +1209,7 @@ class MonitoredResourcesListMemberItem(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[str]:
         """
-        Monitored resource identifier
+        Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "resource_id")
 
@@ -904,7 +1217,7 @@ class MonitoredResourcesListMemberItem(dict):
     @pulumi.getter(name="resourceName")
     def resource_name(self) -> Optional[str]:
         """
-        Monitored resource name
+        Monitored Resource Name.
         """
         return pulumi.get(self, "resource_name")
 
@@ -912,7 +1225,7 @@ class MonitoredResourcesListMemberItem(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
         """
-        Monitored resource type
+        Monitored Resource Type.
         """
         return pulumi.get(self, "resource_type")
 
@@ -970,12 +1283,12 @@ class MonitoredResourcesSearchAssociationItem(dict):
                  source_resource_id: Optional[str] = None,
                  time_created: Optional[str] = None):
         """
-        :param str association_type: Association type to be created between source and destination resources
-        :param Sequence['MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs'] destination_resource_details: Association Resource Details
-        :param str destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param Sequence['MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs'] source_resource_details: Association Resource Details
-        :param str source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param str time_created: The time the the association was created. An RFC3339 formatted datetime string
+        :param str association_type: Association type filter to search associated resources.
+        :param Sequence['MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs'] destination_resource_details: Association Resource Details.
+        :param str destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs'] source_resource_details: Association Resource Details.
+        :param str source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str time_created: The association creation time. An RFC3339 formatted datetime string.
         """
         if association_type is not None:
             pulumi.set(__self__, "association_type", association_type)
@@ -994,7 +1307,7 @@ class MonitoredResourcesSearchAssociationItem(dict):
     @pulumi.getter(name="associationType")
     def association_type(self) -> Optional[str]:
         """
-        Association type to be created between source and destination resources
+        Association type filter to search associated resources.
         """
         return pulumi.get(self, "association_type")
 
@@ -1002,7 +1315,7 @@ class MonitoredResourcesSearchAssociationItem(dict):
     @pulumi.getter(name="destinationResourceDetails")
     def destination_resource_details(self) -> Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemDestinationResourceDetail']]:
         """
-        Association Resource Details
+        Association Resource Details.
         """
         return pulumi.get(self, "destination_resource_details")
 
@@ -1010,7 +1323,7 @@ class MonitoredResourcesSearchAssociationItem(dict):
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> Optional[str]:
         """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "destination_resource_id")
 
@@ -1018,7 +1331,7 @@ class MonitoredResourcesSearchAssociationItem(dict):
     @pulumi.getter(name="sourceResourceDetails")
     def source_resource_details(self) -> Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemSourceResourceDetail']]:
         """
-        Association Resource Details
+        Association Resource Details.
         """
         return pulumi.get(self, "source_resource_details")
 
@@ -1026,7 +1339,7 @@ class MonitoredResourcesSearchAssociationItem(dict):
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> Optional[str]:
         """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "source_resource_id")
 
@@ -1034,30 +1347,59 @@ class MonitoredResourcesSearchAssociationItem(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
         """
-        The time the the association was created. An RFC3339 formatted datetime string
+        The association creation time. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class MonitoredResourcesSearchAssociationItemDestinationResourceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MonitoredResourcesSearchAssociationItemDestinationResourceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MonitoredResourcesSearchAssociationItemDestinationResourceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MonitoredResourcesSearchAssociationItemDestinationResourceDetail.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str name: Monitored Resource Name
-        :param str type: Monitored Resource Type
+        :param str compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str name: Monitored Resource Name.
+        :param str type: Monitored Resource Type.
         """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
     @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Monitored Resource Name
+        Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
@@ -1065,30 +1407,59 @@ class MonitoredResourcesSearchAssociationItemDestinationResourceDetail(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type
+        Monitored Resource Type.
         """
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class MonitoredResourcesSearchAssociationItemSourceResourceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MonitoredResourcesSearchAssociationItemSourceResourceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MonitoredResourcesSearchAssociationItemSourceResourceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MonitoredResourcesSearchAssociationItemSourceResourceDetail.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str name: Monitored Resource Name
-        :param str type: Monitored Resource Type
+        :param str compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str name: Monitored Resource Name.
+        :param str type: Monitored Resource Type.
         """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
     @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Monitored Resource Name
+        Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
@@ -1096,7 +1467,7 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetail(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type
+        Monitored Resource Type.
         """
         return pulumi.get(self, "type")
 
@@ -1154,18 +1525,18 @@ class MonitoredResourcesSearchItem(dict):
         """
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: Monitored resource display name.
-        :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str host_name: A filter to return resources with host name match
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        :param str host_name: A filter to return resources with host name match.
+        :param str id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str management_agent_id: A filter to return resources with matching management agent id.
-        :param str name: A filter to return resources that match exact resource name
-        :param Sequence['MonitoredResourcesSearchItemPropertyArgs'] properties: List of monitored resource properties
+        :param str name: A filter to return resources that match exact resource name.
+        :param Sequence['MonitoredResourcesSearchItemPropertyArgs'] properties: List of monitored resource properties.
         :param str state: A filter to return resources with matching lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: Monitored resource creation time. An RFC3339 formatted datetime string
-        :param str time_updated: Monitored resource updation time. An RFC3339 formatted datetime string
-        :param str type: A filter to return resources that match resource type
+        :param str time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
+        :param str time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
+        :param str type: A filter to return resources that match resource type.
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1216,7 +1587,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[str]:
         """
-        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
@@ -1232,7 +1603,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[str]:
         """
-        A filter to return resources with host name match
+        A filter to return resources with host name match.
         """
         return pulumi.get(self, "host_name")
 
@@ -1240,7 +1611,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "id")
 
@@ -1256,7 +1627,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        A filter to return resources that match exact resource name
+        A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 
@@ -1264,7 +1635,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter
     def properties(self) -> Optional[Sequence['outputs.MonitoredResourcesSearchItemProperty']]:
         """
-        List of monitored resource properties
+        List of monitored resource properties.
         """
         return pulumi.get(self, "properties")
 
@@ -1288,7 +1659,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
         """
-        Monitored resource creation time. An RFC3339 formatted datetime string
+        Monitored resource creation time. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -1296,7 +1667,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
         """
-        Monitored resource updation time. An RFC3339 formatted datetime string
+        Monitored resource update time. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -1304,7 +1675,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        A filter to return resources that match resource type
+        A filter to return resources that match resource type.
         """
         return pulumi.get(self, "type")
 
@@ -1315,8 +1686,8 @@ class MonitoredResourcesSearchItemProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: A filter to return resources that match exact resource name
-        :param str value: property value
+        :param str name: A filter to return resources that match exact resource name.
+        :param str value: Property Value.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1327,7 +1698,7 @@ class MonitoredResourcesSearchItemProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        A filter to return resources that match exact resource name
+        A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 
@@ -1335,7 +1706,7 @@ class MonitoredResourcesSearchItemProperty(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        property value
+        Property Value.
         """
         return pulumi.get(self, "value")
 
@@ -1834,15 +2205,15 @@ class GetDiscoveryJobsFilterResult(dict):
 
 
 @pulumi.output_type
-class GetMonitoredResourceAliasResult(dict):
+class GetMonitoredResourceAdditionalAliasResult(dict):
     def __init__(__self__, *,
-                 credentials: Sequence['outputs.GetMonitoredResourceAliasCredentialResult'],
+                 credentials: Sequence['outputs.GetMonitoredResourceAdditionalAliasCredentialResult'],
                  name: str,
                  source: str):
         """
-        :param Sequence['GetMonitoredResourceAliasCredentialArgs'] credentials: Monitored Resource Alias Reference Source Credential
-        :param str name: property name
-        :param str source: The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param Sequence['GetMonitoredResourceAdditionalAliasCredentialArgs'] credentials: Monitored Resource Alias Reference Source Credential.
+        :param str name: Property Name.
+        :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "name", name)
@@ -1850,9 +2221,9 @@ class GetMonitoredResourceAliasResult(dict):
 
     @property
     @pulumi.getter
-    def credentials(self) -> Sequence['outputs.GetMonitoredResourceAliasCredentialResult']:
+    def credentials(self) -> Sequence['outputs.GetMonitoredResourceAdditionalAliasCredentialResult']:
         """
-        Monitored Resource Alias Reference Source Credential
+        Monitored Resource Alias Reference Source Credential.
         """
         return pulumi.get(self, "credentials")
 
@@ -1860,7 +2231,7 @@ class GetMonitoredResourceAliasResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        property name
+        Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -1868,21 +2239,21 @@ class GetMonitoredResourceAliasResult(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
 
 @pulumi.output_type
-class GetMonitoredResourceAliasCredentialResult(dict):
+class GetMonitoredResourceAdditionalAliasCredentialResult(dict):
     def __init__(__self__, *,
                  name: str,
                  service: str,
                  source: str):
         """
-        :param str name: property name
-        :param str service: The name of the service owning the credential. Ex stack-monitoring or dbmgmt
-        :param str source: The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str name: Property Name.
+        :param str service: The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
@@ -1892,7 +2263,7 @@ class GetMonitoredResourceAliasCredentialResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        property name
+        Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -1900,7 +2271,7 @@ class GetMonitoredResourceAliasCredentialResult(dict):
     @pulumi.getter
     def service(self) -> str:
         """
-        The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+        The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         """
         return pulumi.get(self, "service")
 
@@ -1908,29 +2279,32 @@ class GetMonitoredResourceAliasCredentialResult(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
 
 @pulumi.output_type
-class GetMonitoredResourceCredentialResult(dict):
+class GetMonitoredResourceAdditionalCredentialResult(dict):
     def __init__(__self__, *,
                  credential_type: str,
                  description: str,
                  key_id: str,
                  name: str,
-                 properties: Sequence['outputs.GetMonitoredResourceCredentialPropertyResult'],
+                 properties: Sequence['outputs.GetMonitoredResourceAdditionalCredentialPropertyResult'],
                  source: str,
                  type: str):
         """
-        :param str credential_type: Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        :param str credential_type: Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+               * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+               * PLAINTEXT - The credential properties will have credentials in plain text format.
+               * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         :param str description: The user-specified textual description of the credential.
-        :param str key_id: The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
-        :param str name: property name
-        :param Sequence['GetMonitoredResourceCredentialPropertyArgs'] properties: List of monitored resource properties
-        :param str source: The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param str type: Monitored resource type
+        :param str key_id: The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        :param str name: Property Name.
+        :param Sequence['GetMonitoredResourceAdditionalCredentialPropertyArgs'] properties: List of monitored resource properties.
+        :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str type: Monitored Resource Type.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         pulumi.set(__self__, "description", description)
@@ -1944,7 +2318,10 @@ class GetMonitoredResourceCredentialResult(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
         """
-        Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        * PLAINTEXT - The credential properties will have credentials in plain text format.
+        * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         """
         return pulumi.get(self, "credential_type")
 
@@ -1960,7 +2337,7 @@ class GetMonitoredResourceCredentialResult(dict):
     @pulumi.getter(name="keyId")
     def key_id(self) -> str:
         """
-        The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+        The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
         """
         return pulumi.get(self, "key_id")
 
@@ -1968,15 +2345,15 @@ class GetMonitoredResourceCredentialResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        property name
+        Property Name.
         """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def properties(self) -> Sequence['outputs.GetMonitoredResourceCredentialPropertyResult']:
+    def properties(self) -> Sequence['outputs.GetMonitoredResourceAdditionalCredentialPropertyResult']:
         """
-        List of monitored resource properties
+        List of monitored resource properties.
         """
         return pulumi.get(self, "properties")
 
@@ -1984,7 +2361,7 @@ class GetMonitoredResourceCredentialResult(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -1992,7 +2369,206 @@ class GetMonitoredResourceCredentialResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Monitored resource type
+        Monitored Resource Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMonitoredResourceAdditionalCredentialPropertyResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Property Name.
+        :param str value: Property Value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Property Value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMonitoredResourceAliasResult(dict):
+    def __init__(__self__, *,
+                 credentials: Sequence['outputs.GetMonitoredResourceAliasCredentialResult'],
+                 name: str,
+                 source: str):
+        """
+        :param Sequence['GetMonitoredResourceAliasCredentialArgs'] credentials: Monitored Resource Alias Reference Source Credential.
+        :param str name: Property Name.
+        :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetMonitoredResourceAliasCredentialResult']:
+        """
+        Monitored Resource Alias Reference Source Credential.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetMonitoredResourceAliasCredentialResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 service: str,
+                 source: str):
+        """
+        :param str name: Property Name.
+        :param str service: The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def service(self) -> str:
+        """
+        The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetMonitoredResourceCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_type: str,
+                 description: str,
+                 key_id: str,
+                 name: str,
+                 properties: Sequence['outputs.GetMonitoredResourceCredentialPropertyResult'],
+                 source: str,
+                 type: str):
+        """
+        :param str credential_type: Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+               * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+               * PLAINTEXT - The credential properties will have credentials in plain text format.
+               * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        :param str description: The user-specified textual description of the credential.
+        :param str key_id: The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        :param str name: Property Name.
+        :param Sequence['GetMonitoredResourceCredentialPropertyArgs'] properties: List of monitored resource properties.
+        :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str type: Monitored Resource Type.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        """
+        Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        * PLAINTEXT - The credential properties will have credentials in plain text format.
+        * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The user-specified textual description of the credential.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> str:
+        """
+        The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        """
+        return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetMonitoredResourceCredentialPropertyResult']:
+        """
+        List of monitored resource properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Monitored Resource Type.
         """
         return pulumi.get(self, "type")
 
@@ -2003,8 +2579,8 @@ class GetMonitoredResourceCredentialPropertyResult(dict):
                  name: str,
                  value: str):
         """
-        :param str name: property name
-        :param str value: property value
+        :param str name: Property Name.
+        :param str value: Property Value.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -2013,7 +2589,7 @@ class GetMonitoredResourceCredentialPropertyResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        property name
+        Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -2021,7 +2597,7 @@ class GetMonitoredResourceCredentialPropertyResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        property value
+        Property Value.
         """
         return pulumi.get(self, "value")
 
@@ -2037,13 +2613,13 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
                  service_name: str,
                  ssl_secret_id: str):
         """
-        :param str connector_id: Database connector Identifier
-        :param str db_id: dbId of the database
+        :param str connector_id: Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str db_id: dbId of the database.
         :param str db_unique_name: UniqueName used for database connection requests.
         :param int port: Listener Port number used for connection requests.
         :param str protocol: Protocol used in DB connection string when connecting to external database service.
         :param str service_name: Service name used for connection requests.
-        :param str ssl_secret_id: SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param str ssl_secret_id: SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         pulumi.set(__self__, "connector_id", connector_id)
         pulumi.set(__self__, "db_id", db_id)
@@ -2057,7 +2633,7 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
     @pulumi.getter(name="connectorId")
     def connector_id(self) -> str:
         """
-        Database connector Identifier
+        Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "connector_id")
 
@@ -2065,7 +2641,7 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
     @pulumi.getter(name="dbId")
     def db_id(self) -> str:
         """
-        dbId of the database
+        dbId of the database.
         """
         return pulumi.get(self, "db_id")
 
@@ -2105,7 +2681,7 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> str:
         """
-        SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "ssl_secret_id")
 
@@ -2116,8 +2692,8 @@ class GetMonitoredResourcePropertyResult(dict):
                  name: str,
                  value: str):
         """
-        :param str name: property name
-        :param str value: property value
+        :param str name: Property Name.
+        :param str value: Property Value.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -2126,7 +2702,7 @@ class GetMonitoredResourcePropertyResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        property name
+        Property Name.
         """
         return pulumi.get(self, "name")
 
@@ -2134,7 +2710,7 @@ class GetMonitoredResourcePropertyResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        property value
+        Property Value.
         """
         return pulumi.get(self, "value")
 

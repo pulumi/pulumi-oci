@@ -162,6 +162,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly ImmutableDictionary<string, object> NodeMetadata;
         /// <summary>
+        /// Node Pool Cycling Details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolNodePoolCyclingDetailResult> NodePoolCyclingDetails;
+        /// <summary>
         /// The OCID of the node pool to which this node belongs.
         /// </summary>
         public readonly string NodePoolId;
@@ -232,6 +236,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableDictionary<string, object> nodeMetadata,
 
+            ImmutableArray<Outputs.GetNodePoolNodePoolCyclingDetailResult> nodePoolCyclingDetails,
+
             string nodePoolId,
 
             string nodeShape,
@@ -266,6 +272,7 @@ namespace Pulumi.Oci.ContainerEngine
             NodeImageId = nodeImageId;
             NodeImageName = nodeImageName;
             NodeMetadata = nodeMetadata;
+            NodePoolCyclingDetails = nodePoolCyclingDetails;
             NodePoolId = nodePoolId;
             NodeShape = nodeShape;
             NodeShapeConfigs = nodeShapeConfigs;

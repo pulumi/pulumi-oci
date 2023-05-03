@@ -16,14 +16,29 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
     public static final MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs Empty = new MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs();
 
     /**
-     * Monitored Resource Name
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * Monitored Resource Name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Monitored Resource Name
+     * @return Monitored Resource Name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +46,14 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
     }
 
     /**
-     * Monitored Resource Type
+     * Monitored Resource Type.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Monitored Resource Type
+     * @return Monitored Resource Type.
      * 
      */
     public Optional<Output<String>> type() {
@@ -48,6 +63,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
     private MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs() {}
 
     private MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs $) {
+        this.compartmentId = $.compartmentId;
         this.name = $.name;
         this.type = $.type;
     }
@@ -71,7 +87,28 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
         }
 
         /**
-         * @param name Monitored Resource Name
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param name Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -82,7 +119,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
         }
 
         /**
-         * @param name Monitored Resource Name
+         * @param name Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -92,7 +129,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
         }
 
         /**
-         * @param type Monitored Resource Type
+         * @param type Monitored Resource Type.
          * 
          * @return builder
          * 
@@ -103,7 +140,7 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
         }
 
         /**
-         * @param type Monitored Resource Type
+         * @param type Monitored Resource Type.
          * 
          * @return builder
          * 

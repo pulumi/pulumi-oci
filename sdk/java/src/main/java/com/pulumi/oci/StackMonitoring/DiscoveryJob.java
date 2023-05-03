@@ -11,6 +11,7 @@ import com.pulumi.oci.StackMonitoring.DiscoveryJobArgs;
 import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobState;
 import com.pulumi.oci.StackMonitoring.outputs.DiscoveryJobDiscoveryDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -74,6 +75,7 @@ import javax.annotation.Nullable;
  *             .discoveryClient(var_.discovery_job_discovery_client())
  *             .discoveryType(var_.discovery_job_discovery_type())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .shouldPropagateTagsToDiscoveredResources(var_.discovery_job_should_propagate_tags_to_discovered_resources())
  *             .build());
  * 
  *     }
@@ -174,6 +176,20 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     * 
+     */
+    @Export(name="shouldPropagateTagsToDiscoveredResources", type=Boolean.class, parameters={})
+    private Output<Boolean> shouldPropagateTagsToDiscoveredResources;
+
+    /**
+     * @return If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     * 
+     */
+    public Output<Boolean> shouldPropagateTagsToDiscoveredResources() {
+        return this.shouldPropagateTagsToDiscoveredResources;
     }
     /**
      * The current state of the DiscoveryJob Resource.

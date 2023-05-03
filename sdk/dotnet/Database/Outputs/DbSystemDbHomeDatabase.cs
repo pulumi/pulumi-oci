@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string? DbName;
         public readonly string? DbUniqueName;
         /// <summary>
-        /// The database workload type.
+        /// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
         /// </summary>
         public readonly string? DbWorkload;
         /// <summary>

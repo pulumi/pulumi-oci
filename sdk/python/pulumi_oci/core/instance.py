@@ -521,6 +521,7 @@ class _InstanceState:
                  image: Optional[pulumi.Input[str]] = None,
                  instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
                  ipxe_script: Optional[pulumi.Input[str]] = None,
+                 is_cross_numa_node: Optional[pulumi.Input[bool]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
@@ -560,6 +561,7 @@ class _InstanceState:
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input['InstanceInstanceOptionsArgs'] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[str] ipxe_script: This is an advanced option.
+        :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -623,6 +625,8 @@ class _InstanceState:
             pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
             pulumi.set(__self__, "ipxe_script", ipxe_script)
+        if is_cross_numa_node is not None:
+            pulumi.set(__self__, "is_cross_numa_node", is_cross_numa_node)
         if is_pv_encryption_in_transit_enabled is not None:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_mode is not None:
@@ -889,6 +893,18 @@ class _InstanceState:
     @ipxe_script.setter
     def ipxe_script(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ipxe_script", value)
+
+    @property
+    @pulumi.getter(name="isCrossNumaNode")
+    def is_cross_numa_node(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+        """
+        return pulumi.get(self, "is_cross_numa_node")
+
+    @is_cross_numa_node.setter
+    def is_cross_numa_node(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_cross_numa_node", value)
 
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
@@ -1599,6 +1615,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["update_operation_constraint"] = update_operation_constraint
             __props__.__dict__["boot_volume_id"] = None
+            __props__.__dict__["is_cross_numa_node"] = None
             __props__.__dict__["launch_mode"] = None
             __props__.__dict__["private_ip"] = None
             __props__.__dict__["public_ip"] = None
@@ -1635,6 +1652,7 @@ class Instance(pulumi.CustomResource):
             image: Optional[pulumi.Input[str]] = None,
             instance_options: Optional[pulumi.Input[pulumi.InputType['InstanceInstanceOptionsArgs']]] = None,
             ipxe_script: Optional[pulumi.Input[str]] = None,
+            is_cross_numa_node: Optional[pulumi.Input[bool]] = None,
             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
             launch_mode: Optional[pulumi.Input[str]] = None,
             launch_options: Optional[pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']]] = None,
@@ -1679,6 +1697,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input[pulumi.InputType['InstanceInstanceOptionsArgs']] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[str] ipxe_script: This is an advanced option.
+        :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         :param pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -1721,6 +1740,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["image"] = image
         __props__.__dict__["instance_options"] = instance_options
         __props__.__dict__["ipxe_script"] = ipxe_script
+        __props__.__dict__["is_cross_numa_node"] = is_cross_numa_node
         __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
         __props__.__dict__["launch_mode"] = launch_mode
         __props__.__dict__["launch_options"] = launch_options
@@ -1890,6 +1910,14 @@ class Instance(pulumi.CustomResource):
         This is an advanced option.
         """
         return pulumi.get(self, "ipxe_script")
+
+    @property
+    @pulumi.getter(name="isCrossNumaNode")
+    def is_cross_numa_node(self) -> pulumi.Output[bool]:
+        """
+        Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+        """
+        return pulumi.get(self, "is_cross_numa_node")
 
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")

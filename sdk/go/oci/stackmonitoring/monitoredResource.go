@@ -13,7 +13,9 @@ import (
 
 // This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// # Creates a new monitored resource for the given resource type
+// Creates a new monitored resource for the given resource type with the details and submits
+// a work request for promoting the resource to agent. Once the resource is successfully
+// added to agent, resource state will be marked active.
 //
 // ## Example Usage
 //
@@ -33,6 +35,33 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				Name:          pulumi.Any(_var.Monitored_resource_name),
 //				Type:          pulumi.Any(_var.Monitored_resource_type),
+//				AdditionalAliases: stackmonitoring.MonitoredResourceAdditionalAliasArray{
+//					&stackmonitoring.MonitoredResourceAdditionalAliasArgs{
+//						Credential: &stackmonitoring.MonitoredResourceAdditionalAliasCredentialArgs{
+//							Name:    pulumi.Any(_var.Monitored_resource_additional_aliases_credential_name),
+//							Service: pulumi.Any(_var.Monitored_resource_additional_aliases_credential_service),
+//							Source:  pulumi.Any(_var.Monitored_resource_additional_aliases_credential_source),
+//						},
+//						Name:   pulumi.Any(_var.Monitored_resource_additional_aliases_name),
+//						Source: pulumi.Any(_var.Monitored_resource_additional_aliases_source),
+//					},
+//				},
+//				AdditionalCredentials: stackmonitoring.MonitoredResourceAdditionalCredentialArray{
+//					&stackmonitoring.MonitoredResourceAdditionalCredentialArgs{
+//						CredentialType: pulumi.Any(_var.Monitored_resource_additional_credentials_credential_type),
+//						Description:    pulumi.Any(_var.Monitored_resource_additional_credentials_description),
+//						KeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
+//						Name:           pulumi.Any(_var.Monitored_resource_additional_credentials_name),
+//						Properties: stackmonitoring.MonitoredResourceAdditionalCredentialPropertyArray{
+//							&stackmonitoring.MonitoredResourceAdditionalCredentialPropertyArgs{
+//								Name:  pulumi.Any(_var.Monitored_resource_additional_credentials_properties_name),
+//								Value: pulumi.Any(_var.Monitored_resource_additional_credentials_properties_value),
+//							},
+//						},
+//						Source: pulumi.Any(_var.Monitored_resource_additional_credentials_source),
+//						Type:   pulumi.Any(_var.Monitored_resource_additional_credentials_type),
+//					},
+//				},
 //				Aliases: &stackmonitoring.MonitoredResourceAliasesArgs{
 //					Credential: &stackmonitoring.MonitoredResourceAliasesCredentialArgs{
 //						Name:    pulumi.Any(_var.Monitored_resource_aliases_credential_name),
@@ -65,11 +94,17 @@ import (
 //					DbUniqueName: pulumi.Any(_var.Monitored_resource_database_connection_details_db_unique_name),
 //					SslSecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
 //				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
 //				DisplayName:        pulumi.Any(_var.Monitored_resource_display_name),
 //				ExternalResourceId: pulumi.Any(_var.Monitored_resource_external_resource_id),
 //				ExternalId:         pulumi.Any(oci_stack_monitoring_external.Test_external.Id),
-//				HostName:           pulumi.Any(_var.Monitored_resource_host_name),
-//				ManagementAgentId:  pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				HostName:          pulumi.Any(_var.Monitored_resource_host_name),
+//				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
 //				Properties: stackmonitoring.MonitoredResourcePropertyArray{
 //					&stackmonitoring.MonitoredResourcePropertyArgs{
 //						Name:  pulumi.Any(_var.Monitored_resource_properties_name),
@@ -99,15 +134,19 @@ import (
 type MonitoredResource struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+	AdditionalAliases MonitoredResourceAdditionalAliasArrayOutput `pulumi:"additionalAliases"`
+	// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+	AdditionalCredentials MonitoredResourceAdditionalCredentialArrayOutput `pulumi:"additionalCredentials"`
 	// (Updatable) Monitored Resource Alias Credential Details
 	Aliases MonitoredResourceAliasesPtrOutput `pulumi:"aliases"`
-	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Monitored Resource Credential Details
+	// (Updatable) Monitored Resource Credential Details.
 	Credentials MonitoredResourceCredentialsPtrOutput `pulumi:"credentials"`
-	// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails MonitoredResourceDatabaseConnectionDetailsPtrOutput `pulumi:"databaseConnectionDetails"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Monitored resource display name.
 	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
@@ -115,29 +154,29 @@ type MonitoredResource struct {
 	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId pulumi.StringPtrOutput `pulumi:"externalResourceId"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) Host name of the monitored resource
+	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrOutput `pulumi:"hostName"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// (Updatable) List of monitored resource properties
+	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayOutput `pulumi:"properties"`
-	// (Updatable) Time zone in the form of tz database canonical zone ID.
+	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrOutput `pulumi:"resourceTimeZone"`
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
-	// The time the the resource was created. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the the resource was updated. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -179,15 +218,19 @@ func GetMonitoredResource(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MonitoredResource resources.
 type monitoredResourceState struct {
+	// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+	AdditionalAliases []MonitoredResourceAdditionalAlias `pulumi:"additionalAliases"`
+	// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+	AdditionalCredentials []MonitoredResourceAdditionalCredential `pulumi:"additionalCredentials"`
 	// (Updatable) Monitored Resource Alias Credential Details
 	Aliases *MonitoredResourceAliases `pulumi:"aliases"`
-	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Monitored Resource Credential Details
+	// (Updatable) Monitored Resource Credential Details.
 	Credentials *MonitoredResourceCredentials `pulumi:"credentials"`
-	// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails *MonitoredResourceDatabaseConnectionDetails `pulumi:"databaseConnectionDetails"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Monitored resource display name.
 	DisplayName *string `pulumi:"displayName"`
@@ -195,42 +238,46 @@ type monitoredResourceState struct {
 	ExternalId *string `pulumi:"externalId"`
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId *string `pulumi:"externalResourceId"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Host name of the monitored resource
+	// (Updatable) Host name of the monitored resource.
 	HostName *string `pulumi:"hostName"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId *string `pulumi:"managementAgentId"`
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name *string `pulumi:"name"`
-	// (Updatable) List of monitored resource properties
+	// (Updatable) List of monitored resource properties.
 	Properties []MonitoredResourceProperty `pulumi:"properties"`
-	// (Updatable) Time zone in the form of tz database canonical zone ID.
+	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone *string `pulumi:"resourceTimeZone"`
 	// Lifecycle state of the monitored resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId *string `pulumi:"tenantId"`
-	// The time the the resource was created. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the the resource was updated. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type *string `pulumi:"type"`
 }
 
 type MonitoredResourceState struct {
+	// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+	AdditionalAliases MonitoredResourceAdditionalAliasArrayInput
+	// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+	AdditionalCredentials MonitoredResourceAdditionalCredentialArrayInput
 	// (Updatable) Monitored Resource Alias Credential Details
 	Aliases MonitoredResourceAliasesPtrInput
-	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Monitored Resource Credential Details
+	// (Updatable) Monitored Resource Credential Details.
 	Credentials MonitoredResourceCredentialsPtrInput
-	// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails MonitoredResourceDatabaseConnectionDetailsPtrInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Monitored resource display name.
 	DisplayName pulumi.StringPtrInput
@@ -238,29 +285,29 @@ type MonitoredResourceState struct {
 	ExternalId pulumi.StringPtrInput
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Host name of the monitored resource
+	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrInput
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrInput
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringPtrInput
-	// (Updatable) List of monitored resource properties
+	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayInput
-	// (Updatable) Time zone in the form of tz database canonical zone ID.
+	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrInput
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringPtrInput
-	// The time the the resource was created. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringPtrInput
-	// The time the the resource was updated. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated pulumi.StringPtrInput
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type pulumi.StringPtrInput
 }
 
@@ -269,61 +316,77 @@ func (MonitoredResourceState) ElementType() reflect.Type {
 }
 
 type monitoredResourceArgs struct {
+	// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+	AdditionalAliases []MonitoredResourceAdditionalAlias `pulumi:"additionalAliases"`
+	// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+	AdditionalCredentials []MonitoredResourceAdditionalCredential `pulumi:"additionalCredentials"`
 	// (Updatable) Monitored Resource Alias Credential Details
 	Aliases *MonitoredResourceAliases `pulumi:"aliases"`
-	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Monitored Resource Credential Details
+	// (Updatable) Monitored Resource Credential Details.
 	Credentials *MonitoredResourceCredentials `pulumi:"credentials"`
-	// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails *MonitoredResourceDatabaseConnectionDetails `pulumi:"databaseConnectionDetails"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Monitored resource display name.
 	DisplayName *string `pulumi:"displayName"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
 	ExternalId *string `pulumi:"externalId"`
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId *string `pulumi:"externalResourceId"`
-	// (Updatable) Host name of the monitored resource
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) Host name of the monitored resource.
 	HostName *string `pulumi:"hostName"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId *string `pulumi:"managementAgentId"`
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name string `pulumi:"name"`
-	// (Updatable) List of monitored resource properties
+	// (Updatable) List of monitored resource properties.
 	Properties []MonitoredResourceProperty `pulumi:"properties"`
-	// (Updatable) Time zone in the form of tz database canonical zone ID.
+	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone *string `pulumi:"resourceTimeZone"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a MonitoredResource resource.
 type MonitoredResourceArgs struct {
+	// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+	AdditionalAliases MonitoredResourceAdditionalAliasArrayInput
+	// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+	AdditionalCredentials MonitoredResourceAdditionalCredentialArrayInput
 	// (Updatable) Monitored Resource Alias Credential Details
 	Aliases MonitoredResourceAliasesPtrInput
-	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
-	// (Updatable) Monitored Resource Credential Details
+	// (Updatable) Monitored Resource Credential Details.
 	Credentials MonitoredResourceCredentialsPtrInput
-	// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails MonitoredResourceDatabaseConnectionDetailsPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput
 	// (Updatable) Monitored resource display name.
 	DisplayName pulumi.StringPtrInput
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
 	ExternalId pulumi.StringPtrInput
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId pulumi.StringPtrInput
-	// (Updatable) Host name of the monitored resource
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput
+	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrInput
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrInput
-	// (Updatable) property name
+	// (Updatable) Property Name.
 	Name pulumi.StringInput
-	// (Updatable) List of monitored resource properties
+	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayInput
-	// (Updatable) Time zone in the form of tz database canonical zone ID.
+	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrInput
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type pulumi.StringInput
 }
 
@@ -414,29 +477,41 @@ func (o MonitoredResourceOutput) ToMonitoredResourceOutputWithContext(ctx contex
 	return o
 }
 
+// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+func (o MonitoredResourceOutput) AdditionalAliases() MonitoredResourceAdditionalAliasArrayOutput {
+	return o.ApplyT(func(v *MonitoredResource) MonitoredResourceAdditionalAliasArrayOutput { return v.AdditionalAliases }).(MonitoredResourceAdditionalAliasArrayOutput)
+}
+
+// (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+func (o MonitoredResourceOutput) AdditionalCredentials() MonitoredResourceAdditionalCredentialArrayOutput {
+	return o.ApplyT(func(v *MonitoredResource) MonitoredResourceAdditionalCredentialArrayOutput {
+		return v.AdditionalCredentials
+	}).(MonitoredResourceAdditionalCredentialArrayOutput)
+}
+
 // (Updatable) Monitored Resource Alias Credential Details
 func (o MonitoredResourceOutput) Aliases() MonitoredResourceAliasesPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) MonitoredResourceAliasesPtrOutput { return v.Aliases }).(MonitoredResourceAliasesPtrOutput)
 }
 
-// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Monitored Resource Credential Details
+// (Updatable) Monitored Resource Credential Details.
 func (o MonitoredResourceOutput) Credentials() MonitoredResourceCredentialsPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) MonitoredResourceCredentialsPtrOutput { return v.Credentials }).(MonitoredResourceCredentialsPtrOutput)
 }
 
-// (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+// (Updatable) Connection details for the database.
 func (o MonitoredResourceOutput) DatabaseConnectionDetails() MonitoredResourceDatabaseConnectionDetailsPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) MonitoredResourceDatabaseConnectionDetailsPtrOutput {
 		return v.DatabaseConnectionDetails
 	}).(MonitoredResourceDatabaseConnectionDetailsPtrOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o MonitoredResourceOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -456,12 +531,12 @@ func (o MonitoredResourceOutput) ExternalResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringPtrOutput { return v.ExternalResourceId }).(pulumi.StringPtrOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o MonitoredResourceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Host name of the monitored resource
+// (Updatable) Host name of the monitored resource.
 func (o MonitoredResourceOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringPtrOutput { return v.HostName }).(pulumi.StringPtrOutput)
 }
@@ -471,17 +546,17 @@ func (o MonitoredResourceOutput) ManagementAgentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringPtrOutput { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) property name
+// (Updatable) Property Name.
 func (o MonitoredResourceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) List of monitored resource properties
+// (Updatable) List of monitored resource properties.
 func (o MonitoredResourceOutput) Properties() MonitoredResourcePropertyArrayOutput {
 	return o.ApplyT(func(v *MonitoredResource) MonitoredResourcePropertyArrayOutput { return v.Properties }).(MonitoredResourcePropertyArrayOutput)
 }
 
-// (Updatable) Time zone in the form of tz database canonical zone ID.
+// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 func (o MonitoredResourceOutput) ResourceTimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringPtrOutput { return v.ResourceTimeZone }).(pulumi.StringPtrOutput)
 }
@@ -496,22 +571,22 @@ func (o MonitoredResourceOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourceOutput) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
-// The time the the resource was created. An RFC3339 formatted datetime string
+// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 func (o MonitoredResourceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the the resource was updated. An RFC3339 formatted datetime string
+// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 func (o MonitoredResourceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Monitored resource type
+// Monitored Resource Type.
 func (o MonitoredResourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

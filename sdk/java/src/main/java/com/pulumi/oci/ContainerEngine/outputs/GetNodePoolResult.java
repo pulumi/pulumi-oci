@@ -8,6 +8,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolInitialNodeLabel;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNode;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeConfigDetail;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeEvictionNodePoolSetting;
+import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodePoolCyclingDetail;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeSourceDetail;
@@ -98,6 +99,11 @@ public final class GetNodePoolResult {
      * 
      */
     private Map<String,Object> nodeMetadata;
+    /**
+     * @return Node Pool Cycling Details
+     * 
+     */
+    private List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
     /**
      * @return The OCID of the node pool to which this node belongs.
      * 
@@ -257,6 +263,13 @@ public final class GetNodePoolResult {
         return this.nodeMetadata;
     }
     /**
+     * @return Node Pool Cycling Details
+     * 
+     */
+    public List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails() {
+        return this.nodePoolCyclingDetails;
+    }
+    /**
      * @return The OCID of the node pool to which this node belongs.
      * 
      */
@@ -350,6 +363,7 @@ public final class GetNodePoolResult {
         private String nodeImageId;
         private String nodeImageName;
         private Map<String,Object> nodeMetadata;
+        private List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
         private String nodePoolId;
         private String nodeShape;
         private List<GetNodePoolNodeShapeConfig> nodeShapeConfigs;
@@ -377,6 +391,7 @@ public final class GetNodePoolResult {
     	      this.nodeImageId = defaults.nodeImageId;
     	      this.nodeImageName = defaults.nodeImageName;
     	      this.nodeMetadata = defaults.nodeMetadata;
+    	      this.nodePoolCyclingDetails = defaults.nodePoolCyclingDetails;
     	      this.nodePoolId = defaults.nodePoolId;
     	      this.nodeShape = defaults.nodeShape;
     	      this.nodeShapeConfigs = defaults.nodeShapeConfigs;
@@ -469,6 +484,14 @@ public final class GetNodePoolResult {
             return this;
         }
         @CustomType.Setter
+        public Builder nodePoolCyclingDetails(List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails) {
+            this.nodePoolCyclingDetails = Objects.requireNonNull(nodePoolCyclingDetails);
+            return this;
+        }
+        public Builder nodePoolCyclingDetails(GetNodePoolNodePoolCyclingDetail... nodePoolCyclingDetails) {
+            return nodePoolCyclingDetails(List.of(nodePoolCyclingDetails));
+        }
+        @CustomType.Setter
         public Builder nodePoolId(String nodePoolId) {
             this.nodePoolId = Objects.requireNonNull(nodePoolId);
             return this;
@@ -549,6 +572,7 @@ public final class GetNodePoolResult {
             o.nodeImageId = nodeImageId;
             o.nodeImageName = nodeImageName;
             o.nodeMetadata = nodeMetadata;
+            o.nodePoolCyclingDetails = nodePoolCyclingDetails;
             o.nodePoolId = nodePoolId;
             o.nodeShape = nodeShape;
             o.nodeShapeConfigs = nodeShapeConfigs;

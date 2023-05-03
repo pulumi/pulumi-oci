@@ -106,6 +106,10 @@ namespace Pulumi.Oci.Opa
     public sealed class GetOpaInstanceResult
     {
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpaInstanceAttachmentResult> Attachments;
+        /// <summary>
         /// Compartment Identifier
         /// </summary>
         public readonly string CompartmentId;
@@ -186,6 +190,8 @@ namespace Pulumi.Oci.Opa
 
         [OutputConstructor]
         private GetOpaInstanceResult(
+            ImmutableArray<Outputs.GetOpaInstanceAttachmentResult> attachments,
+
             string compartmentId,
 
             string consumptionModel,
@@ -228,6 +234,7 @@ namespace Pulumi.Oci.Opa
 
             string timeUpdated)
         {
+            Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
             DefinedTags = definedTags;

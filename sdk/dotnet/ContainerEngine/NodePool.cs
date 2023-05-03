@@ -94,6 +94,12 @@ namespace Pulumi.Oci.ContainerEngine
     ///         },
     ///         NodeImageName = oci_core_image.Test_image.Name,
     ///         NodeMetadata = @var.Node_pool_node_metadata,
+    ///         NodePoolCyclingDetails = new Oci.ContainerEngine.Inputs.NodePoolNodePoolCyclingDetailsArgs
+    ///         {
+    ///             IsNodeCyclingEnabled = @var.Node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+    ///             MaximumSurge = @var.Node_pool_node_pool_cycling_details_maximum_surge,
+    ///             MaximumUnavailable = @var.Node_pool_node_pool_cycling_details_maximum_unavailable,
+    ///         },
     ///         NodeShapeConfig = new Oci.ContainerEngine.Inputs.NodePoolNodeShapeConfigArgs
     ///         {
     ///             MemoryInGbs = @var.Node_pool_node_shape_config_memory_in_gbs,
@@ -201,6 +207,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("nodeMetadata")]
         public Output<ImmutableDictionary<string, object>> NodeMetadata { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Node Pool Cycling Details
+        /// </summary>
+        [Output("nodePoolCyclingDetails")]
+        public Output<Outputs.NodePoolNodePoolCyclingDetails> NodePoolCyclingDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the node shape of the nodes in the node pool.
@@ -399,6 +411,12 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
+        /// (Updatable) Node Pool Cycling Details
+        /// </summary>
+        [Input("nodePoolCyclingDetails")]
+        public Input<Inputs.NodePoolNodePoolCyclingDetailsArgs>? NodePoolCyclingDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The name of the node shape of the nodes in the node pool.
         /// </summary>
         [Input("nodeShape", required: true)]
@@ -549,6 +567,12 @@ namespace Pulumi.Oci.ContainerEngine
             get => _nodeMetadata ?? (_nodeMetadata = new InputMap<object>());
             set => _nodeMetadata = value;
         }
+
+        /// <summary>
+        /// (Updatable) Node Pool Cycling Details
+        /// </summary>
+        [Input("nodePoolCyclingDetails")]
+        public Input<Inputs.NodePoolNodePoolCyclingDetailsGetArgs>? NodePoolCyclingDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the node shape of the nodes in the node pool.

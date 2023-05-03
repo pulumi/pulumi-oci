@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetail;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -49,6 +50,7 @@ public final class GetDiscoveryJobResult {
      * 
      */
     private String id;
+    private Boolean shouldPropagateTagsToDiscoveredResources;
     /**
      * @return The current state of the DiscoveryJob Resource.
      * 
@@ -138,6 +140,9 @@ public final class GetDiscoveryJobResult {
     public String id() {
         return this.id;
     }
+    public Boolean shouldPropagateTagsToDiscoveredResources() {
+        return this.shouldPropagateTagsToDiscoveredResources;
+    }
     /**
      * @return The current state of the DiscoveryJob Resource.
      * 
@@ -205,6 +210,7 @@ public final class GetDiscoveryJobResult {
         private String discoveryType;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean shouldPropagateTagsToDiscoveredResources;
         private String state;
         private String status;
         private String statusMessage;
@@ -223,6 +229,7 @@ public final class GetDiscoveryJobResult {
     	      this.discoveryType = defaults.discoveryType;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.shouldPropagateTagsToDiscoveredResources = defaults.shouldPropagateTagsToDiscoveredResources;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
     	      this.statusMessage = defaults.statusMessage;
@@ -276,6 +283,11 @@ public final class GetDiscoveryJobResult {
             return this;
         }
         @CustomType.Setter
+        public Builder shouldPropagateTagsToDiscoveredResources(Boolean shouldPropagateTagsToDiscoveredResources) {
+            this.shouldPropagateTagsToDiscoveredResources = Objects.requireNonNull(shouldPropagateTagsToDiscoveredResources);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -320,6 +332,7 @@ public final class GetDiscoveryJobResult {
             o.discoveryType = discoveryType;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.shouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
             o.state = state;
             o.status = status;
             o.statusMessage = statusMessage;

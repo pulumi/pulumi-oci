@@ -14,11 +14,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourceProperty
     {
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) property value
+        /// (Updatable) Property Value.
         /// </summary>
         public readonly string? Value;
 

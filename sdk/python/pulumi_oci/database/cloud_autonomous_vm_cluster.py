@@ -28,10 +28,13 @@ class CloudAutonomousVmClusterArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_mtls_enabled_vm_cluster: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
+                 scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None):
         """
@@ -43,16 +46,19 @@ class CloudAutonomousVmClusterArgs:
         :param pulumi.Input[float] autonomous_data_storage_size_in_tbs: The data disk group size to be allocated for Autonomous Databases, in TBs.
         :param pulumi.Input[str] cluster_time_zone: The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
-        :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
+        :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to be enabled per VM cluster node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of database servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] description: (Updatable) User defined description of the cloud Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
+        :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
         """
@@ -76,6 +82,8 @@ class CloudAutonomousVmClusterArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_mtls_enabled_vm_cluster is not None:
+            pulumi.set(__self__, "is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
         if maintenance_window_details is not None:
@@ -84,6 +92,10 @@ class CloudAutonomousVmClusterArgs:
             pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if scan_listener_port_non_tls is not None:
+            pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
+        if scan_listener_port_tls is not None:
+            pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_container_databases is not None:
@@ -177,7 +189,7 @@ class CloudAutonomousVmClusterArgs:
     @pulumi.getter(name="cpuCoreCountPerNode")
     def cpu_core_count_per_node(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OCPU cores to be enabled per VM cluster node.
+        The number of CPU cores to be enabled per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
 
@@ -234,6 +246,18 @@ class CloudAutonomousVmClusterArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isMtlsEnabledVmCluster")
+    def is_mtls_enabled_vm_cluster(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        """
+        return pulumi.get(self, "is_mtls_enabled_vm_cluster")
+
+    @is_mtls_enabled_vm_cluster.setter
+    def is_mtls_enabled_vm_cluster(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mtls_enabled_vm_cluster", value)
+
+    @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
         """
@@ -261,7 +285,7 @@ class CloudAutonomousVmClusterArgs:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -281,6 +305,30 @@ class CloudAutonomousVmClusterArgs:
     @nsg_ids.setter
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="scanListenerPortNonTls")
+    def scan_listener_port_non_tls(self) -> Optional[pulumi.Input[int]]:
+        """
+        The SCAN Listener Non TLS port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_non_tls")
+
+    @scan_listener_port_non_tls.setter
+    def scan_listener_port_non_tls(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scan_listener_port_non_tls", value)
+
+    @property
+    @pulumi.getter(name="scanListenerPortTls")
+    def scan_listener_port_tls(self) -> Optional[pulumi.Input[int]]:
+        """
+        The SCAN Listener TLS port. Default is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tls")
+
+    @scan_listener_port_tls.setter
+    def scan_listener_port_tls(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scan_listener_port_tls", value)
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -331,6 +379,7 @@ class _CloudAutonomousVmClusterState:
                  domain: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
+                 is_mtls_enabled_vm_cluster: Optional[pulumi.Input[bool]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  last_update_history_entry_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
@@ -344,6 +393,8 @@ class _CloudAutonomousVmClusterState:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  reclaimable_cpus: Optional[pulumi.Input[float]] = None,
+                 scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
+                 scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -362,7 +413,7 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
-        :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
+        :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to be enabled per VM cluster node.
         :param pulumi.Input[float] data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
         :param pulumi.Input[float] data_storage_size_in_tbs: The total data storage allocated, in terabytes (TB).
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
@@ -373,20 +424,25 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[str] domain: The domain name for the cloud Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname: The hostname for the cloud Autonomous VM cluster.
+        :param pulumi.Input[bool] is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of database servers in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
-        :param pulumi.Input[float] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
+        :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -436,6 +492,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
+        if is_mtls_enabled_vm_cluster is not None:
+            pulumi.set(__self__, "is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
         if last_maintenance_run_id is not None:
             pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         if last_update_history_entry_id is not None:
@@ -462,6 +520,10 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "ocpu_count", ocpu_count)
         if reclaimable_cpus is not None:
             pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if scan_listener_port_non_tls is not None:
+            pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
+        if scan_listener_port_tls is not None:
+            pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
@@ -599,7 +661,7 @@ class _CloudAutonomousVmClusterState:
     @pulumi.getter(name="cpuCoreCountPerNode")
     def cpu_core_count_per_node(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OCPU cores to be enabled per VM cluster node.
+        The number of CPU cores to be enabled per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
 
@@ -728,6 +790,18 @@ class _CloudAutonomousVmClusterState:
         pulumi.set(self, "hostname", value)
 
     @property
+    @pulumi.getter(name="isMtlsEnabledVmCluster")
+    def is_mtls_enabled_vm_cluster(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        """
+        return pulumi.get(self, "is_mtls_enabled_vm_cluster")
+
+    @is_mtls_enabled_vm_cluster.setter
+    def is_mtls_enabled_vm_cluster(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mtls_enabled_vm_cluster", value)
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -803,7 +877,7 @@ class _CloudAutonomousVmClusterState:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -876,13 +950,39 @@ class _CloudAutonomousVmClusterState:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> Optional[pulumi.Input[float]]:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
     @reclaimable_cpus.setter
     def reclaimable_cpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "reclaimable_cpus", value)
+
+    @property
+    @pulumi.getter(name="scanListenerPortNonTls")
+    def scan_listener_port_non_tls(self) -> Optional[pulumi.Input[int]]:
+        """
+        The SCAN Listener Non TLS port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_non_tls")
+
+    @scan_listener_port_non_tls.setter
+    def scan_listener_port_non_tls(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scan_listener_port_non_tls", value)
+
+    @property
+    @pulumi.getter(name="scanListenerPortTls")
+    def scan_listener_port_tls(self) -> Optional[pulumi.Input[int]]:
+        """
+        The SCAN Listener TLS port. Default is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tls")
+
+    @scan_listener_port_tls.setter
+    def scan_listener_port_tls(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "scan_listener_port_tls", value)
 
     @property
     @pulumi.getter
@@ -973,10 +1073,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_mtls_enabled_vm_cluster: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
+                 scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None,
@@ -1007,6 +1110,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_mtls_enabled_vm_cluster=var["cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster"],
             license_model=var["cloud_autonomous_vm_cluster_license_model"],
             maintenance_window_details=oci.database.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs(
                 custom_action_timeout_in_mins=var["cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins"],
@@ -1026,6 +1130,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             ),
             memory_per_oracle_compute_unit_in_gbs=var["cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs"],
             nsg_ids=var["cloud_autonomous_vm_cluster_nsg_ids"],
+            scan_listener_port_non_tls=var["cloud_autonomous_vm_cluster_scan_listener_port_non_tls"],
+            scan_listener_port_tls=var["cloud_autonomous_vm_cluster_scan_listener_port_tls"],
             total_container_databases=var["cloud_autonomous_vm_cluster_total_container_databases"])
         ```
 
@@ -1044,17 +1150,20 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_time_zone: The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
-        :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
+        :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to be enabled per VM cluster node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of database servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] description: (Updatable) User defined description of the cloud Autonomous VM cluster.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[pulumi.InputType['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
+        :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
@@ -1091,6 +1200,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_mtls_enabled_vm_cluster=var["cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster"],
             license_model=var["cloud_autonomous_vm_cluster_license_model"],
             maintenance_window_details=oci.database.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs(
                 custom_action_timeout_in_mins=var["cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins"],
@@ -1110,6 +1220,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             ),
             memory_per_oracle_compute_unit_in_gbs=var["cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs"],
             nsg_ids=var["cloud_autonomous_vm_cluster_nsg_ids"],
+            scan_listener_port_non_tls=var["cloud_autonomous_vm_cluster_scan_listener_port_non_tls"],
+            scan_listener_port_tls=var["cloud_autonomous_vm_cluster_scan_listener_port_tls"],
             total_container_databases=var["cloud_autonomous_vm_cluster_total_container_databases"])
         ```
 
@@ -1147,10 +1259,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_mtls_enabled_vm_cluster: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
+                 scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None,
@@ -1180,10 +1295,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_mtls_enabled_vm_cluster"] = is_mtls_enabled_vm_cluster
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
+            __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
+            __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -1242,6 +1360,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             domain: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
+            is_mtls_enabled_vm_cluster: Optional[pulumi.Input[bool]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             last_update_history_entry_id: Optional[pulumi.Input[str]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
@@ -1255,6 +1374,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ocpu_count: Optional[pulumi.Input[float]] = None,
             reclaimable_cpus: Optional[pulumi.Input[float]] = None,
+            scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
+            scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
@@ -1278,7 +1399,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
-        :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to be enabled per VM cluster node.
+        :param pulumi.Input[int] cpu_core_count_per_node: The number of CPU cores to be enabled per VM cluster node.
         :param pulumi.Input[float] data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
         :param pulumi.Input[float] data_storage_size_in_tbs: The total data storage allocated, in terabytes (TB).
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
@@ -1289,20 +1410,25 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] domain: The domain name for the cloud Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname: The hostname for the cloud Autonomous VM cluster.
+        :param pulumi.Input[bool] is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[pulumi.InputType['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudAutonomousVmClusterMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each OCPU core.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of database servers in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
-        :param pulumi.Input[float] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
+        :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -1335,6 +1461,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["domain"] = domain
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["hostname"] = hostname
+        __props__.__dict__["is_mtls_enabled_vm_cluster"] = is_mtls_enabled_vm_cluster
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
         __props__.__dict__["last_update_history_entry_id"] = last_update_history_entry_id
         __props__.__dict__["license_model"] = license_model
@@ -1348,6 +1475,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ocpu_count"] = ocpu_count
         __props__.__dict__["reclaimable_cpus"] = reclaimable_cpus
+        __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
+        __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
@@ -1440,7 +1569,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="cpuCoreCountPerNode")
     def cpu_core_count_per_node(self) -> pulumi.Output[int]:
         """
-        The number of OCPU cores to be enabled per VM cluster node.
+        The number of CPU cores to be enabled per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
 
@@ -1525,6 +1654,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "hostname")
 
     @property
+    @pulumi.getter(name="isMtlsEnabledVmCluster")
+    def is_mtls_enabled_vm_cluster(self) -> pulumi.Output[bool]:
+        """
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        """
+        return pulumi.get(self, "is_mtls_enabled_vm_cluster")
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> pulumi.Output[str]:
         """
@@ -1576,7 +1713,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[int]:
         """
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -1625,9 +1762,27 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> pulumi.Output[float]:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="scanListenerPortNonTls")
+    def scan_listener_port_non_tls(self) -> pulumi.Output[int]:
+        """
+        The SCAN Listener Non TLS port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_non_tls")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTls")
+    def scan_listener_port_tls(self) -> pulumi.Output[int]:
+        """
+        The SCAN Listener TLS port. Default is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tls")
 
     @property
     @pulumi.getter

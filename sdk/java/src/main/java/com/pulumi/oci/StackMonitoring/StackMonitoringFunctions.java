@@ -502,7 +502,7 @@ public final class StackMonitoringFunctions {
     /**
      * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
      * 
-     * Gets a monitored resource by identifier
+     * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * ```java
@@ -541,7 +541,7 @@ public final class StackMonitoringFunctions {
     /**
      * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
      * 
-     * Gets a monitored resource by identifier
+     * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * ```java
@@ -580,7 +580,7 @@ public final class StackMonitoringFunctions {
     /**
      * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
      * 
-     * Gets a monitored resource by identifier
+     * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * ```java
@@ -619,7 +619,7 @@ public final class StackMonitoringFunctions {
     /**
      * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
      * 
-     * Gets a monitored resource by identifier
+     * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * ```java

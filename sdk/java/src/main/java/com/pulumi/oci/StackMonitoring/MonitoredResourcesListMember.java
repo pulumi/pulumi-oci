@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
  * 
- * List resources which are members of the given monitored resource
+ * List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  * 
  * ## Example Usage
  * ```java
@@ -66,42 +66,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember")
 public class MonitoredResourcesListMember extends com.pulumi.resources.CustomResource {
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="destinationResourceId", type=String.class, parameters={})
     private Output</* @Nullable */ String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<Optional<String>> destinationResourceId() {
         return Codegen.optional(this.destinationResourceId);
     }
     /**
-     * List of Members.
+     * List of member resources.
      * 
      */
     @Export(name="items", type=List.class, parameters={MonitoredResourcesListMemberItem.class})
     private Output<List<MonitoredResourcesListMemberItem>> items;
 
     /**
-     * @return List of Members.
+     * @return List of member resources.
      * 
      */
     public Output<List<MonitoredResourcesListMemberItem>> items() {
         return this.items;
     }
     /**
-     * The field which determines the depth of hierarchy while searching for members
+     * The field which determines the depth of hierarchy while searching for members.
      * 
      */
     @Export(name="limitLevel", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> limitLevel;
 
     /**
-     * @return The field which determines the depth of hierarchy while searching for members
+     * @return The field which determines the depth of hierarchy while searching for members.
      * 
      */
     public Output<Optional<Integer>> limitLevel() {

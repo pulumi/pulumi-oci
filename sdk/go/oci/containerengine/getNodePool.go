@@ -88,6 +88,8 @@ type LookupNodePoolResult struct {
 	NodeImageName string `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	// Node Pool Cycling Details
+	NodePoolCyclingDetails []GetNodePoolNodePoolCyclingDetail `pulumi:"nodePoolCyclingDetails"`
 	// The OCID of the node pool to which this node belongs.
 	NodePoolId string `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
@@ -222,6 +224,11 @@ func (o LookupNodePoolResultOutput) NodeImageName() pulumi.StringOutput {
 // A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 func (o LookupNodePoolResultOutput) NodeMetadata() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) map[string]interface{} { return v.NodeMetadata }).(pulumi.MapOutput)
+}
+
+// Node Pool Cycling Details
+func (o LookupNodePoolResultOutput) NodePoolCyclingDetails() GetNodePoolNodePoolCyclingDetailArrayOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolNodePoolCyclingDetail { return v.NodePoolCyclingDetails }).(GetNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
 // The OCID of the node pool to which this node belongs.

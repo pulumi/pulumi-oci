@@ -19,14 +19,14 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
     public static final MonitoredResourcesSearchAssociationItemArgs Empty = new MonitoredResourcesSearchAssociationItemArgs();
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
      * 
      */
     @Import(name="associationType")
     private @Nullable Output<String> associationType;
 
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type filter to search associated resources.
      * 
      */
     public Optional<Output<String>> associationType() {
@@ -34,14 +34,14 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
     }
 
     /**
-     * Association Resource Details
+     * Association Resource Details.
      * 
      */
     @Import(name="destinationResourceDetails")
     private @Nullable Output<List<MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs>> destinationResourceDetails;
 
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public Optional<Output<List<MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs>>> destinationResourceDetails() {
@@ -49,14 +49,14 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="destinationResourceId")
     private @Nullable Output<String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> destinationResourceId() {
@@ -64,14 +64,14 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
     }
 
     /**
-     * Association Resource Details
+     * Association Resource Details.
      * 
      */
     @Import(name="sourceResourceDetails")
     private @Nullable Output<List<MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs>> sourceResourceDetails;
 
     /**
-     * @return Association Resource Details
+     * @return Association Resource Details.
      * 
      */
     public Optional<Output<List<MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs>>> sourceResourceDetails() {
@@ -79,14 +79,14 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="sourceResourceId")
     private @Nullable Output<String> sourceResourceId;
 
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> sourceResourceId() {
@@ -94,14 +94,14 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
     }
 
     /**
-     * The time the the association was created. An RFC3339 formatted datetime string
+     * The association creation time. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the the association was created. An RFC3339 formatted datetime string
+     * @return The association creation time. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -138,7 +138,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type filter to search associated resources.
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param associationType Association type to be created between source and destination resources
+         * @param associationType Association type filter to search associated resources.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param destinationResourceDetails Association Resource Details
+         * @param destinationResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param destinationResourceDetails Association Resource Details
+         * @param destinationResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param destinationResourceDetails Association Resource Details
+         * @param destinationResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param sourceResourceDetails Association Resource Details
+         * @param sourceResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param sourceResourceDetails Association Resource Details
+         * @param sourceResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param sourceResourceDetails Association Resource Details
+         * @param sourceResourceDetails Association Resource Details.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param sourceResourceId Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param timeCreated The time the the association was created. An RFC3339 formatted datetime string
+         * @param timeCreated The association creation time. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class MonitoredResourcesSearchAssociationItemArgs extends com.pulum
         }
 
         /**
-         * @param timeCreated The time the the association was created. An RFC3339 formatted datetime string
+         * @param timeCreated The association creation time. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

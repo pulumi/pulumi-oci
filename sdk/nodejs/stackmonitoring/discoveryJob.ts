@@ -47,6 +47,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     shouldPropagateTagsToDiscoveredResources: _var.discovery_job_should_propagate_tags_to_discovered_resources,
  * });
  * ```
  *
@@ -111,6 +112,10 @@ export class DiscoveryJob extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     */
+    public readonly shouldPropagateTagsToDiscoveredResources!: pulumi.Output<boolean>;
+    /**
      * The current state of the DiscoveryJob Resource.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -158,6 +163,7 @@ export class DiscoveryJob extends pulumi.CustomResource {
             resourceInputs["discoveryDetails"] = state ? state.discoveryDetails : undefined;
             resourceInputs["discoveryType"] = state ? state.discoveryType : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["shouldPropagateTagsToDiscoveredResources"] = state ? state.shouldPropagateTagsToDiscoveredResources : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["statusMessage"] = state ? state.statusMessage : undefined;
@@ -179,6 +185,7 @@ export class DiscoveryJob extends pulumi.CustomResource {
             resourceInputs["discoveryDetails"] = args ? args.discoveryDetails : undefined;
             resourceInputs["discoveryType"] = args ? args.discoveryType : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["shouldPropagateTagsToDiscoveredResources"] = args ? args.shouldPropagateTagsToDiscoveredResources : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["statusMessage"] = undefined /*out*/;
@@ -220,6 +227,10 @@ export interface DiscoveryJobState {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     */
+    shouldPropagateTagsToDiscoveredResources?: pulumi.Input<boolean>;
     /**
      * The current state of the DiscoveryJob Resource.
      */
@@ -278,4 +289,8 @@ export interface DiscoveryJobArgs {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     */
+    shouldPropagateTagsToDiscoveredResources?: pulumi.Input<boolean>;
 }

@@ -16,14 +16,14 @@ public final class MonitoredResourcePropertyArgs extends com.pulumi.resources.Re
     public static final MonitoredResourcePropertyArgs Empty = new MonitoredResourcePropertyArgs();
 
     /**
-     * (Updatable) property name
+     * (Updatable) Property Name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class MonitoredResourcePropertyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) property value
+     * (Updatable) Property Value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) property value
+     * @return (Updatable) Property Value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class MonitoredResourcePropertyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class MonitoredResourcePropertyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class MonitoredResourcePropertyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) property value
+         * @param value (Updatable) Property Value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class MonitoredResourcePropertyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) property value
+         * @param value (Updatable) Property Value.
          * 
          * @return builder
          * 

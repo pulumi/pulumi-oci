@@ -56,6 +56,8 @@ type LookupOpaInstanceArgs struct {
 
 // A collection of values returned by getOpaInstance.
 type LookupOpaInstanceResult struct {
+	// A list of associated attachments to other services
+	Attachments []GetOpaInstanceAttachment `pulumi:"attachments"`
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes
@@ -134,6 +136,11 @@ func (o LookupOpaInstanceResultOutput) ToLookupOpaInstanceResultOutput() LookupO
 
 func (o LookupOpaInstanceResultOutput) ToLookupOpaInstanceResultOutputWithContext(ctx context.Context) LookupOpaInstanceResultOutput {
 	return o
+}
+
+// A list of associated attachments to other services
+func (o LookupOpaInstanceResultOutput) Attachments() GetOpaInstanceAttachmentArrayOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) []GetOpaInstanceAttachment { return v.Attachments }).(GetOpaInstanceAttachmentArrayOutput)
 }
 
 // Compartment Identifier

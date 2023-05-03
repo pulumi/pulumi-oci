@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -42,6 +44,10 @@ export interface GetOpaInstanceArgs {
  * A collection of values returned by getOpaInstance.
  */
 export interface GetOpaInstanceResult {
+    /**
+     * A list of associated attachments to other services
+     */
+    readonly attachments: outputs.Opa.GetOpaInstanceAttachment[];
     /**
      * Compartment Identifier
      */

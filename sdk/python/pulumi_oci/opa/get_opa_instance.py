@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetOpaInstanceResult',
@@ -21,7 +22,10 @@ class GetOpaInstanceResult:
     """
     A collection of values returned by getOpaInstance.
     """
-    def __init__(__self__, compartment_id=None, consumption_model=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, idcs_at=None, identity_app_display_name=None, identity_app_guid=None, identity_app_opc_service_instance_guid=None, identity_domain_url=None, instance_url=None, is_breakglass_enabled=None, metering_type=None, opa_instance_id=None, shape_name=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, attachments=None, compartment_id=None, consumption_model=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, idcs_at=None, identity_app_display_name=None, identity_app_guid=None, identity_app_opc_service_instance_guid=None, identity_domain_url=None, instance_url=None, is_breakglass_enabled=None, metering_type=None, opa_instance_id=None, shape_name=None, state=None, system_tags=None, time_created=None, time_updated=None):
+        if attachments and not isinstance(attachments, list):
+            raise TypeError("Expected argument 'attachments' to be a list")
+        pulumi.set(__self__, "attachments", attachments)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -85,6 +89,14 @@ class GetOpaInstanceResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetOpaInstanceAttachmentResult']:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -255,6 +267,7 @@ class AwaitableGetOpaInstanceResult(GetOpaInstanceResult):
         if False:
             yield self
         return GetOpaInstanceResult(
+            attachments=self.attachments,
             compartment_id=self.compartment_id,
             consumption_model=self.consumption_model,
             defined_tags=self.defined_tags,
@@ -303,6 +316,7 @@ def get_opa_instance(opa_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opa/getOpaInstance:getOpaInstance', __args__, opts=opts, typ=GetOpaInstanceResult).value
 
     return AwaitableGetOpaInstanceResult(
+        attachments=__ret__.attachments,
         compartment_id=__ret__.compartment_id,
         consumption_model=__ret__.consumption_model,
         defined_tags=__ret__.defined_tags,

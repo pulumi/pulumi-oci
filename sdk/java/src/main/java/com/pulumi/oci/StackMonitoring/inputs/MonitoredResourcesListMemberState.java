@@ -19,14 +19,14 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
     public static final MonitoredResourcesListMemberState Empty = new MonitoredResourcesListMemberState();
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="destinationResourceId")
     private @Nullable Output<String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> destinationResourceId() {
@@ -34,14 +34,14 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
     }
 
     /**
-     * List of Members.
+     * List of member resources.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<MonitoredResourcesListMemberItemArgs>> items;
 
     /**
-     * @return List of Members.
+     * @return List of member resources.
      * 
      */
     public Optional<Output<List<MonitoredResourcesListMemberItemArgs>>> items() {
@@ -49,14 +49,14 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
     }
 
     /**
-     * The field which determines the depth of hierarchy while searching for members
+     * The field which determines the depth of hierarchy while searching for members.
      * 
      */
     @Import(name="limitLevel")
     private @Nullable Output<Integer> limitLevel;
 
     /**
-     * @return The field which determines the depth of hierarchy while searching for members
+     * @return The field which determines the depth of hierarchy while searching for members.
      * 
      */
     public Optional<Output<Integer>> limitLevel() {
@@ -106,7 +106,7 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
         }
 
         /**
-         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
         }
 
         /**
-         * @param items List of Members.
+         * @param items List of member resources.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
         }
 
         /**
-         * @param items List of Members.
+         * @param items List of member resources.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
         }
 
         /**
-         * @param items List of Members.
+         * @param items List of member resources.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
         }
 
         /**
-         * @param limitLevel The field which determines the depth of hierarchy while searching for members
+         * @param limitLevel The field which determines the depth of hierarchy while searching for members.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class MonitoredResourcesListMemberState extends com.pulumi.resource
         }
 
         /**
-         * @param limitLevel The field which determines the depth of hierarchy while searching for members
+         * @param limitLevel The field which determines the depth of hierarchy while searching for members.
          * 
          * @return builder
          * 

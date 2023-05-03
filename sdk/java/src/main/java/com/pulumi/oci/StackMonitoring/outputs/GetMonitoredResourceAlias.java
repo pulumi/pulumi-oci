@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitoredResourceAlias {
     /**
-     * @return Monitored Resource Alias Reference Source Credential
+     * @return Monitored Resource Alias Reference Source Credential.
      * 
      */
     private List<GetMonitoredResourceAliasCredential> credentials;
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     private String name;
     /**
-     * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     private String source;
 
     private GetMonitoredResourceAlias() {}
     /**
-     * @return Monitored Resource Alias Reference Source Credential
+     * @return Monitored Resource Alias Reference Source Credential.
      * 
      */
     public List<GetMonitoredResourceAliasCredential> credentials() {
         return this.credentials;
     }
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public String source() {

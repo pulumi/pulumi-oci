@@ -14,7 +14,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class GetMonitoredResourceCredentialResult
     {
         /// <summary>
-        /// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        /// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        /// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        /// * PLAINTEXT - The credential properties will have credentials in plain text format.
+        /// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         /// </summary>
         public readonly string CredentialType;
         /// <summary>
@@ -22,23 +25,23 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+        /// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
         /// </summary>
         public readonly string KeyId;
         /// <summary>
-        /// property name
+        /// Property Name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// List of monitored resource properties
+        /// List of monitored resource properties.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitoredResourceCredentialPropertyResult> Properties;
         /// <summary>
-        /// The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// Monitored resource type
+        /// Monitored Resource Type.
         /// </summary>
         public readonly string Type;
 

@@ -14,15 +14,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourceAliasesCredential
     {
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+        /// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         /// </summary>
         public readonly string Service;
         /// <summary>
-        /// (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         public readonly string Source;
 

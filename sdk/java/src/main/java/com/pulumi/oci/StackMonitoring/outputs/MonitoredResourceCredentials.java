@@ -14,7 +14,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourceCredentials {
     /**
-     * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+     * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
     private @Nullable String credentialType;
@@ -24,34 +27,37 @@ public final class MonitoredResourceCredentials {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * @return (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
     private @Nullable String keyId;
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) List of monitored resource properties
+     * @return (Updatable) List of monitored resource properties.
      * 
      */
     private @Nullable List<MonitoredResourceCredentialsProperty> properties;
     /**
-     * @return (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     private @Nullable String source;
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     private @Nullable String type;
 
     private MonitoredResourceCredentials() {}
     /**
-     * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+     * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
     public Optional<String> credentialType() {
@@ -65,35 +71,35 @@ public final class MonitoredResourceCredentials {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * @return (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
     public Optional<String> keyId() {
         return Optional.ofNullable(this.keyId);
     }
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) List of monitored resource properties
+     * @return (Updatable) List of monitored resource properties.
      * 
      */
     public List<MonitoredResourceCredentialsProperty> properties() {
         return this.properties == null ? List.of() : this.properties;
     }
     /**
-     * @return (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public Optional<String> source() {
         return Optional.ofNullable(this.source);
     }
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public Optional<String> type() {

@@ -18,6 +18,21 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     public static final MonitoredResourcesListMemberItemArgs Empty = new MonitoredResourcesListMemberItemArgs();
 
     /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -33,14 +48,14 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -63,14 +78,14 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
-     * Monitored Resource Host
+     * Monitored Resource Host Name.
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return Monitored Resource Host
+     * @return Monitored Resource Host Name.
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -78,14 +93,14 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
-     * Parent monitored resource identifier
+     * Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="parentId")
     private @Nullable Output<String> parentId;
 
     /**
-     * @return Parent monitored resource identifier
+     * @return Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> parentId() {
@@ -108,14 +123,14 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
-     * Monitored resource identifier
+     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
-     * @return Monitored resource identifier
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> resourceId() {
@@ -123,14 +138,14 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
-     * Monitored resource name
+     * Monitored Resource Name.
      * 
      */
     @Import(name="resourceName")
     private @Nullable Output<String> resourceName;
 
     /**
-     * @return Monitored resource name
+     * @return Monitored Resource Name.
      * 
      */
     public Optional<Output<String>> resourceName() {
@@ -138,14 +153,14 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
-     * Monitored resource type
+     * Monitored Resource Type.
      * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -185,6 +200,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     private MonitoredResourcesListMemberItemArgs() {}
 
     private MonitoredResourcesListMemberItemArgs(MonitoredResourcesListMemberItemArgs $) {
+        this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.externalId = $.externalId;
         this.freeformTags = $.freeformTags;
@@ -217,6 +233,27 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
          * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -238,7 +275,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          * 
          * @return builder
          * 
@@ -249,7 +286,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          * 
          * @return builder
          * 
@@ -280,7 +317,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param hostName Monitored Resource Host
+         * @param hostName Monitored Resource Host Name.
          * 
          * @return builder
          * 
@@ -291,7 +328,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param hostName Monitored Resource Host
+         * @param hostName Monitored Resource Host Name.
          * 
          * @return builder
          * 
@@ -301,7 +338,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param parentId Parent monitored resource identifier
+         * @param parentId Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -312,7 +349,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param parentId Parent monitored resource identifier
+         * @param parentId Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -343,7 +380,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param resourceId Monitored resource identifier
+         * @param resourceId Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -354,7 +391,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param resourceId Monitored resource identifier
+         * @param resourceId Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -364,7 +401,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param resourceName Monitored resource name
+         * @param resourceName Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -375,7 +412,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param resourceName Monitored resource name
+         * @param resourceName Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -385,7 +422,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param resourceType Monitored resource type
+         * @param resourceType Monitored Resource Type.
          * 
          * @return builder
          * 
@@ -396,7 +433,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
-         * @param resourceType Monitored resource type
+         * @param resourceType Monitored Resource Type.
          * 
          * @return builder
          * 

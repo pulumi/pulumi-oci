@@ -5,7 +5,9 @@ package com.pulumi.oci.VisualBuilder.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint;
+import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachment;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint;
+import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -21,6 +23,11 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      * 
      */
     private List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    private List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -56,6 +63,11 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return Information for IDCS access
+     * 
+     */
+    private List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
     private String idcsOpenId;
     /**
      * @return The Vb Instance URL.
@@ -68,10 +80,30 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      */
     private Boolean isVisualBuilderEnabled;
     /**
+     * @return The NAT gateway IP address for the VB management VCN
+     * 
+     */
+    private String managementNatGatewayIp;
+    /**
+     * @return The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     * 
+     */
+    private String managementVcnId;
+    /**
      * @return The number of Nodes
      * 
      */
     private Integer nodeCount;
+    /**
+     * @return The NAT gateway IP address for the VB service VCN
+     * 
+     */
+    private String serviceNatGatewayIp;
+    /**
+     * @return The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     * 
+     */
+    private String serviceVcnId;
     /**
      * @return Life cycle state to query on.
      * 
@@ -105,6 +137,13 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      */
     public List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints() {
         return this.alternateCustomEndpoints;
+    }
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments() {
+        return this.attachments;
     }
     /**
      * @return The ID of the compartment in which to list resources.
@@ -155,6 +194,13 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Information for IDCS access
+     * 
+     */
+    public List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos() {
+        return this.idcsInfos;
+    }
     public String idcsOpenId() {
         return this.idcsOpenId;
     }
@@ -173,11 +219,39 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         return this.isVisualBuilderEnabled;
     }
     /**
+     * @return The NAT gateway IP address for the VB management VCN
+     * 
+     */
+    public String managementNatGatewayIp() {
+        return this.managementNatGatewayIp;
+    }
+    /**
+     * @return The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     * 
+     */
+    public String managementVcnId() {
+        return this.managementVcnId;
+    }
+    /**
      * @return The number of Nodes
      * 
      */
     public Integer nodeCount() {
         return this.nodeCount;
+    }
+    /**
+     * @return The NAT gateway IP address for the VB service VCN
+     * 
+     */
+    public String serviceNatGatewayIp() {
+        return this.serviceNatGatewayIp;
+    }
+    /**
+     * @return The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     * 
+     */
+    public String serviceVcnId() {
+        return this.serviceVcnId;
     }
     /**
      * @return Life cycle state to query on.
@@ -225,6 +299,7 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
+        private List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
         private String compartmentId;
         private String consumptionModel;
         private List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints;
@@ -232,10 +307,15 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
         private String idcsOpenId;
         private String instanceUrl;
         private Boolean isVisualBuilderEnabled;
+        private String managementNatGatewayIp;
+        private String managementVcnId;
         private Integer nodeCount;
+        private String serviceNatGatewayIp;
+        private String serviceVcnId;
         private String state;
         private String stateMessage;
         private Map<String,Object> systemTags;
@@ -245,6 +325,7 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         public Builder(GetVbInstancesVbInstanceSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternateCustomEndpoints = defaults.alternateCustomEndpoints;
+    	      this.attachments = defaults.attachments;
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
     	      this.customEndpoints = defaults.customEndpoints;
@@ -252,10 +333,15 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.idcsInfos = defaults.idcsInfos;
     	      this.idcsOpenId = defaults.idcsOpenId;
     	      this.instanceUrl = defaults.instanceUrl;
     	      this.isVisualBuilderEnabled = defaults.isVisualBuilderEnabled;
+    	      this.managementNatGatewayIp = defaults.managementNatGatewayIp;
+    	      this.managementVcnId = defaults.managementVcnId;
     	      this.nodeCount = defaults.nodeCount;
+    	      this.serviceNatGatewayIp = defaults.serviceNatGatewayIp;
+    	      this.serviceVcnId = defaults.serviceVcnId;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
     	      this.systemTags = defaults.systemTags;
@@ -270,6 +356,14 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         }
         public Builder alternateCustomEndpoints(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
+        }
+        @CustomType.Setter
+        public Builder attachments(List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments) {
+            this.attachments = Objects.requireNonNull(attachments);
+            return this;
+        }
+        public Builder attachments(GetVbInstancesVbInstanceSummaryCollectionItemAttachment... attachments) {
+            return attachments(List.of(attachments));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -310,6 +404,14 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder idcsInfos(List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos) {
+            this.idcsInfos = Objects.requireNonNull(idcsInfos);
+            return this;
+        }
+        public Builder idcsInfos(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo... idcsInfos) {
+            return idcsInfos(List.of(idcsInfos));
+        }
+        @CustomType.Setter
         public Builder idcsOpenId(String idcsOpenId) {
             this.idcsOpenId = Objects.requireNonNull(idcsOpenId);
             return this;
@@ -325,8 +427,28 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder managementNatGatewayIp(String managementNatGatewayIp) {
+            this.managementNatGatewayIp = Objects.requireNonNull(managementNatGatewayIp);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder managementVcnId(String managementVcnId) {
+            this.managementVcnId = Objects.requireNonNull(managementVcnId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = Objects.requireNonNull(nodeCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceNatGatewayIp(String serviceNatGatewayIp) {
+            this.serviceNatGatewayIp = Objects.requireNonNull(serviceNatGatewayIp);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceVcnId(String serviceVcnId) {
+            this.serviceVcnId = Objects.requireNonNull(serviceVcnId);
             return this;
         }
         @CustomType.Setter
@@ -357,6 +479,7 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         public GetVbInstancesVbInstanceSummaryCollectionItem build() {
             final var o = new GetVbInstancesVbInstanceSummaryCollectionItem();
             o.alternateCustomEndpoints = alternateCustomEndpoints;
+            o.attachments = attachments;
             o.compartmentId = compartmentId;
             o.consumptionModel = consumptionModel;
             o.customEndpoints = customEndpoints;
@@ -364,10 +487,15 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.idcsInfos = idcsInfos;
             o.idcsOpenId = idcsOpenId;
             o.instanceUrl = instanceUrl;
             o.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            o.managementNatGatewayIp = managementNatGatewayIp;
+            o.managementVcnId = managementVcnId;
             o.nodeCount = nodeCount;
+            o.serviceNatGatewayIp = serviceNatGatewayIp;
+            o.serviceVcnId = serviceVcnId;
             o.state = state;
             o.stateMessage = stateMessage;
             o.systemTags = systemTags;

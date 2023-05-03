@@ -473,6 +473,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.ipxeScript;
     }
     /**
+     * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     * 
+     */
+    @Export(name="isCrossNumaNode", type=Boolean.class, parameters={})
+    private Output<Boolean> isCrossNumaNode;
+
+    /**
+     * @return Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     * 
+     */
+    public Output<Boolean> isCrossNumaNode() {
+        return this.isCrossNumaNode;
+    }
+    /**
      * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
      * 
      */

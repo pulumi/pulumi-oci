@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute model of the Cloud Autonomous VM Cluster.
+        /// The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly string ComputeModel;
         /// <summary>
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int CpuCoreCount;
         /// <summary>
-        /// The number of OCPU cores enabled per VM cluster node.
+        /// The number of CPU cores enabled per VM cluster node.
         /// </summary>
         public readonly int CpuCoreCountPerNode;
         /// <summary>
@@ -194,6 +194,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        /// </summary>
+        public readonly bool IsMtlsEnabledVmCluster;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         public readonly string LastMaintenanceRunId;
@@ -215,7 +219,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each OCPU core.
+        /// The amount of memory (in GBs) enabled per each CPU core.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -240,9 +244,19 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double OcpuCount;
         /// <summary>
-        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// For Autonomous Databases on Dedicated Exadata Infrastructure:
+        /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly double ReclaimableCpus;
+        /// <summary>
+        /// The SCAN Listener Non TLS port. Default is 1521.
+        /// </summary>
+        public readonly int ScanListenerPortNonTls;
+        /// <summary>
+        /// The SCAN Listenenr TLS port. Default is 2484.
+        /// </summary>
+        public readonly int ScanListenerPortTls;
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
@@ -316,6 +330,8 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            bool isMtlsEnabledVmCluster,
+
             string lastMaintenanceRunId,
 
             string lastUpdateHistoryEntryId,
@@ -341,6 +357,10 @@ namespace Pulumi.Oci.Database
             double ocpuCount,
 
             double reclaimableCpus,
+
+            int scanListenerPortNonTls,
+
+            int scanListenerPortTls,
 
             string shape,
 
@@ -377,6 +397,7 @@ namespace Pulumi.Oci.Database
             FreeformTags = freeformTags;
             Hostname = hostname;
             Id = id;
+            IsMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             LicenseModel = licenseModel;
@@ -390,6 +411,8 @@ namespace Pulumi.Oci.Database
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
             ReclaimableCpus = reclaimableCpus;
+            ScanListenerPortNonTls = scanListenerPortNonTls;
+            ScanListenerPortTls = scanListenerPortTls;
             Shape = shape;
             State = state;
             SubnetId = subnetId;

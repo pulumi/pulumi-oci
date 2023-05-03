@@ -50,14 +50,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
-     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -80,14 +80,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return A filter to return resources with host name match
+     * @return A filter to return resources with host name match.
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -95,14 +95,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> id() {
@@ -125,14 +125,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -140,14 +140,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * List of monitored resource properties
+     * List of monitored resource properties.
      * 
      */
     @Import(name="properties")
     private @Nullable Output<List<MonitoredResourcesSearchItemPropertyArgs>> properties;
 
     /**
-     * @return List of monitored resource properties
+     * @return List of monitored resource properties.
      * 
      */
     public Optional<Output<List<MonitoredResourcesSearchItemPropertyArgs>>> properties() {
@@ -185,14 +185,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * Monitored resource creation time. An RFC3339 formatted datetime string
+     * Monitored resource creation time. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Monitored resource creation time. An RFC3339 formatted datetime string
+     * @return Monitored resource creation time. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -200,14 +200,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * Monitored resource updation time. An RFC3339 formatted datetime string
+     * Monitored resource update time. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return Monitored resource updation time. An RFC3339 formatted datetime string
+     * @return Monitored resource update time. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -215,14 +215,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return A filter to return resources that match resource type
+     * @return A filter to return resources that match resource type.
      * 
      */
     public Optional<Output<String>> type() {
@@ -309,7 +309,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param hostName A filter to return resources with host name match
+         * @param hostName A filter to return resources with host name match.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param hostName A filter to return resources with host name match
+         * @param hostName A filter to return resources with host name match.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * @param id Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * @param id Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param name A filter to return resources that match exact resource name
+         * @param name A filter to return resources that match exact resource name.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param name A filter to return resources that match exact resource name
+         * @param name A filter to return resources that match exact resource name.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param properties List of monitored resource properties
+         * @param properties List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param properties List of monitored resource properties
+         * @param properties List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param properties List of monitored resource properties
+         * @param properties List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param timeCreated Monitored resource creation time. An RFC3339 formatted datetime string
+         * @param timeCreated Monitored resource creation time. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param timeCreated Monitored resource creation time. An RFC3339 formatted datetime string
+         * @param timeCreated Monitored resource creation time. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param timeUpdated Monitored resource updation time. An RFC3339 formatted datetime string
+         * @param timeUpdated Monitored resource update time. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param timeUpdated Monitored resource updation time. An RFC3339 formatted datetime string
+         * @param timeUpdated Monitored resource update time. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type A filter to return resources that match resource type
+         * @param type A filter to return resources that match resource type.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type A filter to return resources that match resource type
+         * @param type A filter to return resources that match resource type.
          * 
          * @return builder
          * 

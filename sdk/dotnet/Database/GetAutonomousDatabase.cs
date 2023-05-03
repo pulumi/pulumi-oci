@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         /// </summary>
         public readonly double ComputeCount;
         /// <summary>
@@ -276,7 +276,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsLocalDataGuardEnabled;
         /// <summary>
-        /// Indicates whether the Autonomous Database requires mTLS connections.
+        /// Specifies if the Autonomous Database requires mTLS connections.
         /// </summary>
         public readonly bool IsMtlsConnectionRequired;
         /// <summary>
@@ -346,7 +346,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MaxCpuCoreCount;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>

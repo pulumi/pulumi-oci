@@ -9,6 +9,8 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.StackMonitoring.MonitoredResourceArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceState;
+import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceAdditionalAlias;
+import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceAdditionalCredential;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceAliases;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceCredentials;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceDatabaseConnectionDetails;
@@ -24,7 +26,9 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
  * 
- * Creates a new monitored resource for the given resource type
+ * Creates a new monitored resource for the given resource type with the details and submits
+ * a work request for promoting the resource to agent. Once the resource is successfully
+ * added to agent, resource state will be marked active.
  * 
  * ## Example Usage
  * ```java
@@ -35,6 +39,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.StackMonitoring.MonitoredResource;
  * import com.pulumi.oci.StackMonitoring.MonitoredResourceArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAdditionalAliasArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAdditionalAliasCredentialArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAdditionalCredentialArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAliasesArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAliasesCredentialArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceCredentialsArgs;
@@ -57,6 +64,27 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .name(var_.monitored_resource_name())
  *             .type(var_.monitored_resource_type())
+ *             .additionalAliases(MonitoredResourceAdditionalAliasArgs.builder()
+ *                 .credential(MonitoredResourceAdditionalAliasCredentialArgs.builder()
+ *                     .name(var_.monitored_resource_additional_aliases_credential_name())
+ *                     .service(var_.monitored_resource_additional_aliases_credential_service())
+ *                     .source(var_.monitored_resource_additional_aliases_credential_source())
+ *                     .build())
+ *                 .name(var_.monitored_resource_additional_aliases_name())
+ *                 .source(var_.monitored_resource_additional_aliases_source())
+ *                 .build())
+ *             .additionalCredentials(MonitoredResourceAdditionalCredentialArgs.builder()
+ *                 .credentialType(var_.monitored_resource_additional_credentials_credential_type())
+ *                 .description(var_.monitored_resource_additional_credentials_description())
+ *                 .keyId(oci_kms_key.test_key().id())
+ *                 .name(var_.monitored_resource_additional_credentials_name())
+ *                 .properties(MonitoredResourceAdditionalCredentialPropertyArgs.builder()
+ *                     .name(var_.monitored_resource_additional_credentials_properties_name())
+ *                     .value(var_.monitored_resource_additional_credentials_properties_value())
+ *                     .build())
+ *                 .source(var_.monitored_resource_additional_credentials_source())
+ *                 .type(var_.monitored_resource_additional_credentials_type())
+ *                 .build())
  *             .aliases(MonitoredResourceAliasesArgs.builder()
  *                 .credential(MonitoredResourceAliasesCredentialArgs.builder()
  *                     .name(var_.monitored_resource_aliases_credential_name())
@@ -87,9 +115,11 @@ import javax.annotation.Nullable;
  *                 .dbUniqueName(var_.monitored_resource_database_connection_details_db_unique_name())
  *                 .sslSecretId(oci_vault_secret.test_secret().id())
  *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .displayName(var_.monitored_resource_display_name())
  *             .externalResourceId(var_.monitored_resource_external_resource_id())
  *             .externalId(oci_stack_monitoring_external.test_external().id())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .hostName(var_.monitored_resource_host_name())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
  *             .properties(MonitoredResourcePropertyArgs.builder()
@@ -115,6 +145,34 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:StackMonitoring/monitoredResource:MonitoredResource")
 public class MonitoredResource extends com.pulumi.resources.CustomResource {
     /**
+     * (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
+     * 
+     */
+    @Export(name="additionalAliases", type=List.class, parameters={MonitoredResourceAdditionalAlias.class})
+    private Output</* @Nullable */ List<MonitoredResourceAdditionalAlias>> additionalAliases;
+
+    /**
+     * @return (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
+     * 
+     */
+    public Output<Optional<List<MonitoredResourceAdditionalAlias>>> additionalAliases() {
+        return Codegen.optional(this.additionalAliases);
+    }
+    /**
+     * (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
+     * 
+     */
+    @Export(name="additionalCredentials", type=List.class, parameters={MonitoredResourceAdditionalCredential.class})
+    private Output</* @Nullable */ List<MonitoredResourceAdditionalCredential>> additionalCredentials;
+
+    /**
+     * @return (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
+     * 
+     */
+    public Output<Optional<List<MonitoredResourceAdditionalCredential>>> additionalCredentials() {
+        return Codegen.optional(this.additionalCredentials);
+    }
+    /**
      * (Updatable) Monitored Resource Alias Credential Details
      * 
      */
@@ -129,56 +187,56 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.aliases);
     }
     /**
-     * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Monitored Resource Credential Details
+     * (Updatable) Monitored Resource Credential Details.
      * 
      */
     @Export(name="credentials", type=MonitoredResourceCredentials.class, parameters={})
     private Output</* @Nullable */ MonitoredResourceCredentials> credentials;
 
     /**
-     * @return (Updatable) Monitored Resource Credential Details
+     * @return (Updatable) Monitored Resource Credential Details.
      * 
      */
     public Output<Optional<MonitoredResourceCredentials>> credentials() {
         return Codegen.optional(this.credentials);
     }
     /**
-     * (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * (Updatable) Connection details for the database.
      * 
      */
     @Export(name="databaseConnectionDetails", type=MonitoredResourceDatabaseConnectionDetails.class, parameters={})
     private Output</* @Nullable */ MonitoredResourceDatabaseConnectionDetails> databaseConnectionDetails;
 
     /**
-     * @return (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * @return (Updatable) Connection details for the database.
      * 
      */
     public Output<Optional<MonitoredResourceDatabaseConnectionDetails>> databaseConnectionDetails() {
         return Codegen.optional(this.databaseConnectionDetails);
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -227,28 +285,28 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.externalResourceId);
     }
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * (Updatable) Host name of the monitored resource
+     * (Updatable) Host name of the monitored resource.
      * 
      */
     @Export(name="hostName", type=String.class, parameters={})
     private Output</* @Nullable */ String> hostName;
 
     /**
-     * @return (Updatable) Host name of the monitored resource
+     * @return (Updatable) Host name of the monitored resource.
      * 
      */
     public Output<Optional<String>> hostName() {
@@ -269,42 +327,42 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.managementAgentId);
     }
     /**
-     * (Updatable) property name
+     * (Updatable) Property Name.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * (Updatable) List of monitored resource properties
+     * (Updatable) List of monitored resource properties.
      * 
      */
     @Export(name="properties", type=List.class, parameters={MonitoredResourceProperty.class})
     private Output</* @Nullable */ List<MonitoredResourceProperty>> properties;
 
     /**
-     * @return (Updatable) List of monitored resource properties
+     * @return (Updatable) List of monitored resource properties.
      * 
      */
     public Output<Optional<List<MonitoredResourceProperty>>> properties() {
         return Codegen.optional(this.properties);
     }
     /**
-     * (Updatable) Time zone in the form of tz database canonical zone ID.
+     * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     @Export(name="resourceTimeZone", type=String.class, parameters={})
     private Output</* @Nullable */ String> resourceTimeZone;
 
     /**
-     * @return (Updatable) Time zone in the form of tz database canonical zone ID.
+     * @return (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     public Output<Optional<String>> resourceTimeZone() {
@@ -339,56 +397,56 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="tenantId", type=String.class, parameters={})
     private Output<String> tenantId;
 
     /**
-     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> tenantId() {
         return this.tenantId;
     }
     /**
-     * The time the the resource was created. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The time the the resource was created. An RFC3339 formatted datetime string
+     * @return The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the the resource was updated. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the the resource was updated. An RFC3339 formatted datetime string
+     * @return The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * Monitored resource type
+     * Monitored Resource Type.
      * 
      */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public Output<String> type() {

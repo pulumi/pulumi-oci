@@ -10,6 +10,278 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type OpaInstanceAttachment struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit *bool `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId *string `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole *string `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType *string `pulumi:"targetServiceType"`
+}
+
+// OpaInstanceAttachmentInput is an input type that accepts OpaInstanceAttachmentArgs and OpaInstanceAttachmentOutput values.
+// You can construct a concrete instance of `OpaInstanceAttachmentInput` via:
+//
+//	OpaInstanceAttachmentArgs{...}
+type OpaInstanceAttachmentInput interface {
+	pulumi.Input
+
+	ToOpaInstanceAttachmentOutput() OpaInstanceAttachmentOutput
+	ToOpaInstanceAttachmentOutputWithContext(context.Context) OpaInstanceAttachmentOutput
+}
+
+type OpaInstanceAttachmentArgs struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
+}
+
+func (OpaInstanceAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpaInstanceAttachment)(nil)).Elem()
+}
+
+func (i OpaInstanceAttachmentArgs) ToOpaInstanceAttachmentOutput() OpaInstanceAttachmentOutput {
+	return i.ToOpaInstanceAttachmentOutputWithContext(context.Background())
+}
+
+func (i OpaInstanceAttachmentArgs) ToOpaInstanceAttachmentOutputWithContext(ctx context.Context) OpaInstanceAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceAttachmentOutput)
+}
+
+// OpaInstanceAttachmentArrayInput is an input type that accepts OpaInstanceAttachmentArray and OpaInstanceAttachmentArrayOutput values.
+// You can construct a concrete instance of `OpaInstanceAttachmentArrayInput` via:
+//
+//	OpaInstanceAttachmentArray{ OpaInstanceAttachmentArgs{...} }
+type OpaInstanceAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToOpaInstanceAttachmentArrayOutput() OpaInstanceAttachmentArrayOutput
+	ToOpaInstanceAttachmentArrayOutputWithContext(context.Context) OpaInstanceAttachmentArrayOutput
+}
+
+type OpaInstanceAttachmentArray []OpaInstanceAttachmentInput
+
+func (OpaInstanceAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpaInstanceAttachment)(nil)).Elem()
+}
+
+func (i OpaInstanceAttachmentArray) ToOpaInstanceAttachmentArrayOutput() OpaInstanceAttachmentArrayOutput {
+	return i.ToOpaInstanceAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i OpaInstanceAttachmentArray) ToOpaInstanceAttachmentArrayOutputWithContext(ctx context.Context) OpaInstanceAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceAttachmentArrayOutput)
+}
+
+type OpaInstanceAttachmentOutput struct{ *pulumi.OutputState }
+
+func (OpaInstanceAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpaInstanceAttachment)(nil)).Elem()
+}
+
+func (o OpaInstanceAttachmentOutput) ToOpaInstanceAttachmentOutput() OpaInstanceAttachmentOutput {
+	return o
+}
+
+func (o OpaInstanceAttachmentOutput) ToOpaInstanceAttachmentOutputWithContext(ctx context.Context) OpaInstanceAttachmentOutput {
+	return o
+}
+
+// * If role == `PARENT`, the attached instance was created by this service instance
+// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+func (o OpaInstanceAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v OpaInstanceAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
+}
+
+// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+func (o OpaInstanceAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpaInstanceAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// The dataplane instance URL of the attached instance
+func (o OpaInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpaInstanceAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
+}
+
+// The role of the target attachment.
+func (o OpaInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpaInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
+}
+
+// The type of the target instance, such as "FUSION".
+func (o OpaInstanceAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpaInstanceAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
+}
+
+type OpaInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (OpaInstanceAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpaInstanceAttachment)(nil)).Elem()
+}
+
+func (o OpaInstanceAttachmentArrayOutput) ToOpaInstanceAttachmentArrayOutput() OpaInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o OpaInstanceAttachmentArrayOutput) ToOpaInstanceAttachmentArrayOutputWithContext(ctx context.Context) OpaInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o OpaInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) OpaInstanceAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpaInstanceAttachment {
+		return vs[0].([]OpaInstanceAttachment)[vs[1].(int)]
+	}).(OpaInstanceAttachmentOutput)
+}
+
+type GetOpaInstanceAttachment struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit bool `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId string `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole string `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType string `pulumi:"targetServiceType"`
+}
+
+// GetOpaInstanceAttachmentInput is an input type that accepts GetOpaInstanceAttachmentArgs and GetOpaInstanceAttachmentOutput values.
+// You can construct a concrete instance of `GetOpaInstanceAttachmentInput` via:
+//
+//	GetOpaInstanceAttachmentArgs{...}
+type GetOpaInstanceAttachmentInput interface {
+	pulumi.Input
+
+	ToGetOpaInstanceAttachmentOutput() GetOpaInstanceAttachmentOutput
+	ToGetOpaInstanceAttachmentOutputWithContext(context.Context) GetOpaInstanceAttachmentOutput
+}
+
+type GetOpaInstanceAttachmentArgs struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+}
+
+func (GetOpaInstanceAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpaInstanceAttachment)(nil)).Elem()
+}
+
+func (i GetOpaInstanceAttachmentArgs) ToGetOpaInstanceAttachmentOutput() GetOpaInstanceAttachmentOutput {
+	return i.ToGetOpaInstanceAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetOpaInstanceAttachmentArgs) ToGetOpaInstanceAttachmentOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstanceAttachmentOutput)
+}
+
+// GetOpaInstanceAttachmentArrayInput is an input type that accepts GetOpaInstanceAttachmentArray and GetOpaInstanceAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetOpaInstanceAttachmentArrayInput` via:
+//
+//	GetOpaInstanceAttachmentArray{ GetOpaInstanceAttachmentArgs{...} }
+type GetOpaInstanceAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetOpaInstanceAttachmentArrayOutput() GetOpaInstanceAttachmentArrayOutput
+	ToGetOpaInstanceAttachmentArrayOutputWithContext(context.Context) GetOpaInstanceAttachmentArrayOutput
+}
+
+type GetOpaInstanceAttachmentArray []GetOpaInstanceAttachmentInput
+
+func (GetOpaInstanceAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpaInstanceAttachment)(nil)).Elem()
+}
+
+func (i GetOpaInstanceAttachmentArray) ToGetOpaInstanceAttachmentArrayOutput() GetOpaInstanceAttachmentArrayOutput {
+	return i.ToGetOpaInstanceAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpaInstanceAttachmentArray) ToGetOpaInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstanceAttachmentArrayOutput)
+}
+
+type GetOpaInstanceAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetOpaInstanceAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpaInstanceAttachment)(nil)).Elem()
+}
+
+func (o GetOpaInstanceAttachmentOutput) ToGetOpaInstanceAttachmentOutput() GetOpaInstanceAttachmentOutput {
+	return o
+}
+
+func (o GetOpaInstanceAttachmentOutput) ToGetOpaInstanceAttachmentOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentOutput {
+	return o
+}
+
+// * If role == `PARENT`, the attached instance was created by this service instance
+// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+func (o GetOpaInstanceAttachmentOutput) IsImplicit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+}
+
+// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+func (o GetOpaInstanceAttachmentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The dataplane instance URL of the attached instance
+func (o GetOpaInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+}
+
+// The role of the target attachment.
+func (o GetOpaInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+}
+
+// The type of the target instance, such as "FUSION".
+func (o GetOpaInstanceAttachmentOutput) TargetServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+}
+
+type GetOpaInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpaInstanceAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpaInstanceAttachment)(nil)).Elem()
+}
+
+func (o GetOpaInstanceAttachmentArrayOutput) ToGetOpaInstanceAttachmentArrayOutput() GetOpaInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetOpaInstanceAttachmentArrayOutput) ToGetOpaInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetOpaInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetOpaInstanceAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpaInstanceAttachment {
+		return vs[0].([]GetOpaInstanceAttachment)[vs[1].(int)]
+	}).(GetOpaInstanceAttachmentOutput)
+}
+
 type GetOpaInstancesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -213,6 +485,8 @@ func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetOpaInstancesOpaInstanceCollectionItem struct {
+	// A list of associated attachments to other services
+	Attachments []GetOpaInstancesOpaInstanceCollectionItemAttachment `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes
@@ -266,6 +540,8 @@ type GetOpaInstancesOpaInstanceCollectionItemInput interface {
 }
 
 type GetOpaInstancesOpaInstanceCollectionItemArgs struct {
+	// A list of associated attachments to other services
+	Attachments GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes
@@ -356,6 +632,13 @@ func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ToGetOpaInstancesOpaInst
 
 func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ToGetOpaInstancesOpaInstanceCollectionItemOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemOutput {
 	return o
+}
+
+// A list of associated attachments to other services
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) Attachments() GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) []GetOpaInstancesOpaInstanceCollectionItemAttachment {
+		return v.Attachments
+	}).(GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput)
 }
 
 // The ID of the compartment in which to list resources.
@@ -477,17 +760,165 @@ func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) Index(i pulumi.IntI
 	}).(GetOpaInstancesOpaInstanceCollectionItemOutput)
 }
 
+type GetOpaInstancesOpaInstanceCollectionItemAttachment struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit bool `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId string `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole string `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType string `pulumi:"targetServiceType"`
+}
+
+// GetOpaInstancesOpaInstanceCollectionItemAttachmentInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs and GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput values.
+// You can construct a concrete instance of `GetOpaInstancesOpaInstanceCollectionItemAttachmentInput` via:
+//
+//	GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs{...}
+type GetOpaInstancesOpaInstanceCollectionItemAttachmentInput interface {
+	pulumi.Input
+
+	ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutput() GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput
+	ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput
+}
+
+type GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs struct {
+	// * If role == `PARENT`, the attached instance was created by this service instance
+	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The dataplane instance URL of the attached instance
+	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	// The role of the target attachment.
+	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	// The type of the target instance, such as "FUSION".
+	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+}
+
+func (GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionItemAttachment)(nil)).Elem()
+}
+
+func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutput() GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {
+	return i.ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput)
+}
+
+// GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemAttachmentArray and GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput` via:
+//
+//	GetOpaInstancesOpaInstanceCollectionItemAttachmentArray{ GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs{...} }
+type GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput() GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput
+	ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput
+}
+
+type GetOpaInstancesOpaInstanceCollectionItemAttachmentArray []GetOpaInstancesOpaInstanceCollectionItemAttachmentInput
+
+func (GetOpaInstancesOpaInstanceCollectionItemAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpaInstancesOpaInstanceCollectionItemAttachment)(nil)).Elem()
+}
+
+func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArray) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput() GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
+	return i.ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArray) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput)
+}
+
+type GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionItemAttachment)(nil)).Elem()
+}
+
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutput() GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {
+	return o
+}
+
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {
+	return o
+}
+
+// * If role == `PARENT`, the attached instance was created by this service instance
+// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) IsImplicit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+}
+
+// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The dataplane instance URL of the attached instance
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+}
+
+// The role of the target attachment.
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+}
+
+// The type of the target instance, such as "FUSION".
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+}
+
+type GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpaInstancesOpaInstanceCollectionItemAttachment)(nil)).Elem()
+}
+
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput() GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
+	return o
+}
+
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
+	return o
+}
+
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpaInstancesOpaInstanceCollectionItemAttachment {
+		return vs[0].([]GetOpaInstancesOpaInstanceCollectionItemAttachment)[vs[1].(int)]
+	}).(GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OpaInstanceAttachmentInput)(nil)).Elem(), OpaInstanceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpaInstanceAttachmentArrayInput)(nil)).Elem(), OpaInstanceAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstanceAttachmentInput)(nil)).Elem(), GetOpaInstanceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstanceAttachmentArrayInput)(nil)).Elem(), GetOpaInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesFilterInput)(nil)).Elem(), GetOpaInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesFilterArrayInput)(nil)).Elem(), GetOpaInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionInput)(nil)).Elem(), GetOpaInstancesOpaInstanceCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionArrayInput)(nil)).Elem(), GetOpaInstancesOpaInstanceCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionItemInput)(nil)).Elem(), GetOpaInstancesOpaInstanceCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionItemArrayInput)(nil)).Elem(), GetOpaInstancesOpaInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionItemAttachmentInput)(nil)).Elem(), GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput)(nil)).Elem(), GetOpaInstancesOpaInstanceCollectionItemAttachmentArray{})
+	pulumi.RegisterOutputType(OpaInstanceAttachmentOutput{})
+	pulumi.RegisterOutputType(OpaInstanceAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetOpaInstanceAttachmentOutput{})
+	pulumi.RegisterOutputType(GetOpaInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetOpaInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetOpaInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetOpaInstancesOpaInstanceCollectionOutput{})
 	pulumi.RegisterOutputType(GetOpaInstancesOpaInstanceCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetOpaInstancesOpaInstanceCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetOpaInstancesOpaInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput{})
+	pulumi.RegisterOutputType(GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput{})
 }

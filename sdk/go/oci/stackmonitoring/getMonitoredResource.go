@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// # Gets a monitored resource by identifier
+// Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //
 // ## Example Usage
 //
@@ -56,33 +56,35 @@ type LookupMonitoredResourceArgs struct {
 
 // A collection of values returned by getMonitoredResource.
 type LookupMonitoredResourceResult struct {
+	AdditionalAliases     []GetMonitoredResourceAdditionalAlias      `pulumi:"additionalAliases"`
+	AdditionalCredentials []GetMonitoredResourceAdditionalCredential `pulumi:"additionalCredentials"`
 	// Monitored Resource Alias Credential Details
 	Aliases []GetMonitoredResourceAlias `pulumi:"aliases"`
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	// Monitored Resource Credential Details
+	// Monitored Resource Credential Details.
 	Credentials []GetMonitoredResourceCredential `pulumi:"credentials"`
-	// Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// Connection details for the database.
 	DatabaseConnectionDetails []GetMonitoredResourceDatabaseConnectionDetail `pulumi:"databaseConnectionDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName string `pulumi:"displayName"`
-	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId         string `pulumi:"externalId"`
 	ExternalResourceId string `pulumi:"externalResourceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Monitored resource host name.
 	HostName string `pulumi:"hostName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId   string `pulumi:"managementAgentId"`
 	MonitoredResourceId string `pulumi:"monitoredResourceId"`
-	// property name
+	// Property Name.
 	Name string `pulumi:"name"`
-	// List of monitored resource properties
+	// List of monitored resource properties.
 	Properties []GetMonitoredResourceProperty `pulumi:"properties"`
 	// Time zone in the form of tz database canonical zone ID.
 	ResourceTimeZone string `pulumi:"resourceTimeZone"`
@@ -90,13 +92,13 @@ type LookupMonitoredResourceResult struct {
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId string `pulumi:"tenantId"`
-	// The time the the resource was created. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the the resource was updated. An RFC3339 formatted datetime string
+	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Monitored resource type
+	// Monitored Resource Type.
 	Type string `pulumi:"type"`
 }
 
@@ -138,22 +140,34 @@ func (o LookupMonitoredResourceResultOutput) ToLookupMonitoredResourceResultOutp
 	return o
 }
 
+func (o LookupMonitoredResourceResultOutput) AdditionalAliases() GetMonitoredResourceAdditionalAliasArrayOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceAdditionalAlias {
+		return v.AdditionalAliases
+	}).(GetMonitoredResourceAdditionalAliasArrayOutput)
+}
+
+func (o LookupMonitoredResourceResultOutput) AdditionalCredentials() GetMonitoredResourceAdditionalCredentialArrayOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceAdditionalCredential {
+		return v.AdditionalCredentials
+	}).(GetMonitoredResourceAdditionalCredentialArrayOutput)
+}
+
 // Monitored Resource Alias Credential Details
 func (o LookupMonitoredResourceResultOutput) Aliases() GetMonitoredResourceAliasArrayOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceAlias { return v.Aliases }).(GetMonitoredResourceAliasArrayOutput)
 }
 
-// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupMonitoredResourceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Monitored Resource Credential Details
+// Monitored Resource Credential Details.
 func (o LookupMonitoredResourceResultOutput) Credentials() GetMonitoredResourceCredentialArrayOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceCredential { return v.Credentials }).(GetMonitoredResourceCredentialArrayOutput)
 }
 
-// Connection details to connect to the database. HostName, protocol, and port should be specified.
+// Connection details for the database.
 func (o LookupMonitoredResourceResultOutput) DatabaseConnectionDetails() GetMonitoredResourceDatabaseConnectionDetailArrayOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceDatabaseConnectionDetail {
 		return v.DatabaseConnectionDetails
@@ -170,7 +184,7 @@ func (o LookupMonitoredResourceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 func (o LookupMonitoredResourceResultOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ExternalId }).(pulumi.StringOutput)
 }
@@ -189,7 +203,7 @@ func (o LookupMonitoredResourceResultOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupMonitoredResourceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -203,12 +217,12 @@ func (o LookupMonitoredResourceResultOutput) MonitoredResourceId() pulumi.String
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.MonitoredResourceId }).(pulumi.StringOutput)
 }
 
-// property name
+// Property Name.
 func (o LookupMonitoredResourceResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// List of monitored resource properties
+// List of monitored resource properties.
 func (o LookupMonitoredResourceResultOutput) Properties() GetMonitoredResourcePropertyArrayOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceProperty { return v.Properties }).(GetMonitoredResourcePropertyArrayOutput)
 }
@@ -228,22 +242,22 @@ func (o LookupMonitoredResourceResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupMonitoredResourceResultOutput) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.TenantId }).(pulumi.StringOutput)
 }
 
-// The time the the resource was created. An RFC3339 formatted datetime string
+// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 func (o LookupMonitoredResourceResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the the resource was updated. An RFC3339 formatted datetime string
+// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 func (o LookupMonitoredResourceResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Monitored resource type
+// Monitored Resource Type.
 func (o LookupMonitoredResourceResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.Type }).(pulumi.StringOutput)
 }

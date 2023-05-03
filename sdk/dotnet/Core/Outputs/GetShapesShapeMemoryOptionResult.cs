@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly double MaxInGbs;
         /// <summary>
+        /// The maximum amount of memory per NUMA node, in gigabytes.
+        /// </summary>
+        public readonly double MaxPerNumaNodeInGbs;
+        /// <summary>
         /// The maximum amount of memory per OCPU available for this shape, in gigabytes.
         /// </summary>
         public readonly double MaxPerOcpuInGbs;
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             double maxInGbs,
 
+            double maxPerNumaNodeInGbs,
+
             double maxPerOcpuInGbs,
 
             double minInGbs,
@@ -48,6 +54,7 @@ namespace Pulumi.Oci.Core.Outputs
         {
             DefaultPerOcpuInGbs = defaultPerOcpuInGbs;
             MaxInGbs = maxInGbs;
+            MaxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
             MaxPerOcpuInGbs = maxPerOcpuInGbs;
             MinInGbs = minInGbs;
             MinPerOcpuInGbs = minPerOcpuInGbs;

@@ -22,7 +22,7 @@ class GetNodePoolResult:
     """
     A collection of values returned by getNodePool.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, quantity_per_subnet=None, ssh_public_key=None, state=None, subnet_ids=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_cycling_details=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, quantity_per_subnet=None, ssh_public_key=None, state=None, subnet_ids=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -73,6 +73,9 @@ class GetNodePoolResult:
         if node_metadata and not isinstance(node_metadata, dict):
             raise TypeError("Expected argument 'node_metadata' to be a dict")
         pulumi.set(__self__, "node_metadata", node_metadata)
+        if node_pool_cycling_details and not isinstance(node_pool_cycling_details, list):
+            raise TypeError("Expected argument 'node_pool_cycling_details' to be a list")
+        pulumi.set(__self__, "node_pool_cycling_details", node_pool_cycling_details)
         if node_pool_id and not isinstance(node_pool_id, str):
             raise TypeError("Expected argument 'node_pool_id' to be a str")
         pulumi.set(__self__, "node_pool_id", node_pool_id)
@@ -217,6 +220,14 @@ class GetNodePoolResult:
         return pulumi.get(self, "node_metadata")
 
     @property
+    @pulumi.getter(name="nodePoolCyclingDetails")
+    def node_pool_cycling_details(self) -> Sequence['outputs.GetNodePoolNodePoolCyclingDetailResult']:
+        """
+        Node Pool Cycling Details
+        """
+        return pulumi.get(self, "node_pool_cycling_details")
+
+    @property
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> str:
         """
@@ -317,6 +328,7 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
             node_image_id=self.node_image_id,
             node_image_name=self.node_image_name,
             node_metadata=self.node_metadata,
+            node_pool_cycling_details=self.node_pool_cycling_details,
             node_pool_id=self.node_pool_id,
             node_shape=self.node_shape,
             node_shape_configs=self.node_shape_configs,
@@ -368,6 +380,7 @@ def get_node_pool(node_pool_id: Optional[str] = None,
         node_image_id=__ret__.node_image_id,
         node_image_name=__ret__.node_image_name,
         node_metadata=__ret__.node_metadata,
+        node_pool_cycling_details=__ret__.node_pool_cycling_details,
         node_pool_id=__ret__.node_pool_id,
         node_shape=__ret__.node_shape,
         node_shape_configs=__ret__.node_shape_configs,

@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// Returns a list of monitored resource associations.
+// Search associations in the given compartment based on the search criteria.
 //
 // ## Example Usage
 //
@@ -60,23 +60,23 @@ import (
 type MonitoredResourcesSearchAssociation struct {
 	pulumi.CustomResourceState
 
-	// Association type to be created between source and destination resources
+	// Association type filter to search associated resources.
 	AssociationType pulumi.StringPtrOutput `pulumi:"associationType"`
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrOutput `pulumi:"destinationResourceId"`
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	DestinationResourceName pulumi.StringPtrOutput `pulumi:"destinationResourceName"`
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	DestinationResourceType pulumi.StringPtrOutput `pulumi:"destinationResourceType"`
 	// List of Monitored Resource Associations.
 	Items MonitoredResourcesSearchAssociationItemArrayOutput `pulumi:"items"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId pulumi.StringPtrOutput `pulumi:"sourceResourceId"`
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	SourceResourceName pulumi.StringPtrOutput `pulumi:"sourceResourceName"`
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	SourceResourceType pulumi.StringPtrOutput `pulumi:"sourceResourceType"`
 }
 
@@ -112,44 +112,44 @@ func GetMonitoredResourcesSearchAssociation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MonitoredResourcesSearchAssociation resources.
 type monitoredResourcesSearchAssociationState struct {
-	// Association type to be created between source and destination resources
+	// Association type filter to search associated resources.
 	AssociationType *string `pulumi:"associationType"`
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId *string `pulumi:"destinationResourceId"`
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	DestinationResourceName *string `pulumi:"destinationResourceName"`
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	DestinationResourceType *string `pulumi:"destinationResourceType"`
 	// List of Monitored Resource Associations.
 	Items []MonitoredResourcesSearchAssociationItem `pulumi:"items"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId *string `pulumi:"sourceResourceId"`
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	SourceResourceName *string `pulumi:"sourceResourceName"`
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	SourceResourceType *string `pulumi:"sourceResourceType"`
 }
 
 type MonitoredResourcesSearchAssociationState struct {
-	// Association type to be created between source and destination resources
+	// Association type filter to search associated resources.
 	AssociationType pulumi.StringPtrInput
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrInput
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	DestinationResourceName pulumi.StringPtrInput
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	DestinationResourceType pulumi.StringPtrInput
 	// List of Monitored Resource Associations.
 	Items MonitoredResourcesSearchAssociationItemArrayInput
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId pulumi.StringPtrInput
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	SourceResourceName pulumi.StringPtrInput
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	SourceResourceType pulumi.StringPtrInput
 }
 
@@ -158,41 +158,41 @@ func (MonitoredResourcesSearchAssociationState) ElementType() reflect.Type {
 }
 
 type monitoredResourcesSearchAssociationArgs struct {
-	// Association type to be created between source and destination resources
+	// Association type filter to search associated resources.
 	AssociationType *string `pulumi:"associationType"`
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId *string `pulumi:"destinationResourceId"`
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	DestinationResourceName *string `pulumi:"destinationResourceName"`
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	DestinationResourceType *string `pulumi:"destinationResourceType"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId *string `pulumi:"sourceResourceId"`
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	SourceResourceName *string `pulumi:"sourceResourceName"`
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	SourceResourceType *string `pulumi:"sourceResourceType"`
 }
 
 // The set of arguments for constructing a MonitoredResourcesSearchAssociation resource.
 type MonitoredResourcesSearchAssociationArgs struct {
-	// Association type to be created between source and destination resources
+	// Association type filter to search associated resources.
 	AssociationType pulumi.StringPtrInput
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrInput
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	DestinationResourceName pulumi.StringPtrInput
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	DestinationResourceType pulumi.StringPtrInput
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId pulumi.StringPtrInput
-	// Source Monitored Resource Name
+	// Source Monitored Resource Name.
 	SourceResourceName pulumi.StringPtrInput
-	// Source Monitored Resource Type
+	// Source Monitored Resource Type.
 	SourceResourceType pulumi.StringPtrInput
 }
 
@@ -283,27 +283,27 @@ func (o MonitoredResourcesSearchAssociationOutput) ToMonitoredResourcesSearchAss
 	return o
 }
 
-// Association type to be created between source and destination resources
+// Association type filter to search associated resources.
 func (o MonitoredResourcesSearchAssociationOutput) AssociationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.AssociationType }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesSearchAssociationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesSearchAssociationOutput) DestinationResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.DestinationResourceId }).(pulumi.StringPtrOutput)
 }
 
-// Source Monitored Resource Name
+// Source Monitored Resource Name.
 func (o MonitoredResourcesSearchAssociationOutput) DestinationResourceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.DestinationResourceName }).(pulumi.StringPtrOutput)
 }
 
-// Source Monitored Resource Type
+// Source Monitored Resource Type.
 func (o MonitoredResourcesSearchAssociationOutput) DestinationResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.DestinationResourceType }).(pulumi.StringPtrOutput)
 }
@@ -315,17 +315,17 @@ func (o MonitoredResourcesSearchAssociationOutput) Items() MonitoredResourcesSea
 	}).(MonitoredResourcesSearchAssociationItemArrayOutput)
 }
 
-// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesSearchAssociationOutput) SourceResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.SourceResourceId }).(pulumi.StringPtrOutput)
 }
 
-// Source Monitored Resource Name
+// Source Monitored Resource Name.
 func (o MonitoredResourcesSearchAssociationOutput) SourceResourceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.SourceResourceName }).(pulumi.StringPtrOutput)
 }
 
-// Source Monitored Resource Type
+// Source Monitored Resource Type.
 func (o MonitoredResourcesSearchAssociationOutput) SourceResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.SourceResourceType }).(pulumi.StringPtrOutput)
 }

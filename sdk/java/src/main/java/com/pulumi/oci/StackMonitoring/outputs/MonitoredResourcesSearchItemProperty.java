@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourcesSearchItemProperty {
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return property value
+     * @return Property Value.
      * 
      */
     private @Nullable String value;
 
     private MonitoredResourcesSearchItemProperty() {}
     /**
-     * @return A filter to return resources that match exact resource name
+     * @return A filter to return resources that match exact resource name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return property value
+     * @return Property Value.
      * 
      */
     public Optional<String> value() {

@@ -182,16 +182,22 @@ class VbInstanceArgs:
 class _VbInstanceState:
     def __init__(__self__, *,
                  alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]] = None,
+                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  consumption_model: Optional[pulumi.Input[str]] = None,
                  custom_endpoint: Optional[pulumi.Input['VbInstanceCustomEndpointArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]] = None,
                  idcs_open_id: Optional[pulumi.Input[str]] = None,
                  instance_url: Optional[pulumi.Input[str]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+                 management_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
+                 management_vcn_id: Optional[pulumi.Input[str]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
+                 service_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
+                 service_vcn_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  state_message: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -200,16 +206,22 @@ class _VbInstanceState:
         """
         Input properties used for looking up and filtering VbInstance resources.
         :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input['VbInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[str] instance_url: The Vb Instance URL.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
+        :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
+        :param pulumi.Input[str] service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
+        :param pulumi.Input[str] service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
         :param pulumi.Input[str] state: The current state of the vb instance.
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -218,6 +230,8 @@ class _VbInstanceState:
         """
         if alternate_custom_endpoints is not None:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if consumption_model is not None:
@@ -230,14 +244,24 @@ class _VbInstanceState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if idcs_infos is not None:
+            pulumi.set(__self__, "idcs_infos", idcs_infos)
         if idcs_open_id is not None:
             pulumi.set(__self__, "idcs_open_id", idcs_open_id)
         if instance_url is not None:
             pulumi.set(__self__, "instance_url", instance_url)
         if is_visual_builder_enabled is not None:
             pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        if management_nat_gateway_ip is not None:
+            pulumi.set(__self__, "management_nat_gateway_ip", management_nat_gateway_ip)
+        if management_vcn_id is not None:
+            pulumi.set(__self__, "management_vcn_id", management_vcn_id)
         if node_count is not None:
             pulumi.set(__self__, "node_count", node_count)
+        if service_nat_gateway_ip is not None:
+            pulumi.set(__self__, "service_nat_gateway_ip", service_nat_gateway_ip)
+        if service_vcn_id is not None:
+            pulumi.set(__self__, "service_vcn_id", service_vcn_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if state_message is not None:
@@ -260,6 +284,18 @@ class _VbInstanceState:
     @alternate_custom_endpoints.setter
     def alternate_custom_endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]]):
         pulumi.set(self, "alternate_custom_endpoints", value)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]]:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
+
+    @attachments.setter
+    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]]):
+        pulumi.set(self, "attachments", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -334,6 +370,18 @@ class _VbInstanceState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="idcsInfos")
+    def idcs_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]]:
+        """
+        Information for IDCS access
+        """
+        return pulumi.get(self, "idcs_infos")
+
+    @idcs_infos.setter
+    def idcs_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]]):
+        pulumi.set(self, "idcs_infos", value)
+
+    @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -370,6 +418,30 @@ class _VbInstanceState:
         pulumi.set(self, "is_visual_builder_enabled", value)
 
     @property
+    @pulumi.getter(name="managementNatGatewayIp")
+    def management_nat_gateway_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        The NAT gateway IP address for the VB management VCN
+        """
+        return pulumi.get(self, "management_nat_gateway_ip")
+
+    @management_nat_gateway_ip.setter
+    def management_nat_gateway_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_nat_gateway_ip", value)
+
+    @property
+    @pulumi.getter(name="managementVcnId")
+    def management_vcn_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        """
+        return pulumi.get(self, "management_vcn_id")
+
+    @management_vcn_id.setter
+    def management_vcn_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_vcn_id", value)
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -380,6 +452,30 @@ class _VbInstanceState:
     @node_count.setter
     def node_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "node_count", value)
+
+    @property
+    @pulumi.getter(name="serviceNatGatewayIp")
+    def service_nat_gateway_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        The NAT gateway IP address for the VB service VCN
+        """
+        return pulumi.get(self, "service_nat_gateway_ip")
+
+    @service_nat_gateway_ip.setter
+    def service_nat_gateway_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_nat_gateway_ip", value)
+
+    @property
+    @pulumi.getter(name="serviceVcnId")
+    def service_vcn_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+        """
+        return pulumi.get(self, "service_vcn_id")
+
+    @service_vcn_id.setter
+    def service_vcn_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_vcn_id", value)
 
     @property
     @pulumi.getter
@@ -611,7 +707,13 @@ class VbInstance(pulumi.CustomResource):
             if node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'node_count'")
             __props__.__dict__["node_count"] = node_count
+            __props__.__dict__["attachments"] = None
+            __props__.__dict__["idcs_infos"] = None
             __props__.__dict__["instance_url"] = None
+            __props__.__dict__["management_nat_gateway_ip"] = None
+            __props__.__dict__["management_vcn_id"] = None
+            __props__.__dict__["service_nat_gateway_ip"] = None
+            __props__.__dict__["service_vcn_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["state_message"] = None
             __props__.__dict__["system_tags"] = None
@@ -630,16 +732,22 @@ class VbInstance(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceAlternateCustomEndpointArgs']]]]] = None,
+            attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceAttachmentArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             consumption_model: Optional[pulumi.Input[str]] = None,
             custom_endpoint: Optional[pulumi.Input[pulumi.InputType['VbInstanceCustomEndpointArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceIdcsInfoArgs']]]]] = None,
             idcs_open_id: Optional[pulumi.Input[str]] = None,
             instance_url: Optional[pulumi.Input[str]] = None,
             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+            management_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
+            management_vcn_id: Optional[pulumi.Input[str]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
+            service_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
+            service_vcn_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             state_message: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -653,16 +761,22 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceAttachmentArgs']]]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input[pulumi.InputType['VbInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceIdcsInfoArgs']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[str] instance_url: The Vb Instance URL.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
+        :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
+        :param pulumi.Input[str] service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
+        :param pulumi.Input[str] service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
         :param pulumi.Input[str] state: The current state of the vb instance.
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -674,16 +788,22 @@ class VbInstance(pulumi.CustomResource):
         __props__ = _VbInstanceState.__new__(_VbInstanceState)
 
         __props__.__dict__["alternate_custom_endpoints"] = alternate_custom_endpoints
+        __props__.__dict__["attachments"] = attachments
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["consumption_model"] = consumption_model
         __props__.__dict__["custom_endpoint"] = custom_endpoint
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["idcs_infos"] = idcs_infos
         __props__.__dict__["idcs_open_id"] = idcs_open_id
         __props__.__dict__["instance_url"] = instance_url
         __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
+        __props__.__dict__["management_nat_gateway_ip"] = management_nat_gateway_ip
+        __props__.__dict__["management_vcn_id"] = management_vcn_id
         __props__.__dict__["node_count"] = node_count
+        __props__.__dict__["service_nat_gateway_ip"] = service_nat_gateway_ip
+        __props__.__dict__["service_vcn_id"] = service_vcn_id
         __props__.__dict__["state"] = state
         __props__.__dict__["state_message"] = state_message
         __props__.__dict__["system_tags"] = system_tags
@@ -698,6 +818,14 @@ class VbInstance(pulumi.CustomResource):
         (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         """
         return pulumi.get(self, "alternate_custom_endpoints")
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> pulumi.Output[Sequence['outputs.VbInstanceAttachment']]:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -748,6 +876,14 @@ class VbInstance(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="idcsInfos")
+    def idcs_infos(self) -> pulumi.Output[Sequence['outputs.VbInstanceIdcsInfo']]:
+        """
+        Information for IDCS access
+        """
+        return pulumi.get(self, "idcs_infos")
+
+    @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> pulumi.Output[Optional[str]]:
         """
@@ -772,12 +908,44 @@ class VbInstance(pulumi.CustomResource):
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @property
+    @pulumi.getter(name="managementNatGatewayIp")
+    def management_nat_gateway_ip(self) -> pulumi.Output[str]:
+        """
+        The NAT gateway IP address for the VB management VCN
+        """
+        return pulumi.get(self, "management_nat_gateway_ip")
+
+    @property
+    @pulumi.getter(name="managementVcnId")
+    def management_vcn_id(self) -> pulumi.Output[str]:
+        """
+        The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        """
+        return pulumi.get(self, "management_vcn_id")
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[int]:
         """
         (Updatable) The number of Nodes
         """
         return pulumi.get(self, "node_count")
+
+    @property
+    @pulumi.getter(name="serviceNatGatewayIp")
+    def service_nat_gateway_ip(self) -> pulumi.Output[str]:
+        """
+        The NAT gateway IP address for the VB service VCN
+        """
+        return pulumi.get(self, "service_nat_gateway_ip")
+
+    @property
+    @pulumi.getter(name="serviceVcnId")
+    def service_vcn_id(self) -> pulumi.Output[str]:
+        """
+        The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+        """
+        return pulumi.get(self, "service_vcn_id")
 
     @property
     @pulumi.getter

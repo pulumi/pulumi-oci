@@ -66,6 +66,8 @@ import (
 type OpaInstance struct {
 	pulumi.CustomResourceState
 
+	// A list of associated attachments to other services
+	Attachments OpaInstanceAttachmentArrayOutput `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Parameter specifying which entitlement to use for billing purposes
@@ -144,6 +146,8 @@ func GetOpaInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OpaInstance resources.
 type opaInstanceState struct {
+	// A list of associated attachments to other services
+	Attachments []OpaInstanceAttachment `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Parameter specifying which entitlement to use for billing purposes
@@ -185,6 +189,8 @@ type opaInstanceState struct {
 }
 
 type OpaInstanceState struct {
+	// A list of associated attachments to other services
+	Attachments OpaInstanceAttachmentArrayInput
 	// (Updatable) Compartment Identifier
 	CompartmentId pulumi.StringPtrInput
 	// Parameter specifying which entitlement to use for billing purposes
@@ -361,6 +367,11 @@ func (o OpaInstanceOutput) ToOpaInstanceOutput() OpaInstanceOutput {
 
 func (o OpaInstanceOutput) ToOpaInstanceOutputWithContext(ctx context.Context) OpaInstanceOutput {
 	return o
+}
+
+// A list of associated attachments to other services
+func (o OpaInstanceOutput) Attachments() OpaInstanceAttachmentArrayOutput {
+	return o.ApplyT(func(v *OpaInstance) OpaInstanceAttachmentArrayOutput { return v.Attachments }).(OpaInstanceAttachmentArrayOutput)
 }
 
 // (Updatable) Compartment Identifier

@@ -86,7 +86,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String compartmentId;
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
     private Double computeCount;
@@ -231,7 +231,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isLocalDataGuardEnabled;
     /**
-     * @return Indicates whether the Autonomous Database requires mTLS connections.
+     * @return Specifies if the Autonomous Database requires mTLS connections.
      * 
      */
     private Boolean isMtlsConnectionRequired;
@@ -318,7 +318,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer maxCpuCoreCount;
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -644,7 +644,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.compartmentId;
     }
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
     public Double computeCount() {
@@ -847,7 +847,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isLocalDataGuardEnabled;
     }
     /**
-     * @return Indicates whether the Autonomous Database requires mTLS connections.
+     * @return Specifies if the Autonomous Database requires mTLS connections.
      * 
      */
     public Boolean isMtlsConnectionRequired() {
@@ -972,7 +972,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.maxCpuCoreCount;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {

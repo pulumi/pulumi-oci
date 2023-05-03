@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
  *
- * Returns a list of monitored resource associations.
+ * Search associations in the given compartment based on the search criteria.
  *
  * ## Example Usage
  *
@@ -66,23 +66,23 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
     }
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
      */
     public readonly associationType!: pulumi.Output<string | undefined>;
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly destinationResourceId!: pulumi.Output<string | undefined>;
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      */
     public readonly destinationResourceName!: pulumi.Output<string | undefined>;
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      */
     public readonly destinationResourceType!: pulumi.Output<string | undefined>;
     /**
@@ -90,15 +90,15 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
      */
     public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchAssociationItem[]>;
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly sourceResourceId!: pulumi.Output<string | undefined>;
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      */
     public readonly sourceResourceName!: pulumi.Output<string | undefined>;
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      */
     public readonly sourceResourceType!: pulumi.Output<string | undefined>;
 
@@ -149,23 +149,23 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
  */
 export interface MonitoredResourcesSearchAssociationState {
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
      */
     associationType?: pulumi.Input<string>;
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     destinationResourceId?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      */
     destinationResourceName?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      */
     destinationResourceType?: pulumi.Input<string>;
     /**
@@ -173,15 +173,15 @@ export interface MonitoredResourcesSearchAssociationState {
      */
     items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchAssociationItem>[]>;
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     sourceResourceId?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      */
     sourceResourceName?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      */
     sourceResourceType?: pulumi.Input<string>;
 }
@@ -191,35 +191,35 @@ export interface MonitoredResourcesSearchAssociationState {
  */
 export interface MonitoredResourcesSearchAssociationArgs {
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
      */
     associationType?: pulumi.Input<string>;
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     destinationResourceId?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      */
     destinationResourceName?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      */
     destinationResourceType?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     sourceResourceId?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      */
     sourceResourceName?: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      */
     sourceResourceType?: pulumi.Input<string>;
 }

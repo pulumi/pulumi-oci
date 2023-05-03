@@ -12,7 +12,10 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitoredResourceCredential {
     /**
-     * @return Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+     * @return Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
     private String credentialType;
@@ -22,34 +25,37 @@ public final class GetMonitoredResourceCredential {
      */
     private String description;
     /**
-     * @return The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * @return The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
     private String keyId;
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     private String name;
     /**
-     * @return List of monitored resource properties
+     * @return List of monitored resource properties.
      * 
      */
     private List<GetMonitoredResourceCredentialProperty> properties;
     /**
-     * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     private String source;
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     private String type;
 
     private GetMonitoredResourceCredential() {}
     /**
-     * @return Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+     * @return Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
     public String credentialType() {
@@ -63,35 +69,35 @@ public final class GetMonitoredResourceCredential {
         return this.description;
     }
     /**
-     * @return The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * @return The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
     public String keyId() {
         return this.keyId;
     }
     /**
-     * @return property name
+     * @return Property Name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return List of monitored resource properties
+     * @return List of monitored resource properties.
      * 
      */
     public List<GetMonitoredResourceCredentialProperty> properties() {
         return this.properties;
     }
     /**
-     * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public String source() {
         return this.source;
     }
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public String type() {

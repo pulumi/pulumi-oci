@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolInitialNodeLabelArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeEvictionNodePoolSettingsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodePoolCyclingDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
 import java.lang.Integer;
@@ -221,6 +222,21 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Node Pool Cycling Details
+     * 
+     */
+    @Import(name="nodePoolCyclingDetails")
+    private @Nullable Output<NodePoolNodePoolCyclingDetailsArgs> nodePoolCyclingDetails;
+
+    /**
+     * @return (Updatable) Node Pool Cycling Details
+     * 
+     */
+    public Optional<Output<NodePoolNodePoolCyclingDetailsArgs>> nodePoolCyclingDetails() {
+        return Optional.ofNullable(this.nodePoolCyclingDetails);
+    }
+
+    /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      * 
      */
@@ -325,6 +341,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         this.nodeImageId = $.nodeImageId;
         this.nodeImageName = $.nodeImageName;
         this.nodeMetadata = $.nodeMetadata;
+        this.nodePoolCyclingDetails = $.nodePoolCyclingDetails;
         this.nodeShape = $.nodeShape;
         this.nodeShapeConfig = $.nodeShapeConfig;
         this.nodeSourceDetails = $.nodeSourceDetails;
@@ -627,6 +644,27 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodeMetadata(Map<String,Object> nodeMetadata) {
             return nodeMetadata(Output.of(nodeMetadata));
+        }
+
+        /**
+         * @param nodePoolCyclingDetails (Updatable) Node Pool Cycling Details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodePoolCyclingDetails(@Nullable Output<NodePoolNodePoolCyclingDetailsArgs> nodePoolCyclingDetails) {
+            $.nodePoolCyclingDetails = nodePoolCyclingDetails;
+            return this;
+        }
+
+        /**
+         * @param nodePoolCyclingDetails (Updatable) Node Pool Cycling Details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodePoolCyclingDetails(NodePoolNodePoolCyclingDetailsArgs nodePoolCyclingDetails) {
+            return nodePoolCyclingDetails(Output.of(nodePoolCyclingDetails));
         }
 
         /**

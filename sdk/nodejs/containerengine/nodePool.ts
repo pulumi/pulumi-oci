@@ -69,6 +69,11 @@ import * as utilities from "../utilities";
  *     },
  *     nodeImageName: oci_core_image.test_image.name,
  *     nodeMetadata: _var.node_pool_node_metadata,
+ *     nodePoolCyclingDetails: {
+ *         isNodeCyclingEnabled: _var.node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+ *         maximumSurge: _var.node_pool_node_pool_cycling_details_maximum_surge,
+ *         maximumUnavailable: _var.node_pool_node_pool_cycling_details_maximum_unavailable,
+ *     },
  *     nodeShapeConfig: {
  *         memoryInGbs: _var.node_pool_node_shape_config_memory_in_gbs,
  *         ocpus: _var.node_pool_node_shape_config_ocpus,
@@ -177,6 +182,10 @@ export class NodePool extends pulumi.CustomResource {
      */
     public readonly nodeMetadata!: pulumi.Output<{[key: string]: any}>;
     /**
+     * (Updatable) Node Pool Cycling Details
+     */
+    public readonly nodePoolCyclingDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
+    /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      */
     public readonly nodeShape!: pulumi.Output<string>;
@@ -239,6 +248,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodeImageId"] = state ? state.nodeImageId : undefined;
             resourceInputs["nodeImageName"] = state ? state.nodeImageName : undefined;
             resourceInputs["nodeMetadata"] = state ? state.nodeMetadata : undefined;
+            resourceInputs["nodePoolCyclingDetails"] = state ? state.nodePoolCyclingDetails : undefined;
             resourceInputs["nodeShape"] = state ? state.nodeShape : undefined;
             resourceInputs["nodeShapeConfig"] = state ? state.nodeShapeConfig : undefined;
             resourceInputs["nodeSourceDetails"] = state ? state.nodeSourceDetails : undefined;
@@ -274,6 +284,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodeImageId"] = args ? args.nodeImageId : undefined;
             resourceInputs["nodeImageName"] = args ? args.nodeImageName : undefined;
             resourceInputs["nodeMetadata"] = args ? args.nodeMetadata : undefined;
+            resourceInputs["nodePoolCyclingDetails"] = args ? args.nodePoolCyclingDetails : undefined;
             resourceInputs["nodeShape"] = args ? args.nodeShape : undefined;
             resourceInputs["nodeShapeConfig"] = args ? args.nodeShapeConfig : undefined;
             resourceInputs["nodeSourceDetails"] = args ? args.nodeSourceDetails : undefined;
@@ -350,6 +361,10 @@ export interface NodePoolState {
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
     nodeMetadata?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Node Pool Cycling Details
+     */
+    nodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      */
@@ -444,6 +459,10 @@ export interface NodePoolArgs {
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
     nodeMetadata?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Node Pool Cycling Details
+     */
+    nodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      */

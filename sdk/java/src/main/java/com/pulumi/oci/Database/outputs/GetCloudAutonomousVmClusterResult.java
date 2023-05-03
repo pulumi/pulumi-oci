@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetail;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -58,7 +59,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Cloud Autonomous VM Cluster.
+     * @return The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private String computeModel;
@@ -68,7 +69,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Integer cpuCoreCount;
     /**
-     * @return The number of OCPU cores enabled per VM cluster node.
+     * @return The number of CPU cores enabled per VM cluster node.
      * 
      */
     private Integer cpuCoreCountPerNode;
@@ -124,6 +125,11 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String id;
     /**
+     * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * 
+     */
+    private Boolean isMtlsEnabledVmCluster;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -150,7 +156,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core.
+     * @return The amount of memory (in GBs) enabled per each CPU core.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -181,10 +187,22 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Double ocpuCount;
     /**
-     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private Double reclaimableCpus;
+    /**
+     * @return The SCAN Listener Non TLS port. Default is 1521.
+     * 
+     */
+    private Integer scanListenerPortNonTls;
+    /**
+     * @return The SCAN Listenenr TLS port. Default is 2484.
+     * 
+     */
+    private Integer scanListenerPortTls;
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
@@ -277,7 +295,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Cloud Autonomous VM Cluster.
+     * @return The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public String computeModel() {
@@ -291,7 +309,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.cpuCoreCount;
     }
     /**
-     * @return The number of OCPU cores enabled per VM cluster node.
+     * @return The number of CPU cores enabled per VM cluster node.
      * 
      */
     public Integer cpuCoreCountPerNode() {
@@ -371,6 +389,13 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.id;
     }
     /**
+     * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * 
+     */
+    public Boolean isMtlsEnabledVmCluster() {
+        return this.isMtlsEnabledVmCluster;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -409,7 +434,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core.
+     * @return The amount of memory (in GBs) enabled per each CPU core.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -452,11 +477,27 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.ocpuCount;
     }
     /**
-     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Double reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    /**
+     * @return The SCAN Listener Non TLS port. Default is 1521.
+     * 
+     */
+    public Integer scanListenerPortNonTls() {
+        return this.scanListenerPortNonTls;
+    }
+    /**
+     * @return The SCAN Listenenr TLS port. Default is 2484.
+     * 
+     */
+    public Integer scanListenerPortTls() {
+        return this.scanListenerPortTls;
     }
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -533,6 +574,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private Map<String,Object> freeformTags;
         private String hostname;
         private String id;
+        private Boolean isMtlsEnabledVmCluster;
         private String lastMaintenanceRunId;
         private String lastUpdateHistoryEntryId;
         private String licenseModel;
@@ -546,6 +588,8 @@ public final class GetCloudAutonomousVmClusterResult {
         private List<String> nsgIds;
         private Double ocpuCount;
         private Double reclaimableCpus;
+        private Integer scanListenerPortNonTls;
+        private Integer scanListenerPortTls;
         private String shape;
         private String state;
         private String subnetId;
@@ -578,6 +622,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
+    	      this.isMtlsEnabledVmCluster = defaults.isMtlsEnabledVmCluster;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lastUpdateHistoryEntryId = defaults.lastUpdateHistoryEntryId;
     	      this.licenseModel = defaults.licenseModel;
@@ -591,6 +636,8 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
+    	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
+    	      this.scanListenerPortTls = defaults.scanListenerPortTls;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -718,6 +765,11 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
+            this.isMtlsEnabledVmCluster = Objects.requireNonNull(isMtlsEnabledVmCluster);
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
             this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
             return this;
@@ -792,6 +844,16 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            this.scanListenerPortNonTls = Objects.requireNonNull(scanListenerPortNonTls);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            this.scanListenerPortTls = Objects.requireNonNull(scanListenerPortTls);
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
@@ -846,6 +908,7 @@ public final class GetCloudAutonomousVmClusterResult {
             o.freeformTags = freeformTags;
             o.hostname = hostname;
             o.id = id;
+            o.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
             o.lastMaintenanceRunId = lastMaintenanceRunId;
             o.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             o.licenseModel = licenseModel;
@@ -859,6 +922,8 @@ public final class GetCloudAutonomousVmClusterResult {
             o.nsgIds = nsgIds;
             o.ocpuCount = ocpuCount;
             o.reclaimableCpus = reclaimableCpus;
+            o.scanListenerPortNonTls = scanListenerPortNonTls;
+            o.scanListenerPortTls = scanListenerPortTls;
             o.shape = shape;
             o.state = state;
             o.subnetId = subnetId;

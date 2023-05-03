@@ -18,14 +18,20 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
     public static final MonitoredResourceCredentialsArgs Empty = new MonitoredResourceCredentialsArgs();
 
     /**
-     * (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+     * (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
     @Import(name="credentialType")
     private @Nullable Output<String> credentialType;
 
     /**
-     * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+     * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
     public Optional<Output<String>> credentialType() {
@@ -48,14 +54,14 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
     @Import(name="keyId")
     private @Nullable Output<String> keyId;
 
     /**
-     * @return (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * @return (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
     public Optional<Output<String>> keyId() {
@@ -63,14 +69,14 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) property name
+     * (Updatable) Property Name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -78,14 +84,14 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) List of monitored resource properties
+     * (Updatable) List of monitored resource properties.
      * 
      */
     @Import(name="properties")
     private @Nullable Output<List<MonitoredResourceCredentialsPropertyArgs>> properties;
 
     /**
-     * @return (Updatable) List of monitored resource properties
+     * @return (Updatable) List of monitored resource properties.
      * 
      */
     public Optional<Output<List<MonitoredResourceCredentialsPropertyArgs>>> properties() {
@@ -93,14 +99,14 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
-     * @return (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public Optional<Output<String>> source() {
@@ -108,14 +114,14 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
     }
 
     /**
-     * Monitored resource type
+     * Monitored Resource Type.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public Optional<Output<String>> type() {
@@ -153,7 +159,10 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param credentialType (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+         * @param credentialType (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+         * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+         * * PLAINTEXT - The credential properties will have credentials in plain text format.
+         * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
          * 
          * @return builder
          * 
@@ -164,7 +173,10 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param credentialType (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+         * @param credentialType (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+         * * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+         * * PLAINTEXT - The credential properties will have credentials in plain text format.
+         * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
          * 
          * @return builder
          * 
@@ -195,7 +207,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param keyId (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         * @param keyId (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
          * 
          * @return builder
          * 
@@ -206,7 +218,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param keyId (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         * @param keyId (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
          * 
          * @return builder
          * 
@@ -216,7 +228,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -227,7 +239,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -237,7 +249,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties
+         * @param properties (Updatable) List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -248,7 +260,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties
+         * @param properties (Updatable) List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -258,7 +270,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties
+         * @param properties (Updatable) List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -268,7 +280,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 
@@ -279,7 +291,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 
@@ -289,7 +301,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type Monitored resource type
+         * @param type Monitored Resource Type.
          * 
          * @return builder
          * 
@@ -300,7 +312,7 @@ public final class MonitoredResourceCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type Monitored resource type
+         * @param type Monitored Resource Type.
          * 
          * @return builder
          * 

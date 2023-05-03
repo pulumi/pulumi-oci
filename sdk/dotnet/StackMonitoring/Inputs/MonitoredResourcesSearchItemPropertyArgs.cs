@@ -13,13 +13,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourcesSearchItemPropertyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A filter to return resources that match exact resource name
+        /// A filter to return resources that match exact resource name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// property value
+        /// Property Value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

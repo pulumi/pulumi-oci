@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourceDatabaseConnectionDetails {
     /**
-     * @return (Updatable) Database connector Identifier
+     * @return (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String connectorId;
     /**
-     * @return (Updatable) dbId of the database
+     * @return (Updatable) dbId of the database.
      * 
      */
     private @Nullable String dbId;
@@ -43,21 +43,21 @@ public final class MonitoredResourceDatabaseConnectionDetails {
      */
     private String serviceName;
     /**
-     * @return (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String sslSecretId;
 
     private MonitoredResourceDatabaseConnectionDetails() {}
     /**
-     * @return (Updatable) Database connector Identifier
+     * @return (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> connectorId() {
         return Optional.ofNullable(this.connectorId);
     }
     /**
-     * @return (Updatable) dbId of the database
+     * @return (Updatable) dbId of the database.
      * 
      */
     public Optional<String> dbId() {
@@ -92,7 +92,7 @@ public final class MonitoredResourceDatabaseConnectionDetails {
         return this.serviceName;
     }
     /**
-     * @return (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> sslSecretId() {

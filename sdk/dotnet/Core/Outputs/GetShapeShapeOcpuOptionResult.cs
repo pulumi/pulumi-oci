@@ -14,15 +14,19 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapeShapeOcpuOptionResult
     {
         public readonly double Max;
+        public readonly double MaxPerNumaNode;
         public readonly double Min;
 
         [OutputConstructor]
         private GetShapeShapeOcpuOptionResult(
             double max,
 
+            double maxPerNumaNode,
+
             double min)
         {
             Max = max;
+            MaxPerNumaNode = maxPerNumaNode;
             Min = min;
         }
     }

@@ -66,6 +66,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         ShouldPropagateTagsToDiscoveredResources = @var.Discovery_job_should_propagate_tags_to_discovered_resources,
     ///     });
     /// 
     /// });
@@ -117,6 +118,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        /// </summary>
+        [Output("shouldPropagateTagsToDiscoveredResources")]
+        public Output<bool> ShouldPropagateTagsToDiscoveredResources { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the DiscoveryJob Resource.
@@ -254,6 +261,12 @@ namespace Pulumi.Oci.StackMonitoring
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        /// </summary>
+        [Input("shouldPropagateTagsToDiscoveredResources")]
+        public Input<bool>? ShouldPropagateTagsToDiscoveredResources { get; set; }
+
         public DiscoveryJobArgs()
         {
         }
@@ -309,6 +322,12 @@ namespace Pulumi.Oci.StackMonitoring
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        /// </summary>
+        [Input("shouldPropagateTagsToDiscoveredResources")]
+        public Input<bool>? ShouldPropagateTagsToDiscoveredResources { get; set; }
 
         /// <summary>
         /// The current state of the DiscoveryJob Resource.

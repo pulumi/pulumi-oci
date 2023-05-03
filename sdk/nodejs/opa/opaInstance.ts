@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -69,6 +71,10 @@ export class OpaInstance extends pulumi.CustomResource {
         return obj['__pulumiType'] === OpaInstance.__pulumiType;
     }
 
+    /**
+     * A list of associated attachments to other services
+     */
+    public /*out*/ readonly attachments!: pulumi.Output<outputs.Opa.OpaInstanceAttachment[]>;
     /**
      * (Updatable) Compartment Identifier
      */
@@ -159,6 +165,7 @@ export class OpaInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OpaInstanceState | undefined;
+            resourceInputs["attachments"] = state ? state.attachments : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -199,6 +206,7 @@ export class OpaInstance extends pulumi.CustomResource {
             resourceInputs["isBreakglassEnabled"] = args ? args.isBreakglassEnabled : undefined;
             resourceInputs["meteringType"] = args ? args.meteringType : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
+            resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["identityAppDisplayName"] = undefined /*out*/;
             resourceInputs["identityAppGuid"] = undefined /*out*/;
             resourceInputs["identityAppOpcServiceInstanceGuid"] = undefined /*out*/;
@@ -218,6 +226,10 @@ export class OpaInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering OpaInstance resources.
  */
 export interface OpaInstanceState {
+    /**
+     * A list of associated attachments to other services
+     */
+    attachments?: pulumi.Input<pulumi.Input<inputs.Opa.OpaInstanceAttachment>[]>;
     /**
      * (Updatable) Compartment Identifier
      */

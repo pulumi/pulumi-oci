@@ -45,6 +45,7 @@ __all__ = [
     'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction',
     'NodePoolNodeError',
     'NodePoolNodeEvictionNodePoolSettings',
+    'NodePoolNodePoolCyclingDetails',
     'NodePoolNodeShapeConfig',
     'NodePoolNodeSource',
     'NodePoolNodeSourceDetails',
@@ -88,6 +89,7 @@ __all__ = [
     'GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult',
     'GetNodePoolNodeErrorResult',
     'GetNodePoolNodeEvictionNodePoolSettingResult',
+    'GetNodePoolNodePoolCyclingDetailResult',
     'GetNodePoolNodeShapeConfigResult',
     'GetNodePoolNodeSourceResult',
     'GetNodePoolNodeSourceDetailResult',
@@ -103,6 +105,7 @@ __all__ = [
     'GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult',
     'GetNodePoolsNodePoolNodeErrorResult',
     'GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult',
+    'GetNodePoolsNodePoolNodePoolCyclingDetailResult',
     'GetNodePoolsNodePoolNodeShapeConfigResult',
     'GetNodePoolsNodePoolNodeSourceResult',
     'GetNodePoolsNodePoolNodeSourceDetailResult',
@@ -2886,6 +2889,70 @@ class NodePoolNodeEvictionNodePoolSettings(dict):
 
 
 @pulumi.output_type
+class NodePoolNodePoolCyclingDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isNodeCyclingEnabled":
+            suggest = "is_node_cycling_enabled"
+        elif key == "maximumSurge":
+            suggest = "maximum_surge"
+        elif key == "maximumUnavailable":
+            suggest = "maximum_unavailable"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolNodePoolCyclingDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolNodePoolCyclingDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolNodePoolCyclingDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_node_cycling_enabled: Optional[bool] = None,
+                 maximum_surge: Optional[str] = None,
+                 maximum_unavailable: Optional[str] = None):
+        """
+        :param bool is_node_cycling_enabled: (Updatable) If nodes in the nodepool will be cycled to have new changes.
+        :param str maximum_surge: (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        :param str maximum_unavailable: (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        if is_node_cycling_enabled is not None:
+            pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
+        if maximum_surge is not None:
+            pulumi.set(__self__, "maximum_surge", maximum_surge)
+        if maximum_unavailable is not None:
+            pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+
+    @property
+    @pulumi.getter(name="isNodeCyclingEnabled")
+    def is_node_cycling_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) If nodes in the nodepool will be cycled to have new changes.
+        """
+        return pulumi.get(self, "is_node_cycling_enabled")
+
+    @property
+    @pulumi.getter(name="maximumSurge")
+    def maximum_surge(self) -> Optional[str]:
+        """
+        (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_surge")
+
+    @property
+    @pulumi.getter(name="maximumUnavailable")
+    def maximum_unavailable(self) -> Optional[str]:
+        """
+        (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_unavailable")
+
+
+@pulumi.output_type
 class NodePoolNodeShapeConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -5136,6 +5203,46 @@ class GetNodePoolNodeEvictionNodePoolSettingResult(dict):
 
 
 @pulumi.output_type
+class GetNodePoolNodePoolCyclingDetailResult(dict):
+    def __init__(__self__, *,
+                 is_node_cycling_enabled: bool,
+                 maximum_surge: str,
+                 maximum_unavailable: str):
+        """
+        :param bool is_node_cycling_enabled: If nodes in the nodepool will be cycled to have new changes.
+        :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
+        pulumi.set(__self__, "maximum_surge", maximum_surge)
+        pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+
+    @property
+    @pulumi.getter(name="isNodeCyclingEnabled")
+    def is_node_cycling_enabled(self) -> bool:
+        """
+        If nodes in the nodepool will be cycled to have new changes.
+        """
+        return pulumi.get(self, "is_node_cycling_enabled")
+
+    @property
+    @pulumi.getter(name="maximumSurge")
+    def maximum_surge(self) -> str:
+        """
+        Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_surge")
+
+    @property
+    @pulumi.getter(name="maximumUnavailable")
+    def maximum_unavailable(self) -> str:
+        """
+        Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_unavailable")
+
+
+@pulumi.output_type
 class GetNodePoolNodeShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: float,
@@ -5334,6 +5441,7 @@ class GetNodePoolsNodePoolResult(dict):
                  node_image_id: str,
                  node_image_name: str,
                  node_metadata: Mapping[str, Any],
+                 node_pool_cycling_details: Sequence['outputs.GetNodePoolsNodePoolNodePoolCyclingDetailResult'],
                  node_pool_id: str,
                  node_shape: str,
                  node_shape_configs: Sequence['outputs.GetNodePoolsNodePoolNodeShapeConfigResult'],
@@ -5359,6 +5467,7 @@ class GetNodePoolsNodePoolResult(dict):
         :param str node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param str node_image_name: Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         :param Mapping[str, Any] node_metadata: A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param Sequence['GetNodePoolsNodePoolNodePoolCyclingDetailArgs'] node_pool_cycling_details: Node Pool Cycling Details
         :param str node_pool_id: The OCID of the node pool to which this node belongs.
         :param str node_shape: The name of the node shape of the nodes in the node pool.
         :param Sequence['GetNodePoolsNodePoolNodeShapeConfigArgs'] node_shape_configs: The shape configuration of the nodes.
@@ -5384,6 +5493,7 @@ class GetNodePoolsNodePoolResult(dict):
         pulumi.set(__self__, "node_image_id", node_image_id)
         pulumi.set(__self__, "node_image_name", node_image_name)
         pulumi.set(__self__, "node_metadata", node_metadata)
+        pulumi.set(__self__, "node_pool_cycling_details", node_pool_cycling_details)
         pulumi.set(__self__, "node_pool_id", node_pool_id)
         pulumi.set(__self__, "node_shape", node_shape)
         pulumi.set(__self__, "node_shape_configs", node_shape_configs)
@@ -5506,6 +5616,14 @@ class GetNodePoolsNodePoolResult(dict):
         A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         """
         return pulumi.get(self, "node_metadata")
+
+    @property
+    @pulumi.getter(name="nodePoolCyclingDetails")
+    def node_pool_cycling_details(self) -> Sequence['outputs.GetNodePoolsNodePoolNodePoolCyclingDetailResult']:
+        """
+        Node Pool Cycling Details
+        """
+        return pulumi.get(self, "node_pool_cycling_details")
 
     @property
     @pulumi.getter(name="nodePoolId")
@@ -6100,6 +6218,46 @@ class GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult(dict):
         If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         """
         return pulumi.get(self, "is_force_delete_after_grace_duration")
+
+
+@pulumi.output_type
+class GetNodePoolsNodePoolNodePoolCyclingDetailResult(dict):
+    def __init__(__self__, *,
+                 is_node_cycling_enabled: bool,
+                 maximum_surge: str,
+                 maximum_unavailable: str):
+        """
+        :param bool is_node_cycling_enabled: If nodes in the nodepool will be cycled to have new changes.
+        :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
+        pulumi.set(__self__, "maximum_surge", maximum_surge)
+        pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+
+    @property
+    @pulumi.getter(name="isNodeCyclingEnabled")
+    def is_node_cycling_enabled(self) -> bool:
+        """
+        If nodes in the nodepool will be cycled to have new changes.
+        """
+        return pulumi.get(self, "is_node_cycling_enabled")
+
+    @property
+    @pulumi.getter(name="maximumSurge")
+    def maximum_surge(self) -> str:
+        """
+        Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_surge")
+
+    @property
+    @pulumi.getter(name="maximumUnavailable")
+    def maximum_unavailable(self) -> str:
+        """
+        Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_unavailable")
 
 
 @pulumi.output_type

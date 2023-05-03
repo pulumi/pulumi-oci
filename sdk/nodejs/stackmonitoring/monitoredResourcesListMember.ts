@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
  *
- * List resources which are members of the given monitored resource
+ * List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -61,15 +61,15 @@ export class MonitoredResourcesListMember extends pulumi.CustomResource {
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly destinationResourceId!: pulumi.Output<string | undefined>;
     /**
-     * List of Members.
+     * List of member resources.
      */
     public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesListMemberItem[]>;
     /**
-     * The field which determines the depth of hierarchy while searching for members
+     * The field which determines the depth of hierarchy while searching for members.
      */
     public readonly limitLevel!: pulumi.Output<number | undefined>;
     /**
@@ -114,15 +114,15 @@ export class MonitoredResourcesListMember extends pulumi.CustomResource {
  */
 export interface MonitoredResourcesListMemberState {
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     destinationResourceId?: pulumi.Input<string>;
     /**
-     * List of Members.
+     * List of member resources.
      */
     items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesListMemberItem>[]>;
     /**
-     * The field which determines the depth of hierarchy while searching for members
+     * The field which determines the depth of hierarchy while searching for members.
      */
     limitLevel?: pulumi.Input<number>;
     /**
@@ -136,11 +136,11 @@ export interface MonitoredResourcesListMemberState {
  */
 export interface MonitoredResourcesListMemberArgs {
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     destinationResourceId?: pulumi.Input<string>;
     /**
-     * The field which determines the depth of hierarchy while searching for members
+     * The field which determines the depth of hierarchy while searching for members.
      */
     limitLevel?: pulumi.Input<number>;
     /**

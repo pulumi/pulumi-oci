@@ -124,6 +124,10 @@ export interface GetInstanceResult {
      */
     readonly ipxeScript: string;
     /**
+     * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+     */
+    readonly isCrossNumaNode: boolean;
+    /**
      * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
      */
     readonly isPvEncryptionInTransitEnabled: boolean;

@@ -22,7 +22,7 @@ class GetDiscoveryJobResult:
     """
     A collection of values returned by getDiscoveryJob.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, discovery_client=None, discovery_details=None, discovery_job_id=None, discovery_type=None, freeform_tags=None, id=None, state=None, status=None, status_message=None, system_tags=None, tenant_id=None, time_updated=None, user_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, discovery_client=None, discovery_details=None, discovery_job_id=None, discovery_type=None, freeform_tags=None, id=None, should_propagate_tags_to_discovered_resources=None, state=None, status=None, status_message=None, system_tags=None, tenant_id=None, time_updated=None, user_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetDiscoveryJobResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if should_propagate_tags_to_discovered_resources and not isinstance(should_propagate_tags_to_discovered_resources, bool):
+            raise TypeError("Expected argument 'should_propagate_tags_to_discovered_resources' to be a bool")
+        pulumi.set(__self__, "should_propagate_tags_to_discovered_resources", should_propagate_tags_to_discovered_resources)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -131,6 +134,11 @@ class GetDiscoveryJobResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
+    def should_propagate_tags_to_discovered_resources(self) -> bool:
+        return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -201,6 +209,7 @@ class AwaitableGetDiscoveryJobResult(GetDiscoveryJobResult):
             discovery_type=self.discovery_type,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            should_propagate_tags_to_discovered_resources=self.should_propagate_tags_to_discovered_resources,
             state=self.state,
             status=self.status,
             status_message=self.status_message,
@@ -243,6 +252,7 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
         discovery_type=__ret__.discovery_type,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        should_propagate_tags_to_discovered_resources=__ret__.should_propagate_tags_to_discovered_resources,
         state=__ret__.state,
         status=__ret__.status,
         status_message=__ret__.status_message,

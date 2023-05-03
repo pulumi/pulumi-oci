@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly double Max;
         /// <summary>
+        /// The maximum number of cores available per NUMA node.
+        /// </summary>
+        public readonly double MaxPerNumaNode;
+        /// <summary>
         /// The minimum allowed percentage of cores enabled.
         /// </summary>
         public readonly double Min;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.Core.Outputs
         private GetShapesShapeOcpuOptionResult(
             double max,
 
+            double maxPerNumaNode,
+
             double min)
         {
             Max = max;
+            MaxPerNumaNode = maxPerNumaNode;
             Min = min;
         }
     }

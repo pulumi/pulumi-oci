@@ -78,7 +78,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly compartmentId: string;
     /**
-     * The compute model of the Cloud Autonomous VM Cluster.
+     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly computeModel: string;
     /**
@@ -86,7 +86,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly cpuCoreCount: number;
     /**
-     * The number of OCPU cores enabled per VM cluster node.
+     * The number of CPU cores enabled per VM cluster node.
      */
     readonly cpuCoreCountPerNode: number;
     /**
@@ -131,6 +131,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly id: string;
     /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     */
+    readonly isMtlsEnabledVmCluster: boolean;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
     readonly lastMaintenanceRunId: string;
@@ -152,7 +156,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly maintenanceWindows: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core.
+     * The amount of memory (in GBs) enabled per each CPU core.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**
@@ -177,9 +181,19 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly ocpuCount: number;
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly reclaimableCpus: number;
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     */
+    readonly scanListenerPortNonTls: number;
+    /**
+     * The SCAN Listenenr TLS port. Default is 2484.
+     */
+    readonly scanListenerPortTls: number;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */

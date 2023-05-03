@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
  * 
- * Returns a list of monitored resource associations.
+ * Search associations in the given compartment based on the search criteria.
  * 
  * ## Example Usage
  * ```java
@@ -70,70 +70,70 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation")
 public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.CustomResource {
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
      * 
      */
     @Export(name="associationType", type=String.class, parameters={})
     private Output</* @Nullable */ String> associationType;
 
     /**
-     * @return Association type to be created between source and destination resources
+     * @return Association type filter to search associated resources.
      * 
      */
     public Output<Optional<String>> associationType() {
         return Codegen.optional(this.associationType);
     }
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="destinationResourceId", type=String.class, parameters={})
     private Output</* @Nullable */ String> destinationResourceId;
 
     /**
-     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<Optional<String>> destinationResourceId() {
         return Codegen.optional(this.destinationResourceId);
     }
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      * 
      */
     @Export(name="destinationResourceName", type=String.class, parameters={})
     private Output</* @Nullable */ String> destinationResourceName;
 
     /**
-     * @return Source Monitored Resource Name
+     * @return Source Monitored Resource Name.
      * 
      */
     public Output<Optional<String>> destinationResourceName() {
         return Codegen.optional(this.destinationResourceName);
     }
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      * 
      */
     @Export(name="destinationResourceType", type=String.class, parameters={})
     private Output</* @Nullable */ String> destinationResourceType;
 
     /**
-     * @return Source Monitored Resource Type
+     * @return Source Monitored Resource Type.
      * 
      */
     public Output<Optional<String>> destinationResourceType() {
@@ -154,42 +154,42 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
         return this.items;
     }
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="sourceResourceId", type=String.class, parameters={})
     private Output</* @Nullable */ String> sourceResourceId;
 
     /**
-     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<Optional<String>> sourceResourceId() {
         return Codegen.optional(this.sourceResourceId);
     }
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
      * 
      */
     @Export(name="sourceResourceName", type=String.class, parameters={})
     private Output</* @Nullable */ String> sourceResourceName;
 
     /**
-     * @return Source Monitored Resource Name
+     * @return Source Monitored Resource Name.
      * 
      */
     public Output<Optional<String>> sourceResourceName() {
         return Codegen.optional(this.sourceResourceName);
     }
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
      * 
      */
     @Export(name="sourceResourceType", type=String.class, parameters={})
     private Output</* @Nullable */ String> sourceResourceType;
 
     /**
-     * @return Source Monitored Resource Type
+     * @return Source Monitored Resource Type.
      * 
      */
     public Output<Optional<String>> sourceResourceType() {

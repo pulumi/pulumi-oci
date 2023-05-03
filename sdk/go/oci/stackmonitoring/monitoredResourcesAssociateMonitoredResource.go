@@ -13,7 +13,9 @@ import (
 
 // This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// Create an association between two monitored resources.
+// Create an association between two monitored resources. Associations can be created
+// between resources from different compartments as long they are in same tenancy.
+// User should have required access in both the compartments.
 //
 // ## Example Usage
 //
@@ -56,21 +58,26 @@ import (
 type MonitoredResourcesAssociateMonitoredResource struct {
 	pulumi.CustomResourceState
 
-	// Association type to be created between source and destination resources
+	// Association type to be created between source and destination resources.
 	AssociationType pulumi.StringOutput `pulumi:"associationType"`
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Association category. Possible values are:
+	// * System created (SYSTEM),
+	// * User created using API (USER_API)
+	// * User created using tags (USER_TAG_ASSOC).
+	Category pulumi.StringOutput `pulumi:"category"`
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Association Resource Details
+	// Association Resource Details.
 	DestinationResourceDetails MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput `pulumi:"destinationResourceDetails"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringOutput `pulumi:"destinationResourceId"`
-	// Association Resource Details
+	// Association Resource Details.
 	SourceResourceDetails MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput `pulumi:"sourceResourceDetails"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId pulumi.StringOutput `pulumi:"sourceResourceId"`
-	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
-	// The time when the association was created. An RFC3339 formatted datetime string
+	// The time when the association was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
 
@@ -115,40 +122,50 @@ func GetMonitoredResourcesAssociateMonitoredResource(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MonitoredResourcesAssociateMonitoredResource resources.
 type monitoredResourcesAssociateMonitoredResourceState struct {
-	// Association type to be created between source and destination resources
+	// Association type to be created between source and destination resources.
 	AssociationType *string `pulumi:"associationType"`
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Association category. Possible values are:
+	// * System created (SYSTEM),
+	// * User created using API (USER_API)
+	// * User created using tags (USER_TAG_ASSOC).
+	Category *string `pulumi:"category"`
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Association Resource Details
+	// Association Resource Details.
 	DestinationResourceDetails []MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail `pulumi:"destinationResourceDetails"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId *string `pulumi:"destinationResourceId"`
-	// Association Resource Details
+	// Association Resource Details.
 	SourceResourceDetails []MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail `pulumi:"sourceResourceDetails"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId *string `pulumi:"sourceResourceId"`
-	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId *string `pulumi:"tenantId"`
-	// The time when the association was created. An RFC3339 formatted datetime string
+	// The time when the association was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 type MonitoredResourcesAssociateMonitoredResourceState struct {
-	// Association type to be created between source and destination resources
+	// Association type to be created between source and destination resources.
 	AssociationType pulumi.StringPtrInput
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Association category. Possible values are:
+	// * System created (SYSTEM),
+	// * User created using API (USER_API)
+	// * User created using tags (USER_TAG_ASSOC).
+	Category pulumi.StringPtrInput
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
-	// Association Resource Details
+	// Association Resource Details.
 	DestinationResourceDetails MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringPtrInput
-	// Association Resource Details
+	// Association Resource Details.
 	SourceResourceDetails MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId pulumi.StringPtrInput
-	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringPtrInput
-	// The time when the association was created. An RFC3339 formatted datetime string
+	// The time when the association was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 }
 
@@ -157,25 +174,25 @@ func (MonitoredResourcesAssociateMonitoredResourceState) ElementType() reflect.T
 }
 
 type monitoredResourcesAssociateMonitoredResourceArgs struct {
-	// Association type to be created between source and destination resources
+	// Association type to be created between source and destination resources.
 	AssociationType string `pulumi:"associationType"`
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId string `pulumi:"destinationResourceId"`
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId string `pulumi:"sourceResourceId"`
 }
 
 // The set of arguments for constructing a MonitoredResourcesAssociateMonitoredResource resource.
 type MonitoredResourcesAssociateMonitoredResourceArgs struct {
-	// Association type to be created between source and destination resources
+	// Association type to be created between source and destination resources.
 	AssociationType pulumi.StringInput
-	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
-	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringInput
-	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SourceResourceId pulumi.StringInput
 }
 
@@ -266,48 +283,56 @@ func (o MonitoredResourcesAssociateMonitoredResourceOutput) ToMonitoredResources
 	return o
 }
 
-// Association type to be created between source and destination resources
+// Association type to be created between source and destination resources.
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) AssociationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.AssociationType }).(pulumi.StringOutput)
 }
 
-// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Association category. Possible values are:
+// * System created (SYSTEM),
+// * User created using API (USER_API)
+// * User created using tags (USER_TAG_ASSOC).
+func (o MonitoredResourcesAssociateMonitoredResourceOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
+}
+
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Association Resource Details
+// Association Resource Details.
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) DestinationResourceDetails() MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput {
 		return v.DestinationResourceDetails
 	}).(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput)
 }
 
-// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) DestinationResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput {
 		return v.DestinationResourceId
 	}).(pulumi.StringOutput)
 }
 
-// Association Resource Details
+// Association Resource Details.
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) SourceResourceDetails() MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput {
 		return v.SourceResourceDetails
 	}).(MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput)
 }
 
-// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) SourceResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.SourceResourceId }).(pulumi.StringOutput)
 }
 
-// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
-// The time when the association was created. An RFC3339 formatted datetime string
+// The time when the association was created. An RFC3339 formatted datetime string.
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

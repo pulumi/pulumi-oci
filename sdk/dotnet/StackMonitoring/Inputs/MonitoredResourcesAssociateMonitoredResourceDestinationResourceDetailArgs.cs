@@ -13,13 +13,19 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Monitored Resource Name
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// Monitored Resource Name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Monitored Resource Type
+        /// Monitored Resource Type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

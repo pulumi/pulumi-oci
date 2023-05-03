@@ -5,12 +5,16 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAdditionalAliasArgs;
+import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAdditionalCredentialArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAliasesArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceCredentialsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceDatabaseConnectionDetailsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourcePropertyArgs;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -19,6 +23,36 @@ import javax.annotation.Nullable;
 public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MonitoredResourceArgs Empty = new MonitoredResourceArgs();
+
+    /**
+     * (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
+     * 
+     */
+    @Import(name="additionalAliases")
+    private @Nullable Output<List<MonitoredResourceAdditionalAliasArgs>> additionalAliases;
+
+    /**
+     * @return (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
+     * 
+     */
+    public Optional<Output<List<MonitoredResourceAdditionalAliasArgs>>> additionalAliases() {
+        return Optional.ofNullable(this.additionalAliases);
+    }
+
+    /**
+     * (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
+     * 
+     */
+    @Import(name="additionalCredentials")
+    private @Nullable Output<List<MonitoredResourceAdditionalCredentialArgs>> additionalCredentials;
+
+    /**
+     * @return (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
+     * 
+     */
+    public Optional<Output<List<MonitoredResourceAdditionalCredentialArgs>>> additionalCredentials() {
+        return Optional.ofNullable(this.additionalCredentials);
+    }
 
     /**
      * (Updatable) Monitored Resource Alias Credential Details
@@ -36,14 +70,14 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
@@ -51,14 +85,14 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Monitored Resource Credential Details
+     * (Updatable) Monitored Resource Credential Details.
      * 
      */
     @Import(name="credentials")
     private @Nullable Output<MonitoredResourceCredentialsArgs> credentials;
 
     /**
-     * @return (Updatable) Monitored Resource Credential Details
+     * @return (Updatable) Monitored Resource Credential Details.
      * 
      */
     public Optional<Output<MonitoredResourceCredentialsArgs>> credentials() {
@@ -66,18 +100,33 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * (Updatable) Connection details for the database.
      * 
      */
     @Import(name="databaseConnectionDetails")
     private @Nullable Output<MonitoredResourceDatabaseConnectionDetailsArgs> databaseConnectionDetails;
 
     /**
-     * @return (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * @return (Updatable) Connection details for the database.
      * 
      */
     public Optional<Output<MonitoredResourceDatabaseConnectionDetailsArgs>> databaseConnectionDetails() {
         return Optional.ofNullable(this.databaseConnectionDetails);
+    }
+
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
     }
 
     /**
@@ -126,14 +175,29 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Host name of the monitored resource
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) Host name of the monitored resource.
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return (Updatable) Host name of the monitored resource
+     * @return (Updatable) Host name of the monitored resource.
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -156,14 +220,14 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) property name
+     * (Updatable) Property Name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) property name
+     * @return (Updatable) Property Name.
      * 
      */
     public Output<String> name() {
@@ -171,14 +235,14 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) List of monitored resource properties
+     * (Updatable) List of monitored resource properties.
      * 
      */
     @Import(name="properties")
     private @Nullable Output<List<MonitoredResourcePropertyArgs>> properties;
 
     /**
-     * @return (Updatable) List of monitored resource properties
+     * @return (Updatable) List of monitored resource properties.
      * 
      */
     public Optional<Output<List<MonitoredResourcePropertyArgs>>> properties() {
@@ -186,14 +250,14 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Time zone in the form of tz database canonical zone ID.
+     * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     @Import(name="resourceTimeZone")
     private @Nullable Output<String> resourceTimeZone;
 
     /**
-     * @return (Updatable) Time zone in the form of tz database canonical zone ID.
+     * @return (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
     public Optional<Output<String>> resourceTimeZone() {
@@ -201,14 +265,14 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Monitored resource type
+     * Monitored Resource Type.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return Monitored resource type
+     * @return Monitored Resource Type.
      * 
      */
     public Output<String> type() {
@@ -218,13 +282,17 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     private MonitoredResourceArgs() {}
 
     private MonitoredResourceArgs(MonitoredResourceArgs $) {
+        this.additionalAliases = $.additionalAliases;
+        this.additionalCredentials = $.additionalCredentials;
         this.aliases = $.aliases;
         this.compartmentId = $.compartmentId;
         this.credentials = $.credentials;
         this.databaseConnectionDetails = $.databaseConnectionDetails;
+        this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.externalId = $.externalId;
         this.externalResourceId = $.externalResourceId;
+        this.freeformTags = $.freeformTags;
         this.hostName = $.hostName;
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
@@ -252,6 +320,68 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param additionalAliases (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalAliases(@Nullable Output<List<MonitoredResourceAdditionalAliasArgs>> additionalAliases) {
+            $.additionalAliases = additionalAliases;
+            return this;
+        }
+
+        /**
+         * @param additionalAliases (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalAliases(List<MonitoredResourceAdditionalAliasArgs> additionalAliases) {
+            return additionalAliases(Output.of(additionalAliases));
+        }
+
+        /**
+         * @param additionalAliases (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalAliases(MonitoredResourceAdditionalAliasArgs... additionalAliases) {
+            return additionalAliases(List.of(additionalAliases));
+        }
+
+        /**
+         * @param additionalCredentials (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalCredentials(@Nullable Output<List<MonitoredResourceAdditionalCredentialArgs>> additionalCredentials) {
+            $.additionalCredentials = additionalCredentials;
+            return this;
+        }
+
+        /**
+         * @param additionalCredentials (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalCredentials(List<MonitoredResourceAdditionalCredentialArgs> additionalCredentials) {
+            return additionalCredentials(Output.of(additionalCredentials));
+        }
+
+        /**
+         * @param additionalCredentials (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalCredentials(MonitoredResourceAdditionalCredentialArgs... additionalCredentials) {
+            return additionalCredentials(List.of(additionalCredentials));
+        }
+
+        /**
          * @param aliases (Updatable) Monitored Resource Alias Credential Details
          * 
          * @return builder
@@ -273,7 +403,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -284,7 +414,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -294,7 +424,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param credentials (Updatable) Monitored Resource Credential Details
+         * @param credentials (Updatable) Monitored Resource Credential Details.
          * 
          * @return builder
          * 
@@ -305,7 +435,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param credentials (Updatable) Monitored Resource Credential Details
+         * @param credentials (Updatable) Monitored Resource Credential Details.
          * 
          * @return builder
          * 
@@ -315,7 +445,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param databaseConnectionDetails (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+         * @param databaseConnectionDetails (Updatable) Connection details for the database.
          * 
          * @return builder
          * 
@@ -326,13 +456,34 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param databaseConnectionDetails (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
+         * @param databaseConnectionDetails (Updatable) Connection details for the database.
          * 
          * @return builder
          * 
          */
         public Builder databaseConnectionDetails(MonitoredResourceDatabaseConnectionDetailsArgs databaseConnectionDetails) {
             return databaseConnectionDetails(Output.of(databaseConnectionDetails));
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,Object> definedTags) {
+            return definedTags(Output.of(definedTags));
         }
 
         /**
@@ -399,7 +550,28 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param hostName (Updatable) Host name of the monitored resource
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param hostName (Updatable) Host name of the monitored resource.
          * 
          * @return builder
          * 
@@ -410,7 +582,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param hostName (Updatable) Host name of the monitored resource
+         * @param hostName (Updatable) Host name of the monitored resource.
          * 
          * @return builder
          * 
@@ -441,7 +613,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -452,7 +624,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name (Updatable) property name
+         * @param name (Updatable) Property Name.
          * 
          * @return builder
          * 
@@ -462,7 +634,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties
+         * @param properties (Updatable) List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -473,7 +645,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties
+         * @param properties (Updatable) List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -483,7 +655,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties
+         * @param properties (Updatable) List of monitored resource properties.
          * 
          * @return builder
          * 
@@ -493,7 +665,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param resourceTimeZone (Updatable) Time zone in the form of tz database canonical zone ID.
+         * @param resourceTimeZone (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
          * 
          * @return builder
          * 
@@ -504,7 +676,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param resourceTimeZone (Updatable) Time zone in the form of tz database canonical zone ID.
+         * @param resourceTimeZone (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
          * 
          * @return builder
          * 
@@ -514,7 +686,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type Monitored resource type
+         * @param type Monitored Resource Type.
          * 
          * @return builder
          * 
@@ -525,7 +697,7 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type Monitored resource type
+         * @param type Monitored Resource Type.
          * 
          * @return builder
          * 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
  *
- * Gets a monitored resource by identifier
+ * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -44,20 +44,22 @@ export interface GetMonitoredResourceArgs {
  * A collection of values returned by getMonitoredResource.
  */
 export interface GetMonitoredResourceResult {
+    readonly additionalAliases: outputs.StackMonitoring.GetMonitoredResourceAdditionalAlias[];
+    readonly additionalCredentials: outputs.StackMonitoring.GetMonitoredResourceAdditionalCredential[];
     /**
      * Monitored Resource Alias Credential Details
      */
     readonly aliases: outputs.StackMonitoring.GetMonitoredResourceAlias[];
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly compartmentId: string;
     /**
-     * Monitored Resource Credential Details
+     * Monitored Resource Credential Details.
      */
     readonly credentials: outputs.StackMonitoring.GetMonitoredResourceCredential[];
     /**
-     * Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * Connection details for the database.
      */
     readonly databaseConnectionDetails: outputs.StackMonitoring.GetMonitoredResourceDatabaseConnectionDetail[];
     /**
@@ -69,7 +71,7 @@ export interface GetMonitoredResourceResult {
      */
     readonly displayName: string;
     /**
-     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
     readonly externalId: string;
     readonly externalResourceId: string;
@@ -82,7 +84,7 @@ export interface GetMonitoredResourceResult {
      */
     readonly hostName: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly id: string;
     /**
@@ -91,11 +93,11 @@ export interface GetMonitoredResourceResult {
     readonly managementAgentId: string;
     readonly monitoredResourceId: string;
     /**
-     * property name
+     * Property Name.
      */
     readonly name: string;
     /**
-     * List of monitored resource properties
+     * List of monitored resource properties.
      */
     readonly properties: outputs.StackMonitoring.GetMonitoredResourceProperty[];
     /**
@@ -111,26 +113,26 @@ export interface GetMonitoredResourceResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly tenantId: string;
     /**
-     * The time the the resource was created. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
     readonly timeCreated: string;
     /**
-     * The time the the resource was updated. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
     readonly timeUpdated: string;
     /**
-     * Monitored resource type
+     * Monitored Resource Type.
      */
     readonly type: string;
 }
 /**
  * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
  *
- * Gets a monitored resource by identifier
+ * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *

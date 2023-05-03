@@ -13,13 +13,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourcePropertyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) property name
+        /// (Updatable) Property Name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) property value
+        /// (Updatable) Property Value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

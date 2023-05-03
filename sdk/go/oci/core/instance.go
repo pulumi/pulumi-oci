@@ -228,6 +228,8 @@ type Instance struct {
 	InstanceOptions InstanceInstanceOptionsOutput `pulumi:"instanceOptions"`
 	// This is an advanced option.
 	IpxeScript pulumi.StringOutput `pulumi:"ipxeScript"`
+	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+	IsCrossNumaNode pulumi.BoolOutput `pulumi:"isCrossNumaNode"`
 	// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled pulumi.BoolOutput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -348,6 +350,8 @@ type instanceState struct {
 	InstanceOptions *InstanceInstanceOptions `pulumi:"instanceOptions"`
 	// This is an advanced option.
 	IpxeScript *string `pulumi:"ipxeScript"`
+	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+	IsCrossNumaNode *bool `pulumi:"isCrossNumaNode"`
 	// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -431,6 +435,8 @@ type InstanceState struct {
 	InstanceOptions InstanceInstanceOptionsPtrInput
 	// This is an advanced option.
 	IpxeScript pulumi.StringPtrInput
+	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+	IsCrossNumaNode pulumi.BoolPtrInput
 	// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -794,6 +800,11 @@ func (o InstanceOutput) InstanceOptions() InstanceInstanceOptionsOutput {
 // This is an advanced option.
 func (o InstanceOutput) IpxeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.IpxeScript }).(pulumi.StringOutput)
+}
+
+// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+func (o InstanceOutput) IsCrossNumaNode() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.IsCrossNumaNode }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).

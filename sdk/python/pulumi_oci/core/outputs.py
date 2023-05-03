@@ -22725,6 +22725,7 @@ class GetInstancesInstanceResult(dict):
                  image: str,
                  instance_options: Sequence['outputs.GetInstancesInstanceInstanceOptionResult'],
                  ipxe_script: str,
+                 is_cross_numa_node: bool,
                  is_pv_encryption_in_transit_enabled: bool,
                  launch_mode: str,
                  launch_options: Sequence['outputs.GetInstancesInstanceLaunchOptionResult'],
@@ -22762,6 +22763,7 @@ class GetInstancesInstanceResult(dict):
         :param str image: Deprecated. Use `sourceDetails` instead.
         :param Sequence['GetInstancesInstanceInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+        :param bool is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         :param Sequence['GetInstancesInstanceLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -22797,6 +22799,7 @@ class GetInstancesInstanceResult(dict):
         pulumi.set(__self__, "image", image)
         pulumi.set(__self__, "instance_options", instance_options)
         pulumi.set(__self__, "ipxe_script", ipxe_script)
+        pulumi.set(__self__, "is_cross_numa_node", is_cross_numa_node)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "launch_mode", launch_mode)
         pulumi.set(__self__, "launch_options", launch_options)
@@ -22967,6 +22970,14 @@ class GetInstancesInstanceResult(dict):
         When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
         """
         return pulumi.get(self, "ipxe_script")
+
+    @property
+    @pulumi.getter(name="isCrossNumaNode")
+    def is_cross_numa_node(self) -> bool:
+        """
+        Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+        """
+        return pulumi.get(self, "is_cross_numa_node")
 
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
@@ -28535,11 +28546,13 @@ class GetShapeShapeMemoryOptionResult(dict):
     def __init__(__self__, *,
                  default_per_ocpu_in_gbs: float,
                  max_in_gbs: float,
+                 max_per_numa_node_in_gbs: float,
                  max_per_ocpu_in_gbs: float,
                  min_in_gbs: float,
                  min_per_ocpu_in_gbs: float):
         pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
         pulumi.set(__self__, "max_in_gbs", max_in_gbs)
+        pulumi.set(__self__, "max_per_numa_node_in_gbs", max_per_numa_node_in_gbs)
         pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
         pulumi.set(__self__, "min_in_gbs", min_in_gbs)
         pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
@@ -28553,6 +28566,11 @@ class GetShapeShapeMemoryOptionResult(dict):
     @pulumi.getter(name="maxInGbs")
     def max_in_gbs(self) -> float:
         return pulumi.get(self, "max_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxPerNumaNodeInGbs")
+    def max_per_numa_node_in_gbs(self) -> float:
+        return pulumi.get(self, "max_per_numa_node_in_gbs")
 
     @property
     @pulumi.getter(name="maxPerOcpuInGbs")
@@ -28600,14 +28618,21 @@ class GetShapeShapeNetworkingBandwidthOptionResult(dict):
 class GetShapeShapeOcpuOptionResult(dict):
     def __init__(__self__, *,
                  max: float,
+                 max_per_numa_node: float,
                  min: float):
         pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "max_per_numa_node", max_per_numa_node)
         pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
     def max(self) -> float:
         return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter(name="maxPerNumaNode")
+    def max_per_numa_node(self) -> float:
+        return pulumi.get(self, "max_per_numa_node")
 
     @property
     @pulumi.getter
@@ -29310,18 +29335,21 @@ class GetShapesShapeMemoryOptionResult(dict):
     def __init__(__self__, *,
                  default_per_ocpu_in_gbs: float,
                  max_in_gbs: float,
+                 max_per_numa_node_in_gbs: float,
                  max_per_ocpu_in_gbs: float,
                  min_in_gbs: float,
                  min_per_ocpu_in_gbs: float):
         """
         :param float default_per_ocpu_in_gbs: The default amount of memory per OCPU available for this shape, in gigabytes.
         :param float max_in_gbs: The maximum amount of memory, in gigabytes.
+        :param float max_per_numa_node_in_gbs: The maximum amount of memory per NUMA node, in gigabytes.
         :param float max_per_ocpu_in_gbs: The maximum amount of memory per OCPU available for this shape, in gigabytes.
         :param float min_in_gbs: The minimum amount of memory, in gigabytes.
         :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape, in gigabytes.
         """
         pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
         pulumi.set(__self__, "max_in_gbs", max_in_gbs)
+        pulumi.set(__self__, "max_per_numa_node_in_gbs", max_per_numa_node_in_gbs)
         pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
         pulumi.set(__self__, "min_in_gbs", min_in_gbs)
         pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
@@ -29341,6 +29369,14 @@ class GetShapesShapeMemoryOptionResult(dict):
         The maximum amount of memory, in gigabytes.
         """
         return pulumi.get(self, "max_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxPerNumaNodeInGbs")
+    def max_per_numa_node_in_gbs(self) -> float:
+        """
+        The maximum amount of memory per NUMA node, in gigabytes.
+        """
+        return pulumi.get(self, "max_per_numa_node_in_gbs")
 
     @property
     @pulumi.getter(name="maxPerOcpuInGbs")
@@ -29411,12 +29447,15 @@ class GetShapesShapeNetworkingBandwidthOptionResult(dict):
 class GetShapesShapeOcpuOptionResult(dict):
     def __init__(__self__, *,
                  max: float,
+                 max_per_numa_node: float,
                  min: float):
         """
         :param float max: The maximum allowed percentage of cores enabled.
+        :param float max_per_numa_node: The maximum number of cores available per NUMA node.
         :param float min: The minimum allowed percentage of cores enabled.
         """
         pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "max_per_numa_node", max_per_numa_node)
         pulumi.set(__self__, "min", min)
 
     @property
@@ -29426,6 +29465,14 @@ class GetShapesShapeOcpuOptionResult(dict):
         The maximum allowed percentage of cores enabled.
         """
         return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter(name="maxPerNumaNode")
+    def max_per_numa_node(self) -> float:
+        """
+        The maximum number of cores available per NUMA node.
+        """
+        return pulumi.get(self, "max_per_numa_node")
 
     @property
     @pulumi.getter

@@ -22,7 +22,7 @@ class GetCloudAutonomousVmClusterResult:
     """
     A collection of values returned by getCloudAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, reclaimable_cpus=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None, total_container_databases=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, is_mtls_enabled_vm_cluster=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None, total_container_databases=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -92,6 +92,9 @@ class GetCloudAutonomousVmClusterResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_mtls_enabled_vm_cluster and not isinstance(is_mtls_enabled_vm_cluster, bool):
+            raise TypeError("Expected argument 'is_mtls_enabled_vm_cluster' to be a bool")
+        pulumi.set(__self__, "is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
         if last_maintenance_run_id and not isinstance(last_maintenance_run_id, str):
             raise TypeError("Expected argument 'last_maintenance_run_id' to be a str")
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
@@ -131,6 +134,12 @@ class GetCloudAutonomousVmClusterResult:
         if reclaimable_cpus and not isinstance(reclaimable_cpus, float):
             raise TypeError("Expected argument 'reclaimable_cpus' to be a float")
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if scan_listener_port_non_tls and not isinstance(scan_listener_port_non_tls, int):
+            raise TypeError("Expected argument 'scan_listener_port_non_tls' to be a int")
+        pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
+        if scan_listener_port_tls and not isinstance(scan_listener_port_tls, int):
+            raise TypeError("Expected argument 'scan_listener_port_tls' to be a int")
+        pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -223,7 +232,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Cloud Autonomous VM Cluster.
+        The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -239,7 +248,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="cpuCoreCountPerNode")
     def cpu_core_count_per_node(self) -> int:
         """
-        The number of OCPU cores enabled per VM cluster node.
+        The number of CPU cores enabled per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
 
@@ -329,6 +338,14 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isMtlsEnabledVmCluster")
+    def is_mtls_enabled_vm_cluster(self) -> bool:
+        """
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        """
+        return pulumi.get(self, "is_mtls_enabled_vm_cluster")
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> str:
         """
@@ -377,7 +394,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per each OCPU core.
+        The amount of memory (in GBs) enabled per each CPU core.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -426,9 +443,27 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="scanListenerPortNonTls")
+    def scan_listener_port_non_tls(self) -> int:
+        """
+        The SCAN Listener Non TLS port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_non_tls")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTls")
+    def scan_listener_port_tls(self) -> int:
+        """
+        The SCAN Listenenr TLS port. Default is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tls")
 
     @property
     @pulumi.getter
@@ -508,6 +543,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             freeform_tags=self.freeform_tags,
             hostname=self.hostname,
             id=self.id,
+            is_mtls_enabled_vm_cluster=self.is_mtls_enabled_vm_cluster,
             last_maintenance_run_id=self.last_maintenance_run_id,
             last_update_history_entry_id=self.last_update_history_entry_id,
             license_model=self.license_model,
@@ -521,6 +557,8 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
             reclaimable_cpus=self.reclaimable_cpus,
+            scan_listener_port_non_tls=self.scan_listener_port_non_tls,
+            scan_listener_port_tls=self.scan_listener_port_tls,
             shape=self.shape,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -577,6 +615,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         freeform_tags=__ret__.freeform_tags,
         hostname=__ret__.hostname,
         id=__ret__.id,
+        is_mtls_enabled_vm_cluster=__ret__.is_mtls_enabled_vm_cluster,
         last_maintenance_run_id=__ret__.last_maintenance_run_id,
         last_update_history_entry_id=__ret__.last_update_history_entry_id,
         license_model=__ret__.license_model,
@@ -590,6 +629,8 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         nsg_ids=__ret__.nsg_ids,
         ocpu_count=__ret__.ocpu_count,
         reclaimable_cpus=__ret__.reclaimable_cpus,
+        scan_listener_port_non_tls=__ret__.scan_listener_port_non_tls,
+        scan_listener_port_tls=__ret__.scan_listener_port_tls,
         shape=__ret__.shape,
         state=__ret__.state,
         subnet_id=__ret__.subnet_id,

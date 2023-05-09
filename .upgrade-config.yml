@@ -2,4 +2,5 @@
 
 ---
 upstream-provider-name: terraform-provider-oci
+pulumi-infer-version: true
 

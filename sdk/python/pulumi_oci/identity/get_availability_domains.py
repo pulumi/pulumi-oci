@@ -97,7 +97,7 @@ def get_availability_domains(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_availability_domains = oci.Identity.get_availability_domains(compartment_id=var["tenancy_ocid"])
+    test_availability_domains = oci.Identity.get_availability_domains(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -135,7 +135,7 @@ def get_availability_domains_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_availability_domains = oci.Identity.get_availability_domains(compartment_id=var["tenancy_ocid"])
+    test_availability_domains = oci.Identity.get_availability_domains(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

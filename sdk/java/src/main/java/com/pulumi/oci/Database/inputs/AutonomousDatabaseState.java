@@ -983,14 +983,14 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
@@ -3346,7 +3346,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -3357,7 +3357,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
          * 
          * @return builder
          * 

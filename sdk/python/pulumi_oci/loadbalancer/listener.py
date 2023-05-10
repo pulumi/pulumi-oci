@@ -18,11 +18,11 @@ class ListenerArgs:
     def __init__(__self__, *,
                  default_backend_set_name: pulumi.Input[str],
                  load_balancer_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  port: pulumi.Input[int],
                  protocol: pulumi.Input[str],
                  connection_configuration: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']] = None,
                  hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  path_route_set_name: Optional[pulumi.Input[str]] = None,
                  routing_policy_name: Optional[pulumi.Input[str]] = None,
                  rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -31,11 +31,11 @@ class ListenerArgs:
         The set of arguments for constructing a Listener resource.
         :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
         :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
         :param pulumi.Input['ListenerConnectionConfigurationArgs'] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_names: (Updatable) An array of hostname resource names.
+        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
         :param pulumi.Input[str] path_route_set_name: (Updatable) Deprecated. Please use `routingPolicies` instead.
         :param pulumi.Input[str] routing_policy_name: (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] rule_set_names: (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
@@ -43,13 +43,14 @@ class ListenerArgs:
         """
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
         if connection_configuration is not None:
             pulumi.set(__self__, "connection_configuration", connection_configuration)
         if hostname_names is not None:
             pulumi.set(__self__, "hostname_names", hostname_names)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if path_route_set_name is not None:
             pulumi.set(__self__, "path_route_set_name", path_route_set_name)
         if routing_policy_name is not None:
@@ -82,18 +83,6 @@ class ListenerArgs:
     @load_balancer_id.setter
     def load_balancer_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "load_balancer_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -142,6 +131,18 @@ class ListenerArgs:
     @hostname_names.setter
     def hostname_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "hostname_names", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="pathRouteSetName")
@@ -419,26 +420,25 @@ class Listener(pulumi.CustomResource):
         test_listener = oci.load_balancer.Listener("testListener",
             default_backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["listener_name"],
             port=var["listener_port"],
             protocol=var["listener_protocol"],
             connection_configuration=oci.load_balancer.ListenerConnectionConfigurationArgs(
-                idle_timeout_in_seconds=var["listener_connection_configuration_idle_timeout_in_seconds"],
-                backend_tcp_proxy_protocol_version=var["listener_connection_configuration_backend_tcp_proxy_protocol_version"],
+                idle_timeout_in_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                backend_tcp_proxy_protocol_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             hostname_names=[oci_load_balancer_hostname["test_hostname"]["name"]],
             path_route_set_name=oci_load_balancer_path_route_set["test_path_route_set"]["name"],
             routing_policy_name=oci_load_balancer_load_balancer_routing_policy["test_load_balancer_routing_policy"]["name"],
             rule_set_names=[oci_load_balancer_rule_set["test_rule_set"]["name"]],
             ssl_configuration=oci.load_balancer.ListenerSslConfigurationArgs(
-                certificate_name=oci_load_balancer_certificate["test_certificate"]["name"],
-                certificate_ids=var["listener_ssl_configuration_certificate_ids"],
-                cipher_suite_name=var["listener_ssl_configuration_cipher_suite_name"],
-                protocols=var["listener_ssl_configuration_protocols"],
-                server_order_preference=var["listener_ssl_configuration_server_order_preference"],
-                trusted_certificate_authority_ids=var["listener_ssl_configuration_trusted_certificate_authority_ids"],
-                verify_depth=var["listener_ssl_configuration_verify_depth"],
-                verify_peer_certificate=var["listener_ssl_configuration_verify_peer_certificate"],
+                certificate_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                cipher_suite_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocols=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                server_order_preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                trusted_certificate_authority_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_depth=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_peer_certificate=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -484,26 +484,25 @@ class Listener(pulumi.CustomResource):
         test_listener = oci.load_balancer.Listener("testListener",
             default_backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["listener_name"],
             port=var["listener_port"],
             protocol=var["listener_protocol"],
             connection_configuration=oci.load_balancer.ListenerConnectionConfigurationArgs(
-                idle_timeout_in_seconds=var["listener_connection_configuration_idle_timeout_in_seconds"],
-                backend_tcp_proxy_protocol_version=var["listener_connection_configuration_backend_tcp_proxy_protocol_version"],
+                idle_timeout_in_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                backend_tcp_proxy_protocol_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             hostname_names=[oci_load_balancer_hostname["test_hostname"]["name"]],
             path_route_set_name=oci_load_balancer_path_route_set["test_path_route_set"]["name"],
             routing_policy_name=oci_load_balancer_load_balancer_routing_policy["test_load_balancer_routing_policy"]["name"],
             rule_set_names=[oci_load_balancer_rule_set["test_rule_set"]["name"]],
             ssl_configuration=oci.load_balancer.ListenerSslConfigurationArgs(
-                certificate_name=oci_load_balancer_certificate["test_certificate"]["name"],
-                certificate_ids=var["listener_ssl_configuration_certificate_ids"],
-                cipher_suite_name=var["listener_ssl_configuration_cipher_suite_name"],
-                protocols=var["listener_ssl_configuration_protocols"],
-                server_order_preference=var["listener_ssl_configuration_server_order_preference"],
-                trusted_certificate_authority_ids=var["listener_ssl_configuration_trusted_certificate_authority_ids"],
-                verify_depth=var["listener_ssl_configuration_verify_depth"],
-                verify_peer_certificate=var["listener_ssl_configuration_verify_peer_certificate"],
+                certificate_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                cipher_suite_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocols=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                server_order_preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                trusted_certificate_authority_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_depth=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_peer_certificate=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -558,8 +557,6 @@ class Listener(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["path_route_set_name"] = path_route_set_name
             if port is None and not opts.urn:

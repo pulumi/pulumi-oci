@@ -242,9 +242,9 @@ def get_data_asset(catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["data_asset_data_asset_key"],
-        fields=var["data_asset_fields"])
+    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        data_asset_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -295,9 +295,9 @@ def get_data_asset_output(catalog_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["data_asset_data_asset_key"],
-        fields=var["data_asset_fields"])
+    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        data_asset_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

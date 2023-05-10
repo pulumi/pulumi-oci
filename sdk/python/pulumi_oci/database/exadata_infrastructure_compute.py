@@ -806,7 +806,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
+        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
         ```
 
         :param str resource_name: The name of the resource.
@@ -831,7 +831,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
+        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
         ```
 
         :param str resource_name: The name of the resource.

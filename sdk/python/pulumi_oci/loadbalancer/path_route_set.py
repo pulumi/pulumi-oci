@@ -17,17 +17,18 @@ __all__ = ['PathRouteSetArgs', 'PathRouteSet']
 class PathRouteSetArgs:
     def __init__(__self__, *,
                  load_balancer_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
-                 path_routes: pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]):
+                 path_routes: pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]],
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PathRouteSet resource.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
-        :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         :param pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]] path_routes: (Updatable) The set of path route rules.
+        :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         """
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "path_routes", path_routes)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="loadBalancerId")
@@ -42,18 +43,6 @@ class PathRouteSetArgs:
         pulumi.set(self, "load_balancer_id", value)
 
     @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
-
-    @property
     @pulumi.getter(name="pathRoutes")
     def path_routes(self) -> pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]:
         """
@@ -64,6 +53,18 @@ class PathRouteSetArgs:
     @path_routes.setter
     def path_routes(self, value: pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]):
         pulumi.set(self, "path_routes", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -157,12 +158,11 @@ class PathRouteSet(pulumi.CustomResource):
 
         test_path_route_set = oci.load_balancer.PathRouteSet("testPathRouteSet",
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["path_route_set_name"],
             path_routes=[oci.load_balancer.PathRouteSetPathRouteArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                path=var["path_route_set_path_routes_path"],
+                backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 path_match_type=oci.load_balancer.PathRouteSetPathRoutePathMatchTypeArgs(
-                    match_type=var["path_route_set_path_routes_path_match_type_match_type"],
+                    match_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             )])
         ```
@@ -201,12 +201,11 @@ class PathRouteSet(pulumi.CustomResource):
 
         test_path_route_set = oci.load_balancer.PathRouteSet("testPathRouteSet",
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["path_route_set_name"],
             path_routes=[oci.load_balancer.PathRouteSetPathRouteArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                path=var["path_route_set_path_routes_path"],
+                backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 path_match_type=oci.load_balancer.PathRouteSetPathRoutePathMatchTypeArgs(
-                    match_type=var["path_route_set_path_routes_path_match_type_match_type"],
+                    match_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             )])
         ```
@@ -249,8 +248,6 @@ class PathRouteSet(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if path_routes is None and not opts.urn:
                 raise TypeError("Missing required property 'path_routes'")

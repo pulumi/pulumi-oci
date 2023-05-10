@@ -119,9 +119,9 @@ def get_clusters(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_clusters = oci.ContainerEngine.get_clusters(compartment_id=var["compartment_id"],
-        name=var["cluster_name"],
-        states=var["cluster_state"])
+    test_clusters = oci.ContainerEngine.get_clusters(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_clusters = oci.ContainerEngine.get_clusters(compartment_id=var["compartment_id"],
-        name=var["cluster_name"],
-        states=var["cluster_state"])
+    test_clusters = oci.ContainerEngine.get_clusters(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

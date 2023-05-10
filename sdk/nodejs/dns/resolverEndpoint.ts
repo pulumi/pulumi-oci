@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  * const testResolverEndpoint = new oci.dns.ResolverEndpoint("testResolverEndpoint", {
  *     isForwarding: _var.resolver_endpoint_is_forwarding,
  *     isListening: _var.resolver_endpoint_is_listening,
- *     name: _var.resolver_endpoint_name,
  *     resolverId: oci_dns_resolver.test_resolver.id,
  *     subnetId: oci_core_subnet.test_subnet.id,
  *     scope: "PRIVATE",
@@ -168,9 +167,6 @@ export class ResolverEndpoint extends pulumi.CustomResource {
             if ((!args || args.isListening === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'isListening'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.resolverId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'resolverId'");
             }
@@ -291,7 +287,7 @@ export interface ResolverEndpointArgs {
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      */

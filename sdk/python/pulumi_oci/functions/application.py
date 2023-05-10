@@ -430,15 +430,15 @@ class Application(pulumi.CustomResource):
             },
             network_security_group_ids=var["application_network_security_group_ids"],
             image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=var["application_image_policy_config_is_policy_enabled"],
+                is_policy_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=oci_kms_key["test_key"]["id"],
+                    kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             syslog_url=var["application_syslog_url"],
             trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=oci_functions_domain["test_domain"]["id"],
-                is_enabled=var["application_trace_config_is_enabled"],
+                domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -489,15 +489,15 @@ class Application(pulumi.CustomResource):
             },
             network_security_group_ids=var["application_network_security_group_ids"],
             image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=var["application_image_policy_config_is_policy_enabled"],
+                is_policy_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=oci_kms_key["test_key"]["id"],
+                    kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             syslog_url=var["application_syslog_url"],
             trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=oci_functions_domain["test_domain"]["id"],
-                is_enabled=var["application_trace_config_is_enabled"],
+                domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

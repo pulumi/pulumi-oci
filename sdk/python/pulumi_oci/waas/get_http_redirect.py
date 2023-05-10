@@ -175,7 +175,7 @@ def get_http_redirect(http_redirect_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=oci_waas_http_redirect["test_http_redirect"]["id"])
+    test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -214,7 +214,7 @@ def get_http_redirect_output(http_redirect_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=oci_waas_http_redirect["test_http_redirect"]["id"])
+    test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

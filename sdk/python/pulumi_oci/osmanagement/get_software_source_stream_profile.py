@@ -151,11 +151,11 @@ def get_software_source_stream_profile(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_stream_profiles = oci.OsManagement.get_software_source_stream_profile(software_source_id=var["software_source"]["id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["software_source_module_name"],
-        profile_name=var["software_source_module_stream_profile_name"],
-        stream_name=var["software_source_module_stream_name"])
+    test_software_source_stream_profiles = oci.OsManagement.get_software_source_stream_profile(software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        module_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        stream_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -217,11 +217,11 @@ def get_software_source_stream_profile_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_stream_profiles = oci.OsManagement.get_software_source_stream_profile(software_source_id=var["software_source"]["id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["software_source_module_name"],
-        profile_name=var["software_source_module_stream_profile_name"],
-        stream_name=var["software_source_module_stream_name"])
+    test_software_source_stream_profiles = oci.OsManagement.get_software_source_stream_profile(software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        module_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        stream_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

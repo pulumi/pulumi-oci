@@ -142,11 +142,11 @@ def get_migration_plans(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=var["compartment_id"],
-        display_name=var["migration_plan_display_name"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        state=var["migration_plan_state"])
+    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -196,11 +196,11 @@ def get_migration_plans_output(compartment_id: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=var["compartment_id"],
-        display_name=var["migration_plan_display_name"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        state=var["migration_plan_state"])
+    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

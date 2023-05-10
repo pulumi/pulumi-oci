@@ -331,7 +331,7 @@ def get_container_instance(container_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=oci_container_instances_container_instance["test_container_instance"]["id"])
+    test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -383,7 +383,7 @@ def get_container_instance_output(container_instance_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=oci_container_instances_container_instance["test_container_instance"]["id"])
+    test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

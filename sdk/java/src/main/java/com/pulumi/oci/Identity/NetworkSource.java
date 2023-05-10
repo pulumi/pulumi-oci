@@ -63,7 +63,6 @@ import javax.annotation.Nullable;
  *         var testNetworkSource = new NetworkSource(&#34;testNetworkSource&#34;, NetworkSourceArgs.builder()        
  *             .compartmentId(var_.tenancy_ocid())
  *             .description(var_.network_source_description())
- *             .name(var_.network_source_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .publicSourceLists(var_.network_source_public_source_list())

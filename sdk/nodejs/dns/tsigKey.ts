@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  * const testTsigKey = new oci.dns.TsigKey("testTsigKey", {
  *     algorithm: _var.tsig_key_algorithm,
  *     compartmentId: _var.compartment_id,
- *     name: _var.tsig_key_name,
  *     secret: _var.tsig_key_secret,
  *     definedTags: _var.tsig_key_defined_tags,
  *     freeformTags: _var.tsig_key_freeform_tags,
@@ -134,9 +133,6 @@ export class TsigKey extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.secret === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'secret'");
             }
@@ -227,7 +223,7 @@ export interface TsigKeyArgs {
     /**
      * A globally unique domain name identifying the key for a given pair of hosts.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A base64 string encoding the binary shared secret.
      */

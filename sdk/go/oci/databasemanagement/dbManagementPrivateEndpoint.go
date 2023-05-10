@@ -31,7 +31,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.NewDbManagementPrivateEndpoint(ctx, "testDbManagementPrivateEndpoint", &DatabaseManagement.DbManagementPrivateEndpointArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Name:          pulumi.Any(_var.Db_management_private_endpoint_name),
 //				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				Description:   pulumi.Any(_var.Db_management_private_endpoint_description),
 //				IsCluster:     pulumi.Any(_var.Db_management_private_endpoint_is_cluster),
@@ -89,9 +88,6 @@ func NewDbManagementPrivateEndpoint(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.SubnetId == nil {
 		return nil, errors.New("invalid value for required argument 'SubnetId'")
@@ -175,7 +171,7 @@ type dbManagementPrivateEndpointArgs struct {
 	// Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
 	IsCluster *bool `pulumi:"isCluster"`
 	// (Updatable) The display name of the Database Management private endpoint.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -191,7 +187,7 @@ type DbManagementPrivateEndpointArgs struct {
 	// Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
 	IsCluster pulumi.BoolPtrInput
 	// (Updatable) The display name of the Database Management private endpoint.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 	NsgIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.

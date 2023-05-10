@@ -357,12 +357,12 @@ def get_domains_kmsi_setting(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        kmsi_setting_id=oci_identity_domains_kmsi_setting["test_kmsi_setting"]["id"],
+    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        kmsi_setting_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["kmsi_setting_authorization"],
-        resource_type_schema_version=var["kmsi_setting_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -432,12 +432,12 @@ def get_domains_kmsi_setting_output(attribute_sets: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        kmsi_setting_id=oci_identity_domains_kmsi_setting["test_kmsi_setting"]["id"],
+    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        kmsi_setting_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["kmsi_setting_authorization"],
-        resource_type_schema_version=var["kmsi_setting_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

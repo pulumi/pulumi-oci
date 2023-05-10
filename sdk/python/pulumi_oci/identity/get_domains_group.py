@@ -381,12 +381,12 @@ def get_domains_group(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_group = oci.Identity.get_domains_group(group_id=oci_identity_group["test_group"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_group = oci.Identity.get_domains_group(group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["group_authorization"],
-        resource_type_schema_version=var["group_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -458,12 +458,12 @@ def get_domains_group_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_group = oci.Identity.get_domains_group(group_id=oci_identity_group["test_group"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_group = oci.Identity.get_domains_group(group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["group_authorization"],
-        resource_type_schema_version=var["group_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

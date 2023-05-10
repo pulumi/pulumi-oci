@@ -17,28 +17,29 @@ __all__ = ['BackendSetArgs', 'BackendSet']
 class BackendSetArgs:
     def __init__(__self__, *,
                  health_checker: pulumi.Input['BackendSetHealthCheckerArgs'],
-                 name: pulumi.Input[str],
                  network_load_balancer_id: pulumi.Input[str],
                  policy: pulumi.Input[str],
                  ip_version: Optional[pulumi.Input[str]] = None,
-                 is_preserve_source: Optional[pulumi.Input[bool]] = None):
+                 is_preserve_source: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BackendSet resource.
         :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
+        :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
         """
         pulumi.set(__self__, "health_checker", health_checker)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         pulumi.set(__self__, "policy", policy)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
         if is_preserve_source is not None:
             pulumi.set(__self__, "is_preserve_source", is_preserve_source)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="healthChecker")
@@ -51,18 +52,6 @@ class BackendSetArgs:
     @health_checker.setter
     def health_checker(self, value: pulumi.Input['BackendSetHealthCheckerArgs']):
         pulumi.set(self, "health_checker", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="networkLoadBalancerId")
@@ -111,6 +100,18 @@ class BackendSetArgs:
     @is_preserve_source.setter
     def is_preserve_source(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_preserve_source", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the backend set that must be unique and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -258,18 +259,17 @@ class BackendSet(pulumi.CustomResource):
 
         test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
             health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
-                interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
-                port=var["backend_set_health_checker_port"],
-                request_data=var["backend_set_health_checker_request_data"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                response_data=var["backend_set_health_checker_response_data"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                interval_in_millis=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                request_data=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                response_body_regex=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                response_data=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                retries=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                return_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                timeout_in_millis=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                url_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
-            name=var["backend_set_name"],
             network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
             policy=var["backend_set_policy"],
             ip_version=var["backend_set_ip_version"],
@@ -312,18 +312,17 @@ class BackendSet(pulumi.CustomResource):
 
         test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
             health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
-                interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
-                port=var["backend_set_health_checker_port"],
-                request_data=var["backend_set_health_checker_request_data"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                response_data=var["backend_set_health_checker_response_data"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                interval_in_millis=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                request_data=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                response_body_regex=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                response_data=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                retries=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                return_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                timeout_in_millis=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                url_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
-            name=var["backend_set_name"],
             network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
             policy=var["backend_set_policy"],
             ip_version=var["backend_set_ip_version"],
@@ -373,8 +372,6 @@ class BackendSet(pulumi.CustomResource):
             __props__.__dict__["health_checker"] = health_checker
             __props__.__dict__["ip_version"] = ip_version
             __props__.__dict__["is_preserve_source"] = is_preserve_source
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if network_load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_load_balancer_id'")

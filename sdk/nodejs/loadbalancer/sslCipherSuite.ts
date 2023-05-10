@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  * const testSslCipherSuite = new oci.loadbalancer.SslCipherSuite("testSslCipherSuite", {
  *     ciphers: _var.ssl_cipher_suite_ciphers,
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     name: _var.ssl_cipher_suite_name,
  * });
  * ```
  *
@@ -97,9 +96,6 @@ export class SslCipherSuite extends pulumi.CustomResource {
             if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["ciphers"] = args ? args.ciphers : undefined;
             resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -144,5 +140,5 @@ export interface SslCipherSuiteArgs {
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

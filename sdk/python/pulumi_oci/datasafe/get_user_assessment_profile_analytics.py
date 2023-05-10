@@ -154,12 +154,12 @@ def get_user_assessment_profile_analytics(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=var["compartment_id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["user_assessment_profile_analytic_compartment_id_in_subtree"],
-        profile_name=oci_optimizer_profile["test_profile"]["name"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -227,12 +227,12 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=var["compartment_id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["user_assessment_profile_analytic_compartment_id_in_subtree"],
-        profile_name=oci_optimizer_profile["test_profile"]["name"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

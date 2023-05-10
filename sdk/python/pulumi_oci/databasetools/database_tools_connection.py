@@ -533,24 +533,24 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             },
             key_stores=[oci.database_tools.DatabaseToolsConnectionKeyStoreArgs(
                 key_store_content=oci.database_tools.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs(
-                    value_type=var["database_tools_connection_key_stores_key_store_content_value_type"],
-                    secret_id=oci_vault_secret["test_secret"]["id"],
+                    value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 key_store_password=oci.database_tools.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs(
-                    value_type=var["database_tools_connection_key_stores_key_store_password_value_type"],
-                    secret_id=oci_vault_secret["test_secret"]["id"],
+                    value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                key_store_type=var["database_tools_connection_key_stores_key_store_type"],
+                key_store_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
             related_resource=oci.database_tools.DatabaseToolsConnectionRelatedResourceArgs(
-                entity_type=var["database_tools_connection_related_resource_entity_type"],
-                identifier=var["database_tools_connection_related_resource_identifier"],
+                entity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                identifier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             user_name=oci_identity_user["test_user"]["name"],
             user_password=oci.database_tools.DatabaseToolsConnectionUserPasswordArgs(
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                value_type=var["database_tools_connection_user_password_value_type"],
+                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -608,24 +608,24 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             },
             key_stores=[oci.database_tools.DatabaseToolsConnectionKeyStoreArgs(
                 key_store_content=oci.database_tools.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs(
-                    value_type=var["database_tools_connection_key_stores_key_store_content_value_type"],
-                    secret_id=oci_vault_secret["test_secret"]["id"],
+                    value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 key_store_password=oci.database_tools.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs(
-                    value_type=var["database_tools_connection_key_stores_key_store_password_value_type"],
-                    secret_id=oci_vault_secret["test_secret"]["id"],
+                    value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                key_store_type=var["database_tools_connection_key_stores_key_store_type"],
+                key_store_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
             related_resource=oci.database_tools.DatabaseToolsConnectionRelatedResourceArgs(
-                entity_type=var["database_tools_connection_related_resource_entity_type"],
-                identifier=var["database_tools_connection_related_resource_identifier"],
+                entity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                identifier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             user_name=oci_identity_user["test_user"]["name"],
             user_password=oci.database_tools.DatabaseToolsConnectionUserPasswordArgs(
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                value_type=var["database_tools_connection_user_password_value_type"],
+                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

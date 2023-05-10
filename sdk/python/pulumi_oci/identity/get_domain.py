@@ -304,7 +304,7 @@ def get_domain(domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain = oci.Identity.get_domain(domain_id=oci_identity_domain["test_domain"]["id"])
+    test_domain = oci.Identity.get_domain(domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -358,7 +358,7 @@ def get_domain_output(domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain = oci.Identity.get_domain(domain_id=oci_identity_domain["test_domain"]["id"])
+    test_domain = oci.Identity.get_domain(domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

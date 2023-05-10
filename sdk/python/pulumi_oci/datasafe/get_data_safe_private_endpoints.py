@@ -152,12 +152,12 @@ def get_data_safe_private_endpoints(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=var["compartment_id"],
-        access_level=var["data_safe_private_endpoint_access_level"],
-        compartment_id_in_subtree=var["data_safe_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["data_safe_private_endpoint_display_name"],
-        state=var["data_safe_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -211,12 +211,12 @@ def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=var["compartment_id"],
-        access_level=var["data_safe_private_endpoint_access_level"],
-        compartment_id_in_subtree=var["data_safe_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["data_safe_private_endpoint_display_name"],
-        state=var["data_safe_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

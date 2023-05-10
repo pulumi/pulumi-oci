@@ -235,7 +235,7 @@ def get_external_database_connector(external_database_connector_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"])
+    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -279,7 +279,7 @@ def get_external_database_connector_output(external_database_connector_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"])
+    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

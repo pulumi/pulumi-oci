@@ -282,7 +282,7 @@ def get_control(operator_control_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"])
+    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -330,7 +330,7 @@ def get_control_output(operator_control_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"])
+    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

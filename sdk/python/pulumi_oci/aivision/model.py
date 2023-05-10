@@ -684,11 +684,11 @@ class Model(pulumi.CustomResource):
             model_type=var["model_model_type"],
             project_id=oci_ai_vision_project["test_project"]["id"],
             training_dataset=oci.ai_vision.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                bucket=var["model_training_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace_name=var["model_training_dataset_namespace"],
-                object=var["model_training_dataset_object"],
+                dataset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -702,18 +702,18 @@ class Model(pulumi.CustomResource):
             max_training_duration_in_hours=var["model_max_training_duration_in_hours"],
             model_version=var["model_model_version"],
             testing_dataset=oci.ai_vision.ModelTestingDatasetArgs(
-                dataset_type=var["model_testing_dataset_dataset_type"],
-                bucket=var["model_testing_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace_name=var["model_testing_dataset_namespace"],
-                object=var["model_testing_dataset_object"],
+                dataset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             validation_dataset=oci.ai_vision.ModelValidationDatasetArgs(
-                dataset_type=var["model_validation_dataset_dataset_type"],
-                bucket=var["model_validation_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace_name=var["model_validation_dataset_namespace"],
-                object=var["model_validation_dataset_object"],
+                dataset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -763,11 +763,11 @@ class Model(pulumi.CustomResource):
             model_type=var["model_model_type"],
             project_id=oci_ai_vision_project["test_project"]["id"],
             training_dataset=oci.ai_vision.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                bucket=var["model_training_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace_name=var["model_training_dataset_namespace"],
-                object=var["model_training_dataset_object"],
+                dataset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -781,18 +781,18 @@ class Model(pulumi.CustomResource):
             max_training_duration_in_hours=var["model_max_training_duration_in_hours"],
             model_version=var["model_model_version"],
             testing_dataset=oci.ai_vision.ModelTestingDatasetArgs(
-                dataset_type=var["model_testing_dataset_dataset_type"],
-                bucket=var["model_testing_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace_name=var["model_testing_dataset_namespace"],
-                object=var["model_testing_dataset_object"],
+                dataset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             validation_dataset=oci.ai_vision.ModelValidationDatasetArgs(
-                dataset_type=var["model_validation_dataset_dataset_type"],
-                bucket=var["model_validation_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace_name=var["model_validation_dataset_namespace"],
-                object=var["model_validation_dataset_object"],
+                dataset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

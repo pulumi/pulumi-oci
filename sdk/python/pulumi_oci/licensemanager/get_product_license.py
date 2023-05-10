@@ -307,7 +307,7 @@ def get_product_license(product_license_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license = oci.LicenseManager.get_product_license(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
+    test_product_license = oci.LicenseManager.get_product_license(product_license_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -357,7 +357,7 @@ def get_product_license_output(product_license_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license = oci.LicenseManager.get_product_license(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
+    test_product_license = oci.LicenseManager.get_product_license(product_license_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

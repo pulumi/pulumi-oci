@@ -116,9 +116,9 @@ def get_etl_runs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouse_etl_runs = oci.EmWarehouse.get_etl_runs(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_etl_run_display_name"])
+    test_em_warehouse_etl_runs = oci.EmWarehouse.get_etl_runs(em_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -160,9 +160,9 @@ def get_etl_runs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouse_etl_runs = oci.EmWarehouse.get_etl_runs(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_etl_run_display_name"])
+    test_em_warehouse_etl_runs = oci.EmWarehouse.get_etl_runs(em_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

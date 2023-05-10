@@ -574,20 +574,20 @@ class Job(pulumi.CustomResource):
         test_job = oci.data_science.Job("testJob",
             compartment_id=var["compartment_id"],
             job_configuration_details=oci.data_science.JobJobConfigurationDetailsArgs(
-                job_type=var["job_job_configuration_details_job_type"],
-                command_line_arguments=var["job_job_configuration_details_command_line_arguments"],
-                environment_variables=var["job_job_configuration_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_job_configuration_details_maximum_runtime_in_minutes"],
+                job_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             job_infrastructure_configuration_details=oci.data_science.JobJobInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=var["job_job_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                job_infrastructure_type=var["job_job_infrastructure_configuration_details_job_infrastructure_type"],
-                shape_name=oci_core_shape["test_shape"]["name"],
+                block_storage_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                job_infrastructure_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 job_shape_config_details=oci.data_science.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(
-                    memory_in_gbs=var["job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs"],
-                    ocpus=var["job_job_infrastructure_configuration_details_job_shape_config_details_ocpus"],
+                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             project_id=oci_datascience_project["test_project"]["id"],
             defined_tags={
@@ -599,10 +599,10 @@ class Job(pulumi.CustomResource):
                 "Department": "Finance",
             },
             job_log_configuration_details=oci.data_science.JobJobLogConfigurationDetailsArgs(
-                enable_auto_log_creation=var["job_job_log_configuration_details_enable_auto_log_creation"],
-                enable_logging=var["job_job_log_configuration_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_logging=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -650,20 +650,20 @@ class Job(pulumi.CustomResource):
         test_job = oci.data_science.Job("testJob",
             compartment_id=var["compartment_id"],
             job_configuration_details=oci.data_science.JobJobConfigurationDetailsArgs(
-                job_type=var["job_job_configuration_details_job_type"],
-                command_line_arguments=var["job_job_configuration_details_command_line_arguments"],
-                environment_variables=var["job_job_configuration_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_job_configuration_details_maximum_runtime_in_minutes"],
+                job_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             job_infrastructure_configuration_details=oci.data_science.JobJobInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=var["job_job_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                job_infrastructure_type=var["job_job_infrastructure_configuration_details_job_infrastructure_type"],
-                shape_name=oci_core_shape["test_shape"]["name"],
+                block_storage_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                job_infrastructure_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 job_shape_config_details=oci.data_science.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(
-                    memory_in_gbs=var["job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs"],
-                    ocpus=var["job_job_infrastructure_configuration_details_job_shape_config_details_ocpus"],
+                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             project_id=oci_datascience_project["test_project"]["id"],
             defined_tags={
@@ -675,10 +675,10 @@ class Job(pulumi.CustomResource):
                 "Department": "Finance",
             },
             job_log_configuration_details=oci.data_science.JobJobLogConfigurationDetailsArgs(
-                enable_auto_log_creation=var["job_job_log_configuration_details_enable_auto_log_creation"],
-                enable_logging=var["job_job_log_configuration_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_logging=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

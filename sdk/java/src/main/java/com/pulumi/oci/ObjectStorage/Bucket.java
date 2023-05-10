@@ -51,7 +51,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testBucket = new Bucket(&#34;testBucket&#34;, BucketArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.bucket_name())
  *             .namespace(var_.bucket_namespace())
  *             .accessType(var_.bucket_access_type())
  *             .autoTiering(var_.bucket_auto_tiering())

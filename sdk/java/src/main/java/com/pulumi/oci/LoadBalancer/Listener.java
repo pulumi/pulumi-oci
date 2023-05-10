@@ -50,7 +50,6 @@ import javax.annotation.Nullable;
  *         var testListener = new Listener(&#34;testListener&#34;, ListenerArgs.builder()        
  *             .defaultBackendSetName(oci_load_balancer_backend_set.test_backend_set().name())
  *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
- *             .name(var_.listener_name())
  *             .port(var_.listener_port())
  *             .protocol(var_.listener_protocol())
  *             .connectionConfiguration(ListenerConnectionConfigurationArgs.builder()

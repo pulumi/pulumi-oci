@@ -113,9 +113,9 @@ def get_pod_shapes(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["pod_shape_availability_domain"],
-        name=var["pod_shape_name"])
+    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -157,9 +157,9 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["pod_shape_availability_domain"],
-        name=var["pod_shape_name"])
+    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

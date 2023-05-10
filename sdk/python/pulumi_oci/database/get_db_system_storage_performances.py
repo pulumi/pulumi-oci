@@ -103,8 +103,8 @@ def get_db_system_storage_performances(filters: Optional[Sequence[pulumi.InputTy
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=var["db_system_storage_performance_storage_management"],
-        shape_type=var["db_system_storage_performance_shape_type"])
+    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        shape_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -144,8 +144,8 @@ def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=var["db_system_storage_performance_storage_management"],
-        shape_type=var["db_system_storage_performance_shape_type"])
+    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        shape_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -132,10 +132,10 @@ def get_detection_data_assets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_assets = oci.AiAnomalyDetection.get_detection_data_assets(compartment_id=var["compartment_id"],
-        display_name=var["data_asset_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["data_asset_state"])
+    test_data_assets = oci.AiAnomalyDetection.get_detection_data_assets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -181,10 +181,10 @@ def get_detection_data_assets_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_data_assets = oci.AiAnomalyDetection.get_detection_data_assets(compartment_id=var["compartment_id"],
-        display_name=var["data_asset_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["data_asset_state"])
+    test_data_assets = oci.AiAnomalyDetection.get_detection_data_assets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

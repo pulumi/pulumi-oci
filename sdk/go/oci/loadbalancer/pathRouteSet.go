@@ -32,7 +32,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.NewPathRouteSet(ctx, "testPathRouteSet", &LoadBalancer.PathRouteSetArgs{
 //				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//				Name:           pulumi.Any(_var.Path_route_set_name),
 //				PathRoutes: loadbalancer.PathRouteSetPathRouteArray{
 //					&loadbalancer.PathRouteSetPathRouteArgs{
 //						BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
@@ -82,9 +81,6 @@ func NewPathRouteSet(ctx *pulumi.Context,
 
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.PathRoutes == nil {
 		return nil, errors.New("invalid value for required argument 'PathRoutes'")
@@ -138,7 +134,7 @@ type pathRouteSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) The set of path route rules.
 	PathRoutes []PathRouteSetPathRoute `pulumi:"pathRoutes"`
 }
@@ -148,7 +144,7 @@ type PathRouteSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
 	LoadBalancerId pulumi.StringInput
 	// The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) The set of path route rules.
 	PathRoutes PathRouteSetPathRouteArrayInput
 }

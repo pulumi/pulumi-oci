@@ -144,15 +144,15 @@ public final class VirtualServiceArgs extends com.pulumi.resources.ResourceArgs 
      * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private VirtualServiceArgs() {}
@@ -371,7 +371,7 @@ public final class VirtualServiceArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -389,7 +389,6 @@ public final class VirtualServiceArgs extends com.pulumi.resources.ResourceArgs 
         public VirtualServiceArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.meshId = Objects.requireNonNull($.meshId, "expected parameter 'meshId' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

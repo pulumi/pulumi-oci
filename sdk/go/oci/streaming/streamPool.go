@@ -33,7 +33,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.NewStreamPool(ctx, "testStreamPool", &Streaming.StreamPoolArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Name:          pulumi.Any(_var.Stream_pool_name),
 //				CustomEncryptionKey: &streaming.StreamPoolCustomEncryptionKeyArgs{
 //					KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
 //				},
@@ -109,9 +108,6 @@ func NewStreamPool(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource StreamPool
 	err := ctx.RegisterResource("oci:Streaming/streamPool:StreamPool", name, args, &resource, opts...)
@@ -204,7 +200,7 @@ type streamPoolArgs struct {
 	// (Updatable) Settings for the Kafka compatibility layer.
 	KafkaSettings *StreamPoolKafkaSettings `pulumi:"kafkaSettings"`
 	// (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Optional parameters if a private stream pool is requested.
 	PrivateEndpointSettings *StreamPoolPrivateEndpointSettings `pulumi:"privateEndpointSettings"`
 }
@@ -222,7 +218,7 @@ type StreamPoolArgs struct {
 	// (Updatable) Settings for the Kafka compatibility layer.
 	KafkaSettings StreamPoolKafkaSettingsPtrInput
 	// (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// Optional parameters if a private stream pool is requested.
 	PrivateEndpointSettings StreamPoolPrivateEndpointSettingsPtrInput
 }

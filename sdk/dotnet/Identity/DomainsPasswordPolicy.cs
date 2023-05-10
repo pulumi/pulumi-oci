@@ -594,8 +594,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) The number of passwords that will be kept in history that may not be used as a password

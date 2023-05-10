@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  *         timeoutInMillis: _var.backend_set_health_checker_timeout_in_millis,
  *         urlPath: _var.backend_set_health_checker_url_path,
  *     },
- *     name: _var.backend_set_name,
  *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
  *     policy: _var.backend_set_policy,
  *     ipVersion: _var.backend_set_ip_version,
@@ -128,9 +127,6 @@ export class BackendSet extends pulumi.CustomResource {
             if ((!args || args.healthChecker === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'healthChecker'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.networkLoadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'networkLoadBalancerId'");
             }
@@ -203,7 +199,7 @@ export interface BackendSetArgs {
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */

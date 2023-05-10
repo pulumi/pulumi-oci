@@ -45,6 +45,14 @@ namespace Pulumi.Oci.Ocvp
     ///         VsanVlanId = oci_core_vlan.Test_vsan_vlan.Id,
     ///         VsphereVlanId = oci_core_vlan.Test_vsphere_vlan.Id,
     ///         CapacityReservationId = oci_ocvp_capacity_reservation.Test_capacity_reservation.Id,
+    ///         Datastores = new[]
+    ///         {
+    ///             new Oci.Ocvp.Inputs.SddcDatastoreArgs
+    ///             {
+    ///                 BlockVolumeIds = @var.Sddc_datastores_block_volume_ids,
+    ///                 DatastoreType = @var.Sddc_datastores_datastore_type,
+    ///             },
+    ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -107,6 +115,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("computeAvailabilityDomain")]
         public Output<string> ComputeAvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+        /// </summary>
+        [Output("datastores")]
+        public Output<ImmutableArray<Outputs.SddcDatastore>> Datastores { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -199,13 +213,13 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> InstanceDisplayNamePrefix { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether to enable HCX for this SDDC.
+        /// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         /// </summary>
         [Output("isHcxEnabled")]
         public Output<bool> IsHcxEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether HCX Enterprise is enabled for this SDDC.
+        /// Indicates whether to enable HCX Enterprise for this SDDC.
         /// </summary>
         [Output("isHcxEnterpriseEnabled")]
         public Output<bool> IsHcxEnterpriseEnabled { get; private set; } = null!;
@@ -355,7 +369,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The vSphere licenses to be used when upgrade SDDC.
+        /// The vSphere licenses to use when upgrading the SDDC.
         /// </summary>
         [Output("upgradeLicenses")]
         public Output<ImmutableArray<Outputs.SddcUpgradeLicense>> UpgradeLicenses { get; private set; } = null!;
@@ -403,13 +417,13 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> VsanVlanId { get; private set; } = null!;
 
         /// <summary>
-        /// The link of guidance to upgrade vSphere.
+        /// The link to guidance for upgrading vSphere.
         /// </summary>
         [Output("vsphereUpgradeGuide")]
         public Output<string> VsphereUpgradeGuide { get; private set; } = null!;
 
         /// <summary>
-        /// The links of binary objects needed for upgrade vSphere.
+        /// The links to binary objects needed to upgrade vSphere.
         /// </summary>
         [Output("vsphereUpgradeObjects")]
         public Output<ImmutableArray<Outputs.SddcVsphereUpgradeObject>> VsphereUpgradeObjects { get; private set; } = null!;
@@ -490,6 +504,18 @@ namespace Pulumi.Oci.Ocvp
         [Input("computeAvailabilityDomain", required: true)]
         public Input<string> ComputeAvailabilityDomain { get; set; } = null!;
 
+        [Input("datastores")]
+        private InputList<Inputs.SddcDatastoreArgs>? _datastores;
+
+        /// <summary>
+        /// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+        /// </summary>
+        public InputList<Inputs.SddcDatastoreArgs> Datastores
+        {
+            get => _datastores ?? (_datastores = new InputList<Inputs.SddcDatastoreArgs>());
+            set => _datastores = value;
+        }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -563,7 +589,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? InstanceDisplayNamePrefix { get; set; }
 
         /// <summary>
-        /// Indicates whether to enable HCX for this SDDC.
+        /// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         /// </summary>
         [Input("isHcxEnabled")]
         public Input<bool>? IsHcxEnabled { get; set; }
@@ -708,6 +734,18 @@ namespace Pulumi.Oci.Ocvp
         [Input("computeAvailabilityDomain")]
         public Input<string>? ComputeAvailabilityDomain { get; set; }
 
+        [Input("datastores")]
+        private InputList<Inputs.SddcDatastoreGetArgs>? _datastores;
+
+        /// <summary>
+        /// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+        /// </summary>
+        public InputList<Inputs.SddcDatastoreGetArgs> Datastores
+        {
+            get => _datastores ?? (_datastores = new InputList<Inputs.SddcDatastoreGetArgs>());
+            set => _datastores = value;
+        }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -817,13 +855,13 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? InstanceDisplayNamePrefix { get; set; }
 
         /// <summary>
-        /// Indicates whether to enable HCX for this SDDC.
+        /// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         /// </summary>
         [Input("isHcxEnabled")]
         public Input<bool>? IsHcxEnabled { get; set; }
 
         /// <summary>
-        /// Indicates whether HCX Enterprise is enabled for this SDDC.
+        /// Indicates whether to enable HCX Enterprise for this SDDC.
         /// </summary>
         [Input("isHcxEnterpriseEnabled")]
         public Input<bool>? IsHcxEnterpriseEnabled { get; set; }
@@ -982,7 +1020,7 @@ namespace Pulumi.Oci.Ocvp
         private InputList<Inputs.SddcUpgradeLicenseGetArgs>? _upgradeLicenses;
 
         /// <summary>
-        /// The vSphere licenses to be used when upgrade SDDC.
+        /// The vSphere licenses to use when upgrading the SDDC.
         /// </summary>
         public InputList<Inputs.SddcUpgradeLicenseGetArgs> UpgradeLicenses
         {
@@ -1033,7 +1071,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? VsanVlanId { get; set; }
 
         /// <summary>
-        /// The link of guidance to upgrade vSphere.
+        /// The link to guidance for upgrading vSphere.
         /// </summary>
         [Input("vsphereUpgradeGuide")]
         public Input<string>? VsphereUpgradeGuide { get; set; }
@@ -1042,7 +1080,7 @@ namespace Pulumi.Oci.Ocvp
         private InputList<Inputs.SddcVsphereUpgradeObjectGetArgs>? _vsphereUpgradeObjects;
 
         /// <summary>
-        /// The links of binary objects needed for upgrade vSphere.
+        /// The links to binary objects needed to upgrade vSphere.
         /// </summary>
         public InputList<Inputs.SddcVsphereUpgradeObjectGetArgs> VsphereUpgradeObjects
         {

@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testSupportedSkus = oci.Ocvp.getSupportedSkus({
  *     compartmentId: _var.compartment_id,
+ *     hostShapeName: oci_core_shape.test_shape.name,
  * });
  * ```
  */
@@ -28,6 +29,7 @@ export function getSupportedSkus(args: GetSupportedSkusArgs, opts?: pulumi.Invok
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedSkus:getSupportedSkus", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "hostShapeName": args.hostShapeName,
     }, opts);
 }
 
@@ -40,6 +42,10 @@ export interface GetSupportedSkusArgs {
      */
     compartmentId: string;
     filters?: inputs.Ocvp.GetSupportedSkusFilter[];
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     */
+    hostShapeName?: string;
 }
 
 /**
@@ -48,6 +54,7 @@ export interface GetSupportedSkusArgs {
 export interface GetSupportedSkusResult {
     readonly compartmentId: string;
     readonly filters?: outputs.Ocvp.GetSupportedSkusFilter[];
+    readonly hostShapeName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -70,6 +77,7 @@ export interface GetSupportedSkusResult {
  *
  * const testSupportedSkus = oci.Ocvp.getSupportedSkus({
  *     compartmentId: _var.compartment_id,
+ *     hostShapeName: oci_core_shape.test_shape.name,
  * });
  * ```
  */
@@ -86,4 +94,8 @@ export interface GetSupportedSkusOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSupportedSkusFilterArgs>[]>;
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     */
+    hostShapeName?: pulumi.Input<string>;
 }

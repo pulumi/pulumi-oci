@@ -16,7 +16,7 @@ class HostnameArgs:
     def __init__(__self__, *,
                  hostname: pulumi.Input[str],
                  load_balancer_id: pulumi.Input[str],
-                 name: pulumi.Input[str]):
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Hostname resource.
         :param pulumi.Input[str] hostname: (Updatable) A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
@@ -25,7 +25,8 @@ class HostnameArgs:
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -53,14 +54,14 @@ class HostnameArgs:
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
+    def name(self) -> Optional[pulumi.Input[str]]:
         """
         A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[str]):
+    def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
 
@@ -150,8 +151,7 @@ class Hostname(pulumi.CustomResource):
 
         test_hostname = oci.load_balancer.Hostname("testHostname",
             hostname=var["hostname_hostname"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["hostname_name"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
 
         ## Import
@@ -183,8 +183,7 @@ class Hostname(pulumi.CustomResource):
 
         test_hostname = oci.load_balancer.Hostname("testHostname",
             hostname=var["hostname_hostname"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["hostname_name"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
 
         ## Import
@@ -228,8 +227,6 @@ class Hostname(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["state"] = None
         super(Hostname, __self__).__init__(

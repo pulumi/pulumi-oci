@@ -140,10 +140,10 @@ def get_exsi_hosts(compute_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compute_instance_id=oci_core_instance["test_instance"]["id"],
-        display_name=var["esxi_host_display_name"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["esxi_host_state"])
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compute_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sddc_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -197,10 +197,10 @@ def get_exsi_hosts_output(compute_instance_id: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compute_instance_id=oci_core_instance["test_instance"]["id"],
-        display_name=var["esxi_host_display_name"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["esxi_host_state"])
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compute_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sddc_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

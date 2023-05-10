@@ -86,9 +86,9 @@ def get_repository_archive_content(format: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        format=var["repository_archive_content_format"],
-        ref_name=var["repository_archive_content_ref_name"])
+    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -126,9 +126,9 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        format=var["repository_archive_content_format"],
-        ref_name=var["repository_archive_content_ref_name"])
+    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

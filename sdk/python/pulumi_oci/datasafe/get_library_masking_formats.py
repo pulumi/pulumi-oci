@@ -182,15 +182,15 @@ def get_library_masking_formats(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=var["compartment_id"],
-        access_level=var["library_masking_format_access_level"],
-        compartment_id_in_subtree=var["library_masking_format_compartment_id_in_subtree"],
-        display_name=var["library_masking_format_display_name"],
-        library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"],
-        library_masking_format_source=var["library_masking_format_library_masking_format_source"],
-        state=var["library_masking_format_state"],
-        time_created_greater_than_or_equal_to=var["library_masking_format_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["library_masking_format_time_created_less_than"])
+    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        library_masking_format_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        library_masking_format_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -256,15 +256,15 @@ def get_library_masking_formats_output(access_level: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=var["compartment_id"],
-        access_level=var["library_masking_format_access_level"],
-        compartment_id_in_subtree=var["library_masking_format_compartment_id_in_subtree"],
-        display_name=var["library_masking_format_display_name"],
-        library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"],
-        library_masking_format_source=var["library_masking_format_library_masking_format_source"],
-        state=var["library_masking_format_state"],
-        time_created_greater_than_or_equal_to=var["library_masking_format_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["library_masking_format_time_created_less_than"])
+    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        library_masking_format_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        library_masking_format_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

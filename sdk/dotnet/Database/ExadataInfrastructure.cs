@@ -86,6 +86,11 @@ namespace Pulumi.Oci.Database
     ///             WeeksOfMonths = @var.Exadata_infrastructure_maintenance_window_weeks_of_month,
     ///         },
     ///         MultiRackConfigurationFile = @var.Exadata_infrastructure_multi_rack_configuration_file,
+    ///         NetworkBondingModeDetails = new Oci.Database.Inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs
+    ///         {
+    ///             BackupNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode,
+    ///             ClientNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode,
+    ///         },
     ///         StorageCount = @var.Exadata_infrastructure_storage_count,
     ///     });
     /// 
@@ -323,6 +328,12 @@ namespace Pulumi.Oci.Database
         public Output<string> Netmask { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// </summary>
+        [Output("networkBondingModeDetails")]
+        public Output<Outputs.ExadataInfrastructureNetworkBondingModeDetails> NetworkBondingModeDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         /// </summary>
         [Output("ntpServers")]
@@ -556,6 +567,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("netmask", required: true)]
         public Input<string> Netmask { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// </summary>
+        [Input("networkBondingModeDetails")]
+        public Input<Inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs>? NetworkBondingModeDetails { get; set; }
 
         [Input("ntpServers", required: true)]
         private InputList<string>? _ntpServers;
@@ -837,6 +854,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("netmask")]
         public Input<string>? Netmask { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// </summary>
+        [Input("networkBondingModeDetails")]
+        public Input<Inputs.ExadataInfrastructureNetworkBondingModeDetailsGetArgs>? NetworkBondingModeDetails { get; set; }
 
         [Input("ntpServers")]
         private InputList<string>? _ntpServers;

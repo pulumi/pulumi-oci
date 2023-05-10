@@ -163,12 +163,12 @@ def get_keys(algorithm: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_keys = oci.Kms.get_keys(compartment_id=var["compartment_id"],
-        management_endpoint=var["key_management_endpoint"],
-        algorithm=var["key_algorithm"],
-        length=var["key_length"],
-        curve_id=oci_kms_curve["test_curve"]["id"],
-        protection_mode=var["key_protection_mode"])
+    test_keys = oci.Kms.get_keys(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        management_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        length=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        curve_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        protection_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -227,12 +227,12 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_keys = oci.Kms.get_keys(compartment_id=var["compartment_id"],
-        management_endpoint=var["key_management_endpoint"],
-        algorithm=var["key_algorithm"],
-        length=var["key_length"],
-        curve_id=oci_kms_curve["test_curve"]["id"],
-        protection_mode=var["key_protection_mode"])
+    test_keys = oci.Kms.get_keys(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        management_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        length=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        curve_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        protection_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

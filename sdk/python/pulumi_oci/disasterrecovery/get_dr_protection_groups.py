@@ -129,10 +129,10 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
-        display_name=var["dr_protection_group_display_name"],
-        dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        state=var["dr_protection_group_state"])
+    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        dr_protection_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
-        display_name=var["dr_protection_group_display_name"],
-        dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        state=var["dr_protection_group_state"])
+    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        dr_protection_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

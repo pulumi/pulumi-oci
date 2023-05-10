@@ -310,11 +310,11 @@ class HttpRedirect(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             domain=var["http_redirect_domain"],
             target=oci.waas.HttpRedirectTargetArgs(
-                host=var["http_redirect_target_host"],
-                path=var["http_redirect_target_path"],
-                protocol=var["http_redirect_target_protocol"],
-                query=var["http_redirect_target_query"],
-                port=var["http_redirect_target_port"],
+                host=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -365,11 +365,11 @@ class HttpRedirect(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             domain=var["http_redirect_domain"],
             target=oci.waas.HttpRedirectTargetArgs(
-                host=var["http_redirect_target_host"],
-                path=var["http_redirect_target_path"],
-                protocol=var["http_redirect_target_protocol"],
-                query=var["http_redirect_target_query"],
-                port=var["http_redirect_target_port"],
+                host=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "Operations.CostCenter": "42",

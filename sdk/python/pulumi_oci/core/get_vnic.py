@@ -261,7 +261,7 @@ def get_vnic(vnic_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic = oci.Core.get_vnic(vnic_id=oci_core_vnic["test_vnic"]["id"])
+    test_vnic = oci.Core.get_vnic(vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -310,7 +310,7 @@ def get_vnic_output(vnic_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic = oci.Core.get_vnic(vnic_id=oci_core_vnic["test_vnic"]["id"])
+    test_vnic = oci.Core.get_vnic(vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

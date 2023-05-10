@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  * const testTagNamespace = new oci.identity.TagNamespace("testTagNamespace", {
  *     compartmentId: _var.compartment_id,
  *     description: _var.tag_namespace_description,
- *     name: _var.tag_namespace_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -140,9 +139,6 @@ export class TagNamespace extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -222,5 +218,5 @@ export interface TagNamespaceArgs {
     /**
      * The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

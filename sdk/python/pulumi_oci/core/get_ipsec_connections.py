@@ -120,9 +120,9 @@ def get_ipsec_connections(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=var["compartment_id"],
-        cpe_id=oci_core_cpe["test_cpe"]["id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
+    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cpe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        drg_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -165,9 +165,9 @@ def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=var["compartment_id"],
-        cpe_id=oci_core_cpe["test_cpe"]["id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
+    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cpe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        drg_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

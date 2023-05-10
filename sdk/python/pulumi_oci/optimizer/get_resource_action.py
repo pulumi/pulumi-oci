@@ -271,7 +271,7 @@ def get_resource_action(resource_action_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"])
+    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -318,7 +318,7 @@ def get_resource_action_output(resource_action_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"])
+    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

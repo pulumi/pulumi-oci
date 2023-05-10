@@ -36,7 +36,6 @@ import * as utilities from "../utilities";
  * const testNetworkSource = new oci.identity.NetworkSource("testNetworkSource", {
  *     compartmentId: _var.tenancy_ocid,
  *     description: _var.network_source_description,
- *     name: _var.network_source_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -162,9 +161,6 @@ export class NetworkSource extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -255,7 +251,7 @@ export interface NetworkSourceArgs {
     /**
      * The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) A list of allowed public IP addresses and CIDR ranges.
      */

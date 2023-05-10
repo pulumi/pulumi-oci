@@ -109,10 +109,10 @@ def get_repository_file_line(file_path: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_file_line = oci.DevOps.get_repository_file_line(repository_id=oci_devops_repository["test_repository"]["id"],
-        revision=var["repository_file_line_revision"],
-        file_path=var["repository_file_line_file_path"],
-        start_line_number=var["repository_file_line_start_line_number"])
+    test_repository_file_line = oci.DevOps.get_repository_file_line(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        revision=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_line_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -155,10 +155,10 @@ def get_repository_file_line_output(file_path: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_file_line = oci.DevOps.get_repository_file_line(repository_id=oci_devops_repository["test_repository"]["id"],
-        revision=var["repository_file_line_revision"],
-        file_path=var["repository_file_line_file_path"],
-        start_line_number=var["repository_file_line_start_line_number"])
+    test_repository_file_line = oci.DevOps.get_repository_file_line(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        revision=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_line_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

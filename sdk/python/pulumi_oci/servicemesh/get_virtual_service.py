@@ -235,7 +235,7 @@ def get_virtual_service(virtual_service_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -279,7 +279,7 @@ def get_virtual_service_output(virtual_service_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

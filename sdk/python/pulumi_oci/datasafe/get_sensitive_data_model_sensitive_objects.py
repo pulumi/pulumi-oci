@@ -129,10 +129,10 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_objects = oci.DataSafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        objects=var["sensitive_data_model_sensitive_object_object"],
-        object_types=var["sensitive_data_model_sensitive_object_object_type"],
-        schema_names=var["sensitive_data_model_sensitive_object_schema_name"])
+    test_sensitive_data_model_sensitive_objects = oci.DataSafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_objects = oci.DataSafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        objects=var["sensitive_data_model_sensitive_object_object"],
-        object_types=var["sensitive_data_model_sensitive_object_object_type"],
-        schema_names=var["sensitive_data_model_sensitive_object_schema_name"])
+    test_sensitive_data_model_sensitive_objects = oci.DataSafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

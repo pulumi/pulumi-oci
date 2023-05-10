@@ -264,7 +264,7 @@ def get_queue(queue_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queue = oci.Queue.get_queue(queue_id=oci_queue_queue["test_queue"]["id"])
+    test_queue = oci.Queue.get_queue(queue_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -311,7 +311,7 @@ def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queue = oci.Queue.get_queue(queue_id=oci_queue_queue["test_queue"]["id"])
+    test_queue = oci.Queue.get_queue(queue_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

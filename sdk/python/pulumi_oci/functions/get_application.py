@@ -223,7 +223,7 @@ def get_application(application_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.Functions.get_application(application_id=oci_functions_application["test_application"]["id"])
+    test_application = oci.Functions.get_application(application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -266,7 +266,7 @@ def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.Functions.get_application(application_id=oci_functions_application["test_application"]["id"])
+    test_application = oci.Functions.get_application(application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -18,7 +18,7 @@ class AnnouncementSubscriptionsFilterGroupArgs:
     def __init__(__self__, *,
                  announcement_subscription_id: pulumi.Input[str],
                  filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]],
-                 name: pulumi.Input[str]):
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AnnouncementSubscriptionsFilterGroup resource.
         :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
@@ -27,7 +27,8 @@ class AnnouncementSubscriptionsFilterGroupArgs:
         """
         pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
         pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "name", name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="announcementSubscriptionId")
@@ -55,14 +56,14 @@ class AnnouncementSubscriptionsFilterGroupArgs:
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
+    def name(self) -> Optional[pulumi.Input[str]]:
         """
         The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[str]):
+    def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
 
@@ -147,10 +148,9 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup",
             announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
             filters=[oci.announcements_service.AnnouncementSubscriptionsFilterGroupFilterArgs(
-                type=var["announcement_subscriptions_filter_group_filters_type"],
-                value=var["announcement_subscriptions_filter_group_filters_value"],
-            )],
-            name=var["announcement_subscriptions_filter_group_name"])
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+            )])
         ```
 
         ## Import
@@ -189,10 +189,9 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup",
             announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
             filters=[oci.announcements_service.AnnouncementSubscriptionsFilterGroupFilterArgs(
-                type=var["announcement_subscriptions_filter_group_filters_type"],
-                value=var["announcement_subscriptions_filter_group_filters_value"],
-            )],
-            name=var["announcement_subscriptions_filter_group_name"])
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+            )])
         ```
 
         ## Import
@@ -236,8 +235,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
             if filters is None and not opts.urn:
                 raise TypeError("Missing required property 'filters'")
             __props__.__dict__["filters"] = filters
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
         super(AnnouncementSubscriptionsFilterGroup, __self__).__init__(
             'oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup',

@@ -176,14 +176,14 @@ def get_metric_data(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=var["compartment_id"],
-        namespace=var["metric_data_namespace"],
-        query=var["metric_data_query"],
-        compartment_id_in_subtree=var["metric_data_compartment_id_in_subtree"],
-        end_time=var["metric_data_end_time"],
-        resolution=var["metric_data_resolution"],
-        resource_group=var["metric_data_resource_group"],
-        start_time=var["metric_data_start_time"])
+    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resolution=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_group=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -249,14 +249,14 @@ def get_metric_data_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=var["compartment_id"],
-        namespace=var["metric_data_namespace"],
-        query=var["metric_data_query"],
-        compartment_id_in_subtree=var["metric_data_compartment_id_in_subtree"],
-        end_time=var["metric_data_end_time"],
-        resolution=var["metric_data_resolution"],
-        resource_group=var["metric_data_resource_group"],
-        start_time=var["metric_data_start_time"])
+    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resolution=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_group=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

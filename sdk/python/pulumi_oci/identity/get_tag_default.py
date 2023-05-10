@@ -164,7 +164,7 @@ def get_tag_default(tag_default_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_default = oci.Identity.get_tag_default(tag_default_id=oci_identity_tag_default["test_tag_default"]["id"])
+    test_tag_default = oci.Identity.get_tag_default(tag_default_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -202,7 +202,7 @@ def get_tag_default_output(tag_default_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_default = oci.Identity.get_tag_default(tag_default_id=oci_identity_tag_default["test_tag_default"]["id"])
+    test_tag_default = oci.Identity.get_tag_default(tag_default_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

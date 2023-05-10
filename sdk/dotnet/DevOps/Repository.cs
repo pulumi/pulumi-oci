@@ -26,7 +26,6 @@ namespace Pulumi.Oci.DevOps
     /// {
     ///     var testRepository = new Oci.DevOps.Repository("testRepository", new()
     ///     {
-    ///         Name = @var.Repository_name,
     ///         ProjectId = oci_devops_project.Test_project.Id,
     ///         RepositoryType = @var.Repository_repository_type,
     ///         DefaultBranch = @var.Repository_default_branch,
@@ -288,8 +287,8 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// (Updatable) Unique name of a repository.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The OCID of the DevOps project containing the repository.

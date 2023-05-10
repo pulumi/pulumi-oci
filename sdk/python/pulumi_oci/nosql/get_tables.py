@@ -119,9 +119,9 @@ def get_tables(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tables = oci.Nosql.get_tables(compartment_id=var["compartment_id"],
-        name=var["table_name"],
-        state=var["table_state"])
+    test_tables = oci.Nosql.get_tables(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tables = oci.Nosql.get_tables(compartment_id=var["compartment_id"],
-        name=var["table_name"],
-        state=var["table_state"])
+    test_tables = oci.Nosql.get_tables(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -106,6 +106,8 @@ type LookupExadataInfrastructureResult struct {
 	MultiRackConfigurationFile string `pulumi:"multiRackConfigurationFile"`
 	// The netmask for the control plane network.
 	Netmask string `pulumi:"netmask"`
+	// Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+	NetworkBondingModeDetails []GetExadataInfrastructureNetworkBondingModeDetail `pulumi:"networkBondingModeDetails"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers []string `pulumi:"ntpServers"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -352,6 +354,13 @@ func (o LookupExadataInfrastructureResultOutput) MultiRackConfigurationFile() pu
 // The netmask for the control plane network.
 func (o LookupExadataInfrastructureResultOutput) Netmask() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.Netmask }).(pulumi.StringOutput)
+}
+
+// Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+func (o LookupExadataInfrastructureResultOutput) NetworkBondingModeDetails() GetExadataInfrastructureNetworkBondingModeDetailArrayOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) []GetExadataInfrastructureNetworkBondingModeDetail {
+		return v.NetworkBondingModeDetails
+	}).(GetExadataInfrastructureNetworkBondingModeDetailArrayOutput)
 }
 
 // The list of NTP server IP addresses. Maximum of 3 allowed.

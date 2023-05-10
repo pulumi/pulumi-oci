@@ -135,11 +135,11 @@ def get_resolvers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resolvers = oci.Dns.get_resolvers(compartment_id=var["compartment_id"],
+    test_resolvers = oci.Dns.get_resolvers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         scope="PRIVATE",
-        display_name=var["resolver_display_name"],
-        id=var["resolver_id"],
-        state=var["resolver_state"])
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -193,11 +193,11 @@ def get_resolvers_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resolvers = oci.Dns.get_resolvers(compartment_id=var["compartment_id"],
+    test_resolvers = oci.Dns.get_resolvers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         scope="PRIVATE",
-        display_name=var["resolver_display_name"],
-        id=var["resolver_id"],
-        state=var["resolver_state"])
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

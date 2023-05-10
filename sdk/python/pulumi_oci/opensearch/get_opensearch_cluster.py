@@ -546,7 +546,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
+    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -627,7 +627,7 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
+    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

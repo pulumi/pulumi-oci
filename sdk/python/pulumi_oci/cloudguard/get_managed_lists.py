@@ -175,13 +175,13 @@ def get_managed_lists(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=var["compartment_id"],
-        access_level=var["managed_list_access_level"],
-        compartment_id_in_subtree=var["managed_list_compartment_id_in_subtree"],
-        display_name=var["managed_list_display_name"],
-        list_type=var["managed_list_list_type"],
-        resource_metadata_only=var["managed_list_resource_metadata_only"],
-        state=var["managed_list_state"])
+    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        list_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_metadata_only=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -252,13 +252,13 @@ def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=var["compartment_id"],
-        access_level=var["managed_list_access_level"],
-        compartment_id_in_subtree=var["managed_list_compartment_id_in_subtree"],
-        display_name=var["managed_list_display_name"],
-        list_type=var["managed_list_list_type"],
-        resource_metadata_only=var["managed_list_resource_metadata_only"],
-        state=var["managed_list_state"])
+    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        list_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_metadata_only=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

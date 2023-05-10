@@ -474,15 +474,15 @@ public final class DomainsPasswordPolicyArgs extends com.pulumi.resources.Resour
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -1397,7 +1397,7 @@ public final class DomainsPasswordPolicyArgs extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -1686,7 +1686,6 @@ public final class DomainsPasswordPolicyArgs extends com.pulumi.resources.Resour
 
         public DomainsPasswordPolicyArgs build() {
             $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
             return $;
         }

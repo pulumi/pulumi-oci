@@ -17,7 +17,6 @@ import * as utilities from "../utilities";
  *
  * const testLogSavedSearch = new oci.logging.LogSavedSearch("testLogSavedSearch", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.log_saved_search_name,
  *     query: _var.log_saved_search_query,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -129,9 +128,6 @@ export class LogSavedSearch extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.query === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
@@ -215,7 +211,7 @@ export interface LogSavedSearchArgs {
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) The search query that is saved.
      */

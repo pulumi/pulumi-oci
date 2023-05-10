@@ -316,7 +316,7 @@ def get_pipeline_run(pipeline_run_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_run = oci.DataScience.get_pipeline_run(pipeline_run_id=oci_datascience_pipeline_run["test_pipeline_run"]["id"])
+    test_pipeline_run = oci.DataScience.get_pipeline_run(pipeline_run_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -367,7 +367,7 @@ def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_run = oci.DataScience.get_pipeline_run(pipeline_run_id=oci_datascience_pipeline_run["test_pipeline_run"]["id"])
+    test_pipeline_run = oci.DataScience.get_pipeline_run(pipeline_run_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

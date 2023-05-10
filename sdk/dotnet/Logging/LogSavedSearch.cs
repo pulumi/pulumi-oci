@@ -27,7 +27,6 @@ namespace Pulumi.Oci.Logging
     ///     var testLogSavedSearch = new Oci.Logging.LogSavedSearch("testLogSavedSearch", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Log_saved_search_name,
     ///         Query = @var.Log_saved_search_query,
     ///         DefinedTags = 
     ///         {
@@ -193,8 +192,8 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) The search query that is saved.

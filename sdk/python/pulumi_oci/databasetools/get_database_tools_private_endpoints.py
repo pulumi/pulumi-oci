@@ -145,11 +145,11 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_private_endpoint_display_name"],
-        endpoint_service_id=oci_core_service["test_service"]["id"],
-        state=var["database_tools_private_endpoint_state"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"])
+    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        endpoint_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -199,11 +199,11 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_private_endpoint_display_name"],
-        endpoint_service_id=oci_core_service["test_service"]["id"],
-        state=var["database_tools_private_endpoint_state"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"])
+    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        endpoint_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

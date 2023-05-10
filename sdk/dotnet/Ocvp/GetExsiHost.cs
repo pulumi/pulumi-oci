@@ -195,7 +195,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string UpgradedReplacementEsxiHostId;
         /// <summary>
-        /// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         /// </summary>
         public readonly string VmwareSoftwareVersion;
 

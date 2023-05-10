@@ -116,9 +116,9 @@ def get_tag_namespaces(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=var["compartment_id"],
-        include_subcompartments=var["tag_namespace_include_subcompartments"],
-        state=var["tag_namespace_state"])
+    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        include_subcompartments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -160,9 +160,9 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=var["compartment_id"],
-        include_subcompartments=var["tag_namespace_include_subcompartments"],
-        state=var["tag_namespace_state"])
+    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        include_subcompartments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

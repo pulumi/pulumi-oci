@@ -154,9 +154,6 @@ export class Cluster extends pulumi.CustomResource {
             if ((!args || args.kubernetesVersion === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'kubernetesVersion'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.vcnId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
@@ -296,7 +293,7 @@ export interface ClusterArgs {
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) Optional attributes for the cluster.
      */

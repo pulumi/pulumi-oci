@@ -129,10 +129,10 @@ def get_indexes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["index_name"],
-        state=var["index_state"])
+    test_indexes = oci.Nosql.get_indexes(table_name_or_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["index_name"],
-        state=var["index_state"])
+    test_indexes = oci.Nosql.get_indexes(table_name_or_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

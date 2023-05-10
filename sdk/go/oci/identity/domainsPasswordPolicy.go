@@ -145,9 +145,6 @@ func NewDomainsPasswordPolicy(ctx *pulumi.Context,
 	if args.IdcsEndpoint == nil {
 		return nil, errors.New("invalid value for required argument 'IdcsEndpoint'")
 	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
-	}
 	if args.Schemas == nil {
 		return nil, errors.New("invalid value for required argument 'Schemas'")
 	}
@@ -463,7 +460,7 @@ type domainsPasswordPolicyArgs struct {
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
 	MinUpperCase *int `pulumi:"minUpperCase"`
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) The number of passwords that will be kept in history that may not be used as a password
 	NumPasswordsInHistory *int `pulumi:"numPasswordsInHistory"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -553,7 +550,7 @@ type DomainsPasswordPolicyArgs struct {
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
 	MinUpperCase pulumi.IntPtrInput
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) The number of passwords that will be kept in history that may not be used as a password
 	NumPasswordsInHistory pulumi.IntPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.

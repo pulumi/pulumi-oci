@@ -94,7 +94,7 @@ def get_auth_tokens(filters: Optional[Sequence[pulumi.InputType['GetAuthTokensFi
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=oci_identity_user["test_user"]["id"])
+    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -129,7 +129,7 @@ def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=oci_identity_user["test_user"]["id"])
+    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

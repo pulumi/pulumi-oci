@@ -351,16 +351,16 @@ class ManagedInstanceManagement(pulumi.CustomResource):
         test_managed_instance_management = oci.os_management.ManagedInstanceManagement("testManagedInstanceManagement",
             managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
             parent_software_source=oci.os_management.ManagedInstanceManagementParentSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_parent_software_source"]["id"],
-                name=oci_osmanagement_software_source["test_parent_software_source"]["display_name"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             managed_instance_groups=[oci.os_management.ManagedInstanceManagementManagedInstanceGroupArgs(
-                id=oci_osmanagement_managed_instance_group["test_managed_instance_group"]["id"],
-                display_name=var["managed_instance_group_display_name"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             child_software_sources=[oci.os_management.ManagedInstanceManagementChildSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_software_source_child"]["id"],
-                name=oci_osmanagement_software_source["test_software_source_child"]["display_name"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -406,16 +406,16 @@ class ManagedInstanceManagement(pulumi.CustomResource):
         test_managed_instance_management = oci.os_management.ManagedInstanceManagement("testManagedInstanceManagement",
             managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
             parent_software_source=oci.os_management.ManagedInstanceManagementParentSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_parent_software_source"]["id"],
-                name=oci_osmanagement_software_source["test_parent_software_source"]["display_name"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             managed_instance_groups=[oci.os_management.ManagedInstanceManagementManagedInstanceGroupArgs(
-                id=oci_osmanagement_managed_instance_group["test_managed_instance_group"]["id"],
-                display_name=var["managed_instance_group_display_name"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             child_software_sources=[oci.os_management.ManagedInstanceManagementChildSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_software_source_child"]["id"],
-                name=oci_osmanagement_software_source["test_software_source_child"]["display_name"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 

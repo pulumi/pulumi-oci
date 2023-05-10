@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  *
  * const testNotificationTopic = new oci.ons.NotificationTopic("testNotificationTopic", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.notification_topic_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -151,9 +150,6 @@ export class NotificationTopic extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -244,5 +240,5 @@ export interface NotificationTopicArgs {
     /**
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

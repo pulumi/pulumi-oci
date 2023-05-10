@@ -44,7 +44,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDbManagementPrivateEndpoint = new DbManagementPrivateEndpoint(&#34;testDbManagementPrivateEndpoint&#34;, DbManagementPrivateEndpointArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.db_management_private_endpoint_name())
  *             .subnetId(oci_core_subnet.test_subnet().id())
  *             .description(var_.db_management_private_endpoint_description())
  *             .isCluster(var_.db_management_private_endpoint_is_cluster())

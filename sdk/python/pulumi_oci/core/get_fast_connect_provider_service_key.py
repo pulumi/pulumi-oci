@@ -113,8 +113,8 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
-        provider_service_key_name=var["fast_connect_provider_service_key_provider_service_key_name"])
+    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        provider_service_key_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -152,8 +152,8 @@ def get_fast_connect_provider_service_key_output(provider_service_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
-        provider_service_key_name=var["fast_connect_provider_service_key_provider_service_key_name"])
+    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        provider_service_key_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

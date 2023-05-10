@@ -187,15 +187,15 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * OceInstance Name
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return OceInstance Name
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -560,7 +560,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -684,7 +684,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
             $.adminEmail = Objects.requireNonNull($.adminEmail, "expected parameter 'adminEmail' to be non-null");
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.idcsAccessToken = Objects.requireNonNull($.idcsAccessToken, "expected parameter 'idcsAccessToken' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.objectStorageNamespace = Objects.requireNonNull($.objectStorageNamespace, "expected parameter 'objectStorageNamespace' to be non-null");
             $.tenancyId = Objects.requireNonNull($.tenancyId, "expected parameter 'tenancyId' to be non-null");
             $.tenancyName = Objects.requireNonNull($.tenancyName, "expected parameter 'tenancyName' to be non-null");

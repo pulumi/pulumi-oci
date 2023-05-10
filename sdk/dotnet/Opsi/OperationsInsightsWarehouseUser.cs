@@ -30,7 +30,6 @@ namespace Pulumi.Oci.Opsi
     ///         CompartmentId = @var.Compartment_id,
     ///         ConnectionPassword = @var.Operations_insights_warehouse_user_connection_password,
     ///         IsAwrDataAccess = @var.Operations_insights_warehouse_user_is_awr_data_access,
-    ///         Name = @var.Operations_insights_warehouse_user_name,
     ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
     ///         DefinedTags = 
     ///         {
@@ -259,8 +258,8 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// OPSI Warehouse OCID

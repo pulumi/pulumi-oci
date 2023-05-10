@@ -209,14 +209,14 @@ def get_domains_dynamic_resource_groups(attribute_sets: Optional[Sequence[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_groups = oci.Identity.get_domains_dynamic_resource_groups(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        dynamic_resource_group_count=var["dynamic_resource_group_dynamic_resource_group_count"],
-        dynamic_resource_group_filter=var["dynamic_resource_group_dynamic_resource_group_filter"],
+    test_dynamic_resource_groups = oci.Identity.get_domains_dynamic_resource_groups(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        dynamic_resource_group_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        dynamic_resource_group_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["dynamic_resource_group_authorization"],
-        resource_type_schema_version=var["dynamic_resource_group_resource_type_schema_version"],
-        start_index=var["dynamic_resource_group_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -287,14 +287,14 @@ def get_domains_dynamic_resource_groups_output(attribute_sets: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_groups = oci.Identity.get_domains_dynamic_resource_groups(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        dynamic_resource_group_count=var["dynamic_resource_group_dynamic_resource_group_count"],
-        dynamic_resource_group_filter=var["dynamic_resource_group_dynamic_resource_group_filter"],
+    test_dynamic_resource_groups = oci.Identity.get_domains_dynamic_resource_groups(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        dynamic_resource_group_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        dynamic_resource_group_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["dynamic_resource_group_authorization"],
-        resource_type_schema_version=var["dynamic_resource_group_resource_type_schema_version"],
-        start_index=var["dynamic_resource_group_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

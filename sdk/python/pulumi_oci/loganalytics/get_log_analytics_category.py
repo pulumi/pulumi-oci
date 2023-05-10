@@ -127,8 +127,8 @@ def get_log_analytics_category(name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=var["log_analytics_category_name"],
-        namespace=var["log_analytics_category_namespace"])
+    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -166,8 +166,8 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=var["log_analytics_category_name"],
-        namespace=var["log_analytics_category_namespace"])
+    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

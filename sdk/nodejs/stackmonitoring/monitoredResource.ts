@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * const testMonitoredResource = new oci.stackmonitoring.MonitoredResource("testMonitoredResource", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.monitored_resource_name,
  *     type: _var.monitored_resource_type,
  *     additionalAliases: [{
  *         credential: {
@@ -258,9 +257,6 @@ export class MonitoredResource extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
@@ -445,7 +441,7 @@ export interface MonitoredResourceArgs {
     /**
      * (Updatable) Property Name.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) List of monitored resource properties.
      */

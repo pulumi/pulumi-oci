@@ -172,7 +172,7 @@ def get_compartment(id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_compartment(id=var["compartment_id"])
+    test_compartment = oci.Identity.get_compartment(id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -217,7 +217,7 @@ def get_compartment_output(id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_compartment(id=var["compartment_id"])
+    test_compartment = oci.Identity.get_compartment(id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

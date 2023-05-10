@@ -81,9 +81,6 @@ func NewCertificateAuthority(ctx *pulumi.Context,
 	if args.KmsKeyId == nil {
 		return nil, errors.New("invalid value for required argument 'KmsKeyId'")
 	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
-	}
 	var resource CertificateAuthority
 	err := ctx.RegisterResource("oci:CertificatesManagement/certificateAuthority:CertificateAuthority", name, args, &resource, opts...)
 	if err != nil {
@@ -205,7 +202,7 @@ type certificateAuthorityArgs struct {
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a CertificateAuthority resource.
@@ -227,7 +224,7 @@ type CertificateAuthorityArgs struct {
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId pulumi.StringInput
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 }
 
 func (CertificateAuthorityArgs) ElementType() reflect.Type {

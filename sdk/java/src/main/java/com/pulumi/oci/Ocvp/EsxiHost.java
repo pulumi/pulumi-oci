@@ -234,14 +234,14 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.nextSku;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      * 
      */
     @Export(name="nonUpgradedEsxiHostId", type=String.class, parameters={})
     private Output<String> nonUpgradedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      * 
      */
     public Output<String> nonUpgradedEsxiHostId() {
@@ -332,14 +332,14 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.upgradedReplacementEsxiHostId;
     }
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
     @Export(name="vmwareSoftwareVersion", type=String.class, parameters={})
     private Output<String> vmwareSoftwareVersion;
 
     /**
-     * @return The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * @return The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
     public Output<String> vmwareSoftwareVersion() {

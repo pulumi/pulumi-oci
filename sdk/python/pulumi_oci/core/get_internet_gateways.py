@@ -133,10 +133,10 @@ def get_internet_gateways(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=var["compartment_id"],
-        display_name=var["internet_gateway_display_name"],
-        state=var["internet_gateway_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -183,10 +183,10 @@ def get_internet_gateways_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=var["compartment_id"],
-        display_name=var["internet_gateway_display_name"],
-        state=var["internet_gateway_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -100,8 +100,8 @@ def get_backends(backendset_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backends = oci.LoadBalancer.get_backends(backendset_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_backends = oci.LoadBalancer.get_backends(backendset_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -139,8 +139,8 @@ def get_backends_output(backendset_name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backends = oci.LoadBalancer.get_backends(backendset_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_backends = oci.LoadBalancer.get_backends(backendset_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

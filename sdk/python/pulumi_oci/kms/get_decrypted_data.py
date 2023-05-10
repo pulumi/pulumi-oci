@@ -120,10 +120,10 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=var["decrypted_data_ciphertext"],
-        crypto_endpoint=var["decrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        associated_data=var["decrypted_data_associated_data"])
+    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        crypto_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        associated_data=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -167,10 +167,10 @@ def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=var["decrypted_data_ciphertext"],
-        crypto_endpoint=var["decrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        associated_data=var["decrypted_data_associated_data"])
+    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        crypto_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        associated_data=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

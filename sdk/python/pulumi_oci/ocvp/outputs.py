@@ -11,16 +11,19 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'SddcDatastore',
     'SddcHcxOnPremLicense',
     'SddcUpgradeLicense',
     'SddcVsphereUpgradeObject',
     'GetExsiHostsEsxiHostCollectionResult',
     'GetExsiHostsFilterResult',
+    'GetSddcDatastoreResult',
     'GetSddcHcxOnPremLicenseResult',
     'GetSddcUpgradeLicenseResult',
     'GetSddcVsphereUpgradeObjectResult',
     'GetSddcsFilterResult',
     'GetSddcsSddcCollectionResult',
+    'GetSddcsSddcCollectionDatastoreResult',
     'GetSddcsSddcCollectionHcxOnPremLicenseResult',
     'GetSddcsSddcCollectionUpgradeLicenseResult',
     'GetSddcsSddcCollectionVsphereUpgradeObjectResult',
@@ -31,6 +34,66 @@ __all__ = [
     'GetSupportedVmwareSoftwareVersionsFilterResult',
     'GetSupportedVmwareSoftwareVersionsItemResult',
 ]
+
+@pulumi.output_type
+class SddcDatastore(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockVolumeIds":
+            suggest = "block_volume_ids"
+        elif key == "datastoreType":
+            suggest = "datastore_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SddcDatastore. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SddcDatastore.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SddcDatastore.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_volume_ids: Sequence[str],
+                 datastore_type: str,
+                 capacity: Optional[float] = None):
+        """
+        :param Sequence[str] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        :param str datastore_type: Type of the datastore.
+        :param float capacity: Size of the Block Storage Volume in GB.
+        """
+        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
+        pulumi.set(__self__, "datastore_type", datastore_type)
+        if capacity is not None:
+            pulumi.set(__self__, "capacity", capacity)
+
+    @property
+    @pulumi.getter(name="blockVolumeIds")
+    def block_volume_ids(self) -> Sequence[str]:
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
+        return pulumi.get(self, "block_volume_ids")
+
+    @property
+    @pulumi.getter(name="datastoreType")
+    def datastore_type(self) -> str:
+        """
+        Type of the datastore.
+        """
+        return pulumi.get(self, "datastore_type")
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> Optional[float]:
+        """
+        Size of the Block Storage Volume in GB.
+        """
+        return pulumi.get(self, "capacity")
+
 
 @pulumi.output_type
 class SddcHcxOnPremLicense(dict):
@@ -243,7 +306,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
-        :param str vmware_software_version: The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        :param str vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -449,7 +512,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
     @pulumi.getter(name="vmwareSoftwareVersion")
     def vmware_software_version(self) -> str:
         """
-        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
         return pulumi.get(self, "vmware_software_version")
 
@@ -479,6 +542,46 @@ class GetExsiHostsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSddcDatastoreResult(dict):
+    def __init__(__self__, *,
+                 block_volume_ids: Sequence[str],
+                 capacity: float,
+                 datastore_type: str):
+        """
+        :param Sequence[str] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        :param float capacity: Size of the Block Storage Volume in GB.
+        :param str datastore_type: Type of the datastore.
+        """
+        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
+        pulumi.set(__self__, "capacity", capacity)
+        pulumi.set(__self__, "datastore_type", datastore_type)
+
+    @property
+    @pulumi.getter(name="blockVolumeIds")
+    def block_volume_ids(self) -> Sequence[str]:
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
+        return pulumi.get(self, "block_volume_ids")
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> float:
+        """
+        Size of the Block Storage Volume in GB.
+        """
+        return pulumi.get(self, "capacity")
+
+    @property
+    @pulumi.getter(name="datastoreType")
+    def datastore_type(self) -> str:
+        """
+        Type of the datastore.
+        """
+        return pulumi.get(self, "datastore_type")
 
 
 @pulumi.output_type
@@ -613,6 +716,7 @@ class GetSddcsSddcCollectionResult(dict):
                  capacity_reservation_id: str,
                  compartment_id: str,
                  compute_availability_domain: str,
+                 datastores: Sequence['outputs.GetSddcsSddcCollectionDatastoreResult'],
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  esxi_hosts_count: int,
@@ -672,6 +776,7 @@ class GetSddcsSddcCollectionResult(dict):
         :param str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
+        :param Sequence['GetSddcsSddcCollectionDatastoreArgs'] datastores: Datastores used for the Sddc.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param int esxi_hosts_count: The number of ESXi hosts in the SDDC.
@@ -711,7 +816,7 @@ class GetSddcsSddcCollectionResult(dict):
         :param str time_hcx_billing_cycle_end: The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_hcx_license_status_updated: The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param Sequence['GetSddcsSddcCollectionUpgradeLicenseArgs'] upgrade_licenses: The vSphere licenses to be used when upgrade SDDC.
+        :param Sequence['GetSddcsSddcCollectionUpgradeLicenseArgs'] upgrade_licenses: The vSphere licenses to use when upgrading the SDDC.
         :param str vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         :param str vcenter_initial_password: The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
         :param str vcenter_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
@@ -719,8 +824,8 @@ class GetSddcsSddcCollectionResult(dict):
         :param str vmotion_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
         :param str vmware_software_version: In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
         :param str vsan_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
-        :param str vsphere_upgrade_guide: The link of guidance to upgrade vSphere.
-        :param Sequence['GetSddcsSddcCollectionVsphereUpgradeObjectArgs'] vsphere_upgrade_objects: The links of binary objects needed for upgrade vSphere.
+        :param str vsphere_upgrade_guide: The link to guidance for upgrading vSphere.
+        :param Sequence['GetSddcsSddcCollectionVsphereUpgradeObjectArgs'] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
         :param str vsphere_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
         :param str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
@@ -728,6 +833,7 @@ class GetSddcsSddcCollectionResult(dict):
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        pulumi.set(__self__, "datastores", datastores)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
@@ -814,6 +920,14 @@ class GetSddcsSddcCollectionResult(dict):
         The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "compute_availability_domain")
+
+    @property
+    @pulumi.getter
+    def datastores(self) -> Sequence['outputs.GetSddcsSddcCollectionDatastoreResult']:
+        """
+        Datastores used for the Sddc.
+        """
+        return pulumi.get(self, "datastores")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1146,7 +1260,7 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="upgradeLicenses")
     def upgrade_licenses(self) -> Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult']:
         """
-        The vSphere licenses to be used when upgrade SDDC.
+        The vSphere licenses to use when upgrading the SDDC.
         """
         return pulumi.get(self, "upgrade_licenses")
 
@@ -1210,7 +1324,7 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vsphereUpgradeGuide")
     def vsphere_upgrade_guide(self) -> str:
         """
-        The link of guidance to upgrade vSphere.
+        The link to guidance for upgrading vSphere.
         """
         return pulumi.get(self, "vsphere_upgrade_guide")
 
@@ -1218,7 +1332,7 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vsphereUpgradeObjects")
     def vsphere_upgrade_objects(self) -> Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult']:
         """
-        The links of binary objects needed for upgrade vSphere.
+        The links to binary objects needed to upgrade vSphere.
         """
         return pulumi.get(self, "vsphere_upgrade_objects")
 
@@ -1237,6 +1351,46 @@ class GetSddcsSddcCollectionResult(dict):
         The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
         return pulumi.get(self, "workload_network_cidr")
+
+
+@pulumi.output_type
+class GetSddcsSddcCollectionDatastoreResult(dict):
+    def __init__(__self__, *,
+                 block_volume_ids: Sequence[str],
+                 capacity: float,
+                 datastore_type: str):
+        """
+        :param Sequence[str] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        :param float capacity: Size of the Block Storage Volume in GB.
+        :param str datastore_type: Type of the datastore.
+        """
+        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
+        pulumi.set(__self__, "capacity", capacity)
+        pulumi.set(__self__, "datastore_type", datastore_type)
+
+    @property
+    @pulumi.getter(name="blockVolumeIds")
+    def block_volume_ids(self) -> Sequence[str]:
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
+        return pulumi.get(self, "block_volume_ids")
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> float:
+        """
+        Size of the Block Storage Volume in GB.
+        """
+        return pulumi.get(self, "capacity")
+
+    @property
+    @pulumi.getter(name="datastoreType")
+    def datastore_type(self) -> str:
+        """
+        Type of the datastore.
+        """
+        return pulumi.get(self, "datastore_type")
 
 
 @pulumi.output_type
@@ -1375,6 +1529,7 @@ class GetSupportedHostShapesItemResult(dict):
     def __init__(__self__, *,
                  default_ocpu_count: float,
                  description: str,
+                 is_support_monthly_sku: bool,
                  is_support_shielded_instances: bool,
                  name: str,
                  shape_family: str,
@@ -1385,6 +1540,7 @@ class GetSupportedHostShapesItemResult(dict):
         """
         :param float default_ocpu_count: The default OCPU count of the shape.
         :param str description: Description of the shape.
+        :param bool is_support_monthly_sku: Whether the shape supports "MONTH" SKU.
         :param bool is_support_shielded_instances: Indicates whether the shape supports shielded instances.
         :param str name: A filter to return only resources that match the given name exactly.
         :param str shape_family: The family of the shape. ESXi hosts of one SDDC must have the same shape family.
@@ -1395,6 +1551,7 @@ class GetSupportedHostShapesItemResult(dict):
         """
         pulumi.set(__self__, "default_ocpu_count", default_ocpu_count)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_support_monthly_sku", is_support_monthly_sku)
         pulumi.set(__self__, "is_support_shielded_instances", is_support_shielded_instances)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "shape_family", shape_family)
@@ -1418,6 +1575,14 @@ class GetSupportedHostShapesItemResult(dict):
         Description of the shape.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isSupportMonthlySku")
+    def is_support_monthly_sku(self) -> bool:
+        """
+        Whether the shape supports "MONTH" SKU.
+        """
+        return pulumi.get(self, "is_support_monthly_sku")
 
     @property
     @pulumi.getter(name="isSupportShieldedInstances")

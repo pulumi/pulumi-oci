@@ -311,8 +311,8 @@ def get_config(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.ApmConfig.get_config(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_id=oci_apm_config_config["test_config"]["id"])
+    test_config = oci.ApmConfig.get_config(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        config_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -366,8 +366,8 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.ApmConfig.get_config(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_id=oci_apm_config_config["test_config"]["id"])
+    test_config = oci.ApmConfig.get_config(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        config_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

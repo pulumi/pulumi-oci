@@ -28,7 +28,6 @@ namespace Pulumi.Oci.Dns
     ///     var testZone = new Oci.Dns.Zone("testZone", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Zone_name,
     ///         ZoneType = @var.Zone_zone_type,
     ///         DefinedTags = @var.Zone_defined_tags,
     ///         ExternalMasters = new[]
@@ -241,8 +240,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The name of the zone.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// Specifies to operate only on resources that have a matching DNS scope. 

@@ -61,6 +61,10 @@ export interface GetSddcResult {
      */
     readonly computeAvailabilityDomain: string;
     /**
+     * Datastores used for the Sddc.
+     */
+    readonly datastores: outputs.Ocvp.GetSddcDatastore[];
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: any};
@@ -221,7 +225,7 @@ export interface GetSddcResult {
      */
     readonly timeUpdated: string;
     /**
-     * The vSphere licenses to be used when upgrade SDDC.
+     * The vSphere licenses to use when upgrading the SDDC.
      */
     readonly upgradeLicenses: outputs.Ocvp.GetSddcUpgradeLicense[];
     /**
@@ -253,11 +257,11 @@ export interface GetSddcResult {
      */
     readonly vsanVlanId: string;
     /**
-     * The link of guidance to upgrade vSphere.
+     * The link to guidance for upgrading vSphere.
      */
     readonly vsphereUpgradeGuide: string;
     /**
-     * The links of binary objects needed for upgrade vSphere.
+     * The links to binary objects needed to upgrade vSphere.
      */
     readonly vsphereUpgradeObjects: outputs.Ocvp.GetSddcVsphereUpgradeObject[];
     /**

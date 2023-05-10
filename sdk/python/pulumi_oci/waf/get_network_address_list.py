@@ -211,7 +211,7 @@ def get_network_address_list(network_address_list_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=oci_waf_network_address_list["test_network_address_list"]["id"])
+    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -253,7 +253,7 @@ def get_network_address_list_output(network_address_list_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=oci_waf_network_address_list["test_network_address_list"]["id"])
+    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

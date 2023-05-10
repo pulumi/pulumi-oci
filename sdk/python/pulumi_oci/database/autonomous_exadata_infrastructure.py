@@ -599,20 +599,20 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             },
             license_model=var["autonomous_exadata_infrastructure_license_model"],
             maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                hours_of_days=var["autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day"],
-                is_custom_action_timeout_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks"],
+                hours_of_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_custom_action_timeout_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                lead_time_in_weeks=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
+                patching_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                weeks_of_months=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
         ```
@@ -672,20 +672,20 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             },
             license_model=var["autonomous_exadata_infrastructure_license_model"],
             maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                hours_of_days=var["autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day"],
-                is_custom_action_timeout_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks"],
+                hours_of_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_custom_action_timeout_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                lead_time_in_weeks=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
+                patching_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                weeks_of_months=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
         ```

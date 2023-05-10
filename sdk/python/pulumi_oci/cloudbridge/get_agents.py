@@ -145,11 +145,11 @@ def get_agents(agent_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.CloudBridge.get_agents(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_state"])
+    test_agents = oci.CloudBridge.get_agents(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -199,11 +199,11 @@ def get_agents_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.CloudBridge.get_agents(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_state"])
+    test_agents = oci.CloudBridge.get_agents(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

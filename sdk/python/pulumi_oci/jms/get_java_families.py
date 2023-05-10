@@ -107,8 +107,8 @@ def get_java_families(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_families = oci.Jms.get_java_families(display_name=var["java_family_display_name"],
-        family_version=var["java_family_family_version"])
+    test_java_families = oci.Jms.get_java_families(display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        family_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -147,8 +147,8 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_java_families = oci.Jms.get_java_families(display_name=var["java_family_display_name"],
-        family_version=var["java_family_family_version"])
+    test_java_families = oci.Jms.get_java_families(display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        family_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

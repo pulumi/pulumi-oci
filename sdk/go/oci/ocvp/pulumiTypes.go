@@ -10,6 +10,121 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type SddcDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity *float64 `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// SddcDatastoreInput is an input type that accepts SddcDatastoreArgs and SddcDatastoreOutput values.
+// You can construct a concrete instance of `SddcDatastoreInput` via:
+//
+//	SddcDatastoreArgs{...}
+type SddcDatastoreInput interface {
+	pulumi.Input
+
+	ToSddcDatastoreOutput() SddcDatastoreOutput
+	ToSddcDatastoreOutputWithContext(context.Context) SddcDatastoreOutput
+}
+
+type SddcDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity pulumi.Float64PtrInput `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (SddcDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcDatastore)(nil)).Elem()
+}
+
+func (i SddcDatastoreArgs) ToSddcDatastoreOutput() SddcDatastoreOutput {
+	return i.ToSddcDatastoreOutputWithContext(context.Background())
+}
+
+func (i SddcDatastoreArgs) ToSddcDatastoreOutputWithContext(ctx context.Context) SddcDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcDatastoreOutput)
+}
+
+// SddcDatastoreArrayInput is an input type that accepts SddcDatastoreArray and SddcDatastoreArrayOutput values.
+// You can construct a concrete instance of `SddcDatastoreArrayInput` via:
+//
+//	SddcDatastoreArray{ SddcDatastoreArgs{...} }
+type SddcDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToSddcDatastoreArrayOutput() SddcDatastoreArrayOutput
+	ToSddcDatastoreArrayOutputWithContext(context.Context) SddcDatastoreArrayOutput
+}
+
+type SddcDatastoreArray []SddcDatastoreInput
+
+func (SddcDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcDatastore)(nil)).Elem()
+}
+
+func (i SddcDatastoreArray) ToSddcDatastoreArrayOutput() SddcDatastoreArrayOutput {
+	return i.ToSddcDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i SddcDatastoreArray) ToSddcDatastoreArrayOutputWithContext(ctx context.Context) SddcDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcDatastoreArrayOutput)
+}
+
+type SddcDatastoreOutput struct{ *pulumi.OutputState }
+
+func (SddcDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcDatastore)(nil)).Elem()
+}
+
+func (o SddcDatastoreOutput) ToSddcDatastoreOutput() SddcDatastoreOutput {
+	return o
+}
+
+func (o SddcDatastoreOutput) ToSddcDatastoreOutputWithContext(ctx context.Context) SddcDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o SddcDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SddcDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Size of the Block Storage Volume in GB.
+func (o SddcDatastoreOutput) Capacity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SddcDatastore) *float64 { return v.Capacity }).(pulumi.Float64PtrOutput)
+}
+
+// Type of the datastore.
+func (o SddcDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type SddcDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (SddcDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcDatastore)(nil)).Elem()
+}
+
+func (o SddcDatastoreArrayOutput) ToSddcDatastoreArrayOutput() SddcDatastoreArrayOutput {
+	return o
+}
+
+func (o SddcDatastoreArrayOutput) ToSddcDatastoreArrayOutputWithContext(ctx context.Context) SddcDatastoreArrayOutput {
+	return o
+}
+
+func (o SddcDatastoreArrayOutput) Index(i pulumi.IntInput) SddcDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcDatastore {
+		return vs[0].([]SddcDatastore)[vs[1].(int)]
+	}).(SddcDatastoreOutput)
+}
+
 type SddcHcxOnPremLicense struct {
 	// HCX on-premise license key value.
 	ActivationKey *string `pulumi:"activationKey"`
@@ -382,7 +497,7 @@ type GetExsiHostsEsxiHostCollection struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 	UpgradedReplacementEsxiHostId string `pulumi:"upgradedReplacementEsxiHostId"`
-	// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 }
 
@@ -442,7 +557,7 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 	UpgradedReplacementEsxiHostId pulumi.StringInput `pulumi:"upgradedReplacementEsxiHostId"`
-	// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
 }
 
@@ -607,7 +722,7 @@ func (o GetExsiHostsEsxiHostCollectionOutput) UpgradedReplacementEsxiHostId() pu
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
 }
 
-// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 func (o GetExsiHostsEsxiHostCollectionOutput) VmwareSoftwareVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
 }
@@ -736,6 +851,121 @@ func (o GetExsiHostsFilterArrayOutput) Index(i pulumi.IntInput) GetExsiHostsFilt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExsiHostsFilter {
 		return vs[0].([]GetExsiHostsFilter)[vs[1].(int)]
 	}).(GetExsiHostsFilterOutput)
+}
+
+type GetSddcDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity float64 `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// GetSddcDatastoreInput is an input type that accepts GetSddcDatastoreArgs and GetSddcDatastoreOutput values.
+// You can construct a concrete instance of `GetSddcDatastoreInput` via:
+//
+//	GetSddcDatastoreArgs{...}
+type GetSddcDatastoreInput interface {
+	pulumi.Input
+
+	ToGetSddcDatastoreOutput() GetSddcDatastoreOutput
+	ToGetSddcDatastoreOutputWithContext(context.Context) GetSddcDatastoreOutput
+}
+
+type GetSddcDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity pulumi.Float64Input `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (GetSddcDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcDatastore)(nil)).Elem()
+}
+
+func (i GetSddcDatastoreArgs) ToGetSddcDatastoreOutput() GetSddcDatastoreOutput {
+	return i.ToGetSddcDatastoreOutputWithContext(context.Background())
+}
+
+func (i GetSddcDatastoreArgs) ToGetSddcDatastoreOutputWithContext(ctx context.Context) GetSddcDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcDatastoreOutput)
+}
+
+// GetSddcDatastoreArrayInput is an input type that accepts GetSddcDatastoreArray and GetSddcDatastoreArrayOutput values.
+// You can construct a concrete instance of `GetSddcDatastoreArrayInput` via:
+//
+//	GetSddcDatastoreArray{ GetSddcDatastoreArgs{...} }
+type GetSddcDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcDatastoreArrayOutput() GetSddcDatastoreArrayOutput
+	ToGetSddcDatastoreArrayOutputWithContext(context.Context) GetSddcDatastoreArrayOutput
+}
+
+type GetSddcDatastoreArray []GetSddcDatastoreInput
+
+func (GetSddcDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcDatastore)(nil)).Elem()
+}
+
+func (i GetSddcDatastoreArray) ToGetSddcDatastoreArrayOutput() GetSddcDatastoreArrayOutput {
+	return i.ToGetSddcDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcDatastoreArray) ToGetSddcDatastoreArrayOutputWithContext(ctx context.Context) GetSddcDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcDatastoreArrayOutput)
+}
+
+type GetSddcDatastoreOutput struct{ *pulumi.OutputState }
+
+func (GetSddcDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcDatastore)(nil)).Elem()
+}
+
+func (o GetSddcDatastoreOutput) ToGetSddcDatastoreOutput() GetSddcDatastoreOutput {
+	return o
+}
+
+func (o GetSddcDatastoreOutput) ToGetSddcDatastoreOutputWithContext(ctx context.Context) GetSddcDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o GetSddcDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSddcDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Size of the Block Storage Volume in GB.
+func (o GetSddcDatastoreOutput) Capacity() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSddcDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
+}
+
+// Type of the datastore.
+func (o GetSddcDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type GetSddcDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcDatastore)(nil)).Elem()
+}
+
+func (o GetSddcDatastoreArrayOutput) ToGetSddcDatastoreArrayOutput() GetSddcDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcDatastoreArrayOutput) ToGetSddcDatastoreArrayOutputWithContext(ctx context.Context) GetSddcDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcDatastore {
+		return vs[0].([]GetSddcDatastore)[vs[1].(int)]
+	}).(GetSddcDatastoreOutput)
 }
 
 type GetSddcHcxOnPremLicense struct {
@@ -1180,6 +1410,8 @@ type GetSddcsSddcCollection struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// Datastores used for the Sddc.
+	Datastores []GetSddcsSddcCollectionDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -1261,7 +1493,7 @@ type GetSddcsSddcCollection struct {
 	TimeHcxLicenseStatusUpdated string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The vSphere licenses to be used when upgrade SDDC.
+	// The vSphere licenses to use when upgrading the SDDC.
 	UpgradeLicenses []GetSddcsSddcCollectionUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn string `pulumi:"vcenterFqdn"`
@@ -1277,9 +1509,9 @@ type GetSddcsSddcCollection struct {
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	VsanVlanId string `pulumi:"vsanVlanId"`
-	// The link of guidance to upgrade vSphere.
+	// The link to guidance for upgrading vSphere.
 	VsphereUpgradeGuide string `pulumi:"vsphereUpgradeGuide"`
-	// The links of binary objects needed for upgrade vSphere.
+	// The links to binary objects needed to upgrade vSphere.
 	VsphereUpgradeObjects []GetSddcsSddcCollectionVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	VsphereVlanId string `pulumi:"vsphereVlanId"`
@@ -1307,6 +1539,8 @@ type GetSddcsSddcCollectionArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// Datastores used for the Sddc.
+	Datastores GetSddcsSddcCollectionDatastoreArrayInput `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -1388,7 +1622,7 @@ type GetSddcsSddcCollectionArgs struct {
 	TimeHcxLicenseStatusUpdated pulumi.StringInput `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The vSphere licenses to be used when upgrade SDDC.
+	// The vSphere licenses to use when upgrading the SDDC.
 	UpgradeLicenses GetSddcsSddcCollectionUpgradeLicenseArrayInput `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn pulumi.StringInput `pulumi:"vcenterFqdn"`
@@ -1404,9 +1638,9 @@ type GetSddcsSddcCollectionArgs struct {
 	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
-	// The link of guidance to upgrade vSphere.
+	// The link to guidance for upgrading vSphere.
 	VsphereUpgradeGuide pulumi.StringInput `pulumi:"vsphereUpgradeGuide"`
-	// The links of binary objects needed for upgrade vSphere.
+	// The links to binary objects needed to upgrade vSphere.
 	VsphereUpgradeObjects GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput `pulumi:"vsphereUpgradeObjects"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
@@ -1483,6 +1717,11 @@ func (o GetSddcsSddcCollectionOutput) CompartmentId() pulumi.StringOutput {
 // The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 func (o GetSddcsSddcCollectionOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Datastores used for the Sddc.
+func (o GetSddcsSddcCollectionOutput) Datastores() GetSddcsSddcCollectionDatastoreArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionDatastore { return v.Datastores }).(GetSddcsSddcCollectionDatastoreArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1692,7 +1931,7 @@ func (o GetSddcsSddcCollectionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The vSphere licenses to be used when upgrade SDDC.
+// The vSphere licenses to use when upgrading the SDDC.
 func (o GetSddcsSddcCollectionOutput) UpgradeLicenses() GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionUpgradeLicense { return v.UpgradeLicenses }).(GetSddcsSddcCollectionUpgradeLicenseArrayOutput)
 }
@@ -1732,12 +1971,12 @@ func (o GetSddcsSddcCollectionOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsanVlanId }).(pulumi.StringOutput)
 }
 
-// The link of guidance to upgrade vSphere.
+// The link to guidance for upgrading vSphere.
 func (o GetSddcsSddcCollectionOutput) VsphereUpgradeGuide() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
 }
 
-// The links of binary objects needed for upgrade vSphere.
+// The links to binary objects needed to upgrade vSphere.
 func (o GetSddcsSddcCollectionOutput) VsphereUpgradeObjects() GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionVsphereUpgradeObject {
 		return v.VsphereUpgradeObjects
@@ -1772,6 +2011,121 @@ func (o GetSddcsSddcCollectionArrayOutput) Index(i pulumi.IntInput) GetSddcsSddc
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollection {
 		return vs[0].([]GetSddcsSddcCollection)[vs[1].(int)]
 	}).(GetSddcsSddcCollectionOutput)
+}
+
+type GetSddcsSddcCollectionDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity float64 `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// GetSddcsSddcCollectionDatastoreInput is an input type that accepts GetSddcsSddcCollectionDatastoreArgs and GetSddcsSddcCollectionDatastoreOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionDatastoreInput` via:
+//
+//	GetSddcsSddcCollectionDatastoreArgs{...}
+type GetSddcsSddcCollectionDatastoreInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionDatastoreOutput() GetSddcsSddcCollectionDatastoreOutput
+	ToGetSddcsSddcCollectionDatastoreOutputWithContext(context.Context) GetSddcsSddcCollectionDatastoreOutput
+}
+
+type GetSddcsSddcCollectionDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity pulumi.Float64Input `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (GetSddcsSddcCollectionDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionDatastore)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionDatastoreArgs) ToGetSddcsSddcCollectionDatastoreOutput() GetSddcsSddcCollectionDatastoreOutput {
+	return i.ToGetSddcsSddcCollectionDatastoreOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionDatastoreArgs) ToGetSddcsSddcCollectionDatastoreOutputWithContext(ctx context.Context) GetSddcsSddcCollectionDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionDatastoreOutput)
+}
+
+// GetSddcsSddcCollectionDatastoreArrayInput is an input type that accepts GetSddcsSddcCollectionDatastoreArray and GetSddcsSddcCollectionDatastoreArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionDatastoreArrayInput` via:
+//
+//	GetSddcsSddcCollectionDatastoreArray{ GetSddcsSddcCollectionDatastoreArgs{...} }
+type GetSddcsSddcCollectionDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionDatastoreArrayOutput() GetSddcsSddcCollectionDatastoreArrayOutput
+	ToGetSddcsSddcCollectionDatastoreArrayOutputWithContext(context.Context) GetSddcsSddcCollectionDatastoreArrayOutput
+}
+
+type GetSddcsSddcCollectionDatastoreArray []GetSddcsSddcCollectionDatastoreInput
+
+func (GetSddcsSddcCollectionDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionDatastore)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionDatastoreArray) ToGetSddcsSddcCollectionDatastoreArrayOutput() GetSddcsSddcCollectionDatastoreArrayOutput {
+	return i.ToGetSddcsSddcCollectionDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionDatastoreArray) ToGetSddcsSddcCollectionDatastoreArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionDatastoreArrayOutput)
+}
+
+type GetSddcsSddcCollectionDatastoreOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionDatastore)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionDatastoreOutput) ToGetSddcsSddcCollectionDatastoreOutput() GetSddcsSddcCollectionDatastoreOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionDatastoreOutput) ToGetSddcsSddcCollectionDatastoreOutputWithContext(ctx context.Context) GetSddcsSddcCollectionDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o GetSddcsSddcCollectionDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Size of the Block Storage Volume in GB.
+func (o GetSddcsSddcCollectionDatastoreOutput) Capacity() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
+}
+
+// Type of the datastore.
+func (o GetSddcsSddcCollectionDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type GetSddcsSddcCollectionDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionDatastore)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionDatastoreArrayOutput) ToGetSddcsSddcCollectionDatastoreArrayOutput() GetSddcsSddcCollectionDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionDatastoreArrayOutput) ToGetSddcsSddcCollectionDatastoreArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionDatastore {
+		return vs[0].([]GetSddcsSddcCollectionDatastore)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionDatastoreOutput)
 }
 
 type GetSddcsSddcCollectionHcxOnPremLicense struct {
@@ -2215,6 +2569,8 @@ type GetSupportedHostShapesItem struct {
 	DefaultOcpuCount float64 `pulumi:"defaultOcpuCount"`
 	// Description of the shape.
 	Description string `pulumi:"description"`
+	// Whether the shape supports "MONTH" SKU.
+	IsSupportMonthlySku bool `pulumi:"isSupportMonthlySku"`
 	// Indicates whether the shape supports shielded instances.
 	IsSupportShieldedInstances bool `pulumi:"isSupportShieldedInstances"`
 	// A filter to return only resources that match the given name exactly.
@@ -2247,6 +2603,8 @@ type GetSupportedHostShapesItemArgs struct {
 	DefaultOcpuCount pulumi.Float64Input `pulumi:"defaultOcpuCount"`
 	// Description of the shape.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Whether the shape supports "MONTH" SKU.
+	IsSupportMonthlySku pulumi.BoolInput `pulumi:"isSupportMonthlySku"`
 	// Indicates whether the shape supports shielded instances.
 	IsSupportShieldedInstances pulumi.BoolInput `pulumi:"isSupportShieldedInstances"`
 	// A filter to return only resources that match the given name exactly.
@@ -2322,6 +2680,11 @@ func (o GetSupportedHostShapesItemOutput) DefaultOcpuCount() pulumi.Float64Outpu
 // Description of the shape.
 func (o GetSupportedHostShapesItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Whether the shape supports "MONTH" SKU.
+func (o GetSupportedHostShapesItemOutput) IsSupportMonthlySku() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) bool { return v.IsSupportMonthlySku }).(pulumi.BoolOutput)
 }
 
 // Indicates whether the shape supports shielded instances.
@@ -2798,6 +3161,8 @@ func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) Index(i pulumi.IntInp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreInput)(nil)).Elem(), SddcDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreArrayInput)(nil)).Elem(), SddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseInput)(nil)).Elem(), SddcHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseArrayInput)(nil)).Elem(), SddcHcxOnPremLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcUpgradeLicenseInput)(nil)).Elem(), SddcUpgradeLicenseArgs{})
@@ -2808,6 +3173,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionArrayInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterInput)(nil)).Elem(), GetExsiHostsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterArrayInput)(nil)).Elem(), GetExsiHostsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreInput)(nil)).Elem(), GetSddcDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreArrayInput)(nil)).Elem(), GetSddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseArrayInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcUpgradeLicenseInput)(nil)).Elem(), GetSddcUpgradeLicenseArgs{})
@@ -2818,6 +3185,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsFilterArrayInput)(nil)).Elem(), GetSddcsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInput)(nil)).Elem(), GetSddcsSddcCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionArrayInput)(nil)).Elem(), GetSddcsSddcCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionDatastoreInput)(nil)).Elem(), GetSddcsSddcCollectionDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionDatastoreArrayInput)(nil)).Elem(), GetSddcsSddcCollectionDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionHcxOnPremLicenseInput)(nil)).Elem(), GetSddcsSddcCollectionHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionHcxOnPremLicenseArrayInput)(nil)).Elem(), GetSddcsSddcCollectionHcxOnPremLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicenseInput)(nil)).Elem(), GetSddcsSddcCollectionUpgradeLicenseArgs{})
@@ -2836,6 +3205,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsFilterArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemArray{})
+	pulumi.RegisterOutputType(SddcDatastoreOutput{})
+	pulumi.RegisterOutputType(SddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseArrayOutput{})
 	pulumi.RegisterOutputType(SddcUpgradeLicenseOutput{})
@@ -2846,6 +3217,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcDatastoreOutput{})
+	pulumi.RegisterOutputType(GetSddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcUpgradeLicenseOutput{})
@@ -2856,6 +3229,8 @@ func init() {
 	pulumi.RegisterOutputType(GetSddcsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionDatastoreOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionUpgradeLicenseOutput{})

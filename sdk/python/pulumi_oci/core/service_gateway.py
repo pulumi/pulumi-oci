@@ -333,7 +333,7 @@ class ServiceGateway(pulumi.CustomResource):
         test_service_gateway = oci.core.ServiceGateway("testServiceGateway",
             compartment_id=var["compartment_id"],
             services=[oci.core.ServiceGatewayServiceArgs(
-                service_id=data["oci_core_services"]["test_services"]["services"][0]["id"],
+                service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             vcn_id=oci_core_vcn["test_vcn"]["id"],
             defined_tags={
@@ -392,7 +392,7 @@ class ServiceGateway(pulumi.CustomResource):
         test_service_gateway = oci.core.ServiceGateway("testServiceGateway",
             compartment_id=var["compartment_id"],
             services=[oci.core.ServiceGatewayServiceArgs(
-                service_id=data["oci_core_services"]["test_services"]["services"][0]["id"],
+                service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             vcn_id=oci_core_vcn["test_vcn"]["id"],
             defined_tags={

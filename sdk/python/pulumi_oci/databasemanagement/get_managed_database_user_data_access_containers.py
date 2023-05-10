@@ -113,9 +113,9 @@ def get_managed_database_user_data_access_containers(filters: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_containers = oci.DatabaseManagement.get_managed_database_user_data_access_containers(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_data_access_container_name"])
+    test_managed_database_user_data_access_containers = oci.DatabaseManagement.get_managed_database_user_data_access_containers(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -157,9 +157,9 @@ def get_managed_database_user_data_access_containers_output(filters: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_containers = oci.DatabaseManagement.get_managed_database_user_data_access_containers(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_data_access_container_name"])
+    test_managed_database_user_data_access_containers = oci.DatabaseManagement.get_managed_database_user_data_access_containers(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

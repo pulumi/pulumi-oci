@@ -171,13 +171,13 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        column_names=var["discovery_jobs_result_column_name"],
-        discovery_type=var["discovery_jobs_result_discovery_type"],
-        is_result_applied=var["discovery_jobs_result_is_result_applied"],
-        objects=var["discovery_jobs_result_object"],
-        planned_action=var["discovery_jobs_result_planned_action"],
-        schema_names=var["discovery_jobs_result_schema_name"])
+    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        discovery_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_result_applied=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        planned_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -235,13 +235,13 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        column_names=var["discovery_jobs_result_column_name"],
-        discovery_type=var["discovery_jobs_result_discovery_type"],
-        is_result_applied=var["discovery_jobs_result_is_result_applied"],
-        objects=var["discovery_jobs_result_object"],
-        planned_action=var["discovery_jobs_result_planned_action"],
-        schema_names=var["discovery_jobs_result_schema_name"])
+    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        discovery_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_result_applied=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        planned_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

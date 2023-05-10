@@ -21,12 +21,12 @@ class AnalyticsInstanceArgs:
                  feature_set: pulumi.Input[str],
                  idcs_access_token: pulumi.Input[str],
                  license_type: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  email_notification: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
@@ -36,12 +36,12 @@ class AnalyticsInstanceArgs:
         :param pulumi.Input[str] feature_set: Analytics feature set.
         :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
-        :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Optional description.
         :param pulumi.Input[str] email_notification: (Updatable) Email address receiving notifications.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
         """
@@ -50,7 +50,6 @@ class AnalyticsInstanceArgs:
         pulumi.set(__self__, "feature_set", feature_set)
         pulumi.set(__self__, "idcs_access_token", idcs_access_token)
         pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "name", name)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -61,6 +60,8 @@ class AnalyticsInstanceArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if network_endpoint_details is not None:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         if state is not None:
@@ -127,18 +128,6 @@ class AnalyticsInstanceArgs:
         pulumi.set(self, "license_type", value)
 
     @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -197,6 +186,18 @@ class AnalyticsInstanceArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="networkEndpointDetails")
@@ -520,14 +521,13 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         test_analytics_instance = oci.analytics.AnalyticsInstance("testAnalyticsInstance",
             capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=var["analytics_instance_capacity_capacity_type"],
-                capacity_value=var["analytics_instance_capacity_capacity_value"],
+                capacity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                capacity_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             compartment_id=var["compartment_id"],
             feature_set=var["analytics_instance_feature_set"],
             idcs_access_token=var["analytics_instance_idcs_access_token"],
             license_type=var["analytics_instance_license_type"],
-            name=var["analytics_instance_name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -538,15 +538,15 @@ class AnalyticsInstance(pulumi.CustomResource):
             },
             kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
-                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-                whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
-                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
+                network_endpoint_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                network_security_group_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                whitelisted_services=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
-                    whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],
+                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ))
         ```
@@ -595,14 +595,13 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         test_analytics_instance = oci.analytics.AnalyticsInstance("testAnalyticsInstance",
             capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=var["analytics_instance_capacity_capacity_type"],
-                capacity_value=var["analytics_instance_capacity_capacity_value"],
+                capacity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                capacity_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             compartment_id=var["compartment_id"],
             feature_set=var["analytics_instance_feature_set"],
             idcs_access_token=var["analytics_instance_idcs_access_token"],
             license_type=var["analytics_instance_license_type"],
-            name=var["analytics_instance_name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -613,15 +612,15 @@ class AnalyticsInstance(pulumi.CustomResource):
             },
             kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
-                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-                whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
-                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
+                network_endpoint_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                network_security_group_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                whitelisted_services=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
-                    whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],
+                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ))
         ```
@@ -691,8 +690,6 @@ class AnalyticsInstance(pulumi.CustomResource):
             if license_type is None and not opts.urn:
                 raise TypeError("Missing required property 'license_type'")
             __props__.__dict__["license_type"] = license_type
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["state"] = state

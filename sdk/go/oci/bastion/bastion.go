@@ -42,7 +42,6 @@ import (
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MaxSessionTtlInSeconds:    pulumi.Any(_var.Bastion_max_session_ttl_in_seconds),
-//				Name:                      pulumi.Any(_var.Bastion_name),
 //				PhoneBookEntry:            pulumi.Any(_var.Bastion_phone_book_entry),
 //				StaticJumpHostIpAddresses: pulumi.Any(_var.Bastion_static_jump_host_ip_addresses),
 //			})

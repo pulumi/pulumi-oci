@@ -44,7 +44,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ons.NewNotificationTopic(ctx, "testNotificationTopic", &Ons.NotificationTopicArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Name:          pulumi.Any(_var.Notification_topic_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -107,9 +106,6 @@ func NewNotificationTopic(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource NotificationTopic
 	err := ctx.RegisterResource("oci:Ons/notificationTopic:NotificationTopic", name, args, &resource, opts...)
@@ -196,7 +192,7 @@ type notificationTopicArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a NotificationTopic resource.
@@ -210,7 +206,7 @@ type NotificationTopicArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 }
 
 func (NotificationTopicArgs) ElementType() reflect.Type {

@@ -313,8 +313,8 @@ def get_discovery_jobs_result(discovery_job_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        result_key=var["discovery_jobs_result_result_key"])
+    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        result_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -367,8 +367,8 @@ def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        result_key=var["discovery_jobs_result_result_key"])
+    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        result_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -62,7 +62,6 @@ import (
 //			_, err := Identity.NewUser(ctx, "testUser", &Identity.UserArgs{
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.User_description),
-//				Name:          pulumi.Any(_var.User_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -138,9 +137,6 @@ func NewUser(ctx *pulumi.Context,
 
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource User
 	err := ctx.RegisterResource("oci:Identity/user:User", name, args, &resource, opts...)
@@ -255,7 +251,7 @@ type userArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a User resource.
@@ -271,7 +267,7 @@ type UserArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 }
 
 func (UserArgs) ElementType() reflect.Type {

@@ -32,7 +32,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.NewZone(ctx, "testZone", &Dns.ZoneArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Name:          pulumi.Any(_var.Zone_name),
 //				ZoneType:      pulumi.Any(_var.Zone_zone_type),
 //				DefinedTags:   pulumi.Any(_var.Zone_defined_tags),
 //				ExternalMasters: dns.ZoneExternalMasterArray{
@@ -109,9 +108,6 @@ func NewZone(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.ZoneType == nil {
 		return nil, errors.New("invalid value for required argument 'ZoneType'")
@@ -219,7 +215,7 @@ type zoneArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the zone.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 	Scope *string `pulumi:"scope"`
@@ -240,7 +236,7 @@ type ZoneArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput
 	// The name of the zone.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// Specifies to operate only on resources that have a matching DNS scope.
 	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 	Scope pulumi.StringPtrInput

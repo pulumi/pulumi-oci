@@ -385,8 +385,8 @@ class NetworkAddressList(pulumi.CustomResource):
             },
             system_tags=var["network_address_list_system_tags"],
             vcn_addresses=[oci.waf.NetworkAddressListVcnAddressArgs(
-                addresses=var["network_address_list_vcn_addresses_addresses"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                addresses=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -439,8 +439,8 @@ class NetworkAddressList(pulumi.CustomResource):
             },
             system_tags=var["network_address_list_system_tags"],
             vcn_addresses=[oci.waf.NetworkAddressListVcnAddressArgs(
-                addresses=var["network_address_list_vcn_addresses_addresses"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                addresses=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 

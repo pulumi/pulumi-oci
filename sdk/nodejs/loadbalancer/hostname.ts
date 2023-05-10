@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  * const testHostname = new oci.loadbalancer.Hostname("testHostname", {
  *     hostname: _var.hostname_hostname,
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     name: _var.hostname_name,
  * });
  * ```
  *
@@ -93,9 +92,6 @@ export class Hostname extends pulumi.CustomResource {
             if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["hostname"] = args ? args.hostname : undefined;
             resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -140,5 +136,5 @@ export interface HostnameArgs {
     /**
      * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

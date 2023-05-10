@@ -696,11 +696,11 @@ class FusionEnvironment(pulumi.CustomResource):
         test_fusion_environment = oci.fusion_apps.FusionEnvironment("testFusionEnvironment",
             compartment_id=var["compartment_id"],
             create_fusion_environment_admin_user_details=oci.fusion_apps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs(
-                email_address=var["fusion_environment_create_fusion_environment_admin_user_details_email_address"],
-                first_name=var["fusion_environment_create_fusion_environment_admin_user_details_first_name"],
-                last_name=var["fusion_environment_create_fusion_environment_admin_user_details_last_name"],
-                password=var["fusion_environment_create_fusion_environment_admin_user_details_password"],
-                username=var["fusion_environment_create_fusion_environment_admin_user_details_username"],
+                email_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                first_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                last_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             display_name=var["fusion_environment_display_name"],
             fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
@@ -715,16 +715,16 @@ class FusionEnvironment(pulumi.CustomResource):
             },
             kms_key_id=oci_kms_key["test_key"]["id"],
             maintenance_policy=oci.fusion_apps.FusionEnvironmentMaintenancePolicyArgs(
-                environment_maintenance_override=var["fusion_environment_maintenance_policy_environment_maintenance_override"],
-                monthly_patching_override=var["fusion_environment_maintenance_policy_monthly_patching_override"],
+                environment_maintenance_override=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                monthly_patching_override=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             rules=[oci.fusion_apps.FusionEnvironmentRuleArgs(
-                action=var["fusion_environment_rules_action"],
+                action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 conditions=[oci.fusion_apps.FusionEnvironmentRuleConditionArgs(
-                    attribute_name=var["fusion_environment_rules_conditions_attribute_name"],
-                    attribute_value=var["fusion_environment_rules_conditions_attribute_value"],
+                    attribute_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    attribute_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                description=var["fusion_environment_rules_description"],
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -771,11 +771,11 @@ class FusionEnvironment(pulumi.CustomResource):
         test_fusion_environment = oci.fusion_apps.FusionEnvironment("testFusionEnvironment",
             compartment_id=var["compartment_id"],
             create_fusion_environment_admin_user_details=oci.fusion_apps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs(
-                email_address=var["fusion_environment_create_fusion_environment_admin_user_details_email_address"],
-                first_name=var["fusion_environment_create_fusion_environment_admin_user_details_first_name"],
-                last_name=var["fusion_environment_create_fusion_environment_admin_user_details_last_name"],
-                password=var["fusion_environment_create_fusion_environment_admin_user_details_password"],
-                username=var["fusion_environment_create_fusion_environment_admin_user_details_username"],
+                email_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                first_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                last_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             display_name=var["fusion_environment_display_name"],
             fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
@@ -790,16 +790,16 @@ class FusionEnvironment(pulumi.CustomResource):
             },
             kms_key_id=oci_kms_key["test_key"]["id"],
             maintenance_policy=oci.fusion_apps.FusionEnvironmentMaintenancePolicyArgs(
-                environment_maintenance_override=var["fusion_environment_maintenance_policy_environment_maintenance_override"],
-                monthly_patching_override=var["fusion_environment_maintenance_policy_monthly_patching_override"],
+                environment_maintenance_override=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                monthly_patching_override=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             rules=[oci.fusion_apps.FusionEnvironmentRuleArgs(
-                action=var["fusion_environment_rules_action"],
+                action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 conditions=[oci.fusion_apps.FusionEnvironmentRuleConditionArgs(
-                    attribute_name=var["fusion_environment_rules_conditions_attribute_name"],
-                    attribute_value=var["fusion_environment_rules_conditions_attribute_value"],
+                    attribute_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    attribute_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                description=var["fusion_environment_rules_description"],
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 

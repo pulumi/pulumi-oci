@@ -100,8 +100,8 @@ def get_replication_sources(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=var["replication_source_bucket"],
-        namespace=var["replication_source_namespace"])
+    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -139,8 +139,8 @@ def get_replication_sources_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=var["replication_source_bucket"],
-        namespace=var["replication_source_namespace"])
+    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

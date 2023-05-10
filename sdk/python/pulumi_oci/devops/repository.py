@@ -16,17 +16,16 @@ __all__ = ['RepositoryArgs', 'Repository']
 @pulumi.input_type
 class RepositoryArgs:
     def __init__(__self__, *,
-                 name: pulumi.Input[str],
                  project_id: pulumi.Input[str],
                  repository_type: pulumi.Input[str],
                  default_branch: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None):
+                 mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Repository resource.
-        :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
         :param pulumi.Input[str] default_branch: (Updatable) The default branch of the repository.
@@ -34,8 +33,8 @@ class RepositoryArgs:
         :param pulumi.Input[str] description: (Updatable) Details of the repository. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input['RepositoryMirrorRepositoryConfigArgs'] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
+        :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
         """
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "repository_type", repository_type)
         if default_branch is not None:
@@ -48,18 +47,8 @@ class RepositoryArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if mirror_repository_config is not None:
             pulumi.set(__self__, "mirror_repository_config", mirror_repository_config)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Unique name of a repository.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="projectId")
@@ -144,6 +133,18 @@ class RepositoryArgs:
     @mirror_repository_config.setter
     def mirror_repository_config(self, value: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']]):
         pulumi.set(self, "mirror_repository_config", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique name of a repository.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -532,7 +533,6 @@ class Repository(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_repository = oci.dev_ops.Repository("testRepository",
-            name=var["repository_name"],
             project_id=oci_devops_project["test_project"]["id"],
             repository_type=var["repository_repository_type"],
             default_branch=var["repository_default_branch"],
@@ -544,11 +544,11 @@ class Repository(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=oci_devops_connector["test_connector"]["id"],
-                repository_url=var["repository_mirror_repository_config_repository_url"],
+                connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=var["repository_mirror_repository_config_trigger_schedule_schedule_type"],
-                    custom_schedule=var["repository_mirror_repository_config_trigger_schedule_custom_schedule"],
+                    schedule_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    custom_schedule=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ))
         ```
@@ -590,7 +590,6 @@ class Repository(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_repository = oci.dev_ops.Repository("testRepository",
-            name=var["repository_name"],
             project_id=oci_devops_project["test_project"]["id"],
             repository_type=var["repository_repository_type"],
             default_branch=var["repository_default_branch"],
@@ -602,11 +601,11 @@ class Repository(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=oci_devops_connector["test_connector"]["id"],
-                repository_url=var["repository_mirror_repository_config_repository_url"],
+                connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=var["repository_mirror_repository_config_trigger_schedule_schedule_type"],
-                    custom_schedule=var["repository_mirror_repository_config_trigger_schedule_custom_schedule"],
+                    schedule_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    custom_schedule=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ))
         ```
@@ -656,8 +655,6 @@ class Repository(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["mirror_repository_config"] = mirror_repository_config
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")

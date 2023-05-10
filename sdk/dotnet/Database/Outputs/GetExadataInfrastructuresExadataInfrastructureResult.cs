@@ -160,6 +160,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Netmask;
         /// <summary>
+        /// Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult> NetworkBondingModeDetails;
+        /// <summary>
         /// The list of NTP server IP addresses. Maximum of 3 allowed.
         /// </summary>
         public readonly ImmutableArray<string> NtpServers;
@@ -266,6 +270,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string netmask,
 
+            ImmutableArray<Outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult> networkBondingModeDetails,
+
             ImmutableArray<string> ntpServers,
 
             string shape,
@@ -318,6 +324,7 @@ namespace Pulumi.Oci.Database.Outputs
             MonthlyDbServerVersion = monthlyDbServerVersion;
             MultiRackConfigurationFile = multiRackConfigurationFile;
             Netmask = netmask;
+            NetworkBondingModeDetails = networkBondingModeDetails;
             NtpServers = ntpServers;
             Shape = shape;
             State = state;

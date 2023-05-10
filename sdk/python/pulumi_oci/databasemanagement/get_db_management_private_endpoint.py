@@ -186,7 +186,7 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
+    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -226,7 +226,7 @@ def get_db_management_private_endpoint_output(db_management_private_endpoint_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
+    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

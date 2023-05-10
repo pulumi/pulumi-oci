@@ -37,7 +37,6 @@ import (
 //						JsonPath:      pulumi.Any(_var.Index_keys_json_path),
 //					},
 //				},
-//				Name:          pulumi.Any(_var.Index_name),
 //				TableNameOrId: pulumi.Any(oci_nosql_table_name_or.Test_table_name_or.Id),
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				IsIfNotExists: pulumi.Any(_var.Index_is_if_not_exists),
@@ -92,9 +91,6 @@ func NewIndex(ctx *pulumi.Context,
 
 	if args.Keys == nil {
 		return nil, errors.New("invalid value for required argument 'Keys'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.TableNameOrId == nil {
 		return nil, errors.New("invalid value for required argument 'TableNameOrId'")
@@ -174,7 +170,7 @@ type indexArgs struct {
 	// A set of keys for a secondary index.
 	Keys []IndexKey `pulumi:"keys"`
 	// Index name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A table name within the compartment, or a table OCID.
 	TableNameOrId string `pulumi:"tableNameOrId"`
 }
@@ -188,7 +184,7 @@ type IndexArgs struct {
 	// A set of keys for a secondary index.
 	Keys IndexKeyArrayInput
 	// Index name.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// A table name within the compartment, or a table OCID.
 	TableNameOrId pulumi.StringInput
 }

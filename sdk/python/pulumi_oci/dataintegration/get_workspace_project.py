@@ -215,8 +215,8 @@ def get_workspace_project(project_key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=var["workspace_project_project_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -262,8 +262,8 @@ def get_workspace_project_output(project_key: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=var["workspace_project_project_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

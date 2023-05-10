@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  * const testNodePool = new oci.containerengine.NodePool("testNodePool", {
  *     clusterId: oci_containerengine_cluster.test_cluster.id,
  *     compartmentId: _var.compartment_id,
- *     name: _var.node_pool_name,
  *     nodeShape: _var.node_pool_node_shape,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -266,9 +265,6 @@ export class NodePool extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.nodeShape === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'nodeShape'");
             }
@@ -434,7 +430,7 @@ export interface NodePoolArgs {
     /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */

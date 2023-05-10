@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Ocvp.SddcArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcState;
+import com.pulumi.oci.Ocvp.outputs.SddcDatastore;
 import com.pulumi.oci.Ocvp.outputs.SddcHcxOnPremLicense;
 import com.pulumi.oci.Ocvp.outputs.SddcUpgradeLicense;
 import com.pulumi.oci.Ocvp.outputs.SddcVsphereUpgradeObject;
@@ -42,6 +43,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Ocvp.Sddc;
  * import com.pulumi.oci.Ocvp.SddcArgs;
+ * import com.pulumi.oci.Ocvp.inputs.SddcDatastoreArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -70,6 +72,10 @@ import javax.annotation.Nullable;
  *             .vsanVlanId(oci_core_vlan.test_vsan_vlan().id())
  *             .vsphereVlanId(oci_core_vlan.test_vsphere_vlan().id())
  *             .capacityReservationId(oci_ocvp_capacity_reservation.test_capacity_reservation().id())
+ *             .datastores(SddcDatastoreArgs.builder()
+ *                 .blockVolumeIds(var_.sddc_datastores_block_volume_ids())
+ *                 .datastoreType(var_.sddc_datastores_datastore_type())
+ *                 .build())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.sddc_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
@@ -159,6 +165,20 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      */
     public Output<String> computeAvailabilityDomain() {
         return this.computeAvailabilityDomain;
+    }
+    /**
+     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
+    @Export(name="datastores", type=List.class, parameters={SddcDatastore.class})
+    private Output<List<SddcDatastore>> datastores;
+
+    /**
+     * @return A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
+    public Output<List<SddcDatastore>> datastores() {
+        return this.datastores;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -371,28 +391,28 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.instanceDisplayNamePrefix;
     }
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
     @Export(name="isHcxEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isHcxEnabled;
 
     /**
-     * @return Indicates whether to enable HCX for this SDDC.
+     * @return For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
     public Output<Boolean> isHcxEnabled() {
         return this.isHcxEnabled;
     }
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * Indicates whether to enable HCX Enterprise for this SDDC.
      * 
      */
     @Export(name="isHcxEnterpriseEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isHcxEnterpriseEnabled;
 
     /**
-     * @return Indicates whether HCX Enterprise is enabled for this SDDC.
+     * @return Indicates whether to enable HCX Enterprise for this SDDC.
      * 
      */
     public Output<Boolean> isHcxEnterpriseEnabled() {
@@ -735,14 +755,14 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * The vSphere licenses to be used when upgrade SDDC.
+     * The vSphere licenses to use when upgrading the SDDC.
      * 
      */
     @Export(name="upgradeLicenses", type=List.class, parameters={SddcUpgradeLicense.class})
     private Output<List<SddcUpgradeLicense>> upgradeLicenses;
 
     /**
-     * @return The vSphere licenses to be used when upgrade SDDC.
+     * @return The vSphere licenses to use when upgrading the SDDC.
      * 
      */
     public Output<List<SddcUpgradeLicense>> upgradeLicenses() {
@@ -847,28 +867,28 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.vsanVlanId;
     }
     /**
-     * The link of guidance to upgrade vSphere.
+     * The link to guidance for upgrading vSphere.
      * 
      */
     @Export(name="vsphereUpgradeGuide", type=String.class, parameters={})
     private Output<String> vsphereUpgradeGuide;
 
     /**
-     * @return The link of guidance to upgrade vSphere.
+     * @return The link to guidance for upgrading vSphere.
      * 
      */
     public Output<String> vsphereUpgradeGuide() {
         return this.vsphereUpgradeGuide;
     }
     /**
-     * The links of binary objects needed for upgrade vSphere.
+     * The links to binary objects needed to upgrade vSphere.
      * 
      */
     @Export(name="vsphereUpgradeObjects", type=List.class, parameters={SddcVsphereUpgradeObject.class})
     private Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects;
 
     /**
-     * @return The links of binary objects needed for upgrade vSphere.
+     * @return The links to binary objects needed to upgrade vSphere.
      * 
      */
     public Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects() {

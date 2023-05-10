@@ -117,9 +117,9 @@ def get_public_ip_pools(byoip_range_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=var["compartment_id"],
-        byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"],
-        display_name=var["public_ip_pool_display_name"])
+    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        byoip_range_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -162,9 +162,9 @@ def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=var["compartment_id"],
-        byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"],
-        display_name=var["public_ip_pool_display_name"])
+    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        byoip_range_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

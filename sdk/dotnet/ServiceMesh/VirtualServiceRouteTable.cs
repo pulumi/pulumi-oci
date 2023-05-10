@@ -27,7 +27,6 @@ namespace Pulumi.Oci.ServiceMesh
     ///     var testVirtualServiceRouteTable = new Oci.ServiceMesh.VirtualServiceRouteTable("testVirtualServiceRouteTable", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Virtual_service_route_table_name,
     ///         RouteRules = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.VirtualServiceRouteTableRouteRuleArgs
@@ -238,8 +237,8 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.

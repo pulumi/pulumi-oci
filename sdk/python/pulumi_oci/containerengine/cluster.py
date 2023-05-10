@@ -18,7 +18,6 @@ class ClusterArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  kubernetes_version: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  vcn_id: pulumi.Input[str],
                  cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -26,13 +25,13 @@ class ClusterArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  image_policy_config: Optional[pulumi.Input['ClusterImagePolicyConfigArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Cluster resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
-        :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -40,12 +39,12 @@ class ClusterArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['ClusterImagePolicyConfigArgs'] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
         :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+        :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] type: (Updatable) Type of cluster
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "vcn_id", vcn_id)
         if cluster_pod_network_options is not None:
             pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
@@ -59,6 +58,8 @@ class ClusterArgs:
             pulumi.set(__self__, "image_policy_config", image_policy_config)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
         if type is not None:
@@ -87,18 +88,6 @@ class ClusterArgs:
     @kubernetes_version.setter
     def kubernetes_version(self, value: pulumi.Input[str]):
         pulumi.set(self, "kubernetes_version", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the cluster. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="vcnId")
@@ -183,6 +172,18 @@ class ClusterArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the cluster. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -602,8 +603,6 @@ class Cluster(pulumi.CustomResource):
             if kubernetes_version is None and not opts.urn:
                 raise TypeError("Missing required property 'kubernetes_version'")
             __props__.__dict__["kubernetes_version"] = kubernetes_version
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["options"] = options
             __props__.__dict__["type"] = type

@@ -693,12 +693,12 @@ def get_domains_password_policy(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_id=oci_identity_policy["test_policy"]["id"],
+    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        password_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -796,12 +796,12 @@ def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_id=oci_identity_policy["test_policy"]["id"],
+    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        password_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

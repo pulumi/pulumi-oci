@@ -31,7 +31,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.NewModelVersionSet(ctx, "testModelVersionSet", &DataScience.ModelVersionSetArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Name:          pulumi.Any(_var.Model_version_set_name),
 //				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
@@ -93,9 +92,6 @@ func NewModelVersionSet(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.ProjectId == nil {
 		return nil, errors.New("invalid value for required argument 'ProjectId'")
@@ -181,7 +177,7 @@ type modelVersionSetArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model version set.
 	ProjectId string `pulumi:"projectId"`
 }
@@ -197,7 +193,7 @@ type ModelVersionSetArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model version set.
 	ProjectId pulumi.StringInput
 }

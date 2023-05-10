@@ -18,27 +18,28 @@ class BackendSetArgs:
     def __init__(__self__, *,
                  health_checker: pulumi.Input['BackendSetHealthCheckerArgs'],
                  load_balancer_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  policy: pulumi.Input[str],
                  lb_cookie_session_persistence_configuration: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
                  ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None):
         """
         The set of arguments for constructing a BackendSet resource.
         :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy's configuration details.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
-        :param pulumi.Input[str] name: A friendly name for the backend set. It must be unique and it cannot be changed.
         :param pulumi.Input[str] policy: (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
         :param pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs'] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
+        :param pulumi.Input[str] name: A friendly name for the backend set. It must be unique and it cannot be changed.
         :param pulumi.Input['BackendSetSessionPersistenceConfigurationArgs'] session_persistence_configuration: (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
         :param pulumi.Input['BackendSetSslConfigurationArgs'] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
         """
         pulumi.set(__self__, "health_checker", health_checker)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "policy", policy)
         if lb_cookie_session_persistence_configuration is not None:
             pulumi.set(__self__, "lb_cookie_session_persistence_configuration", lb_cookie_session_persistence_configuration)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if session_persistence_configuration is not None:
             pulumi.set(__self__, "session_persistence_configuration", session_persistence_configuration)
         if ssl_configuration is not None:
@@ -70,18 +71,6 @@ class BackendSetArgs:
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        A friendly name for the backend set. It must be unique and it cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
     def policy(self) -> pulumi.Input[str]:
         """
         (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
@@ -103,6 +92,18 @@ class BackendSetArgs:
     @lb_cookie_session_persistence_configuration.setter
     def lb_cookie_session_persistence_configuration(self, value: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']]):
         pulumi.set(self, "lb_cookie_session_persistence_configuration", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A friendly name for the backend set. It must be unique and it cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="sessionPersistenceConfiguration")
@@ -303,41 +304,40 @@ class BackendSet(pulumi.CustomResource):
 
         test_backend_set = oci.load_balancer.BackendSet("testBackendSet",
             health_checker=oci.load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
-                interval_ms=var["backend_set_health_checker_interval_ms"],
-                is_force_plain_text=var["backend_set_health_checker_is_force_plain_text"],
-                port=var["backend_set_health_checker_port"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                interval_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_force_plain_text=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                response_body_regex=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                retries=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                return_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                timeout_in_millis=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                url_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["backend_set_name"],
             policy=var["backend_set_policy"],
             lb_cookie_session_persistence_configuration=oci.load_balancer.BackendSetLbCookieSessionPersistenceConfigurationArgs(
-                cookie_name=var["backend_set_lb_cookie_session_persistence_configuration_cookie_name"],
-                disable_fallback=var["backend_set_lb_cookie_session_persistence_configuration_disable_fallback"],
-                domain=var["backend_set_lb_cookie_session_persistence_configuration_domain"],
-                is_http_only=var["backend_set_lb_cookie_session_persistence_configuration_is_http_only"],
-                is_secure=var["backend_set_lb_cookie_session_persistence_configuration_is_secure"],
-                max_age_in_seconds=var["backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds"],
-                path=var["backend_set_lb_cookie_session_persistence_configuration_path"],
+                cookie_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                disable_fallback=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_http_only=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_secure=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                max_age_in_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             session_persistence_configuration=oci.load_balancer.BackendSetSessionPersistenceConfigurationArgs(
-                cookie_name=var["backend_set_session_persistence_configuration_cookie_name"],
-                disable_fallback=var["backend_set_session_persistence_configuration_disable_fallback"],
+                cookie_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                disable_fallback=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             ssl_configuration=oci.load_balancer.BackendSetSslConfigurationArgs(
-                certificate_ids=var["backend_set_ssl_configuration_certificate_ids"],
-                certificate_name=oci_load_balancer_certificate["test_certificate"]["name"],
-                cipher_suite_name=var["backend_set_ssl_configuration_cipher_suite_name"],
-                protocols=var["backend_set_ssl_configuration_protocols"],
-                server_order_preference=var["backend_set_ssl_configuration_server_order_preference"],
-                trusted_certificate_authority_ids=var["backend_set_ssl_configuration_trusted_certificate_authority_ids"],
-                verify_depth=var["backend_set_ssl_configuration_verify_depth"],
-                verify_peer_certificate=var["backend_set_ssl_configuration_verify_peer_certificate"],
+                certificate_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                cipher_suite_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocols=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                server_order_preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                trusted_certificate_authority_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_depth=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_peer_certificate=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
@@ -386,41 +386,40 @@ class BackendSet(pulumi.CustomResource):
 
         test_backend_set = oci.load_balancer.BackendSet("testBackendSet",
             health_checker=oci.load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
-                interval_ms=var["backend_set_health_checker_interval_ms"],
-                is_force_plain_text=var["backend_set_health_checker_is_force_plain_text"],
-                port=var["backend_set_health_checker_port"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                interval_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_force_plain_text=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                response_body_regex=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                retries=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                return_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                timeout_in_millis=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                url_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["backend_set_name"],
             policy=var["backend_set_policy"],
             lb_cookie_session_persistence_configuration=oci.load_balancer.BackendSetLbCookieSessionPersistenceConfigurationArgs(
-                cookie_name=var["backend_set_lb_cookie_session_persistence_configuration_cookie_name"],
-                disable_fallback=var["backend_set_lb_cookie_session_persistence_configuration_disable_fallback"],
-                domain=var["backend_set_lb_cookie_session_persistence_configuration_domain"],
-                is_http_only=var["backend_set_lb_cookie_session_persistence_configuration_is_http_only"],
-                is_secure=var["backend_set_lb_cookie_session_persistence_configuration_is_secure"],
-                max_age_in_seconds=var["backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds"],
-                path=var["backend_set_lb_cookie_session_persistence_configuration_path"],
+                cookie_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                disable_fallback=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_http_only=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_secure=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                max_age_in_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             session_persistence_configuration=oci.load_balancer.BackendSetSessionPersistenceConfigurationArgs(
-                cookie_name=var["backend_set_session_persistence_configuration_cookie_name"],
-                disable_fallback=var["backend_set_session_persistence_configuration_disable_fallback"],
+                cookie_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                disable_fallback=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             ssl_configuration=oci.load_balancer.BackendSetSslConfigurationArgs(
-                certificate_ids=var["backend_set_ssl_configuration_certificate_ids"],
-                certificate_name=oci_load_balancer_certificate["test_certificate"]["name"],
-                cipher_suite_name=var["backend_set_ssl_configuration_cipher_suite_name"],
-                protocols=var["backend_set_ssl_configuration_protocols"],
-                server_order_preference=var["backend_set_ssl_configuration_server_order_preference"],
-                trusted_certificate_authority_ids=var["backend_set_ssl_configuration_trusted_certificate_authority_ids"],
-                verify_depth=var["backend_set_ssl_configuration_verify_depth"],
-                verify_peer_certificate=var["backend_set_ssl_configuration_verify_peer_certificate"],
+                certificate_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                cipher_suite_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocols=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                server_order_preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                trusted_certificate_authority_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_depth=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                verify_peer_certificate=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
@@ -474,8 +473,6 @@ class BackendSet(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if policy is None and not opts.urn:
                 raise TypeError("Missing required property 'policy'")

@@ -209,8 +209,8 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        refresh_activity_id=oci_fusion_apps_refresh_activity["test_refresh_activity"]["id"])
+    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        refresh_activity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -255,8 +255,8 @@ def get_fusion_environment_refresh_activity_output(fusion_environment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        refresh_activity_id=oci_fusion_apps_refresh_activity["test_refresh_activity"]["id"])
+    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        refresh_activity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

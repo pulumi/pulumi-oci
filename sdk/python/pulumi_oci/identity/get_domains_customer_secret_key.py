@@ -345,12 +345,12 @@ def get_domains_customer_secret_key(attribute_sets: Optional[Sequence[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_key = oci.Identity.get_domains_customer_secret_key(customer_secret_key_id=oci_identity_customer_secret_key["test_customer_secret_key"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_customer_secret_key = oci.Identity.get_domains_customer_secret_key(customer_secret_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["customer_secret_key_authorization"],
-        resource_type_schema_version=var["customer_secret_key_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -419,12 +419,12 @@ def get_domains_customer_secret_key_output(attribute_sets: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_key = oci.Identity.get_domains_customer_secret_key(customer_secret_key_id=oci_identity_customer_secret_key["test_customer_secret_key"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_customer_secret_key = oci.Identity.get_domains_customer_secret_key(customer_secret_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["customer_secret_key_authorization"],
-        resource_type_schema_version=var["customer_secret_key_resource_type_schema_version"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

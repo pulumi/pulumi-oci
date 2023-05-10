@@ -17,7 +17,6 @@ __all__ = ['MonitoredResourceArgs', 'MonitoredResource']
 class MonitoredResourceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  type: pulumi.Input[str],
                  additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
                  additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
@@ -31,12 +30,12 @@ class MonitoredResourceArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MonitoredResource resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[str] type: Monitored Resource Type.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
@@ -50,11 +49,11 @@ class MonitoredResourceArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
         if additional_aliases is not None:
             pulumi.set(__self__, "additional_aliases", additional_aliases)
@@ -80,6 +79,8 @@ class MonitoredResourceArgs:
             pulumi.set(__self__, "host_name", host_name)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
         if resource_time_zone is not None:
@@ -96,18 +97,6 @@ class MonitoredResourceArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Property Name.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -264,6 +253,18 @@ class MonitoredResourceArgs:
     @management_agent_id.setter
     def management_agent_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "management_agent_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Property Name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -688,58 +689,57 @@ class MonitoredResource(pulumi.CustomResource):
 
         test_monitored_resource = oci.stack_monitoring.MonitoredResource("testMonitoredResource",
             compartment_id=var["compartment_id"],
-            name=var["monitored_resource_name"],
             type=var["monitored_resource_type"],
             additional_aliases=[oci.stack_monitoring.MonitoredResourceAdditionalAliasArgs(
                 credential=oci.stack_monitoring.MonitoredResourceAdditionalAliasCredentialArgs(
-                    name=var["monitored_resource_additional_aliases_credential_name"],
-                    service=var["monitored_resource_additional_aliases_credential_service"],
-                    source=var["monitored_resource_additional_aliases_credential_source"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    service=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                name=var["monitored_resource_additional_aliases_name"],
-                source=var["monitored_resource_additional_aliases_source"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             additional_credentials=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialArgs(
-                credential_type=var["monitored_resource_additional_credentials_credential_type"],
-                description=var["monitored_resource_additional_credentials_description"],
-                key_id=oci_kms_key["test_key"]["id"],
-                name=var["monitored_resource_additional_credentials_name"],
+                credential_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 properties=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialPropertyArgs(
-                    name=var["monitored_resource_additional_credentials_properties_name"],
-                    value=var["monitored_resource_additional_credentials_properties_value"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                source=var["monitored_resource_additional_credentials_source"],
-                type=var["monitored_resource_additional_credentials_type"],
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             aliases=oci.stack_monitoring.MonitoredResourceAliasesArgs(
                 credential=oci.stack_monitoring.MonitoredResourceAliasesCredentialArgs(
-                    name=var["monitored_resource_aliases_credential_name"],
-                    service=var["monitored_resource_aliases_credential_service"],
-                    source=var["monitored_resource_aliases_credential_source"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    service=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                name=var["monitored_resource_aliases_name"],
-                source=var["monitored_resource_aliases_source"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             credentials=oci.stack_monitoring.MonitoredResourceCredentialsArgs(
-                credential_type=var["monitored_resource_credentials_credential_type"],
-                description=var["monitored_resource_credentials_description"],
-                key_id=var["monitored_resource_credentials_key_id"],
-                name=var["monitored_resource_credentials_name"],
+                credential_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 properties=[oci.stack_monitoring.MonitoredResourceCredentialsPropertyArgs(
-                    name=var["monitored_resource_credentials_properties_name"],
-                    value=var["monitored_resource_credentials_properties_value"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                source=var["monitored_resource_credentials_source"],
-                type=var["monitored_resource_credentials_type"],
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             database_connection_details=oci.stack_monitoring.MonitoredResourceDatabaseConnectionDetailsArgs(
-                port=var["monitored_resource_database_connection_details_port"],
-                protocol=var["monitored_resource_database_connection_details_protocol"],
-                service_name=var["monitored_resource_database_service_name"],
-                connector_id=var["monitored_resource_database_connector_id"],
-                db_id=var["monitored_resource_database_id"],
-                db_unique_name=var["monitored_resource_database_connection_details_db_unique_name"],
-                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                service_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                db_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                db_unique_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ssl_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -753,8 +753,8 @@ class MonitoredResource(pulumi.CustomResource):
             host_name=var["monitored_resource_host_name"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
-                name=var["monitored_resource_properties_name"],
-                value=var["monitored_resource_properties_value"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             resource_time_zone=var["monitored_resource_resource_time_zone"])
         ```
@@ -808,58 +808,57 @@ class MonitoredResource(pulumi.CustomResource):
 
         test_monitored_resource = oci.stack_monitoring.MonitoredResource("testMonitoredResource",
             compartment_id=var["compartment_id"],
-            name=var["monitored_resource_name"],
             type=var["monitored_resource_type"],
             additional_aliases=[oci.stack_monitoring.MonitoredResourceAdditionalAliasArgs(
                 credential=oci.stack_monitoring.MonitoredResourceAdditionalAliasCredentialArgs(
-                    name=var["monitored_resource_additional_aliases_credential_name"],
-                    service=var["monitored_resource_additional_aliases_credential_service"],
-                    source=var["monitored_resource_additional_aliases_credential_source"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    service=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                name=var["monitored_resource_additional_aliases_name"],
-                source=var["monitored_resource_additional_aliases_source"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             additional_credentials=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialArgs(
-                credential_type=var["monitored_resource_additional_credentials_credential_type"],
-                description=var["monitored_resource_additional_credentials_description"],
-                key_id=oci_kms_key["test_key"]["id"],
-                name=var["monitored_resource_additional_credentials_name"],
+                credential_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 properties=[oci.stack_monitoring.MonitoredResourceAdditionalCredentialPropertyArgs(
-                    name=var["monitored_resource_additional_credentials_properties_name"],
-                    value=var["monitored_resource_additional_credentials_properties_value"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                source=var["monitored_resource_additional_credentials_source"],
-                type=var["monitored_resource_additional_credentials_type"],
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             aliases=oci.stack_monitoring.MonitoredResourceAliasesArgs(
                 credential=oci.stack_monitoring.MonitoredResourceAliasesCredentialArgs(
-                    name=var["monitored_resource_aliases_credential_name"],
-                    service=var["monitored_resource_aliases_credential_service"],
-                    source=var["monitored_resource_aliases_credential_source"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    service=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                name=var["monitored_resource_aliases_name"],
-                source=var["monitored_resource_aliases_source"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             credentials=oci.stack_monitoring.MonitoredResourceCredentialsArgs(
-                credential_type=var["monitored_resource_credentials_credential_type"],
-                description=var["monitored_resource_credentials_description"],
-                key_id=var["monitored_resource_credentials_key_id"],
-                name=var["monitored_resource_credentials_name"],
+                credential_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 properties=[oci.stack_monitoring.MonitoredResourceCredentialsPropertyArgs(
-                    name=var["monitored_resource_credentials_properties_name"],
-                    value=var["monitored_resource_credentials_properties_value"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                source=var["monitored_resource_credentials_source"],
-                type=var["monitored_resource_credentials_type"],
+                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             database_connection_details=oci.stack_monitoring.MonitoredResourceDatabaseConnectionDetailsArgs(
-                port=var["monitored_resource_database_connection_details_port"],
-                protocol=var["monitored_resource_database_connection_details_protocol"],
-                service_name=var["monitored_resource_database_service_name"],
-                connector_id=var["monitored_resource_database_connector_id"],
-                db_id=var["monitored_resource_database_id"],
-                db_unique_name=var["monitored_resource_database_connection_details_db_unique_name"],
-                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                service_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                db_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                db_unique_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ssl_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -873,8 +872,8 @@ class MonitoredResource(pulumi.CustomResource):
             host_name=var["monitored_resource_host_name"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
-                name=var["monitored_resource_properties_name"],
-                value=var["monitored_resource_properties_value"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             resource_time_zone=var["monitored_resource_resource_time_zone"])
         ```
@@ -943,8 +942,6 @@ class MonitoredResource(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["host_name"] = host_name
             __props__.__dict__["management_agent_id"] = management_agent_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["properties"] = properties
             __props__.__dict__["resource_time_zone"] = resource_time_zone

@@ -49,6 +49,12 @@ import (
 //				VsanVlanId:                pulumi.Any(oci_core_vlan.Test_vsan_vlan.Id),
 //				VsphereVlanId:             pulumi.Any(oci_core_vlan.Test_vsphere_vlan.Id),
 //				CapacityReservationId:     pulumi.Any(oci_ocvp_capacity_reservation.Test_capacity_reservation.Id),
+//				Datastores: ocvp.SddcDatastoreArray{
+//					&ocvp.SddcDatastoreArgs{
+//						BlockVolumeIds: pulumi.Any(_var.Sddc_datastores_block_volume_ids),
+//						DatastoreType:  pulumi.Any(_var.Sddc_datastores_datastore_type),
+//					},
+//				},
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -100,6 +106,8 @@ type Sddc struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringOutput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores SddcDatastoreArrayOutput `pulumi:"datastores"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
@@ -130,9 +138,9 @@ type Sddc struct {
 	InitialSku pulumi.StringOutput `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix pulumi.StringOutput `pulumi:"instanceDisplayNamePrefix"`
-	// Indicates whether to enable HCX for this SDDC.
+	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolOutput `pulumi:"isHcxEnabled"`
-	// Indicates whether HCX Enterprise is enabled for this SDDC.
+	// Indicates whether to enable HCX Enterprise for this SDDC.
 	IsHcxEnterpriseEnabled pulumi.BoolOutput `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade pulumi.BoolOutput `pulumi:"isHcxPendingDowngrade"`
@@ -182,7 +190,7 @@ type Sddc struct {
 	TimeHcxLicenseStatusUpdated pulumi.StringOutput `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// The vSphere licenses to be used when upgrade SDDC.
+	// The vSphere licenses to use when upgrading the SDDC.
 	UpgradeLicenses SddcUpgradeLicenseArrayOutput `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn pulumi.StringOutput `pulumi:"vcenterFqdn"`
@@ -198,9 +206,9 @@ type Sddc struct {
 	VmwareSoftwareVersion pulumi.StringOutput `pulumi:"vmwareSoftwareVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
 	VsanVlanId pulumi.StringOutput `pulumi:"vsanVlanId"`
-	// The link of guidance to upgrade vSphere.
+	// The link to guidance for upgrading vSphere.
 	VsphereUpgradeGuide pulumi.StringOutput `pulumi:"vsphereUpgradeGuide"`
-	// The links of binary objects needed for upgrade vSphere.
+	// The links to binary objects needed to upgrade vSphere.
 	VsphereUpgradeObjects SddcVsphereUpgradeObjectArrayOutput `pulumi:"vsphereUpgradeObjects"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringOutput `pulumi:"vsphereVlanId"`
@@ -284,6 +292,8 @@ type sddcState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores []SddcDatastore `pulumi:"datastores"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
@@ -314,9 +324,9 @@ type sddcState struct {
 	InitialSku *string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
-	// Indicates whether to enable HCX for this SDDC.
+	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled *bool `pulumi:"isHcxEnabled"`
-	// Indicates whether HCX Enterprise is enabled for this SDDC.
+	// Indicates whether to enable HCX Enterprise for this SDDC.
 	IsHcxEnterpriseEnabled *bool `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade *bool `pulumi:"isHcxPendingDowngrade"`
@@ -366,7 +376,7 @@ type sddcState struct {
 	TimeHcxLicenseStatusUpdated *string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The vSphere licenses to be used when upgrade SDDC.
+	// The vSphere licenses to use when upgrading the SDDC.
 	UpgradeLicenses []SddcUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn *string `pulumi:"vcenterFqdn"`
@@ -382,9 +392,9 @@ type sddcState struct {
 	VmwareSoftwareVersion *string `pulumi:"vmwareSoftwareVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
 	VsanVlanId *string `pulumi:"vsanVlanId"`
-	// The link of guidance to upgrade vSphere.
+	// The link to guidance for upgrading vSphere.
 	VsphereUpgradeGuide *string `pulumi:"vsphereUpgradeGuide"`
-	// The links of binary objects needed for upgrade vSphere.
+	// The links to binary objects needed to upgrade vSphere.
 	VsphereUpgradeObjects []SddcVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId *string `pulumi:"vsphereVlanId"`
@@ -401,6 +411,8 @@ type SddcState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringPtrInput
+	// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores SddcDatastoreArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
@@ -431,9 +443,9 @@ type SddcState struct {
 	InitialSku pulumi.StringPtrInput
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix pulumi.StringPtrInput
-	// Indicates whether to enable HCX for this SDDC.
+	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolPtrInput
-	// Indicates whether HCX Enterprise is enabled for this SDDC.
+	// Indicates whether to enable HCX Enterprise for this SDDC.
 	IsHcxEnterpriseEnabled pulumi.BoolPtrInput
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade pulumi.BoolPtrInput
@@ -483,7 +495,7 @@ type SddcState struct {
 	TimeHcxLicenseStatusUpdated pulumi.StringPtrInput
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
-	// The vSphere licenses to be used when upgrade SDDC.
+	// The vSphere licenses to use when upgrading the SDDC.
 	UpgradeLicenses SddcUpgradeLicenseArrayInput
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn pulumi.StringPtrInput
@@ -499,9 +511,9 @@ type SddcState struct {
 	VmwareSoftwareVersion pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
 	VsanVlanId pulumi.StringPtrInput
-	// The link of guidance to upgrade vSphere.
+	// The link to guidance for upgrading vSphere.
 	VsphereUpgradeGuide pulumi.StringPtrInput
-	// The links of binary objects needed for upgrade vSphere.
+	// The links to binary objects needed to upgrade vSphere.
 	VsphereUpgradeObjects SddcVsphereUpgradeObjectArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringPtrInput
@@ -520,6 +532,8 @@ type sddcArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores []SddcDatastore `pulumi:"datastores"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
@@ -540,7 +554,7 @@ type sddcArgs struct {
 	InitialSku *string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
-	// Indicates whether to enable HCX for this SDDC.
+	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled *bool `pulumi:"isHcxEnabled"`
 	// Indicates whether shielded instance is enabled for this SDDC.
 	IsShieldedInstanceEnabled *bool `pulumi:"isShieldedInstanceEnabled"`
@@ -586,6 +600,8 @@ type SddcArgs struct {
 	CompartmentId pulumi.StringInput
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringInput
+	// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores SddcDatastoreArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
@@ -606,7 +622,7 @@ type SddcArgs struct {
 	InitialSku pulumi.StringPtrInput
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix pulumi.StringPtrInput
-	// Indicates whether to enable HCX for this SDDC.
+	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolPtrInput
 	// Indicates whether shielded instance is enabled for this SDDC.
 	IsShieldedInstanceEnabled pulumi.BoolPtrInput
@@ -751,6 +767,11 @@ func (o SddcOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+func (o SddcOutput) Datastores() SddcDatastoreArrayOutput {
+	return o.ApplyT(func(v *Sddc) SddcDatastoreArrayOutput { return v.Datastores }).(SddcDatastoreArrayOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o SddcOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
@@ -826,12 +847,12 @@ func (o SddcOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.InstanceDisplayNamePrefix }).(pulumi.StringOutput)
 }
 
-// Indicates whether to enable HCX for this SDDC.
+// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 func (o SddcOutput) IsHcxEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.BoolOutput { return v.IsHcxEnabled }).(pulumi.BoolOutput)
 }
 
-// Indicates whether HCX Enterprise is enabled for this SDDC.
+// Indicates whether to enable HCX Enterprise for this SDDC.
 func (o SddcOutput) IsHcxEnterpriseEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.BoolOutput { return v.IsHcxEnterpriseEnabled }).(pulumi.BoolOutput)
 }
@@ -956,7 +977,7 @@ func (o SddcOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The vSphere licenses to be used when upgrade SDDC.
+// The vSphere licenses to use when upgrading the SDDC.
 func (o SddcOutput) UpgradeLicenses() SddcUpgradeLicenseArrayOutput {
 	return o.ApplyT(func(v *Sddc) SddcUpgradeLicenseArrayOutput { return v.UpgradeLicenses }).(SddcUpgradeLicenseArrayOutput)
 }
@@ -996,12 +1017,12 @@ func (o SddcOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.VsanVlanId }).(pulumi.StringOutput)
 }
 
-// The link of guidance to upgrade vSphere.
+// The link to guidance for upgrading vSphere.
 func (o SddcOutput) VsphereUpgradeGuide() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
 }
 
-// The links of binary objects needed for upgrade vSphere.
+// The links to binary objects needed to upgrade vSphere.
 func (o SddcOutput) VsphereUpgradeObjects() SddcVsphereUpgradeObjectArrayOutput {
 	return o.ApplyT(func(v *Sddc) SddcVsphereUpgradeObjectArrayOutput { return v.VsphereUpgradeObjects }).(SddcVsphereUpgradeObjectArrayOutput)
 }

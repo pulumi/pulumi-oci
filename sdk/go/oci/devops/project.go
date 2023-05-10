@@ -31,7 +31,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.NewProject(ctx, "testProject", &DevOps.ProjectArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Name:          pulumi.Any(_var.Project_name),
 //				NotificationConfig: &devops.ProjectNotificationConfigArgs{
 //					TopicId: pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
 //				},
@@ -99,9 +98,6 @@ func NewProject(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.NotificationConfig == nil {
 		return nil, errors.New("invalid value for required argument 'NotificationConfig'")
@@ -195,7 +191,7 @@ type projectArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Project name (case-sensitive).
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) Notification configuration for the project.
 	NotificationConfig ProjectNotificationConfig `pulumi:"notificationConfig"`
 }
@@ -211,7 +207,7 @@ type ProjectArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Project name (case-sensitive).
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) Notification configuration for the project.
 	NotificationConfig ProjectNotificationConfigInput
 }

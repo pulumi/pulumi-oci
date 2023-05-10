@@ -10,6 +10,10 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+//
+// Lists supported compute shapes for ESXi hosts.
+//
 // ## Example Usage
 //
 // ```go
@@ -63,7 +67,7 @@ type GetSupportedHostShapesResult struct {
 	Filters       []GetSupportedHostShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The list of the supported compute shapes for ESXi hosts.
+	// A list of the supported compute shapes for ESXi hosts.
 	Items []GetSupportedHostShapesItem `pulumi:"items"`
 	// The name of the supported compute shape.
 	Name     *string `pulumi:"name"`
@@ -126,7 +130,7 @@ func (o GetSupportedHostShapesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of the supported compute shapes for ESXi hosts.
+// A list of the supported compute shapes for ESXi hosts.
 func (o GetSupportedHostShapesResultOutput) Items() GetSupportedHostShapesItemArrayOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesResult) []GetSupportedHostShapesItem { return v.Items }).(GetSupportedHostShapesItemArrayOutput)
 }

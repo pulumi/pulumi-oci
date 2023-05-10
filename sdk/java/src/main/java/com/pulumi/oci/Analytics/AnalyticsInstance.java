@@ -58,7 +58,6 @@ import javax.annotation.Nullable;
  *             .featureSet(var_.analytics_instance_feature_set())
  *             .idcsAccessToken(var_.analytics_instance_idcs_access_token())
  *             .licenseType(var_.analytics_instance_license_type())
- *             .name(var_.analytics_instance_name())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.analytics_instance_description())
  *             .emailNotification(var_.analytics_instance_email_notification())

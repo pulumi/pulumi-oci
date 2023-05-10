@@ -47,7 +47,6 @@ import javax.annotation.Nullable;
  *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy(&#34;testLoadBalancerRoutingPolicy&#34;, LoadBalancerRoutingPolicyArgs.builder()        
  *             .conditionLanguageVersion(var_.load_balancer_routing_policy_condition_language_version())
  *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
- *             .name(var_.load_balancer_routing_policy_name())
  *             .rules(LoadBalancerRoutingPolicyRuleArgs.builder()
  *                 .actions(LoadBalancerRoutingPolicyRuleActionArgs.builder()
  *                     .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())

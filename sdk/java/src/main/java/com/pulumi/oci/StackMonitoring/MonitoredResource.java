@@ -62,7 +62,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMonitoredResource = new MonitoredResource(&#34;testMonitoredResource&#34;, MonitoredResourceArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.monitored_resource_name())
  *             .type(var_.monitored_resource_type())
  *             .additionalAliases(MonitoredResourceAdditionalAliasArgs.builder()
  *                 .credential(MonitoredResourceAdditionalAliasCredentialArgs.builder()

@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  *             recommendationId: oci_optimizer_recommendation.test_recommendation.id,
  *         }],
  *     },
- *     name: _var.profile_name,
  *     aggregationIntervalInDays: _var.profile_aggregation_interval_in_days,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -169,9 +168,6 @@ export class Profile extends pulumi.CustomResource {
             if ((!args || args.levelsConfiguration === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'levelsConfiguration'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["aggregationIntervalInDays"] = args ? args.aggregationIntervalInDays : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -275,7 +271,7 @@ export interface ProfileArgs {
     /**
      * (Updatable) The name assigned to the profile. Avoid entering confidential information.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      */

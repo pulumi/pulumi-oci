@@ -280,7 +280,7 @@ class GetExsiHostResult:
     @pulumi.getter(name="vmwareSoftwareVersion")
     def vmware_software_version(self) -> str:
         """
-        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
         return pulumi.get(self, "vmware_software_version")
 
@@ -330,7 +330,7 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=oci_ocvp_esxi_host["test_esxi_host"]["id"])
+    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -382,7 +382,7 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=oci_ocvp_esxi_host["test_esxi_host"]["id"])
+    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

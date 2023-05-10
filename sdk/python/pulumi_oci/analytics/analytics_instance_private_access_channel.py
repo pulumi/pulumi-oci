@@ -325,16 +325,16 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
             analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
             display_name=var["analytics_instance_private_access_channel_display_name"],
             private_source_dns_zones=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs(
-                dns_zone=var["analytics_instance_private_access_channel_private_source_dns_zones_dns_zone"],
-                description=var["analytics_instance_private_access_channel_private_source_dns_zones_description"],
+                dns_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             vcn_id=oci_core_vcn["test_vcn"]["id"],
             network_security_group_ids=var["analytics_instance_private_access_channel_network_security_group_ids"],
             private_source_scan_hosts=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs(
-                scan_hostname=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname"],
-                scan_port=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_port"],
-                description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
+                scan_hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                scan_port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -378,16 +378,16 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
             analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
             display_name=var["analytics_instance_private_access_channel_display_name"],
             private_source_dns_zones=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs(
-                dns_zone=var["analytics_instance_private_access_channel_private_source_dns_zones_dns_zone"],
-                description=var["analytics_instance_private_access_channel_private_source_dns_zones_description"],
+                dns_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             vcn_id=oci_core_vcn["test_vcn"]["id"],
             network_security_group_ids=var["analytics_instance_private_access_channel_network_security_group_ids"],
             private_source_scan_hosts=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs(
-                scan_hostname=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname"],
-                scan_port=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_port"],
-                description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
+                scan_hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                scan_port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 

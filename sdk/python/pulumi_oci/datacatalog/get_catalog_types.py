@@ -194,15 +194,15 @@ def get_catalog_types(catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        external_type_name=var["catalog_type_external_type_name"],
-        fields=var["catalog_type_fields"],
-        is_approved=var["catalog_type_is_approved"],
-        is_internal=var["catalog_type_is_internal"],
-        is_tag=var["catalog_type_is_tag"],
-        name=var["catalog_type_name"],
-        state=var["catalog_type_state"],
-        type_category=var["catalog_type_type_category"])
+    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_type_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_approved=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_internal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_tag=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type_category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -268,15 +268,15 @@ def get_catalog_types_output(catalog_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        external_type_name=var["catalog_type_external_type_name"],
-        fields=var["catalog_type_fields"],
-        is_approved=var["catalog_type_is_approved"],
-        is_internal=var["catalog_type_is_internal"],
-        is_tag=var["catalog_type_is_tag"],
-        name=var["catalog_type_name"],
-        state=var["catalog_type_state"],
-        type_category=var["catalog_type_type_category"])
+    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_type_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_approved=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_internal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_tag=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type_category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

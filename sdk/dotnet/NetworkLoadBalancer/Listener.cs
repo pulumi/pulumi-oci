@@ -27,7 +27,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///     var testListener = new Oci.NetworkLoadBalancer.Listener("testListener", new()
     ///     {
     ///         DefaultBackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
-    ///         Name = @var.Listener_name,
     ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
     ///         Port = @var.Listener_port,
     ///         Protocol = @var.Listener_protocol,
@@ -145,8 +144,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.

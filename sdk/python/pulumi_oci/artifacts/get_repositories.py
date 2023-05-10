@@ -133,11 +133,11 @@ def get_repositories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.Artifacts.get_repositories(compartment_id=var["compartment_id"],
-        display_name=var["repository_display_name"],
-        id=var["repository_id"],
-        is_immutable=var["repository_is_immutable"],
-        state=var["repository_state"])
+    test_repositories = oci.Artifacts.get_repositories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_immutable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -186,11 +186,11 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.Artifacts.get_repositories(compartment_id=var["compartment_id"],
-        display_name=var["repository_display_name"],
-        id=var["repository_id"],
-        is_immutable=var["repository_is_immutable"],
-        state=var["repository_state"])
+    test_repositories = oci.Artifacts.get_repositories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_immutable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -439,13 +439,13 @@ class DrProtectionGroup(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["dr_protection_group_display_name"],
             log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
-                bucket=var["dr_protection_group_log_location_bucket"],
-                namespace=var["dr_protection_group_log_location_namespace"],
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
-                role=var["dr_protection_group_association_role"],
-                peer_id=oci_blockchain_peer["test_peer"]["id"],
-                peer_region=var["dr_protection_group_association_peer_region"],
+                role=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                peer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                peer_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -454,16 +454,16 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "Department": "Finance",
             },
             members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
-                member_id=oci_disaster_recovery_member["test_member"]["id"],
-                member_type=var["dr_protection_group_members_member_type"],
-                destination_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-                destination_dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                is_movable=var["dr_protection_group_members_is_movable"],
-                password_vault_secret_id=oci_vault_secret["test_secret"]["id"],
+                member_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                member_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                destination_compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                destination_dedicated_vm_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_movable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password_vault_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mapping_destination_nsg_id_list"],
-                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
+                    destination_nsg_id_lists=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    destination_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source_vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )])
         ```
@@ -508,13 +508,13 @@ class DrProtectionGroup(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["dr_protection_group_display_name"],
             log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
-                bucket=var["dr_protection_group_log_location_bucket"],
-                namespace=var["dr_protection_group_log_location_namespace"],
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
-                role=var["dr_protection_group_association_role"],
-                peer_id=oci_blockchain_peer["test_peer"]["id"],
-                peer_region=var["dr_protection_group_association_peer_region"],
+                role=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                peer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                peer_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -523,16 +523,16 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "Department": "Finance",
             },
             members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
-                member_id=oci_disaster_recovery_member["test_member"]["id"],
-                member_type=var["dr_protection_group_members_member_type"],
-                destination_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-                destination_dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                is_movable=var["dr_protection_group_members_is_movable"],
-                password_vault_secret_id=oci_vault_secret["test_secret"]["id"],
+                member_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                member_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                destination_compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                destination_dedicated_vm_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_movable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password_vault_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mapping_destination_nsg_id_list"],
-                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
+                    destination_nsg_id_lists=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    destination_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source_vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )])
         ```

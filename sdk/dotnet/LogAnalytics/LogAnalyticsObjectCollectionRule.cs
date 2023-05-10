@@ -29,7 +29,6 @@ namespace Pulumi.Oci.LogAnalytics
     ///         CompartmentId = @var.Compartment_id,
     ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
     ///         LogSourceName = @var.Log_analytics_object_collection_rule_log_source_name,
-    ///         Name = @var.Log_analytics_object_collection_rule_name,
     ///         Namespace = @var.Log_analytics_object_collection_rule_namespace,
     ///         OsBucketName = oci_objectstorage_bucket.Test_bucket.Name,
     ///         OsNamespace = @var.Log_analytics_object_collection_rule_os_namespace,
@@ -365,8 +364,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The Logging Analytics namespace used for the request.

@@ -37,6 +37,10 @@ import * as utilities from "../utilities";
  *     vsanVlanId: oci_core_vlan.test_vsan_vlan.id,
  *     vsphereVlanId: oci_core_vlan.test_vsphere_vlan.id,
  *     capacityReservationId: oci_ocvp_capacity_reservation.test_capacity_reservation.id,
+ *     datastores: [{
+ *         blockVolumeIds: _var.sddc_datastores_block_volume_ids,
+ *         datastoreType: _var.sddc_datastores_datastore_type,
+ *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -114,6 +118,10 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly computeAvailabilityDomain!: pulumi.Output<string>;
     /**
+     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     */
+    public readonly datastores!: pulumi.Output<outputs.Ocvp.SddcDatastore[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -174,11 +182,11 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly instanceDisplayNamePrefix!: pulumi.Output<string>;
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      */
     public readonly isHcxEnabled!: pulumi.Output<boolean>;
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * Indicates whether to enable HCX Enterprise for this SDDC.
      */
     public /*out*/ readonly isHcxEnterpriseEnabled!: pulumi.Output<boolean>;
     /**
@@ -278,7 +286,7 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The vSphere licenses to be used when upgrade SDDC.
+     * The vSphere licenses to use when upgrading the SDDC.
      */
     public /*out*/ readonly upgradeLicenses!: pulumi.Output<outputs.Ocvp.SddcUpgradeLicense[]>;
     /**
@@ -310,11 +318,11 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly vsanVlanId!: pulumi.Output<string>;
     /**
-     * The link of guidance to upgrade vSphere.
+     * The link to guidance for upgrading vSphere.
      */
     public /*out*/ readonly vsphereUpgradeGuide!: pulumi.Output<string>;
     /**
-     * The links of binary objects needed for upgrade vSphere.
+     * The links to binary objects needed to upgrade vSphere.
      */
     public /*out*/ readonly vsphereUpgradeObjects!: pulumi.Output<outputs.Ocvp.SddcVsphereUpgradeObject[]>;
     /**
@@ -343,6 +351,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeAvailabilityDomain"] = state ? state.computeAvailabilityDomain : undefined;
+            resourceInputs["datastores"] = state ? state.datastores : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["esxiHostsCount"] = state ? state.esxiHostsCount : undefined;
@@ -440,6 +449,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["computeAvailabilityDomain"] = args ? args.computeAvailabilityDomain : undefined;
+            resourceInputs["datastores"] = args ? args.datastores : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["esxiHostsCount"] = args ? args.esxiHostsCount : undefined;
@@ -521,6 +531,10 @@ export interface SddcState {
      */
     computeAvailabilityDomain?: pulumi.Input<string>;
     /**
+     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     */
+    datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcDatastore>[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -581,11 +595,11 @@ export interface SddcState {
      */
     instanceDisplayNamePrefix?: pulumi.Input<string>;
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      */
     isHcxEnabled?: pulumi.Input<boolean>;
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * Indicates whether to enable HCX Enterprise for this SDDC.
      */
     isHcxEnterpriseEnabled?: pulumi.Input<boolean>;
     /**
@@ -685,7 +699,7 @@ export interface SddcState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The vSphere licenses to be used when upgrade SDDC.
+     * The vSphere licenses to use when upgrading the SDDC.
      */
     upgradeLicenses?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcUpgradeLicense>[]>;
     /**
@@ -717,11 +731,11 @@ export interface SddcState {
      */
     vsanVlanId?: pulumi.Input<string>;
     /**
-     * The link of guidance to upgrade vSphere.
+     * The link to guidance for upgrading vSphere.
      */
     vsphereUpgradeGuide?: pulumi.Input<string>;
     /**
-     * The links of binary objects needed for upgrade vSphere.
+     * The links to binary objects needed to upgrade vSphere.
      */
     vsphereUpgradeObjects?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcVsphereUpgradeObject>[]>;
     /**
@@ -750,6 +764,10 @@ export interface SddcArgs {
      * The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
      */
     computeAvailabilityDomain: pulumi.Input<string>;
+    /**
+     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     */
+    datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcDatastore>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -791,7 +809,7 @@ export interface SddcArgs {
      */
     instanceDisplayNamePrefix?: pulumi.Input<string>;
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      */
     isHcxEnabled?: pulumi.Input<boolean>;
     /**

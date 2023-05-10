@@ -93,7 +93,7 @@ def get_namespace(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=var["namespace_namespace"])
+    test_namespace = oci.LogAnalytics.get_namespace(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -125,7 +125,7 @@ def get_namespace_output(namespace: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=var["namespace_namespace"])
+    test_namespace = oci.LogAnalytics.get_namespace(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -147,22 +147,22 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
+    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
+    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=var["private_ip_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
+    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vlan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -223,22 +223,22 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
+    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
+    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=var["private_ip_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
+    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vlan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -132,10 +132,10 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_connection_display_name"],
-        state=var["database_tools_connection_state"],
-        types=var["database_tools_connection_type"])
+    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -181,10 +181,10 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_connection_display_name"],
-        state=var["database_tools_connection_state"],
-        types=var["database_tools_connection_type"])
+    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

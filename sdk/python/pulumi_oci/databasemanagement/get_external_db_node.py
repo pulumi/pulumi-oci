@@ -222,7 +222,7 @@ def get_external_db_node(external_db_node_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=oci_database_management_external_db_node["test_external_db_node"]["id"])
+    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -265,7 +265,7 @@ def get_external_db_node_output(external_db_node_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=oci_database_management_external_db_node["test_external_db_node"]["id"])
+    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -50,7 +50,6 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .logGroupId(oci_logging_log_group.test_log_group().id())
  *             .logSourceName(var_.log_analytics_object_collection_rule_log_source_name())
- *             .name(var_.log_analytics_object_collection_rule_name())
  *             .namespace(var_.log_analytics_object_collection_rule_namespace())
  *             .osBucketName(oci_objectstorage_bucket.test_bucket().name())
  *             .osNamespace(var_.log_analytics_object_collection_rule_os_namespace())

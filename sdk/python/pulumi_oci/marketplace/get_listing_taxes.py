@@ -100,8 +100,8 @@ def get_listing_taxes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"])
+    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -139,8 +139,8 @@ def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"])
+    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

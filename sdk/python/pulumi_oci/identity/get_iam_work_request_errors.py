@@ -94,7 +94,7 @@ def get_iam_work_request_errors(filters: Optional[Sequence[pulumi.InputType['Get
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
+    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -132,7 +132,7 @@ def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
+    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

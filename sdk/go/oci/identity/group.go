@@ -48,7 +48,6 @@ import (
 //			_, err := Identity.NewGroup(ctx, "testGroup", &Identity.GroupArgs{
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.Group_description),
-//				Name:          pulumi.Any(_var.Group_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -104,9 +103,6 @@ func NewGroup(ctx *pulumi.Context,
 
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource Group
 	err := ctx.RegisterResource("oci:Identity/group:Group", name, args, &resource, opts...)
@@ -181,7 +177,7 @@ type groupArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a Group resource.
@@ -195,7 +191,7 @@ type GroupArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 }
 
 func (GroupArgs) ElementType() reflect.Type {

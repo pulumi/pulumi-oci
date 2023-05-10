@@ -231,7 +231,7 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=oci_vbs_inst_vbs_instance["test_vbs_instance"]["id"])
+    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -275,7 +275,7 @@ def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=oci_vbs_inst_vbs_instance["test_vbs_instance"]["id"])
+    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -106,8 +106,8 @@ def get_external_db_system_discoveries(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_discoveries = oci.DatabaseManagement.get_external_db_system_discoveries(compartment_id=var["compartment_id"],
-        display_name=var["external_db_system_discovery_display_name"])
+    test_external_db_system_discoveries = oci.DatabaseManagement.get_external_db_system_discoveries(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -145,8 +145,8 @@ def get_external_db_system_discoveries_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_discoveries = oci.DatabaseManagement.get_external_db_system_discoveries(compartment_id=var["compartment_id"],
-        display_name=var["external_db_system_discovery_display_name"])
+    test_external_db_system_discoveries = oci.DatabaseManagement.get_external_db_system_discoveries(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

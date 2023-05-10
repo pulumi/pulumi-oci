@@ -42,7 +42,6 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Name: pulumi.Any(_var.Dkim_name),
 //			})
 //			if err != nil {
 //				return err

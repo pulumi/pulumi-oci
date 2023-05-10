@@ -373,11 +373,11 @@ class Model(pulumi.CustomResource):
         test_model = oci.ai_anomaly_detection.Model("testModel",
             compartment_id=var["compartment_id"],
             model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
-                data_asset_ids=var["model_model_training_details_data_asset_ids"],
-                algorithm_hint=var["model_model_training_details_algorithm_hint"],
-                target_fap=var["model_model_training_details_target_fap"],
-                training_fraction=var["model_model_training_details_training_fraction"],
-                window_size=var["model_model_training_details_window_size"],
+                data_asset_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                algorithm_hint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                target_fap=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                training_fraction=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                window_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
             defined_tags={
@@ -428,11 +428,11 @@ class Model(pulumi.CustomResource):
         test_model = oci.ai_anomaly_detection.Model("testModel",
             compartment_id=var["compartment_id"],
             model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
-                data_asset_ids=var["model_model_training_details_data_asset_ids"],
-                algorithm_hint=var["model_model_training_details_algorithm_hint"],
-                target_fap=var["model_model_training_details_target_fap"],
-                training_fraction=var["model_model_training_details_training_fraction"],
-                window_size=var["model_model_training_details_window_size"],
+                data_asset_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                algorithm_hint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                target_fap=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                training_fraction=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                window_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
             defined_tags={

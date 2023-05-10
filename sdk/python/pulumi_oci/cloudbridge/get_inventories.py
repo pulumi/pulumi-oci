@@ -106,8 +106,8 @@ def get_inventories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=var["compartment_id"],
-        state=var["inventory_state"])
+    test_inventories = oci.CloudBridge.get_inventories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -145,8 +145,8 @@ def get_inventories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=var["compartment_id"],
-        state=var["inventory_state"])
+    test_inventories = oci.CloudBridge.get_inventories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

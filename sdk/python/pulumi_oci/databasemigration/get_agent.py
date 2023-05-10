@@ -210,7 +210,7 @@ def get_agent(agent_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.DatabaseMigration.get_agent(agent_id=oci_database_migration_agent["test_agent"]["id"])
+    test_agent = oci.DatabaseMigration.get_agent(agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -252,7 +252,7 @@ def get_agent_output(agent_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.DatabaseMigration.get_agent(agent_id=oci_database_migration_agent["test_agent"]["id"])
+    test_agent = oci.DatabaseMigration.get_agent(agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

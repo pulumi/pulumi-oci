@@ -276,20 +276,20 @@ class UsagePlan(pulumi.CustomResource):
         test_usage_plan = oci.api_gateway.UsagePlan("testUsagePlan",
             compartment_id=var["compartment_id"],
             entitlements=[oci.api_gateway.UsagePlanEntitlementArgs(
-                name=var["usage_plan_entitlements_name"],
-                description=var["usage_plan_entitlements_description"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 quota=oci.api_gateway.UsagePlanEntitlementQuotaArgs(
-                    operation_on_breach=var["usage_plan_entitlements_quota_operation_on_breach"],
-                    reset_policy=var["usage_plan_entitlements_quota_reset_policy"],
-                    unit=var["usage_plan_entitlements_quota_unit"],
-                    value=var["usage_plan_entitlements_quota_value"],
+                    operation_on_breach=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    reset_policy=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 rate_limit=oci.api_gateway.UsagePlanEntitlementRateLimitArgs(
-                    unit=var["usage_plan_entitlements_rate_limit_unit"],
-                    value=var["usage_plan_entitlements_rate_limit_value"],
+                    unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 targets=[oci.api_gateway.UsagePlanEntitlementTargetArgs(
-                    deployment_id=oci_apigateway_deployment["test_deployment"]["id"],
+                    deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )],
             defined_tags={
@@ -337,20 +337,20 @@ class UsagePlan(pulumi.CustomResource):
         test_usage_plan = oci.api_gateway.UsagePlan("testUsagePlan",
             compartment_id=var["compartment_id"],
             entitlements=[oci.api_gateway.UsagePlanEntitlementArgs(
-                name=var["usage_plan_entitlements_name"],
-                description=var["usage_plan_entitlements_description"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 quota=oci.api_gateway.UsagePlanEntitlementQuotaArgs(
-                    operation_on_breach=var["usage_plan_entitlements_quota_operation_on_breach"],
-                    reset_policy=var["usage_plan_entitlements_quota_reset_policy"],
-                    unit=var["usage_plan_entitlements_quota_unit"],
-                    value=var["usage_plan_entitlements_quota_value"],
+                    operation_on_breach=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    reset_policy=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 rate_limit=oci.api_gateway.UsagePlanEntitlementRateLimitArgs(
-                    unit=var["usage_plan_entitlements_rate_limit_unit"],
-                    value=var["usage_plan_entitlements_rate_limit_value"],
+                    unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 targets=[oci.api_gateway.UsagePlanEntitlementTargetArgs(
-                    deployment_id=oci_apigateway_deployment["test_deployment"]["id"],
+                    deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )],
             defined_tags={

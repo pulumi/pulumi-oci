@@ -129,10 +129,10 @@ def get_migrations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=var["compartment_id"],
-        display_name=var["migration_display_name"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        state=var["migration_state"])
+    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_migrations_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=var["compartment_id"],
-        display_name=var["migration_display_name"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        state=var["migration_state"])
+    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

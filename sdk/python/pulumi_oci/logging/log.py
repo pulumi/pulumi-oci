@@ -394,12 +394,12 @@ class Log(pulumi.CustomResource):
             log_type=var["log_log_type"],
             configuration=oci.logging.LogConfigurationArgs(
                 source=oci.logging.LogConfigurationSourceArgs(
-                    category=var["log_configuration_source_category"],
-                    resource=var["log_configuration_source_resource"],
-                    service=var["log_configuration_source_service"],
-                    source_type=var["log_configuration_source_source_type"],
+                    category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    resource=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    service=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                compartment_id=var["compartment_id"],
+                compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -454,12 +454,12 @@ class Log(pulumi.CustomResource):
             log_type=var["log_log_type"],
             configuration=oci.logging.LogConfigurationArgs(
                 source=oci.logging.LogConfigurationSourceArgs(
-                    category=var["log_configuration_source_category"],
-                    resource=var["log_configuration_source_resource"],
-                    service=var["log_configuration_source_service"],
-                    source_type=var["log_configuration_source_source_type"],
+                    category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    resource=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    service=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                compartment_id=var["compartment_id"],
+                compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "Operations.CostCenter": "42",

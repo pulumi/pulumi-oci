@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  * const testLogAnalyticsEntity = new oci.loganalytics.LogAnalyticsEntity("testLogAnalyticsEntity", {
  *     compartmentId: _var.compartment_id,
  *     entityTypeName: _var.log_analytics_entity_entity_type_name,
- *     name: _var.log_analytics_entity_name,
  *     namespace: _var.log_analytics_entity_namespace,
  *     cloudResourceId: oci_log_analytics_cloud_resource.test_cloud_resource.id,
  *     definedTags: {
@@ -193,9 +192,6 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
             if ((!args || args.entityTypeName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'entityTypeName'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.namespace === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
@@ -346,7 +342,7 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) Log analytics entity name.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */

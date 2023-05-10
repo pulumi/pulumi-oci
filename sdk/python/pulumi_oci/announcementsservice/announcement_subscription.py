@@ -432,8 +432,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
             description=var["announcement_subscription_description"],
             filter_groups=oci.announcements_service.AnnouncementSubscriptionFilterGroupsArgs(
                 filters=[oci.announcements_service.AnnouncementSubscriptionFilterGroupsFilterArgs(
-                    type=var["announcement_subscription_filter_groups_filters_type"],
-                    value=var["announcement_subscription_filter_groups_filters_value"],
+                    type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             freeform_tags={
@@ -492,8 +492,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
             description=var["announcement_subscription_description"],
             filter_groups=oci.announcements_service.AnnouncementSubscriptionFilterGroupsArgs(
                 filters=[oci.announcements_service.AnnouncementSubscriptionFilterGroupsFilterArgs(
-                    type=var["announcement_subscription_filter_groups_filters_type"],
-                    value=var["announcement_subscription_filter_groups_filters_value"],
+                    type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             freeform_tags={

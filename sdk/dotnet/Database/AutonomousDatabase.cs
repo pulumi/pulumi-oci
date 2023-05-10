@@ -408,7 +408,7 @@ namespace Pulumi.Oci.Database
         public Output<int> MaxCpuCoreCount { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
         public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
@@ -1690,7 +1690,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? MaxCpuCoreCount { get; set; }
 
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }

@@ -296,8 +296,8 @@ def get_trace(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"])
+    test_trace = oci.ApmTraces.get_trace(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        trace_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -349,8 +349,8 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"])
+    test_trace = oci.ApmTraces.get_trace(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        trace_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

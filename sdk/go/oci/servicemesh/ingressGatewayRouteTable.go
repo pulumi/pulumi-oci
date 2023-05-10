@@ -32,7 +32,6 @@ import (
 //			_, err := ServiceMesh.NewIngressGatewayRouteTable(ctx, "testIngressGatewayRouteTable", &ServiceMesh.IngressGatewayRouteTableArgs{
 //				CompartmentId:    pulumi.Any(_var.Compartment_id),
 //				IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-//				Name:             pulumi.Any(_var.Ingress_gateway_route_table_name),
 //				RouteRules: servicemesh.IngressGatewayRouteTableRouteRuleArray{
 //					&servicemesh.IngressGatewayRouteTableRouteRuleArgs{
 //						Destinations: servicemesh.IngressGatewayRouteTableRouteRuleDestinationArray{
@@ -125,9 +124,6 @@ func NewIngressGatewayRouteTable(ctx *pulumi.Context,
 	}
 	if args.IngressGatewayId == nil {
 		return nil, errors.New("invalid value for required argument 'IngressGatewayId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.RouteRules == nil {
 		return nil, errors.New("invalid value for required argument 'RouteRules'")
@@ -227,7 +223,7 @@ type ingressGatewayRouteTableArgs struct {
 	// The OCID of the service mesh in which this access policy is created.
 	IngressGatewayId string `pulumi:"ingressGatewayId"`
 	// (Updatable) Name of the ingress gateway host that this route should apply to.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority *int `pulumi:"priority"`
 	// (Updatable) The route rules for the ingress gateway.
@@ -247,7 +243,7 @@ type IngressGatewayRouteTableArgs struct {
 	// The OCID of the service mesh in which this access policy is created.
 	IngressGatewayId pulumi.StringInput
 	// (Updatable) Name of the ingress gateway host that this route should apply to.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority pulumi.IntPtrInput
 	// (Updatable) The route rules for the ingress gateway.

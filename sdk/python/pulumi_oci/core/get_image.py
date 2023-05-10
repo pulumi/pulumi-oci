@@ -277,7 +277,7 @@ def get_image(image_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image = oci.Core.get_image(image_id=oci_core_image["test_image"]["id"])
+    test_image = oci.Core.get_image(image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -325,7 +325,7 @@ def get_image_output(image_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image = oci.Core.get_image(image_id=oci_core_image["test_image"]["id"])
+    test_image = oci.Core.get_image(image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

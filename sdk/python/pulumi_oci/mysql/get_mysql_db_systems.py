@@ -182,14 +182,14 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-        display_name=var["mysql_db_system_display_name"],
-        is_analytics_cluster_attached=var["mysql_db_system_is_analytics_cluster_attached"],
-        is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
-        is_up_to_date=var["mysql_db_system_is_up_to_date"],
-        state=var["mysql_db_system_state"])
+    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        configuration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_analytics_cluster_attached=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_heat_wave_cluster_attached=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_up_to_date=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -252,14 +252,14 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-        display_name=var["mysql_db_system_display_name"],
-        is_analytics_cluster_attached=var["mysql_db_system_is_analytics_cluster_attached"],
-        is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
-        is_up_to_date=var["mysql_db_system_is_up_to_date"],
-        state=var["mysql_db_system_state"])
+    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        configuration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_analytics_cluster_attached=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_heat_wave_cluster_attached=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_up_to_date=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

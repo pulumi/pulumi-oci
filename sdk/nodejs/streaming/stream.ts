@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStream = new oci.streaming.Stream("testStream", {
- *     name: _var.stream_name,
  *     partitions: _var.stream_partitions,
  *     compartmentId: _var.compartment_id,
  *     definedTags: _var.stream_defined_tags,
@@ -139,9 +138,6 @@ export class Stream extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
             const args = argsOrState as StreamArgs | undefined;
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.partitions === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'partitions'");
             }
@@ -231,7 +227,7 @@ export interface StreamArgs {
     /**
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The number of partitions in the stream.
      */

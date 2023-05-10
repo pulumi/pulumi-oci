@@ -139,11 +139,11 @@ def get_publications(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=var["compartment_id"],
-        listing_type=var["publication_listing_type"],
-        names=var["publication_name"],
-        operating_systems=var["publication_operating_systems"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publications = oci.Marketplace.get_publications(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        listing_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        operating_systems=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        publication_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -193,11 +193,11 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=var["compartment_id"],
-        listing_type=var["publication_listing_type"],
-        names=var["publication_name"],
-        operating_systems=var["publication_operating_systems"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publications = oci.Marketplace.get_publications(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        listing_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        operating_systems=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        publication_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

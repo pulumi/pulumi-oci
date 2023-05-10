@@ -127,10 +127,10 @@ def get_service_environments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=var["compartment_id"],
-        display_name=var["service_environment_display_name"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"],
-        service_environment_type=var["service_environment_service_environment_type"])
+    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_environment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -177,10 +177,10 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=var["compartment_id"],
-        display_name=var["service_environment_display_name"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"],
-        service_environment_type=var["service_environment_service_environment_type"])
+    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_environment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

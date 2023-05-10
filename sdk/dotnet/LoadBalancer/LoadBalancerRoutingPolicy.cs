@@ -29,7 +29,6 @@ namespace Pulumi.Oci.LoadBalancer
     ///     {
     ///         ConditionLanguageVersion = @var.Load_balancer_routing_policy_condition_language_version,
     ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         Name = @var.Load_balancer_routing_policy_name,
     ///         Rules = new[]
     ///         {
     ///             new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleArgs
@@ -150,8 +149,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("rules", required: true)]
         private InputList<Inputs.LoadBalancerRoutingPolicyRuleArgs>? _rules;

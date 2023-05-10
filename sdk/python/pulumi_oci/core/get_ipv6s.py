@@ -126,9 +126,9 @@ def get_ipv6s(filters: Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]
     import pulumi
     import pulumi_oci as oci
 
-    test_ipv6s = oci.Core.get_ipv6s(ip_address=var["ipv6_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
+    test_ipv6s = oci.Core.get_ipv6s(ip_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -177,9 +177,9 @@ def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_ipv6s = oci.Core.get_ipv6s(ip_address=var["ipv6_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
+    test_ipv6s = oci.Core.get_ipv6s(ip_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

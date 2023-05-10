@@ -15,27 +15,28 @@ __all__ = ['DbManagementPrivateEndpointArgs', 'DbManagementPrivateEndpoint']
 class DbManagementPrivateEndpointArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None,
                  is_cluster: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a DbManagementPrivateEndpoint resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[bool] is_cluster: Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+        :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if is_cluster is not None:
             pulumi.set(__self__, "is_cluster", is_cluster)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
 
@@ -50,18 +51,6 @@ class DbManagementPrivateEndpointArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The display name of the Database Management private endpoint.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -98,6 +87,18 @@ class DbManagementPrivateEndpointArgs:
     @is_cluster.setter
     def is_cluster(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_cluster", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The display name of the Database Management private endpoint.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -305,7 +306,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
 
         test_db_management_private_endpoint = oci.database_management.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint",
             compartment_id=var["compartment_id"],
-            name=var["db_management_private_endpoint_name"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             description=var["db_management_private_endpoint_description"],
             is_cluster=var["db_management_private_endpoint_is_cluster"],
@@ -348,7 +348,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
 
         test_db_management_private_endpoint = oci.database_management.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint",
             compartment_id=var["compartment_id"],
-            name=var["db_management_private_endpoint_name"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             description=var["db_management_private_endpoint_description"],
             is_cluster=var["db_management_private_endpoint_is_cluster"],
@@ -398,8 +397,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["description"] = description
             __props__.__dict__["is_cluster"] = is_cluster
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["nsg_ids"] = nsg_ids
             if subnet_id is None and not opts.urn:

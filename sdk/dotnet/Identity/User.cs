@@ -58,7 +58,6 @@ namespace Pulumi.Oci.Identity
     ///     {
     ///         CompartmentId = @var.Tenancy_ocid,
     ///         Description = @var.User_description,
-    ///         Name = @var.User_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -274,8 +273,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public UserArgs()
         {

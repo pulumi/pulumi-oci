@@ -68,7 +68,6 @@ import javax.annotation.Nullable;
  *                 .urlPath(var_.backend_set_health_checker_url_path())
  *                 .build())
  *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
- *             .name(var_.backend_set_name())
  *             .policy(var_.backend_set_policy())
  *             .lbCookieSessionPersistenceConfiguration(BackendSetLbCookieSessionPersistenceConfigurationArgs.builder()
  *                 .cookieName(var_.backend_set_lb_cookie_session_persistence_configuration_cookie_name())

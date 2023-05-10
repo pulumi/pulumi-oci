@@ -179,9 +179,9 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
             subscription_id=oci_ons_subscription["test_subscription"]["id"],
             tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
             items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=oci_usage_proxy_email["test_email"]["id"],
-                first_name=var["subscription_redeemable_user_items_first_name"],
-                last_name=var["subscription_redeemable_user_items_last_name"],
+                email_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                first_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                last_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             user_id=oci_identity_user["test_user"]["id"])
         ```
@@ -222,9 +222,9 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
             subscription_id=oci_ons_subscription["test_subscription"]["id"],
             tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
             items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=oci_usage_proxy_email["test_email"]["id"],
-                first_name=var["subscription_redeemable_user_items_first_name"],
-                last_name=var["subscription_redeemable_user_items_last_name"],
+                email_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                first_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                last_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             user_id=oci_identity_user["test_user"]["id"])
         ```

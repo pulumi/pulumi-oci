@@ -50,7 +50,6 @@ import * as utilities from "../utilities";
  * const testUser = new oci.identity.User("testUser", {
  *     compartmentId: _var.tenancy_ocid,
  *     description: _var.user_description,
- *     name: _var.user_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -199,9 +198,6 @@ export class User extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -324,5 +320,5 @@ export interface UserArgs {
     /**
      * The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

@@ -108,8 +108,8 @@ def get_instance_console_connections(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=var["compartment_id"],
-        instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -149,8 +149,8 @@ def get_instance_console_connections_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=var["compartment_id"],
-        instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

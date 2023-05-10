@@ -122,9 +122,9 @@ def get_drg_route_distributions(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_distribution_display_name"],
-        state=var["drg_route_distribution_state"])
+    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -169,9 +169,9 @@ def get_drg_route_distributions_output(display_name: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_distribution_display_name"],
-        state=var["drg_route_distribution_state"])
+    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

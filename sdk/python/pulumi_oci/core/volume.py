@@ -680,14 +680,14 @@ class Volume(pulumi.CustomResource):
         test_volume = oci.core.Volume("testVolume",
             compartment_id=var["compartment_id"],
             autotune_policies=[oci.core.VolumeAutotunePolicyArgs(
-                autotune_type=var["volume_autotune_policies_autotune_type"],
-                max_vpus_per_gb=var["volume_autotune_policies_max_vpus_per_gb"],
+                autotune_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                max_vpus_per_gb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             availability_domain=var["volume_availability_domain"],
             backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
             block_volume_replicas=[oci.core.VolumeBlockVolumeReplicaArgs(
-                availability_domain=var["volume_block_volume_replicas_availability_domain"],
-                display_name=var["volume_block_volume_replicas_display_name"],
+                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -701,8 +701,8 @@ class Volume(pulumi.CustomResource):
             size_in_gbs=var["volume_size_in_gbs"],
             size_in_mbs=var["volume_size_in_mbs"],
             source_details=oci.core.VolumeSourceDetailsArgs(
-                id=var["volume_source_details_id"],
-                type=var["volume_source_details_type"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             vpus_per_gb=var["volume_vpus_per_gb"],
             block_volume_replicas_deletion=True)
@@ -766,14 +766,14 @@ class Volume(pulumi.CustomResource):
         test_volume = oci.core.Volume("testVolume",
             compartment_id=var["compartment_id"],
             autotune_policies=[oci.core.VolumeAutotunePolicyArgs(
-                autotune_type=var["volume_autotune_policies_autotune_type"],
-                max_vpus_per_gb=var["volume_autotune_policies_max_vpus_per_gb"],
+                autotune_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                max_vpus_per_gb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             availability_domain=var["volume_availability_domain"],
             backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
             block_volume_replicas=[oci.core.VolumeBlockVolumeReplicaArgs(
-                availability_domain=var["volume_block_volume_replicas_availability_domain"],
-                display_name=var["volume_block_volume_replicas_display_name"],
+                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -787,8 +787,8 @@ class Volume(pulumi.CustomResource):
             size_in_gbs=var["volume_size_in_gbs"],
             size_in_mbs=var["volume_size_in_mbs"],
             source_details=oci.core.VolumeSourceDetailsArgs(
-                id=var["volume_source_details_id"],
-                type=var["volume_source_details_type"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             vpus_per_gb=var["volume_vpus_per_gb"],
             block_volume_replicas_deletion=True)

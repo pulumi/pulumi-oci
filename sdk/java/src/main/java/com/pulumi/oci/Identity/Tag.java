@@ -69,7 +69,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testTag = new Tag(&#34;testTag&#34;, TagArgs.builder()        
  *             .description(var_.tag_description())
- *             .name(var_.tag_name())
  *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))

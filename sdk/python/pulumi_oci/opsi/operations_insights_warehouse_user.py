@@ -17,28 +17,27 @@ class OperationsInsightsWarehouseUserArgs:
                  compartment_id: pulumi.Input[str],
                  connection_password: pulumi.Input[str],
                  is_awr_data_access: pulumi.Input[bool],
-                 name: pulumi.Input[str],
                  operations_insights_warehouse_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_em_data_access: Optional[pulumi.Input[bool]] = None,
-                 is_opsi_data_access: Optional[pulumi.Input[bool]] = None):
+                 is_opsi_data_access: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a OperationsInsightsWarehouseUser resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
         :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
+        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_password", connection_password)
         pulumi.set(__self__, "is_awr_data_access", is_awr_data_access)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -48,6 +47,8 @@ class OperationsInsightsWarehouseUserArgs:
             pulumi.set(__self__, "is_em_data_access", is_em_data_access)
         if is_opsi_data_access is not None:
             pulumi.set(__self__, "is_opsi_data_access", is_opsi_data_access)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -84,18 +85,6 @@ class OperationsInsightsWarehouseUserArgs:
     @is_awr_data_access.setter
     def is_awr_data_access(self, value: pulumi.Input[bool]):
         pulumi.set(self, "is_awr_data_access", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
@@ -156,6 +145,18 @@ class OperationsInsightsWarehouseUserArgs:
     @is_opsi_data_access.setter
     def is_opsi_data_access(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_opsi_data_access", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -421,7 +422,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             connection_password=var["operations_insights_warehouse_user_connection_password"],
             is_awr_data_access=var["operations_insights_warehouse_user_is_awr_data_access"],
-            name=var["operations_insights_warehouse_user_name"],
             operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -475,7 +475,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             connection_password=var["operations_insights_warehouse_user_connection_password"],
             is_awr_data_access=var["operations_insights_warehouse_user_is_awr_data_access"],
-            name=var["operations_insights_warehouse_user_name"],
             operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -541,8 +540,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             __props__.__dict__["is_awr_data_access"] = is_awr_data_access
             __props__.__dict__["is_em_data_access"] = is_em_data_access
             __props__.__dict__["is_opsi_data_access"] = is_opsi_data_access
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if operations_insights_warehouse_id is None and not opts.urn:
                 raise TypeError("Missing required property 'operations_insights_warehouse_id'")

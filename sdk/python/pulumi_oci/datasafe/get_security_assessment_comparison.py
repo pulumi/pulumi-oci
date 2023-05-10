@@ -125,8 +125,8 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
+    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        security_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -164,8 +164,8 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
+    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        security_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

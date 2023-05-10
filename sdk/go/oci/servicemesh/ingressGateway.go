@@ -60,7 +60,6 @@ import (
 //					},
 //				},
 //				MeshId: pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
-//				Name:   pulumi.Any(_var.Ingress_gateway_name),
 //				AccessLogging: &servicemesh.IngressGatewayAccessLoggingArgs{
 //					IsEnabled: pulumi.Any(_var.Ingress_gateway_access_logging_is_enabled),
 //				},
@@ -141,9 +140,6 @@ func NewIngressGateway(ctx *pulumi.Context,
 	}
 	if args.MeshId == nil {
 		return nil, errors.New("invalid value for required argument 'MeshId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource IngressGateway
 	err := ctx.RegisterResource("oci:ServiceMesh/ingressGateway:IngressGateway", name, args, &resource, opts...)
@@ -250,7 +246,7 @@ type ingressGatewayArgs struct {
 	// (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls *IngressGatewayMtls `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a IngressGateway resource.
@@ -272,7 +268,7 @@ type IngressGatewayArgs struct {
 	// (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls IngressGatewayMtlsPtrInput
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 }
 
 func (IngressGatewayArgs) ElementType() reflect.Type {

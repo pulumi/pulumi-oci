@@ -18,12 +18,12 @@ class NodePoolArgs:
     def __init__(__self__, *,
                  cluster_id: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  node_shape: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
                  node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
@@ -39,12 +39,12 @@ class NodePoolArgs:
         The set of arguments for constructing a NodePool resource.
         :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
+        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -59,7 +59,6 @@ class NodePoolArgs:
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "node_shape", node_shape)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -69,6 +68,8 @@ class NodePoolArgs:
             pulumi.set(__self__, "initial_node_labels", initial_node_labels)
         if kubernetes_version is not None:
             pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if node_config_details is not None:
             pulumi.set(__self__, "node_config_details", node_config_details)
         if node_eviction_node_pool_settings is not None:
@@ -121,18 +122,6 @@ class NodePoolArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the node pool. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="nodeShape")
@@ -193,6 +182,18 @@ class NodePoolArgs:
     @kubernetes_version.setter
     def kubernetes_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kubernetes_version", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the node pool. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="nodeConfigDetails")
@@ -748,7 +749,6 @@ class NodePool(pulumi.CustomResource):
         test_node_pool = oci.container_engine.NodePool("testNodePool",
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compartment_id=var["compartment_id"],
-            name=var["node_pool_name"],
             node_shape=var["node_pool_node_shape"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -757,31 +757,31 @@ class NodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=var["node_pool_initial_node_labels_key"],
-                value=var["node_pool_initial_node_labels_value"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             kubernetes_version=var["node_pool_kubernetes_version"],
             node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
                 placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
-                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
+                    availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    fault_domains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
                         preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
-                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
+                            type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            is_preserve_boot_volume=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         ),
                     ),
                 )],
-                size=var["node_pool_node_config_details_size"],
-                is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_pv_encryption_in_transit_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
-                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
-                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
-                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
+                    cni_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max_pods_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    pod_nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    pod_subnet_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 defined_tags={
                     "Operations.CostCenter": "42",
@@ -789,27 +789,27 @@ class NodePool(pulumi.CustomResource):
                 freeform_tags={
                     "Department": "Finance",
                 },
-                nsg_ids=var["node_pool_node_config_details_nsg_ids"],
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
-                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
+                eviction_grace_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_force_delete_after_grace_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_image_name=oci_core_image["test_image"]["name"],
             node_metadata=var["node_pool_node_metadata"],
             node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
-                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
-                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
+                is_node_cycling_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_surge=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_unavailable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
-                ocpus=var["node_pool_node_shape_config_ocpus"],
+                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=oci_core_image["test_image"]["id"],
-                source_type=var["node_pool_node_source_details_source_type"],
-                boot_volume_size_in_gbs=var["node_pool_node_source_details_boot_volume_size_in_gbs"],
+                image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                boot_volume_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             quantity_per_subnet=var["node_pool_quantity_per_subnet"],
             ssh_public_key=var["node_pool_ssh_public_key"],
@@ -866,7 +866,6 @@ class NodePool(pulumi.CustomResource):
         test_node_pool = oci.container_engine.NodePool("testNodePool",
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compartment_id=var["compartment_id"],
-            name=var["node_pool_name"],
             node_shape=var["node_pool_node_shape"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -875,31 +874,31 @@ class NodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=var["node_pool_initial_node_labels_key"],
-                value=var["node_pool_initial_node_labels_value"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             kubernetes_version=var["node_pool_kubernetes_version"],
             node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
                 placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
-                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
+                    availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    fault_domains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
                         preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
-                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
+                            type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            is_preserve_boot_volume=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         ),
                     ),
                 )],
-                size=var["node_pool_node_config_details_size"],
-                is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_pv_encryption_in_transit_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
-                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
-                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
-                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
+                    cni_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max_pods_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    pod_nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    pod_subnet_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 defined_tags={
                     "Operations.CostCenter": "42",
@@ -907,27 +906,27 @@ class NodePool(pulumi.CustomResource):
                 freeform_tags={
                     "Department": "Finance",
                 },
-                nsg_ids=var["node_pool_node_config_details_nsg_ids"],
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
-                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
+                eviction_grace_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_force_delete_after_grace_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_image_name=oci_core_image["test_image"]["name"],
             node_metadata=var["node_pool_node_metadata"],
             node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
-                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
-                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
+                is_node_cycling_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_surge=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_unavailable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
-                ocpus=var["node_pool_node_shape_config_ocpus"],
+                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=oci_core_image["test_image"]["id"],
-                source_type=var["node_pool_node_source_details_source_type"],
-                boot_volume_size_in_gbs=var["node_pool_node_source_details_boot_volume_size_in_gbs"],
+                image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                boot_volume_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             quantity_per_subnet=var["node_pool_quantity_per_subnet"],
             ssh_public_key=var["node_pool_ssh_public_key"],
@@ -995,8 +994,6 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["initial_node_labels"] = initial_node_labels
             __props__.__dict__["kubernetes_version"] = kubernetes_version
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["node_config_details"] = node_config_details
             __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings

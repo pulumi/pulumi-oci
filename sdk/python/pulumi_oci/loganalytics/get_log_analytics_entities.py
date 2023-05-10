@@ -221,18 +221,18 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entity_namespace"],
-        cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
-        entity_type_names=var["log_analytics_entity_entity_type_name"],
-        hostname=var["log_analytics_entity_hostname"],
-        hostname_contains=var["log_analytics_entity_hostname_contains"],
-        is_management_agent_id_null=var["log_analytics_entity_is_management_agent_id_null"],
-        lifecycle_details_contains=var["log_analytics_entity_lifecycle_details_contains"],
-        name=var["log_analytics_entity_name"],
-        name_contains=var["log_analytics_entity_name_contains"],
-        source_id=oci_log_analytics_source["test_source"]["id"],
-        state=var["log_analytics_entity_state"])
+    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cloud_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        entity_type_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        hostname_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_management_agent_id_null=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        lifecycle_details_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -310,18 +310,18 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entity_namespace"],
-        cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
-        entity_type_names=var["log_analytics_entity_entity_type_name"],
-        hostname=var["log_analytics_entity_hostname"],
-        hostname_contains=var["log_analytics_entity_hostname_contains"],
-        is_management_agent_id_null=var["log_analytics_entity_is_management_agent_id_null"],
-        lifecycle_details_contains=var["log_analytics_entity_lifecycle_details_contains"],
-        name=var["log_analytics_entity_name"],
-        name_contains=var["log_analytics_entity_name_contains"],
-        source_id=oci_log_analytics_source["test_source"]["id"],
-        state=var["log_analytics_entity_state"])
+    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cloud_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        entity_type_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        hostname_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_management_agent_id_null=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        lifecycle_details_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

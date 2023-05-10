@@ -174,7 +174,7 @@ def get_steering_policy_attachment(steering_policy_attachment_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachment = oci.Dns.get_steering_policy_attachment(steering_policy_attachment_id=oci_dns_steering_policy_attachment["test_steering_policy_attachment"]["id"])
+    test_steering_policy_attachment = oci.Dns.get_steering_policy_attachment(steering_policy_attachment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -213,7 +213,7 @@ def get_steering_policy_attachment_output(steering_policy_attachment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachment = oci.Dns.get_steering_policy_attachment(steering_policy_attachment_id=oci_dns_steering_policy_attachment["test_steering_policy_attachment"]["id"])
+    test_steering_policy_attachment = oci.Dns.get_steering_policy_attachment(steering_policy_attachment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

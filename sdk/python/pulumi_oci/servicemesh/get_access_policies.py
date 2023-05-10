@@ -133,11 +133,11 @@ def get_access_policies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_policies = oci.ServiceMesh.get_access_policies(compartment_id=var["compartment_id"],
-        id=var["access_policy_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["access_policy_name"],
-        state=var["access_policy_state"])
+    test_access_policies = oci.ServiceMesh.get_access_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        mesh_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -186,11 +186,11 @@ def get_access_policies_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_access_policies = oci.ServiceMesh.get_access_policies(compartment_id=var["compartment_id"],
-        id=var["access_policy_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["access_policy_name"],
-        state=var["access_policy_state"])
+    test_access_policies = oci.ServiceMesh.get_access_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        mesh_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

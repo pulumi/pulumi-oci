@@ -174,7 +174,7 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"])
+    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -213,7 +213,7 @@ def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"])
+    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

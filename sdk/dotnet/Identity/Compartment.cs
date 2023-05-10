@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Identity
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         Description = @var.Compartment_description,
-    ///         Name = @var.Compartment_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -200,8 +199,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// (Updatable) The name you assign to the compartment during creation. The name must be unique across all compartments in the parent compartment. Avoid entering confidential information.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public CompartmentArgs()
         {

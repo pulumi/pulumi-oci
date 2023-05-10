@@ -150,7 +150,7 @@ def get_service_catalog(service_catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
+    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -187,7 +187,7 @@ def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
+    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

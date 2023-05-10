@@ -40,6 +40,7 @@ class ExadataInfrastructureArgs:
                  is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
                  maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
                  multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
+                 network_bonding_mode_details: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
                  storage_count: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a ExadataInfrastructure resource.
@@ -66,6 +67,7 @@ class ExadataInfrastructureArgs:
         :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
+        :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
         """
         pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
@@ -104,6 +106,8 @@ class ExadataInfrastructureArgs:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if multi_rack_configuration_file is not None:
             pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
+        if network_bonding_mode_details is not None:
+            pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
         if storage_count is not None:
             pulumi.set(__self__, "storage_count", storage_count)
 
@@ -393,6 +397,18 @@ class ExadataInfrastructureArgs:
         pulumi.set(self, "multi_rack_configuration_file", value)
 
     @property
+    @pulumi.getter(name="networkBondingModeDetails")
+    def network_bonding_mode_details(self) -> Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']]:
+        """
+        (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        """
+        return pulumi.get(self, "network_bonding_mode_details")
+
+    @network_bonding_mode_details.setter
+    def network_bonding_mode_details(self, value: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']]):
+        pulumi.set(self, "network_bonding_mode_details", value)
+
+    @property
     @pulumi.getter(name="storageCount")
     def storage_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -445,6 +461,7 @@ class _ExadataInfrastructureState:
                  monthly_db_server_version: Optional[pulumi.Input[str]] = None,
                  multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
+                 network_bonding_mode_details: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -490,6 +507,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
+        :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[str] state: The current lifecycle state of the Exadata infrastructure.
@@ -572,6 +590,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         if netmask is not None:
             pulumi.set(__self__, "netmask", netmask)
+        if network_bonding_mode_details is not None:
+            pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
         if ntp_servers is not None:
             pulumi.set(__self__, "ntp_servers", ntp_servers)
         if shape is not None:
@@ -1029,6 +1049,18 @@ class _ExadataInfrastructureState:
         pulumi.set(self, "netmask", value)
 
     @property
+    @pulumi.getter(name="networkBondingModeDetails")
+    def network_bonding_mode_details(self) -> Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']]:
+        """
+        (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        """
+        return pulumi.get(self, "network_bonding_mode_details")
+
+    @network_bonding_mode_details.setter
+    def network_bonding_mode_details(self, value: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']]):
+        pulumi.set(self, "network_bonding_mode_details", value)
+
+    @property
     @pulumi.getter(name="ntpServers")
     def ntp_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -1139,6 +1171,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
                  multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
+                 network_bonding_mode_details: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
@@ -1172,11 +1205,11 @@ class ExadataInfrastructure(pulumi.CustomResource):
             activation_file=var["exadata_infrastructure_activation_file"],
             compute_count=var["exadata_infrastructure_compute_count"],
             contacts=[oci.database.ExadataInfrastructureContactArgs(
-                email=var["exadata_infrastructure_contacts_email"],
-                is_primary=var["exadata_infrastructure_contacts_is_primary"],
-                name=var["exadata_infrastructure_contacts_name"],
-                is_contact_mos_validated=var["exadata_infrastructure_contacts_is_contact_mos_validated"],
-                phone_number=var["exadata_infrastructure_contacts_phone_number"],
+                email=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_primary=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_contact_mos_validated=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                phone_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             corporate_proxy=var["exadata_infrastructure_corporate_proxy"],
             defined_tags=var["exadata_infrastructure_defined_tags"],
@@ -1186,22 +1219,26 @@ class ExadataInfrastructure(pulumi.CustomResource):
             is_cps_offline_report_enabled=var["exadata_infrastructure_is_cps_offline_report_enabled"],
             is_multi_rack_deployment=var["exadata_infrastructure_is_multi_rack_deployment"],
             maintenance_window=oci.database.ExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=var["exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 days_of_weeks=[oci.database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=var["exadata_infrastructure_maintenance_window_days_of_week_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                hours_of_days=var["exadata_infrastructure_maintenance_window_hours_of_day"],
-                is_custom_action_timeout_enabled=var["exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
+                hours_of_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_custom_action_timeout_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                lead_time_in_weeks=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 months=[oci.database.ExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=var["exadata_infrastructure_maintenance_window_months_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                patching_mode=var["exadata_infrastructure_maintenance_window_patching_mode"],
-                preference=var["exadata_infrastructure_maintenance_window_preference"],
-                weeks_of_months=var["exadata_infrastructure_maintenance_window_weeks_of_month"],
+                patching_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                weeks_of_months=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             multi_rack_configuration_file=var["exadata_infrastructure_multi_rack_configuration_file"],
+            network_bonding_mode_details=oci.database.ExadataInfrastructureNetworkBondingModeDetailsArgs(
+                backup_network_bonding_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                client_network_bonding_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+            ),
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
 
@@ -1235,6 +1272,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
+        :param pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
@@ -1274,11 +1312,11 @@ class ExadataInfrastructure(pulumi.CustomResource):
             activation_file=var["exadata_infrastructure_activation_file"],
             compute_count=var["exadata_infrastructure_compute_count"],
             contacts=[oci.database.ExadataInfrastructureContactArgs(
-                email=var["exadata_infrastructure_contacts_email"],
-                is_primary=var["exadata_infrastructure_contacts_is_primary"],
-                name=var["exadata_infrastructure_contacts_name"],
-                is_contact_mos_validated=var["exadata_infrastructure_contacts_is_contact_mos_validated"],
-                phone_number=var["exadata_infrastructure_contacts_phone_number"],
+                email=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_primary=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_contact_mos_validated=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                phone_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             corporate_proxy=var["exadata_infrastructure_corporate_proxy"],
             defined_tags=var["exadata_infrastructure_defined_tags"],
@@ -1288,22 +1326,26 @@ class ExadataInfrastructure(pulumi.CustomResource):
             is_cps_offline_report_enabled=var["exadata_infrastructure_is_cps_offline_report_enabled"],
             is_multi_rack_deployment=var["exadata_infrastructure_is_multi_rack_deployment"],
             maintenance_window=oci.database.ExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=var["exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 days_of_weeks=[oci.database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=var["exadata_infrastructure_maintenance_window_days_of_week_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                hours_of_days=var["exadata_infrastructure_maintenance_window_hours_of_day"],
-                is_custom_action_timeout_enabled=var["exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
+                hours_of_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_custom_action_timeout_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                lead_time_in_weeks=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 months=[oci.database.ExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=var["exadata_infrastructure_maintenance_window_months_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                patching_mode=var["exadata_infrastructure_maintenance_window_patching_mode"],
-                preference=var["exadata_infrastructure_maintenance_window_preference"],
-                weeks_of_months=var["exadata_infrastructure_maintenance_window_weeks_of_month"],
+                patching_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                weeks_of_months=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             multi_rack_configuration_file=var["exadata_infrastructure_multi_rack_configuration_file"],
+            network_bonding_mode_details=oci.database.ExadataInfrastructureNetworkBondingModeDetailsArgs(
+                backup_network_bonding_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                client_network_bonding_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+            ),
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
 
@@ -1351,6 +1393,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
                  multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
+                 network_bonding_mode_details: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
@@ -1403,6 +1446,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             if netmask is None and not opts.urn:
                 raise TypeError("Missing required property 'netmask'")
             __props__.__dict__["netmask"] = netmask
+            __props__.__dict__["network_bonding_mode_details"] = network_bonding_mode_details
             if ntp_servers is None and not opts.urn:
                 raise TypeError("Missing required property 'ntp_servers'")
             __props__.__dict__["ntp_servers"] = ntp_servers
@@ -1479,6 +1523,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             monthly_db_server_version: Optional[pulumi.Input[str]] = None,
             multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
             netmask: Optional[pulumi.Input[str]] = None,
+            network_bonding_mode_details: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']]] = None,
             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1529,6 +1574,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
+        :param pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[str] state: The current lifecycle state of the Exadata infrastructure.
@@ -1578,6 +1624,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["monthly_db_server_version"] = monthly_db_server_version
         __props__.__dict__["multi_rack_configuration_file"] = multi_rack_configuration_file
         __props__.__dict__["netmask"] = netmask
+        __props__.__dict__["network_bonding_mode_details"] = network_bonding_mode_details
         __props__.__dict__["ntp_servers"] = ntp_servers
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
@@ -1879,6 +1926,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The netmask for the control plane network.
         """
         return pulumi.get(self, "netmask")
+
+    @property
+    @pulumi.getter(name="networkBondingModeDetails")
+    def network_bonding_mode_details(self) -> pulumi.Output['outputs.ExadataInfrastructureNetworkBondingModeDetails']:
+        """
+        (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        """
+        return pulumi.get(self, "network_bonding_mode_details")
 
     @property
     @pulumi.getter(name="ntpServers")

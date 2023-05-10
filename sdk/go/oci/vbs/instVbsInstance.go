@@ -32,7 +32,6 @@ import (
 //			_, err := Vbs.NewInstVbsInstance(ctx, "testVbsInstance", &Vbs.InstVbsInstanceArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Vbs_instance_display_name),
-//				Name:          pulumi.Any(_var.Vbs_instance_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -106,9 +105,6 @@ func NewInstVbsInstance(ctx *pulumi.Context,
 	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource InstVbsInstance
 	err := ctx.RegisterResource("oci:Vbs/instVbsInstance:InstVbsInstance", name, args, &resource, opts...)
@@ -211,7 +207,7 @@ type instVbsInstanceArgs struct {
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
 	IsResourceUsageAgreementGranted *bool `pulumi:"isResourceUsageAgreementGranted"`
 	// Service Instance Name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
 	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 }
@@ -231,7 +227,7 @@ type InstVbsInstanceArgs struct {
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
 	IsResourceUsageAgreementGranted pulumi.BoolPtrInput
 	// Service Instance Name
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
 	ResourceCompartmentId pulumi.StringPtrInput
 }

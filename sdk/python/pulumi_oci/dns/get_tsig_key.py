@@ -186,7 +186,7 @@ def get_tsig_key(tsig_key_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"])
+    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -226,7 +226,7 @@ def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"])
+    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

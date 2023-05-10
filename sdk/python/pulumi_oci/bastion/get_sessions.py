@@ -126,10 +126,10 @@ def get_sessions(bastion_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sessions = oci.Bastion.get_sessions(bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-        display_name=var["session_display_name"],
-        session_id=oci_bastion_session["test_session"]["id"],
-        session_lifecycle_state=var["session_session_lifecycle_state"])
+    test_sessions = oci.Bastion.get_sessions(bastion_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        session_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        session_lifecycle_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -175,10 +175,10 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sessions = oci.Bastion.get_sessions(bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-        display_name=var["session_display_name"],
-        session_id=oci_bastion_session["test_session"]["id"],
-        session_lifecycle_state=var["session_session_lifecycle_state"])
+    test_sessions = oci.Bastion.get_sessions(bastion_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        session_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        session_lifecycle_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

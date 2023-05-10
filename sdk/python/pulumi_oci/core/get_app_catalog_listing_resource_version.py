@@ -163,8 +163,8 @@ def get_app_catalog_listing_resource_version(listing_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-        resource_version=var["app_catalog_listing_resource_version_resource_version"])
+    test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -205,8 +205,8 @@ def get_app_catalog_listing_resource_version_output(listing_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-        resource_version=var["app_catalog_listing_resource_version_resource_version"])
+    test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

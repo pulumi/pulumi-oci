@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  *
  * const testProject = new oci.devops.Project("testProject", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.project_name,
  *     notificationConfig: {
  *         topicId: oci_ons_notification_topic.test_notification_topic.id,
  *     },
@@ -148,9 +147,6 @@ export class Project extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.notificationConfig === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notificationConfig'");
             }
@@ -249,7 +245,7 @@ export interface ProjectArgs {
     /**
      * Project name (case-sensitive).
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) Notification configuration for the project.
      */

@@ -45,7 +45,6 @@ import javax.annotation.Nullable;
  *             .bucket(var_.replication_policy_bucket())
  *             .destinationBucketName(oci_objectstorage_bucket.test_bucket().name())
  *             .destinationRegionName(oci_identity_region.test_region().name())
- *             .name(var_.replication_policy_name())
  *             .namespace(var_.replication_policy_namespace())
  *             .build());
  * 

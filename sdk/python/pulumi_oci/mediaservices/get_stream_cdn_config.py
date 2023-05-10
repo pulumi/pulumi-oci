@@ -211,7 +211,7 @@ def get_stream_cdn_config(stream_cdn_config_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_config = oci.MediaServices.get_stream_cdn_config(stream_cdn_config_id=oci_media_services_stream_cdn_config["test_stream_cdn_config"]["id"])
+    test_stream_cdn_config = oci.MediaServices.get_stream_cdn_config(stream_cdn_config_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -253,7 +253,7 @@ def get_stream_cdn_config_output(stream_cdn_config_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_config = oci.MediaServices.get_stream_cdn_config(stream_cdn_config_id=oci_media_services_stream_cdn_config["test_stream_cdn_config"]["id"])
+    test_stream_cdn_config = oci.MediaServices.get_stream_cdn_config(stream_cdn_config_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

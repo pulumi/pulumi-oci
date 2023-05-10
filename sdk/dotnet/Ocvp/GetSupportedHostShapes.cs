@@ -12,6 +12,11 @@ namespace Pulumi.Oci.Ocvp
     public static class GetSupportedHostShapes
     {
         /// <summary>
+        /// This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Lists supported compute shapes for ESXi hosts.
+        /// 
+        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -40,6 +45,11 @@ namespace Pulumi.Oci.Ocvp
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Lists supported compute shapes for ESXi hosts.
+        /// 
+        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -148,7 +158,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The list of the supported compute shapes for ESXi hosts.
+        /// A list of the supported compute shapes for ESXi hosts.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSupportedHostShapesItemResult> Items;
         /// <summary>

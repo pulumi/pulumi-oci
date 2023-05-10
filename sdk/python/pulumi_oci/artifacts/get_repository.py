@@ -174,7 +174,7 @@ def get_repository(repository_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.Artifacts.get_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
+    test_repository = oci.Artifacts.get_repository(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -213,7 +213,7 @@ def get_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.Artifacts.get_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
+    test_repository = oci.Artifacts.get_repository(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

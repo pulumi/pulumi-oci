@@ -222,7 +222,7 @@ def get_enterprise_manager_bridge(enterprise_manager_bridge_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"])
+    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -265,7 +265,7 @@ def get_enterprise_manager_bridge_output(enterprise_manager_bridge_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"])
+    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

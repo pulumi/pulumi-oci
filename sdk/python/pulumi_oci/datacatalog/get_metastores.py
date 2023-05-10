@@ -119,9 +119,9 @@ def get_metastores(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=var["compartment_id"],
-        display_name=var["metastore_display_name"],
-        state=var["metastore_state"])
+    test_metastores = oci.DataCatalog.get_metastores(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_metastores_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=var["compartment_id"],
-        display_name=var["metastore_display_name"],
-        state=var["metastore_state"])
+    test_metastores = oci.DataCatalog.get_metastores(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

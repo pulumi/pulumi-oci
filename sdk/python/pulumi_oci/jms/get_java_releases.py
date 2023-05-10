@@ -142,11 +142,11 @@ def get_java_releases(family_version: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_releases = oci.Jms.get_java_releases(family_version=var["java_release_family_version"],
-        jre_security_status=var["java_release_jre_security_status"],
-        license_type=var["java_release_license_type"],
-        release_type=var["java_release_release_type"],
-        release_version=var["java_release_release_version"])
+    test_java_releases = oci.Jms.get_java_releases(family_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        jre_security_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        license_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        release_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        release_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -196,11 +196,11 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_java_releases = oci.Jms.get_java_releases(family_version=var["java_release_family_version"],
-        jre_security_status=var["java_release_jre_security_status"],
-        license_type=var["java_release_license_type"],
-        release_type=var["java_release_release_type"],
-        release_version=var["java_release_release_version"])
+    test_java_releases = oci.Jms.get_java_releases(family_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        jre_security_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        license_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        release_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        release_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

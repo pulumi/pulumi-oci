@@ -174,7 +174,7 @@ def get_environment(environment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_environment = oci.CloudBridge.get_environment(environment_id=oci_cloud_bridge_environment["test_environment"]["id"])
+    test_environment = oci.CloudBridge.get_environment(environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -213,7 +213,7 @@ def get_environment_output(environment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_environment = oci.CloudBridge.get_environment(environment_id=oci_cloud_bridge_environment["test_environment"]["id"])
+    test_environment = oci.CloudBridge.get_environment(environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

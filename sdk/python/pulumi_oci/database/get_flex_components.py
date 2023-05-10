@@ -103,8 +103,8 @@ def get_flex_components(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_flex_components = oci.Database.get_flex_components(compartment_id=var["compartment_id"],
-        name=var["flex_component_name"])
+    test_flex_components = oci.Database.get_flex_components(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -142,8 +142,8 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_flex_components = oci.Database.get_flex_components(compartment_id=var["compartment_id"],
-        name=var["flex_component_name"])
+    test_flex_components = oci.Database.get_flex_components(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

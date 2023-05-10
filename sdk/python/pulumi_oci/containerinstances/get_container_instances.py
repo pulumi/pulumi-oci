@@ -132,10 +132,10 @@ def get_container_instances(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=var["compartment_id"],
-        availability_domain=var["container_instance_availability_domain"],
-        display_name=var["container_instance_display_name"],
-        state=var["container_instance_state"])
+    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -181,10 +181,10 @@ def get_container_instances_output(availability_domain: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=var["compartment_id"],
-        availability_domain=var["container_instance_availability_domain"],
-        display_name=var["container_instance_display_name"],
-        state=var["container_instance_state"])
+    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

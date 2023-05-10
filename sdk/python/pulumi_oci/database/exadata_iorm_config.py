@@ -184,8 +184,8 @@ class ExadataIormConfig(pulumi.CustomResource):
 
         test_exadata_iorm_config = oci.database.ExadataIormConfig("testExadataIormConfig",
             db_plans=[oci.database.ExadataIormConfigDbPlanArgs(
-                db_name=var["exadata_iorm_config_db_plans_db_name"],
-                share=var["exadata_iorm_config_db_plans_share"],
+                db_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                share=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             db_system_id=oci_database_db_system["test_db_system"]["id"],
             objective="AUTO")
@@ -227,8 +227,8 @@ class ExadataIormConfig(pulumi.CustomResource):
 
         test_exadata_iorm_config = oci.database.ExadataIormConfig("testExadataIormConfig",
             db_plans=[oci.database.ExadataIormConfigDbPlanArgs(
-                db_name=var["exadata_iorm_config_db_plans_db_name"],
-                share=var["exadata_iorm_config_db_plans_share"],
+                db_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                share=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             db_system_id=oci_database_db_system["test_db_system"]["id"],
             objective="AUTO")

@@ -123,10 +123,10 @@ def get_trail_sequences(deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_sequence_display_name"],
-        trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
+    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        trail_file_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        trail_sequence_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -172,10 +172,10 @@ def get_trail_sequences_output(deployment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_sequence_display_name"],
-        trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
+    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        trail_file_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        trail_sequence_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

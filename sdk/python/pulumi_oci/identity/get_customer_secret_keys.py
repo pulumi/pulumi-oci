@@ -94,7 +94,7 @@ def get_customer_secret_keys(filters: Optional[Sequence[pulumi.InputType['GetCus
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=oci_identity_user["test_user"]["id"])
+    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -129,7 +129,7 @@ def get_customer_secret_keys_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=oci_identity_user["test_user"]["id"])
+    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

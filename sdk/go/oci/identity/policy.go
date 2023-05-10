@@ -44,7 +44,6 @@ import (
 //			_, err := Identity.NewPolicy(ctx, "testPolicy", &Identity.PolicyArgs{
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.Policy_description),
-//				Name:          pulumi.Any(_var.Policy_name),
 //				Statements:    pulumi.Any(_var.Policy_statements),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
@@ -115,9 +114,6 @@ func NewPolicy(ctx *pulumi.Context,
 	}
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Statements == nil {
 		return nil, errors.New("invalid value for required argument 'Statements'")
@@ -215,7 +211,7 @@ type policyArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
 	Statements []string `pulumi:"statements"`
 	// (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
@@ -233,7 +229,7 @@ type PolicyArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
 	Statements pulumi.StringArrayInput
 	// (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.

@@ -109,10 +109,10 @@ def get_subscription_redemption(subscription_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemption = oci.UsageProxy.get_subscription_redemption(subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
-        time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
+    test_subscription_redemption = oci.UsageProxy.get_subscription_redemption(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_redeemed_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_redeemed_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -155,10 +155,10 @@ def get_subscription_redemption_output(subscription_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemption = oci.UsageProxy.get_subscription_redemption(subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
-        time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
+    test_subscription_redemption = oci.UsageProxy.get_subscription_redemption(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_redeemed_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_redeemed_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

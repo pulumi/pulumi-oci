@@ -150,7 +150,7 @@ def get_association(association_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_association = oci.CertificatesManagement.get_association(association_id=oci_certificates_management_association["test_association"]["id"])
+    test_association = oci.CertificatesManagement.get_association(association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -187,7 +187,7 @@ def get_association_output(association_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_association = oci.CertificatesManagement.get_association(association_id=oci_certificates_management_association["test_association"]["id"])
+    test_association = oci.CertificatesManagement.get_association(association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -17,13 +17,13 @@ __all__ = ['DomainsMyOauth2clientCredentialArgs', 'DomainsMyOauth2clientCredenti
 class DomainsMyOauth2clientCredentialArgs:
     def __init__(__self__, *,
                  idcs_endpoint: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
                  scopes: pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialScopeArgs']]],
                  authorization: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  expires_on: Optional[pulumi.Input[str]] = None,
                  is_reset_secret: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
@@ -32,13 +32,13 @@ class DomainsMyOauth2clientCredentialArgs:
         """
         The set of arguments for constructing a DomainsMyOauth2clientCredential resource.
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] name: (Updatable) User name
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialScopeArgs']]] scopes: Scopes
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[str] description: Description
         :param pulumi.Input[str] expires_on: User credential expires on
         :param pulumi.Input[bool] is_reset_secret: Specifies if secret need to be reset
+        :param pulumi.Input[str] name: (Updatable) User name
         :param pulumi.Input[str] ocid: User's ocid
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[str] status: User credential status
@@ -46,7 +46,6 @@ class DomainsMyOauth2clientCredentialArgs:
         :param pulumi.Input['DomainsMyOauth2clientCredentialUserArgs'] user: User linked to oauth2 client credential
         """
         pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "schemas", schemas)
         pulumi.set(__self__, "scopes", scopes)
         if authorization is not None:
@@ -57,6 +56,8 @@ class DomainsMyOauth2clientCredentialArgs:
             pulumi.set(__self__, "expires_on", expires_on)
         if is_reset_secret is not None:
             pulumi.set(__self__, "is_reset_secret", is_reset_secret)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if ocid is not None:
             pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
@@ -79,18 +80,6 @@ class DomainsMyOauth2clientCredentialArgs:
     @idcs_endpoint.setter
     def idcs_endpoint(self, value: pulumi.Input[str]):
         pulumi.set(self, "idcs_endpoint", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) User name
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -163,6 +152,18 @@ class DomainsMyOauth2clientCredentialArgs:
     @is_reset_secret.setter
     def is_reset_secret(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_reset_secret", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -696,8 +697,6 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
             __props__.__dict__["is_reset_secret"] = is_reset_secret
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["ocid"] = ocid
             __props__.__dict__["resource_type_schema_version"] = resource_type_schema_version

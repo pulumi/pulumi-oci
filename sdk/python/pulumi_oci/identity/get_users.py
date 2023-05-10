@@ -147,11 +147,11 @@ def get_users(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_users(compartment_id=var["tenancy_ocid"],
-        external_identifier=var["user_external_identifier"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["user_name"],
-        state=var["user_state"])
+    test_users = oci.Identity.get_users(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_identifier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        identity_provider_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -203,11 +203,11 @@ def get_users_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_users(compartment_id=var["tenancy_ocid"],
-        external_identifier=var["user_external_identifier"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["user_name"],
-        state=var["user_state"])
+    test_users = oci.Identity.get_users(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_identifier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        identity_provider_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

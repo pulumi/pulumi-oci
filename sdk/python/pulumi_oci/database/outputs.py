@@ -110,6 +110,7 @@ __all__ = [
     'ExadataInfrastructureMaintenanceWindow',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'ExadataInfrastructureMaintenanceWindowMonth',
+    'ExadataInfrastructureNetworkBondingModeDetails',
     'ExadataInfrastructureStorageContact',
     'ExadataInfrastructureStorageMaintenanceWindow',
     'ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek',
@@ -411,11 +412,13 @@ __all__ = [
     'GetExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructureMaintenanceWindowMonthResult',
+    'GetExadataInfrastructureNetworkBondingModeDetailResult',
     'GetExadataInfrastructuresExadataInfrastructureResult',
     'GetExadataInfrastructuresExadataInfrastructureContactResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthResult',
+    'GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult',
     'GetExadataInfrastructuresFilterResult',
     'GetExadataIormConfigDbPlanResult',
     'GetExternalContainerDatabaseDatabaseManagementConfigResult',
@@ -7963,6 +7966,56 @@ class ExadataInfrastructureMaintenanceWindowMonth(dict):
         (Updatable) Name of the month of the year.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class ExadataInfrastructureNetworkBondingModeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupNetworkBondingMode":
+            suggest = "backup_network_bonding_mode"
+        elif key == "clientNetworkBondingMode":
+            suggest = "client_network_bonding_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureNetworkBondingModeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureNetworkBondingModeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureNetworkBondingModeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_network_bonding_mode: Optional[str] = None,
+                 client_network_bonding_mode: Optional[str] = None):
+        """
+        :param str backup_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
+        :param str client_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        if backup_network_bonding_mode is not None:
+            pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
+        if client_network_bonding_mode is not None:
+            pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+
+    @property
+    @pulumi.getter(name="backupNetworkBondingMode")
+    def backup_network_bonding_mode(self) -> Optional[str]:
+        """
+        (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "backup_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="clientNetworkBondingMode")
+    def client_network_bonding_mode(self) -> Optional[str]:
+        """
+        (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "client_network_bonding_mode")
 
 
 @pulumi.output_type
@@ -28618,7 +28671,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
                  shape_type: str):
         """
         :param int available_core_count: The maximum number of CPU cores that can be enabled on the DB system for this shape.
-        :param int available_core_count_per_node: The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
+        :param int available_core_count_per_node: The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
         :param int available_data_storage_in_tbs: The maximum DATA storage that can be enabled for this shape.
         :param float available_data_storage_per_server_in_tbs: The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
         :param int available_db_node_per_node_in_gbs: The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
@@ -28675,7 +28728,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
     @pulumi.getter(name="availableCoreCountPerNode")
     def available_core_count_per_node(self) -> int:
         """
-        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
+        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
         """
         return pulumi.get(self, "available_core_count_per_node")
 
@@ -31078,6 +31131,35 @@ class GetExadataInfrastructureMaintenanceWindowMonthResult(dict):
 
 
 @pulumi.output_type
+class GetExadataInfrastructureNetworkBondingModeDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_network_bonding_mode: str,
+                 client_network_bonding_mode: str):
+        """
+        :param str backup_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param str client_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        """
+        pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
+        pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+
+    @property
+    @pulumi.getter(name="backupNetworkBondingMode")
+    def backup_network_bonding_mode(self) -> str:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "backup_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="clientNetworkBondingMode")
+    def client_network_bonding_mode(self) -> str:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "client_network_bonding_mode")
+
+
+@pulumi.output_type
 class GetExadataInfrastructuresExadataInfrastructureResult(dict):
     def __init__(__self__, *,
                  activated_storage_count: int,
@@ -31118,6 +31200,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  monthly_db_server_version: str,
                  multi_rack_configuration_file: str,
                  netmask: str,
+                 network_bonding_mode_details: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult'],
                  ntp_servers: Sequence[str],
                  shape: str,
                  state: str,
@@ -31162,6 +31245,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param str multi_rack_configuration_file: The base64 encoded Multi-Rack configuration json file.
         :param str netmask: The netmask for the control plane network.
+        :param Sequence['GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArgs'] network_bonding_mode_details: Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
         :param Sequence[str] ntp_servers: The list of NTP server IP addresses. Maximum of 3 allowed.
         :param str shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -31208,6 +31292,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
         pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         pulumi.set(__self__, "netmask", netmask)
+        pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
         pulumi.set(__self__, "ntp_servers", ntp_servers)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
@@ -31515,6 +31600,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         return pulumi.get(self, "netmask")
 
     @property
+    @pulumi.getter(name="networkBondingModeDetails")
+    def network_bonding_mode_details(self) -> Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult']:
+        """
+        Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        """
+        return pulumi.get(self, "network_bonding_mode_details")
+
+    @property
     @pulumi.getter(name="ntpServers")
     def ntp_servers(self) -> Sequence[str]:
         """
@@ -31786,6 +31879,35 @@ class GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthResult
         Name of the month of the year.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_network_bonding_mode: str,
+                 client_network_bonding_mode: str):
+        """
+        :param str backup_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param str client_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        """
+        pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
+        pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+
+    @property
+    @pulumi.getter(name="backupNetworkBondingMode")
+    def backup_network_bonding_mode(self) -> str:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "backup_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="clientNetworkBondingMode")
+    def client_network_bonding_mode(self) -> str:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "client_network_bonding_mode")
 
 
 @pulumi.output_type

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
+import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -571,6 +572,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * 
+     */
+    @Import(name="networkBondingModeDetails")
+    private @Nullable Output<ExadataInfrastructureNetworkBondingModeDetailsArgs> networkBondingModeDetails;
+
+    /**
+     * @return (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<ExadataInfrastructureNetworkBondingModeDetailsArgs>> networkBondingModeDetails() {
+        return Optional.ofNullable(this.networkBondingModeDetails);
+    }
+
+    /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
@@ -715,6 +731,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.monthlyDbServerVersion = $.monthlyDbServerVersion;
         this.multiRackConfigurationFile = $.multiRackConfigurationFile;
         this.netmask = $.netmask;
+        this.networkBondingModeDetails = $.networkBondingModeDetails;
         this.ntpServers = $.ntpServers;
         this.shape = $.shape;
         this.state = $.state;
@@ -1525,6 +1542,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder netmask(String netmask) {
             return netmask(Output.of(netmask));
+        }
+
+        /**
+         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkBondingModeDetails(@Nullable Output<ExadataInfrastructureNetworkBondingModeDetailsArgs> networkBondingModeDetails) {
+            $.networkBondingModeDetails = networkBondingModeDetails;
+            return this;
+        }
+
+        /**
+         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkBondingModeDetails(ExadataInfrastructureNetworkBondingModeDetailsArgs networkBondingModeDetails) {
+            return networkBondingModeDetails(Output.of(networkBondingModeDetails));
         }
 
         /**

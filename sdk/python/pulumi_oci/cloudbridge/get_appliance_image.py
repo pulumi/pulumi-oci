@@ -92,8 +92,8 @@ def get_appliance_image(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_appliance_image = oci.CloudBridge.get_appliance_image(compartment_id=var["compartment_id"],
-        display_name=var["appliance_image_display_name"])
+    test_appliance_image = oci.CloudBridge.get_appliance_image(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -128,8 +128,8 @@ def get_appliance_image_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_appliance_image = oci.CloudBridge.get_appliance_image(compartment_id=var["compartment_id"],
-        display_name=var["appliance_image_display_name"])
+    test_appliance_image = oci.CloudBridge.get_appliance_image(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

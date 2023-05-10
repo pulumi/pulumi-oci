@@ -120,10 +120,10 @@ def get_security_recipes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=var["compartment_id"],
-        display_name=var["security_recipe_display_name"],
-        id=var["security_recipe_id"],
-        state=var["security_recipe_state"])
+    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -168,10 +168,10 @@ def get_security_recipes_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=var["compartment_id"],
-        display_name=var["security_recipe_display_name"],
-        id=var["security_recipe_id"],
-        state=var["security_recipe_state"])
+    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -22,7 +22,7 @@ public final class GetSupportedHostShapesResult {
      */
     private String id;
     /**
-     * @return The list of the supported compute shapes for ESXi hosts.
+     * @return A list of the supported compute shapes for ESXi hosts.
      * 
      */
     private List<GetSupportedHostShapesItem> items;
@@ -48,7 +48,7 @@ public final class GetSupportedHostShapesResult {
         return this.id;
     }
     /**
-     * @return The list of the supported compute shapes for ESXi hosts.
+     * @return A list of the supported compute shapes for ESXi hosts.
      * 
      */
     public List<GetSupportedHostShapesItem> items() {

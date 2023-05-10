@@ -123,10 +123,10 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
-        name=var["managed_databases_database_parameter_name"],
-        source=var["managed_databases_database_parameter_source"])
+    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_allowed_values_included=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -172,10 +172,10 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
-        name=var["managed_databases_database_parameter_name"],
-        source=var["managed_databases_database_parameter_source"])
+    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_allowed_values_included=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

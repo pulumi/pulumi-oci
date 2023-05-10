@@ -90,8 +90,8 @@ def get_management_agent_plugin_count(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=var["compartment_id"],
-        group_by=var["management_agent_plugin_count_group_by"])
+    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -127,8 +127,8 @@ def get_management_agent_plugin_count_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=var["compartment_id"],
-        group_by=var["management_agent_plugin_count_group_by"])
+    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

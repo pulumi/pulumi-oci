@@ -268,7 +268,7 @@ def get_masking_policy(masking_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
+    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -315,7 +315,7 @@ def get_masking_policy_output(masking_policy_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
+    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

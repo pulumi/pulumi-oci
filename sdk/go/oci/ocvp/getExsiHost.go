@@ -101,7 +101,7 @@ type GetExsiHostResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 	UpgradedReplacementEsxiHostId string `pulumi:"upgradedReplacementEsxiHostId"`
-	// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 }
 
@@ -257,7 +257,7 @@ func (o GetExsiHostResultOutput) UpgradedReplacementEsxiHostId() pulumi.StringOu
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
 }
 
-// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 func (o GetExsiHostResultOutput) VmwareSoftwareVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
 }

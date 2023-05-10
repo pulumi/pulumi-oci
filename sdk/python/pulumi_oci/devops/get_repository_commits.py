@@ -166,14 +166,14 @@ def get_repository_commits(author_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=oci_devops_repository["test_repository"]["id"],
-        author_name=var["repository_commit_author_name"],
-        commit_message=var["repository_commit_commit_message"],
-        exclude_ref_name=var["repository_commit_exclude_ref_name"],
-        file_path=var["repository_commit_file_path"],
-        ref_name=var["repository_commit_ref_name"],
-        timestamp_greater_than_or_equal_to=var["repository_commit_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than_or_equal_to=var["repository_commit_timestamp_less_than_or_equal_to"])
+    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        author_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        commit_message=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        exclude_ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        timestamp_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        timestamp_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -235,14 +235,14 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=oci_devops_repository["test_repository"]["id"],
-        author_name=var["repository_commit_author_name"],
-        commit_message=var["repository_commit_commit_message"],
-        exclude_ref_name=var["repository_commit_exclude_ref_name"],
-        file_path=var["repository_commit_file_path"],
-        ref_name=var["repository_commit_ref_name"],
-        timestamp_greater_than_or_equal_to=var["repository_commit_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than_or_equal_to=var["repository_commit_timestamp_less_than_or_equal_to"])
+    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        author_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        commit_message=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        exclude_ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        timestamp_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        timestamp_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

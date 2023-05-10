@@ -99,9 +99,9 @@ def get_invoices_invoice_line(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices_invoice_line = oci.OspGateway.get_invoices_invoice_line(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoices_invoice_line_osp_home_region"])
+    test_invoices_invoice_line = oci.OspGateway.get_invoices_invoice_line(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        internal_invoice_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        osp_home_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -140,9 +140,9 @@ def get_invoices_invoice_line_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices_invoice_line = oci.OspGateway.get_invoices_invoice_line(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoices_invoice_line_osp_home_region"])
+    test_invoices_invoice_line = oci.OspGateway.get_invoices_invoice_line(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        internal_invoice_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        osp_home_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

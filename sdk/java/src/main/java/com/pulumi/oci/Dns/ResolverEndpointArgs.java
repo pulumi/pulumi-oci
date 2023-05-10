@@ -96,15 +96,15 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -311,7 +311,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -423,7 +423,6 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         public ResolverEndpointArgs build() {
             $.isForwarding = Objects.requireNonNull($.isForwarding, "expected parameter 'isForwarding' to be non-null");
             $.isListening = Objects.requireNonNull($.isListening, "expected parameter 'isListening' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
             $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
             return $;

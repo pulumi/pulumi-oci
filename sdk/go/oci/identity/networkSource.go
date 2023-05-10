@@ -48,7 +48,6 @@ import (
 //			_, err := Identity.NewNetworkSource(ctx, "testNetworkSource", &Identity.NetworkSourceArgs{
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.Network_source_description),
-//				Name:          pulumi.Any(_var.Network_source_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -116,9 +115,6 @@ func NewNetworkSource(ctx *pulumi.Context,
 	}
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource NetworkSource
 	err := ctx.RegisterResource("oci:Identity/networkSource:NetworkSource", name, args, &resource, opts...)
@@ -205,7 +201,7 @@ type networkSourceArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) A list of allowed public IP addresses and CIDR ranges.
 	PublicSourceLists []string `pulumi:"publicSourceLists"`
 	// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
@@ -225,7 +221,7 @@ type NetworkSourceArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) A list of allowed public IP addresses and CIDR ranges.
 	PublicSourceLists pulumi.StringArrayInput
 	// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.

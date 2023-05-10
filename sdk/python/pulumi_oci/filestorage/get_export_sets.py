@@ -133,11 +133,11 @@ def get_export_sets(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=var["export_set_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["export_set_display_name"],
-        id=var["export_set_id"],
-        state=var["export_set_state"])
+    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -186,11 +186,11 @@ def get_export_sets_output(availability_domain: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=var["export_set_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["export_set_display_name"],
-        id=var["export_set_id"],
-        state=var["export_set_state"])
+    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

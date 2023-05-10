@@ -139,8 +139,8 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
-        instance_pool_load_balancer_attachment_id=oci_core_instance_pool_load_balancer_attachment["test_instance_pool_load_balancer_attachment"]["id"])
+    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        instance_pool_load_balancer_attachment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -179,8 +179,8 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
-        instance_pool_load_balancer_attachment_id=oci_core_instance_pool_load_balancer_attachment["test_instance_pool_load_balancer_attachment"]["id"])
+    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        instance_pool_load_balancer_attachment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

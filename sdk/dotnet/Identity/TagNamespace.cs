@@ -41,7 +41,6 @@ namespace Pulumi.Oci.Identity
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         Description = @var.Tag_namespace_description,
-    ///         Name = @var.Tag_namespace_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -206,8 +205,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public TagNamespaceArgs()
         {

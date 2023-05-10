@@ -18,9 +18,9 @@ class NetworkSourceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  description: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  public_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]]] = None):
@@ -28,20 +28,21 @@ class NetworkSourceArgs:
         The set of arguments for constructing a NetworkSource resource.
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy (root compartment) containing the network source object.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[str] name: The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] name: The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] public_source_lists: (Updatable) A list of allowed public IP addresses and CIDR ranges.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if public_source_lists is not None:
             pulumi.set(__self__, "public_source_lists", public_source_lists)
         if services is not None:
@@ -74,18 +75,6 @@ class NetworkSourceArgs:
         pulumi.set(self, "description", value)
 
     @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -108,6 +97,18 @@ class NetworkSourceArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="publicSourceLists")
@@ -374,7 +375,6 @@ class NetworkSource(pulumi.CustomResource):
         test_network_source = oci.identity.NetworkSource("testNetworkSource",
             compartment_id=var["tenancy_ocid"],
             description=var["network_source_description"],
-            name=var["network_source_name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -441,7 +441,6 @@ class NetworkSource(pulumi.CustomResource):
         test_network_source = oci.identity.NetworkSource("testNetworkSource",
             compartment_id=var["tenancy_ocid"],
             description=var["network_source_description"],
-            name=var["network_source_name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -501,8 +500,6 @@ class NetworkSource(pulumi.CustomResource):
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["public_source_lists"] = public_source_lists
             __props__.__dict__["services"] = services

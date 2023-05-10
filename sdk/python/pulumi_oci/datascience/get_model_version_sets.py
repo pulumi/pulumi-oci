@@ -146,12 +146,12 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=var["compartment_id"],
-        created_by=var["model_version_set_created_by"],
-        id=var["model_version_set_id"],
-        name=var["model_version_set_name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_version_set_state"])
+    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -204,12 +204,12 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=var["compartment_id"],
-        created_by=var["model_version_set_created_by"],
-        id=var["model_version_set_id"],
-        name=var["model_version_set_name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_version_set_state"])
+    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

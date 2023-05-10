@@ -124,8 +124,8 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=oci_fusion_apps_data_masking_activity["test_data_masking_activity"]["id"],
-        fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
+    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,8 +163,8 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=oci_fusion_apps_data_masking_activity["test_data_masking_activity"]["id"],
-        fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
+    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

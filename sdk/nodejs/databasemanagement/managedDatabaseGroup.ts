@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  *
  * const testManagedDatabaseGroup = new oci.databasemanagement.ManagedDatabaseGroup("testManagedDatabaseGroup", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.managed_database_group_name,
  *     description: _var.managed_database_group_description,
  *     managedDatabases: [{
  *         id: _var.managed_database_id,
@@ -118,9 +117,6 @@ export class ManagedDatabaseGroup extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["managedDatabases"] = args ? args.managedDatabases : undefined;
@@ -187,5 +183,5 @@ export interface ManagedDatabaseGroupArgs {
     /**
      * The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

@@ -133,11 +133,11 @@ def get_virtual_service_route_tables(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service_route_tables = oci.ServiceMesh.get_virtual_service_route_tables(compartment_id=var["compartment_id"],
-        id=var["virtual_service_route_table_id"],
-        name=var["virtual_service_route_table_name"],
-        state=var["virtual_service_route_table_state"],
-        virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_service_route_tables = oci.ServiceMesh.get_virtual_service_route_tables(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        virtual_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -186,11 +186,11 @@ def get_virtual_service_route_tables_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service_route_tables = oci.ServiceMesh.get_virtual_service_route_tables(compartment_id=var["compartment_id"],
-        id=var["virtual_service_route_table_id"],
-        name=var["virtual_service_route_table_name"],
-        state=var["virtual_service_route_table_state"],
-        virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_service_route_tables = oci.ServiceMesh.get_virtual_service_route_tables(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        virtual_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

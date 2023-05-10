@@ -42,7 +42,6 @@ import (
 //					TimeoutInMillis:   pulumi.Any(_var.Backend_set_health_checker_timeout_in_millis),
 //					UrlPath:           pulumi.Any(_var.Backend_set_health_checker_url_path),
 //				},
-//				Name:                  pulumi.Any(_var.Backend_set_name),
 //				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
 //				Policy:                pulumi.Any(_var.Backend_set_policy),
 //				IpVersion:             pulumi.Any(_var.Backend_set_ip_version),
@@ -94,9 +93,6 @@ func NewBackendSet(ctx *pulumi.Context,
 
 	if args.HealthChecker == nil {
 		return nil, errors.New("invalid value for required argument 'HealthChecker'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.NetworkLoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'NetworkLoadBalancerId'")
@@ -171,7 +167,7 @@ type backendSetArgs struct {
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource *bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
 	// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
@@ -187,7 +183,7 @@ type BackendSetArgs struct {
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolPtrInput
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId pulumi.StringInput
 	// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``

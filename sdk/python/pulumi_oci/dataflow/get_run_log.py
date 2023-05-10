@@ -110,8 +110,8 @@ def get_run_log(base64_encode_content: Optional[bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_run_log = oci.DataFlow.get_run_log(name=var["run_log_name"],
-        run_id=oci_dataflow_run["test_run"]["id"])
+    test_run_log = oci.DataFlow.get_run_log(name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        run_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -150,8 +150,8 @@ def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[boo
     import pulumi
     import pulumi_oci as oci
 
-    test_run_log = oci.DataFlow.get_run_log(name=var["run_log_name"],
-        run_id=oci_dataflow_run["test_run"]["id"])
+    test_run_log = oci.DataFlow.get_run_log(name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        run_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

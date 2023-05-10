@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  * const testIngressGatewayRouteTable = new oci.servicemesh.IngressGatewayRouteTable("testIngressGatewayRouteTable", {
  *     compartmentId: _var.compartment_id,
  *     ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
- *     name: _var.ingress_gateway_route_table_name,
  *     routeRules: [{
  *         destinations: [{
  *             virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
@@ -173,9 +172,6 @@ export class IngressGatewayRouteTable extends pulumi.CustomResource {
             if ((!args || args.ingressGatewayId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ingressGatewayId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.routeRules === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'routeRules'");
             }
@@ -283,7 +279,7 @@ export interface IngressGatewayRouteTableArgs {
     /**
      * (Updatable) Name of the ingress gateway host that this route should apply to.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
      */

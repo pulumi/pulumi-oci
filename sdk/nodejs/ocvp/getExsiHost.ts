@@ -132,7 +132,7 @@ export interface GetExsiHostResult {
      */
     readonly upgradedReplacementEsxiHostId: string;
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
     readonly vmwareSoftwareVersion: string;
 }

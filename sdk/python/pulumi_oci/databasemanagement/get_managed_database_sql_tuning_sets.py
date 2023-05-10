@@ -116,9 +116,9 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        owner=var["managed_database_sql_tuning_set_owner"])
+    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -160,9 +160,9 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        owner=var["managed_database_sql_tuning_set_owner"])
+    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

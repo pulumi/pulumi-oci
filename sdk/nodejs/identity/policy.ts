@@ -30,7 +30,6 @@ import * as utilities from "../utilities";
  * const testPolicy = new oci.identity.Policy("testPolicy", {
  *     compartmentId: _var.tenancy_ocid,
  *     description: _var.policy_description,
- *     name: _var.policy_name,
  *     statements: _var.policy_statements,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -165,9 +164,6 @@ export class Policy extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.statements === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'statements'");
             }
@@ -271,7 +267,7 @@ export interface PolicyArgs {
     /**
      * The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
      */

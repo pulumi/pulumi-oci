@@ -62,7 +62,6 @@ namespace Pulumi.Oci.LoadBalancer
     ///             },
     ///         },
     ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         Name = @var.Rule_set_name,
     ///     });
     /// 
     /// });
@@ -167,8 +166,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public RuleSetArgs()
         {

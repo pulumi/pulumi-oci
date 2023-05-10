@@ -375,8 +375,8 @@ class CloudDatabaseManagement(pulumi.CustomResource):
             private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
             service_name=var["database_cloud_database_management_details_service_name"],
             credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
-                user_name=var["database_cloud_database_management_details_user_name"],
-                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
+                user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             enable_management=var["database_cloud_database_management_details_enable_management"],
             port=var["cloud_database_management_port"],
@@ -428,8 +428,8 @@ class CloudDatabaseManagement(pulumi.CustomResource):
             private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
             service_name=var["database_cloud_database_management_details_service_name"],
             credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
-                user_name=var["database_cloud_database_management_details_user_name"],
-                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
+                user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             enable_management=var["database_cloud_database_management_details_enable_management"],
             port=var["cloud_database_management_port"],

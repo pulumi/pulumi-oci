@@ -163,7 +163,7 @@ def get_capture_filter(capture_filter_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"])
+    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -201,7 +201,7 @@ def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"])
+    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

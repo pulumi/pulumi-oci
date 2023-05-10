@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'SddcDatastoreArgs',
     'SddcHcxOnPremLicenseArgs',
     'SddcUpgradeLicenseArgs',
     'SddcVsphereUpgradeObjectArgs',
@@ -19,6 +20,59 @@ __all__ = [
     'GetSupportedSkusFilterArgs',
     'GetSupportedVmwareSoftwareVersionsFilterArgs',
 ]
+
+@pulumi.input_type
+class SddcDatastoreArgs:
+    def __init__(__self__, *,
+                 block_volume_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 datastore_type: pulumi.Input[str],
+                 capacity: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        :param pulumi.Input[str] datastore_type: Type of the datastore.
+        :param pulumi.Input[float] capacity: Size of the Block Storage Volume in GB.
+        """
+        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
+        pulumi.set(__self__, "datastore_type", datastore_type)
+        if capacity is not None:
+            pulumi.set(__self__, "capacity", capacity)
+
+    @property
+    @pulumi.getter(name="blockVolumeIds")
+    def block_volume_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
+        return pulumi.get(self, "block_volume_ids")
+
+    @block_volume_ids.setter
+    def block_volume_ids(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "block_volume_ids", value)
+
+    @property
+    @pulumi.getter(name="datastoreType")
+    def datastore_type(self) -> pulumi.Input[str]:
+        """
+        Type of the datastore.
+        """
+        return pulumi.get(self, "datastore_type")
+
+    @datastore_type.setter
+    def datastore_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "datastore_type", value)
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> Optional[pulumi.Input[float]]:
+        """
+        Size of the Block Storage Volume in GB.
+        """
+        return pulumi.get(self, "capacity")
+
+    @capacity.setter
+    def capacity(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "capacity", value)
+
 
 @pulumi.input_type
 class SddcHcxOnPremLicenseArgs:

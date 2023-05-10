@@ -128,10 +128,10 @@ def get_suppressions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=var["tenancy_ocid"],
-        email_address=var["suppression_email_address"],
-        time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["suppression_time_created_less_than"])
+    test_suppressions = oci.Email.get_suppressions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        email_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -179,10 +179,10 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=var["tenancy_ocid"],
-        email_address=var["suppression_email_address"],
-        time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["suppression_time_created_less_than"])
+    test_suppressions = oci.Email.get_suppressions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        email_address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

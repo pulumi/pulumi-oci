@@ -116,9 +116,9 @@ def get_preauthrequests(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        object_name_prefix=var["preauthenticated_request_object_name_prefix"])
+    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object_name_prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -160,9 +160,9 @@ def get_preauthrequests_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        object_name_prefix=var["preauthenticated_request_object_name_prefix"])
+    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object_name_prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

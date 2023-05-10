@@ -383,13 +383,13 @@ class MediaWorkflow(pulumi.CustomResource):
             media_workflow_configuration_ids=var["media_workflow_media_workflow_configuration_ids"],
             parameters=var["media_workflow_parameters"],
             tasks=[oci.media_services.MediaWorkflowTaskArgs(
-                key=var["media_workflow_tasks_key"],
-                parameters=var["media_workflow_tasks_parameters"],
-                type=var["media_workflow_tasks_type"],
-                version=var["media_workflow_tasks_version"],
-                enable_parameter_reference=var["media_workflow_tasks_enable_parameter_reference"],
-                enable_when_referenced_parameter_equals=var["media_workflow_tasks_enable_when_referenced_parameter_equals"],
-                prerequisites=var["media_workflow_tasks_prerequisites"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                parameters=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_parameter_reference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_when_referenced_parameter_equals=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                prerequisites=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -440,13 +440,13 @@ class MediaWorkflow(pulumi.CustomResource):
             media_workflow_configuration_ids=var["media_workflow_media_workflow_configuration_ids"],
             parameters=var["media_workflow_parameters"],
             tasks=[oci.media_services.MediaWorkflowTaskArgs(
-                key=var["media_workflow_tasks_key"],
-                parameters=var["media_workflow_tasks_parameters"],
-                type=var["media_workflow_tasks_type"],
-                version=var["media_workflow_tasks_version"],
-                enable_parameter_reference=var["media_workflow_tasks_enable_parameter_reference"],
-                enable_when_referenced_parameter_equals=var["media_workflow_tasks_enable_when_referenced_parameter_equals"],
-                prerequisites=var["media_workflow_tasks_prerequisites"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                parameters=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_parameter_reference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_when_referenced_parameter_equals=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                prerequisites=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 

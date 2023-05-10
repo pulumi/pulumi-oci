@@ -142,11 +142,11 @@ def get_applications(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.DataFlow.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        display_name_starts_with=var["application_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        spark_version=var["application_spark_version"])
+    test_applications = oci.DataFlow.get_applications(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name_starts_with=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        owner_principal_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        spark_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -196,11 +196,11 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.DataFlow.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        display_name_starts_with=var["application_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        spark_version=var["application_spark_version"])
+    test_applications = oci.DataFlow.get_applications(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name_starts_with=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        owner_principal_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        spark_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

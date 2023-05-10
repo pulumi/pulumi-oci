@@ -136,11 +136,11 @@ def get_target_databases_tables(filters: Optional[Sequence[pulumi.InputType['Get
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        schema_names=var["target_databases_table_schema_name"],
-        schema_name_contains=var["target_databases_table_schema_name_contains"],
-        table_names=oci_nosql_table["test_table"]["name"],
-        table_name_contains=var["target_databases_table_table_name_contains"])
+    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        table_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        table_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -190,11 +190,11 @@ def get_target_databases_tables_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        schema_names=var["target_databases_table_schema_name"],
-        schema_name_contains=var["target_databases_table_schema_name_contains"],
-        table_names=oci_nosql_table["test_table"]["name"],
-        table_name_contains=var["target_databases_table_table_name_contains"])
+    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        table_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        table_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

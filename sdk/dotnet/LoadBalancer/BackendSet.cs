@@ -43,7 +43,6 @@ namespace Pulumi.Oci.LoadBalancer
     ///             UrlPath = @var.Backend_set_health_checker_url_path,
     ///         },
     ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         Name = @var.Backend_set_name,
     ///         Policy = @var.Backend_set_policy,
     ///         LbCookieSessionPersistenceConfiguration = new Oci.LoadBalancer.Inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs
     ///         {
@@ -206,8 +205,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// A friendly name for the backend set. It must be unique and it cannot be changed.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`

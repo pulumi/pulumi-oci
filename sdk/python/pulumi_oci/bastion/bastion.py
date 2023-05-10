@@ -545,7 +545,6 @@ class Bastion(pulumi.CustomResource):
                 "bar-key": "value",
             },
             max_session_ttl_in_seconds=var["bastion_max_session_ttl_in_seconds"],
-            name=var["bastion_name"],
             phone_book_entry=var["bastion_phone_book_entry"],
             static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
         ```
@@ -602,7 +601,6 @@ class Bastion(pulumi.CustomResource):
                 "bar-key": "value",
             },
             max_session_ttl_in_seconds=var["bastion_max_session_ttl_in_seconds"],
-            name=var["bastion_name"],
             phone_book_entry=var["bastion_phone_book_entry"],
             static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
         ```

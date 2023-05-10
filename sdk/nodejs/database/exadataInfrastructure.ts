@@ -64,6 +64,10 @@ import * as utilities from "../utilities";
  *         weeksOfMonths: _var.exadata_infrastructure_maintenance_window_weeks_of_month,
  *     },
  *     multiRackConfigurationFile: _var.exadata_infrastructure_multi_rack_configuration_file,
+ *     networkBondingModeDetails: {
+ *         backupNetworkBondingMode: _var.exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode,
+ *         clientNetworkBondingMode: _var.exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode,
+ *     },
  *     storageCount: _var.exadata_infrastructure_storage_count,
  * });
  * ```
@@ -250,6 +254,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly netmask!: pulumi.Output<string>;
     /**
+     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     */
+    public readonly networkBondingModeDetails!: pulumi.Output<outputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
+    /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
     public readonly ntpServers!: pulumi.Output<string[]>;
@@ -328,6 +336,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["monthlyDbServerVersion"] = state ? state.monthlyDbServerVersion : undefined;
             resourceInputs["multiRackConfigurationFile"] = state ? state.multiRackConfigurationFile : undefined;
             resourceInputs["netmask"] = state ? state.netmask : undefined;
+            resourceInputs["networkBondingModeDetails"] = state ? state.networkBondingModeDetails : undefined;
             resourceInputs["ntpServers"] = state ? state.ntpServers : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -394,6 +403,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["multiRackConfigurationFile"] = args ? args.multiRackConfigurationFile : undefined;
             resourceInputs["netmask"] = args ? args.netmask : undefined;
+            resourceInputs["networkBondingModeDetails"] = args ? args.networkBondingModeDetails : undefined;
             resourceInputs["ntpServers"] = args ? args.ntpServers : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["storageCount"] = args ? args.storageCount : undefined;
@@ -573,6 +583,10 @@ export interface ExadataInfrastructureState {
      */
     netmask?: pulumi.Input<string>;
     /**
+     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     */
+    networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
+    /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
     ntpServers?: pulumi.Input<pulumi.Input<string>[]>;
@@ -687,6 +701,10 @@ export interface ExadataInfrastructureArgs {
      * (Updatable) The netmask for the control plane network.
      */
     netmask: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     */
+    networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */

@@ -172,8 +172,8 @@ def get_db_systems_upgrade_history_entry(db_system_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=oci_database_db_system["test_db_system"]["id"],
-        upgrade_history_entry_id=oci_database_upgrade_history_entry["test_upgrade_history_entry"]["id"])
+    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        upgrade_history_entry_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -215,8 +215,8 @@ def get_db_systems_upgrade_history_entry_output(db_system_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=oci_database_db_system["test_db_system"]["id"],
-        upgrade_history_entry_id=oci_database_upgrade_history_entry["test_upgrade_history_entry"]["id"])
+    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        upgrade_history_entry_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

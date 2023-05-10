@@ -143,12 +143,12 @@ def get_db_versions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_versions = oci.Database.get_db_versions(compartment_id=var["compartment_id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        db_system_shape=var["db_version_db_system_shape"],
-        is_database_software_image_supported=var["db_version_is_database_software_image_supported"],
-        is_upgrade_supported=var["db_version_is_upgrade_supported"],
-        storage_management=var["db_version_storage_management"])
+    test_db_versions = oci.Database.get_db_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_database_software_image_supported=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_upgrade_supported=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        storage_management=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -204,12 +204,12 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_versions = oci.Database.get_db_versions(compartment_id=var["compartment_id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        db_system_shape=var["db_version_db_system_shape"],
-        is_database_software_image_supported=var["db_version_is_database_software_image_supported"],
-        is_upgrade_supported=var["db_version_is_upgrade_supported"],
-        storage_management=var["db_version_storage_management"])
+    test_db_versions = oci.Database.get_db_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_database_software_image_supported=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_upgrade_supported=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        storage_management=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

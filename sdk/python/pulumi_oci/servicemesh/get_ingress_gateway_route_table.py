@@ -223,7 +223,7 @@ def get_ingress_gateway_route_table(ingress_gateway_route_table_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateway_route_table = oci.ServiceMesh.get_ingress_gateway_route_table(ingress_gateway_route_table_id=oci_service_mesh_ingress_gateway_route_table["test_ingress_gateway_route_table"]["id"])
+    test_ingress_gateway_route_table = oci.ServiceMesh.get_ingress_gateway_route_table(ingress_gateway_route_table_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -266,7 +266,7 @@ def get_ingress_gateway_route_table_output(ingress_gateway_route_table_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateway_route_table = oci.ServiceMesh.get_ingress_gateway_route_table(ingress_gateway_route_table_id=oci_service_mesh_ingress_gateway_route_table["test_ingress_gateway_route_table"]["id"])
+    test_ingress_gateway_route_table = oci.ServiceMesh.get_ingress_gateway_route_table(ingress_gateway_route_table_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -176,9 +176,6 @@ export class DomainsMyOauth2clientCredential extends pulumi.CustomResource {
             if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.schemas === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
@@ -334,7 +331,7 @@ export interface DomainsMyOauth2clientCredentialArgs {
     /**
      * (Updatable) User name
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * User's ocid
      */

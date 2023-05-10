@@ -50,7 +50,6 @@ import javax.annotation.Nullable;
  *         var testTable = new Table(&#34;testTable&#34;, TableArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .ddlStatement(var_.table_ddl_statement())
- *             .name(var_.table_name())
  *             .definedTags(var_.table_defined_tags())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .isAutoReclaimable(var_.table_is_auto_reclaimable())

@@ -124,10 +124,10 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=oci_database_management_execution["test_execution"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
+    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_object_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_tuning_advisor_task_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -174,10 +174,10 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations_output(executi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=oci_database_management_execution["test_execution"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
+    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_object_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_tuning_advisor_task_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

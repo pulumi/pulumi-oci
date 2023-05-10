@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * const testStreamPool = new oci.streaming.StreamPool("testStreamPool", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.stream_pool_name,
  *     customEncryptionKey: {
  *         kmsKeyId: oci_kms_key.test_key.id,
  *     },
@@ -158,9 +157,6 @@ export class StreamPool extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["customEncryptionKey"] = args ? args.customEncryptionKey : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -260,7 +256,7 @@ export interface StreamPoolArgs {
     /**
      * (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Optional parameters if a private stream pool is requested.
      */

@@ -328,8 +328,8 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=var["sensitive_data_models_sensitive_column_sensitive_column_key"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
+    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -384,8 +384,8 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=var["sensitive_data_models_sensitive_column_sensitive_column_key"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
+    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

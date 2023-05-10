@@ -119,9 +119,9 @@ def get_profiles(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=var["compartment_id"],
-        name=var["profile_name"],
-        state=var["profile_state"])
+    test_profiles = oci.Optimizer.get_profiles(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=var["compartment_id"],
-        name=var["profile_name"],
-        state=var["profile_state"])
+    test_profiles = oci.Optimizer.get_profiles(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

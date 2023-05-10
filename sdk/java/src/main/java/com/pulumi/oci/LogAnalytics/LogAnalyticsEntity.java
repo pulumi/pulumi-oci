@@ -46,7 +46,6 @@ import javax.annotation.Nullable;
  *         var testLogAnalyticsEntity = new LogAnalyticsEntity(&#34;testLogAnalyticsEntity&#34;, LogAnalyticsEntityArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .entityTypeName(var_.log_analytics_entity_entity_type_name())
- *             .name(var_.log_analytics_entity_name())
  *             .namespace(var_.log_analytics_entity_namespace())
  *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))

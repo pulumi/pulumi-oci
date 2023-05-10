@@ -66,15 +66,15 @@ public final class ManagedDatabaseGroupArgs extends com.pulumi.resources.Resourc
      * The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and &#34;_&#34;. The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and &#34;_&#34;. The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private ManagedDatabaseGroupArgs() {}
@@ -183,7 +183,7 @@ public final class ManagedDatabaseGroupArgs extends com.pulumi.resources.Resourc
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -200,7 +200,6 @@ public final class ManagedDatabaseGroupArgs extends com.pulumi.resources.Resourc
 
         public ManagedDatabaseGroupArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

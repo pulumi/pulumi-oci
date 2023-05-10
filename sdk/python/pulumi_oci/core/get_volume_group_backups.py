@@ -120,9 +120,9 @@ def get_volume_group_backups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_backups = oci.Core.get_volume_group_backups(compartment_id=var["compartment_id"],
-        display_name=var["volume_group_backup_display_name"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
+    test_volume_group_backups = oci.Core.get_volume_group_backups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        volume_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -165,9 +165,9 @@ def get_volume_group_backups_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_backups = oci.Core.get_volume_group_backups(compartment_id=var["compartment_id"],
-        display_name=var["volume_group_backup_display_name"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
+    test_volume_group_backups = oci.Core.get_volume_group_backups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        volume_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

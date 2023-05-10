@@ -113,9 +113,9 @@ def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_system_privilege_name"])
+    test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -157,9 +157,9 @@ def get_managed_databases_user_system_privileges_output(filters: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_system_privilege_name"])
+    test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

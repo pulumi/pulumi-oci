@@ -142,11 +142,11 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rule_namespace"],
-        display_name=var["namespace_rule_display_name"],
-        kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"])
+    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -196,11 +196,11 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rule_namespace"],
-        display_name=var["namespace_rule_display_name"],
-        kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"])
+    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

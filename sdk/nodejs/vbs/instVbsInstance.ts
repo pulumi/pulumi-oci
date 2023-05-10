@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  * const testVbsInstance = new oci.vbs.InstVbsInstance("testVbsInstance", {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.vbs_instance_display_name,
- *     name: _var.vbs_instance_name,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -159,9 +158,6 @@ export class InstVbsInstance extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -275,7 +271,7 @@ export interface InstVbsInstanceArgs {
     /**
      * Service Instance Name
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      */

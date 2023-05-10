@@ -142,11 +142,11 @@ def get_repositories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.DevOps.get_repositories(compartment_id=var["compartment_id"],
-        name=var["repository_name"],
-        project_id=oci_devops_project["test_project"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        state=var["repository_state"])
+    test_repositories = oci.DevOps.get_repositories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -196,11 +196,11 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.DevOps.get_repositories(compartment_id=var["compartment_id"],
-        name=var["repository_name"],
-        project_id=oci_devops_project["test_project"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        state=var["repository_state"])
+    test_repositories = oci.DevOps.get_repositories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

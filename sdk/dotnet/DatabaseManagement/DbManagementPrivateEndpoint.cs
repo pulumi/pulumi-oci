@@ -27,7 +27,6 @@ namespace Pulumi.Oci.DatabaseManagement
     ///     var testDbManagementPrivateEndpoint = new Oci.DatabaseManagement.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Db_management_private_endpoint_name,
     ///         SubnetId = oci_core_subnet.Test_subnet.Id,
     ///         Description = @var.Db_management_private_endpoint_description,
     ///         IsCluster = @var.Db_management_private_endpoint_is_cluster,
@@ -175,8 +174,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// (Updatable) The display name of the Database Management private endpoint.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;

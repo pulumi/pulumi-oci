@@ -83,7 +83,7 @@ def get_importable_agent_entity(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_importable_agent_entity = oci.Opsi.get_importable_agent_entity(compartment_id=var["compartment_id"])
+    test_importable_agent_entity = oci.Opsi.get_importable_agent_entity(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -118,7 +118,7 @@ def get_importable_agent_entity_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_importable_agent_entity = oci.Opsi.get_importable_agent_entity(compartment_id=var["compartment_id"])
+    test_importable_agent_entity = oci.Opsi.get_importable_agent_entity(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

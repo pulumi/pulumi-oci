@@ -162,9 +162,6 @@ export class CertificateAuthority extends pulumi.CustomResource {
             if ((!args || args.kmsKeyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'kmsKeyId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["certificateAuthorityConfig"] = args ? args.certificateAuthorityConfig : undefined;
             resourceInputs["certificateAuthorityRules"] = args ? args.certificateAuthorityRules : undefined;
             resourceInputs["certificateRevocationListDetails"] = args ? args.certificateRevocationListDetails : undefined;
@@ -306,5 +303,5 @@ export interface CertificateAuthorityArgs {
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

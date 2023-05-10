@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     maxSessionTtlInSeconds: _var.bastion_max_session_ttl_in_seconds,
- *     name: _var.bastion_name,
  *     phoneBookEntry: _var.bastion_phone_book_entry,
  *     staticJumpHostIpAddresses: _var.bastion_static_jump_host_ip_addresses,
  * });

@@ -32,7 +32,6 @@ import (
 //			_, err := LoadBalancer.NewListener(ctx, "testListener", &LoadBalancer.ListenerArgs{
 //				DefaultBackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
 //				LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//				Name:                  pulumi.Any(_var.Listener_name),
 //				Port:                  pulumi.Any(_var.Listener_port),
 //				Protocol:              pulumi.Any(_var.Listener_protocol),
 //				ConnectionConfiguration: &loadbalancer.ListenerConnectionConfigurationArgs{
@@ -116,9 +115,6 @@ func NewListener(ctx *pulumi.Context,
 	}
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Port == nil {
 		return nil, errors.New("invalid value for required argument 'Port'")
@@ -213,7 +209,7 @@ type listenerArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) Deprecated. Please use `routingPolicies` instead.
 	PathRouteSetName *string `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
@@ -239,7 +235,7 @@ type ListenerArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
 	LoadBalancerId pulumi.StringInput
 	// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) Deprecated. Please use `routingPolicies` instead.
 	PathRouteSetName pulumi.StringPtrInput
 	// (Updatable) The communication port for the listener.  Example: `80`

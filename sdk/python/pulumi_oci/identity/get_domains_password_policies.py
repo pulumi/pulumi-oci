@@ -209,14 +209,14 @@ def get_domains_password_policies(attribute_sets: Optional[Sequence[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_count=var["password_policy_password_policy_count"],
-        password_policy_filter=var["password_policy_password_policy_filter"],
+    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        password_policy_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        password_policy_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"],
-        start_index=var["password_policy_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -287,14 +287,14 @@ def get_domains_password_policies_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_count=var["password_policy_password_policy_count"],
-        password_policy_filter=var["password_policy_password_policy_filter"],
+    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        password_policy_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        password_policy_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"],
-        start_index=var["password_policy_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

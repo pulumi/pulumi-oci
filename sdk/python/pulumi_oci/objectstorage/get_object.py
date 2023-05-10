@@ -299,16 +299,16 @@ def get_object(base64_encode_content: Optional[bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"],
-        http_response_cache_control=var["object_http_response_cache_control"],
-        http_response_content_disposition=var["object_http_response_content_disposition"],
-        http_response_content_encoding=var["object_http_response_content_encoding"],
-        http_response_content_language=var["object_http_response_content_language"],
-        http_response_content_type=var["object_http_response_content_type"],
-        http_response_expires=var["object_http_response_expires"],
-        version_id=oci_objectstorage_version["test_version"]["id"])
+    test_object = oci.ObjectStorage.get_object(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_cache_control=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_disposition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_encoding=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_language=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_expires=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -391,16 +391,16 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"],
-        http_response_cache_control=var["object_http_response_cache_control"],
-        http_response_content_disposition=var["object_http_response_content_disposition"],
-        http_response_content_encoding=var["object_http_response_content_encoding"],
-        http_response_content_language=var["object_http_response_content_language"],
-        http_response_content_type=var["object_http_response_content_type"],
-        http_response_expires=var["object_http_response_expires"],
-        version_id=oci_objectstorage_version["test_version"]["id"])
+    test_object = oci.ObjectStorage.get_object(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_cache_control=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_disposition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_encoding=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_language=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_content_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        http_response_expires=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

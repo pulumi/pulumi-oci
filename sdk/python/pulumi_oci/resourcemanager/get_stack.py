@@ -169,7 +169,7 @@ def get_stack(stack_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stack = oci.ResourceManager.get_stack(stack_id=oci_resourcemanager_stack["test_stack"]["id"])
+    test_stack = oci.ResourceManager.get_stack(stack_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -208,7 +208,7 @@ def get_stack_output(stack_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stack = oci.ResourceManager.get_stack(stack_id=oci_resourcemanager_stack["test_stack"]["id"])
+    test_stack = oci.ResourceManager.get_stack(stack_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

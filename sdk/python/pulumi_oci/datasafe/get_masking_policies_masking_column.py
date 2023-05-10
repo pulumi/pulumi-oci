@@ -257,8 +257,8 @@ def get_masking_policies_masking_column(masking_column_key: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=var["masking_policies_masking_column_masking_column_key"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
+    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -307,8 +307,8 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=var["masking_policies_masking_column_masking_column_key"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
+    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

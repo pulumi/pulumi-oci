@@ -175,8 +175,8 @@ def get_repository_commit(commit_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=oci_devops_commit["test_commit"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
+    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -218,8 +218,8 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=oci_devops_commit["test_commit"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
+    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

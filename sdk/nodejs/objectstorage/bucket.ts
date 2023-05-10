@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  *
  * const testBucket = new oci.objectstorage.Bucket("testBucket", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.bucket_name,
  *     namespace: _var.bucket_namespace,
  *     accessType: _var.bucket_access_type,
  *     autoTiering: _var.bucket_auto_tiering,
@@ -211,9 +210,6 @@ export class Bucket extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.namespace === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
@@ -374,7 +370,7 @@ export interface BucketArgs {
     /**
      * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The Object Storage namespace used for the request.
      */

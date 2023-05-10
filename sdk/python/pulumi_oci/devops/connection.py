@@ -518,8 +518,8 @@ class Connection(pulumi.CustomResource):
                 "bar-key": "value",
             },
             tls_verify_config=oci.dev_ops.ConnectionTlsVerifyConfigArgs(
-                ca_certificate_bundle_id=oci_devops_ca_certificate_bundle["test_ca_certificate_bundle"]["id"],
-                tls_verify_mode=var["connection_tls_verify_config_tls_verify_mode"],
+                ca_certificate_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                tls_verify_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             username=var["connection_username"])
         ```
@@ -578,8 +578,8 @@ class Connection(pulumi.CustomResource):
                 "bar-key": "value",
             },
             tls_verify_config=oci.dev_ops.ConnectionTlsVerifyConfigArgs(
-                ca_certificate_bundle_id=oci_devops_ca_certificate_bundle["test_ca_certificate_bundle"]["id"],
-                tls_verify_mode=var["connection_tls_verify_config_tls_verify_mode"],
+                ca_certificate_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                tls_verify_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             username=var["connection_username"])
         ```

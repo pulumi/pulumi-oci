@@ -15,22 +15,21 @@ __all__ = ['ModelVersionSetArgs', 'ModelVersionSet']
 class ModelVersionSetArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  project_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ModelVersionSet resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
-        :param pulumi.Input[str] name: A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model version set.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the model version set.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] name: A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "project_id", project_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -38,6 +37,8 @@ class ModelVersionSetArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -50,18 +51,6 @@ class ModelVersionSetArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="projectId")
@@ -110,6 +99,18 @@ class ModelVersionSetArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -305,7 +306,6 @@ class ModelVersionSet(pulumi.CustomResource):
 
         test_model_version_set = oci.data_science.ModelVersionSet("testModelVersionSet",
             compartment_id=var["compartment_id"],
-            name=var["model_version_set_name"],
             project_id=oci_datascience_project["test_project"]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -352,7 +352,6 @@ class ModelVersionSet(pulumi.CustomResource):
 
         test_model_version_set = oci.data_science.ModelVersionSet("testModelVersionSet",
             compartment_id=var["compartment_id"],
-            name=var["model_version_set_name"],
             project_id=oci_datascience_project["test_project"]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -407,8 +406,6 @@ class ModelVersionSet(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")

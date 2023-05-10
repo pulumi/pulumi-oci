@@ -96,7 +96,7 @@ def get_swift_passwords(filters: Optional[Sequence[pulumi.InputType['GetSwiftPas
     import pulumi
     import pulumi_oci as oci
 
-    test_swift_passwords = oci.Identity.get_swift_passwords(user_id=oci_identity_user["test_user"]["id"])
+    test_swift_passwords = oci.Identity.get_swift_passwords(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -133,7 +133,7 @@ def get_swift_passwords_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_swift_passwords = oci.Identity.get_swift_passwords(user_id=oci_identity_user["test_user"]["id"])
+    test_swift_passwords = oci.Identity.get_swift_passwords(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

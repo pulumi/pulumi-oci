@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.tenancy_ocid,
  *     description: _var.dynamic_group_description,
  *     matchingRule: _var.dynamic_group_matching_rule,
- *     name: _var.dynamic_group_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -149,9 +148,6 @@ export class DynamicGroup extends pulumi.CustomResource {
             if ((!args || args.matchingRule === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'matchingRule'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -236,5 +232,5 @@ export interface DynamicGroupArgs {
     /**
      * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

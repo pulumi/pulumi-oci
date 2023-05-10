@@ -498,30 +498,30 @@ class Target(pulumi.CustomResource):
             },
             state=var["target_state"],
             target_detector_recipes=[oci.cloud_guard.TargetTargetDetectorRecipeArgs(
-                detector_recipe_id=oci_cloud_guard_detector_recipe["test_detector_recipe"]["id"],
+                detector_recipe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 detector_rules=[oci.cloud_guard.TargetTargetDetectorRecipeDetectorRuleArgs(
                     details=oci.cloud_guard.TargetTargetDetectorRecipeDetectorRuleDetailsArgs(
                         condition_groups=[oci.cloud_guard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs(
-                            compartment_id=var["compartment_id"],
-                            condition=var["target_target_detector_recipes_detector_rules_details_condition_groups_condition"],
+                            compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            condition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         )],
                     ),
-                    detector_rule_id=oci_events_rule["test_rule"]["id"],
+                    detector_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )],
             target_responder_recipes=[oci.cloud_guard.TargetTargetResponderRecipeArgs(
-                responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"],
+                responder_recipe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 responder_rules=[oci.cloud_guard.TargetTargetResponderRecipeResponderRuleArgs(
                     details=oci.cloud_guard.TargetTargetResponderRecipeResponderRuleDetailsArgs(
-                        condition=var["target_target_responder_recipes_responder_rules_details_condition"],
+                        condition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         configurations=[oci.cloud_guard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs(
-                            config_key=var["target_target_responder_recipes_responder_rules_details_configurations_config_key"],
-                            name=var["target_target_responder_recipes_responder_rules_details_configurations_name"],
-                            value=var["target_target_responder_recipes_responder_rules_details_configurations_value"],
+                            config_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         )],
-                        mode=var["target_target_responder_recipes_responder_rules_details_mode"],
+                        mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
-                    responder_rule_id=oci_events_rule["test_rule"]["id"],
+                    responder_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )])
         ```
@@ -578,30 +578,30 @@ class Target(pulumi.CustomResource):
             },
             state=var["target_state"],
             target_detector_recipes=[oci.cloud_guard.TargetTargetDetectorRecipeArgs(
-                detector_recipe_id=oci_cloud_guard_detector_recipe["test_detector_recipe"]["id"],
+                detector_recipe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 detector_rules=[oci.cloud_guard.TargetTargetDetectorRecipeDetectorRuleArgs(
                     details=oci.cloud_guard.TargetTargetDetectorRecipeDetectorRuleDetailsArgs(
                         condition_groups=[oci.cloud_guard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs(
-                            compartment_id=var["compartment_id"],
-                            condition=var["target_target_detector_recipes_detector_rules_details_condition_groups_condition"],
+                            compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            condition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         )],
                     ),
-                    detector_rule_id=oci_events_rule["test_rule"]["id"],
+                    detector_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )],
             target_responder_recipes=[oci.cloud_guard.TargetTargetResponderRecipeArgs(
-                responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"],
+                responder_recipe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 responder_rules=[oci.cloud_guard.TargetTargetResponderRecipeResponderRuleArgs(
                     details=oci.cloud_guard.TargetTargetResponderRecipeResponderRuleDetailsArgs(
-                        condition=var["target_target_responder_recipes_responder_rules_details_condition"],
+                        condition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         configurations=[oci.cloud_guard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs(
-                            config_key=var["target_target_responder_recipes_responder_rules_details_configurations_config_key"],
-                            name=var["target_target_responder_recipes_responder_rules_details_configurations_name"],
-                            value=var["target_target_responder_recipes_responder_rules_details_configurations_value"],
+                            config_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         )],
-                        mode=var["target_target_responder_recipes_responder_rules_details_mode"],
+                        mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
-                    responder_rule_id=oci_events_rule["test_rule"]["id"],
+                    responder_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )])
         ```

@@ -117,7 +117,7 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=var["log_analytics_unprocessed_data_bucket_namespace"])
+    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -151,7 +151,7 @@ def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=var["log_analytics_unprocessed_data_bucket_namespace"])
+    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

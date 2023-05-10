@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.ExadataInfrastructureArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureState;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureContact;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureMaintenanceWindow;
+import com.pulumi.oci.Database.outputs.ExadataInfrastructureNetworkBondingModeDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -39,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.ExadataInfrastructureArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -96,6 +98,10 @@ import javax.annotation.Nullable;
  *                 .weeksOfMonths(var_.exadata_infrastructure_maintenance_window_weeks_of_month())
  *                 .build())
  *             .multiRackConfigurationFile(var_.exadata_infrastructure_multi_rack_configuration_file())
+ *             .networkBondingModeDetails(ExadataInfrastructureNetworkBondingModeDetailsArgs.builder()
+ *                 .backupNetworkBondingMode(var_.exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode())
+ *                 .clientNetworkBondingMode(var_.exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode())
+ *                 .build())
  *             .storageCount(var_.exadata_infrastructure_storage_count())
  *             .build());
  * 
@@ -623,6 +629,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<String> netmask() {
         return this.netmask;
+    }
+    /**
+     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * 
+     */
+    @Export(name="networkBondingModeDetails", type=ExadataInfrastructureNetworkBondingModeDetails.class, parameters={})
+    private Output<ExadataInfrastructureNetworkBondingModeDetails> networkBondingModeDetails;
+
+    /**
+     * @return (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * 
+     */
+    public Output<ExadataInfrastructureNetworkBondingModeDetails> networkBondingModeDetails() {
+        return this.networkBondingModeDetails;
     }
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.

@@ -93,7 +93,7 @@ def get_autonomous_container_database_dataguard_associations(autonomous_containe
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_dataguard_associations = oci.Database.get_autonomous_container_database_dataguard_associations(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
+    test_autonomous_container_database_dataguard_associations = oci.Database.get_autonomous_container_database_dataguard_associations(autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -127,7 +127,7 @@ def get_autonomous_container_database_dataguard_associations_output(autonomous_c
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_dataguard_associations = oci.Database.get_autonomous_container_database_dataguard_associations(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
+    test_autonomous_container_database_dataguard_associations = oci.Database.get_autonomous_container_database_dataguard_associations(autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

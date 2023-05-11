@@ -17,7 +17,6 @@ __all__ = ['DomainsPasswordPolicyArgs', 'DomainsPasswordPolicy']
 class DomainsPasswordPolicyArgs:
     def __init__(__self__, *,
                  idcs_endpoint: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
                  allowed_chars: Optional[pulumi.Input[str]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -48,6 +47,7 @@ class DomainsPasswordPolicyArgs:
                  min_special_chars: Optional[pulumi.Input[int]] = None,
                  min_unique_chars: Optional[pulumi.Input[int]] = None,
                  min_upper_case: Optional[pulumi.Input[int]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  num_passwords_in_history: Optional[pulumi.Input[int]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  password_expire_warning: Optional[pulumi.Input[int]] = None,
@@ -62,7 +62,6 @@ class DomainsPasswordPolicyArgs:
         """
         The set of arguments for constructing a DomainsPasswordPolicy resource.
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] name: (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
         :param pulumi.Input[str] allowed_chars: (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -93,6 +92,7 @@ class DomainsPasswordPolicyArgs:
         :param pulumi.Input[int] min_special_chars: (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
         :param pulumi.Input[int] min_unique_chars: (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
         :param pulumi.Input[int] min_upper_case: (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+        :param pulumi.Input[str] name: (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
         :param pulumi.Input[int] num_passwords_in_history: (Updatable) The number of passwords that will be kept in history that may not be used as a password
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         :param pulumi.Input[int] password_expire_warning: (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
@@ -106,7 +106,6 @@ class DomainsPasswordPolicyArgs:
         :param pulumi.Input[bool] user_name_disallowed: (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
         """
         pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "schemas", schemas)
         if allowed_chars is not None:
             pulumi.set(__self__, "allowed_chars", allowed_chars)
@@ -166,6 +165,8 @@ class DomainsPasswordPolicyArgs:
             pulumi.set(__self__, "min_unique_chars", min_unique_chars)
         if min_upper_case is not None:
             pulumi.set(__self__, "min_upper_case", min_upper_case)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if num_passwords_in_history is not None:
             pulumi.set(__self__, "num_passwords_in_history", num_passwords_in_history)
         if ocid is not None:
@@ -200,18 +201,6 @@ class DomainsPasswordPolicyArgs:
     @idcs_endpoint.setter
     def idcs_endpoint(self, value: pulumi.Input[str]):
         pulumi.set(self, "idcs_endpoint", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -572,6 +561,18 @@ class DomainsPasswordPolicyArgs:
     @min_upper_case.setter
     def min_upper_case(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "min_upper_case", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="numPasswordsInHistory")
@@ -1788,8 +1789,6 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             __props__.__dict__["min_special_chars"] = min_special_chars
             __props__.__dict__["min_unique_chars"] = min_unique_chars
             __props__.__dict__["min_upper_case"] = min_upper_case
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["num_passwords_in_history"] = num_passwords_in_history
             __props__.__dict__["ocid"] = ocid

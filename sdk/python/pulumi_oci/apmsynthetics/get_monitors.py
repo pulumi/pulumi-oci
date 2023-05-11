@@ -172,14 +172,14 @@ def get_monitors(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["monitor_display_name"],
-        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
-        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
-        monitor_type=var["monitor_monitor_type"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"],
-        vantage_point=var["monitor_vantage_point"])
+    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_maintenance_window_active=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_maintenance_window_set=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        monitor_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        script_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vantage_point=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -241,14 +241,14 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["monitor_display_name"],
-        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
-        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
-        monitor_type=var["monitor_monitor_type"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"],
-        vantage_point=var["monitor_vantage_point"])
+    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_maintenance_window_active=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_maintenance_window_set=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        monitor_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        script_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vantage_point=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

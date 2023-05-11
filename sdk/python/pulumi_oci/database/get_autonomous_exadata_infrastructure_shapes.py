@@ -100,8 +100,8 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=var["autonomous_exadata_infrastructure_shape_availability_domain"],
-        compartment_id=var["compartment_id"])
+    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -139,8 +139,8 @@ def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=var["autonomous_exadata_infrastructure_shape_availability_domain"],
-        compartment_id=var["compartment_id"])
+    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

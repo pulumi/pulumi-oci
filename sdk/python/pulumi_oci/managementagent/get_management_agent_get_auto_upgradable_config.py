@@ -79,7 +79,7 @@ def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=var["compartment_id"])
+    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -111,7 +111,7 @@ def get_management_agent_get_auto_upgradable_config_output(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=var["compartment_id"])
+    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

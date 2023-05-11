@@ -147,15 +147,15 @@ class AuthenticationPolicy(pulumi.CustomResource):
         test_authentication_policy = oci.identity.AuthenticationPolicy("testAuthenticationPolicy",
             compartment_id=var["tenancy_ocid"],
             network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=var["authentication_policy_network_policy_network_source_ids"],
+                network_source_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=var["authentication_policy_password_policy_is_lowercase_characters_required"],
-                is_numeric_characters_required=var["authentication_policy_password_policy_is_numeric_characters_required"],
-                is_special_characters_required=var["authentication_policy_password_policy_is_special_characters_required"],
-                is_uppercase_characters_required=var["authentication_policy_password_policy_is_uppercase_characters_required"],
-                is_username_containment_allowed=var["authentication_policy_password_policy_is_username_containment_allowed"],
-                minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
+                is_lowercase_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_numeric_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_special_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_uppercase_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_username_containment_allowed=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                minimum_password_length=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -193,15 +193,15 @@ class AuthenticationPolicy(pulumi.CustomResource):
         test_authentication_policy = oci.identity.AuthenticationPolicy("testAuthenticationPolicy",
             compartment_id=var["tenancy_ocid"],
             network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=var["authentication_policy_network_policy_network_source_ids"],
+                network_source_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=var["authentication_policy_password_policy_is_lowercase_characters_required"],
-                is_numeric_characters_required=var["authentication_policy_password_policy_is_numeric_characters_required"],
-                is_special_characters_required=var["authentication_policy_password_policy_is_special_characters_required"],
-                is_uppercase_characters_required=var["authentication_policy_password_policy_is_uppercase_characters_required"],
-                is_username_containment_allowed=var["authentication_policy_password_policy_is_username_containment_allowed"],
-                minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
+                is_lowercase_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_numeric_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_special_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_uppercase_characters_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_username_containment_allowed=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                minimum_password_length=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

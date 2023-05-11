@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresExadataInfrastructureContact;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow;
+import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -199,6 +200,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      * 
      */
     private String netmask;
+    /**
+     * @return Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * 
+     */
+    private List<GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails;
     /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
@@ -495,6 +501,13 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         return this.netmask;
     }
     /**
+     * @return Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * 
+     */
+    public List<GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails() {
+        return this.networkBondingModeDetails;
+    }
+    /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
@@ -591,6 +604,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         private String monthlyDbServerVersion;
         private String multiRackConfigurationFile;
         private String netmask;
+        private List<GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails;
         private List<String> ntpServers;
         private String shape;
         private String state;
@@ -639,6 +653,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      this.monthlyDbServerVersion = defaults.monthlyDbServerVersion;
     	      this.multiRackConfigurationFile = defaults.multiRackConfigurationFile;
     	      this.netmask = defaults.netmask;
+    	      this.networkBondingModeDetails = defaults.networkBondingModeDetails;
     	      this.ntpServers = defaults.ntpServers;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
@@ -848,6 +863,14 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder networkBondingModeDetails(List<GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails) {
+            this.networkBondingModeDetails = Objects.requireNonNull(networkBondingModeDetails);
+            return this;
+        }
+        public Builder networkBondingModeDetails(GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail... networkBondingModeDetails) {
+            return networkBondingModeDetails(List.of(networkBondingModeDetails));
+        }
+        @CustomType.Setter
         public Builder ntpServers(List<String> ntpServers) {
             this.ntpServers = Objects.requireNonNull(ntpServers);
             return this;
@@ -925,6 +948,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             o.monthlyDbServerVersion = monthlyDbServerVersion;
             o.multiRackConfigurationFile = multiRackConfigurationFile;
             o.netmask = netmask;
+            o.networkBondingModeDetails = networkBondingModeDetails;
             o.ntpServers = ntpServers;
             o.shape = shape;
             o.state = state;

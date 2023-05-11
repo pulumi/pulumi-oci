@@ -91,7 +91,7 @@ def get_services(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Limits.get_services(compartment_id=var["tenancy_ocid"])
+    test_services = oci.Limits.get_services(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -126,7 +126,7 @@ def get_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Limits.get_services(compartment_id=var["tenancy_ocid"])
+    test_services = oci.Limits.get_services(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

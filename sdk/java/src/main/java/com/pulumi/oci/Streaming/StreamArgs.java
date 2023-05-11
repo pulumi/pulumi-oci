@@ -67,15 +67,15 @@ public final class StreamArgs extends com.pulumi.resources.ResourceArgs {
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -222,7 +222,7 @@ public final class StreamArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -301,7 +301,6 @@ public final class StreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public StreamArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.partitions = Objects.requireNonNull($.partitions, "expected parameter 'partitions' to be non-null");
             return $;
         }

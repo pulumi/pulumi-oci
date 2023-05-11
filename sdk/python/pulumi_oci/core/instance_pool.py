@@ -375,12 +375,12 @@ class InstancePool(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
             placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                fault_domains=var["instance_pool_placement_configurations_fault_domains"],
+                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                primary_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                fault_domains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
+                    subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )],
             size=var["instance_pool_size"],
@@ -392,10 +392,10 @@ class InstancePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                port=var["instance_pool_load_balancers_port"],
-                vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
+                backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vnic_selection=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -440,12 +440,12 @@ class InstancePool(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
             placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                fault_domains=var["instance_pool_placement_configurations_fault_domains"],
+                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                primary_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                fault_domains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
+                    subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             )],
             size=var["instance_pool_size"],
@@ -457,10 +457,10 @@ class InstancePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                port=var["instance_pool_load_balancers_port"],
-                vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
+                backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vnic_selection=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 

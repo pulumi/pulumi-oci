@@ -109,6 +109,7 @@ __all__ = [
     'ExadataInfrastructureMaintenanceWindowArgs',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
     'ExadataInfrastructureMaintenanceWindowMonthArgs',
+    'ExadataInfrastructureNetworkBondingModeDetailsArgs',
     'ExadataInfrastructureStorageContactArgs',
     'ExadataInfrastructureStorageMaintenanceWindowArgs',
     'ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs',
@@ -7739,6 +7740,45 @@ class ExadataInfrastructureMaintenanceWindowMonthArgs:
     @name.setter
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class ExadataInfrastructureNetworkBondingModeDetailsArgs:
+    def __init__(__self__, *,
+                 backup_network_bonding_mode: Optional[pulumi.Input[str]] = None,
+                 client_network_bonding_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] backup_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
+        :param pulumi.Input[str] client_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        if backup_network_bonding_mode is not None:
+            pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
+        if client_network_bonding_mode is not None:
+            pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+
+    @property
+    @pulumi.getter(name="backupNetworkBondingMode")
+    def backup_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "backup_network_bonding_mode")
+
+    @backup_network_bonding_mode.setter
+    def backup_network_bonding_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_network_bonding_mode", value)
+
+    @property
+    @pulumi.getter(name="clientNetworkBondingMode")
+    def client_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "client_network_bonding_mode")
+
+    @client_network_bonding_mode.setter
+    def client_network_bonding_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_network_bonding_mode", value)
 
 
 @pulumi.input_type

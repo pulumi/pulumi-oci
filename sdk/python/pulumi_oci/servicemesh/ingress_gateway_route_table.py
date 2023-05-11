@@ -18,26 +18,25 @@ class IngressGatewayRouteTableArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  ingress_gateway_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  route_rules: pulumi.Input[Sequence[pulumi.Input['IngressGatewayRouteTableRouteRuleArgs']]],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a IngressGatewayRouteTable resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] ingress_gateway_id: The OCID of the service mesh in which this access policy is created.
-        :param pulumi.Input[str] name: (Updatable) Name of the ingress gateway host that this route should apply to.
         :param pulumi.Input[Sequence[pulumi.Input['IngressGatewayRouteTableRouteRuleArgs']]] route_rules: (Updatable) The route rules for the ingress gateway.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] name: (Updatable) Name of the ingress gateway host that this route should apply to.
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "route_rules", route_rules)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -45,6 +44,8 @@ class IngressGatewayRouteTableArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if priority is not None:
             pulumi.set(__self__, "priority", priority)
 
@@ -71,18 +72,6 @@ class IngressGatewayRouteTableArgs:
     @ingress_gateway_id.setter
     def ingress_gateway_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "ingress_gateway_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the ingress gateway host that this route should apply to.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="routeRules")
@@ -131,6 +120,18 @@ class IngressGatewayRouteTableArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the ingress gateway host that this route should apply to.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -389,24 +390,23 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         test_ingress_gateway_route_table = oci.service_mesh.IngressGatewayRouteTable("testIngressGatewayRouteTable",
             compartment_id=var["compartment_id"],
             ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-            name=var["ingress_gateway_route_table_name"],
             route_rules=[oci.service_mesh.IngressGatewayRouteTableRouteRuleArgs(
                 destinations=[oci.service_mesh.IngressGatewayRouteTableRouteRuleDestinationArgs(
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                    port=var["ingress_gateway_route_table_route_rules_destinations_port"],
-                    weight=var["ingress_gateway_route_table_route_rules_destinations_weight"],
+                    virtual_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    weight=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                type=var["ingress_gateway_route_table_route_rules_type"],
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ingress_gateway_host=oci.service_mesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs(
-                    name=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_name"],
-                    port=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_port"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                is_grpc=var["ingress_gateway_route_table_route_rules_is_grpc"],
-                is_host_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_host_rewrite_enabled"],
-                is_path_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_path_rewrite_enabled"],
-                path=var["ingress_gateway_route_table_route_rules_path"],
-                path_type=var["ingress_gateway_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["ingress_gateway_route_table_route_rules_request_timeout_in_ms"],
+                is_grpc=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_host_rewrite_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_path_rewrite_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                request_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -457,24 +457,23 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         test_ingress_gateway_route_table = oci.service_mesh.IngressGatewayRouteTable("testIngressGatewayRouteTable",
             compartment_id=var["compartment_id"],
             ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-            name=var["ingress_gateway_route_table_name"],
             route_rules=[oci.service_mesh.IngressGatewayRouteTableRouteRuleArgs(
                 destinations=[oci.service_mesh.IngressGatewayRouteTableRouteRuleDestinationArgs(
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                    port=var["ingress_gateway_route_table_route_rules_destinations_port"],
-                    weight=var["ingress_gateway_route_table_route_rules_destinations_weight"],
+                    virtual_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    weight=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                type=var["ingress_gateway_route_table_route_rules_type"],
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ingress_gateway_host=oci.service_mesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs(
-                    name=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_name"],
-                    port=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_port"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                is_grpc=var["ingress_gateway_route_table_route_rules_is_grpc"],
-                is_host_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_host_rewrite_enabled"],
-                is_path_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_path_rewrite_enabled"],
-                path=var["ingress_gateway_route_table_route_rules_path"],
-                path_type=var["ingress_gateway_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["ingress_gateway_route_table_route_rules_request_timeout_in_ms"],
+                is_grpc=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_host_rewrite_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_path_rewrite_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                path_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                request_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -535,8 +534,6 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
             if ingress_gateway_id is None and not opts.urn:
                 raise TypeError("Missing required property 'ingress_gateway_id'")
             __props__.__dict__["ingress_gateway_id"] = ingress_gateway_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["priority"] = priority
             if route_rules is None and not opts.urn:

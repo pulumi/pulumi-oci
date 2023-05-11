@@ -124,11 +124,11 @@ def get_masking_analytic(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytic = oci.DataSafe.get_masking_analytic(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["masking_analytic_compartment_id_in_subtree"],
-        group_by=var["masking_analytic_group_by"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_masking_analytic = oci.DataSafe.get_masking_analytic(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -177,11 +177,11 @@ def get_masking_analytic_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytic = oci.DataSafe.get_masking_analytic(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["masking_analytic_compartment_id_in_subtree"],
-        group_by=var["masking_analytic_group_by"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_masking_analytic = oci.DataSafe.get_masking_analytic(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -146,12 +146,12 @@ def get_pipelines(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.DataScience.get_pipelines(compartment_id=var["compartment_id"],
-        created_by=var["pipeline_created_by"],
-        display_name=var["pipeline_display_name"],
-        id=var["pipeline_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["pipeline_state"])
+    test_pipelines = oci.DataScience.get_pipelines(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -204,12 +204,12 @@ def get_pipelines_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.DataScience.get_pipelines(compartment_id=var["compartment_id"],
-        created_by=var["pipeline_created_by"],
-        display_name=var["pipeline_display_name"],
-        id=var["pipeline_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["pipeline_state"])
+    test_pipelines = oci.DataScience.get_pipelines(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

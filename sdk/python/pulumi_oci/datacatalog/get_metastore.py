@@ -186,7 +186,7 @@ def get_metastore(metastore_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=oci_datacatalog_metastore["test_metastore"]["id"])
+    test_metastore = oci.DataCatalog.get_metastore(metastore_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -226,7 +226,7 @@ def get_metastore_output(metastore_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=oci_datacatalog_metastore["test_metastore"]["id"])
+    test_metastore = oci.DataCatalog.get_metastore(metastore_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

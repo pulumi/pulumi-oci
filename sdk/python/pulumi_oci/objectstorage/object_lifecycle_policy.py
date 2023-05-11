@@ -163,17 +163,17 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
             bucket=var["object_lifecycle_policy_bucket"],
             namespace=var["object_lifecycle_policy_namespace"],
             rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=var["object_lifecycle_policy_rules_action"],
-                is_enabled=var["object_lifecycle_policy_rules_is_enabled"],
-                name=var["object_lifecycle_policy_rules_name"],
-                time_amount=var["object_lifecycle_policy_rules_time_amount"],
-                time_unit=var["object_lifecycle_policy_rules_time_unit"],
+                action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_amount=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_exclusion_patterns"],
-                    inclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_inclusion_patterns"],
-                    inclusion_prefixes=var["object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes"],
+                    exclusion_patterns=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    inclusion_patterns=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    inclusion_prefixes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                target=var["object_lifecycle_policy_rules_target"],
+                target=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -212,17 +212,17 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
             bucket=var["object_lifecycle_policy_bucket"],
             namespace=var["object_lifecycle_policy_namespace"],
             rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=var["object_lifecycle_policy_rules_action"],
-                is_enabled=var["object_lifecycle_policy_rules_is_enabled"],
-                name=var["object_lifecycle_policy_rules_name"],
-                time_amount=var["object_lifecycle_policy_rules_time_amount"],
-                time_unit=var["object_lifecycle_policy_rules_time_unit"],
+                action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_amount=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_exclusion_patterns"],
-                    inclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_inclusion_patterns"],
-                    inclusion_prefixes=var["object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes"],
+                    exclusion_patterns=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    inclusion_patterns=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    inclusion_prefixes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                target=var["object_lifecycle_policy_rules_target"],
+                target=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 

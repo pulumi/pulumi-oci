@@ -142,11 +142,11 @@ def get_replicas(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replicas = oci.Mysql.get_replicas(compartment_id=var["compartment_id"],
-        db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
-        display_name=var["replica_display_name"],
-        replica_id=oci_mysql_replica["test_replica"]["id"],
-        state=var["replica_state"])
+    test_replicas = oci.Mysql.get_replicas(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -196,11 +196,11 @@ def get_replicas_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replicas = oci.Mysql.get_replicas(compartment_id=var["compartment_id"],
-        db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
-        display_name=var["replica_display_name"],
-        replica_id=oci_mysql_replica["test_replica"]["id"],
-        state=var["replica_state"])
+    test_replicas = oci.Mysql.get_replicas(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

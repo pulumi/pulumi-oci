@@ -489,12 +489,12 @@ class Image(pulumi.CustomResource):
             launch_mode=var["image_launch_mode"],
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageTuple",
-                bucket_name=var["bucket_name"],
-                namespace_name=var["namespace"],
-                object_name=var["object_name"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                bucket_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_image_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
         ### Create image from exported image at publicly accessible uri
@@ -508,10 +508,10 @@ class Image(pulumi.CustomResource):
             launch_mode=var["image_launch_mode"],
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageUri",
-                source_uri=var["source_uri"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                source_uri=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_image_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -594,12 +594,12 @@ class Image(pulumi.CustomResource):
             launch_mode=var["image_launch_mode"],
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageTuple",
-                bucket_name=var["bucket_name"],
-                namespace_name=var["namespace"],
-                object_name=var["object_name"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                bucket_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                object_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_image_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
         ### Create image from exported image at publicly accessible uri
@@ -613,10 +613,10 @@ class Image(pulumi.CustomResource):
             launch_mode=var["image_launch_mode"],
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageUri",
-                source_uri=var["source_uri"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                source_uri=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                operating_system_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_image_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

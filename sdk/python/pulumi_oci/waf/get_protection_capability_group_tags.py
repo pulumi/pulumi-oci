@@ -113,9 +113,9 @@ def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=var["compartment_id"],
-        name=var["protection_capability_group_tag_name"],
-        type=var["protection_capability_group_tag_type"])
+    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -157,9 +157,9 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=var["compartment_id"],
-        name=var["protection_capability_group_tag_name"],
-        type=var["protection_capability_group_tag_type"])
+    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

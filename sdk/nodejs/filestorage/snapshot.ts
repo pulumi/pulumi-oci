@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * const testSnapshot = new oci.filestorage.Snapshot("testSnapshot", {
  *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     name: _var.snapshot_name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -141,9 +140,6 @@ export class Snapshot extends pulumi.CustomResource {
             if ((!args || args.fileSystemId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'fileSystemId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["fileSystemId"] = args ? args.fileSystemId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
@@ -233,5 +229,5 @@ export interface SnapshotArgs {
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

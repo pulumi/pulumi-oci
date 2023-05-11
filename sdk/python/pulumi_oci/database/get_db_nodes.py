@@ -139,11 +139,11 @@ def get_db_nodes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=var["compartment_id"],
-        db_server_id=oci_database_db_server["test_db_server"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        state=var["db_node_state"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_db_nodes = oci.Database.get_db_nodes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_server_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -193,11 +193,11 @@ def get_db_nodes_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=var["compartment_id"],
-        db_server_id=oci_database_db_server["test_db_server"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        state=var["db_node_state"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_db_nodes = oci.Database.get_db_nodes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_server_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -55,7 +55,6 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .isAgreementAcknowledged(var_.publication_is_agreement_acknowledged())
  *             .listingType(var_.publication_listing_type())
- *             .name(var_.publication_name())
  *             .packageDetails(PublicationPackageDetailsArgs.builder()
  *                 .eulas(PublicationPackageDetailsEulaArgs.builder()
  *                     .eulaType(var_.publication_package_details_eula_eula_type())

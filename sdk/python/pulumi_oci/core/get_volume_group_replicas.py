@@ -133,10 +133,10 @@ def get_volume_group_replicas(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=var["volume_group_replica_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_group_replica_display_name"],
-        state=var["volume_group_replica_state"])
+    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -183,10 +183,10 @@ def get_volume_group_replicas_output(availability_domain: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=var["volume_group_replica_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_group_replica_display_name"],
-        state=var["volume_group_replica_state"])
+    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

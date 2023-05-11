@@ -49,7 +49,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSchedule = new Schedule(&#34;testSchedule&#34;, ScheduleArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.schedule_name())
  *             .resultLocation(ScheduleResultLocationArgs.builder()
  *                 .bucket(var_.schedule_result_location_bucket())
  *                 .locationType(var_.schedule_result_location_location_type())

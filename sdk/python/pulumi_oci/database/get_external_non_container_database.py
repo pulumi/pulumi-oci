@@ -295,7 +295,7 @@ def get_external_non_container_database(external_non_container_database_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"])
+    test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -344,7 +344,7 @@ def get_external_non_container_database_output(external_non_container_database_i
     import pulumi
     import pulumi_oci as oci
 
-    test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"])
+    test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -88,8 +88,8 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
-        private_ip=var["private_endpoint_reachable_ip_private_ip"])
+    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        private_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -124,8 +124,8 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
-        private_ip=var["private_endpoint_reachable_ip_private_ip"])
+    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        private_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

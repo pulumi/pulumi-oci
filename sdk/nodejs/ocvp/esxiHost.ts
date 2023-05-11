@@ -107,7 +107,7 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public readonly nextSku!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      */
     public readonly nonUpgradedEsxiHostId!: pulumi.Output<string>;
     /**
@@ -135,7 +135,7 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public /*out*/ readonly upgradedReplacementEsxiHostId!: pulumi.Output<string>;
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
     public /*out*/ readonly vmwareSoftwareVersion!: pulumi.Output<string>;
 
@@ -268,7 +268,7 @@ export interface EsxiHostState {
      */
     nextSku?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      */
     nonUpgradedEsxiHostId?: pulumi.Input<string>;
     /**
@@ -296,7 +296,7 @@ export interface EsxiHostState {
      */
     upgradedReplacementEsxiHostId?: pulumi.Input<string>;
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
     vmwareSoftwareVersion?: pulumi.Input<string>;
 }
@@ -346,7 +346,7 @@ export interface EsxiHostArgs {
      */
     nextSku?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      */
     nonUpgradedEsxiHostId?: pulumi.Input<string>;
     /**

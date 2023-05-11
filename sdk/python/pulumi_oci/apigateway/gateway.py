@@ -475,9 +475,9 @@ class Gateway(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
             ca_bundles=[oci.api_gateway.GatewayCaBundleArgs(
-                type=var["gateway_ca_bundles_type"],
-                ca_bundle_id=oci_apigateway_ca_bundle["test_ca_bundle"]["id"],
-                certificate_authority_id=oci_apigateway_certificate_authority["test_certificate_authority"]["id"],
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ca_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_authority_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -488,17 +488,17 @@ class Gateway(pulumi.CustomResource):
             },
             network_security_group_ids=var["gateway_network_security_group_ids"],
             response_cache_details=oci.api_gateway.GatewayResponseCacheDetailsArgs(
-                type=var["gateway_response_cache_details_type"],
-                authentication_secret_id=oci_vault_secret["test_secret"]["id"],
-                authentication_secret_version_number=var["gateway_response_cache_details_authentication_secret_version_number"],
-                connect_timeout_in_ms=var["gateway_response_cache_details_connect_timeout_in_ms"],
-                is_ssl_enabled=var["gateway_response_cache_details_is_ssl_enabled"],
-                is_ssl_verify_disabled=var["gateway_response_cache_details_is_ssl_verify_disabled"],
-                read_timeout_in_ms=var["gateway_response_cache_details_read_timeout_in_ms"],
-                send_timeout_in_ms=var["gateway_response_cache_details_send_timeout_in_ms"],
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                authentication_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                authentication_secret_version_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connect_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_ssl_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_ssl_verify_disabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                read_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                send_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 servers=[oci.api_gateway.GatewayResponseCacheDetailsServerArgs(
-                    host=var["gateway_response_cache_details_servers_host"],
-                    port=var["gateway_response_cache_details_servers_port"],
+                    host=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ))
         ```
@@ -547,9 +547,9 @@ class Gateway(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
             ca_bundles=[oci.api_gateway.GatewayCaBundleArgs(
-                type=var["gateway_ca_bundles_type"],
-                ca_bundle_id=oci_apigateway_ca_bundle["test_ca_bundle"]["id"],
-                certificate_authority_id=oci_apigateway_certificate_authority["test_certificate_authority"]["id"],
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ca_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_authority_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -560,17 +560,17 @@ class Gateway(pulumi.CustomResource):
             },
             network_security_group_ids=var["gateway_network_security_group_ids"],
             response_cache_details=oci.api_gateway.GatewayResponseCacheDetailsArgs(
-                type=var["gateway_response_cache_details_type"],
-                authentication_secret_id=oci_vault_secret["test_secret"]["id"],
-                authentication_secret_version_number=var["gateway_response_cache_details_authentication_secret_version_number"],
-                connect_timeout_in_ms=var["gateway_response_cache_details_connect_timeout_in_ms"],
-                is_ssl_enabled=var["gateway_response_cache_details_is_ssl_enabled"],
-                is_ssl_verify_disabled=var["gateway_response_cache_details_is_ssl_verify_disabled"],
-                read_timeout_in_ms=var["gateway_response_cache_details_read_timeout_in_ms"],
-                send_timeout_in_ms=var["gateway_response_cache_details_send_timeout_in_ms"],
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                authentication_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                authentication_secret_version_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connect_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_ssl_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_ssl_verify_disabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                read_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                send_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 servers=[oci.api_gateway.GatewayResponseCacheDetailsServerArgs(
-                    host=var["gateway_response_cache_details_servers_host"],
-                    port=var["gateway_response_cache_details_servers_port"],
+                    host=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ))
         ```

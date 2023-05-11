@@ -22,7 +22,7 @@ class GetSddcResult:
     """
     A collection of values returned by getSddc.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, defined_tags=None, display_name=None, esxi_hosts_count=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, upgrade_licenses=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_upgrade_guide=None, vsphere_upgrade_objects=None, vsphere_vlan_id=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, datastores=None, defined_tags=None, display_name=None, esxi_hosts_count=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, upgrade_licenses=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_upgrade_guide=None, vsphere_upgrade_objects=None, vsphere_vlan_id=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -35,6 +35,9 @@ class GetSddcResult:
         if compute_availability_domain and not isinstance(compute_availability_domain, str):
             raise TypeError("Expected argument 'compute_availability_domain' to be a str")
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        if datastores and not isinstance(datastores, list):
+            raise TypeError("Expected argument 'datastores' to be a list")
+        pulumi.set(__self__, "datastores", datastores)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -232,6 +235,14 @@ class GetSddcResult:
         The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
         """
         return pulumi.get(self, "compute_availability_domain")
+
+    @property
+    @pulumi.getter
+    def datastores(self) -> Sequence['outputs.GetSddcDatastoreResult']:
+        """
+        Datastores used for the Sddc.
+        """
+        return pulumi.get(self, "datastores")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -569,7 +580,7 @@ class GetSddcResult:
     @pulumi.getter(name="upgradeLicenses")
     def upgrade_licenses(self) -> Sequence['outputs.GetSddcUpgradeLicenseResult']:
         """
-        The vSphere licenses to be used when upgrade SDDC.
+        The vSphere licenses to use when upgrading the SDDC.
         """
         return pulumi.get(self, "upgrade_licenses")
 
@@ -633,7 +644,7 @@ class GetSddcResult:
     @pulumi.getter(name="vsphereUpgradeGuide")
     def vsphere_upgrade_guide(self) -> str:
         """
-        The link of guidance to upgrade vSphere.
+        The link to guidance for upgrading vSphere.
         """
         return pulumi.get(self, "vsphere_upgrade_guide")
 
@@ -641,7 +652,7 @@ class GetSddcResult:
     @pulumi.getter(name="vsphereUpgradeObjects")
     def vsphere_upgrade_objects(self) -> Sequence['outputs.GetSddcVsphereUpgradeObjectResult']:
         """
-        The links of binary objects needed for upgrade vSphere.
+        The links to binary objects needed to upgrade vSphere.
         """
         return pulumi.get(self, "vsphere_upgrade_objects")
 
@@ -672,6 +683,7 @@ class AwaitableGetSddcResult(GetSddcResult):
             capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
             compute_availability_domain=self.compute_availability_domain,
+            datastores=self.datastores,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             esxi_hosts_count=self.esxi_hosts_count,
@@ -742,7 +754,7 @@ def get_sddc(sddc_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddc = oci.Ocvp.get_sddc(sddc_id=oci_ocvp_sddc["test_sddc"]["id"])
+    test_sddc = oci.Ocvp.get_sddc(sddc_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -758,6 +770,7 @@ def get_sddc(sddc_id: Optional[str] = None,
         capacity_reservation_id=__ret__.capacity_reservation_id,
         compartment_id=__ret__.compartment_id,
         compute_availability_domain=__ret__.compute_availability_domain,
+        datastores=__ret__.datastores,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         esxi_hosts_count=__ret__.esxi_hosts_count,
@@ -829,7 +842,7 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddc = oci.Ocvp.get_sddc(sddc_id=oci_ocvp_sddc["test_sddc"]["id"])
+    test_sddc = oci.Ocvp.get_sddc(sddc_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

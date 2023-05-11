@@ -145,11 +145,11 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["cloud_autonomous_vm_cluster_availability_domain"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_autonomous_vm_cluster_display_name"],
-        state=var["cloud_autonomous_vm_cluster_state"])
+    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -199,11 +199,11 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["cloud_autonomous_vm_cluster_availability_domain"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_autonomous_vm_cluster_display_name"],
-        state=var["cloud_autonomous_vm_cluster_state"])
+    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

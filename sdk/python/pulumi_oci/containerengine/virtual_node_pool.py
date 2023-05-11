@@ -537,9 +537,9 @@ class VirtualNodePool(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["virtual_node_pool_display_name"],
             placement_configurations=[oci.container_engine.VirtualNodePoolPlacementConfigurationArgs(
-                availability_domain=var["virtual_node_pool_placement_configurations_availability_domain"],
-                fault_domains=var["virtual_node_pool_placement_configurations_fault_domain"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                fault_domains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -548,20 +548,20 @@ class VirtualNodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_virtual_node_labels=[oci.container_engine.VirtualNodePoolInitialVirtualNodeLabelArgs(
-                key=var["virtual_node_pool_initial_virtual_node_labels_key"],
-                value=var["virtual_node_pool_initial_virtual_node_labels_value"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             nsg_ids=var["virtual_node_pool_nsg_ids"],
             pod_configuration=oci.container_engine.VirtualNodePoolPodConfigurationArgs(
-                shape=var["virtual_node_pool_pod_configuration_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["virtual_node_pool_pod_configuration_nsg_ids"],
+                shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             size=var["virtual_node_pool_size"],
             taints=[oci.container_engine.VirtualNodePoolTaintArgs(
-                effect=var["virtual_node_pool_taints_effect"],
-                key=var["virtual_node_pool_taints_key"],
-                value=var["virtual_node_pool_taints_value"],
+                effect=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             virtual_node_tags=oci.container_engine.VirtualNodePoolVirtualNodeTagsArgs(
                 defined_tags={
@@ -618,9 +618,9 @@ class VirtualNodePool(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["virtual_node_pool_display_name"],
             placement_configurations=[oci.container_engine.VirtualNodePoolPlacementConfigurationArgs(
-                availability_domain=var["virtual_node_pool_placement_configurations_availability_domain"],
-                fault_domains=var["virtual_node_pool_placement_configurations_fault_domain"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                fault_domains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -629,20 +629,20 @@ class VirtualNodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_virtual_node_labels=[oci.container_engine.VirtualNodePoolInitialVirtualNodeLabelArgs(
-                key=var["virtual_node_pool_initial_virtual_node_labels_key"],
-                value=var["virtual_node_pool_initial_virtual_node_labels_value"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             nsg_ids=var["virtual_node_pool_nsg_ids"],
             pod_configuration=oci.container_engine.VirtualNodePoolPodConfigurationArgs(
-                shape=var["virtual_node_pool_pod_configuration_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["virtual_node_pool_pod_configuration_nsg_ids"],
+                shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             size=var["virtual_node_pool_size"],
             taints=[oci.container_engine.VirtualNodePoolTaintArgs(
-                effect=var["virtual_node_pool_taints_effect"],
-                key=var["virtual_node_pool_taints_key"],
-                value=var["virtual_node_pool_taints_value"],
+                effect=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             virtual_node_tags=oci.container_engine.VirtualNodePoolVirtualNodeTagsArgs(
                 defined_tags={

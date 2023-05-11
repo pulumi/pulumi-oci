@@ -157,13 +157,13 @@ def get_masking_reports_masked_column(column_names: Optional[Sequence[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_column = oci.DataSafe.get_masking_reports_masked_column(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"],
-        column_names=var["masking_reports_masked_column_column_name"],
-        masking_column_groups=var["masking_reports_masked_column_masking_column_group"],
-        objects=var["masking_reports_masked_column_object"],
-        object_types=var["masking_reports_masked_column_object_type"],
-        schema_names=var["masking_reports_masked_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
+    test_masking_reports_masked_column = oci.DataSafe.get_masking_reports_masked_column(masking_report_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        masking_column_groups=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -218,13 +218,13 @@ def get_masking_reports_masked_column_output(column_names: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_column = oci.DataSafe.get_masking_reports_masked_column(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"],
-        column_names=var["masking_reports_masked_column_column_name"],
-        masking_column_groups=var["masking_reports_masked_column_masking_column_group"],
-        objects=var["masking_reports_masked_column_object"],
-        object_types=var["masking_reports_masked_column_object_type"],
-        schema_names=var["masking_reports_masked_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
+    test_masking_reports_masked_column = oci.DataSafe.get_masking_reports_masked_column(masking_report_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        masking_column_groups=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

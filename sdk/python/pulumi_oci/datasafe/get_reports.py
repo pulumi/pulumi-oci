@@ -165,13 +165,13 @@ def get_reports(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=var["compartment_id"],
-        access_level=var["report_access_level"],
-        compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
-        display_name=var["report_display_name"],
-        report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"],
-        type=var["report_type"])
+    test_reports = oci.DataSafe.get_reports(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        report_definition_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -229,13 +229,13 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=var["compartment_id"],
-        access_level=var["report_access_level"],
-        compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
-        display_name=var["report_display_name"],
-        report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"],
-        type=var["report_type"])
+    test_reports = oci.DataSafe.get_reports(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        report_definition_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

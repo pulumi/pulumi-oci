@@ -209,14 +209,14 @@ def get_domains_users(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_domains_users(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_count=var["user_user_count"],
-        user_filter=var["user_user_filter"],
+    test_users = oci.Identity.get_domains_users(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["user_authorization"],
-        resource_type_schema_version=var["user_resource_type_schema_version"],
-        start_index=var["user_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -287,14 +287,14 @@ def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_domains_users(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_count=var["user_user_count"],
-        user_filter=var["user_user_filter"],
+    test_users = oci.Identity.get_domains_users(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["user_authorization"],
-        resource_type_schema_version=var["user_resource_type_schema_version"],
-        start_index=var["user_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

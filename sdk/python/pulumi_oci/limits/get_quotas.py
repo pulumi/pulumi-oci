@@ -119,9 +119,9 @@ def get_quotas(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quotas = oci.Limits.get_quotas(compartment_id=var["tenancy_ocid"],
-        name=var["quota_name"],
-        state=var["quota_state"])
+    test_quotas = oci.Limits.get_quotas(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_quotas_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quotas = oci.Limits.get_quotas(compartment_id=var["tenancy_ocid"],
-        name=var["quota_name"],
-        state=var["quota_state"])
+    test_quotas = oci.Limits.get_quotas(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -246,7 +246,7 @@ def get_replication_target(replication_target_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=oci_file_storage_replication_target["test_replication_target"]["id"])
+    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -291,7 +291,7 @@ def get_replication_target_output(replication_target_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=oci_file_storage_replication_target["test_replication_target"]["id"])
+    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

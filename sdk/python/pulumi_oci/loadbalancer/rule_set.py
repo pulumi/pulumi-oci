@@ -18,7 +18,7 @@ class RuleSetArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]],
                  load_balancer_id: pulumi.Input[str],
-                 name: pulumi.Input[str]):
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a RuleSet resource.
         :param pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
@@ -27,7 +27,8 @@ class RuleSetArgs:
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -55,14 +56,14 @@ class RuleSetArgs:
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
+    def name(self) -> Optional[pulumi.Input[str]]:
         """
         The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[str]):
+    def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
 
@@ -157,32 +158,31 @@ class RuleSet(pulumi.CustomResource):
 
         test_rule_set = oci.load_balancer.RuleSet("testRuleSet",
             items=[oci.load_balancer.RuleSetItemArgs(
-                action=var["rule_set_items_action"],
-                allowed_methods=var["rule_set_items_allowed_methods"],
-                are_invalid_characters_allowed=var["rule_set_items_are_invalid_characters_allowed"],
+                action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                allowed_methods=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                are_invalid_characters_allowed=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=var["rule_set_items_conditions_attribute_name"],
-                    attribute_value=var["rule_set_items_conditions_attribute_value"],
-                    operator=var["rule_set_items_conditions_operator"],
+                    attribute_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    attribute_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    operator=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                description=var["rule_set_items_description"],
-                header=var["rule_set_items_header"],
-                http_large_header_size_in_kb=var["rule_set_items_http_large_header_size_in_kb"],
-                prefix=var["rule_set_items_prefix"],
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                header=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                http_large_header_size_in_kb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=var["rule_set_items_redirect_uri_host"],
-                    path=var["rule_set_items_redirect_uri_path"],
-                    port=var["rule_set_items_redirect_uri_port"],
-                    protocol=var["rule_set_items_redirect_uri_protocol"],
-                    query=var["rule_set_items_redirect_uri_query"],
+                    host=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                response_code=var["rule_set_items_response_code"],
-                status_code=var["rule_set_items_status_code"],
-                suffix=var["rule_set_items_suffix"],
-                value=var["rule_set_items_value"],
+                response_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                status_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                suffix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["rule_set_name"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
 
         ## Import
@@ -219,32 +219,31 @@ class RuleSet(pulumi.CustomResource):
 
         test_rule_set = oci.load_balancer.RuleSet("testRuleSet",
             items=[oci.load_balancer.RuleSetItemArgs(
-                action=var["rule_set_items_action"],
-                allowed_methods=var["rule_set_items_allowed_methods"],
-                are_invalid_characters_allowed=var["rule_set_items_are_invalid_characters_allowed"],
+                action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                allowed_methods=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                are_invalid_characters_allowed=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=var["rule_set_items_conditions_attribute_name"],
-                    attribute_value=var["rule_set_items_conditions_attribute_value"],
-                    operator=var["rule_set_items_conditions_operator"],
+                    attribute_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    attribute_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    operator=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                description=var["rule_set_items_description"],
-                header=var["rule_set_items_header"],
-                http_large_header_size_in_kb=var["rule_set_items_http_large_header_size_in_kb"],
-                prefix=var["rule_set_items_prefix"],
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                header=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                http_large_header_size_in_kb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=var["rule_set_items_redirect_uri_host"],
-                    path=var["rule_set_items_redirect_uri_path"],
-                    port=var["rule_set_items_redirect_uri_port"],
-                    protocol=var["rule_set_items_redirect_uri_protocol"],
-                    query=var["rule_set_items_redirect_uri_query"],
+                    host=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                response_code=var["rule_set_items_response_code"],
-                status_code=var["rule_set_items_status_code"],
-                suffix=var["rule_set_items_suffix"],
-                value=var["rule_set_items_value"],
+                response_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                status_code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                suffix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["rule_set_name"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
 
         ## Import
@@ -288,8 +287,6 @@ class RuleSet(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["state"] = None
         super(RuleSet, __self__).__init__(

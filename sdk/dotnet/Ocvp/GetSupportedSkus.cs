@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Ocvp
         ///     var testSupportedSkus = Oci.Ocvp.GetSupportedSkus.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         HostShapeName = oci_core_shape.Test_shape.Name,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Ocvp
         ///     var testSupportedSkus = Oci.Ocvp.GetSupportedSkus.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         HostShapeName = oci_core_shape.Test_shape.Name,
         ///     });
         /// 
         /// });
@@ -91,6 +93,12 @@ namespace Pulumi.Oci.Ocvp
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only resources that match or support the given ESXi host shape.
+        /// </summary>
+        [Input("hostShapeName")]
+        public string? HostShapeName { get; set; }
+
         public GetSupportedSkusArgs()
         {
         }
@@ -113,6 +121,12 @@ namespace Pulumi.Oci.Ocvp
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only resources that match or support the given ESXi host shape.
+        /// </summary>
+        [Input("hostShapeName")]
+        public Input<string>? HostShapeName { get; set; }
+
         public GetSupportedSkusInvokeArgs()
         {
         }
@@ -125,6 +139,7 @@ namespace Pulumi.Oci.Ocvp
     {
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetSupportedSkusFilterResult> Filters;
+        public readonly string? HostShapeName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -140,12 +155,15 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<Outputs.GetSupportedSkusFilterResult> filters,
 
+            string? hostShapeName,
+
             string id,
 
             ImmutableArray<Outputs.GetSupportedSkusItemResult> items)
         {
             CompartmentId = compartmentId;
             Filters = filters;
+            HostShapeName = hostShapeName;
             Id = id;
             Items = items;
         }

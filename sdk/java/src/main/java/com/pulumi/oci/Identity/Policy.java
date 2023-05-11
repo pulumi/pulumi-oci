@@ -58,7 +58,6 @@ import javax.annotation.Nullable;
  *         var testPolicy = new Policy(&#34;testPolicy&#34;, PolicyArgs.builder()        
  *             .compartmentId(var_.tenancy_ocid())
  *             .description(var_.policy_description())
- *             .name(var_.policy_name())
  *             .statements(var_.policy_statements())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))

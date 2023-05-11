@@ -163,14 +163,14 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_findings = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_findings(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id=oci_database_management_begin_exec["test_begin_exec"]["id"],
-        end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
-        finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
-        index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
-        stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
+    test_managed_database_sql_tuning_advisor_tasks_findings = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_findings(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_tuning_advisor_task_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        begin_exec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_exec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        finding_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        index_hash_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        search_period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        stats_hash_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -232,14 +232,14 @@ def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_findings = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_findings(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id=oci_database_management_begin_exec["test_begin_exec"]["id"],
-        end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
-        finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
-        index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
-        stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
+    test_managed_database_sql_tuning_advisor_tasks_findings = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_findings(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_tuning_advisor_task_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        begin_exec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_exec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        finding_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        index_hash_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        search_period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        stats_hash_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

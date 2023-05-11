@@ -213,9 +213,9 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
             protocol=var["oda_private_endpoint_scan_proxy_protocol"],
             scan_listener_infos=[oci.oda.OdaPrivateEndpointScanProxyScanListenerInfoArgs(
-                scan_listener_fqdn=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn"],
-                scan_listener_ip=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip"],
-                scan_listener_port=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port"],
+                scan_listener_fqdn=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                scan_listener_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                scan_listener_port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             scan_listener_type=var["oda_private_endpoint_scan_proxy_scan_listener_type"])
         ```
@@ -259,9 +259,9 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
             protocol=var["oda_private_endpoint_scan_proxy_protocol"],
             scan_listener_infos=[oci.oda.OdaPrivateEndpointScanProxyScanListenerInfoArgs(
-                scan_listener_fqdn=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn"],
-                scan_listener_ip=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip"],
-                scan_listener_port=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port"],
+                scan_listener_fqdn=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                scan_listener_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                scan_listener_port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             scan_listener_type=var["oda_private_endpoint_scan_proxy_scan_listener_type"])
         ```

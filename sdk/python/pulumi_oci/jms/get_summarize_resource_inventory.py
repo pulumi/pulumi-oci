@@ -146,9 +146,9 @@ def get_summarize_resource_inventory(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=var["compartment_id"],
-        time_end=var["summarize_resource_inventory_time_end"],
-        time_start=var["summarize_resource_inventory_time_start"])
+    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -191,9 +191,9 @@ def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=var["compartment_id"],
-        time_end=var["summarize_resource_inventory_time_end"],
-        time_start=var["summarize_resource_inventory_time_start"])
+    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

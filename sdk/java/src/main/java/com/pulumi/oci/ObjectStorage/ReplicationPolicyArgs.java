@@ -83,15 +83,15 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
      * The name of the policy. Avoid entering confidential information.
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return The name of the policy. Avoid entering confidential information.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -232,7 +232,7 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -272,7 +272,6 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
             $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
             $.destinationBucketName = Objects.requireNonNull($.destinationBucketName, "expected parameter 'destinationBucketName' to be non-null");
             $.destinationRegionName = Objects.requireNonNull($.destinationRegionName, "expected parameter 'destinationRegionName' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
             return $;
         }

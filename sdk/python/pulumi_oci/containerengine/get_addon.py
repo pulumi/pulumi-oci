@@ -158,8 +158,8 @@ def get_addon(addon_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon = oci.ContainerEngine.get_addon(addon_name=oci_containerengine_addon["test_addon"]["name"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
+    test_addon = oci.ContainerEngine.get_addon(addon_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -200,8 +200,8 @@ def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon = oci.ContainerEngine.get_addon(addon_name=oci_containerengine_addon["test_addon"]["name"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
+    test_addon = oci.ContainerEngine.get_addon(addon_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

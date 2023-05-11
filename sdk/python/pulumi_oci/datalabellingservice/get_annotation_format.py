@@ -79,7 +79,7 @@ def get_annotation_format(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=var["compartment_id"])
+    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -110,7 +110,7 @@ def get_annotation_format_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=var["compartment_id"])
+    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

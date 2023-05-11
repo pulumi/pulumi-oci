@@ -511,9 +511,9 @@ class OpsiConfiguration(pulumi.CustomResource):
             config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
             config_item_fields=var["opsi_configuration_config_item_field"],
             config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=var["opsi_configuration_config_items_config_item_type"],
-                name=var["opsi_configuration_config_items_name"],
-                value=var["opsi_configuration_config_items_value"],
+                config_item_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
             defined_tags={
@@ -574,9 +574,9 @@ class OpsiConfiguration(pulumi.CustomResource):
             config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
             config_item_fields=var["opsi_configuration_config_item_field"],
             config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=var["opsi_configuration_config_items_config_item_type"],
-                name=var["opsi_configuration_config_items_name"],
-                value=var["opsi_configuration_config_items_value"],
+                config_item_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
             defined_tags={

@@ -163,8 +163,8 @@ def get_secret_version(secret_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret_version = oci.Vault.get_secret_version(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_number=var["secret_version_secret_version_number"])
+    test_secret_version = oci.Vault.get_secret_version(secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        secret_version_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -205,8 +205,8 @@ def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret_version = oci.Vault.get_secret_version(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_number=var["secret_version_secret_version_number"])
+    test_secret_version = oci.Vault.get_secret_version(secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        secret_version_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

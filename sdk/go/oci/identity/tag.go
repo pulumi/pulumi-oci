@@ -52,7 +52,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.NewTag(ctx, "testTag", &Identity.TagArgs{
 //				Description:    pulumi.Any(_var.Tag_description),
-//				Name:           pulumi.Any(_var.Tag_name),
 //				TagNamespaceId: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Id),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
@@ -119,9 +118,6 @@ func NewTag(ctx *pulumi.Context,
 
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.TagNamespaceId == nil {
 		return nil, errors.New("invalid value for required argument 'TagNamespaceId'")
@@ -209,7 +205,7 @@ type tagArgs struct {
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 	IsRetired *bool `pulumi:"isRetired"`
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The OCID of the tag namespace.
 	TagNamespaceId string `pulumi:"tagNamespaceId"`
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
@@ -229,7 +225,7 @@ type TagArgs struct {
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 	IsRetired pulumi.BoolPtrInput
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// The OCID of the tag namespace.
 	TagNamespaceId pulumi.StringInput
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).

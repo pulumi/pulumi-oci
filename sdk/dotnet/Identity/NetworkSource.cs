@@ -44,7 +44,6 @@ namespace Pulumi.Oci.Identity
     ///     {
     ///         CompartmentId = @var.Tenancy_ocid,
     ///         Description = @var.Network_source_description,
-    ///         Name = @var.Network_source_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -223,8 +222,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("publicSourceLists")]
         private InputList<string>? _publicSourceLists;

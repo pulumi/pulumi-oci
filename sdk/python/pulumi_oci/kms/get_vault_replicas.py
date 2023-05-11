@@ -95,7 +95,7 @@ def get_vault_replicas(filters: Optional[Sequence[pulumi.InputType['GetVaultRepl
     import pulumi
     import pulumi_oci as oci
 
-    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=oci_kms_vault["test_vault"]["id"])
+    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -134,7 +134,7 @@ def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     import pulumi
     import pulumi_oci as oci
 
-    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=oci_kms_vault["test_vault"]["id"])
+    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

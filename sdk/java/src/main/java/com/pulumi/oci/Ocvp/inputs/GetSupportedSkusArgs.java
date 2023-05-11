@@ -39,11 +39,27 @@ public final class GetSupportedSkusArgs extends com.pulumi.resources.InvokeArgs 
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    @Import(name="hostShapeName")
+    private @Nullable Output<String> hostShapeName;
+
+    /**
+     * @return A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    public Optional<Output<String>> hostShapeName() {
+        return Optional.ofNullable(this.hostShapeName);
+    }
+
     private GetSupportedSkusArgs() {}
 
     private GetSupportedSkusArgs(GetSupportedSkusArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.hostShapeName = $.hostShapeName;
     }
 
     public static Builder builder() {
@@ -96,6 +112,27 @@ public final class GetSupportedSkusArgs extends com.pulumi.resources.InvokeArgs 
 
         public Builder filters(GetSupportedSkusFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param hostShapeName A filter to return only resources that match or support the given ESXi host shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(@Nullable Output<String> hostShapeName) {
+            $.hostShapeName = hostShapeName;
+            return this;
+        }
+
+        /**
+         * @param hostShapeName A filter to return only resources that match or support the given ESXi host shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(String hostShapeName) {
+            return hostShapeName(Output.of(hostShapeName));
         }
 
         public GetSupportedSkusArgs build() {

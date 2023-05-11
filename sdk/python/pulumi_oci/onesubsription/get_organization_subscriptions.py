@@ -90,7 +90,7 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=var["compartment_id"])
+    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -124,7 +124,7 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=var["compartment_id"])
+    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

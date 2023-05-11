@@ -23,13 +23,16 @@ class GetSupportedSkusResult:
     """
     A collection of values returned by getSupportedSkus.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, items=None):
+    def __init__(__self__, compartment_id=None, filters=None, host_shape_name=None, id=None, items=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
+        if host_shape_name and not isinstance(host_shape_name, str):
+            raise TypeError("Expected argument 'host_shape_name' to be a str")
+        pulumi.set(__self__, "host_shape_name", host_shape_name)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -46,6 +49,11 @@ class GetSupportedSkusResult:
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetSupportedSkusFilterResult']]:
         return pulumi.get(self, "filters")
+
+    @property
+    @pulumi.getter(name="hostShapeName")
+    def host_shape_name(self) -> Optional[str]:
+        return pulumi.get(self, "host_shape_name")
 
     @property
     @pulumi.getter
@@ -72,12 +80,14 @@ class AwaitableGetSupportedSkusResult(GetSupportedSkusResult):
         return GetSupportedSkusResult(
             compartment_id=self.compartment_id,
             filters=self.filters,
+            host_shape_name=self.host_shape_name,
             id=self.id,
             items=self.items)
 
 
 def get_supported_skus(compartment_id: Optional[str] = None,
                        filters: Optional[Sequence[pulumi.InputType['GetSupportedSkusFilterArgs']]] = None,
+                       host_shape_name: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedSkusResult:
     """
     This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -90,21 +100,25 @@ def get_supported_skus(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"])
+    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        host_shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str host_shape_name: A filter to return only resources that match or support the given ESXi host shape.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['hostShapeName'] = host_shape_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getSupportedSkus:getSupportedSkus', __args__, opts=opts, typ=GetSupportedSkusResult).value
 
     return AwaitableGetSupportedSkusResult(
         compartment_id=__ret__.compartment_id,
         filters=__ret__.filters,
+        host_shape_name=__ret__.host_shape_name,
         id=__ret__.id,
         items=__ret__.items)
 
@@ -112,6 +126,7 @@ def get_supported_skus(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_supported_skus)
 def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSupportedSkusFilterArgs']]]]] = None,
+                              host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedSkusResult]:
     """
     This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -124,10 +139,12 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"])
+    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        host_shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str host_shape_name: A filter to return only resources that match or support the given ESXi host shape.
     """
     ...

@@ -429,15 +429,15 @@ class Usage(pulumi.CustomResource):
             compartment_depth=var["usage_compartment_depth"],
             filter=var["usage_filter"],
             forecast=oci.metering_computation.UsageForecastArgs(
-                time_forecast_ended=var["usage_forecast_time_forecast_ended"],
-                forecast_type=var["usage_forecast_forecast_type"],
-                time_forecast_started=var["usage_forecast_time_forecast_started"],
+                time_forecast_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                forecast_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_forecast_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             group_bies=var["usage_group_by"],
             group_by_tags=[oci.metering_computation.UsageGroupByTagArgs(
-                key=var["usage_group_by_tag_key"],
-                namespace=var["usage_group_by_tag_namespace"],
-                value=var["usage_group_by_tag_value"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             is_aggregate_by_time=var["usage_is_aggregate_by_time"],
             query_type=var["usage_query_type"])
@@ -486,15 +486,15 @@ class Usage(pulumi.CustomResource):
             compartment_depth=var["usage_compartment_depth"],
             filter=var["usage_filter"],
             forecast=oci.metering_computation.UsageForecastArgs(
-                time_forecast_ended=var["usage_forecast_time_forecast_ended"],
-                forecast_type=var["usage_forecast_forecast_type"],
-                time_forecast_started=var["usage_forecast_time_forecast_started"],
+                time_forecast_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                forecast_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_forecast_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             group_bies=var["usage_group_by"],
             group_by_tags=[oci.metering_computation.UsageGroupByTagArgs(
-                key=var["usage_group_by_tag_key"],
-                namespace=var["usage_group_by_tag_namespace"],
-                value=var["usage_group_by_tag_value"],
+                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             is_aggregate_by_time=var["usage_is_aggregate_by_time"],
             query_type=var["usage_query_type"])

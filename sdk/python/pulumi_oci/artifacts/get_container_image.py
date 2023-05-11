@@ -247,7 +247,7 @@ def get_container_image(image_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image = oci.Artifacts.get_container_image(image_id=var["container_image_id"])
+    test_container_image = oci.Artifacts.get_container_image(image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -292,7 +292,7 @@ def get_container_image_output(image_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image = oci.Artifacts.get_container_image(image_id=var["container_image_id"])
+    test_container_image = oci.Artifacts.get_container_image(image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

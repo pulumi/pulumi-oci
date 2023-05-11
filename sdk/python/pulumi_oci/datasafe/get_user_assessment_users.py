@@ -281,24 +281,24 @@ def get_user_assessment_users(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_user_access_level"],
-        account_status=var["user_assessment_user_account_status"],
-        authentication_type=var["user_assessment_user_authentication_type"],
-        compartment_id_in_subtree=var["user_assessment_user_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_last_login_greater_than_or_equal_to=var["user_assessment_user_time_last_login_greater_than_or_equal_to"],
-        time_last_login_less_than=var["user_assessment_user_time_last_login_less_than"],
-        time_password_last_changed_greater_than_or_equal_to=var["user_assessment_user_time_password_last_changed_greater_than_or_equal_to"],
-        time_password_last_changed_less_than=var["user_assessment_user_time_password_last_changed_less_than"],
-        time_user_created_greater_than_or_equal_to=var["user_assessment_user_time_user_created_greater_than_or_equal_to"],
-        time_user_created_less_than=var["user_assessment_user_time_user_created_less_than"],
-        user_category=var["user_assessment_user_user_category"],
-        user_key=var["user_assessment_user_user_key"],
-        user_name=oci_identity_user["test_user"]["name"],
-        user_profile=var["user_assessment_user_user_profile"],
-        user_role=var["user_assessment_user_user_role"],
-        user_type=var["user_assessment_user_user_type"])
+    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        account_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        authentication_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_last_login_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_last_login_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_password_last_changed_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_password_last_changed_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_user_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_user_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_profile=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_role=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -408,24 +408,24 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_user_access_level"],
-        account_status=var["user_assessment_user_account_status"],
-        authentication_type=var["user_assessment_user_authentication_type"],
-        compartment_id_in_subtree=var["user_assessment_user_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_last_login_greater_than_or_equal_to=var["user_assessment_user_time_last_login_greater_than_or_equal_to"],
-        time_last_login_less_than=var["user_assessment_user_time_last_login_less_than"],
-        time_password_last_changed_greater_than_or_equal_to=var["user_assessment_user_time_password_last_changed_greater_than_or_equal_to"],
-        time_password_last_changed_less_than=var["user_assessment_user_time_password_last_changed_less_than"],
-        time_user_created_greater_than_or_equal_to=var["user_assessment_user_time_user_created_greater_than_or_equal_to"],
-        time_user_created_less_than=var["user_assessment_user_time_user_created_less_than"],
-        user_category=var["user_assessment_user_user_category"],
-        user_key=var["user_assessment_user_user_key"],
-        user_name=oci_identity_user["test_user"]["name"],
-        user_profile=var["user_assessment_user_user_profile"],
-        user_role=var["user_assessment_user_user_role"],
-        user_type=var["user_assessment_user_user_type"])
+    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        account_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        authentication_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_last_login_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_last_login_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_password_last_changed_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_password_last_changed_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_user_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_user_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_profile=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_role=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

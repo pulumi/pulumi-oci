@@ -64,7 +64,6 @@ namespace Pulumi.Oci.ServiceMesh
     ///             },
     ///         },
     ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-    ///         Name = @var.Ingress_gateway_name,
     ///         AccessLogging = new Oci.ServiceMesh.Inputs.IngressGatewayAccessLoggingArgs
     ///         {
     ///             IsEnabled = @var.Ingress_gateway_access_logging_is_enabled,
@@ -297,8 +296,8 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public IngressGatewayArgs()
         {

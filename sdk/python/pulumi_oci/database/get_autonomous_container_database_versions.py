@@ -100,8 +100,8 @@ def get_autonomous_container_database_versions(compartment_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=var["compartment_id"],
-        service_component=var["autonomous_container_database_version_service_component"])
+    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_component=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -139,8 +139,8 @@ def get_autonomous_container_database_versions_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=var["compartment_id"],
-        service_component=var["autonomous_container_database_version_service_component"])
+    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_component=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

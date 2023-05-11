@@ -385,10 +385,10 @@ def get_computed_usage(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=var["compartment_id"],
-        computed_usage_id=oci_osub_usage_computed_usage["test_computed_usage"]["id"],
-        fields=var["computed_usage_fields"],
-        x_one_origin_region=var["computed_usage_x_one_origin_region"])
+    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        computed_usage_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        x_one_origin_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -454,10 +454,10 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=var["compartment_id"],
-        computed_usage_id=oci_osub_usage_computed_usage["test_computed_usage"]["id"],
-        fields=var["computed_usage_fields"],
-        x_one_origin_region=var["computed_usage_x_one_origin_region"])
+    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        computed_usage_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        x_one_origin_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

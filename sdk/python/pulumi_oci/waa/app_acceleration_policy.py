@@ -350,11 +350,11 @@ class AppAccelerationPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             },
             response_caching_policy=oci.waa.AppAccelerationPolicyResponseCachingPolicyArgs(
-                is_response_header_based_caching_enabled=var["web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled"],
+                is_response_header_based_caching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             response_compression_policy=oci.waa.AppAccelerationPolicyResponseCompressionPolicyArgs(
                 gzip_compression=oci.waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs(
-                    is_enabled=var["web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled"],
+                    is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ),
             system_tags=var["web_app_acceleration_policy_system_tags"])
@@ -405,11 +405,11 @@ class AppAccelerationPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             },
             response_caching_policy=oci.waa.AppAccelerationPolicyResponseCachingPolicyArgs(
-                is_response_header_based_caching_enabled=var["web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled"],
+                is_response_header_based_caching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             response_compression_policy=oci.waa.AppAccelerationPolicyResponseCompressionPolicyArgs(
                 gzip_compression=oci.waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs(
-                    is_enabled=var["web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled"],
+                    is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ),
             system_tags=var["web_app_acceleration_policy_system_tags"])

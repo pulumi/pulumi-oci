@@ -82,7 +82,11 @@ import (
 //					WeeksOfMonths: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_weeks_of_month),
 //				},
 //				MultiRackConfigurationFile: pulumi.Any(_var.Exadata_infrastructure_multi_rack_configuration_file),
-//				StorageCount:               pulumi.Any(_var.Exadata_infrastructure_storage_count),
+//				NetworkBondingModeDetails: &database.ExadataInfrastructureNetworkBondingModeDetailsArgs{
+//					BackupNetworkBondingMode: pulumi.Any(_var.Exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode),
+//					ClientNetworkBondingMode: pulumi.Any(_var.Exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode),
+//				},
+//				StorageCount: pulumi.Any(_var.Exadata_infrastructure_storage_count),
 //			})
 //			if err != nil {
 //				return err
@@ -178,6 +182,8 @@ type ExadataInfrastructure struct {
 	MultiRackConfigurationFile pulumi.StringPtrOutput `pulumi:"multiRackConfigurationFile"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringOutput `pulumi:"netmask"`
+	// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+	NetworkBondingModeDetails ExadataInfrastructureNetworkBondingModeDetailsOutput `pulumi:"networkBondingModeDetails"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers pulumi.StringArrayOutput `pulumi:"ntpServers"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -332,6 +338,8 @@ type exadataInfrastructureState struct {
 	MultiRackConfigurationFile *string `pulumi:"multiRackConfigurationFile"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask *string `pulumi:"netmask"`
+	// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+	NetworkBondingModeDetails *ExadataInfrastructureNetworkBondingModeDetails `pulumi:"networkBondingModeDetails"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers []string `pulumi:"ntpServers"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -422,6 +430,8 @@ type ExadataInfrastructureState struct {
 	MultiRackConfigurationFile pulumi.StringPtrInput
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringPtrInput
+	// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+	NetworkBondingModeDetails ExadataInfrastructureNetworkBondingModeDetailsPtrInput
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers pulumi.StringArrayInput
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -484,6 +494,8 @@ type exadataInfrastructureArgs struct {
 	MultiRackConfigurationFile *string `pulumi:"multiRackConfigurationFile"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask string `pulumi:"netmask"`
+	// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+	NetworkBondingModeDetails *ExadataInfrastructureNetworkBondingModeDetails `pulumi:"networkBondingModeDetails"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers []string `pulumi:"ntpServers"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -537,6 +549,8 @@ type ExadataInfrastructureArgs struct {
 	MultiRackConfigurationFile pulumi.StringPtrInput
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringInput
+	// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+	NetworkBondingModeDetails ExadataInfrastructureNetworkBondingModeDetailsPtrInput
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers pulumi.StringArrayInput
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -818,6 +832,13 @@ func (o ExadataInfrastructureOutput) MultiRackConfigurationFile() pulumi.StringP
 // (Updatable) The netmask for the control plane network.
 func (o ExadataInfrastructureOutput) Netmask() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.Netmask }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+func (o ExadataInfrastructureOutput) NetworkBondingModeDetails() ExadataInfrastructureNetworkBondingModeDetailsOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) ExadataInfrastructureNetworkBondingModeDetailsOutput {
+		return v.NetworkBondingModeDetails
+	}).(ExadataInfrastructureNetworkBondingModeDetailsOutput)
 }
 
 // (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.

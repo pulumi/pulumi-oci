@@ -129,10 +129,10 @@ def get_private_application_packages(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"],
-        display_name=var["private_application_package_display_name"],
-        package_types=var["private_application_package_package_type"],
-        private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
+    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        package_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        private_application_package_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"],
-        display_name=var["private_application_package_display_name"],
-        package_types=var["private_application_package_package_type"],
-        private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
+    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        package_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        private_application_package_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

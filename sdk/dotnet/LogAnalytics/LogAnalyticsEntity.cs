@@ -28,7 +28,6 @@ namespace Pulumi.Oci.LogAnalytics
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         EntityTypeName = @var.Log_analytics_entity_entity_type_name,
-    ///         Name = @var.Log_analytics_entity_name,
     ///         Namespace = @var.Log_analytics_entity_namespace,
     ///         CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
     ///         DefinedTags = 
@@ -283,8 +282,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// (Updatable) Log analytics entity name.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The Logging Analytics namespace used for the request.

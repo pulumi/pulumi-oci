@@ -106,8 +106,8 @@ def get_subscription_rewards(filters: Optional[Sequence[pulumi.InputType['GetSub
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+    test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -145,8 +145,8 @@ def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+    test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -242,19 +242,19 @@ def get_management_agents(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_access_level"],
-        availability_status=var["management_agent_availability_status"],
-        compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
-        display_name=var["management_agent_display_name"],
-        gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
-        host_id=oci_management_agent_host["test_host"]["id"],
-        install_type=var["management_agent_install_type"],
-        is_customer_deployed=var["management_agent_is_customer_deployed"],
-        platform_types=var["management_agent_platform_type"],
-        plugin_names=var["management_agent_plugin_name"],
-        state=var["management_agent_state"],
-        versions=var["management_agent_version"])
+    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        gateway_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        install_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_customer_deployed=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        platform_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        plugin_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        versions=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -338,19 +338,19 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_access_level"],
-        availability_status=var["management_agent_availability_status"],
-        compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
-        display_name=var["management_agent_display_name"],
-        gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
-        host_id=oci_management_agent_host["test_host"]["id"],
-        install_type=var["management_agent_install_type"],
-        is_customer_deployed=var["management_agent_is_customer_deployed"],
-        platform_types=var["management_agent_platform_type"],
-        plugin_names=var["management_agent_plugin_name"],
-        state=var["management_agent_state"],
-        versions=var["management_agent_version"])
+    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        gateway_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        install_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_customer_deployed=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        platform_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        plugin_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        versions=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

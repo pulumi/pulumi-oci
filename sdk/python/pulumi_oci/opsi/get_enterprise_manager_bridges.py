@@ -131,11 +131,11 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["enterprise_manager_bridge_compartment_id_in_subtree"],
-        display_name=var["enterprise_manager_bridge_display_name"],
-        id=var["enterprise_manager_bridge_id"],
-        states=var["enterprise_manager_bridge_state"])
+    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -185,11 +185,11 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["enterprise_manager_bridge_compartment_id_in_subtree"],
-        display_name=var["enterprise_manager_bridge_display_name"],
-        id=var["enterprise_manager_bridge_id"],
-        states=var["enterprise_manager_bridge_state"])
+    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

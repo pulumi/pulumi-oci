@@ -90,7 +90,7 @@ def get_path_route_sets(filters: Optional[Sequence[pulumi.InputType['GetPathRout
     import pulumi
     import pulumi_oci as oci
 
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -124,7 +124,7 @@ def get_path_route_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

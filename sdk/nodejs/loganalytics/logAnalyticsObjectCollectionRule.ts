@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     logGroupId: oci_logging_log_group.test_log_group.id,
  *     logSourceName: _var.log_analytics_object_collection_rule_log_source_name,
- *     name: _var.log_analytics_object_collection_rule_name,
  *     namespace: _var.log_analytics_object_collection_rule_namespace,
  *     osBucketName: oci_objectstorage_bucket.test_bucket.name,
  *     osNamespace: _var.log_analytics_object_collection_rule_os_namespace,
@@ -238,9 +237,6 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
             if ((!args || args.logSourceName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'logSourceName'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.namespace === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
@@ -451,7 +447,7 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */

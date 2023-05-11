@@ -572,9 +572,9 @@ class MaskingPolicy(pulumi.CustomResource):
 
         test_masking_policy = oci.data_safe.MaskingPolicy("testMaskingPolicy",
             column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=var["masking_policy_column_source_column_source"],
-                sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-                target_id=oci_cloud_guard_target["test_target"]["id"],
+                column_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             compartment_id=var["compartment_id"],
             defined_tags={
@@ -654,9 +654,9 @@ class MaskingPolicy(pulumi.CustomResource):
 
         test_masking_policy = oci.data_safe.MaskingPolicy("testMaskingPolicy",
             column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=var["masking_policy_column_source_column_source"],
-                sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-                target_id=oci_cloud_guard_target["test_target"]["id"],
+                column_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             compartment_id=var["compartment_id"],
             defined_tags={

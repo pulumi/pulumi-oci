@@ -9,12 +9,14 @@ import com.pulumi.oci.Ocvp.outputs.GetSupportedSkusItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSupportedSkusResult {
     private String compartmentId;
     private @Nullable List<GetSupportedSkusFilter> filters;
+    private @Nullable String hostShapeName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -32,6 +34,9 @@ public final class GetSupportedSkusResult {
     }
     public List<GetSupportedSkusFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
+    }
+    public Optional<String> hostShapeName() {
+        return Optional.ofNullable(this.hostShapeName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -59,6 +64,7 @@ public final class GetSupportedSkusResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSupportedSkusFilter> filters;
+        private @Nullable String hostShapeName;
         private String id;
         private List<GetSupportedSkusItem> items;
         public Builder() {}
@@ -66,6 +72,7 @@ public final class GetSupportedSkusResult {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
+    	      this.hostShapeName = defaults.hostShapeName;
     	      this.id = defaults.id;
     	      this.items = defaults.items;
         }
@@ -84,6 +91,11 @@ public final class GetSupportedSkusResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
+        public Builder hostShapeName(@Nullable String hostShapeName) {
+            this.hostShapeName = hostShapeName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -100,6 +112,7 @@ public final class GetSupportedSkusResult {
             final var o = new GetSupportedSkusResult();
             o.compartmentId = compartmentId;
             o.filters = filters;
+            o.hostShapeName = hostShapeName;
             o.id = id;
             o.items = items;
             return o;

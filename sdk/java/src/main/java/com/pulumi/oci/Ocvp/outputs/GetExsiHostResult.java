@@ -124,7 +124,7 @@ public final class GetExsiHostResult {
      */
     private String upgradedReplacementEsxiHostId;
     /**
-     * @return The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * @return The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
     private String vmwareSoftwareVersion;
@@ -288,7 +288,7 @@ public final class GetExsiHostResult {
         return this.upgradedReplacementEsxiHostId;
     }
     /**
-     * @return The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * @return The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
     public String vmwareSoftwareVersion() {

@@ -120,10 +120,10 @@ def get_applications(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.Functions.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        id=var["application_id"],
-        state=var["application_state"])
+    test_applications = oci.Functions.get_applications(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -168,10 +168,10 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.Functions.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        id=var["application_id"],
-        state=var["application_state"])
+    test_applications = oci.Functions.get_applications(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

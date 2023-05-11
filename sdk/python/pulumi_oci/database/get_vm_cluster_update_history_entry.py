@@ -160,8 +160,8 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=oci_database_update_history_entry["test_update_history_entry"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -202,8 +202,8 @@ def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=oci_database_update_history_entry["test_update_history_entry"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

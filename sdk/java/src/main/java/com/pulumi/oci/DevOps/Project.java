@@ -46,7 +46,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testProject = new Project(&#34;testProject&#34;, ProjectArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.project_name())
  *             .notificationConfig(ProjectNotificationConfigArgs.builder()
  *                 .topicId(oci_ons_notification_topic.test_notification_topic().id())
  *                 .build())

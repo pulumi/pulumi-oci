@@ -235,7 +235,7 @@ def get_virtual_deployment(virtual_deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_deployment = oci.ServiceMesh.get_virtual_deployment(virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"])
+    test_virtual_deployment = oci.ServiceMesh.get_virtual_deployment(virtual_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -279,7 +279,7 @@ def get_virtual_deployment_output(virtual_deployment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_deployment = oci.ServiceMesh.get_virtual_deployment(virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"])
+    test_virtual_deployment = oci.ServiceMesh.get_virtual_deployment(virtual_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

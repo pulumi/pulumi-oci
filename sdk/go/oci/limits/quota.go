@@ -32,7 +32,6 @@ import (
 //			_, err := Limits.NewQuota(ctx, "testQuota", &Limits.QuotaArgs{
 //				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
 //				Description:   pulumi.Any(_var.Quota_description),
-//				Name:          pulumi.Any(_var.Quota_name),
 //				Statements:    pulumi.Any(_var.Quota_statements),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
@@ -103,9 +102,6 @@ func NewQuota(ctx *pulumi.Context,
 	}
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Statements == nil {
 		return nil, errors.New("invalid value for required argument 'Statements'")
@@ -193,7 +189,7 @@ type quotaArgs struct {
 	// Locks associated with this resource.
 	Locks []QuotaLock `pulumi:"locks"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
 	Statements []string `pulumi:"statements"`
 }
@@ -211,7 +207,7 @@ type QuotaArgs struct {
 	// Locks associated with this resource.
 	Locks QuotaLockArrayInput
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
 	Statements pulumi.StringArrayInput
 }

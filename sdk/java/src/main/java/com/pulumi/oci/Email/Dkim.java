@@ -51,7 +51,6 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.dkim_description())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .name(var_.dkim_name())
  *             .build());
  * 
  *     }

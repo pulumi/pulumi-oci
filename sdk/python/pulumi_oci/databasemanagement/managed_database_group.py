@@ -17,22 +17,23 @@ __all__ = ['ManagedDatabaseGroupArgs', 'ManagedDatabaseGroup']
 class ManagedDatabaseGroupArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None,
-                 managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]]] = None):
+                 managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ManagedDatabaseGroup resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the Managed Database Group.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
+        :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "name", name)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if managed_databases is not None:
             pulumi.set(__self__, "managed_databases", managed_databases)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -45,18 +46,6 @@ class ManagedDatabaseGroupArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -81,6 +70,18 @@ class ManagedDatabaseGroupArgs:
     @managed_databases.setter
     def managed_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]]]):
         pulumi.set(self, "managed_databases", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -227,10 +228,9 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
 
         test_managed_database_group = oci.database_management.ManagedDatabaseGroup("testManagedDatabaseGroup",
             compartment_id=var["compartment_id"],
-            name=var["managed_database_group_name"],
             description=var["managed_database_group_description"],
             managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=var["managed_database_id"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -269,10 +269,9 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
 
         test_managed_database_group = oci.database_management.ManagedDatabaseGroup("testManagedDatabaseGroup",
             compartment_id=var["compartment_id"],
-            name=var["managed_database_group_name"],
             description=var["managed_database_group_description"],
             managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=var["managed_database_id"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )])
         ```
 
@@ -317,8 +316,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["description"] = description
             __props__.__dict__["managed_databases"] = managed_databases
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

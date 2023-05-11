@@ -150,7 +150,7 @@ def get_public_ip_pool(public_ip_pool_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -187,7 +187,7 @@ def get_public_ip_pool_output(public_ip_pool_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

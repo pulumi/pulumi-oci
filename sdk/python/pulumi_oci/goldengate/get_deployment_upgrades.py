@@ -132,10 +132,10 @@ def get_deployment_upgrades(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrades = oci.GoldenGate.get_deployment_upgrades(compartment_id=var["compartment_id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        display_name=var["deployment_upgrade_display_name"],
-        state=var["deployment_upgrade_state"])
+    test_deployment_upgrades = oci.GoldenGate.get_deployment_upgrades(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -181,10 +181,10 @@ def get_deployment_upgrades_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrades = oci.GoldenGate.get_deployment_upgrades(compartment_id=var["compartment_id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        display_name=var["deployment_upgrade_display_name"],
-        state=var["deployment_upgrade_state"])
+    test_deployment_upgrades = oci.GoldenGate.get_deployment_upgrades(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

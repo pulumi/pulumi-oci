@@ -203,11 +203,11 @@ def get_repository_file_diff(base_version: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_file_diff = oci.DevOps.get_repository_file_diff(base_version=var["repository_file_diff_base_version"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_file_diff_target_version"],
-        file_path=var["repository_file_diff_file_path"],
-        is_comparison_from_merge_base=var["repository_file_diff_is_comparison_from_merge_base"])
+    test_repository_file_diff = oci.DevOps.get_repository_file_diff(base_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_comparison_from_merge_base=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -261,11 +261,11 @@ def get_repository_file_diff_output(base_version: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_file_diff = oci.DevOps.get_repository_file_diff(base_version=var["repository_file_diff_base_version"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_file_diff_target_version"],
-        file_path=var["repository_file_diff_file_path"],
-        is_comparison_from_merge_base=var["repository_file_diff_is_comparison_from_merge_base"])
+    test_repository_file_diff = oci.DevOps.get_repository_file_diff(base_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_comparison_from_merge_base=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

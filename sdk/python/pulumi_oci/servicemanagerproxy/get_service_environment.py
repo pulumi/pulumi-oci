@@ -140,8 +140,8 @@ def get_service_environment(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=var["compartment_id"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"])
+    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -180,8 +180,8 @@ def get_service_environment_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=var["compartment_id"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"])
+    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        service_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  *
  * const testWorkspaceFolder = new oci.dataintegration.WorkspaceFolder("testWorkspaceFolder", {
  *     identifier: _var.workspace_folder_identifier,
- *     name: _var.workspace_folder_name,
  *     registryMetadata: {
  *         aggregatorKey: _var.workspace_folder_registry_metadata_aggregator_key,
  *         isFavorite: _var.workspace_folder_registry_metadata_is_favorite,
@@ -164,9 +163,6 @@ export class WorkspaceFolder extends pulumi.CustomResource {
             if ((!args || args.identifier === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.registryMetadata === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'registryMetadata'");
             }
@@ -285,7 +281,7 @@ export interface WorkspaceFolderArgs {
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */

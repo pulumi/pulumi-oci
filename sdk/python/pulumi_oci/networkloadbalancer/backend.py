@@ -379,7 +379,6 @@ class Backend(pulumi.CustomResource):
             is_backup=var["backend_is_backup"],
             is_drain=var["backend_is_drain"],
             is_offline=var["backend_is_offline"],
-            name=var["backend_name"],
             target_id=oci_cloud_guard_target["test_target"]["id"],
             weight=var["backend_weight"])
         ```
@@ -430,7 +429,6 @@ class Backend(pulumi.CustomResource):
             is_backup=var["backend_is_backup"],
             is_drain=var["backend_is_drain"],
             is_offline=var["backend_is_offline"],
-            name=var["backend_name"],
             target_id=oci_cloud_guard_target["test_target"]["id"],
             weight=var["backend_weight"])
         ```

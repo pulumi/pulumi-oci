@@ -272,8 +272,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// (Updatable) User name
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// User's ocid

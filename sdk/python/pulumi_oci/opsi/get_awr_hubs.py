@@ -133,11 +133,11 @@ def get_awr_hubs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["awr_hub_display_name"],
-        id=var["awr_hub_id"],
-        states=var["awr_hub_state"])
+    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -186,11 +186,11 @@ def get_awr_hubs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["awr_hub_display_name"],
-        id=var["awr_hub_id"],
-        states=var["awr_hub_state"])
+    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

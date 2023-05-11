@@ -28,7 +28,6 @@ namespace Pulumi.Oci.Dns
     ///     {
     ///         IsForwarding = @var.Resolver_endpoint_is_forwarding,
     ///         IsListening = @var.Resolver_endpoint_is_listening,
-    ///         Name = @var.Resolver_endpoint_name,
     ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
     ///         SubnetId = oci_core_subnet.Test_subnet.Id,
     ///         Scope = "PRIVATE",
@@ -227,8 +226,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;

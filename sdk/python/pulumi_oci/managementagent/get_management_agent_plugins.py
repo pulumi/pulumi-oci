@@ -136,11 +136,11 @@ def get_management_agent_plugins(agent_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=var["compartment_id"],
-        agent_id=var["management_agent_id"],
-        display_name=var["management_agent_plugin_display_name"],
-        platform_types=var["management_agent_plugin_platform_type"],
-        state=var["management_agent_plugin_state"])
+    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        platform_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -190,11 +190,11 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=var["compartment_id"],
-        agent_id=var["management_agent_id"],
-        display_name=var["management_agent_plugin_display_name"],
-        platform_types=var["management_agent_plugin_platform_type"],
-        state=var["management_agent_plugin_state"])
+    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        platform_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

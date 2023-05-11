@@ -47,7 +47,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testPathRouteSet = new PathRouteSet(&#34;testPathRouteSet&#34;, PathRouteSetArgs.builder()        
  *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
- *             .name(var_.path_route_set_name())
  *             .pathRoutes(PathRouteSetPathRouteArgs.builder()
  *                 .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
  *                 .path(var_.path_route_set_path_routes_path())

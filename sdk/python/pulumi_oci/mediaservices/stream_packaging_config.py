@@ -362,8 +362,8 @@ class StreamPackagingConfig(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             encryption=oci.media_services.StreamPackagingConfigEncryptionArgs(
-                algorithm=var["stream_packaging_config_encryption_algorithm"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             freeform_tags={
                 "bar-key": "value",
@@ -414,8 +414,8 @@ class StreamPackagingConfig(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             encryption=oci.media_services.StreamPackagingConfigEncryptionArgs(
-                algorithm=var["stream_packaging_config_encryption_algorithm"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             freeform_tags={
                 "bar-key": "value",

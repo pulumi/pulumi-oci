@@ -27,7 +27,6 @@ namespace Pulumi.Oci.DataScience
     ///     var testModelVersionSet = new Oci.DataScience.ModelVersionSet("testModelVersionSet", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Model_version_set_name,
     ///         ProjectId = oci_datascience_project.Test_project.Id,
     ///         DefinedTags = 
     ///         {
@@ -199,8 +198,8 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model version set.

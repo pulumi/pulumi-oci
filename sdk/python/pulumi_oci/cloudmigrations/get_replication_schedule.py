@@ -186,7 +186,7 @@ def get_replication_schedule(replication_schedule_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
+    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -226,7 +226,7 @@ def get_replication_schedule_output(replication_schedule_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
+    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -134,12 +134,12 @@ def get_alerts(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alerts = oci.DataSafe.get_alerts(compartment_id=var["compartment_id"],
-        access_level=var["alert_access_level"],
-        compartment_id_in_subtree=var["alert_compartment_id_in_subtree"],
-        fields=var["alert_field"],
-        id=var["alert_id"],
-        scim_query=var["alert_scim_query"])
+    test_alerts = oci.DataSafe.get_alerts(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -192,12 +192,12 @@ def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_alerts = oci.DataSafe.get_alerts(compartment_id=var["compartment_id"],
-        access_level=var["alert_access_level"],
-        compartment_id_in_subtree=var["alert_compartment_id_in_subtree"],
-        fields=var["alert_field"],
-        id=var["alert_id"],
-        scim_query=var["alert_scim_query"])
+    test_alerts = oci.DataSafe.get_alerts(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

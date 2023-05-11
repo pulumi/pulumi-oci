@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> NextSku { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         /// </summary>
         [Output("nonUpgradedEsxiHostId")]
         public Output<string> NonUpgradedEsxiHostId { get; private set; } = null!;
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> UpgradedReplacementEsxiHostId { get; private set; } = null!;
 
         /// <summary>
-        /// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         /// </summary>
         [Output("vmwareSoftwareVersion")]
         public Output<string> VmwareSoftwareVersion { get; private set; } = null!;
@@ -281,7 +281,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? NextSku { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         /// </summary>
         [Input("nonUpgradedEsxiHostId")]
         public Input<string>? NonUpgradedEsxiHostId { get; set; }
@@ -397,7 +397,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? NextSku { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         /// </summary>
         [Input("nonUpgradedEsxiHostId")]
         public Input<string>? NonUpgradedEsxiHostId { get; set; }
@@ -439,7 +439,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? UpgradedReplacementEsxiHostId { get; set; }
 
         /// <summary>
-        /// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         /// </summary>
         [Input("vmwareSoftwareVersion")]
         public Input<string>? VmwareSoftwareVersion { get; set; }

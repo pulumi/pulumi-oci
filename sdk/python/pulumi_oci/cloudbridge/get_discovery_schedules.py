@@ -129,10 +129,10 @@ def get_discovery_schedules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=var["compartment_id"],
-        discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-        display_name=var["discovery_schedule_display_name"],
-        state=var["discovery_schedule_state"])
+    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        discovery_schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=var["compartment_id"],
-        discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-        display_name=var["discovery_schedule_display_name"],
-        state=var["discovery_schedule_state"])
+    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        discovery_schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

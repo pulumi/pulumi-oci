@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// Whether the shape supports "MONTH" SKU.
+        /// </summary>
+        public readonly bool IsSupportMonthlySku;
+        /// <summary>
         /// Indicates whether the shape supports shielded instances.
         /// </summary>
         public readonly bool IsSupportShieldedInstances;
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string description,
 
+            bool isSupportMonthlySku,
+
             bool isSupportShieldedInstances,
 
             string name,
@@ -72,6 +78,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         {
             DefaultOcpuCount = defaultOcpuCount;
             Description = description;
+            IsSupportMonthlySku = isSupportMonthlySku;
             IsSupportShieldedInstances = isSupportShieldedInstances;
             Name = name;
             ShapeFamily = shapeFamily;

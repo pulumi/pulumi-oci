@@ -705,13 +705,13 @@ class IntegrationInstance(pulumi.CustomResource):
             is_byol=var["integration_instance_is_byol"],
             message_packs=var["integration_instance_message_packs"],
             alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=var["integration_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             consumption_model=var["integration_instance_consumption_model"],
             custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=var["integration_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -723,13 +723,13 @@ class IntegrationInstance(pulumi.CustomResource):
             is_file_server_enabled=var["integration_instance_is_file_server_enabled"],
             is_visual_builder_enabled=var["integration_instance_is_visual_builder_enabled"],
             network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["integration_instance_network_endpoint_details_network_endpoint_type"],
-                allowlisted_http_ips=var["integration_instance_network_endpoint_details_allowlisted_http_ips"],
+                network_endpoint_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                allowlisted_http_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_id"],
-                    allowlisted_ips=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips"],
+                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    allowlisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
+                is_integration_vcn_allowlisted=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])
@@ -787,13 +787,13 @@ class IntegrationInstance(pulumi.CustomResource):
             is_byol=var["integration_instance_is_byol"],
             message_packs=var["integration_instance_message_packs"],
             alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=var["integration_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             consumption_model=var["integration_instance_consumption_model"],
             custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=var["integration_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -805,13 +805,13 @@ class IntegrationInstance(pulumi.CustomResource):
             is_file_server_enabled=var["integration_instance_is_file_server_enabled"],
             is_visual_builder_enabled=var["integration_instance_is_visual_builder_enabled"],
             network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["integration_instance_network_endpoint_details_network_endpoint_type"],
-                allowlisted_http_ips=var["integration_instance_network_endpoint_details_allowlisted_http_ips"],
+                network_endpoint_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                allowlisted_http_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_id"],
-                    allowlisted_ips=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips"],
+                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    allowlisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
+                is_integration_vcn_allowlisted=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])

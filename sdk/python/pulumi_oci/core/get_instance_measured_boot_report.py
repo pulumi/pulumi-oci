@@ -91,7 +91,7 @@ def get_instance_measured_boot_report(instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -123,7 +123,7 @@ def get_instance_measured_boot_report_output(instance_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

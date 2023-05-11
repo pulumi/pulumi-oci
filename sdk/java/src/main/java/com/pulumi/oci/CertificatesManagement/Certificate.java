@@ -96,7 +96,6 @@ import javax.annotation.Nullable;
  *                 .versionName(var_.certificate_certificate_config_version_name())
  *                 .build())
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.certificate_name())
  *             .certificateRules(CertificateCertificateRuleArgs.builder()
  *                 .advanceRenewalPeriod(var_.certificate_certificate_rules_advance_renewal_period())
  *                 .renewalInterval(var_.certificate_certificate_rules_renewal_interval())

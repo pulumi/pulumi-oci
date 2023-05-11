@@ -439,7 +439,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"])
+    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -500,7 +500,7 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"])
+    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

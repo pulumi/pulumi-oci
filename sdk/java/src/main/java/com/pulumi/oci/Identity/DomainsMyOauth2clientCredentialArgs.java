@@ -99,15 +99,15 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
      * (Updatable) User name
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) User name
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -362,7 +362,7 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -556,7 +556,6 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         public DomainsMyOauth2clientCredentialArgs build() {
             $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
             $.scopes = Objects.requireNonNull($.scopes, "expected parameter 'scopes' to be non-null");
             return $;

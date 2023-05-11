@@ -40,7 +40,6 @@ namespace Pulumi.Oci.Email
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Name = @var.Dkim_name,
     ///     });
     /// 
     /// });

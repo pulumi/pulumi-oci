@@ -17,22 +17,21 @@ __all__ = ['ProjectArgs', 'Project']
 class ProjectArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  notification_config: pulumi.Input['ProjectNotificationConfigArgs'],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Project resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the project is created.
-        :param pulumi.Input[str] name: Project name (case-sensitive).
         :param pulumi.Input['ProjectNotificationConfigArgs'] notification_config: (Updatable) Notification configuration for the project.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Project description.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] name: Project name (case-sensitive).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "notification_config", notification_config)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -40,6 +39,8 @@ class ProjectArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -52,18 +53,6 @@ class ProjectArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        Project name (case-sensitive).
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="notificationConfig")
@@ -112,6 +101,18 @@ class ProjectArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Project name (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -339,9 +340,8 @@ class Project(pulumi.CustomResource):
 
         test_project = oci.dev_ops.Project("testProject",
             compartment_id=var["compartment_id"],
-            name=var["project_name"],
             notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+                topic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -388,9 +388,8 @@ class Project(pulumi.CustomResource):
 
         test_project = oci.dev_ops.Project("testProject",
             compartment_id=var["compartment_id"],
-            name=var["project_name"],
             notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+                topic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -445,8 +444,6 @@ class Project(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if notification_config is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_config'")

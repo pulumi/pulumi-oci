@@ -170,15 +170,15 @@ def get_audit_event_analytic(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_event_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_event_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_event_analytic_group_by"],
-        query_time_zone=var["audit_event_analytic_query_time_zone"],
-        scim_query=var["audit_event_analytic_scim_query"],
-        summary_fields=var["audit_event_analytic_summary_field"],
-        time_ended=var["audit_event_analytic_time_ended"],
-        time_started=var["audit_event_analytic_time_started"])
+    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        query_time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        summary_fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -246,15 +246,15 @@ def get_audit_event_analytic_output(access_level: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_event_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_event_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_event_analytic_group_by"],
-        query_time_zone=var["audit_event_analytic_query_time_zone"],
-        scim_query=var["audit_event_analytic_scim_query"],
-        summary_fields=var["audit_event_analytic_summary_field"],
-        time_ended=var["audit_event_analytic_time_ended"],
-        time_started=var["audit_event_analytic_time_started"])
+    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        query_time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        summary_fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

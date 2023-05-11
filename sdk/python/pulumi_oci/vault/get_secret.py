@@ -256,7 +256,7 @@ def get_secret(secret_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret = oci.Vault.get_secret(secret_id=oci_vault_secret["test_secret"]["id"])
+    test_secret = oci.Vault.get_secret(secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -302,7 +302,7 @@ def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret = oci.Vault.get_secret(secret_id=oci_vault_secret["test_secret"]["id"])
+    test_secret = oci.Vault.get_secret(secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

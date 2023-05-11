@@ -29,7 +29,6 @@ namespace Pulumi.Oci.Streaming
     ///     var testStreamPool = new Oci.Streaming.StreamPool("testStreamPool", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Stream_pool_name,
     ///         CustomEncryptionKey = new Oci.Streaming.Inputs.StreamPoolCustomEncryptionKeyArgs
     ///         {
     ///             KmsKeyId = oci_kms_key.Test_key.Id,
@@ -231,8 +230,8 @@ namespace Pulumi.Oci.Streaming
         /// <summary>
         /// (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// Optional parameters if a private stream pool is requested.

@@ -481,16 +481,16 @@ class JobRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             job_configuration_override_details=oci.data_science.JobRunJobConfigurationOverrideDetailsArgs(
-                job_type=var["job_run_job_configuration_override_details_job_type"],
-                command_line_arguments=var["job_run_job_configuration_override_details_command_line_arguments"],
-                environment_variables=var["job_run_job_configuration_override_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_run_job_configuration_override_details_maximum_runtime_in_minutes"],
+                job_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             job_log_configuration_override_details=oci.data_science.JobRunJobLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=var["job_run_job_log_configuration_override_details_enable_auto_log_creation"],
-                enable_logging=var["job_run_job_log_configuration_override_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_logging=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -544,16 +544,16 @@ class JobRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             job_configuration_override_details=oci.data_science.JobRunJobConfigurationOverrideDetailsArgs(
-                job_type=var["job_run_job_configuration_override_details_job_type"],
-                command_line_arguments=var["job_run_job_configuration_override_details_command_line_arguments"],
-                environment_variables=var["job_run_job_configuration_override_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_run_job_configuration_override_details_maximum_runtime_in_minutes"],
+                job_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             job_log_configuration_override_details=oci.data_science.JobRunJobLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=var["job_run_job_log_configuration_override_details_enable_auto_log_creation"],
-                enable_logging=var["job_run_job_log_configuration_override_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_logging=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

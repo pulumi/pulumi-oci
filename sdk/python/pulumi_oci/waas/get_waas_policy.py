@@ -223,7 +223,7 @@ def get_waas_policy(waas_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
+    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -266,7 +266,7 @@ def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
+    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

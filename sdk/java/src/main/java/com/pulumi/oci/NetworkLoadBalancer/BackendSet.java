@@ -58,7 +58,6 @@ import javax.annotation.Nullable;
  *                 .timeoutInMillis(var_.backend_set_health_checker_timeout_in_millis())
  *                 .urlPath(var_.backend_set_health_checker_url_path())
  *                 .build())
- *             .name(var_.backend_set_name())
  *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
  *             .policy(var_.backend_set_policy())
  *             .ipVersion(var_.backend_set_ip_version())

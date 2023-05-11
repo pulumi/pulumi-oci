@@ -103,8 +103,8 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=var["compartment_id"],
-        db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
+    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_management_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -142,8 +142,8 @@ def get_db_management_private_endpoint_associated_databases_output(compartment_i
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=var["compartment_id"],
-        db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
+    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_management_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

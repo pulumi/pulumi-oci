@@ -103,8 +103,8 @@ def get_discovery_jobs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=var["compartment_id"],
-        name=var["discovery_job_name"])
+    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -142,8 +142,8 @@ def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=var["compartment_id"],
-        name=var["discovery_job_name"])
+    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

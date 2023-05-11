@@ -16,7 +16,7 @@ class SslCipherSuiteArgs:
     def __init__(__self__, *,
                  ciphers: pulumi.Input[Sequence[pulumi.Input[str]]],
                  load_balancer_id: pulumi.Input[str],
-                 name: pulumi.Input[str]):
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SslCipherSuite resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
@@ -25,7 +25,8 @@ class SslCipherSuiteArgs:
         """
         pulumi.set(__self__, "ciphers", ciphers)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -53,14 +54,14 @@ class SslCipherSuiteArgs:
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
+    def name(self) -> Optional[pulumi.Input[str]]:
         """
         A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[str]):
+    def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
 
@@ -154,8 +155,7 @@ class SslCipherSuite(pulumi.CustomResource):
 
         test_ssl_cipher_suite = oci.load_balancer.SslCipherSuite("testSslCipherSuite",
             ciphers=var["ssl_cipher_suite_ciphers"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["ssl_cipher_suite_name"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
 
         ## Import
@@ -191,8 +191,7 @@ class SslCipherSuite(pulumi.CustomResource):
 
         test_ssl_cipher_suite = oci.load_balancer.SslCipherSuite("testSslCipherSuite",
             ciphers=var["ssl_cipher_suite_ciphers"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            name=var["ssl_cipher_suite_name"])
+            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
 
         ## Import
@@ -236,8 +235,6 @@ class SslCipherSuite(pulumi.CustomResource):
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
             __props__.__dict__["load_balancer_id"] = load_balancer_id
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["state"] = None
         super(SslCipherSuite, __self__).__init__(

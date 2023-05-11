@@ -378,9 +378,9 @@ class DeployPipeline(pulumi.CustomResource):
             },
             deploy_pipeline_parameters=oci.dev_ops.DeployPipelineDeployPipelineParametersArgs(
                 items=[oci.dev_ops.DeployPipelineDeployPipelineParametersItemArgs(
-                    name=var["deploy_pipeline_deploy_pipeline_parameters_items_name"],
-                    default_value=var["deploy_pipeline_deploy_pipeline_parameters_items_default_value"],
-                    description=var["deploy_pipeline_deploy_pipeline_parameters_items_description"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    default_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             description=var["deploy_pipeline_description"],
@@ -431,9 +431,9 @@ class DeployPipeline(pulumi.CustomResource):
             },
             deploy_pipeline_parameters=oci.dev_ops.DeployPipelineDeployPipelineParametersArgs(
                 items=[oci.dev_ops.DeployPipelineDeployPipelineParametersItemArgs(
-                    name=var["deploy_pipeline_deploy_pipeline_parameters_items_name"],
-                    default_value=var["deploy_pipeline_deploy_pipeline_parameters_items_default_value"],
-                    description=var["deploy_pipeline_deploy_pipeline_parameters_items_description"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    default_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             description=var["deploy_pipeline_description"],

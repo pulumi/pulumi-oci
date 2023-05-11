@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  * const testPreauthenticatedRequest = new oci.objectstorage.Preauthrequest("testPreauthenticatedRequest", {
  *     accessType: _var.preauthenticated_request_access_type,
  *     bucket: _var.preauthenticated_request_bucket,
- *     name: _var.preauthenticated_request_name,
  *     namespace: _var.preauthenticated_request_namespace,
  *     timeExpires: _var.preauthenticated_request_time_expires,
  *     bucketListingAction: _var.preauthenticated_request_bucket_listing_action,
@@ -141,9 +140,6 @@ export class Preauthrequest extends pulumi.CustomResource {
             if ((!args || args.bucket === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.namespace === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
@@ -238,7 +234,7 @@ export interface PreauthrequestArgs {
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The Object Storage namespace used for the request.
      */

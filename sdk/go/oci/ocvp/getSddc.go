@@ -64,6 +64,8 @@ type LookupSddcResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// Datastores used for the Sddc.
+	Datastores []GetSddcDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
@@ -146,7 +148,7 @@ type LookupSddcResult struct {
 	TimeHcxLicenseStatusUpdated string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The vSphere licenses to be used when upgrade SDDC.
+	// The vSphere licenses to use when upgrading the SDDC.
 	UpgradeLicenses []GetSddcUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn string `pulumi:"vcenterFqdn"`
@@ -162,9 +164,9 @@ type LookupSddcResult struct {
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	VsanVlanId string `pulumi:"vsanVlanId"`
-	// The link of guidance to upgrade vSphere.
+	// The link to guidance for upgrading vSphere.
 	VsphereUpgradeGuide string `pulumi:"vsphereUpgradeGuide"`
-	// The links of binary objects needed for upgrade vSphere.
+	// The links to binary objects needed to upgrade vSphere.
 	VsphereUpgradeObjects []GetSddcVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	VsphereVlanId string `pulumi:"vsphereVlanId"`
@@ -228,6 +230,11 @@ func (o LookupSddcResultOutput) CompartmentId() pulumi.StringOutput {
 // The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
 func (o LookupSddcResultOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Datastores used for the Sddc.
+func (o LookupSddcResultOutput) Datastores() GetSddcDatastoreArrayOutput {
+	return o.ApplyT(func(v LookupSddcResult) []GetSddcDatastore { return v.Datastores }).(GetSddcDatastoreArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -441,7 +448,7 @@ func (o LookupSddcResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The vSphere licenses to be used when upgrade SDDC.
+// The vSphere licenses to use when upgrading the SDDC.
 func (o LookupSddcResultOutput) UpgradeLicenses() GetSddcUpgradeLicenseArrayOutput {
 	return o.ApplyT(func(v LookupSddcResult) []GetSddcUpgradeLicense { return v.UpgradeLicenses }).(GetSddcUpgradeLicenseArrayOutput)
 }
@@ -481,12 +488,12 @@ func (o LookupSddcResultOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.VsanVlanId }).(pulumi.StringOutput)
 }
 
-// The link of guidance to upgrade vSphere.
+// The link to guidance for upgrading vSphere.
 func (o LookupSddcResultOutput) VsphereUpgradeGuide() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
 }
 
-// The links of binary objects needed for upgrade vSphere.
+// The links to binary objects needed to upgrade vSphere.
 func (o LookupSddcResultOutput) VsphereUpgradeObjects() GetSddcVsphereUpgradeObjectArrayOutput {
 	return o.ApplyT(func(v LookupSddcResult) []GetSddcVsphereUpgradeObject { return v.VsphereUpgradeObjects }).(GetSddcVsphereUpgradeObjectArrayOutput)
 }

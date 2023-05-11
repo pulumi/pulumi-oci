@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Ocvp.inputs.SddcDatastoreArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -64,6 +65,21 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> computeAvailabilityDomain() {
         return this.computeAvailabilityDomain;
+    }
+
+    /**
+     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
+    @Import(name="datastores")
+    private @Nullable Output<List<SddcDatastoreArgs>> datastores;
+
+    /**
+     * @return A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
+    public Optional<Output<List<SddcDatastoreArgs>>> datastores() {
+        return Optional.ofNullable(this.datastores);
     }
 
     /**
@@ -217,14 +233,14 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
     @Import(name="isHcxEnabled")
     private @Nullable Output<Boolean> isHcxEnabled;
 
     /**
-     * @return Indicates whether to enable HCX for this SDDC.
+     * @return For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
     public Optional<Output<Boolean>> isHcxEnabled() {
@@ -492,6 +508,7 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
+        this.datastores = $.datastores;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.esxiHostsCount = $.esxiHostsCount;
@@ -601,6 +618,37 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             return computeAvailabilityDomain(Output.of(computeAvailabilityDomain));
+        }
+
+        /**
+         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastores(@Nullable Output<List<SddcDatastoreArgs>> datastores) {
+            $.datastores = datastores;
+            return this;
+        }
+
+        /**
+         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastores(List<SddcDatastoreArgs> datastores) {
+            return datastores(Output.of(datastores));
+        }
+
+        /**
+         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastores(SddcDatastoreArgs... datastores) {
+            return datastores(List.of(datastores));
         }
 
         /**
@@ -814,7 +862,7 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnabled Indicates whether to enable HCX for this SDDC.
+         * @param isHcxEnabled For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
          * 
          * @return builder
          * 
@@ -825,7 +873,7 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnabled Indicates whether to enable HCX for this SDDC.
+         * @param isHcxEnabled For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
          * 
          * @return builder
          * 

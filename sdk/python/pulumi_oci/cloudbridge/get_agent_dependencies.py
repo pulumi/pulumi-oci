@@ -139,11 +139,11 @@ def get_agent_dependencies(agent_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_dependency_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_dependency_state"])
+    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -193,11 +193,11 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_dependency_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_dependency_state"])
+    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

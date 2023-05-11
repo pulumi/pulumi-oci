@@ -235,7 +235,7 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rule = oci.CloudGuard.get_data_mask_rule(data_mask_rule_id=oci_cloud_guard_data_mask_rule["test_data_mask_rule"]["id"])
+    test_data_mask_rule = oci.CloudGuard.get_data_mask_rule(data_mask_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -279,7 +279,7 @@ def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rule = oci.CloudGuard.get_data_mask_rule(data_mask_rule_id=oci_cloud_guard_data_mask_rule["test_data_mask_rule"]["id"])
+    test_data_mask_rule = oci.CloudGuard.get_data_mask_rule(data_mask_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

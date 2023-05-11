@@ -117,7 +117,7 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=oci_core_cpe_device_shape["test_cpe_device_shape"]["id"])
+    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -158,7 +158,7 @@ def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=oci_core_cpe_device_shape["test_cpe_device_shape"]["id"])
+    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

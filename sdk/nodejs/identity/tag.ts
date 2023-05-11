@@ -40,7 +40,6 @@ import * as utilities from "../utilities";
  *
  * const testTag = new oci.identity.Tag("testTag", {
  *     description: _var.tag_description,
- *     name: _var.tag_name,
  *     tagNamespaceId: oci_identity_tag_namespace.test_tag_namespace.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -162,9 +161,6 @@ export class Tag extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.tagNamespaceId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tagNamespaceId'");
             }
@@ -257,7 +253,7 @@ export interface TagArgs {
     /**
      * The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The OCID of the tag namespace.
      */

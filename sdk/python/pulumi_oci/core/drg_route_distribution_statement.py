@@ -178,9 +178,9 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
             drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
             action=var["drg_route_distribution_statement_statements_action"],
             match_criteria=oci.core.DrgRouteDistributionStatementMatchCriteriaArgs(
-                match_type=var["drg_route_distribution_statement_statements_match_criteria_match_type"],
-                attachment_type=var["drg_route_distribution_statement_statements_match_criteria_attachment_type"],
-                drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"],
+                match_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                attachment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                drg_attachment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             priority=var["drg_route_distribution_statement_statements_priority"])
         ```
@@ -221,9 +221,9 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
             drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
             action=var["drg_route_distribution_statement_statements_action"],
             match_criteria=oci.core.DrgRouteDistributionStatementMatchCriteriaArgs(
-                match_type=var["drg_route_distribution_statement_statements_match_criteria_match_type"],
-                attachment_type=var["drg_route_distribution_statement_statements_match_criteria_attachment_type"],
-                drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"],
+                match_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                attachment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                drg_attachment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             priority=var["drg_route_distribution_statement_statements_priority"])
         ```

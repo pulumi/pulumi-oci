@@ -142,7 +142,7 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"])
+    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,7 +178,7 @@ def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"])
+    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

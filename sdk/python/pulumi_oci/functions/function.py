@@ -533,16 +533,16 @@ class Function(pulumi.CustomResource):
             image=var["function_image"],
             image_digest=var["function_image_digest"],
             provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=var["function_provisioned_concurrency_config_strategy"],
-                count=var["function_provisioned_concurrency_config_count"],
+                strategy=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-                source_type=var["function_source_details_source_type"],
+                pbf_listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             timeout_in_seconds=var["function_timeout_in_seconds"],
             trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=var["function_trace_config_is_enabled"],
+                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -600,16 +600,16 @@ class Function(pulumi.CustomResource):
             image=var["function_image"],
             image_digest=var["function_image_digest"],
             provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=var["function_provisioned_concurrency_config_strategy"],
-                count=var["function_provisioned_concurrency_config_count"],
+                strategy=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-                source_type=var["function_source_details_source_type"],
+                pbf_listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             timeout_in_seconds=var["function_timeout_in_seconds"],
             trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=var["function_trace_config_is_enabled"],
+                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

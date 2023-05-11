@@ -144,12 +144,12 @@ def get_result(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        execution_time=var["result_execution_time"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"],
-        result_content_type=var["result_result_content_type"],
-        result_type=var["result_result_type"],
-        vantage_point=var["result_vantage_point"])
+    test_result = oci.ApmSynthetics.get_result(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        execution_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        monitor_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        result_content_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        result_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vantage_point=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -200,12 +200,12 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        execution_time=var["result_execution_time"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"],
-        result_content_type=var["result_result_content_type"],
-        result_type=var["result_result_type"],
-        vantage_point=var["result_vantage_point"])
+    test_result = oci.ApmSynthetics.get_result(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        execution_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        monitor_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        result_content_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        result_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vantage_point=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

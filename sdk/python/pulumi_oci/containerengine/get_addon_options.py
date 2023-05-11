@@ -100,8 +100,8 @@ def get_addon_options(addon_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=var["addon_option_kubernetes_version"],
-        addon_name=oci_containerengine_addon["test_addon"]["name"])
+    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        addon_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -139,8 +139,8 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=var["addon_option_kubernetes_version"],
-        addon_name=oci_containerengine_addon["test_addon"]["name"])
+    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        addon_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

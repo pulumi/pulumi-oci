@@ -119,9 +119,9 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        state=var["autonomous_virtual_machine_state"])
+    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        state=var["autonomous_virtual_machine_state"])
+    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -133,11 +133,11 @@ def get_deploy_stages(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deploy_stage_display_name"],
-        id=var["deploy_stage_id"],
-        state=var["deploy_stage_state"])
+    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        deploy_pipeline_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -186,11 +186,11 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deploy_stage_display_name"],
-        id=var["deploy_stage_id"],
-        state=var["deploy_stage_state"])
+    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        deploy_pipeline_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

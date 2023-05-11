@@ -247,7 +247,7 @@ def get_dataset(dataset_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"])
+    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -292,7 +292,7 @@ def get_dataset_output(dataset_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"])
+    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -162,7 +162,7 @@ def get_address_list(address_list_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_list = oci.Waas.get_address_list(address_list_id=oci_waas_address_list["test_address_list"]["id"])
+    test_address_list = oci.Waas.get_address_list(address_list_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -200,7 +200,7 @@ def get_address_list_output(address_list_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_list = oci.Waas.get_address_list(address_list_id=oci_waas_address_list["test_address_list"]["id"])
+    test_address_list = oci.Waas.get_address_list(address_list_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

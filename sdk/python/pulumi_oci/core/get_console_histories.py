@@ -132,10 +132,10 @@ def get_console_histories(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_console_histories = oci.Core.get_console_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["console_history_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        state=var["console_history_state"])
+    test_console_histories = oci.Core.get_console_histories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -181,10 +181,10 @@ def get_console_histories_output(availability_domain: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_console_histories = oci.Core.get_console_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["console_history_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        state=var["console_history_state"])
+    test_console_histories = oci.Core.get_console_histories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

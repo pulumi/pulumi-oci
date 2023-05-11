@@ -340,7 +340,7 @@ def get_user_assessment(user_assessment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+    test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -393,7 +393,7 @@ def get_user_assessment_output(user_assessment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+    test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

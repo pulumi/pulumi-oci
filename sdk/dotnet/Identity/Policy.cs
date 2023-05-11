@@ -40,7 +40,6 @@ namespace Pulumi.Oci.Identity
     ///     {
     ///         CompartmentId = @var.Tenancy_ocid,
     ///         Description = @var.Policy_description,
-    ///         Name = @var.Policy_name,
     ///         Statements = @var.Policy_statements,
     ///         DefinedTags = 
     ///         {
@@ -221,8 +220,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("statements", required: true)]
         private InputList<string>? _statements;

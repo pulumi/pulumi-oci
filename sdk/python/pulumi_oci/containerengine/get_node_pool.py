@@ -354,7 +354,7 @@ def get_node_pool(node_pool_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=oci_containerengine_node_pool["test_node_pool"]["id"])
+    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -407,7 +407,7 @@ def get_node_pool_output(node_pool_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=oci_containerengine_node_pool["test_node_pool"]["id"])
+    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

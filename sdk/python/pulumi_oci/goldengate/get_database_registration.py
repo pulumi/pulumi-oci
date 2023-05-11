@@ -361,7 +361,7 @@ def get_database_registration(database_registration_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=oci_golden_gate_database_registration["test_database_registration"]["id"])
+    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -417,7 +417,7 @@ def get_database_registration_output(database_registration_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=oci_golden_gate_database_registration["test_database_registration"]["id"])
+    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

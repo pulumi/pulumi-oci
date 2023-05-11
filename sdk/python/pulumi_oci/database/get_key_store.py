@@ -175,7 +175,7 @@ def get_key_store(key_store_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_store = oci.Database.get_key_store(key_store_id=oci_database_key_store["test_key_store"]["id"])
+    test_key_store = oci.Database.get_key_store(key_store_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -214,7 +214,7 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_store = oci.Database.get_key_store(key_store_id=oci_database_key_store["test_key_store"]["id"])
+    test_key_store = oci.Database.get_key_store(key_store_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

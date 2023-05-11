@@ -119,9 +119,9 @@ def get_path_analyzer_tests(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=var["compartment_id"],
-        display_name=var["path_analyzer_test_display_name"],
-        state=var["path_analyzer_test_state"])
+    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_path_analyzer_tests_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=var["compartment_id"],
-        display_name=var["path_analyzer_test_display_name"],
-        state=var["path_analyzer_test_state"])
+    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

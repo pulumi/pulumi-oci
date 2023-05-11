@@ -189,12 +189,12 @@ def get_domains_my_support_accounts(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_support_account_count=var["my_support_account_my_support_account_count"],
-        my_support_account_filter=var["my_support_account_my_support_account_filter"],
-        authorization=var["my_support_account_authorization"],
-        resource_type_schema_version=var["my_support_account_resource_type_schema_version"],
-        start_index=var["my_support_account_start_index"])
+    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        my_support_account_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        my_support_account_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -257,12 +257,12 @@ def get_domains_my_support_accounts_output(authorization: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_support_account_count=var["my_support_account_my_support_account_count"],
-        my_support_account_filter=var["my_support_account_my_support_account_filter"],
-        authorization=var["my_support_account_authorization"],
-        resource_type_schema_version=var["my_support_account_resource_type_schema_version"],
-        start_index=var["my_support_account_start_index"])
+    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        my_support_account_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        my_support_account_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

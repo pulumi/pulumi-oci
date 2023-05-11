@@ -271,8 +271,8 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=oci_database_autonomous_container_database_dataguard_association["test_autonomous_container_database_dataguard_association"]["id"],
-        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
+    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -322,8 +322,8 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=oci_database_autonomous_container_database_dataguard_association["test_autonomous_container_database_dataguard_association"]["id"],
-        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
+    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

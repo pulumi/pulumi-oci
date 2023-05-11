@@ -120,10 +120,10 @@ def get_dkims(email_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dkims = oci.Email.get_dkims(email_domain_id=oci_email_email_domain["test_email_domain"]["id"],
-        id=var["dkim_id"],
-        name=var["dkim_name"],
-        state=var["dkim_state"])
+    test_dkims = oci.Email.get_dkims(email_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -168,10 +168,10 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dkims = oci.Email.get_dkims(email_domain_id=oci_email_email_domain["test_email_domain"]["id"],
-        id=var["dkim_id"],
-        name=var["dkim_name"],
-        state=var["dkim_state"])
+    test_dkims = oci.Email.get_dkims(email_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

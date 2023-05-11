@@ -318,7 +318,7 @@ def get_alert(alert_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert = oci.DataSafe.get_alert(alert_id=oci_data_safe_alert["test_alert"]["id"])
+    test_alert = oci.DataSafe.get_alert(alert_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -369,7 +369,7 @@ def get_alert_output(alert_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert = oci.DataSafe.get_alert(alert_id=oci_data_safe_alert["test_alert"]["id"])
+    test_alert = oci.DataSafe.get_alert(alert_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

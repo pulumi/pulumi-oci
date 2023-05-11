@@ -753,23 +753,23 @@ class BuildPipelineStage(pulumi.CustomResource):
             build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
             build_pipeline_stage_predecessor_collection=oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs(
-                    id=var["build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id"],
+                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             build_pipeline_stage_type=var["build_pipeline_stage_build_pipeline_stage_type"],
             build_runner_shape_config=oci.dev_ops.BuildPipelineStageBuildRunnerShapeConfigArgs(
-                build_runner_type=var["build_pipeline_stage_build_runner_shape_config_build_runner_type"],
-                memory_in_gbs=var["build_pipeline_stage_build_runner_shape_config_memory_in_gbs"],
-                ocpus=var["build_pipeline_stage_build_runner_shape_config_ocpus"],
+                build_runner_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             build_source_collection=oci.dev_ops.BuildPipelineStageBuildSourceCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildSourceCollectionItemArgs(
-                    connection_type=var["build_pipeline_stage_build_source_collection_items_connection_type"],
-                    branch=var["build_pipeline_stage_build_source_collection_items_branch"],
-                    connection_id=oci_devops_connection["test_connection"]["id"],
-                    name=var["build_pipeline_stage_build_source_collection_items_name"],
-                    repository_id=oci_artifacts_repository["test_repository"]["id"],
-                    repository_url=var["build_pipeline_stage_build_source_collection_items_repository_url"],
+                    connection_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    branch=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    connection_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             build_spec_file=var["build_pipeline_stage_build_spec_file"],
@@ -778,8 +778,8 @@ class BuildPipelineStage(pulumi.CustomResource):
             },
             deliver_artifact_collection=oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionItemArgs(
-                    artifact_id=oci_devops_artifact["test_artifact"]["id"],
-                    artifact_name=var["build_pipeline_stage_deliver_artifact_collection_items_artifact_name"],
+                    artifact_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    artifact_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
@@ -792,14 +792,14 @@ class BuildPipelineStage(pulumi.CustomResource):
             is_pass_all_parameters_enabled=var["build_pipeline_stage_is_pass_all_parameters_enabled"],
             primary_build_source=var["build_pipeline_stage_primary_build_source"],
             private_access_config=oci.dev_ops.BuildPipelineStagePrivateAccessConfigArgs(
-                network_channel_type=var["build_pipeline_stage_private_access_config_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["build_pipeline_stage_private_access_config_nsg_ids"],
+                network_channel_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             stage_execution_timeout_in_seconds=var["build_pipeline_stage_stage_execution_timeout_in_seconds"],
             wait_criteria=oci.dev_ops.BuildPipelineStageWaitCriteriaArgs(
-                wait_duration=var["build_pipeline_stage_wait_criteria_wait_duration"],
-                wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
+                wait_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                wait_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -853,23 +853,23 @@ class BuildPipelineStage(pulumi.CustomResource):
             build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
             build_pipeline_stage_predecessor_collection=oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs(
-                    id=var["build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id"],
+                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             build_pipeline_stage_type=var["build_pipeline_stage_build_pipeline_stage_type"],
             build_runner_shape_config=oci.dev_ops.BuildPipelineStageBuildRunnerShapeConfigArgs(
-                build_runner_type=var["build_pipeline_stage_build_runner_shape_config_build_runner_type"],
-                memory_in_gbs=var["build_pipeline_stage_build_runner_shape_config_memory_in_gbs"],
-                ocpus=var["build_pipeline_stage_build_runner_shape_config_ocpus"],
+                build_runner_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             build_source_collection=oci.dev_ops.BuildPipelineStageBuildSourceCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildSourceCollectionItemArgs(
-                    connection_type=var["build_pipeline_stage_build_source_collection_items_connection_type"],
-                    branch=var["build_pipeline_stage_build_source_collection_items_branch"],
-                    connection_id=oci_devops_connection["test_connection"]["id"],
-                    name=var["build_pipeline_stage_build_source_collection_items_name"],
-                    repository_id=oci_artifacts_repository["test_repository"]["id"],
-                    repository_url=var["build_pipeline_stage_build_source_collection_items_repository_url"],
+                    connection_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    branch=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    connection_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             build_spec_file=var["build_pipeline_stage_build_spec_file"],
@@ -878,8 +878,8 @@ class BuildPipelineStage(pulumi.CustomResource):
             },
             deliver_artifact_collection=oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionItemArgs(
-                    artifact_id=oci_devops_artifact["test_artifact"]["id"],
-                    artifact_name=var["build_pipeline_stage_deliver_artifact_collection_items_artifact_name"],
+                    artifact_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    artifact_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
@@ -892,14 +892,14 @@ class BuildPipelineStage(pulumi.CustomResource):
             is_pass_all_parameters_enabled=var["build_pipeline_stage_is_pass_all_parameters_enabled"],
             primary_build_source=var["build_pipeline_stage_primary_build_source"],
             private_access_config=oci.dev_ops.BuildPipelineStagePrivateAccessConfigArgs(
-                network_channel_type=var["build_pipeline_stage_private_access_config_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["build_pipeline_stage_private_access_config_nsg_ids"],
+                network_channel_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             stage_execution_timeout_in_seconds=var["build_pipeline_stage_stage_execution_timeout_in_seconds"],
             wait_criteria=oci.dev_ops.BuildPipelineStageWaitCriteriaArgs(
-                wait_duration=var["build_pipeline_stage_wait_criteria_wait_duration"],
-                wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
+                wait_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                wait_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

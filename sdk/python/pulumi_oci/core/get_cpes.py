@@ -93,7 +93,7 @@ def get_cpes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cpes = oci.Core.get_cpes(compartment_id=var["compartment_id"])
+    test_cpes = oci.Core.get_cpes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -127,7 +127,7 @@ def get_cpes_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cpes = oci.Core.get_cpes(compartment_id=var["compartment_id"])
+    test_cpes = oci.Core.get_cpes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

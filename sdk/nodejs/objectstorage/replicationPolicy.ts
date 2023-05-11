@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  *     bucket: _var.replication_policy_bucket,
  *     destinationBucketName: oci_objectstorage_bucket.test_bucket.name,
  *     destinationRegionName: oci_identity_region.test_region.name,
- *     name: _var.replication_policy_name,
  *     namespace: _var.replication_policy_namespace,
  * });
  * ```
@@ -135,9 +134,6 @@ export class ReplicationPolicy extends pulumi.CustomResource {
             if ((!args || args.destinationRegionName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'destinationRegionName'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.namespace === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
@@ -226,7 +222,7 @@ export interface ReplicationPolicyArgs {
     /**
      * The name of the policy. Avoid entering confidential information.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The Object Storage namespace used for the request.
      */

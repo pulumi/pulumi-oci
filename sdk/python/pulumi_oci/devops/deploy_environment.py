@@ -476,10 +476,10 @@ class DeployEnvironment(pulumi.CustomResource):
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
                 items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=var["deploy_environment_compute_instance_group_selectors_items_selector_type"],
-                    compute_instance_ids=var["deploy_environment_compute_instance_group_selectors_items_compute_instance_ids"],
-                    query=var["deploy_environment_compute_instance_group_selectors_items_query"],
-                    region=var["deploy_environment_compute_instance_group_selectors_items_region"],
+                    selector_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    compute_instance_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             defined_tags={
@@ -492,9 +492,9 @@ class DeployEnvironment(pulumi.CustomResource):
             },
             function_id=oci_functions_function["test_function"]["id"],
             network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=var["deploy_environment_network_channel_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
+                network_channel_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -542,10 +542,10 @@ class DeployEnvironment(pulumi.CustomResource):
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
                 items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=var["deploy_environment_compute_instance_group_selectors_items_selector_type"],
-                    compute_instance_ids=var["deploy_environment_compute_instance_group_selectors_items_compute_instance_ids"],
-                    query=var["deploy_environment_compute_instance_group_selectors_items_query"],
-                    region=var["deploy_environment_compute_instance_group_selectors_items_region"],
+                    selector_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    compute_instance_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             defined_tags={
@@ -558,9 +558,9 @@ class DeployEnvironment(pulumi.CustomResource):
             },
             function_id=oci_functions_function["test_function"]["id"],
             network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=var["deploy_environment_network_channel_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
+                network_channel_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

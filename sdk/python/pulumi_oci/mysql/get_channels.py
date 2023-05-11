@@ -155,12 +155,12 @@ def get_channels(channel_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channels = oci.Mysql.get_channels(compartment_id=var["compartment_id"],
-        channel_id=oci_mysql_channel["test_channel"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        display_name=var["channel_display_name"],
-        is_enabled=var["channel_is_enabled"],
-        state=var["channel_state"])
+    test_channels = oci.Mysql.get_channels(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        channel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -214,12 +214,12 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_channels = oci.Mysql.get_channels(compartment_id=var["compartment_id"],
-        channel_id=oci_mysql_channel["test_channel"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        display_name=var["channel_display_name"],
-        is_enabled=var["channel_is_enabled"],
-        state=var["channel_state"])
+    test_channels = oci.Mysql.get_channels(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        channel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -79,7 +79,7 @@ def get_api_validation(api_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_validation = oci.ApiGateway.get_api_validation(api_id=oci_apigateway_api["test_api"]["id"])
+    test_api_validation = oci.ApiGateway.get_api_validation(api_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -110,7 +110,7 @@ def get_api_validation_output(api_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_validation = oci.ApiGateway.get_api_validation(api_id=oci_apigateway_api["test_api"]["id"])
+    test_api_validation = oci.ApiGateway.get_api_validation(api_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

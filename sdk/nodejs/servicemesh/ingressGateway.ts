@@ -44,7 +44,6 @@ import * as utilities from "../utilities";
  *         hostnames: _var.ingress_gateway_hosts_hostnames,
  *     }],
  *     meshId: oci_service_mesh_mesh.test_mesh.id,
- *     name: _var.ingress_gateway_name,
  *     accessLogging: {
  *         isEnabled: _var.ingress_gateway_access_logging_is_enabled,
  *     },
@@ -192,9 +191,6 @@ export class IngressGateway extends pulumi.CustomResource {
             if ((!args || args.meshId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'meshId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["accessLogging"] = args ? args.accessLogging : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -316,5 +312,5 @@ export interface IngressGatewayArgs {
     /**
      * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

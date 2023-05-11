@@ -238,7 +238,7 @@ def get_byoip_range(byoip_range_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
+    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -282,7 +282,7 @@ def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
+    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -28,7 +28,6 @@ namespace Pulumi.Oci.ObjectStorage
     ///     var testBucket = new Oci.ObjectStorage.Bucket("testBucket", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Bucket_name,
     ///         Namespace = @var.Bucket_namespace,
     ///         AccessType = @var.Bucket_access_type,
     ///         AutoTiering = @var.Bucket_auto_tiering,
@@ -315,8 +314,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The Object Storage namespace used for the request.

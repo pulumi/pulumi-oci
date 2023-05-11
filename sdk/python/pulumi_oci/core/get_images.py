@@ -185,14 +185,14 @@ def get_images(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=var["compartment_id"],
-        display_name=var["image_display_name"],
-        operating_system=var["image_operating_system"],
-        operating_system_version=var["image_operating_system_version"],
-        shape=var["image_shape"],
-        state=var["image_state"],
-        sort_by=var["image_sort_by"],
-        sort_order=var["image_sort_order"])
+    test_images = oci.Core.get_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        operating_system=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        operating_system_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sort_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sort_order=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -264,14 +264,14 @@ def get_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=var["compartment_id"],
-        display_name=var["image_display_name"],
-        operating_system=var["image_operating_system"],
-        operating_system_version=var["image_operating_system_version"],
-        shape=var["image_shape"],
-        state=var["image_state"],
-        sort_by=var["image_sort_by"],
-        sort_order=var["image_sort_order"])
+    test_images = oci.Core.get_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        operating_system=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        operating_system_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sort_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sort_order=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

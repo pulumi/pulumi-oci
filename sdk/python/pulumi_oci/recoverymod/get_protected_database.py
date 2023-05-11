@@ -319,7 +319,7 @@ def get_protected_database(protected_database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=oci_recovery_protected_database["test_protected_database"]["id"])
+    test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -370,7 +370,7 @@ def get_protected_database_output(protected_database_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=oci_recovery_protected_database["test_protected_database"]["id"])
+    test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -221,8 +221,8 @@ def get_script(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"])
+    test_script = oci.ApmSynthetics.get_script(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        script_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -268,8 +268,8 @@ def get_script_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"])
+    test_script = oci.ApmSynthetics.get_script(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        script_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

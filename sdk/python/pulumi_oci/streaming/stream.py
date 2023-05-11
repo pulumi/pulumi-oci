@@ -14,24 +14,23 @@ __all__ = ['StreamArgs', 'Stream']
 @pulumi.input_type
 class StreamArgs:
     def __init__(__self__, *,
-                 name: pulumi.Input[str],
                  partitions: pulumi.Input[int],
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  retention_in_hours: Optional[pulumi.Input[int]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Stream resource.
-        :param pulumi.Input[str] name: The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
         :param pulumi.Input[int] partitions: The number of partitions in the stream.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the stream.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] name: The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
         :param pulumi.Input[int] retention_in_hours: The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The OCID of the stream pool that contains the stream.
         """
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "partitions", partitions)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -39,22 +38,12 @@ class StreamArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if retention_in_hours is not None:
             pulumi.set(__self__, "retention_in_hours", retention_in_hours)
         if stream_pool_id is not None:
             pulumi.set(__self__, "stream_pool_id", stream_pool_id)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -103,6 +92,18 @@ class StreamArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="retentionInHours")
@@ -342,7 +343,6 @@ class Stream(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_stream = oci.streaming.Stream("testStream",
-            name=var["stream_name"],
             partitions=var["stream_partitions"],
             compartment_id=var["compartment_id"],
             defined_tags=var["stream_defined_tags"],
@@ -393,7 +393,6 @@ class Stream(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_stream = oci.streaming.Stream("testStream",
-            name=var["stream_name"],
             partitions=var["stream_partitions"],
             compartment_id=var["compartment_id"],
             defined_tags=var["stream_defined_tags"],
@@ -446,8 +445,6 @@ class Stream(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if partitions is None and not opts.urn:
                 raise TypeError("Missing required property 'partitions'")

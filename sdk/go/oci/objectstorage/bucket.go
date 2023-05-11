@@ -32,7 +32,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.NewBucket(ctx, "testBucket", &ObjectStorage.BucketArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Name:          pulumi.Any(_var.Bucket_name),
 //				Namespace:     pulumi.Any(_var.Bucket_namespace),
 //				AccessType:    pulumi.Any(_var.Bucket_access_type),
 //				AutoTiering:   pulumi.Any(_var.Bucket_auto_tiering),
@@ -134,9 +133,6 @@ func NewBucket(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	if args.Namespace == nil {
 		return nil, errors.New("invalid value for required argument 'Namespace'")
@@ -276,7 +272,7 @@ type bucketArgs struct {
 	// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
@@ -306,7 +302,7 @@ type BucketArgs struct {
 	// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
 	Metadata pulumi.MapInput
 	// The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringInput
 	// (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).

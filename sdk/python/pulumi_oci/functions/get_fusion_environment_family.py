@@ -208,7 +208,7 @@ def get_fusion_environment_family(fusion_environment_family_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
+    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -250,7 +250,7 @@ def get_fusion_environment_family_output(fusion_environment_family_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
+    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

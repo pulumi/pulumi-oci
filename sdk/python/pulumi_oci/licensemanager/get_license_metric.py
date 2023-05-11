@@ -124,8 +124,8 @@ def get_license_metric(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=var["compartment_id"],
-        is_compartment_id_in_subtree=var["license_metric_is_compartment_id_in_subtree"])
+    test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,8 +163,8 @@ def get_license_metric_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=var["compartment_id"],
-        is_compartment_id_in_subtree=var["license_metric_is_compartment_id_in_subtree"])
+    test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

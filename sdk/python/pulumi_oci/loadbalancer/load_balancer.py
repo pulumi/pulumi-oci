@@ -530,11 +530,11 @@ class LoadBalancer(pulumi.CustomResource):
             is_private=var["load_balancer_is_private"],
             network_security_group_ids=var["load_balancer_network_security_group_ids"],
             reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
-                id=var["load_balancer_reserved_ips_id"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             shape_details=oci.load_balancer.LoadBalancerShapeDetailsArgs(
-                maximum_bandwidth_in_mbps=var["load_balancer_shape_details_maximum_bandwidth_in_mbps"],
-                minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
+                maximum_bandwidth_in_mbps=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                minimum_bandwidth_in_mbps=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -619,11 +619,11 @@ class LoadBalancer(pulumi.CustomResource):
             is_private=var["load_balancer_is_private"],
             network_security_group_ids=var["load_balancer_network_security_group_ids"],
             reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
-                id=var["load_balancer_reserved_ips_id"],
+                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             shape_details=oci.load_balancer.LoadBalancerShapeDetailsArgs(
-                maximum_bandwidth_in_mbps=var["load_balancer_shape_details_maximum_bandwidth_in_mbps"],
-                minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
+                maximum_bandwidth_in_mbps=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                minimum_bandwidth_in_mbps=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

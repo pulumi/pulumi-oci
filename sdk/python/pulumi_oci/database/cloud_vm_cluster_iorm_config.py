@@ -179,8 +179,8 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
 
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig",
             db_plans=[oci.database.CloudVmClusterIormConfigDbPlanArgs(
-                db_name=var["cloud_vm_cluster_iorm_config_db_plans_db_name"],
-                share=var["cloud_vm_cluster_iorm_config_db_plans_share"],
+                db_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                share=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
             objective="AUTO")
@@ -221,8 +221,8 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
 
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig",
             db_plans=[oci.database.CloudVmClusterIormConfigDbPlanArgs(
-                db_name=var["cloud_vm_cluster_iorm_config_db_plans_db_name"],
-                share=var["cloud_vm_cluster_iorm_config_db_plans_share"],
+                db_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                share=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
             objective="AUTO")

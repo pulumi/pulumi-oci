@@ -59,7 +59,6 @@ import javax.annotation.Nullable;
  *                 .timeoutInMillis(var_.network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis())
  *                 .urlPath(var_.network_load_balancers_backend_sets_unified_health_checker_url_path())
  *                 .build())
- *             .name(var_.network_load_balancers_backend_sets_unified_name())
  *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
  *             .policy(var_.network_load_balancers_backend_sets_unified_policy())
  *             .backends(NetworkLoadBalancersBackendSetsUnifiedBackendArgs.builder()

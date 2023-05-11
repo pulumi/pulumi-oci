@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Ocvp.outputs.GetSddcDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetSddcHcxOnPremLicense;
 import com.pulumi.oci.Ocvp.outputs.GetSddcUpgradeLicense;
 import com.pulumi.oci.Ocvp.outputs.GetSddcVsphereUpgradeObject;
@@ -38,6 +39,11 @@ public final class GetSddcResult {
      * 
      */
     private String computeAvailabilityDomain;
+    /**
+     * @return Datastores used for the Sddc.
+     * 
+     */
+    private List<GetSddcDatastore> datastores;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -238,7 +244,7 @@ public final class GetSddcResult {
      */
     private String timeUpdated;
     /**
-     * @return The vSphere licenses to be used when upgrade SDDC.
+     * @return The vSphere licenses to use when upgrading the SDDC.
      * 
      */
     private List<GetSddcUpgradeLicense> upgradeLicenses;
@@ -278,12 +284,12 @@ public final class GetSddcResult {
      */
     private String vsanVlanId;
     /**
-     * @return The link of guidance to upgrade vSphere.
+     * @return The link to guidance for upgrading vSphere.
      * 
      */
     private String vsphereUpgradeGuide;
     /**
-     * @return The links of binary objects needed for upgrade vSphere.
+     * @return The links to binary objects needed to upgrade vSphere.
      * 
      */
     private List<GetSddcVsphereUpgradeObject> vsphereUpgradeObjects;
@@ -326,6 +332,13 @@ public final class GetSddcResult {
      */
     public String computeAvailabilityDomain() {
         return this.computeAvailabilityDomain;
+    }
+    /**
+     * @return Datastores used for the Sddc.
+     * 
+     */
+    public List<GetSddcDatastore> datastores() {
+        return this.datastores;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -613,7 +626,7 @@ public final class GetSddcResult {
         return this.timeUpdated;
     }
     /**
-     * @return The vSphere licenses to be used when upgrade SDDC.
+     * @return The vSphere licenses to use when upgrading the SDDC.
      * 
      */
     public List<GetSddcUpgradeLicense> upgradeLicenses() {
@@ -669,14 +682,14 @@ public final class GetSddcResult {
         return this.vsanVlanId;
     }
     /**
-     * @return The link of guidance to upgrade vSphere.
+     * @return The link to guidance for upgrading vSphere.
      * 
      */
     public String vsphereUpgradeGuide() {
         return this.vsphereUpgradeGuide;
     }
     /**
-     * @return The links of binary objects needed for upgrade vSphere.
+     * @return The links to binary objects needed to upgrade vSphere.
      * 
      */
     public List<GetSddcVsphereUpgradeObject> vsphereUpgradeObjects() {
@@ -710,6 +723,7 @@ public final class GetSddcResult {
         private String capacityReservationId;
         private String compartmentId;
         private String computeAvailabilityDomain;
+        private List<GetSddcDatastore> datastores;
         private Map<String,Object> definedTags;
         private String displayName;
         private Integer esxiHostsCount;
@@ -772,6 +786,7 @@ public final class GetSddcResult {
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
+    	      this.datastores = defaults.datastores;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.esxiHostsCount = defaults.esxiHostsCount;
@@ -848,6 +863,14 @@ public final class GetSddcResult {
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
             return this;
+        }
+        @CustomType.Setter
+        public Builder datastores(List<GetSddcDatastore> datastores) {
+            this.datastores = Objects.requireNonNull(datastores);
+            return this;
+        }
+        public Builder datastores(GetSddcDatastore... datastores) {
+            return datastores(List.of(datastores));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -1142,6 +1165,7 @@ public final class GetSddcResult {
             o.capacityReservationId = capacityReservationId;
             o.compartmentId = compartmentId;
             o.computeAvailabilityDomain = computeAvailabilityDomain;
+            o.datastores = datastores;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.esxiHostsCount = esxiHostsCount;

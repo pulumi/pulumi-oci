@@ -113,8 +113,8 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -151,8 +151,8 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -129,10 +129,10 @@ def get_controls(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=var["compartment_id"],
-        display_name=var["operator_control_display_name"],
-        resource_type=var["operator_control_resource_type"],
-        state=var["operator_control_state"])
+    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_controls_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=var["compartment_id"],
-        display_name=var["operator_control_display_name"],
-        resource_type=var["operator_control_resource_type"],
-        state=var["operator_control_state"])
+    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

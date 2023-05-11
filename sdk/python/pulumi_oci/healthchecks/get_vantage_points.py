@@ -106,8 +106,8 @@ def get_vantage_points(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=var["vantage_point_display_name"],
-        name=var["vantage_point_name"])
+    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -145,8 +145,8 @@ def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=var["vantage_point_display_name"],
-        name=var["vantage_point_name"])
+    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

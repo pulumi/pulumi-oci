@@ -30,6 +30,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSupportedSkus(ctx, &ocvp.GetSupportedSkusArgs{
 //				CompartmentId: _var.Compartment_id,
+//				HostShapeName: pulumi.StringRef(oci_core_shape.Test_shape.Name),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -53,12 +54,15 @@ type GetSupportedSkusArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string                   `pulumi:"compartmentId"`
 	Filters       []GetSupportedSkusFilter `pulumi:"filters"`
+	// A filter to return only resources that match or support the given ESXi host shape.
+	HostShapeName *string `pulumi:"hostShapeName"`
 }
 
 // A collection of values returned by getSupportedSkus.
 type GetSupportedSkusResult struct {
 	CompartmentId string                   `pulumi:"compartmentId"`
 	Filters       []GetSupportedSkusFilter `pulumi:"filters"`
+	HostShapeName *string                  `pulumi:"hostShapeName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of the supported SKUs.
@@ -83,6 +87,8 @@ type GetSupportedSkusOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput               `pulumi:"compartmentId"`
 	Filters       GetSupportedSkusFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that match or support the given ESXi host shape.
+	HostShapeName pulumi.StringPtrInput `pulumi:"hostShapeName"`
 }
 
 func (GetSupportedSkusOutputArgs) ElementType() reflect.Type {
@@ -110,6 +116,10 @@ func (o GetSupportedSkusResultOutput) CompartmentId() pulumi.StringOutput {
 
 func (o GetSupportedSkusResultOutput) Filters() GetSupportedSkusFilterArrayOutput {
 	return o.ApplyT(func(v GetSupportedSkusResult) []GetSupportedSkusFilter { return v.Filters }).(GetSupportedSkusFilterArrayOutput)
+}
+
+func (o GetSupportedSkusResultOutput) HostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedSkusResult) *string { return v.HostShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

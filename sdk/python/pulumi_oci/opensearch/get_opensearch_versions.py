@@ -102,7 +102,7 @@ def get_opensearch_versions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=var["compartment_id"])
+    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -148,7 +148,7 @@ def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=var["compartment_id"])
+    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

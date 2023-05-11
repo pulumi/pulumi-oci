@@ -99,9 +99,9 @@ def get_product_license_consumers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=var["compartment_id"],
-        product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
-        is_compartment_id_in_subtree=var["product_license_consumer_is_compartment_id_in_subtree"])
+    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        product_license_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -140,9 +140,9 @@ def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=var["compartment_id"],
-        product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
-        is_compartment_id_in_subtree=var["product_license_consumer_is_compartment_id_in_subtree"])
+    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        product_license_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -103,8 +103,8 @@ def get_commitments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitments = oci.OneSubsription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
+    test_commitments = oci.OneSubsription.get_commitments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subscribed_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -142,8 +142,8 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitments = oci.OneSubsription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
+    test_commitments = oci.OneSubsription.get_commitments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subscribed_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

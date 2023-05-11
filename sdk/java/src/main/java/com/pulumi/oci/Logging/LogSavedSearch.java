@@ -44,7 +44,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testLogSavedSearch = new LogSavedSearch(&#34;testLogSavedSearch&#34;, LogSavedSearchArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.log_saved_search_name())
  *             .query(var_.log_saved_search_query())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.log_saved_search_description())

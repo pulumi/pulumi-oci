@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs {
@@ -48,15 +50,15 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private SslCipherSuiteArgs() {}
@@ -143,7 +145,7 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -161,7 +163,6 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
         public SslCipherSuiteArgs build() {
             $.ciphers = Objects.requireNonNull($.ciphers, "expected parameter 'ciphers' to be non-null");
             $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

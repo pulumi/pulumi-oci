@@ -7,6 +7,10 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ *
+ * Lists supported compute shapes for ESXi hosts.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -61,7 +65,7 @@ export interface GetSupportedHostShapesResult {
      */
     readonly id: string;
     /**
-     * The list of the supported compute shapes for ESXi hosts.
+     * A list of the supported compute shapes for ESXi hosts.
      */
     readonly items: outputs.Ocvp.GetSupportedHostShapesItem[];
     /**
@@ -71,6 +75,10 @@ export interface GetSupportedHostShapesResult {
     readonly sddcType?: string;
 }
 /**
+ * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ *
+ * Lists supported compute shapes for ESXi hosts.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  *
  * const testSchedule = new oci.meteringcomputation.Schedule("testSchedule", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.schedule_name,
  *     resultLocation: {
  *         bucket: _var.schedule_result_location_bucket,
  *         locationType: _var.schedule_result_location_location_type,
@@ -189,9 +188,6 @@ export class Schedule extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.resultLocation === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'resultLocation'");
             }
@@ -311,7 +307,7 @@ export interface ScheduleArgs {
     /**
      * The unique name of the user-created schedule.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) Specifies supported output file format.
      */

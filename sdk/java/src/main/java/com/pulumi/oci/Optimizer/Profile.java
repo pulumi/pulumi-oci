@@ -58,7 +58,6 @@ import javax.annotation.Nullable;
  *                     .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
  *                     .build())
  *                 .build())
- *             .name(var_.profile_name())
  *             .aggregationIntervalInDays(var_.profile_aggregation_interval_in_days())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))

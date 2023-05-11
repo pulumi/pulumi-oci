@@ -182,14 +182,14 @@ def get_histories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
-        name=var["history_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["history_resource_type"],
-        state=var["history_state"],
-        status=var["history_status"])
+    test_histories = oci.Optimizer.get_histories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        recommendation_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -252,14 +252,14 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
-        name=var["history_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["history_resource_type"],
-        state=var["history_state"],
-        status=var["history_status"])
+    test_histories = oci.Optimizer.get_histories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        recommendation_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

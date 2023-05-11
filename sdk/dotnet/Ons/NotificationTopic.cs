@@ -40,7 +40,6 @@ namespace Pulumi.Oci.Ons
     ///     var testNotificationTopic = new Oci.Ons.NotificationTopic("testNotificationTopic", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Notification_topic_name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -217,8 +216,8 @@ namespace Pulumi.Oci.Ons
         /// <summary>
         /// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public NotificationTopicArgs()
         {

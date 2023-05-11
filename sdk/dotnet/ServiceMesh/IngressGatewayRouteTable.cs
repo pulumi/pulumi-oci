@@ -28,7 +28,6 @@ namespace Pulumi.Oci.ServiceMesh
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-    ///         Name = @var.Ingress_gateway_route_table_name,
     ///         RouteRules = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleArgs
@@ -251,8 +250,8 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// (Updatable) Name of the ingress gateway host that this route should apply to.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.

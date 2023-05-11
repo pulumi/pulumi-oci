@@ -378,7 +378,7 @@ def get_host_insight(host_insight_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=oci_opsi_host_insight["test_host_insight"]["id"])
+    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -434,7 +434,7 @@ def get_host_insight_output(host_insight_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=oci_opsi_host_insight["test_host_insight"]["id"])
+    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

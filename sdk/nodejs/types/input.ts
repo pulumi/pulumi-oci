@@ -17680,6 +17680,17 @@ export namespace Database {
         name: pulumi.Input<string>;
     }
 
+    export interface ExadataInfrastructureNetworkBondingModeDetails {
+        /**
+         * (Updatable) The network bonding mode for the Exadata infrastructure.
+         */
+        backupNetworkBondingMode?: pulumi.Input<string>;
+        /**
+         * (Updatable) The network bonding mode for the Exadata infrastructure.
+         */
+        clientNetworkBondingMode?: pulumi.Input<string>;
+    }
+
     export interface ExadataInfrastructureStorageContact {
         email: pulumi.Input<string>;
         isContactMosValidated?: pulumi.Input<boolean>;
@@ -34203,6 +34214,21 @@ export namespace Ocvp {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface SddcDatastore {
+        /**
+         * A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+         */
+        blockVolumeIds: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Size of the Block Storage Volume in GB.
+         */
+        capacity?: pulumi.Input<number>;
+        /**
+         * Type of the datastore.
+         */
+        datastoreType: pulumi.Input<string>;
     }
 
     export interface SddcHcxOnPremLicense {

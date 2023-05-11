@@ -137,8 +137,8 @@ def get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id: Optional[str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        oda_private_endpoint_scan_proxy_id=oci_oda_oda_private_endpoint_scan_proxy["test_oda_private_endpoint_scan_proxy"]["id"])
+    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        oda_private_endpoint_scan_proxy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -177,8 +177,8 @@ def get_oda_private_endpoint_scan_proxy_output(oda_private_endpoint_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        oda_private_endpoint_scan_proxy_id=oci_oda_oda_private_endpoint_scan_proxy["test_oda_private_endpoint_scan_proxy"]["id"])
+    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        oda_private_endpoint_scan_proxy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

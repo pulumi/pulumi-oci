@@ -143,12 +143,12 @@ def get_replications(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=var["replication_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_display_name"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["replication_id"],
-        state=var["replication_state"])
+    test_replications = oci.FileStorage.get_replications(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -201,12 +201,12 @@ def get_replications_output(availability_domain: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=var["replication_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_display_name"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["replication_id"],
-        state=var["replication_state"])
+    test_replications = oci.FileStorage.get_replications(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

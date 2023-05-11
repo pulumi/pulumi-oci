@@ -17,26 +17,25 @@ __all__ = ['TagArgs', 'Tag']
 class TagArgs:
     def __init__(__self__, *,
                  description: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  tag_namespace_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cost_tracking: Optional[pulumi.Input[bool]] = None,
                  is_retired: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  validator: Optional[pulumi.Input['TagValidatorArgs']] = None):
         """
         The set of arguments for constructing a Tag resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the tag during creation.
-        :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
         :param pulumi.Input[str] tag_namespace_id: The OCID of the tag namespace.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
         :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+        :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
         :param pulumi.Input['TagValidatorArgs'] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
         """
         pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "tag_namespace_id", tag_namespace_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -46,6 +45,8 @@ class TagArgs:
             pulumi.set(__self__, "is_cost_tracking", is_cost_tracking)
         if is_retired is not None:
             pulumi.set(__self__, "is_retired", is_retired)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if validator is not None:
             pulumi.set(__self__, "validator", validator)
 
@@ -60,18 +61,6 @@ class TagArgs:
     @description.setter
     def description(self, value: pulumi.Input[str]):
         pulumi.set(self, "description", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="tagNamespaceId")
@@ -132,6 +121,18 @@ class TagArgs:
     @is_retired.setter
     def is_retired(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_retired", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -362,7 +363,6 @@ class Tag(pulumi.CustomResource):
 
         test_tag = oci.identity.Tag("testTag",
             description=var["tag_description"],
-            name=var["tag_name"],
             tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -372,8 +372,8 @@ class Tag(pulumi.CustomResource):
             },
             is_cost_tracking=var["tag_is_cost_tracking"],
             validator=oci.identity.TagValidatorArgs(
-                validator_type=var["tag_validator_validator_type"],
-                values=var["tag_validator_values"],
+                validator_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             is_retired=False)
         ```
@@ -437,7 +437,6 @@ class Tag(pulumi.CustomResource):
 
         test_tag = oci.identity.Tag("testTag",
             description=var["tag_description"],
-            name=var["tag_name"],
             tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -447,8 +446,8 @@ class Tag(pulumi.CustomResource):
             },
             is_cost_tracking=var["tag_is_cost_tracking"],
             validator=oci.identity.TagValidatorArgs(
-                validator_type=var["tag_validator_validator_type"],
-                values=var["tag_validator_values"],
+                validator_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             is_retired=False)
         ```
@@ -500,8 +499,6 @@ class Tag(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_cost_tracking"] = is_cost_tracking
             __props__.__dict__["is_retired"] = is_retired
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             if tag_namespace_id is None and not opts.urn:
                 raise TypeError("Missing required property 'tag_namespace_id'")

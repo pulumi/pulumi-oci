@@ -210,7 +210,7 @@ def get_web_app_firewall(web_app_firewall_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=oci_waf_web_app_firewall["test_web_app_firewall"]["id"])
+    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -252,7 +252,7 @@ def get_web_app_firewall_output(web_app_firewall_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=oci_waf_web_app_firewall["test_web_app_firewall"]["id"])
+    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

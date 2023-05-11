@@ -29,7 +29,6 @@ namespace Pulumi.Oci.Dns
     ///     {
     ///         Algorithm = @var.Tsig_key_algorithm,
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Tsig_key_name,
     ///         Secret = @var.Tsig_key_secret,
     ///         DefinedTags = @var.Tsig_key_defined_tags,
     ///         FreeformTags = @var.Tsig_key_freeform_tags,
@@ -198,8 +197,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// A globally unique domain name identifying the key for a given pair of hosts.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("secret", required: true)]
         private Input<string>? _secret;

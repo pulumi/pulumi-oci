@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Ocvp.inputs.SddcDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcHcxOnPremLicenseArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcUpgradeLicenseArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcVsphereUpgradeObjectArgs;
@@ -82,6 +83,21 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> computeAvailabilityDomain() {
         return Optional.ofNullable(this.computeAvailabilityDomain);
+    }
+
+    /**
+     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
+    @Import(name="datastores")
+    private @Nullable Output<List<SddcDatastoreArgs>> datastores;
+
+    /**
+     * @return A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
+    public Optional<Output<List<SddcDatastoreArgs>>> datastores() {
+        return Optional.ofNullable(this.datastores);
     }
 
     /**
@@ -310,14 +326,14 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
     @Import(name="isHcxEnabled")
     private @Nullable Output<Boolean> isHcxEnabled;
 
     /**
-     * @return Indicates whether to enable HCX for this SDDC.
+     * @return For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
     public Optional<Output<Boolean>> isHcxEnabled() {
@@ -325,14 +341,14 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * Indicates whether to enable HCX Enterprise for this SDDC.
      * 
      */
     @Import(name="isHcxEnterpriseEnabled")
     private @Nullable Output<Boolean> isHcxEnterpriseEnabled;
 
     /**
-     * @return Indicates whether HCX Enterprise is enabled for this SDDC.
+     * @return Indicates whether to enable HCX Enterprise for this SDDC.
      * 
      */
     public Optional<Output<Boolean>> isHcxEnterpriseEnabled() {
@@ -700,14 +716,14 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The vSphere licenses to be used when upgrade SDDC.
+     * The vSphere licenses to use when upgrading the SDDC.
      * 
      */
     @Import(name="upgradeLicenses")
     private @Nullable Output<List<SddcUpgradeLicenseArgs>> upgradeLicenses;
 
     /**
-     * @return The vSphere licenses to be used when upgrade SDDC.
+     * @return The vSphere licenses to use when upgrading the SDDC.
      * 
      */
     public Optional<Output<List<SddcUpgradeLicenseArgs>>> upgradeLicenses() {
@@ -820,14 +836,14 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The link of guidance to upgrade vSphere.
+     * The link to guidance for upgrading vSphere.
      * 
      */
     @Import(name="vsphereUpgradeGuide")
     private @Nullable Output<String> vsphereUpgradeGuide;
 
     /**
-     * @return The link of guidance to upgrade vSphere.
+     * @return The link to guidance for upgrading vSphere.
      * 
      */
     public Optional<Output<String>> vsphereUpgradeGuide() {
@@ -835,14 +851,14 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The links of binary objects needed for upgrade vSphere.
+     * The links to binary objects needed to upgrade vSphere.
      * 
      */
     @Import(name="vsphereUpgradeObjects")
     private @Nullable Output<List<SddcVsphereUpgradeObjectArgs>> vsphereUpgradeObjects;
 
     /**
-     * @return The links of binary objects needed for upgrade vSphere.
+     * @return The links to binary objects needed to upgrade vSphere.
      * 
      */
     public Optional<Output<List<SddcVsphereUpgradeObjectArgs>>> vsphereUpgradeObjects() {
@@ -886,6 +902,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
+        this.datastores = $.datastores;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.esxiHostsCount = $.esxiHostsCount;
@@ -1041,6 +1058,37 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             return computeAvailabilityDomain(Output.of(computeAvailabilityDomain));
+        }
+
+        /**
+         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastores(@Nullable Output<List<SddcDatastoreArgs>> datastores) {
+            $.datastores = datastores;
+            return this;
+        }
+
+        /**
+         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastores(List<SddcDatastoreArgs> datastores) {
+            return datastores(Output.of(datastores));
+        }
+
+        /**
+         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastores(SddcDatastoreArgs... datastores) {
+            return datastores(List.of(datastores));
         }
 
         /**
@@ -1369,7 +1417,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnabled Indicates whether to enable HCX for this SDDC.
+         * @param isHcxEnabled For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
          * 
          * @return builder
          * 
@@ -1380,7 +1428,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnabled Indicates whether to enable HCX for this SDDC.
+         * @param isHcxEnabled For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
          * 
          * @return builder
          * 
@@ -1390,7 +1438,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnterpriseEnabled Indicates whether HCX Enterprise is enabled for this SDDC.
+         * @param isHcxEnterpriseEnabled Indicates whether to enable HCX Enterprise for this SDDC.
          * 
          * @return builder
          * 
@@ -1401,7 +1449,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnterpriseEnabled Indicates whether HCX Enterprise is enabled for this SDDC.
+         * @param isHcxEnterpriseEnabled Indicates whether to enable HCX Enterprise for this SDDC.
          * 
          * @return builder
          * 
@@ -1925,7 +1973,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeLicenses The vSphere licenses to be used when upgrade SDDC.
+         * @param upgradeLicenses The vSphere licenses to use when upgrading the SDDC.
          * 
          * @return builder
          * 
@@ -1936,7 +1984,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeLicenses The vSphere licenses to be used when upgrade SDDC.
+         * @param upgradeLicenses The vSphere licenses to use when upgrading the SDDC.
          * 
          * @return builder
          * 
@@ -1946,7 +1994,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeLicenses The vSphere licenses to be used when upgrade SDDC.
+         * @param upgradeLicenses The vSphere licenses to use when upgrading the SDDC.
          * 
          * @return builder
          * 
@@ -2103,7 +2151,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vsphereUpgradeGuide The link of guidance to upgrade vSphere.
+         * @param vsphereUpgradeGuide The link to guidance for upgrading vSphere.
          * 
          * @return builder
          * 
@@ -2114,7 +2162,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vsphereUpgradeGuide The link of guidance to upgrade vSphere.
+         * @param vsphereUpgradeGuide The link to guidance for upgrading vSphere.
          * 
          * @return builder
          * 
@@ -2124,7 +2172,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vsphereUpgradeObjects The links of binary objects needed for upgrade vSphere.
+         * @param vsphereUpgradeObjects The links to binary objects needed to upgrade vSphere.
          * 
          * @return builder
          * 
@@ -2135,7 +2183,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vsphereUpgradeObjects The links of binary objects needed for upgrade vSphere.
+         * @param vsphereUpgradeObjects The links to binary objects needed to upgrade vSphere.
          * 
          * @return builder
          * 
@@ -2145,7 +2193,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vsphereUpgradeObjects The links of binary objects needed for upgrade vSphere.
+         * @param vsphereUpgradeObjects The links to binary objects needed to upgrade vSphere.
          * 
          * @return builder
          * 

@@ -176,13 +176,13 @@ def get_audit_policies(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=var["compartment_id"],
-        access_level=var["audit_policy_access_level"],
-        audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"],
-        compartment_id_in_subtree=var["audit_policy_compartment_id_in_subtree"],
-        display_name=var["audit_policy_display_name"],
-        state=var["audit_policy_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        audit_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -254,13 +254,13 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=var["compartment_id"],
-        access_level=var["audit_policy_access_level"],
-        audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"],
-        compartment_id_in_subtree=var["audit_policy_compartment_id_in_subtree"],
-        display_name=var["audit_policy_display_name"],
-        state=var["audit_policy_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        audit_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

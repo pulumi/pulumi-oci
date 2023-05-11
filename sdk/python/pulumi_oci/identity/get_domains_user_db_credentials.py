@@ -209,14 +209,14 @@ def get_domains_user_db_credentials(attribute_sets: Optional[Sequence[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_db_credential_count=var["user_db_credential_user_db_credential_count"],
-        user_db_credential_filter=var["user_db_credential_user_db_credential_filter"],
+    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_db_credential_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_db_credential_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["user_db_credential_authorization"],
-        resource_type_schema_version=var["user_db_credential_resource_type_schema_version"],
-        start_index=var["user_db_credential_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -287,14 +287,14 @@ def get_domains_user_db_credentials_output(attribute_sets: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_db_credential_count=var["user_db_credential_user_db_credential_count"],
-        user_db_credential_filter=var["user_db_credential_user_db_credential_filter"],
+    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_db_credential_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        user_db_credential_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         attribute_sets=[],
         attributes="",
-        authorization=var["user_db_credential_authorization"],
-        resource_type_schema_version=var["user_db_credential_resource_type_schema_version"],
-        start_index=var["user_db_credential_start_index"])
+        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

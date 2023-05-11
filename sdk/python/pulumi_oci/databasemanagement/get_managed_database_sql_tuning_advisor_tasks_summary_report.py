@@ -175,13 +175,13 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to"],
-        end_exec_id_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_summary_report_search_period"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to"])
+    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_tuning_advisor_task_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        begin_exec_id_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_exec_id_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        search_period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -239,13 +239,13 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to"],
-        end_exec_id_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_summary_report_search_period"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to"])
+    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sql_tuning_advisor_task_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        begin_exec_id_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_exec_id_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        search_period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

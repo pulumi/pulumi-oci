@@ -343,8 +343,8 @@ class ContainerRepository(pulumi.CustomResource):
             is_immutable=var["container_repository_is_immutable"],
             is_public=var["container_repository_is_public"],
             readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=var["container_repository_readme_content"],
-                format=var["container_repository_readme_format"],
+                content=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -387,8 +387,8 @@ class ContainerRepository(pulumi.CustomResource):
             is_immutable=var["container_repository_is_immutable"],
             is_public=var["container_repository_is_public"],
             readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=var["container_repository_readme_content"],
-                format=var["container_repository_readme_format"],
+                content=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

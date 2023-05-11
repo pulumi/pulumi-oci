@@ -388,7 +388,7 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
+    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -447,7 +447,7 @@ def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
+    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

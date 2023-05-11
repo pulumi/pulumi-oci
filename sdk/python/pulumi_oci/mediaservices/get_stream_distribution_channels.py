@@ -120,10 +120,10 @@ def get_stream_distribution_channels(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=var["compartment_id"],
-        display_name=var["stream_distribution_channel_display_name"],
-        id=var["stream_distribution_channel_id"],
-        state=var["stream_distribution_channel_state"])
+    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -168,10 +168,10 @@ def get_stream_distribution_channels_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=var["compartment_id"],
-        display_name=var["stream_distribution_channel_display_name"],
-        id=var["stream_distribution_channel_id"],
-        state=var["stream_distribution_channel_state"])
+    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

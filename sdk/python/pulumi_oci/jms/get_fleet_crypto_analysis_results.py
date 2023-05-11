@@ -139,11 +139,11 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        aggregation_mode=var["fleet_crypto_analysis_result_aggregation_mode"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_crypto_analysis_result_time_end"],
-        time_start=var["fleet_crypto_analysis_result_time_start"])
+    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        aggregation_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        managed_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -193,11 +193,11 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        aggregation_mode=var["fleet_crypto_analysis_result_aggregation_mode"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_crypto_analysis_result_time_end"],
-        time_start=var["fleet_crypto_analysis_result_time_start"])
+    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        aggregation_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        managed_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -106,8 +106,8 @@ def get_backup_destinations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=var["compartment_id"],
-        type=var["backup_destination_type"])
+    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -145,8 +145,8 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=var["compartment_id"],
-        type=var["backup_destination_type"])
+    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -32,7 +32,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.NewSnapshot(ctx, "testSnapshot", &FileStorage.SnapshotArgs{
 //				FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
-//				Name:         pulumi.Any(_var.Snapshot_name),
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -97,9 +96,6 @@ func NewSnapshot(ctx *pulumi.Context,
 
 	if args.FileSystemId == nil {
 		return nil, errors.New("invalid value for required argument 'FileSystemId'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource Snapshot
 	err := ctx.RegisterResource("oci:FileStorage/snapshot:Snapshot", name, args, &resource, opts...)
@@ -190,7 +186,7 @@ type snapshotArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a Snapshot resource.
@@ -202,7 +198,7 @@ type SnapshotArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 }
 
 func (SnapshotArgs) ElementType() reflect.Type {

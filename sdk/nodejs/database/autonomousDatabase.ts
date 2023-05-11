@@ -306,7 +306,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly maxCpuCoreCount!: pulumi.Output<number>;
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      */
     public /*out*/ readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
@@ -1047,7 +1047,7 @@ export interface AutonomousDatabaseState {
      */
     maxCpuCoreCount?: pulumi.Input<number>;
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**

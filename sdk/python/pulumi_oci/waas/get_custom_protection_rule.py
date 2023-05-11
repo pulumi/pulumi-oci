@@ -174,7 +174,7 @@ def get_custom_protection_rule(custom_protection_rule_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=oci_waas_custom_protection_rule["test_custom_protection_rule"]["id"])
+    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -213,7 +213,7 @@ def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=oci_waas_custom_protection_rule["test_custom_protection_rule"]["id"])
+    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

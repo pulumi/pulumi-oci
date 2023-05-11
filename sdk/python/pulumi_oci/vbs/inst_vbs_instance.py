@@ -16,26 +16,25 @@ class InstVbsInstanceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
                  is_resource_usage_agreement_granted: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  resource_compartment_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InstVbsInstance resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
         :param pulumi.Input[str] display_name: (Updatable) Display Name
-        :param pulumi.Input[str] name: Service Instance Name
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_access_token: IDCS personal acceess token identifying IDCS user and stripe for the VBS service
         :param pulumi.Input[bool] is_resource_usage_agreement_granted: (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
+        :param pulumi.Input[str] name: Service Instance Name
         :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "name", name)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -44,6 +43,8 @@ class InstVbsInstanceArgs:
             pulumi.set(__self__, "idcs_access_token", idcs_access_token)
         if is_resource_usage_agreement_granted is not None:
             pulumi.set(__self__, "is_resource_usage_agreement_granted", is_resource_usage_agreement_granted)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if resource_compartment_id is not None:
             pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
 
@@ -70,18 +71,6 @@ class InstVbsInstanceArgs:
     @display_name.setter
     def display_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "display_name", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        Service Instance Name
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -130,6 +119,18 @@ class InstVbsInstanceArgs:
     @is_resource_usage_agreement_granted.setter
     def is_resource_usage_agreement_granted(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_resource_usage_agreement_granted", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Service Instance Name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="resourceCompartmentId")
@@ -404,7 +405,6 @@ class InstVbsInstance(pulumi.CustomResource):
         test_vbs_instance = oci.vbs.InstVbsInstance("testVbsInstance",
             compartment_id=var["compartment_id"],
             display_name=var["vbs_instance_display_name"],
-            name=var["vbs_instance_name"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -455,7 +455,6 @@ class InstVbsInstance(pulumi.CustomResource):
         test_vbs_instance = oci.vbs.InstVbsInstance("testVbsInstance",
             compartment_id=var["compartment_id"],
             display_name=var["vbs_instance_display_name"],
-            name=var["vbs_instance_name"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -517,8 +516,6 @@ class InstVbsInstance(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["idcs_access_token"] = idcs_access_token
             __props__.__dict__["is_resource_usage_agreement_granted"] = is_resource_usage_agreement_granted
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["resource_compartment_id"] = resource_compartment_id
             __props__.__dict__["lifecyle_details"] = None

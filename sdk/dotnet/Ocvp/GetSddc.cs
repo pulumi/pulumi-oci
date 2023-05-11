@@ -122,6 +122,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string ComputeAvailabilityDomain;
         /// <summary>
+        /// Datastores used for the Sddc.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSddcDatastoreResult> Datastores;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -282,7 +286,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The vSphere licenses to be used when upgrade SDDC.
+        /// The vSphere licenses to use when upgrading the SDDC.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcUpgradeLicenseResult> UpgradeLicenses;
         /// <summary>
@@ -314,11 +318,11 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string VsanVlanId;
         /// <summary>
-        /// The link of guidance to upgrade vSphere.
+        /// The link to guidance for upgrading vSphere.
         /// </summary>
         public readonly string VsphereUpgradeGuide;
         /// <summary>
-        /// The links of binary objects needed for upgrade vSphere.
+        /// The links to binary objects needed to upgrade vSphere.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcVsphereUpgradeObjectResult> VsphereUpgradeObjects;
         /// <summary>
@@ -339,6 +343,8 @@ namespace Pulumi.Oci.Ocvp
             string compartmentId,
 
             string computeAvailabilityDomain,
+
+            ImmutableArray<Outputs.GetSddcDatastoreResult> datastores,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -454,6 +460,7 @@ namespace Pulumi.Oci.Ocvp
             CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
+            Datastores = datastores;
             DefinedTags = definedTags;
             DisplayName = displayName;
             EsxiHostsCount = esxiHostsCount;

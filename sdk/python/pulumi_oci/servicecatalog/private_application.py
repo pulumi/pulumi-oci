@@ -390,9 +390,9 @@ class PrivateApplication(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["private_application_display_name"],
             package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=var["private_application_package_details_package_type"],
-                version=var["private_application_package_details_version"],
-                zip_file_base64encoded=var["private_application_package_details_zip_file_base64encoded"],
+                package_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                zip_file_base64encoded=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             short_description=var["private_application_short_description"],
             defined_tags={
@@ -445,9 +445,9 @@ class PrivateApplication(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["private_application_display_name"],
             package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=var["private_application_package_details_package_type"],
-                version=var["private_application_package_details_version"],
-                zip_file_base64encoded=var["private_application_package_details_zip_file_base64encoded"],
+                package_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                zip_file_base64encoded=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             short_description=var["private_application_short_description"],
             defined_tags={

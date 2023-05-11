@@ -319,7 +319,7 @@ def get_software_source(software_source_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source = oci.OsManagement.get_software_source(software_source_id=oci_osmanagement_software_source["test_software_source"]["id"])
+    test_software_source = oci.OsManagement.get_software_source(software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -370,7 +370,7 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source = oci.OsManagement.get_software_source(software_source_id=oci_osmanagement_software_source["test_software_source"]["id"])
+    test_software_source = oci.OsManagement.get_software_source(software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

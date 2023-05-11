@@ -110,9 +110,9 @@ def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=var["compartment_id"],
-        invoice_line_id=oci_onesubscription_invoice_line["test_invoice_line"]["id"],
-        fields=var["invoice_line_computed_usage_fields"])
+    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        invoice_line_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -154,9 +154,9 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=var["compartment_id"],
-        invoice_line_id=oci_onesubscription_invoice_line["test_invoice_line"]["id"],
-        fields=var["invoice_line_computed_usage_fields"])
+    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        invoice_line_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

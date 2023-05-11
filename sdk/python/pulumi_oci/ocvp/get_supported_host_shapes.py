@@ -65,7 +65,7 @@ class GetSupportedHostShapesResult:
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetSupportedHostShapesItemResult']:
         """
-        The list of the supported compute shapes for ESXi hosts.
+        A list of the supported compute shapes for ESXi hosts.
         """
         return pulumi.get(self, "items")
 
@@ -103,15 +103,19 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
                               sddc_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedHostShapesResult:
     """
+    This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+
+    Lists supported compute shapes for ESXi hosts.
+
     ## Example Usage
 
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
-        name=var["supported_host_shape_name"],
-        sddc_type=var["supported_host_shape_sddc_type"])
+    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sddc_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -143,15 +147,19 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
                                      sddc_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedHostShapesResult]:
     """
+    This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+
+    Lists supported compute shapes for ESXi hosts.
+
     ## Example Usage
 
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
-        name=var["supported_host_shape_name"],
-        sddc_type=var["supported_host_shape_sddc_type"])
+    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sddc_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

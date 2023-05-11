@@ -129,10 +129,10 @@ def get_resolver_endpoints(filters: Optional[Sequence[pulumi.InputType['GetResol
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=oci_dns_resolver["test_resolver"]["id"],
+    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         scope="PRIVATE",
-        name=var["resolver_endpoint_name"],
-        state=var["resolver_endpoint_state"])
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -181,10 +181,10 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=oci_dns_resolver["test_resolver"]["id"],
+    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         scope="PRIVATE",
-        name=var["resolver_endpoint_name"],
-        state=var["resolver_endpoint_state"])
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

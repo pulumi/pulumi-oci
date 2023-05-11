@@ -17,7 +17,6 @@ import * as utilities from "../utilities";
  *
  * const testModelVersionSet = new oci.datascience.ModelVersionSet("testModelVersionSet", {
  *     compartmentId: _var.compartment_id,
- *     name: _var.model_version_set_name,
  *     projectId: oci_datascience_project.test_project.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -134,9 +133,6 @@ export class ModelVersionSet extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.projectId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
@@ -225,7 +221,7 @@ export interface ModelVersionSetArgs {
     /**
      * A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model version set.
      */

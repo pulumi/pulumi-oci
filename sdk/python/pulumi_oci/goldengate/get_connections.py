@@ -175,14 +175,14 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=var["compartment_id"],
-        assignable_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        assignable_deployment_type=var["connection_assignable_deployment_type"],
-        assigned_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        connection_types=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        state=var["connection_state"],
-        technology_types=var["connection_technology_type"])
+    test_connections = oci.GoldenGate.get_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        assignable_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        assignable_deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        assigned_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        connection_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        technology_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -244,14 +244,14 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=var["compartment_id"],
-        assignable_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        assignable_deployment_type=var["connection_assignable_deployment_type"],
-        assigned_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        connection_types=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        state=var["connection_state"],
-        technology_types=var["connection_technology_type"])
+    test_connections = oci.GoldenGate.get_connections(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        assignable_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        assignable_deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        assigned_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        connection_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        technology_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

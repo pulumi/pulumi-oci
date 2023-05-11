@@ -100,8 +100,8 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=var["autonomous_database_character_set_character_set_type"],
-        is_shared=var["autonomous_database_character_set_is_shared"])
+    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_shared=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -139,8 +139,8 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=var["autonomous_database_character_set_character_set_type"],
-        is_shared=var["autonomous_database_character_set_is_shared"])
+    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_shared=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

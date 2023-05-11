@@ -364,8 +364,7 @@ class Dkim(pulumi.CustomResource):
             description=var["dkim_description"],
             freeform_tags={
                 "Department": "Finance",
-            },
-            name=var["dkim_name"])
+            })
         ```
 
         ## Import
@@ -413,8 +412,7 @@ class Dkim(pulumi.CustomResource):
             description=var["dkim_description"],
             freeform_tags={
                 "Department": "Finance",
-            },
-            name=var["dkim_name"])
+            })
         ```
 
         ## Import

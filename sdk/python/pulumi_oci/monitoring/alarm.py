@@ -742,9 +742,9 @@ class Alarm(pulumi.CustomResource):
             resolution=var["alarm_resolution"],
             resource_group=var["alarm_resource_group"],
             suppression=oci.monitoring.AlarmSuppressionArgs(
-                time_suppress_from=var["alarm_suppression_time_suppress_from"],
-                time_suppress_until=var["alarm_suppression_time_suppress_until"],
-                description=var["alarm_suppression_description"],
+                time_suppress_from=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_suppress_until=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -824,9 +824,9 @@ class Alarm(pulumi.CustomResource):
             resolution=var["alarm_resolution"],
             resource_group=var["alarm_resource_group"],
             suppression=oci.monitoring.AlarmSuppressionArgs(
-                time_suppress_from=var["alarm_suppression_time_suppress_from"],
-                time_suppress_until=var["alarm_suppression_time_suppress_until"],
-                description=var["alarm_suppression_description"],
+                time_suppress_from=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_suppress_until=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

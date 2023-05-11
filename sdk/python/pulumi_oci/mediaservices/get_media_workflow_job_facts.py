@@ -119,9 +119,9 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[pulumi.InputType['Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job_facts = oci.MediaServices.get_media_workflow_job_facts(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"],
-        key=var["media_workflow_job_fact_key"],
-        type=var["media_workflow_job_fact_type"])
+    test_media_workflow_job_facts = oci.MediaServices.get_media_workflow_job_facts(media_workflow_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -163,9 +163,9 @@ def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job_facts = oci.MediaServices.get_media_workflow_job_facts(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"],
-        key=var["media_workflow_job_fact_key"],
-        type=var["media_workflow_job_fact_type"])
+    test_media_workflow_job_facts = oci.MediaServices.get_media_workflow_job_facts(media_workflow_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

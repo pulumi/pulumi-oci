@@ -52,7 +52,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testZone = new Zone(&#34;testZone&#34;, ZoneArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .name(var_.zone_name())
  *             .zoneType(var_.zone_zone_type())
  *             .definedTags(var_.zone_defined_tags())
  *             .externalMasters(ZoneExternalMasterArgs.builder()

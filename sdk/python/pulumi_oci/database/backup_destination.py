@@ -469,10 +469,10 @@ class BackupDestination(pulumi.CustomResource):
             },
             local_mount_point_path=var["backup_destination_local_mount_point_path"],
             mount_type_details=oci.database.BackupDestinationMountTypeDetailsArgs(
-                mount_type=var["backup_destination_mount_type_details_mount_type"],
-                local_mount_point_path=var["backup_destination_mount_type_details_local_mount_point_path"],
-                nfs_servers=var["backup_destination_mount_type_details_nfs_server"],
-                nfs_server_export=var["backup_destination_mount_type_details_nfs_server_export"],
+                mount_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                local_mount_point_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nfs_servers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nfs_server_export=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             vpc_users=var["backup_destination_vpc_users"])
         ```
@@ -525,10 +525,10 @@ class BackupDestination(pulumi.CustomResource):
             },
             local_mount_point_path=var["backup_destination_local_mount_point_path"],
             mount_type_details=oci.database.BackupDestinationMountTypeDetailsArgs(
-                mount_type=var["backup_destination_mount_type_details_mount_type"],
-                local_mount_point_path=var["backup_destination_mount_type_details_local_mount_point_path"],
-                nfs_servers=var["backup_destination_mount_type_details_nfs_server"],
-                nfs_server_export=var["backup_destination_mount_type_details_nfs_server_export"],
+                mount_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                local_mount_point_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nfs_servers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nfs_server_export=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             vpc_users=var["backup_destination_vpc_users"])
         ```

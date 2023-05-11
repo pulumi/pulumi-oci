@@ -218,18 +218,18 @@ def get_sensitive_types(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=var["compartment_id"],
-        access_level=var["sensitive_type_access_level"],
-        compartment_id_in_subtree=var["sensitive_type_compartment_id_in_subtree"],
-        default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
-        display_name=var["sensitive_type_display_name"],
-        entity_type=var["sensitive_type_entity_type"],
-        parent_category_id=oci_marketplace_category["test_category"]["id"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        sensitive_type_source=var["sensitive_type_sensitive_type_source"],
-        state=var["sensitive_type_state"],
-        time_created_greater_than_or_equal_to=var["sensitive_type_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_type_time_created_less_than"])
+    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        default_masking_format_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        entity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        parent_category_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_type_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -307,18 +307,18 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=var["compartment_id"],
-        access_level=var["sensitive_type_access_level"],
-        compartment_id_in_subtree=var["sensitive_type_compartment_id_in_subtree"],
-        default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
-        display_name=var["sensitive_type_display_name"],
-        entity_type=var["sensitive_type_entity_type"],
-        parent_category_id=oci_marketplace_category["test_category"]["id"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        sensitive_type_source=var["sensitive_type_sensitive_type_source"],
-        state=var["sensitive_type_state"],
-        time_created_greater_than_or_equal_to=var["sensitive_type_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_type_time_created_less_than"])
+    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        default_masking_format_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        entity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        parent_category_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        sensitive_type_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

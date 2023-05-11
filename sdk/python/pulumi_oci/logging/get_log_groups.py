@@ -116,9 +116,9 @@ def get_log_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_groups = oci.Logging.get_log_groups(compartment_id=var["compartment_id"],
-        display_name=var["log_group_display_name"],
-        is_compartment_id_in_subtree=var["log_group_is_compartment_id_in_subtree"])
+    test_log_groups = oci.Logging.get_log_groups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -160,9 +160,9 @@ def get_log_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_groups = oci.Logging.get_log_groups(compartment_id=var["compartment_id"],
-        display_name=var["log_group_display_name"],
-        is_compartment_id_in_subtree=var["log_group_is_compartment_id_in_subtree"])
+    test_log_groups = oci.Logging.get_log_groups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

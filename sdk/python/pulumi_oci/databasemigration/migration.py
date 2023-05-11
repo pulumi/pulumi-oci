@@ -755,45 +755,45 @@ class Migration(pulumi.CustomResource):
             target_database_connection_id=oci_database_migration_connection["test_connection"]["id"],
             type=var["migration_type"],
             advisor_settings=oci.database_migration.MigrationAdvisorSettingsArgs(
-                is_ignore_errors=var["migration_advisor_settings_is_ignore_errors"],
-                is_skip_advisor=var["migration_advisor_settings_is_skip_advisor"],
+                is_ignore_errors=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_skip_advisor=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             agent_id=oci_database_migration_agent["test_agent"]["id"],
             data_transfer_medium_details=oci.database_migration.MigrationDataTransferMediumDetailsArgs(
                 database_link_details=oci.database_migration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs(
-                    name=var["migration_data_transfer_medium_details_database_link_details_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     wallet_bucket=oci.database_migration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs(
-                        bucket=var["migration_data_transfer_medium_details_database_link_details_wallet_bucket_bucket"],
-                        namespace=var["migration_data_transfer_medium_details_database_link_details_wallet_bucket_namespace"],
+                        bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
                 object_storage_details=oci.database_migration.MigrationDataTransferMediumDetailsObjectStorageDetailsArgs(
-                    bucket=var["migration_data_transfer_medium_details_object_storage_details_bucket"],
-                    namespace=var["migration_data_transfer_medium_details_object_storage_details_namespace"],
+                    bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ),
             datapump_settings=oci.database_migration.MigrationDatapumpSettingsArgs(
                 data_pump_parameters=oci.database_migration.MigrationDatapumpSettingsDataPumpParametersArgs(
-                    estimate=var["migration_datapump_settings_data_pump_parameters_estimate"],
-                    exclude_parameters=var["migration_datapump_settings_data_pump_parameters_exclude_parameters"],
-                    export_parallelism_degree=var["migration_datapump_settings_data_pump_parameters_export_parallelism_degree"],
-                    import_parallelism_degree=var["migration_datapump_settings_data_pump_parameters_import_parallelism_degree"],
-                    is_cluster=var["migration_datapump_settings_data_pump_parameters_is_cluster"],
-                    table_exists_action=var["migration_datapump_settings_data_pump_parameters_table_exists_action"],
+                    estimate=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    exclude_parameters=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    export_parallelism_degree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    import_parallelism_degree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    is_cluster=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    table_exists_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 export_directory_object=oci.database_migration.MigrationDatapumpSettingsExportDirectoryObjectArgs(
-                    name=var["migration_datapump_settings_export_directory_object_name"],
-                    path=var["migration_datapump_settings_export_directory_object_path"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 import_directory_object=oci.database_migration.MigrationDatapumpSettingsImportDirectoryObjectArgs(
-                    name=var["migration_datapump_settings_import_directory_object_name"],
-                    path=var["migration_datapump_settings_import_directory_object_path"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                job_mode=var["migration_datapump_settings_job_mode"],
+                job_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 metadata_remaps=[oci.database_migration.MigrationDatapumpSettingsMetadataRemapArgs(
-                    new_value=var["migration_datapump_settings_metadata_remaps_new_value"],
-                    old_value=var["migration_datapump_settings_metadata_remaps_old_value"],
-                    type=var["migration_datapump_settings_metadata_remaps_type"],
+                    new_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    old_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             defined_tags={
@@ -802,18 +802,18 @@ class Migration(pulumi.CustomResource):
             display_name=var["migration_display_name"],
             dump_transfer_details=oci.database_migration.MigrationDumpTransferDetailsArgs(
                 source=oci.database_migration.MigrationDumpTransferDetailsSourceArgs(
-                    kind=var["migration_dump_transfer_details_source_kind"],
-                    oci_home=var["migration_dump_transfer_details_source_oci_home"],
+                    kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    oci_home=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 target=oci.database_migration.MigrationDumpTransferDetailsTargetArgs(
-                    kind=var["migration_dump_transfer_details_target_kind"],
-                    oci_home=var["migration_dump_transfer_details_target_oci_home"],
+                    kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    oci_home=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ),
             exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(
-                object=var["migration_exclude_objects_object"],
-                owner=var["migration_exclude_objects_owner"],
-                type=var["migration_exclude_objects_type"],
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             freeform_tags={
                 "bar-key": "value",
@@ -821,49 +821,49 @@ class Migration(pulumi.CustomResource):
             golden_gate_details=oci.database_migration.MigrationGoldenGateDetailsArgs(
                 hub=oci.database_migration.MigrationGoldenGateDetailsHubArgs(
                     rest_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_rest_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_rest_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                     source_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_source_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_source_db_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
-                    source_microservices_deployment_name=oci_apigateway_deployment["test_deployment"]["name"],
+                    source_microservices_deployment_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     target_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_target_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_target_db_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
-                    target_microservices_deployment_name=oci_apigateway_deployment["test_deployment"]["name"],
-                    url=var["migration_golden_gate_details_hub_url"],
-                    compute_id=oci_database_migration_compute["test_compute"]["id"],
+                    target_microservices_deployment_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    compute_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     source_container_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
                 settings=oci.database_migration.MigrationGoldenGateDetailsSettingsArgs(
-                    acceptable_lag=var["migration_golden_gate_details_settings_acceptable_lag"],
+                    acceptable_lag=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     extract=oci.database_migration.MigrationGoldenGateDetailsSettingsExtractArgs(
-                        long_trans_duration=var["migration_golden_gate_details_settings_extract_long_trans_duration"],
-                        performance_profile=var["migration_golden_gate_details_settings_extract_performance_profile"],
+                        long_trans_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        performance_profile=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                     replicat=oci.database_migration.MigrationGoldenGateDetailsSettingsReplicatArgs(
-                        map_parallelism=var["migration_golden_gate_details_settings_replicat_map_parallelism"],
-                        max_apply_parallelism=var["migration_golden_gate_details_settings_replicat_max_apply_parallelism"],
-                        min_apply_parallelism=var["migration_golden_gate_details_settings_replicat_min_apply_parallelism"],
+                        map_parallelism=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max_apply_parallelism=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        min_apply_parallelism=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
             ),
             include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
-                object=var["migration_include_objects_object"],
-                owner=var["migration_include_objects_owner"],
-                type=var["migration_include_objects_type"],
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             source_container_database_connection_id=oci_database_migration_connection["test_connection"]["id"],
             vault_details=oci.database_migration.MigrationVaultDetailsArgs(
-                compartment_id=var["compartment_id"],
-                key_id=oci_kms_key["test_key"]["id"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 
@@ -920,45 +920,45 @@ class Migration(pulumi.CustomResource):
             target_database_connection_id=oci_database_migration_connection["test_connection"]["id"],
             type=var["migration_type"],
             advisor_settings=oci.database_migration.MigrationAdvisorSettingsArgs(
-                is_ignore_errors=var["migration_advisor_settings_is_ignore_errors"],
-                is_skip_advisor=var["migration_advisor_settings_is_skip_advisor"],
+                is_ignore_errors=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_skip_advisor=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             agent_id=oci_database_migration_agent["test_agent"]["id"],
             data_transfer_medium_details=oci.database_migration.MigrationDataTransferMediumDetailsArgs(
                 database_link_details=oci.database_migration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs(
-                    name=var["migration_data_transfer_medium_details_database_link_details_name"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     wallet_bucket=oci.database_migration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs(
-                        bucket=var["migration_data_transfer_medium_details_database_link_details_wallet_bucket_bucket"],
-                        namespace=var["migration_data_transfer_medium_details_database_link_details_wallet_bucket_namespace"],
+                        bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
                 object_storage_details=oci.database_migration.MigrationDataTransferMediumDetailsObjectStorageDetailsArgs(
-                    bucket=var["migration_data_transfer_medium_details_object_storage_details_bucket"],
-                    namespace=var["migration_data_transfer_medium_details_object_storage_details_namespace"],
+                    bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ),
             datapump_settings=oci.database_migration.MigrationDatapumpSettingsArgs(
                 data_pump_parameters=oci.database_migration.MigrationDatapumpSettingsDataPumpParametersArgs(
-                    estimate=var["migration_datapump_settings_data_pump_parameters_estimate"],
-                    exclude_parameters=var["migration_datapump_settings_data_pump_parameters_exclude_parameters"],
-                    export_parallelism_degree=var["migration_datapump_settings_data_pump_parameters_export_parallelism_degree"],
-                    import_parallelism_degree=var["migration_datapump_settings_data_pump_parameters_import_parallelism_degree"],
-                    is_cluster=var["migration_datapump_settings_data_pump_parameters_is_cluster"],
-                    table_exists_action=var["migration_datapump_settings_data_pump_parameters_table_exists_action"],
+                    estimate=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    exclude_parameters=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    export_parallelism_degree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    import_parallelism_degree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    is_cluster=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    table_exists_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 export_directory_object=oci.database_migration.MigrationDatapumpSettingsExportDirectoryObjectArgs(
-                    name=var["migration_datapump_settings_export_directory_object_name"],
-                    path=var["migration_datapump_settings_export_directory_object_path"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 import_directory_object=oci.database_migration.MigrationDatapumpSettingsImportDirectoryObjectArgs(
-                    name=var["migration_datapump_settings_import_directory_object_name"],
-                    path=var["migration_datapump_settings_import_directory_object_path"],
+                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                job_mode=var["migration_datapump_settings_job_mode"],
+                job_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 metadata_remaps=[oci.database_migration.MigrationDatapumpSettingsMetadataRemapArgs(
-                    new_value=var["migration_datapump_settings_metadata_remaps_new_value"],
-                    old_value=var["migration_datapump_settings_metadata_remaps_old_value"],
-                    type=var["migration_datapump_settings_metadata_remaps_type"],
+                    new_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    old_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
             ),
             defined_tags={
@@ -967,18 +967,18 @@ class Migration(pulumi.CustomResource):
             display_name=var["migration_display_name"],
             dump_transfer_details=oci.database_migration.MigrationDumpTransferDetailsArgs(
                 source=oci.database_migration.MigrationDumpTransferDetailsSourceArgs(
-                    kind=var["migration_dump_transfer_details_source_kind"],
-                    oci_home=var["migration_dump_transfer_details_source_oci_home"],
+                    kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    oci_home=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
                 target=oci.database_migration.MigrationDumpTransferDetailsTargetArgs(
-                    kind=var["migration_dump_transfer_details_target_kind"],
-                    oci_home=var["migration_dump_transfer_details_target_oci_home"],
+                    kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    oci_home=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
             ),
             exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(
-                object=var["migration_exclude_objects_object"],
-                owner=var["migration_exclude_objects_owner"],
-                type=var["migration_exclude_objects_type"],
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             freeform_tags={
                 "bar-key": "value",
@@ -986,49 +986,49 @@ class Migration(pulumi.CustomResource):
             golden_gate_details=oci.database_migration.MigrationGoldenGateDetailsArgs(
                 hub=oci.database_migration.MigrationGoldenGateDetailsHubArgs(
                     rest_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_rest_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_rest_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                     source_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_source_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_source_db_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
-                    source_microservices_deployment_name=oci_apigateway_deployment["test_deployment"]["name"],
+                    source_microservices_deployment_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     target_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_target_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_target_db_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
-                    target_microservices_deployment_name=oci_apigateway_deployment["test_deployment"]["name"],
-                    url=var["migration_golden_gate_details_hub_url"],
-                    compute_id=oci_database_migration_compute["test_compute"]["id"],
+                    target_microservices_deployment_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    compute_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     source_container_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_username"],
+                        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
                 settings=oci.database_migration.MigrationGoldenGateDetailsSettingsArgs(
-                    acceptable_lag=var["migration_golden_gate_details_settings_acceptable_lag"],
+                    acceptable_lag=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     extract=oci.database_migration.MigrationGoldenGateDetailsSettingsExtractArgs(
-                        long_trans_duration=var["migration_golden_gate_details_settings_extract_long_trans_duration"],
-                        performance_profile=var["migration_golden_gate_details_settings_extract_performance_profile"],
+                        long_trans_duration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        performance_profile=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                     replicat=oci.database_migration.MigrationGoldenGateDetailsSettingsReplicatArgs(
-                        map_parallelism=var["migration_golden_gate_details_settings_replicat_map_parallelism"],
-                        max_apply_parallelism=var["migration_golden_gate_details_settings_replicat_max_apply_parallelism"],
-                        min_apply_parallelism=var["migration_golden_gate_details_settings_replicat_min_apply_parallelism"],
+                        map_parallelism=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max_apply_parallelism=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        min_apply_parallelism=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
             ),
             include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
-                object=var["migration_include_objects_object"],
-                owner=var["migration_include_objects_owner"],
-                type=var["migration_include_objects_type"],
+                object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             source_container_database_connection_id=oci_database_migration_connection["test_connection"]["id"],
             vault_details=oci.database_migration.MigrationVaultDetailsArgs(
-                compartment_id=var["compartment_id"],
-                key_id=oci_kms_key["test_key"]["id"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ))
         ```
 

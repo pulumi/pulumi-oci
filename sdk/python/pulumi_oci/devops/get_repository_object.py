@@ -134,9 +134,9 @@ def get_repository_object(file_path: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=oci_devops_repository["test_repository"]["id"],
-        file_path=var["repository_object_file_path"],
-        ref_name=var["repository_object_ref_name"])
+    test_repository_object = oci.DevOps.get_repository_object(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,9 +178,9 @@ def get_repository_object_output(file_path: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=oci_devops_repository["test_repository"]["id"],
-        file_path=var["repository_object_file_path"],
-        ref_name=var["repository_object_ref_name"])
+    test_repository_object = oci.DevOps.get_repository_object(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

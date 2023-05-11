@@ -17,32 +17,31 @@ __all__ = ['ScheduleArgs', 'Schedule']
 class ScheduleArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 name: pulumi.Input[str],
                  result_location: pulumi.Input['ScheduleResultLocationArgs'],
                  schedule_recurrences: pulumi.Input[str],
                  time_scheduled: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  output_file_format: Optional[pulumi.Input[str]] = None,
                  query_properties: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']] = None,
                  saved_report_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Schedule resource.
         :param pulumi.Input[str] compartment_id: The customer tenancy.
-        :param pulumi.Input[str] name: The unique name of the user-created schedule.
         :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The description of the schedule.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] name: The unique name of the user-created schedule.
         :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
         :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
         :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "result_location", result_location)
         pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
@@ -52,6 +51,8 @@ class ScheduleArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if output_file_format is not None:
             pulumi.set(__self__, "output_file_format", output_file_format)
         if query_properties is not None:
@@ -70,18 +71,6 @@ class ScheduleArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The unique name of the user-created schedule.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="resultLocation")
@@ -154,6 +143,18 @@ class ScheduleArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique name of the user-created schedule.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="outputFileFormat")
@@ -470,12 +471,11 @@ class Schedule(pulumi.CustomResource):
 
         test_schedule = oci.metering_computation.Schedule("testSchedule",
             compartment_id=var["compartment_id"],
-            name=var["schedule_name"],
             result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=var["schedule_result_location_bucket"],
-                location_type=var["schedule_result_location_location_type"],
-                namespace=var["schedule_result_location_namespace"],
-                region=var["schedule_result_location_region"],
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                location_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             schedule_recurrences=var["schedule_schedule_recurrences"],
             time_scheduled=var["schedule_time_scheduled"],
@@ -489,22 +489,22 @@ class Schedule(pulumi.CustomResource):
             output_file_format=var["schedule_output_file_format"],
             query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
                 date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
-                    date_range_type=var["schedule_query_properties_date_range_date_range_type"],
-                    dynamic_date_range_type=var["schedule_query_properties_date_range_dynamic_date_range_type"],
-                    time_usage_ended=var["schedule_query_properties_date_range_time_usage_ended"],
-                    time_usage_started=var["schedule_query_properties_date_range_time_usage_started"],
+                    date_range_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    dynamic_date_range_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    time_usage_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    time_usage_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                granularity=var["schedule_query_properties_granularity"],
-                compartment_depth=var["schedule_query_properties_compartment_depth"],
-                filter=var["schedule_query_properties_filter"],
-                group_bies=var["schedule_query_properties_group_by"],
+                granularity=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                compartment_depth=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 group_by_tags=[oci.metering_computation.ScheduleQueryPropertiesGroupByTagArgs(
-                    key=var["schedule_query_properties_group_by_tag_key"],
-                    namespace=var["schedule_query_properties_group_by_tag_namespace"],
-                    value=var["schedule_query_properties_group_by_tag_value"],
+                    key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                is_aggregate_by_time=var["schedule_query_properties_is_aggregate_by_time"],
-                query_type=var["schedule_query_properties_query_type"],
+                is_aggregate_by_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                query_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
@@ -550,12 +550,11 @@ class Schedule(pulumi.CustomResource):
 
         test_schedule = oci.metering_computation.Schedule("testSchedule",
             compartment_id=var["compartment_id"],
-            name=var["schedule_name"],
             result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=var["schedule_result_location_bucket"],
-                location_type=var["schedule_result_location_location_type"],
-                namespace=var["schedule_result_location_namespace"],
-                region=var["schedule_result_location_region"],
+                bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                location_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             schedule_recurrences=var["schedule_schedule_recurrences"],
             time_scheduled=var["schedule_time_scheduled"],
@@ -569,22 +568,22 @@ class Schedule(pulumi.CustomResource):
             output_file_format=var["schedule_output_file_format"],
             query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
                 date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
-                    date_range_type=var["schedule_query_properties_date_range_date_range_type"],
-                    dynamic_date_range_type=var["schedule_query_properties_date_range_dynamic_date_range_type"],
-                    time_usage_ended=var["schedule_query_properties_date_range_time_usage_ended"],
-                    time_usage_started=var["schedule_query_properties_date_range_time_usage_started"],
+                    date_range_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    dynamic_date_range_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    time_usage_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    time_usage_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 ),
-                granularity=var["schedule_query_properties_granularity"],
-                compartment_depth=var["schedule_query_properties_compartment_depth"],
-                filter=var["schedule_query_properties_filter"],
-                group_bies=var["schedule_query_properties_group_by"],
+                granularity=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                compartment_depth=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 group_by_tags=[oci.metering_computation.ScheduleQueryPropertiesGroupByTagArgs(
-                    key=var["schedule_query_properties_group_by_tag_key"],
-                    namespace=var["schedule_query_properties_group_by_tag_namespace"],
-                    value=var["schedule_query_properties_group_by_tag_value"],
+                    key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 )],
-                is_aggregate_by_time=var["schedule_query_properties_is_aggregate_by_time"],
-                query_type=var["schedule_query_properties_query_type"],
+                is_aggregate_by_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                query_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
@@ -638,8 +637,6 @@ class Schedule(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["output_file_format"] = output_file_format
             __props__.__dict__["query_properties"] = query_properties

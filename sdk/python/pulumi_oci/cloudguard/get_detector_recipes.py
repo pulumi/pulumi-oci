@@ -163,12 +163,12 @@ def get_detector_recipes(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=var["compartment_id"],
-        access_level=var["detector_recipe_access_level"],
-        compartment_id_in_subtree=var["detector_recipe_compartment_id_in_subtree"],
-        display_name=var["detector_recipe_display_name"],
-        resource_metadata_only=var["detector_recipe_resource_metadata_only"],
-        state=var["detector_recipe_state"])
+    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_metadata_only=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -236,12 +236,12 @@ def get_detector_recipes_output(access_level: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=var["compartment_id"],
-        access_level=var["detector_recipe_access_level"],
-        compartment_id_in_subtree=var["detector_recipe_compartment_id_in_subtree"],
-        display_name=var["detector_recipe_display_name"],
-        resource_metadata_only=var["detector_recipe_resource_metadata_only"],
-        state=var["detector_recipe_state"])
+    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        resource_metadata_only=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

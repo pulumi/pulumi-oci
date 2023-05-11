@@ -91,7 +91,7 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=var["compartment_id"])
+    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -126,7 +126,7 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=var["compartment_id"])
+    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

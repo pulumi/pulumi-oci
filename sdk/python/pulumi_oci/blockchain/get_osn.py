@@ -122,8 +122,8 @@ def get_osn(blockchain_platform_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        osn_id=oci_blockchain_osn["test_osn"]["id"])
+    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        osn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -161,8 +161,8 @@ def get_osn_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        osn_id=oci_blockchain_osn["test_osn"]["id"])
+    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        osn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

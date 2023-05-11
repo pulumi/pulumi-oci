@@ -81,15 +81,15 @@ public final class TsigKeyArgs extends com.pulumi.resources.ResourceArgs {
      * A globally unique domain name identifying the key for a given pair of hosts.
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return A globally unique domain name identifying the key for a given pair of hosts.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -226,7 +226,7 @@ public final class TsigKeyArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -265,7 +265,6 @@ public final class TsigKeyArgs extends com.pulumi.resources.ResourceArgs {
         public TsigKeyArgs build() {
             $.algorithm = Objects.requireNonNull($.algorithm, "expected parameter 'algorithm' to be non-null");
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.secret = Objects.requireNonNull($.secret, "expected parameter 'secret' to be non-null");
             return $;
         }

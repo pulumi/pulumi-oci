@@ -112,9 +112,9 @@ def get_managed_database_optimizer_statistics_advisor_executions(end_time_less_t
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to"])
+    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -158,9 +158,9 @@ def get_managed_database_optimizer_statistics_advisor_executions_output(end_time
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to"])
+    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        end_time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        start_time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

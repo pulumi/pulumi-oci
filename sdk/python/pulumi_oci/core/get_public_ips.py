@@ -164,11 +164,11 @@ def get_public_ips(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=var["compartment_id"],
-        scope=var["public_ip_scope"],
-        availability_domain=var["public_ip_availability_domain"],
-        lifetime=var["public_ip_lifetime"],
-        public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+    test_public_ips = oci.Core.get_public_ips(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        lifetime=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        public_ip_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -237,11 +237,11 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=var["compartment_id"],
-        scope=var["public_ip_scope"],
-        availability_domain=var["public_ip_availability_domain"],
-        lifetime=var["public_ip_lifetime"],
-        public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+    test_public_ips = oci.Core.get_public_ips(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        lifetime=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        public_ip_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

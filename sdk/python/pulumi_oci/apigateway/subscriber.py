@@ -307,8 +307,8 @@ class Subscriber(pulumi.CustomResource):
 
         test_subscriber = oci.api_gateway.Subscriber("testSubscriber",
             clients=[oci.api_gateway.SubscriberClientArgs(
-                name=var["subscriber_clients_name"],
-                token=var["subscriber_clients_token"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                token=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             compartment_id=var["compartment_id"],
             usage_plans=var["subscriber_usage_plans"],
@@ -357,8 +357,8 @@ class Subscriber(pulumi.CustomResource):
 
         test_subscriber = oci.api_gateway.Subscriber("testSubscriber",
             clients=[oci.api_gateway.SubscriberClientArgs(
-                name=var["subscriber_clients_name"],
-                token=var["subscriber_clients_token"],
+                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                token=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             )],
             compartment_id=var["compartment_id"],
             usage_plans=var["subscriber_usage_plans"],

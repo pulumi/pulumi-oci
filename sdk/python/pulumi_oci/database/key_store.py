@@ -276,11 +276,11 @@ class KeyStore(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["key_store_display_name"],
             type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=var["key_store_type_details_admin_username"],
-                connection_ips=var["key_store_type_details_connection_ips"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["key_store_type_details_type"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                admin_username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connection_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags=var["key_store_defined_tags"],
             freeform_tags={
@@ -325,11 +325,11 @@ class KeyStore(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["key_store_display_name"],
             type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=var["key_store_type_details_admin_username"],
-                connection_ips=var["key_store_type_details_connection_ips"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["key_store_type_details_type"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                admin_username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connection_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             defined_tags=var["key_store_defined_tags"],
             freeform_tags={

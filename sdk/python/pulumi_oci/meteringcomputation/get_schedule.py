@@ -247,7 +247,7 @@ def get_schedule(schedule_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
+    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -292,7 +292,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
+    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

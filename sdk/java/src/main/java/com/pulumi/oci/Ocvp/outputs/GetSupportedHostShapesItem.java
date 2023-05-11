@@ -23,6 +23,11 @@ public final class GetSupportedHostShapesItem {
      */
     private String description;
     /**
+     * @return Whether the shape supports &#34;MONTH&#34; SKU.
+     * 
+     */
+    private Boolean isSupportMonthlySku;
+    /**
      * @return Indicates whether the shape supports shielded instances.
      * 
      */
@@ -72,6 +77,13 @@ public final class GetSupportedHostShapesItem {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Whether the shape supports &#34;MONTH&#34; SKU.
+     * 
+     */
+    public Boolean isSupportMonthlySku() {
+        return this.isSupportMonthlySku;
     }
     /**
      * @return Indicates whether the shape supports shielded instances.
@@ -134,6 +146,7 @@ public final class GetSupportedHostShapesItem {
     public static final class Builder {
         private Double defaultOcpuCount;
         private String description;
+        private Boolean isSupportMonthlySku;
         private Boolean isSupportShieldedInstances;
         private String name;
         private String shapeFamily;
@@ -146,6 +159,7 @@ public final class GetSupportedHostShapesItem {
     	      Objects.requireNonNull(defaults);
     	      this.defaultOcpuCount = defaults.defaultOcpuCount;
     	      this.description = defaults.description;
+    	      this.isSupportMonthlySku = defaults.isSupportMonthlySku;
     	      this.isSupportShieldedInstances = defaults.isSupportShieldedInstances;
     	      this.name = defaults.name;
     	      this.shapeFamily = defaults.shapeFamily;
@@ -163,6 +177,11 @@ public final class GetSupportedHostShapesItem {
         @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSupportMonthlySku(Boolean isSupportMonthlySku) {
+            this.isSupportMonthlySku = Objects.requireNonNull(isSupportMonthlySku);
             return this;
         }
         @CustomType.Setter
@@ -216,6 +235,7 @@ public final class GetSupportedHostShapesItem {
             final var o = new GetSupportedHostShapesItem();
             o.defaultOcpuCount = defaultOcpuCount;
             o.description = description;
+            o.isSupportMonthlySku = isSupportMonthlySku;
             o.isSupportShieldedInstances = isSupportShieldedInstances;
             o.name = name;
             o.shapeFamily = shapeFamily;

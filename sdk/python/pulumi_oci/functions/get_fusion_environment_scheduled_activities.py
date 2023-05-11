@@ -152,12 +152,12 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_scheduled_activity_display_name"],
-        run_cycle=var["fusion_environment_scheduled_activity_run_cycle"],
-        state=var["fusion_environment_scheduled_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to"])
+    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        run_cycle=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_expected_finish_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_scheduled_start_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -211,12 +211,12 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_scheduled_activity_display_name"],
-        run_cycle=var["fusion_environment_scheduled_activity_run_cycle"],
-        state=var["fusion_environment_scheduled_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to"])
+    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        run_cycle=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_expected_finish_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_scheduled_start_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

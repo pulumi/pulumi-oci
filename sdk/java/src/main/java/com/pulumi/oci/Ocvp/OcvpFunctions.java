@@ -817,6 +817,10 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getSddcs:getSddcs", TypeShape.of(GetSddcsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported compute shapes for ESXi hosts.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -854,6 +858,10 @@ public final class OcvpFunctions {
         return getSupportedHostShapes(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported compute shapes for ESXi hosts.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -891,6 +899,10 @@ public final class OcvpFunctions {
         return getSupportedHostShapesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported compute shapes for ESXi hosts.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -928,6 +940,10 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invoke("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", TypeShape.of(GetSupportedHostShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported compute shapes for ESXi hosts.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -993,6 +1009,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
      *             .build());
      * 
      *     }
@@ -1032,6 +1049,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
      *             .build());
      * 
      *     }
@@ -1071,6 +1089,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
      *             .build());
      * 
      *     }
@@ -1110,6 +1129,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
      *             .build());
      * 
      *     }

@@ -45,7 +45,6 @@ namespace Pulumi.Oci.Identity
     ///         Description = @var.Identity_provider_description,
     ///         Metadata = @var.Identity_provider_metadata,
     ///         MetadataUrl = @var.Identity_provider_metadata_url,
-    ///         Name = @var.Identity_provider_name,
     ///         ProductType = @var.Identity_provider_product_type,
     ///         Protocol = @var.Identity_provider_protocol,
     ///         DefinedTags = 
@@ -272,8 +271,8 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`

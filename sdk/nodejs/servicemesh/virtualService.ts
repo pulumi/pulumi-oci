@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  * const testVirtualService = new oci.servicemesh.VirtualService("testVirtualService", {
  *     compartmentId: _var.compartment_id,
  *     meshId: oci_service_mesh_mesh.test_mesh.id,
- *     name: _var.virtual_service_name,
  *     defaultRoutingPolicy: {
  *         type: _var.virtual_service_default_routing_policy_type,
  *     },
@@ -167,9 +166,6 @@ export class VirtualService extends pulumi.CustomResource {
             if ((!args || args.meshId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'meshId'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["defaultRoutingPolicy"] = args ? args.defaultRoutingPolicy : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -291,5 +287,5 @@ export interface VirtualServiceArgs {
     /**
      * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

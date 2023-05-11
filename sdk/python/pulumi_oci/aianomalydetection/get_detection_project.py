@@ -174,7 +174,7 @@ def get_detection_project(project_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.AiAnomalyDetection.get_detection_project(project_id=oci_ai_anomaly_detection_project["test_project"]["id"])
+    test_project = oci.AiAnomalyDetection.get_detection_project(project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -213,7 +213,7 @@ def get_detection_project_output(project_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.AiAnomalyDetection.get_detection_project(project_id=oci_ai_anomaly_detection_project["test_project"]["id"])
+    test_project = oci.AiAnomalyDetection.get_detection_project(project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

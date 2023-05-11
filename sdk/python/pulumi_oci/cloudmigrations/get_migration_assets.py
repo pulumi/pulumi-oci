@@ -129,10 +129,10 @@ def get_migration_assets(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=var["migration_asset_display_name"],
-        migration_asset_id=oci_cloud_migrations_migration_asset["test_migration_asset"]["id"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        state=var["migration_asset_state"])
+    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_asset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -178,10 +178,10 @@ def get_migration_assets_output(display_name: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=var["migration_asset_display_name"],
-        migration_asset_id=oci_cloud_migrations_migration_asset["test_migration_asset"]["id"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        state=var["migration_asset_state"])
+    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_asset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

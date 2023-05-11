@@ -162,7 +162,7 @@ def get_project(project_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.DataScience.get_project(project_id=oci_datascience_project["test_project"]["id"])
+    test_project = oci.DataScience.get_project(project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -200,7 +200,7 @@ def get_project_output(project_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.DataScience.get_project(project_id=oci_datascience_project["test_project"]["id"])
+    test_project = oci.DataScience.get_project(project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

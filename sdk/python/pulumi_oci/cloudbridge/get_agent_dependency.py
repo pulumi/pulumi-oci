@@ -258,7 +258,7 @@ def get_agent_dependency(agent_dependency_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=oci_cloud_bridge_agent_dependency["test_agent_dependency"]["id"])
+    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -304,7 +304,7 @@ def get_agent_dependency_output(agent_dependency_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=oci_cloud_bridge_agent_dependency["test_agent_dependency"]["id"])
+    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

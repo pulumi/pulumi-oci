@@ -9,6 +9,8 @@ import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
@@ -49,15 +51,15 @@ public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
      * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private RuleSetArgs() {}
@@ -144,7 +146,7 @@ public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -162,7 +164,6 @@ public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
         public RuleSetArgs build() {
             $.items = Objects.requireNonNull($.items, "expected parameter 'items' to be non-null");
             $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

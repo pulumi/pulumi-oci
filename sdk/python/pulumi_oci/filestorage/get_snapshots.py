@@ -107,9 +107,9 @@ def get_snapshots(file_system_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["snapshot_id"],
-        state=var["snapshot_state"])
+    test_snapshots = oci.FileStorage.get_snapshots(file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -150,9 +150,9 @@ def get_snapshots_output(file_system_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["snapshot_id"],
-        state=var["snapshot_state"])
+    test_snapshots = oci.FileStorage.get_snapshots(file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

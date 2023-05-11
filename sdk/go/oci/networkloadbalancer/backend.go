@@ -37,7 +37,6 @@ import (
 //				IsBackup:              pulumi.Any(_var.Backend_is_backup),
 //				IsDrain:               pulumi.Any(_var.Backend_is_drain),
 //				IsOffline:             pulumi.Any(_var.Backend_is_offline),
-//				Name:                  pulumi.Any(_var.Backend_name),
 //				TargetId:              pulumi.Any(oci_cloud_guard_target.Test_target.Id),
 //				Weight:                pulumi.Any(_var.Backend_weight),
 //			})

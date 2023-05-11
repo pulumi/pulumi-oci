@@ -118,9 +118,9 @@ def get_alarm_statuses(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_status_compartment_id_in_subtree"],
-        display_name=var["alarm_status_display_name"])
+    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -167,9 +167,9 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_status_compartment_id_in_subtree"],
-        display_name=var["alarm_status_display_name"])
+    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

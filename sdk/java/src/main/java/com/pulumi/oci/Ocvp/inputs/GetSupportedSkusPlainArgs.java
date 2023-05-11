@@ -38,11 +38,27 @@ public final class GetSupportedSkusPlainArgs extends com.pulumi.resources.Invoke
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    @Import(name="hostShapeName")
+    private @Nullable String hostShapeName;
+
+    /**
+     * @return A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    public Optional<String> hostShapeName() {
+        return Optional.ofNullable(this.hostShapeName);
+    }
+
     private GetSupportedSkusPlainArgs() {}
 
     private GetSupportedSkusPlainArgs(GetSupportedSkusPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.hostShapeName = $.hostShapeName;
     }
 
     public static Builder builder() {
@@ -81,6 +97,17 @@ public final class GetSupportedSkusPlainArgs extends com.pulumi.resources.Invoke
 
         public Builder filters(GetSupportedSkusFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param hostShapeName A filter to return only resources that match or support the given ESXi host shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(@Nullable String hostShapeName) {
+            $.hostShapeName = hostShapeName;
+            return this;
         }
 
         public GetSupportedSkusPlainArgs build() {

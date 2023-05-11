@@ -270,7 +270,7 @@ def get_replica(replica_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replica = oci.Mysql.get_replica(replica_id=oci_mysql_replica["test_replica"]["id"])
+    test_replica = oci.Mysql.get_replica(replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -317,7 +317,7 @@ def get_replica_output(replica_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replica = oci.Mysql.get_replica(replica_id=oci_mysql_replica["test_replica"]["id"])
+    test_replica = oci.Mysql.get_replica(replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

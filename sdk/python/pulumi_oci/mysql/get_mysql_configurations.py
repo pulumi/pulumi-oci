@@ -162,12 +162,12 @@ def get_mysql_configurations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        display_name=var["mysql_configuration_display_name"],
-        shape_name=var["mysql_shape_name"],
-        state=var["mysql_configuration_state"],
-        types=var["mysql_configuration_type"])
+    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        configuration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -228,12 +228,12 @@ def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        display_name=var["mysql_configuration_display_name"],
-        shape_name=var["mysql_shape_name"],
-        state=var["mysql_configuration_state"],
-        types=var["mysql_configuration_type"])
+    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        configuration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

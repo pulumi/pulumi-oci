@@ -35,7 +35,6 @@ import * as utilities from "../utilities";
  *     description: _var.identity_provider_description,
  *     metadata: _var.identity_provider_metadata,
  *     metadataUrl: _var.identity_provider_metadata_url,
- *     name: _var.identity_provider_name,
  *     productType: _var.identity_provider_product_type,
  *     protocol: _var.identity_provider_protocol,
  *     definedTags: {
@@ -187,9 +186,6 @@ export class IdentityProvider extends pulumi.CustomResource {
             if ((!args || args.metadataUrl === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'metadataUrl'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.productType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'productType'");
             }
@@ -318,7 +314,7 @@ export interface IdentityProviderArgs {
     /**
      * The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
      */

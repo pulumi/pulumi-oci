@@ -123,9 +123,9 @@ def get_vcns(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcns = oci.Core.get_vcns(compartment_id=var["compartment_id"],
-        display_name=var["vcn_display_name"],
-        state=var["vcn_state"])
+    test_vcns = oci.Core.get_vcns(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -171,9 +171,9 @@ def get_vcns_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcns = oci.Core.get_vcns(compartment_id=var["compartment_id"],
-        display_name=var["vcn_display_name"],
-        state=var["vcn_state"])
+    test_vcns = oci.Core.get_vcns(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

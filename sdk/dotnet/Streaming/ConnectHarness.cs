@@ -29,7 +29,6 @@ namespace Pulumi.Oci.Streaming
     ///     var testConnectHarness = new Oci.Streaming.ConnectHarness("testConnectHarness", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Name = @var.Connect_harness_name,
     ///         DefinedTags = @var.Connect_harness_defined_tags,
     ///         FreeformTags = 
     ///         {
@@ -172,8 +171,8 @@ namespace Pulumi.Oci.Streaming
         /// <summary>
         /// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public ConnectHarnessArgs()
         {

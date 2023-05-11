@@ -165,13 +165,13 @@ def get_invoke_runs(application_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=var["compartment_id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        display_name=var["invoke_run_display_name"],
-        display_name_starts_with=var["invoke_run_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        state=var["invoke_run_state"],
-        time_created_greater_than=var["invoke_run_time_created_greater_than"])
+    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name_starts_with=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        owner_principal_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -229,13 +229,13 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=var["compartment_id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        display_name=var["invoke_run_display_name"],
-        display_name_starts_with=var["invoke_run_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        state=var["invoke_run_state"],
-        time_created_greater_than=var["invoke_run_time_created_greater_than"])
+    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name_starts_with=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        owner_principal_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created_greater_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

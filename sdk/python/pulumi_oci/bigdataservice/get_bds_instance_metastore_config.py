@@ -187,8 +187,8 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        metastore_config_id=oci_apm_config_config["test_config"]["id"])
+    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        metastore_config_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -232,8 +232,8 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        metastore_config_id=oci_apm_config_config["test_config"]["id"])
+    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        metastore_config_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

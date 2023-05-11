@@ -534,8 +534,8 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
             pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
             enable_pluggabledatabasemanagement=var["enable_pluggabledatabasemanagement"],
             credential_details=oci.database.PluggableDatabaseManagementsManagementCredentialDetailsArgs(
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             private_end_point_id=oci_database_private_end_point["test_private_end_point"]["id"],
             service_name=oci_core_service["test_service"]["name"],
@@ -578,8 +578,8 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
             pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
             enable_pluggabledatabasemanagement=var["enable_pluggabledatabasemanagement"],
             credential_details=oci.database.PluggableDatabaseManagementsManagementCredentialDetailsArgs(
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             private_end_point_id=oci_database_private_end_point["test_private_end_point"]["id"],
             service_name=oci_core_service["test_service"]["name"],

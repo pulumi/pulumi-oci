@@ -130,11 +130,11 @@ def get_invoices(ar_customer_transaction_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=oci_onesubscription_ar_customer_transaction["test_ar_customer_transaction"]["id"],
-        compartment_id=var["compartment_id"],
-        fields=var["invoice_fields"],
-        time_from=var["invoice_time_from"],
-        time_to=var["invoice_time_to"])
+    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_from=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -184,11 +184,11 @@ def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=oci_onesubscription_ar_customer_transaction["test_ar_customer_transaction"]["id"],
-        compartment_id=var["compartment_id"],
-        fields=var["invoice_fields"],
-        time_from=var["invoice_time_from"],
-        time_to=var["invoice_time_to"])
+    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_from=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

@@ -256,7 +256,7 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"])
+    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -302,7 +302,7 @@ def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"])
+    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

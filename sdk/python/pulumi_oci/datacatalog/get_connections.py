@@ -240,19 +240,19 @@ def get_connections(catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DataCatalog.get_connections(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["connection_data_asset_key"],
-        created_by_id=oci_datacatalog_created_by["test_created_by"]["id"],
-        display_name=var["connection_display_name"],
-        display_name_contains=var["connection_display_name_contains"],
-        external_key=var["connection_external_key"],
-        fields=var["connection_fields"],
-        is_default=var["connection_is_default"],
-        state=var["connection_state"],
-        time_created=var["connection_time_created"],
-        time_status_updated=var["connection_time_status_updated"],
-        time_updated=var["connection_time_updated"],
-        updated_by_id=oci_datacatalog_updated_by["test_updated_by"]["id"])
+    test_connections = oci.DataCatalog.get_connections(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        data_asset_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        created_by_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_default=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_status_updated=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_updated=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        updated_by_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -334,19 +334,19 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DataCatalog.get_connections(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["connection_data_asset_key"],
-        created_by_id=oci_datacatalog_created_by["test_created_by"]["id"],
-        display_name=var["connection_display_name"],
-        display_name_contains=var["connection_display_name_contains"],
-        external_key=var["connection_external_key"],
-        fields=var["connection_fields"],
-        is_default=var["connection_is_default"],
-        state=var["connection_state"],
-        time_created=var["connection_time_created"],
-        time_status_updated=var["connection_time_status_updated"],
-        time_updated=var["connection_time_updated"],
-        updated_by_id=oci_datacatalog_updated_by["test_updated_by"]["id"])
+    test_connections = oci.DataCatalog.get_connections(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        data_asset_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        created_by_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        display_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        is_default=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_created=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_status_updated=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        time_updated=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        updated_by_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

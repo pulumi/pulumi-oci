@@ -28,7 +28,6 @@ namespace Pulumi.Oci.LoadBalancer
     ///     {
     ///         DefaultBackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
     ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         Name = @var.Listener_name,
     ///         Port = @var.Listener_port,
     ///         Protocol = @var.Listener_protocol,
     ///         ConnectionConfiguration = new Oci.LoadBalancer.Inputs.ListenerConnectionConfigurationArgs
@@ -221,8 +220,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) Deprecated. Please use `routingPolicies` instead.

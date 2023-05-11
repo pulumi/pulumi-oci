@@ -321,9 +321,9 @@ def get_subscription(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"],
-        subscription_id=oci_osp_gateway_subscription["test_subscription"]["id"])
+    test_subscription = oci.OspGateway.get_subscription(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        osp_home_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -381,9 +381,9 @@ def get_subscription_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"],
-        subscription_id=oci_osp_gateway_subscription["test_subscription"]["id"])
+    test_subscription = oci.OspGateway.get_subscription(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        osp_home_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

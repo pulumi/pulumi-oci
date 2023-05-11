@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  * const testQuota = new oci.limits.Quota("testQuota", {
  *     compartmentId: _var.tenancy_ocid,
  *     description: _var.quota_description,
- *     name: _var.quota_name,
  *     statements: _var.quota_statements,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -144,9 +143,6 @@ export class Quota extends pulumi.CustomResource {
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             if ((!args || args.statements === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'statements'");
             }
@@ -239,7 +235,7 @@ export interface QuotaArgs {
     /**
      * The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Updatable) An array of quota statements written in the declarative quota statement language.
      */

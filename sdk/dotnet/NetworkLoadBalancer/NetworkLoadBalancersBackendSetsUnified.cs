@@ -39,7 +39,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///             TimeoutInMillis = @var.Network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis,
     ///             UrlPath = @var.Network_load_balancers_backend_sets_unified_health_checker_url_path,
     ///         },
-    ///         Name = @var.Network_load_balancers_backend_sets_unified_name,
     ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
     ///         Policy = @var.Network_load_balancers_backend_sets_unified_policy,
     ///         Backends = new[]
@@ -195,8 +194,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.

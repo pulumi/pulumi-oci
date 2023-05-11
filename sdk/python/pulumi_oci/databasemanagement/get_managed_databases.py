@@ -138,11 +138,11 @@ def get_managed_databases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=var["compartment_id"],
-        deployment_type=var["managed_database_deployment_type"],
-        id=var["managed_database_id"],
-        management_option=var["managed_database_management_option"],
-        name=var["managed_database_name"])
+    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        management_option=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -196,11 +196,11 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=var["compartment_id"],
-        deployment_type=var["managed_database_deployment_type"],
-        id=var["managed_database_id"],
-        management_option=var["managed_database_management_option"],
-        name=var["managed_database_name"])
+    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        management_option=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

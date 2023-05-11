@@ -117,7 +117,7 @@ def get_ipsec_config(filters: Optional[Sequence[pulumi.InputType['GetIpsecConfig
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
+    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -156,7 +156,7 @@ def get_ipsec_config_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
+    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 

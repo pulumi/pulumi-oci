@@ -98,8 +98,8 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
+    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vm_cluster_network_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         base64_encode_content=False)
     ```
 
@@ -138,8 +138,8 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
+    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        vm_cluster_network_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         base64_encode_content=False)
     ```
 

@@ -39,7 +39,6 @@ import (
 //						Value: pulumi.Any(_var.Announcement_subscriptions_filter_group_filters_value),
 //					},
 //				},
-//				Name: pulumi.Any(_var.Announcement_subscriptions_filter_group_name),
 //			})
 //			if err != nil {
 //				return err
@@ -82,9 +81,6 @@ func NewAnnouncementSubscriptionsFilterGroup(ctx *pulumi.Context,
 	}
 	if args.Filters == nil {
 		return nil, errors.New("invalid value for required argument 'Filters'")
-	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
 	}
 	var resource AnnouncementSubscriptionsFilterGroup
 	err := ctx.RegisterResource("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, args, &resource, opts...)
@@ -135,7 +131,7 @@ type announcementSubscriptionsFilterGroupArgs struct {
 	// (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
 	Filters []AnnouncementSubscriptionsFilterGroupFilter `pulumi:"filters"`
 	// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a AnnouncementSubscriptionsFilterGroup resource.
@@ -145,7 +141,7 @@ type AnnouncementSubscriptionsFilterGroupArgs struct {
 	// (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
 	Filters AnnouncementSubscriptionsFilterGroupFilterArrayInput
 	// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-	Name pulumi.StringInput
+	Name pulumi.StringPtrInput
 }
 
 func (AnnouncementSubscriptionsFilterGroupArgs) ElementType() reflect.Type {

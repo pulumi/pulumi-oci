@@ -89,8 +89,8 @@ def get_managed_databases_asm_property(managed_database_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_asm_property = oci.DatabaseManagement.get_managed_databases_asm_property(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_databases_asm_property_name"])
+    test_managed_databases_asm_property = oci.DatabaseManagement.get_managed_databases_asm_property(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
@@ -125,8 +125,8 @@ def get_managed_databases_asm_property_output(managed_database_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_asm_property = oci.DatabaseManagement.get_managed_databases_asm_property(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_databases_asm_property_name"])
+    test_managed_databases_asm_property = oci.DatabaseManagement.get_managed_databases_asm_property(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
